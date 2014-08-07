@@ -1,1 +1,1 @@
-web: nodebb start
+web: node app.js
