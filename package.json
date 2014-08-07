@@ -34,6 +34,8 @@
     "less": "~1.7.3",
     "mkdirp": "~0.5.0",
     "mongodb": "^1.4.5",
+    "connect-mongo" : "^0.4.1",
+    "connect-mongodb" : "^1.1.5",
     "nconf": "~0.6.7",
     "nodebb-plugin-dbsearch": "0.0.13",
     "nodebb-plugin-markdown": "~0.5.0",
@@ -60,7 +62,7 @@
     "winston": "~0.7.2",
     "xregexp": "~2.0.0",
     "templates.js": "0.0.8",
-    "nodebb-plugin-dbsearch": "0.0.10"
+    "nodebb-plugin-dbsearch": "0.0.13"
   },
   "devDependencies": {
     "mocha": "~1.13.0"
