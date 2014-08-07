@@ -1,0 +1,18 @@
+{
+    "base_url": "http://cl-forum.herokuapp.com",
+    "port": "4567",
+    "secret": "d3d32021-c602-4fc7-8a04-302ca444f254",
+    "bind_address": "0.0.0.0",
+    "database": "mongo",
+    "mongo": {
+        "host": "kahana.mongohq.com",
+        "port": "10077",
+        "username": "mongo",
+        "password": "mongo",
+        "database": "app28237950"
+    },
+    "bcrypt_rounds": 12,
+    "upload_path": "/public/uploads",
+    "use_port": false,
+    "relative_path": ""
+}
