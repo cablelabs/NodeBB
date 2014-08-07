@@ -62,7 +62,8 @@
     "winston": "~0.7.2",
     "xregexp": "~2.0.0",
     "templates.js": "0.0.8",
-    "nodebb-plugin-dbsearch": "0.0.13"
+    "nodebb-plugin-dbsearch": "0.0.13",
+    "nodebb-theme-rocket": "0.0.1"
   },
   "devDependencies": {
     "mocha": "~1.13.0"
