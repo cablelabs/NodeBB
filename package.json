@@ -44,6 +44,8 @@
     "nodebb-theme-lavender": "~0.0.74",
     "nodebb-theme-vanilla": "~0.0.111",
     "nodebb-widget-essentials": "~0.1.0",
+    "nodebb-plugin-emoji": "0.1.4-2",
+    "nodebb-plugin-desktop-notifications": "0.0.10",
     "npm": "^1.4.6",
     "passport": "~0.2.0",
     "passport-local": "1.0.0",
