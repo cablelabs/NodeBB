@@ -17,7 +17,6 @@
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-
 "use strict";
 /*global require, global, process*/
 
@@ -31,7 +30,6 @@ var fs = require('fs'),
 	path = require('path'),
 	pkg = require('./package.json'),
 	utils = require('./public/src/utils.js');
-
 
 global.env = process.env.NODE_ENV || 'production';
 
