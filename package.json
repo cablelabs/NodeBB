@@ -40,7 +40,11 @@
     "nodebb-plugin-soundpack-default": "~0.1.1",
     "nodebb-theme-lavender": "~0.0.74",
     "nodebb-theme-vanilla": "~0.0.111",
+    "nodebb-theme-pewter": "~0.2.3",
     "nodebb-widget-essentials": "~0.1.0",
+    "nodebb-plugin-emoji": "~0.1.4-2",
+    "nodebb-plugin-desktop-notifications": "~0.0.10",
+    "nodebb-plugin-livereload": "0.0.2-2",
     "npm": "^1.4.6",
     "passport": "~0.2.0",
     "passport-local": "1.0.0",
@@ -61,7 +65,8 @@
     "templates.js": "0.0.9",
     "nodebb-plugin-dbsearch": "0.0.10",
     "redis": "~0.10.1",
-    "connect-redis": "~2.0.0"
+    "connect-redis": "~2.0.0",
+    "nodebb-theme-rocket": "0.0.1"
   },
   "devDependencies": {
     "mocha": "~1.13.0"

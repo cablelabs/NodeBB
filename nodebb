@@ -34,6 +34,7 @@ case "$1" in
 		fi;
 
 		# Start the loader daemon
+		echo "#@";
 		"$node" loader -d "$@"
 		;;
 
