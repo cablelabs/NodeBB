@@ -1,3 +1,4 @@
+[ ![Codeship Status for cablelabs/NodeBB](https://www.codeship.io/projects/60c9da40-03b2-0132-4ac2-0a79ec60a2d2/status?branch=master)](https://www.codeship.io/projects/30520)
 # <img alt="NodeBB" src="http://i.imgur.com/mYxPPtB.png" />
 [![Build Status](https://travis-ci.org/NodeBB/NodeBB.svg?branch=master)](https://travis-ci.org/nodebb/nodebb)
 [![Dependency Status](https://david-dm.org/nodebb/nodebb.svg)](https://david-dm.org/nodebb/nodebb)
