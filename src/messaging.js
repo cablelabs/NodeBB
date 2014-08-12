@@ -198,7 +198,9 @@ var db = require('./database'),
 			},
 			function(messages, next) {
 				if (typeof messages !== 'boolean') {
-					next(null, parseInt(messages[1].timestamp, 10) > parseInt(messages[0].timestamp, 10) + (1000*60*5));
+                    if(messages[1] != null && messages[0] !=null) {
+					    next(null, parseInt(messages[1].timestamp, 10) > parseInt(messages[0].timestamp, 10) + (1000*60*5));
+                    }
 				} else {
 					next(null, messages);
 				}
