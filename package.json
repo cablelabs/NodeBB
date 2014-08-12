@@ -66,7 +66,8 @@
     "nodebb-plugin-dbsearch": "0.0.10",
     "redis": "~0.10.1",
     "connect-redis": "~2.0.0",
-    "nodebb-theme-rocket": "0.0.1"
+    "nodebb-theme-rocket": "0.0.1",
+    "atlassian-crowd": "0.4.4"
   },
   "devDependencies": {
     "mocha": "~1.13.0"
