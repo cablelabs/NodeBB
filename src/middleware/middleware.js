@@ -205,7 +205,6 @@ middleware.buildHeader = function(req, res, next) {
 };
 
 middleware.renderHeader = function(req, res, callback) {
-    console.log("Rendering header");
 	var uid = req.user ? parseInt(req.user.uid, 10) : 0;
 
 	var custom_header = {
@@ -348,7 +347,6 @@ middleware.renderHeader = function(req, res, callback) {
 
 middleware.processRender = function(req, res, next) {
 	// res.render post-processing, modified from here: https://gist.github.com/mrlannigan/5051687
-    console.log("Process render");
 	var render = res.render;
 	res.render = function(template, options, fn) {
 		var self = this,
