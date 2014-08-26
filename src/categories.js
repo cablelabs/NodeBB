@@ -211,7 +211,6 @@ var db = require('./database'),
 					categories = categories.filter(function(category) {
 						return !category.disabled;
 					});
-
 					callback(null, categories);
 				});
 			});

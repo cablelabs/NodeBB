@@ -9,6 +9,7 @@ var topicsController = require('./topics'),
 	staticController = require('./static'),
 	apiController = require('./api'),
 	adminController = require('./admin'),
+    portalController = require('./portal'),
 
 	async = require('async'),
 	nconf = require('nconf'),
@@ -32,7 +33,8 @@ var Controllers = {
 	accounts: accountsController,
 	static: staticController,
 	api: apiController,
-	admin: adminController
+	admin: adminController,
+    portal: portalController
 };
 
 
@@ -41,13 +43,13 @@ Controllers.home = function(req, res, next) {
 		header: function (next) {
 			res.locals.metaTags = [{
 				name: "title",
-				content: meta.config.title || 'NodeBB'
+				content: meta.config.title || 'CableLabs Forums'
 			}, {
 				name: "description",
 				content: meta.config.description || ''
 			}, {
 				property: 'og:title',
-				content: 'Index | ' + (meta.config.title || 'NodeBB')
+				content: 'Index | ' + (meta.config.title || 'CableLabs Forums')
 			}, {
 				property: 'og:type',
 				content: 'website'

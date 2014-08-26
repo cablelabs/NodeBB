@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Customer Self Management",
+        "description": "This has info about the set of API's for Customer Self Management",
+        "bgColor": "#3c3c3c",
+        "color": "#fff",
+        "order": 1,
+        "class": "col-md-3 col-xs-6",
+        "raml-location": "http://raml-store.herokuapp.com/raml/CA-CSM.raml"
+    },
+    {
+        "name": "Customer Information Management",
+        "description": "Provides information about the set of API's for Customer Information Management",
+        "bgColor": "#3c3c3c",
+        "color": "#fff",
+        "order": 2,
+        "class": "col-md-3 col-xs-6",
+        "raml-location": "http://raml-store.herokuapp.com/raml/CA-CIM.raml"
+    },
+    {
+        "name": "Serviceability",
+        "description": "API information for Serviceability",
+        "bgColor": "#3c3c3c",
+        "color": "#fff",
+        "order": 3,
+        "class": "col-md-3 col-xs-6",
+        "raml-location": "http://raml-store.herokuapp.com/raml/CA-Serviceability.raml"
+    },
+    {
+        "name": "Customer Order Management",
+        "description": "All the information you need about API's related to Customer Order Management",
+        "bgColor": "#3c3c3c",
+        "color": "#fff",
+        "order": 4,
+        "class": "col-md-3 col-xs-6",
+        "raml-location": "http://raml-store.herokuapp.com/raml/CA-CustomerOrderManagement.raml"
+    }
+]

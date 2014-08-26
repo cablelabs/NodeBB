@@ -4,6 +4,7 @@ var async = require('async'),
 
 	user = require('../user'),
 	categories = require('../categories'),
+	apis = require('../apis'),
 	topics = require('../topics'),
 	meta = require('../meta'),
 	db = require('../database'),
@@ -18,6 +19,7 @@ var async = require('async'),
 
 
 var adminController = {
+    apis: {},
 	categories: {},
 	topics: {},
 	groups: {},
@@ -106,6 +108,24 @@ function getStatsForSet(set, callback) {
 			db.sortedSetCount(set, 0, now, next);
 		}
 	}, callback);
+}
+
+adminController.apis.active = function(req, res, next) {
+    filterAndRenderApis(req, res, next, true);
+};
+
+adminController.apis.disabled = function(req, res, next) {
+    filterAndRenderApis(req, res, next, false);
+};
+
+function filterAndRenderApis(req, res, next, active) {
+    apis.getAllApis(function (err, apiData) {
+        apiData = apiData.filter(function (api) {
+            return active ? !api.disabled : api.disabled;
+        });
+
+        res.render('admin/apis', {apis: apiData});
+    });
 }
 
 adminController.categories.active = function(req, res, next) {

@@ -402,6 +402,32 @@ function createCategories(next) {
 	});
 }
 
+function createApis(next) {
+    var Apis = require('./apis');
+
+    Apis.getAllApis(function (err, categoryData) {
+        if (err) {
+            return next(err);
+        }
+
+        if (Array.isArray(categoryData) && categoryData.length) {
+            winston.info('Apis OK. Found ' + categoryData.length + ' API categories.');
+            return next();
+        }
+
+        winston.warn('No Api categories found, populating instance with default categories');
+
+        fs.readFile(path.join(__dirname, '../', 'install/data/apis.json'), function (err, default_categories) {
+            if (err) {
+                return next(err);
+            }
+            default_categories = JSON.parse(default_categories);
+
+            async.eachSeries(default_categories, Apis.create, next);
+        });
+    });
+}
+
 function enableDefaultPlugins(next) {
 	var Plugins = require('./plugins');
 
@@ -438,7 +464,7 @@ function setCopyrightWidget(next) {
 }
 
 install.setup = function (callback) {
-	async.series([checkSetupFlag, checkCIFlag, setupConfig, setupDefaultConfigs, enableDefaultTheme, createAdministrator, createCategories, enableDefaultPlugins, setCopyrightWidget,
+	async.series([checkSetupFlag, checkCIFlag, setupConfig, setupDefaultConfigs, enableDefaultTheme, createAdministrator, createCategories, createApis, enableDefaultPlugins, setCopyrightWidget,
 		function (next) {
 			require('./upgrade').upgrade(next);
 		}

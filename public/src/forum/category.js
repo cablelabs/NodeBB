@@ -14,6 +14,7 @@ define('forum/category', ['composer', 'forum/pagination', 'forum/infinitescroll'
 
 	function removeListeners() {
 		socket.removeListener('event:new_topic', Category.onNewTopic);
+        socket.addListener
 		categoryTools.removeListeners();
 	}
 

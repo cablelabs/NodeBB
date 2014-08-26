@@ -11,11 +11,10 @@ var nconf = require('nconf'),
 	metaRoutes = require('./meta'),
 	apiRoutes = require('./api'),
 	adminRoutes = require('./admin'),
+    portalRoutes = require('./portal'),
 	feedRoutes = require('./feeds'),
 	pluginRoutes = require('./plugins'),
 	authRoutes = require('./authentication');
-
-
 
 function mainRoutes(app, middleware, controllers) {
 	app.get('/', middleware.buildHeader, controllers.home);
@@ -174,6 +173,9 @@ module.exports = function(app, middleware) {
 		feedRoutes(router, middleware, controllers);
 		pluginRoutes(router, middleware, controllers);
 		authRoutes.createRoutes(router, middleware, controllers);
+
+        // Added for portal
+        portalRoutes(router, middleware, controllers);
 
 		/**
 		* Every view has an associated API route.

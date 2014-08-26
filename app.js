@@ -62,8 +62,16 @@ winston.info('This program comes with ABSOLUTELY NO WARRANTY.');
 winston.info('This is free software, and you are welcome to redistribute it under certain conditions.');
 winston.info('');
 
+// Use local / cloud config file.
+var configFileName = '/config.json';
+if(nconf.get('cloud')) {
+    configFileName = '/config-cloud.json';
+}
+
+winston.info("Using config file : " + configFileName);
+
 // Alternate configuration file support
-var	configFile = path.join(__dirname, '/config.json'),
+var	configFile = path.join(__dirname, configFileName),
 	configExists;
 
 if (nconf.get('config')) {
@@ -92,7 +100,8 @@ function loadConfig() {
 		base_dir: __dirname,
 		themes_path: path.join(__dirname, 'node_modules'),
 		upload_url: '/uploads/',
-		views_dir: path.join(__dirname, 'public/templates')
+		views_dir: path.join(__dirname, 'public/templates'),
+        static_dir: path.join(__dirname, 'static')
 	});
 
 	// Ensure themes_path is a full filepath
