@@ -10,9 +10,11 @@ var pkg = require('./../../package.json'),
 var apiController = {};
 
 apiController.getConfig = function(req, res, next) {
-	var serverConfig = require('./../../config.json');
+	var serverConfig;
     if(nconf.get('cloud')) {
         serverConfig = require('./../../config-cloud.json');
+    } else {
+        serverConfig = require('./../../config.json');
     }
 
 
