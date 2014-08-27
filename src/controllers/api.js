@@ -4,12 +4,17 @@ var pkg = require('./../../package.json'),
 	meta = require('./../meta'),
 	user = require('./../user'),
 	plugins = require('./../plugins'),
-	widgets = require('../widgets');
+	widgets = require('../widgets'),
+    nconf = require('nconf');
 
 var apiController = {};
 
 apiController.getConfig = function(req, res, next) {
 	var serverConfig = require('./../../config.json');
+    if(nconf.get('cloud')) {
+        serverConfig = require('./../../config-cloud.json');
+    }
+
 
 	var config = {};
 	config.relative_path = serverConfig.relative_path;
