@@ -273,10 +273,10 @@ function enableDefaultTheme(next) {
 			return next(err);
 		}
 
-		winston.info('Enabling default theme: Lavender');
+		winston.info('Enabling default theme: Vanilla');
 		meta.themes.set({
 			type: 'local',
-			id: 'nodebb-theme-lavendar'
+			id: 'nodebb-theme-vanilla'
 		}, next);
 	});
 }
@@ -405,13 +405,13 @@ function createCategories(next) {
 function createApis(next) {
     var Apis = require('./apis');
 
-    Apis.getAllApis(function (err, categoryData) {
+    Apis.getAllApis(function (err, apiData) {
         if (err) {
             return next(err);
         }
 
-        if (Array.isArray(categoryData) && categoryData.length) {
-            winston.info('Apis OK. Found ' + categoryData.length + ' API categories.');
+        if (Array.isArray(apiData) && apiData.length) {
+            winston.info('Apis OK. Found ' + apiData.length + ' API categories.');
             return next();
         }
 

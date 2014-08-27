@@ -6,7 +6,7 @@
         "color": "#fff",
         "order": 1,
         "class": "col-md-3 col-xs-6",
-        "raml-location": "http://raml-store.herokuapp.com/raml/CA-CSM.raml"
+        "raml_location": "http://raml-store.herokuapp.com/raml/CA-CSM.raml"
     },
     {
         "name": "Customer Information Management",
@@ -15,7 +15,7 @@
         "color": "#fff",
         "order": 2,
         "class": "col-md-3 col-xs-6",
-        "raml-location": "http://raml-store.herokuapp.com/raml/CA-CIM.raml"
+        "raml_location": "http://raml-store.herokuapp.com/raml/CA-CIM.raml"
     },
     {
         "name": "Serviceability",
@@ -24,7 +24,7 @@
         "color": "#fff",
         "order": 3,
         "class": "col-md-3 col-xs-6",
-        "raml-location": "http://raml-store.herokuapp.com/raml/CA-Serviceability.raml"
+        "raml_location": "http://raml-store.herokuapp.com/raml/CA-Serviceability.raml"
     },
     {
         "name": "Customer Order Management",
@@ -33,6 +33,6 @@
         "color": "#fff",
         "order": 4,
         "class": "col-md-3 col-xs-6",
-        "raml-location": "http://raml-store.herokuapp.com/raml/CA-CustomerOrderManagement.raml"
+        "raml_location": "http://raml-store.herokuapp.com/raml/CA-CustomerOrderManagement.raml"
     }
 ]

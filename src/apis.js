@@ -40,7 +40,8 @@ var db = require('./database'),
                 color: data.color,
                 order: data.order,
                 disabled: 0,
-                class: 'col-md-3 col-xs-6'
+                class: 'col-md-3 col-xs-6',
+                raml_location: data.raml_location
             };
 
             db.setObject('api:' + cid, category, function(err) {

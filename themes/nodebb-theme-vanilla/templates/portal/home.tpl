@@ -24,7 +24,7 @@
 			<!-- IF apis.link -->
 			<a style="color: {apis.color};" href="{apis.link}" itemprop="url" target="_blank">
 			<!-- ELSE -->
-			<a style="color: {apis.color};" href="{apis.raml-location}" itemprop="url">
+			<a style="color: {apis.color};" href="{apis.raml_location}" itemprop="url">
 			<!-- ENDIF apis.link -->
 				<div
 					id="category-{apis.cid}" class="category-header icon category-header-image-{apis.imageClass}"

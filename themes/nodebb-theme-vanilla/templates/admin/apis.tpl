@@ -57,7 +57,7 @@
 								<div class="col-sm-8 col-xs-12">
 									<div class="form-group">
 										<label for="cid-{apis.cid}-link">Raml Location</label>
-										<input id="cid-{apis.cid}-link" type="text" class="form-control" placeholder="http://domain.com/*.raml" data-name="raml-location" value="{apis.raml-location}" />
+										<input id="cid-{apis.cid}-link" type="text" class="form-control" placeholder="http://domain.com/*.raml" data-name="raml_location" value="{apis.raml_location}" />
 									</div>
 								</div>
 								<div class="col-sm-6 col-xs-12">
