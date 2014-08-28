@@ -5,6 +5,7 @@ var async = require('async'),
 	user = require('../user'),
 	categories = require('../categories'),
 	apis = require('../apis'),
+	announcements = require('../announcements'),
 	topics = require('../topics'),
 	meta = require('../meta'),
 	db = require('../database'),
@@ -20,6 +21,7 @@ var async = require('async'),
 
 var adminController = {
     apis: {},
+    announcements: {},
 	categories: {},
 	topics: {},
 	groups: {},
@@ -125,6 +127,24 @@ function filterAndRenderApis(req, res, next, active) {
         });
 
         res.render('admin/apis', {apis: apiData});
+    });
+}
+
+adminController.announcements.active = function(req, res, next) {
+    filterAndRenderAnnouncements(req, res, next, true);
+};
+
+adminController.announcements.disabled = function(req, res, next) {
+    filterAndRenderAnnouncements(req, res, next, false);
+};
+
+function filterAndRenderAnnouncements(req, res, next, active) {
+    announcements.getAllAnnouncements(function (err, announcementData) {
+        announcementData = announcementData.filter(function (announcement) {
+            return active ? !announcement.disabled : announcement.disabled;
+        });
+
+        res.render('admin/announcements', {announcements: announcementData});
     });
 }
 

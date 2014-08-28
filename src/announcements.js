@@ -17,14 +17,14 @@ var db = require('./database'),
     winston = require('winston'),
     nconf = require('nconf');
 
-(function(Apis) {
+(function(Announcements) {
 
-    require('./apis/delete')(Apis);
-//    require('./categories/activeusers')(Apis);
-//    require('./categories/recentreplies')(Apis);
-    require('./apis/update')(Apis);
+    require('./apis/delete')(Announcements);
+//    require('./categories/activeusers')(Announcements);
+//    require('./categories/recentreplies')(Announcements);
+    require('./apis/update')(Announcements);
 
-    Apis.create = function(data, callback) {
+    Announcements.create = function(data, callback) {
         db.incrObjectField('global', 'nextCid', function(err, cid) {
             if (err) {
                 return callback(err);
@@ -32,7 +32,7 @@ var db = require('./database'),
 
 //            var slug = cid + '/' + utils.slugify(data.name);
 
-            var api = {
+            var announcement = {
                 cid: cid,
                 name: data.name,
                 description: data.description,
@@ -40,28 +40,27 @@ var db = require('./database'),
                 color: data.color,
                 order: data.order,
                 disabled: 0,
-                class: 'col-md-3 col-xs-6',
-                raml_location: data.raml_location
+                class: 'col-md-3 col-xs-6'
             };
 
-            db.setObject('api:' + cid, api, function(err) {
+            db.setObject('announcement:' + cid, announcement, function(err) {
                 if(err) {
                     return callback(err);
                 }
 
-                db.sortedSetAdd('apis:cid', data.order, cid);
+                db.sortedSetAdd('announcements:cid', data.order, cid);
 
-                callback(null, api);
+                callback(null, announcement);
             });
         });
     };
 
-    Apis.exists = function(cid, callback) {
-        db.isSortedSetMember('apis:cid', cid, callback);
+    Announcements.exists = function(cid, callback) {
+        db.isSortedSetMember('announcements:cid', cid, callback);
     };
 
-    Apis.getAllApis = function(callback) {
-        db.getSortedSetRange('apis:cid', 0, -1, function(err, cids) {
+    Announcements.getAllAnnouncements = function(callback) {
+        db.getSortedSetRange('announcements:cid', 0, -1, function(err, cids) {
             if (err) {
                 return callback(err);
             }
@@ -70,12 +69,12 @@ var db = require('./database'),
                 return callback(null, []);
             }
 
-            Apis.getApisData(cids, callback);
+            Announcements.getAnnouncementsData(cids, callback);
         });
     };
 
-    Apis.getVisibleApis = function(uid, callback) {
-        db.getSortedSetRange('apis:cid', 0, -1, function(err, cids) {
+    Announcements.getVisibleAnnouncements = function(uid, callback) {
+        db.getSortedSetRange('announcements:cid', 0, -1, function(err, cids) {
             if (err) {
                 return callback(err);
             }
@@ -83,7 +82,7 @@ var db = require('./database'),
             if (!Array.isArray(cids) || !cids.length) {
                 return callback(null, []);
             }
-            Apis.getApis(cids, function(err, apis) {
+            Announcements.getAnnouncements(cids, function(err, apis) {
                 if (err) {
                     return callback(err);
                 }
@@ -96,7 +95,7 @@ var db = require('./database'),
         });
     };
 
-    Apis.getApis = function(cids, callback) {
+    Announcements.getAnnouncements = function(cids, callback) {
         if (!Array.isArray(cids)) {
             return callback(new Error('[[error:invalid-cid]]'));
         }
@@ -107,7 +106,7 @@ var db = require('./database'),
 
         async.parallel({
             apis: function(next) {
-                Apis.getApisData(cids, next);
+                Announcements.getAnnouncementsData(cids, next);
             }
         }, function(err, results) {
             if (err) {
@@ -119,9 +118,9 @@ var db = require('./database'),
         });
     };
 
-    Apis.getApisData = function(cids, callback) {
+    Announcements.getAnnouncementsData = function(cids, callback) {
         var keys = cids.map(function(cid) {
-            return 'api:' + cid;
+            return 'announcement:' + cid;
         });
 
         db.getObjects(keys, function(err, apis) {
@@ -145,26 +144,26 @@ var db = require('./database'),
         });
     };
 
-    Apis.getCategoryField = function(cid, field, callback) {
-        db.getObjectField('api:' + cid, field, callback);
+    Announcements.getCategoryField = function(cid, field, callback) {
+        db.getObjectField('announcement:' + cid, field, callback);
     };
 
-    Apis.getMultipleCategoryFields = function(cids, fields, callback) {
+    Announcements.getMultipleCategoryFields = function(cids, fields, callback) {
         var keys = cids.map(function(cid) {
-            return 'api:' + cid;
+            return 'announcement:' + cid;
         });
         db.getObjectsFields(keys, fields, callback);
     };
 
-    Apis.getCategoryFields = function(cid, fields, callback) {
-        db.getObjectFields('api:' + cid, fields, callback);
+    Announcements.getCategoryFields = function(cid, fields, callback) {
+        db.getObjectFields('announcement:' + cid, fields, callback);
     };
 
-    Apis.setCategoryField = function(cid, field, value, callback) {
-        db.setObjectField('api:' + cid, field, value, callback);
+    Announcements.setCategoryField = function(cid, field, value, callback) {
+        db.setObjectField('announcement:' + cid, field, value, callback);
     };
 
-//    Apis.getModerators = function(cid, callback) {
+//    Announcements.getModerators = function(cid, callback) {
 //        Groups.get('cid:' + cid + ':privileges:mods', {}, function(err, groupObj) {
 //            if (err) {
 //                return callback(err);
@@ -178,6 +177,6 @@ var db = require('./database'),
 //        });
 //    };
 
-//    emitter.on('event:newpost', Apis.onNewPostMade);
+//    emitter.on('event:newpost', Announcements.onNewPostMade);
 
 }(exports));
