@@ -75,7 +75,23 @@ portalController.home = function(req, res, next) {
                     next(err, apiData);
                 });
             });
-        }
+        },
+        announcements: function (next) {
+        var uid = req.user ? req.user.uid : 0;
+        announcements.getVisibleAnnouncements(uid, function (err, announcementData) {
+            if (err) {
+                return next(err);
+            }
+
+            function getRecentReplies(category, callback) {
+                callback();
+            }
+
+            async.each(announcementData, getRecentReplies, function (err) {
+                next(err, announcementData);
+            });
+        });
+    }
     }, function (err, data) {
         if (err) {
             return next(err);

@@ -67,7 +67,8 @@
     "redis": "~0.10.1",
     "connect-redis": "~2.0.0",
     "nodebb-theme-rocket": "0.0.1",
-    "atlassian-crowd": "0.4.4"
+    "atlassian-crowd": "0.4.4",
+    "nodebb-plugin-google-analytics": "0.4.2"
   },
   "devDependencies": {
     "mocha": "~1.13.0"

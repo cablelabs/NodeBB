@@ -12,7 +12,7 @@
         <li class=''><a href='/admin/announcements/disabled'>Disabled</a></li>
     </ul><br />
 
-    <div class="row admin-announcements">
+    <div class="row admin-announcements pull-left">
         <ul class="col-md-12" id="entry-container">
             <!-- BEGIN announcements -->
             <li data-cid="{announcements.cid}" class="entry-row">
@@ -32,17 +32,17 @@
                             </div>
                             <div class="col-sm-10">
 
-                                <div class="col-sm-4 col-xs-12">
+                                <div class="col-sm-6 col-xs-12">
                                     <div class="form-group">
-                                        <label for="cid-{announcements.cid}-name">Name</label>
-                                        <input id="cid-{announcements.cid}-name" type="text" class="form-control hide" placeholder="Category Name" data-name="name" value="{announcements.name}" />
+                                        <label for="cid-{announcements.cid}-name">Header</label>
+                                        <input id="cid-{announcements.cid}-name" data-name="name" placeholder="Announcement Header" value="{announcements.name}" class="form-control category_name input-sm name"></input>
                                     </div>
                                 </div>
 
-                                <div class="col-sm-4 col-xs-12">
+                                <div class="col-sm-12 col-xs-12">
                                     <div class="form-group">
                                         <label for="cid-{announcements.cid}-description">Description</label>
-                                        <input id="cid-{announcements.cid}-description" data-name="description" placeholder="Category Description" value="{announcements.description}" class="form-control category_description input-sm description hide"></input>
+                                        <input id="cid-{announcements.cid}-description" data-name="description" placeholder="Announcement Description" value="{announcements.description}" class="form-control category_description input-sm description"></input>
                                     </div>
                                 </div>
 
@@ -62,12 +62,6 @@
                                     <div class="form-group">
                                         <label for="cid-{announcements.cid}-class">Custom Class</label>
                                         <input id="cid-{announcements.cid}-class" type="text" class="form-control" placeholder="col-md-6 col-xs-6" data-name="class" value="{announcements.class}" />
-                                    </div>
-                                </div>
-                                <div class="col-sm-8 col-xs-12">
-                                    <div class="form-group">
-                                        <label for="cid-{announcements.cid}-link">Raml Location</label>
-                                        <input id="cid-{announcements.cid}-link" type="text" class="form-control" placeholder="http://domain.com/*.raml" data-name="raml_location" value="{announcements.raml_location}" />
                                     </div>
                                 </div>
                                 <div class="col-sm-6 col-xs-12">
@@ -103,8 +97,104 @@
 
             <!-- END announcements -->
         </ul>
+    </div>
 
+    <div class="row col-md-6 pull-right">
+        <div class="col-xs-6">
+            <ul class="nav nav-pills">
+            <!-- BEGIN templates -->
+                <li class="<!-- IF @first -->active<!-- ENDIF @first -->"><a href="#" data-template="{templates.template}" data-toggle="pill">{templates.template}</a></li>
+            <!-- END templates -->
+            </ul>
 
+            <div class="tab-content">
+            <!-- BEGIN templates -->
+                <div class="tab-pane <!-- IF @first -->active<!-- ENDIF @first -->" data-template="{templates.template}">
+                <!-- BEGIN areas -->
+                    <div class="area" data-template="{templates.template}" data-location="{templates.areas.location}">
+                        <h4>{templates.areas.name} <small>{templates.template} / {templates.areas.location}</small></h4>
+                        <div class="well widget-area">
+
+                        </div>
+                    </div>
+                <!-- END areas -->
+                </div>
+            <!-- END templates -->
+            </div>
+
+            <button class="btn btn-success save pull-right">Save</button>
+        </div>
+        <div class="col-xs-6">
+            <div class="available-widgets">
+                <h4>Available Widgets <small>Drag and drop widgets into templates</small></h4>
+                <!-- IF !widgets.length -->
+                <div class="alert alert-info">No widgets found! Activate the essential widgets plugin in the <a href="/admin/plugins">plugins</a> control panel.</div>
+                <!-- ENDIF !widgets.length -->
+                <div class="row">
+                    <!-- BEGIN widgets -->
+                    <div class="col-lg-6 col-md-12">
+                        <div data-widget="{widgets.widget}" class="panel panel-default pointer">
+                            <div class="panel-heading">
+                                <strong>{widgets.name}</strong>
+                                <small><br />{widgets.description}</small>
+                            </div>
+                            <div class="panel-body hidden">
+                                <form>
+                                    {widgets.content}
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END widgets -->
+                </div>
+            </div>
+            <hr />
+            <div class="available-containers">
+                <h4>Available Containers <small>Drag and drop on top of any widget</small></h4>
+                <div class="containers">
+                    <div class="pointer" style="padding: 20px; border: 1px dotted #dedede; margin-bottom: 20px;" data-container-html=" ">
+                        None
+                    </div>
+                    <div class="well pointer" data-container-html='<div class="well">{body}</div>'>
+                        Well
+                    </div>
+                    <div class="jumbotron pointer" data-container-html='<div class="jumbotron">{body}</div>'>
+                        Jumbotron
+                    </div>
+                    <div class="panel" data-container-html='<div class="panel"><div class="panel-body">{body}</div></div>'>
+                        <div class="panel-body pointer">
+                            Panel
+                        </div>
+                    </div>
+                    <div class="panel panel-default pointer" data-container-html='<div class="panel panel-default"><div class="panel-heading">{title}</div><div class="panel-body">{body}</div></div>'>
+                        <div class="panel-heading">
+                            Panel Header
+                            <div class="pull-right color-selector">
+                                <button data-class="panel-default" class="btn btn-xs">&nbsp;&nbsp;</button>
+                                <button data-class="panel-primary" class="btn btn-xs btn-primary">&nbsp;&nbsp;</button>
+                                <button data-class="panel-success" class="btn btn-xs btn-success">&nbsp;&nbsp;</button>
+                                <button data-class="panel-info" class="btn btn-xs btn-info">&nbsp;&nbsp;</button>
+                                <button data-class="panel-warning" class="btn btn-xs btn-warning">&nbsp;&nbsp;</button>
+                                <button data-class="panel-danger" class="btn btn-xs btn-danger">&nbsp;&nbsp;</button>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            Panel Body
+                        </div>
+                    </div>
+
+                    <div class="alert alert-info pointer" data-container-html='<div class="alert alert-info">{body}</div>'>
+                        Alert
+                        <div class="pull-right color-selector">
+                            <button data-class="alert-success" class="btn btn-xs btn-success">&nbsp;&nbsp;</button>
+                            <button data-class="alert-info" class="btn btn-xs btn-info">&nbsp;&nbsp;</button>
+                            <button data-class="alert-warning" class="btn btn-xs btn-warning">&nbsp;&nbsp;</button>
+                            <button data-class="alert-danger" class="btn btn-xs btn-danger">&nbsp;&nbsp;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div id="new-announcement-modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="Add New Modal" aria-hidden="true">
