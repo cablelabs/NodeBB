@@ -250,4 +250,13 @@ portalController.console = function(req, res, next) {
     });
 };
 
+portalController.proxy = function(req, res, next) {
+    console.log("URL : " + req.originalUrl);
+
+//    req.origi nalUrl
+
+    res.send('{"Status" : "Success"}');
+
+};
+
 module.exports = portalController;

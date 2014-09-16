@@ -62,7 +62,7 @@
     "validator": "~3.16.1",
     "winston": "~0.7.2",
     "xregexp": "~2.0.0",
-    "templates.js": "0.0.9",
+    "templates.js": "0.0.13",
     "nodebb-plugin-dbsearch": "0.0.10",
     "redis": "~0.10.1",
     "connect-redis": "~2.0.0",
@@ -77,7 +77,7 @@
     "url": "https://github.com/NodeBB/NodeBB/issues"
   },
   "engines": {
-    "node": ">=0.8"
+    "node": ">=0.10"
   },
   "maintainers": [
     {

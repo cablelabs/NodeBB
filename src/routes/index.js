@@ -17,8 +17,12 @@ var nconf = require('nconf'),
 	authRoutes = require('./authentication');
 
 function mainRoutes(app, middleware, controllers) {
-	app.get('/', middleware.buildHeader, controllers.home);
-	app.get('/api/home', controllers.home);
+
+    app.get('/', middleware.buildHeader, controllers.index);
+//    app.get('/api/home', controllers.home);
+
+	app.get('/forum', middleware.buildHeader, controllers.home);
+	app.get('/api/forum', controllers.home);
 
 	app.get('/login', middleware.redirectToAccountIfLoggedIn, middleware.buildHeader, controllers.login);
 	app.get('/api/login', middleware.redirectToAccountIfLoggedIn, controllers.login);
@@ -159,7 +163,7 @@ module.exports = function(app, middleware) {
 			app.render.apply(app, arguments);
 		};
 
-		app.all(relativePath + '/api/*', middleware.updateLastOnlineTime, middleware.prepareAPI);
+		app.all(relativePath + '/api/?*', middleware.updateLastOnlineTime, middleware.prepareAPI);
 		app.all(relativePath + '/api/admin/*', middleware.admin.isAdmin, middleware.prepareAPI);
 		app.all(relativePath + '/admin/*', middleware.admin.isAdmin);
 		app.get(relativePath + '/admin', middleware.admin.isAdmin);

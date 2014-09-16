@@ -19,10 +19,10 @@ var db = require('./database'),
 
 (function(Announcements) {
 
-    require('./apis/delete')(Announcements);
+    require('./announcements/delete')(Announcements);
 //    require('./categories/activeusers')(Announcements);
 //    require('./categories/recentreplies')(Announcements);
-    require('./apis/update')(Announcements);
+    require('./announcements/update')(Announcements);
 
     Announcements.create = function(data, callback) {
         db.incrObjectField('global', 'nextCid', function(err, cid) {

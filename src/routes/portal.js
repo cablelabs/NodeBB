@@ -8,9 +8,11 @@ function mainRoutes(app, middleware, controllers) {
     app.get('/portal/announcement', middleware.portal.buildHeader, controllers.portal.announcement);
     app.get('/api/portal/announcement', controllers.portal.announcement);
 
-    app.get('/portal/console', middleware.buildHeader, controllers.portal.console);
+//    app.get('/portal/console', middleware.buildHeader, controllers.portal.console);
 
-    app.get('/portal', middleware.buildHeader, controllers.portal.home);
+    app.get('/portal', middleware.portal.buildHeader, controllers.portal.home);
+
+    app.route('/proxy/', controllers.portal.proxy);
 //    app.get('/admin', middleware.admin.buildHeader, controllers.admin.home);
 //    app.get('/admin/index', middleware.admin.buildHeader, controllers.admin.home);
 //    app.get('/api/admin/index', controllers.admin.home);
