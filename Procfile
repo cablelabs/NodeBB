@@ -1,1 +1,1 @@
-web: node loader.js --cloud
+web: node app.js --cloud
