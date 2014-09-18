@@ -35,6 +35,9 @@ middleware.isAdmin = function(req, res, next) {
 };
 
 middleware.buildHeader = function(req, res, next) {
+
+    console.log("portal.buildHeader");
+
     res.locals.renderHeader = true;
     async.parallel({
         config: function(next) {
@@ -58,6 +61,9 @@ middleware.buildHeader = function(req, res, next) {
 };
 
 middleware.renderHeader = function(req, res, callback) {
+
+    console.log("portal.renderHeader");
+
     var uid = req.user ? parseInt(req.user.uid, 10) : 0;
 
     var custom_header = {
@@ -194,7 +200,7 @@ middleware.renderHeader = function(req, res, callback) {
             templateValues.customCSS = results.customCSS;
             templateValues.customJS = results.customJS;
 
-            app.render('portal/header', templateValues, callback);
+            app.render('landing-header', templateValues, callback);
         });
     });
 };

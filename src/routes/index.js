@@ -21,8 +21,8 @@ function mainRoutes(app, middleware, controllers) {
     app.get('/', middleware.buildHeader, controllers.index);
 //    app.get('/api/home', controllers.home);
 
-	app.get('/forum', middleware.buildHeader, controllers.home);
-	app.get('/api/forum', controllers.home);
+	app.get('/forum', middleware.buildHeader, middleware.checkGlobalPrivacySettings, controllers.home);
+	app.get('/api/forum', middleware.checkGlobalPrivacySettings, controllers.home);
 
 	app.get('/login', middleware.redirectToAccountIfLoggedIn, middleware.buildHeader, controllers.login);
 	app.get('/api/login', middleware.redirectToAccountIfLoggedIn, controllers.login);

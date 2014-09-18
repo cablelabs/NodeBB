@@ -1,0 +1,7 @@
+{
+    "id": "custom",
+    "name": "Custom",
+    "description": "Custom Vanilla Theme for NodeBB",
+    "url": "https://github.com/NodeBB/nodebb-theme-vanilla",
+    "screenshot": "screenshot.png"
+}

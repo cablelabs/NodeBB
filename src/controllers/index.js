@@ -89,25 +89,7 @@ Controllers.index = function(req, res, next) {
         if (err) {
             return next(err);
         }
-
-        var options = {
-            root: __dirname + '../../../public/',
-            dotfiles: 'deny',
-            headers: {
-                'x-timestamp': Date.now(),
-                'x-sent': true
-            }
-        };
-
-        res.redirect('flatscroller/index.htm', options, function(err) {
-            if (err) {
-                console.log(err);
-//                res.status(err.status).end();
-            }
-            else {
-                console.log('Sent:', '/flatscroller/index.htm');
-            }
-        });
+        res.render('landing', data);
     });
 };
 

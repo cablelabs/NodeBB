@@ -2,9 +2,37 @@
 <html>
 <head>
 	<title>{browserTitle}</title>
+
 	<!-- BEGIN metaTags -->
-	{function.buildMetaTag}
+	    {function.buildMetaTag}
 	<!-- END metaTags -->
+
+	<!-- Le styles -->
+
+    <!-- <link href="{relative_path}/flatscroller/assets/css/bootstrap.css?{css-buster}" rel="stylesheet"> -->
+
+    <link href="{relative_path}/flatscroller/assets/css/bootstrap-responsive.css?{css-buster}" rel="stylesheet">
+    <link href="{relative_path}/flatscroller/assets/css/style.css?{css-buster}" rel="stylesheet">
+    <link href="{relative_path}/flatscroller/assets/css/font-awesome.min.css?{css-buster}" rel="stylesheet">
+
+    <!--[if lt IE 7]>
+        <link href="{relative_path}/flatscroller/assets/css/font-awesome-ie7.min.css?{css-buster}" rel="stylesheet">
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="{relative_path}/flatscroller/assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{relative_path}/flatscroller/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{relative_path}/flatscroller/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{relative_path}/flatscroller/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="{relative_path}/flatscroller/assets/ico/apple-touch-icon-57-precomposed.png">
+
 	<link rel="stylesheet" type="text/css" href="{relative_path}/stylesheet.css?{css-buster}" />
 	<!-- IF bootswatchCSS --><link href="{bootswatchCSS}" rel="stylesheet" media="screen"><!-- ENDIF bootswatchCSS -->
 	<!-- BEGIN linkTags -->
@@ -52,5 +80,5 @@
 
 	<input id="csrf_token" type="hidden" template-variable="csrf" value="{csrf}" />
 
-	<div class="container" id="content">
+	<div class="container landing" id="content">
 	<!-- IMPORT partials/noscript/warning.tpl -->
