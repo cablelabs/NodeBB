@@ -1,0 +1,35 @@
+{
+    "base_url": "http://cl-forum.herokuapp.com",
+    "port": "4567",
+    "secret": "8ef98d75-a5b8-41a6-bc6a-efc49b25ea1a",
+    "bind_address": "0.0.0.0",
+    "database": "redis",
+    "redis": {
+        "host": "hoki.redistogo.com",
+        "port": "9956",
+        "password": "5e8de57ae6745dda6eb858c839537e3b",
+        "database": "hoki-9956"
+    },
+    "bcrypt_rounds": 12,
+    "upload_path": "/public/uploads",
+    "use_port": false,
+    "relative_path": ""
+}
+
+//{
+//    "base_url": "http://localhost",
+//    "port": "4567",
+//    "secret": "3d7bb893-3e22-4f52-a605-7f0e5c1257ee",
+//    "bind_address": "0.0.0.0",
+//    "database": "redis",
+//    "redis": {
+//        "host": "127.0.0.1",
+//        "port": "6379",
+//        "password": "",
+//        "database": "0"
+//    },
+//    "bcrypt_rounds": 12,
+//    "upload_path": "/public/uploads",
+//    "use_port": false,
+//    "relative_path": ""
+//}
