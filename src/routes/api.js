@@ -151,6 +151,7 @@ function getTemplatesListing(req, res, next) {
 		},
 		config: function(next) {
 			fs.readFile(path.join(nconf.get('views_dir'), 'config.json'), function(err, config) {
+                console.log("CONFIG: " + config);
 				config = JSON.parse(config.toString());
 				plugins.fireHook('filter:templates.get_config', config, next);
 			});
