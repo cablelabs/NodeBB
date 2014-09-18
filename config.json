@@ -15,21 +15,3 @@
     "use_port": false,
     "relative_path": ""
 }
-
-//{
-//    "base_url": "http://localhost",
-//    "port": "4567",
-//    "secret": "3d7bb893-3e22-4f52-a605-7f0e5c1257ee",
-//    "bind_address": "0.0.0.0",
-//    "database": "redis",
-//    "redis": {
-//        "host": "127.0.0.1",
-//        "port": "6379",
-//        "password": "",
-//        "database": "0"
-//    },
-//    "bcrypt_rounds": 12,
-//    "upload_path": "/public/uploads",
-//    "use_port": false,
-//    "relative_path": ""
-//}
