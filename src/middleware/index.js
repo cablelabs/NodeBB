@@ -54,7 +54,7 @@ function routeThemeScreenshots(app, themes) {
 }
 
 function routeCurrentTheme(app, themeId, themesData) {
-	var themeId = (themeId || 'custom'),
+	var themeId = (themeId || 'nodebb-theme-vanilla'),
 		themeObj = (function(id) {
 			return themesData.filter(function(themeObj) {
 				return themeObj.id === id;
