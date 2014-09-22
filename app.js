@@ -106,7 +106,7 @@ function loadConfig() {
 
 	// Ensure themes_path is a full filepath
 	nconf.set('themes_path', path.resolve(__dirname, nconf.get('themes_path')));
-	nconf.set('base_templates_path', path.join(nconf.get('themes_path'), 'custom/templates'));
+	nconf.set('base_templates_path', path.join(nconf.get('themes_path'), 'nodebb-theme-vanilla/templates'));
 }
 
 function start() {

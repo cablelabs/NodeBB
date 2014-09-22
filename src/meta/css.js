@@ -23,8 +23,8 @@ module.exports = function(Meta) {
 	Meta.css.minify = function() {
 		winston.info('[meta/css] Minifying LESS/CSS');
 		db.getObjectFields('config', ['theme:type', 'theme:id'], function(err, themeData) {
-			var themeId = (themeData['theme:id'] || 'custom'),
-				baseThemePath = path.join(nconf.get('themes_path'), (themeData['theme:type'] && themeData['theme:type'] === 'local' ? themeId : 'custom')),
+			var themeId = (themeData['theme:id'] || 'nodebb-theme-vanilla'),
+				baseThemePath = path.join(nconf.get('themes_path'), (themeData['theme:type'] && themeData['theme:type'] === 'local' ? themeId : 'nodebb-theme-vanilla')),
 				paths = [
 					baseThemePath,
 					path.join(__dirname, '../../node_modules'),
