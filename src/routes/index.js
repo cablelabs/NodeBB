@@ -21,8 +21,11 @@ function mainRoutes(app, middleware, controllers) {
     app.get('/', middleware.buildHeader, controllers.index);
 //    app.get('/api/home', controllers.home);
 
-	app.get('/forum', middleware.buildHeader, middleware.checkGlobalPrivacySettings, controllers.home);
-	app.get('/api/forum', middleware.checkGlobalPrivacySettings, controllers.home);
+    app.get('/apidocs', middleware.buildHeader, controllers.apidocs);
+    app.get('/api/apidocs', controllers.apidocs);
+
+	app.get('/forums', middleware.buildHeader, middleware.isLoggedIn, controllers.home);
+	app.get('/api/forums', middleware.isLoggedIn, controllers.home);
 
 	app.get('/login', middleware.redirectToAccountIfLoggedIn, middleware.buildHeader, controllers.login);
 	app.get('/api/login', middleware.redirectToAccountIfLoggedIn, controllers.login);
@@ -179,7 +182,7 @@ module.exports = function(app, middleware) {
 		authRoutes.createRoutes(router, middleware, controllers);
 
         // Added for portal
-        portalRoutes(router, middleware, controllers);
+//        portalRoutes(router, middleware, controllers);
 
 		/**
 		* Every view has an associated API route.

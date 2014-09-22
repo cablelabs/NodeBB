@@ -1,0 +1,176 @@
+.button {
+  border: none;
+  font: inherit;
+  margin: 0;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  text-decoration: none;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 13px;
+  padding: 5px 7px;
+  border-radius: 4px;
+  color: white;
+  background-color: #5798ca;
+}
+.button:hover {
+  background-color: #2d8bca;
+}
+[role=browser] {
+  font-size: 12px;
+  color: grey;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+  z-index: 200;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0;
+  -ms-flex: 0;
+  flex: 0;
+  min-width: 200px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+[role=browser] button {
+  border: none;
+  font: inherit;
+  margin: 0;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  text-decoration: none;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 13px;
+  padding: 5px 7px;
+  border-radius: 4px;
+  color: white;
+  background-color: #5798ca;
+  float: left;
+  margin: 4px 4px 4px 0;
+}
+[role=browser] button:hover {
+  background-color: #2d8bca;
+}
+[role=browser] [role="context-menu"] {
+  position: fixed;
+  z-index: 5;
+  list-style: none;
+  margin: 0;
+  border: 1px solid #AAA;
+  background-color: #EEE;
+  color: #666;
+  padding: 3px 0;
+  min-width: 145px;
+  font-size: 13px;
+  border-radius: 2px;
+  box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.25);
+  opacity: 0.95;
+}
+[role=browser] [role="context-menu"] li {
+  padding: 2px 5px;
+}
+[role=browser] [role="context-menu"] li:hover {
+  background: #1e4f6a;
+  color: #DDD;
+}
+[role=browser] [role="context-menu-item"] {
+  cursor: pointer;
+}
+[role=browser] .file-list {
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  list-style: none;
+  line-height: 15px;
+  background-color: #141519;
+  color: #777;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+[role=browser] .file-list .file-item {
+  padding: 5px 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+[role=browser] .file-list .file-item:not(.currentfile):hover {
+  color: #ccc;
+  background-color: #808395;
+}
+[role=browser] .file-list .file-item.currentfile {
+  color: #ddd;
+  background-color: #1e4f6a;
+}
+[role=browser] .file-list .file-item .file-name {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+[role=browser] .file-list .file-item .icon {
+  display: none;
+  padding-left: 10px;
+  font-size: 15px;
+}
+[role=browser] .file-list .file-item.geared .icon,
+[role=browser] .file-list .file-item:hover .icon {
+  display: block;
+}
+[role=browser] .file-list .file-item.dirty .file-name:before {
+  content: '* ';
+}
+/* Light theme */
+div[role=raml-editor].light [role=browser] {
+  color: #caccd4;
+}
+div[role=raml-editor].light [role=browser] ul[role=file-list] {
+  color: #aaa;
+  background-color: white;
+  border: 1px solid #839496;
+}
+div[role=raml-editor].light [role=browser] ul[role=file-list] li:not(.currentfile):hover {
+  color: #eee;
+  background-color: #caccd4;
+}
+div[role=raml-editor].light [role=browser] ul[role=file-list] li.currentfile {
+  color: #ddd;
+  background-color: #2f7ca6;
+}

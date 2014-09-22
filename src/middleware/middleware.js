@@ -32,6 +32,15 @@ middleware.authenticate = function(req, res, next) {
 	}
 };
 
+middleware.isLoggedIn = function(req, res, next) {
+    if (!req.user) {
+        if (res.locals.isAPI) {
+            return res.json(403, 'not-allowed');
+        }
+        return res.redirect(nconf.get('relative_path') + '/login');
+    }
+};
+
 middleware.updateLastOnlineTime = function(req, res, next) {
 	if(req.user) {
 		user.updateLastOnlineTime(req.user.uid);

@@ -118,6 +118,7 @@
 					<ul class="nav nav-list">
 						<li class="nav-header">NodeBB</li>
 						<li class="active"><a href="{relative_path}/admin/index"><i class="fa fa-fw fa-home"></i> Home</a></li>
+						<li><a href="{relative_path}/admin/designer/"><i class="fa fa-fw fa-hdd-o"></i> Api Designer</a></li>
 						<li><a href="{relative_path}/admin/categories/active"><i class="fa fa-fw fa-folder"></i> Categories</a></li>
 						<li><a href="{relative_path}/admin/apis/active"><i class="fa fa-fw fa-folder"></i> Api Categories</a></li>
 						<li><a href="{relative_path}/admin/announcements/active"><i class="fa fa-fw fa-bullhorn"></i> Announcements</a></li>

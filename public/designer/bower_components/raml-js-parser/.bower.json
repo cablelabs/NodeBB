@@ -1,0 +1,13 @@
+{
+  "name": "raml-parser",
+  "main": "dist/*",
+  "homepage": "https://github.com/raml-org/raml-js-parser",
+  "_release": "01bf587031",
+  "_resolution": {
+    "type": "commit",
+    "commit": "01bf587031db75b1e91b29ce71e05125b9c5314a"
+  },
+  "_source": "git://github.com/raml-org/raml-js-parser.git",
+  "_target": "01bf587031db75b1e91b29ce71e05125b9c5314a",
+  "_originalSource": "raml-org/raml-js-parser"
+}

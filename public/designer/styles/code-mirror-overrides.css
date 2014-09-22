@@ -1,0 +1,108 @@
+/* CodeMirror Overrides */
+div.CodeMirror {
+  font-size: 12px;
+  position: absolute;
+}
+.CodeMirror-foldgutter {
+  width: 15px;
+}
+.CodeMirror-foldgutter-open,
+.CodeMirror-foldgutter-folded {
+  color: #555;
+  cursor: pointer;
+}
+.CodeMirror-foldgutter-open:after {
+  content: "\25BE";
+}
+.CodeMirror-foldgutter-folded:after {
+  content: "\25B8";
+}
+.cm-s-solarized.CodeMirror,
+.cm-s-solarized .CodeMirror-gutters {
+  background-image: none;
+}
+.cm-s-solarized.cm-s-dark {
+  background-color: #18191d;
+}
+.cm-s-solarized.cm-s-dark .CodeMirror-gutters {
+  background-color: #141519;
+}
+.CodeMirror-code .CodeMirror-hint-ghost {
+  color: #777777;
+}
+.CodeMirror-hints {
+  background-color: #132128;
+  border-radius: 0;
+  -webkit-transition: ease-in 0.1s;
+  transition: ease-in 0.1s;
+}
+.CodeMirror-hint {
+  background-color: #132128;
+  border-radius: 0;
+  color: gray;
+  max-width: 100%;
+}
+.CodeMirror-hint-active {
+  background-color: #9b225c !important;
+  border-radius: 0;
+  color: white;
+  -webkit-transition: background-color 0.1s;
+  transition: background-color 0.1s;
+}
+.CodeMirror-hint div {
+  float: left;
+}
+.CodeMirror-hint div.category {
+  float: right;
+  font-size: 10px;
+  padding-left: 10px;
+}
+.cm-s-solarized .cm-indent::before,
+.cm-s-solarized .cm-indent-incomplete::before {
+  content: " ";
+  position: absolute;
+  height: 100%;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+/* CodeMirror Overrides (Light) */
+body.light .CodeMirror-code .CodeMirror-hint-ghost {
+  color: #bbbbbb;
+}
+body.light .CodeMirror-hints {
+  background-color: white;
+}
+body.light .CodeMirror-hint {
+  background-color: white;
+}
+body.light div.cm-s-solarized.cm-s-dark {
+  text-shadow: #fefefe 0 1px;
+  background-color: white;
+}
+body.light .cm-s-solarized.CodeMirror {
+  box-shadow: none;
+}
+body.light div[role=tab-box],
+body.light div[role=tab].active div[role=tab-box] {
+  background-color: white;
+  border: 1px solid #555;
+}
+body.light div[role=tab].active {
+  text-shadow: #eee 0 1px;
+}
+body.light div[role=code] {
+  border-top: 1px solid #555;
+}
+body.light .cm-s-solarized.cm-s-dark .CodeMirror-gutters {
+  background-color: #f1f1f1;
+  border-right: 1px solid #999;
+}
+body.light .cm-s-solarized.cm-s-dark .CodeMirror-linenumber {
+  text-shadow: #fefefe 0 1px;
+}
+body.light .cm-s-solarized.cm-s-dark .CodeMirror-selected {
+  background-color: #ddd;
+}
+body.light .cm-s-solarized .cm-indent::before,
+body.light .cm-s-solarized .cm-indent-incomplete::before {
+  border-right-color: rgba(0, 0, 0, 0.15);
+}

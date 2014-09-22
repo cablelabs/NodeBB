@@ -11,6 +11,8 @@ var topicsController = require('./topics'),
 	adminController = require('./admin'),
     portalController = require('./portal'),
 
+    apis = require('../apis'),
+
 	async = require('async'),
 	nconf = require('nconf'),
 	winston = require('winston'),
@@ -90,6 +92,56 @@ Controllers.index = function(req, res, next) {
             return next(err);
         }
         res.render('landing', data);
+    });
+};
+
+Controllers.apidocs = function(req, res, next) {
+    async.parallel({
+        header: function (next) {
+            res.locals.metaTags = [{
+                name: "title",
+                content: meta.config.title || 'CableLabs'
+            }, {
+                name: "description",
+                content: meta.config.description || ''
+            }, {
+                property: 'og:title',
+                content: 'Index | ' + (meta.config.title || 'CableLabs')
+            }, {
+                property: 'og:type',
+                content: 'website'
+            }];
+
+            if(meta.config['brand:logo']) {
+                res.locals.metaTags.push({
+                    property: 'og:image',
+                    content: meta.config['brand:logo']
+                });
+            }
+
+            next(null);
+        },
+        apis: function (next) {
+            var uid = req.user ? req.user.uid : 0;
+            apis.getVisibleApis(uid, function (err, apiData) {
+                if (err) {
+                    return next(err);
+                }
+
+                function getRecentReplies(category, callback) {
+                    callback();
+                }
+
+                async.each(apiData, getRecentReplies, function (err) {
+                    next(err, apiData);
+                });
+            });
+        }
+    }, function (err, data) {
+        if (err) {
+            return next(err);
+        }
+        res.render('apidocs', data);
     });
 };
 

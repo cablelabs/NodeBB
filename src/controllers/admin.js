@@ -31,6 +31,7 @@ var adminController = {
 	plugins: {},
 	languages: {},
 	settings: {},
+    designer: {},
 	logger: {},
 	sounds: {},
 	users: require('./admin/users'),
@@ -312,6 +313,10 @@ adminController.sounds.get = function(req, res, next) {
 			sounds: sounds
 		});
 	});
+};
+
+adminController.designer.get = function(req, res, next) {
+    res.render('admin/designer', {});
 };
 
 module.exports = adminController;

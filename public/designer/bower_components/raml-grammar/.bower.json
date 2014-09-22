@@ -1,0 +1,12 @@
+{
+  "name": "raml-grammar",
+  "homepage": "https://github.com/mulesoft/raml-grammar",
+  "_release": "538811151d",
+  "_resolution": {
+    "type": "commit",
+    "commit": "538811151dc8ac6b145ce967b6c6975fa86be07b"
+  },
+  "_source": "git://github.com/mulesoft/raml-grammar.git",
+  "_target": "538811151dc8ac6b145ce967b6c6975fa86be07b",
+  "_originalSource": "mulesoft/raml-grammar"
+}

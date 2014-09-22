@@ -1,0 +1,111 @@
+title: ("title", <any string>)
+
+version: ("version", <any string>)
+
+schemas: ("schemas", ((<any string>, JSONSchema))*)
+
+baseUri: ("baseUri", <any string>)
+
+displayName: ("displayName", <any string>)
+
+description: ("description", <any string>)
+
+type: ("type", string | number | integer | date | boolean)
+
+enum: ("enum", (<any string>)*)
+
+pattern: ("pattern", Regex)
+
+minLength: ("minLength", Integer)
+
+maxLength: ("maxLength", Integer)
+
+maximum: ("maximum", Integer)
+
+minimum: ("minimum", Integer)
+
+required: ("required", Boolean)
+
+default: ("default", <any string>)
+
+baseUriParameters: ("baseUriParameters", ((<any string>, (displayName | description | type | enum | pattern | minLength | maxLength | maximum | minimum | required | default)*))*)
+
+mediaType: ("mediaType", <any string> | (<any string>)*)
+
+content: ("content", <any string>)
+
+documentation: ("documentation", (title | content)*)
+
+example: ("example", <any string>)
+
+headers: ("headers", ((<any string>, (displayName | description | type | enum | pattern | minLength | maxLength | maximum | minimum | required | default | example)*))*)
+
+queryParameters: ("queryParameters", ((<any string>, (displayName | description | type | enum | pattern | minLength | maxLength | maximum | minimum | required | default | example)*))*)
+
+formParameters: ("formParameters", ((<any string>, (displayName | description | type | enum | pattern | minLength | maxLength | maximum | minimum | required | default | example)*))*)
+
+application/x-www-form-urlencoded: ("application/x-www-form-urlencoded", (formParameters)*)
+
+multipart/form-data: ("multipart/form-data", (formParameters)*)
+
+schema: ("schema", XMLSchema | JSONSchema)
+
+application/json: ("application/json", ((schema | example)*)*)
+
+application/xml: ("application/xml", ((schema | example)*)*)
+
+body: ("body", (application/x-www-form-urlencoded | multipart/form-data | application/json | application/xml | (<any string>, ((schema | example)*)*))*)
+
+(Integer)*: ("(Integer)*", (body | description)*)
+
+responses: ("responses", ((Integer)*)*)
+
+securedBy: ("securedBy", list)
+
+protocols: ("protocols", HTTP | HTTPS)
+
+get: ("get", (description | baseUriParameters | headers | queryParameters | body | responses | securedBy | protocols)*)
+
+post: ("post", (description | baseUriParameters | headers | queryParameters | body | responses | securedBy | protocols)*)
+
+put: ("put", (description | baseUriParameters | headers | queryParameters | body | responses | securedBy | protocols)*)
+
+delete: ("delete", (description | baseUriParameters | headers | queryParameters | body | responses | securedBy | protocols)*)
+
+head: ("head", (description | baseUriParameters | headers | queryParameters | body | responses | securedBy | protocols)*)
+
+patch: ("patch", (description | baseUriParameters | headers | queryParameters | body | responses | securedBy | protocols)*)
+
+options: ("options", (description | baseUriParameters | headers | queryParameters | body | responses | securedBy | protocols)*)
+
+is: ("is", list)
+
+type': ("type", <any string>)
+
+uriParameters: ("uriParameters", ((<any string>, (displayName | description | type | enum | pattern | minLength | maxLength | maximum | minimum | required | default)*))*)
+
+traits: ("traits", ((<any string>, (displayName | description | baseUriParameters | headers | queryParameters | body | responses | securedBy | protocols)*))*)
+
+resourceTypes: ("resourceTypes", (<any string>, (description | displayName | get | post | put | delete | head | patch | options | is | type' | securedBy | baseUriParameters | uriParameters)*))
+
+type'': ("type", OAuth 1.0 | OAuth 2.0 | Basic Authentication | Digest Authentication | <any string>)
+
+requestTokenUri: ("requestTokenUri", <any string>)
+
+authorizationUri: ("authorizationUri", <any string>)
+
+tokenCredentialsUri: ("tokenCredentialsUri", <any string>)
+
+accessTokenUri: ("accessTokenUri", <any string>)
+
+authorizationGrants: ("authorizationGrants", <any string>)
+
+scopes: ("scopes", <any string>)
+
+settings: ("settings", requestTokenUri | authorizationUri | tokenCredentialsUri | accessTokenUri | authorizationGrants | scopes | (<any string>, <any string>))
+
+describedBy: ("describedBy", headers | queryParameters | responses)
+
+securitySchemes: ("securitySchemes", (<any string>, (description | type'' | settings | describedBy)*))
+
+root: (title | version | schemas | baseUri | baseUriParameters | mediaType | documentation | (<any string>, (displayName | get | post | put | delete | head | patch | options | is | type' | (<any string>, PostposedExecution) | securedBy | uriParameters | baseUriParameters)*) | traits | resourceTypes | securitySchemes | securedBy | protocols)*

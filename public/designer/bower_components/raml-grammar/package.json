@@ -1,0 +1,15 @@
+{
+  "name": "raml-grammar",
+  "version": "0.0.1",
+  "devDependencies": {
+    "chai": "~1.6.0",
+    "coffeeify": "~0.5.1",
+    "grunt-browserify": "~1.2.12",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-contrib-watch": "~0.5.1",
+    "grunt-simple-mocha": "~0.4.0"
+  },
+  "scripts": {
+    "test": "grunt test --verbose"
+  }
+}

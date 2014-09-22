@@ -35,9 +35,6 @@ middleware.isAdmin = function(req, res, next) {
 };
 
 middleware.buildHeader = function(req, res, next) {
-
-    console.log("portal.buildHeader");
-
     res.locals.renderHeader = true;
     async.parallel({
         config: function(next) {

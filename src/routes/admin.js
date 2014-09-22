@@ -23,6 +23,8 @@ function mainRoutes(app, middleware, controllers) {
 
 	app.get('/admin/sounds', middleware.admin.buildHeader, controllers.admin.sounds.get);
 	app.get('/api/admin/sounds', controllers.admin.sounds.get);
+
+    app.get('/admin/designer', middleware.admin.buildHeader, controllers.admin.designer.get);
 }
 
 function userRoutes(app, middleware, controllers) {
