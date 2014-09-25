@@ -24,8 +24,8 @@ function mainRoutes(app, middleware, controllers) {
     app.get('/apidocs', middleware.buildHeader, controllers.apidocs);
     app.get('/api/apidocs', controllers.apidocs);
 
-	app.get('/forums', middleware.buildHeader, middleware.isLoggedIn, controllers.home);
-	app.get('/api/forums', middleware.isLoggedIn, controllers.home);
+	app.get('/forums', middleware.buildHeader, controllers.home);
+	app.get('/api/forums', controllers.home);
 
 	app.get('/login', middleware.redirectToAccountIfLoggedIn, middleware.buildHeader, controllers.login);
 	app.get('/api/login', middleware.redirectToAccountIfLoggedIn, controllers.login);

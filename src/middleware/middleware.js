@@ -33,6 +33,7 @@ middleware.authenticate = function(req, res, next) {
 };
 
 middleware.isLoggedIn = function(req, res, next) {
+    console.log("middleware.isLoggedin " + req.user);
     if (!req.user) {
         if (res.locals.isAPI) {
             return res.json(403, 'not-allowed');

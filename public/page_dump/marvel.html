@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://developer.marvel.com/ -->
+<html class="juggernaut  grid_940 noCSS_gridRow  noCSS_flowFrom  noCSS_hyphens  device_NOT_HASTOUCH  device_LARGE  device_SCREENSD "><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    <script src="Marvel%20Developer%20Portal_files/login" type="text/javascript"></script><script type="text/javascript" id="janrainAuthWidget" src="Marvel%20Developer%20Portal_files/widget.js"></script><script type="text/javascript" id="janrainAuthWidget" src="Marvel%20Developer%20Portal_files/widget.js"></script><script type="text/javascript" async="" src="Marvel%20Developer%20Portal_files/ga.js"></script><script type="text/javascript">
+        // <![CDATA[
+        var URLs = {
+            'login':  'https://secure.marvel.com/user/login?referer=http%3A%2F%2Fmarvel.com',
+            'signup': 'https://secure.marvel.com/user/register?referer=http%3A%2F%2Fmarvel.com',
+            'comicReader': '',
+            'rpxWidgetUrl': 'http://widget-cdn.rpxnow.com/js/lib/forge.marvel.com/widget.js',
+            'rpxWidgetUrlSecure': 'https://rpxnow.com/js/lib/forge.marvel.com/widget.js'
+        };
+        // ]]>
+    </script>
+
+    <meta name="twitter:site" content="@Marvel">
+    <meta name="og:site_name" content="Marvel.com">
+    <meta name="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@Marvel">
+    <meta property="fb:app_id" content="193166954153103">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="content-type" content="text/html;charset=utf-8">
+    <meta name="robots" content="index,follow">
+    <meta name="description" content="The Marvel developer portal gives Marvel fans, partners and other technologists access to an array of powerful APIs, documentation, and other tools to interact with Marvel&amp;#039;s systems.">
+    <meta name="twitter:description" content="The Marvel developer portal gives Marvel fans, partners and other technologists access to an array of powerful APIs, documentation, and other tools to interact with Marvel&amp;#039;s systems.">
+    <meta name="og:description" content="The Marvel developer portal gives Marvel fans, partners and other technologists access to an array of powerful APIs, documentation, and other tools to interact with Marvel&amp;#039;s systems.">
+    <meta name="keywords" content="Marvel, developers, web developers">
+    <link rel="stylesheet" type="text/css" media="all" href="Marvel%20Developer%20Portal_files/sass_juggernaut.css">
+    <!--[if IE 8]><link rel="stylesheet" type="text/css" media="all" href="/i/css/sass_juggernaut.export_ie8.css" /><![endif]-->
+    <link rel="stylesheet" type="text/css" media="all" href="Marvel%20Developer%20Portal_files/developersite.css">
+
+    <script type="text/javascript" src="Marvel%20Developer%20Portal_files/jquery1.9.1.js"></script>
+    <script type="text/javascript" src="Marvel%20Developer%20Portal_files/json2.js"></script>
+    <script type="text/javascript" src="Marvel%20Developer%20Portal_files/juggernaut.js"></script>
+    <script type="text/javascript" src="Marvel%20Developer%20Portal_files/mustache.js"></script>
+    <!--[if lte IE 9]><script type="text/javascript" src="/i/js/html5shiv.js"></script><![endif]-->
+    <!--[if lte IE 9]><script type="text/javascript" src="/i/js/jquery.placeholder.js"></script><![endif]-->
+    <!--[if lte IE 9]><script type="text/javascript" src="/i/js/matchmedia.js"></script><![endif]-->
+    <script type="text/javascript" src="Marvel%20Developer%20Portal_files/livefyre.ui.js"></script>
+
+    <title>Marvel Developer Portal</title>
+
+    <script type="text/javascript" async="async" src="Marvel%20Developer%20Portal_files/BrightcoveExperiences_all.js"></script>
+    <script type="text/javascript">
+        (function() {
+            function async_load(){
+                files = new Array();
+
+                for(i in files) {
+                    s = document.createElement('script');
+                    s.type = files[i].type;
+                    s.async = files[i].async;
+                    s.src = files[i].src;
+                    var x = document.getElementsByTagName('script')[0];
+                    x.parentNode.insertBefore(s, x);
+                }
+            }
+            if (window.attachEvent) {
+                window.attachEvent('onload', async_load);
+            } else {
+                window.addEventListener('load', async_load, false);
+            }
+        })();
+    </script>
+
+    <script type="text/javascript">// <![CDATA[
+    var MARVEL_USER ={"islogged":"0"}
+    // ]]></script>
+    <script type="text/javascript">
+
+        var strTrackingCode = 'UA-273913-20';
+        var strUserSegment = "nonmember";
+        var strPageId = '/';
+
+
+        var _gaq = _gaq || [];
+        function callAnalytics(trackingCode, userSegment, trackPage, transactionAdd, transactionItem) {
+            _gaq.push(['_setAccount', trackingCode]);
+            _gaq.push(['_trackPageLoadTime']);
+            _gaq.push(['_setCustomVar',1, "user segment", userSegment, 2]);
+            _gaq.push(['_trackPageview',trackPage]);
+            _gaq.push(['_setDomainName', 'marvel.com']);
+            if(transactionAdd != null){
+                if (transactionAdd.length > 0 && transactionItem.length > 0) {
+                    _gaq.push(transactionAdd);
+                    _gaq.push(transactionItem);
+                    _gaq.push(['_trackTrans']);
+                }
+            }
+
+            return false;
+        }
+
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+        (function() {
+            callAnalytics(strTrackingCode, strUserSegment, strPageId, null, null);
+        })();
+    </script>
+
+    <link href="https://plus.google.com/108523337373444601877/posts" rel="publisher">
+    <meta name="msapplication-TileImage" content="/i/images/logo.png">
+
+
+
+    <script type="text/javascript" src="Marvel%20Developer%20Portal_files/marvel-widgets.js"></script><script src="Marvel%20Developer%20Portal_files/topnav"></script><script src="Marvel%20Developer%20Portal_files/footer"></script><link href="Marvel%20Developer%20Portal_files/da73fdb1a7da0f5c13a146c850741464.css" type="text/css" rel="stylesheet"><link href="Marvel%20Developer%20Portal_files/1a17bd6b6ecde0ebdccce55dc60e03fe.css" type="text/css" rel="stylesheet"><link rel="stylesheet" href="Marvel%20Developer%20Portal_files/providers.css" type="text/css"></head>
+<body id="index-index" class="devHome">
+
+
+
+
+<header>
+
+    <!-- <div class="ad ad-header"></div> -->
+
+    <script type="text/javascript">
+        var widgetsDomain = 'marvel.com',
+                widgetsUrl = ((document.location.protocol === 'https:') ? 'https://' : 'http://') + widgetsDomain;
+
+        function loadWidgets(){
+            MarvelWidgets.init({
+                home_url: document.URL.replace(/#.*$/, ""),
+                settings: {
+                    version: 2,
+                    exclude_search: true,
+                    custom_terms: 'developersite'
+                },
+                targets: {
+                    topnav: "topnav-js",
+                    footer: "footer-js"
+                },
+                staging: (widgetsDomain !== 'marvel.com') ? widgetsUrl : undefined
+            });
+        };
+
+
+        var e = document.createElement('script');
+        e.type = 'text/javascript';
+        e.src = widgetsUrl + '/i/js/marvel-widgets.js';
+        e.onreadystatechange = loadWidgets;
+        e.onload = loadWidgets;
+
+        document.getElementsByTagName('HEAD')[0].appendChild(e);
+
+    </script>
+
+    <div id="topnav-js">
+
+        <!--[if IE 8]> <div class="lt-IE9 marvelWidget_Container notresponsive"> <![endif]-->
+        <!--[if gt IE 8]><!-->
+        <div class="marvelWidget_Container notresponsive device_NOT_HASTOUCH">
+            <!--<![endif]-->
+            <div id="marvel_topnav_wrapper" class="inner"> <!-- header -->
+                <div id="marvel_topnav" class="inner">
+                    <h1><a href="http://marvel.com/" class="icon-marvel-logo"></a></h1>
+                    <div id="marvel_topnav_mobile">
+                        <span id="icon-menu" class="icon-menu _topnavicon"></span>
+                    </div>
+                    <div id="marvel_topnav_ul_wrapper" style="height: 0px;">
+                        <div style="">
+
+                            <ul id="marvel_topnav_ul">
+                                <li class="home"><a href="http://marvel.com/">Home</a></li>
+                                <li><a href="http://marvel.com/comics" class="">Comics</a></li>
+
+                                <li><a href="http://marvel.com/movies" class="">Movies</a></li>
+
+                                <li><a href="http://marvel.com/videos" class="">Videos</a></li>
+
+                                <li><a href="http://marvel.com/games" class="">Games</a></li>
+
+                                <li><a href="http://marvel.com/tv" class="">TV</a></li>
+
+                                <li><a href="http://marvel.com/characters" class="">Characters</a></li>
+
+                                <li><a href="http://shop.marvel.com/" class="">Shop</a></li>
+
+                                <li class="dropdown-container">
+                                    <a class="">More</a>
+                                    <div class="dropdown more">
+                                        <div class="linklist">
+                                            <ul>
+                                                <li><a href="http://marvel.com/news/">News</a></li>
+                                                <li><a href="http://marvel.com/images/">Images</a></li>
+                                                <li><a href="http://marvel.com/mobile/">Apps</a></li>
+                                                <li><a href="http://marvel.com/podcasts/10/this_week_in_marvel">Podcast</a></li>
+                                                <li><a href="http://more.marvel.com/">Offers</a></li>
+                                                <li><a href="http://www.cafepress.com/+marvel+gifts">CafePress</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="applist">
+                                            <ul>
+                                                <li><a href="http://marvel.com/mobile/#marvel_comics_app" style="background: url(//i.annihil.us/u/prod/marvel/i/mg/4/20/5189661e2df84b.png) no-repeat 15px 0; padding-top: 64px; width: 73px;">Marvel Comics</a></li>
+                                                <li><a href="http://marvel.com/mobile/#marvel_unlimited_app" style="background: url(//i.annihil.us/u/prod/marvel/i/mg/4/20/5189670f880beb.png) no-repeat 15px 0; padding-top: 64px; width: 73px;">Marvel Unlimited</a></li>
+                                                <li><a href="http://marvel.com/mobile/#marvel_ar_app" style="background: url(//i.annihil.us/u/prod/marvel/i/mg/4/50/534e9cb867268.png) no-repeat 15px 0; padding-top: 64px; width: 73px;">Marvel AR</a></li>
+                                                <li><a href="http://marvel.com/mobile/#marvel_avengers_alliance_app" style="background: url(//i.annihil.us/u/prod/marvel/i/mg/3/40/534842d12f52e.png) no-repeat 15px 0; padding-top: 64px; width: 73px;">Avengers Alliance</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="sociallist"><span>Follow:</span> <a href="http://www.facebook.com/Marvel" target="_blank"><span class="icon-facebook"></span></a> <a href="https://plus.google.com/+marvel/posts" target="_blank"><span class="icon-google-plus"></span></a> <a href="https://twitter.com/#!/marvel" target="_blank"><span class="icon-twitter"></span></a> <a href="http://marvelentertainment.tumblr.com/" target="_blank"><span class="icon-tumblr"></span></a> <a href="http://www.youtube.com/marvel" target="_blank"><span class="icon-youtube"></span></a> <a href="http://pinterest.com/marvelofficial/" target="_blank"><span class="icon-pinterest"></span></a></div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="right">
+                                <li id="marvel_topnav_user_button"><a><span class="icon-account _topnavicon"></span></a>
+                                    <div class="dropdown signin">
+                                        <script type="text/javascript">
+                                            window.marvelJanrainTokenUrl = "https://marvel.com/my_account/social";
+                                            window.marvelJanrainAppId    = "gofcnefdmbcgfcjpgide";
+                                            window.marvelJanrainAppUrl   = "https://forge.marvel.com"
+                                        </script>
+
+
+                                        <div class="signedout">
+                                            <span>(Recommended)</span>
+                                            <div id="janrainEngageEmbed"><div class="janrainContent" style="width: 205px; height: 60px; padding-left: 5px; padding-right: 5px; box-sizing: content-box; border: 1px solid transparent; border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; overflow: hidden; position: relative; background-color: transparent;"><div id="janrainView"><div class="janrainHeader" style="font-size: 14px; color: rgb(13, 13, 13); position: relative; height: 15px; left: -5px; padding: 5px 5px 0px; white-space: nowrap; width: 205px; z-index: 100; border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; text-align: left; background-color: transparent;"><div style="padding-left: 1px; font-family: TradeGothic, Arial, Helvetica, &#39;Lucida Grande&#39;, Verdana, sans-serif;">Sign in</div></div><div id="janrainProviderPages" style="padding-top: 5px; left: 5px; position: absolute; width: 410px;"><div class="janrainPage" pageindex="0"><ul class="providers" id="janrainProviders_0" style="list-style-type: none; margin: 0px; padding: 0px;"><li id="janrain-facebook" role="button" style="list-style: none; float: left; height: 30px; margin-top: 0px; margin-right: 5px; width: 30px; margin-bottom: 5px; position: relative; cursor: pointer; white-space: nowrap; overflow: hidden; background: transparent;"><a tabindex="1" class="janrain-provider-icon-32 janrain-provider-icon-bg janrain-provider-icon-facebook" href="javascript:void(0);" style="margin-top: 0px; text-decoration: none; display: block;"><span style="display: inline-block; text-indent: -9999px;">facebook</span></a></li><li id="janrain-googleplus" role="button" style="list-style: none; float: left; height: 30px; margin-top: 0px; margin-right: 5px; width: 30px; margin-bottom: 5px; position: relative; cursor: pointer; white-space: nowrap; overflow: hidden; background: transparent;"><a tabindex="2" class="janrain-provider-icon-32 janrain-provider-icon-bg janrain-provider-icon-googleplus" href="javascript:void(0);" style="margin-top: 0px; text-decoration: none; display: block;"><span style="display: inline-block; text-indent: -9999px;">googleplus</span></a></li><li id="janrain-twitter" role="button" style="list-style: none; float: left; height: 30px; margin-top: 0px; margin-right: 5px; width: 30px; margin-bottom: 5px; position: relative; cursor: pointer; white-space: nowrap; overflow: hidden; background: transparent;"><a tabindex="3" class="janrain-provider-icon-32 janrain-provider-icon-bg janrain-provider-icon-twitter" href="javascript:void(0);" style="margin-top: 0px; text-decoration: none; display: block;"><span style="display: inline-block; text-indent: -9999px;">twitter</span></a></li><li id="janrain-yahoo" role="button" style="list-style: none; float: left; height: 30px; margin-top: 0px; margin-right: 5px; width: 30px; margin-bottom: 5px; position: relative; cursor: pointer; white-space: nowrap; overflow: hidden; background: transparent;"><a tabindex="4" class="janrain-provider-icon-32 janrain-provider-icon-bg janrain-provider-icon-yahoo" href="javascript:void(0);" style="margin-top: 0px; text-decoration: none; display: block;"><span style="display: inline-block; text-indent: -9999px;">yahoo</span></a></li></ul></div></div></div></div></div>
+                                            <div id="janrainListener" class="janrainEngageEmbed">
+                                                <div class="btn btn-facebook"><span><span class="icon-facebook"></span>Login with Facebook</span></div>
+                                                <div class="sociallist">
+                                                    <span>Or login with:</span>
+                                                    <a><span class="icon-twitter"></span></a>
+                                                    <a><span class="icon-google"></span></a>
+                                                    <a><span class="icon-yahoo"></span></a>
+                                                </div>
+                                            </div>
+                                            <div class="divider"><hr class="left">OR<hr class="right"></div>
+
+                                            <a class="btn btn-red" href="https://secure.marvel.com/user/login?referer=http%3A%2F%2Fdeveloper.marvel.com%2F"><span>Login with marvel account</span></a>
+
+                                            <div class="lightdark">
+                                                <span>Need an account?</span>
+                                                <a class="btn btn-black" href="https://secure.marvel.com/user/register?referer=http%3A%2F%2Fdeveloper.marvel.com%2F"><span>Sign up</span></a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div> <!-- header -->
+            <hr class="marvel_topnav_hr">
+        </div></div>
+    <div id="marvel_subnav_wrapper">
+        <div id="marvel_subnav">
+            <span id="marvel_subnav_li"><a>Developer Portal</a></span>
+            <div id="marvel_subnav_div">
+                <ul id="marvel_subnav_ul">
+                    <li><a href="./Marvel Developer Portal_files/Marvel Developer Portal.html">Developer Portal</a> <span>&nbsp;</span></li>
+                    <li class="dropdown-container">
+                        <a>How-Tos</a>
+                        <div class="dropdown">
+                            <a href="http://developer.marvel.com/documentation/getting_started">Getting Started</a>
+                            <a href="http://developer.marvel.com/documentation/generalinfo">General Information</a>
+                            <a href="http://developer.marvel.com/documentation/apiresults">API Results</a>
+                            <a href="http://developer.marvel.com/documentation/entity_types">Entity Types</a>
+                            <a href="http://developer.marvel.com/documentation/authorization">Authorization</a>
+                            <a href="http://developer.marvel.com/documentation/attribution">Attribution &amp; Rate Limits</a>
+                            <a href="http://developer.marvel.com/documentation/images">Images</a>
+                        </div>
+                    </li>
+
+                    <li><a href="http://developer.marvel.com/docs">Interactive Documentation</a></li>
+                    <li><a href="http://developer.marvel.com/account">Get a Key</a></li>
+                    <li><a href="http://developer.marvel.com/help">Help</a></li>
+                    <li><a href="http://developer.marvel.com/community">Community</a></li>
+                    <li><a href="http://developer.marvel.com/news_and_updates">News and Updates</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</header>
+
+
+<!-- Adding isDeveloper bool property to MARVEL_USER for javascript logic in openHTML.
+    Could be changed to load different openHTML blocks and handle the logic all right here. -->
+<script>
+    MARVEL_USER = MARVEL_USER || {};
+    MARVEL_USER.isDeveloper = (''.length === 0) ? false : true;
+</script>
+
+<div class="module no-stripes moduColor_Light">
+
+    <style><!--
+    #index-index.devHome .devportal-banner{background:url(http://i.annihil.us/u/prod/marvel/i/mg/8/e0/52bdf830aa094.jpg) no-repeat center center #0a1117;height:436px}#index-index.devHome .devportal-banner .skew-box{position:absolute;height:436px;width:64%;margin-left:-65px;background-color:rgba(15,15,15,.8);transform:skew(-11deg);-o-transform:skew(-11deg);-moz-transform:skew(-11deg);-webkit-transform:skew(-11deg);z-index:0}#index-index.devHome .devportal-banner .main-copy{width:52%;color:#fff;z-index:1;position:relative}#index-index.devHome .devportal-banner .main-copy .headline{font-family:TradeGothicBold;font-size:2.8em;letter-spacing:-.02em;line-height:1;padding-top:60px;text-transform:uppercase}#index-index.devHome .devportal-banner .main-copy .headline span.line2{font-size:1.31em}#index-index.devHome .devportal-banner .main-copy .headline span.line3{font-size:1.18em}#index-index.devHome .devportal-banner .main-copy .subcopy{line-height:1.4em;padding-top:20px;font-size:1.1em}#index-index.devHome .devportal-banner .main-copy button{float:right;margin-top:20px;width:160px}#index-index.devHome .devportal-banner .main-copy button.btn-border:before{border:2px solid #fff;border-right:0}#index-index.devHome .devportal-banner .main-copy button.btn-border:after{border:2px solid #fff;border-left:0}#index-index.devHome .devportal-banner .main-copy button.btn-border span{border-top:2px solid #fff;border-bottom:2px solid #fff}#index-index.devHome .devportal-details{margin:50px auto}#index-index.devHome .devportal-details .detail-box{clear:left;display:inline-block;height:100px;margin:auto;padding:1%;width:30%;vertical-align:top}#index-index.devHome .devportal-details .detail-box.div-lines{border-width:0 1px;border-color:#eaeaea;border-style:solid}#index-index.devHome .devportal-details .detail-box .detail-link{font-family:TradeGothicBold;font-size:1.4em;line-height:49px;margin-left:8px}#index-index.devHome .devportal-details .detail-box .detail-link .dev-icon{float:left}#index-index.devHome .devportal-details .detail-box .detail-link .icon-user:before{content:"N";color:#272822;display:block;float:left;font-size:40px;line-height:49px;width:49px}#index-index.devHome .devportal-details .detail-box .detail-copy{font-size:.9em;margin-left:57px}
+    --></style>
+    <div class="devportal-banner">
+        <div class="site-container">
+            <div class="skew-box"></div>
+            <div class="main-copy">
+                <div class="headline"><span class="line1">Create awesome stuff</span> <br> <span class="line2">with the world's</span> <br> <span class="line3">greatest comic api</span></div>
+                <div class="subcopy">The Marvel Comics API allows developers everywhere to access information about Marvel's vast library of comics—from what's coming up, to 70 years ago.                 <br> <a href="http://developer.marvel.com/account"><button class="btn btn-red btn-border"><span>Get Started</span></button></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="site-container devportal-details">
+        <div class="detail-box"><a href="http://developer.marvel.com/documentation/getting_started" class="see-all detail-link"><img src="Marvel%20Developer%20Portal_files/52d5cc4cc1e41.png" class="dev-icon">API Documentation</a>
+            <div class="detail-copy">Read the documentation and rules of the road for the Marvel Comics API.</div>
+        </div>
+        <div class="detail-box  div-lines"><a href="http://developer.marvel.com/docs" class="see-all detail-link"><img src="Marvel%20Developer%20Portal_files/52d56b2725e5e.png" class="dev-icon">Test Calls</a>
+            <div class="detail-copy">Use the interactive test page to explore and test API calls.</div>
+        </div>
+        <div class="detail-box" id="account-detail"><a href="http://developer.marvel.com/account" class="see-all detail-link"><img src="Marvel%20Developer%20Portal_files/52d6b0ea09ff7.png" class="dev-icon">Get a Key</a><div class="detail-copy">Generate your API key and start making cool products.</div></div>
+    </div>
+    <script type="text/javascript">// <![CDATA[
+    (function(accountBox){
+        if (MARVEL_USER.isDeveloper === true) {
+            accountBox.innerHTML = '<a href="/account" class="see-all detail-link"><span class="icon-user"></span>My Developer Account</a><div class="detail-copy">Check your account status and manage your API keys and referrers.</div>';
+        }
+        else {
+            accountBox.innerHTML = '<a href="/account" class="see-all detail-link"><img src="http://i.annihil.us/u/prod/marvel/i/mg/c/60/52d6b0ea09ff7.png" class="dev-icon" />Get a Key</a><div class="detail-copy">Generate your API key and start making cool products.</div>';
+        }
+    }(document.getElementById('account-detail')));
+    // ]]></script>
+</div><!--  module -->
+
+
+<div id="footer-js"><!--[if IE 8]> <div class="marvelWidget_Container notresponsive lt-IE9"> <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <div class="marvelWidget_Container notresponsive device_NOT_HASTOUCH">
+        <!--<![endif]-->
+        <script type="text/javascript">
+            (function() {
+                function async_load(){
+                    files = new Array();
+                    files.push({type : "text/javascript",
+                        src : "http://i.annihil.us/u/prod/marvel/s/js/a56db48a6e059d82003480e71afe2295.js"});
+
+                    for(i in files) {
+                        s = document.createElement('script');
+                        s.type = files[i].type;
+                        s.async = files[i].async;
+                        s.src = files[i].src;
+                        var x = document.getElementsByTagName('script')[0];
+                        x.parentNode.insertBefore(s, x);
+                    }
+                }
+                if (window.attachEvent) {
+                    window.attachEvent('onload', async_load);
+                } else {
+                    window.addEventListener('load', async_load, false);
+                }
+            })();
+        </script>
+
+        <div id="marvel_footer_wrapper">
+
+            <div class="marvel_footer" id="marvel_footer">
+                <div class="html_aside">
+                    <h4>Comics</h4>
+                    <ul>
+                        <li><a href="http://marvel.com/comics/calendar/">Release Calendar</a></li>
+                        <li><a href="http://marvel.com/comics/unlimited/">Marvel Unlimited</a></li>
+                        <li><a href="http://marvel.com/redeem/">Redeem Digital Copy</a></li>
+                        <li><a href="http://comicstore.marvel.com/">Shop Digital Comics</a></li>
+                        <li><a href="http://subscriptions.marvel.com/">Print Subscriptions</a></li>
+                        <li><a href="./Marvel Developer Portal_files/Marvel Developer Portal.html" class="vt-p">Developer Portal</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="html_aside">
+                    <h4>Characters</h4>
+                    <ul>
+                        <li><a href="http://marvel.com/characters/bio/1009610/spider-man">Spider-Man</a></li>
+                        <li><a href="http://marvel.com/characters/bio/1009165/avengers">Avengers</a></li>
+                        <li><a href="http://marvel.com/characters/bio/1009368/iron_man">Iron Man</a></li>
+                        <li><a href="http://marvel.com/characters/bio/1009351/hulk">Hulk</a></li>
+                        <li><a href="http://marvel.com/universe/">Universe Wiki</a></li>
+                    </ul>
+                </div>
+
+                <div class="html_aside">
+                    <h4>Downloads</h4>
+                    <ul>
+                        <li><a href="http://marvel.com/mobile/">Mobile Apps</a></li>
+                        <li><a href="http://marvel.com/mobile/#games">Mobile Games</a></li>
+                        <li><a href="http://marvel.com/podcasts/">Podcast</a></li>
+                        <li><a href="http://marvel.com/wallpaper/">Wallpaper</a></li>
+                    </ul>
+                </div>
+
+                <div class="html_aside">
+                    <h4>Kids</h4>
+                    <ul>
+                        <li><a href="http://marvelkids.marvel.com/">Marvel Kids</a></li>
+                        <li><a href="http://marvelkids.marvel.com/shows/">Kids Shows</a></li>
+                        <li><a href="http://marvelkids.marvel.com/games/">Kids Games</a></li>
+                        <li><a href="http://marvelkids.marvel.com/activities/">Kids Activities</a></li>
+                    </ul>
+                </div>
+
+                <div class="html_aside">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="http://marvel.com/help/">Help/FAQs</a></li>
+                        <li><a href="http://marvel.com/corporate/about/">About Marvel</a></li>
+                        <li><a href="http://marvel.com/corporate/advertising/">Advertising</a></li>
+                        <li><a href="http://marvel.com/corporate/interns/">Internships</a></li>
+                        <li><a href="http://marvel.disneycareers.com/en/default/">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="marvel_footer_sub_wrapper">
+                <h4>Follow Marvel</h4>
+        <span>
+          <a href="http://www.facebook.com/Marvel" target="_blank"><span class="icon-facebook"></span></a>
+          <a href="https://plus.google.com/+marvel/posts" target="_blank"><span class="icon-google-plus"></span></a>
+          <a href="https://twitter.com/#!/marvel" target="_blank"><span class="icon-twitter"></span></a>
+          <a href="http://marvelentertainment.tumblr.com/" target="_blank"><span class="icon-tumblr"></span></a>
+          <a href="http://www.youtube.com/marvel" target="_blank"><span class="icon-youtube"></span></a>
+          <a href="http://pinterest.com/marvelofficial/" target="_blank"><span class="icon-pinterest"></span></a>
+        </span>
+
+                <!--
+                <h4>Get the Marvel Newsletter</h4>
+                <button class="btn btn-grey btn-small" href="https://marvel.com/my_account/emailpreferences"><span>Subscribe</span></button>
+                -->
+                <!--<li class="arrow"><a href="#top">&uarr; Top</a></li>-->
+            </div>
+
+            <div class="marvel_footer_sub_partners_wrapper">
+                <a href="http://marvel.com/corporate/terms">Terms of Use</a>
+                <a href="http://marvel.com/corporate/privacy">Privacy Policy/Your California Privacy Rights</a>
+                <a href="http://marvel.com/corporate/license_tou">License Agreement</a>
+                <a href="http://preferences-mgr.truste.com/?type=marvel&affiliateId=115" onclick="window.open(&#39;http://preferences-mgr.truste.com/?type=marvel&amp;affiliateId=115&#39;,&#39;popup&#39;,&#39;width=986,height=878,scrollbars=yes,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0&#39;); return false">Interest-Based Ads</a>
+                <a href="http://marvel.com/corporate/terms/">© 2014 Marvel</a>
+                <p><a href="http://developer.marvel.com/terms" title="Marvel API Terms of Use">Marvel API Terms of Use</a></p>
+            </div>
+        </div>
+    </div><!--/responsive toggler wrapper-->
+</div>
+
+
+
+<!--ROIA page #94-->
+<script type="text/javascript">/*<![CDATA[*/(function(D,S,T,u,i,p,q,l,f){
+    l=D.URL;f=D.referrer;if(self!=top){try{p=top.document;l=p.URL;f=p.referrer;}
+    catch(e){}}u='http'+(/^http:/i.test(D.URL)?'':'s')+'://roia.biz/im/p/94/js?s='+
+            Math.floor(Math.random()*1320852094)+';t='+escape(T.getTime())+';z='+
+            escape(T.getTimezoneOffset())+';u='+escape(l)+';r='+escape(f);
+    if(S&&typeof(S)==='object'){u+=';w='+S.width+'x'+S.height+'x'+S.colorDepth;}
+    if(D.cookie){q=D.cookie.split(';');for(i=0;i<q.length;++i){p=q[i].split('=',2);
+        if(/^\s*roia_c$/.test(p[0])){u+=';_='+p[1];break;}}}
+    document.write('<'+'script type="text/javascript" src="'+u+'"></'+'script>');
+})(document,screen,new Date());/*]]>*/</script><script type="text/javascript" src="Marvel%20Developer%20Portal_files/js"></script><script type="text/javascript">window.URLs={};window.URLs.rpxWidgetUrl="http://widget-cdn.rpxnow.com/js/lib/forge.marvel.com/widget.js";window.URLs.rpxWidgetUrlSecure="https://rpxnow.com/js/lib/forge.marvel.com/widget.js";window.marvelJanrainTokenUrl="https://marvel.com/my_account/social";window.marvelJanrainAppId="gofcnefdmbcgfcjpgide";window.marvelJanrainAppUrl="https://forge.marvel.com";</script><script type="text/javascript"></script>
+<noscript>&lt;iframe src="https://roia.biz/im/p/94/iframe?js=0" width="1" height="1" frameborder="0" scrolling="no" style="position:absolute;top:-3000px;left:-3000px;"&gt;&lt;/iframe&gt;</noscript>
+<!--/ROIA page #94-->
+
+<!-- Google Code for AVX Homepage Visit Remarketing List -->
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 951293568;
+    var google_conversion_language = "en";
+    var google_conversion_format = "3";
+    var google_conversion_color = "ffffff";
+    var google_conversion_label = "4s7QCPDyoQMQgK3OxQM";
+    var google_conversion_value = 0;
+    /* ]]> */
+</script>
+
+<div class="footer_googleadservices_wrapper">
+    <script type="text/javascript" src="Marvel%20Developer%20Portal_files/conversion.js"></script><img height="1" width="1" border="0" alt="" src="Marvel%20Developer%20Portal_files/saved_resource">
+    <noscript>
+        &lt;div style="display:inline;"&gt;
+        &lt;img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/951293568/?label=4s7QCPDyoQMQgK3OxQM&amp;amp;guid=ON&amp;amp;script=0"/&gt;
+        &lt;/div&gt;
+    </noscript>
+</div>
+
+
+
+
+
+
+<script src="Marvel%20Developer%20Portal_files/75544fcaf644c533dd6cfda5a4f2c74c.js" type="text/javascript"></script></body></html>

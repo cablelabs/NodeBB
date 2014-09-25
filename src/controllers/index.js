@@ -146,6 +146,8 @@ Controllers.apidocs = function(req, res, next) {
 };
 
 Controllers.home = function(req, res, next) {
+    console.log("Controller.Home");
+
 	async.parallel({
 		header: function (next) {
 			res.locals.metaTags = [{

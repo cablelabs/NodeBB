@@ -1,0 +1,152 @@
+"/usergroup": {
+    "post": {
+        "tags": [
+            "usergroup"
+        ],
+        "summary": "",
+        "description": "",
+        "consumes": [
+            "application/json",
+            "application/xml"
+        ],
+        "produces": [
+            "application/json",
+            "application/xml"
+        ],
+        "parameters": [
+            {
+                "in": "body",
+                "name": "body",
+                "description": "",
+                "required": true,
+                "schema": {
+                    "$ref": "#/definitions/UserGroup"
+                }
+            }
+        ],
+        "responses": {
+            "201": {
+                "description": "Instance Created"
+            },
+            "405": {
+                "description": "Invalid input"
+            }
+        }
+    }
+},
+"/usergroup/{id}": {
+    "get": {
+        "tags": [
+            "usergroup"
+        ],
+        "summary": "Find resource by ID",
+        "description": "",
+        "produces": [
+            "application/json",
+            "application/xml"
+        ],
+        "parameters": [
+            {
+                "in": "path",
+                "name": "id",
+                "description": "ID of instance that needs to be fetched",
+                "required": true,
+                "type": "integer",
+                "format": "int64"
+            },
+            {
+                "in": "query",
+                "name": "view",
+                "description": "View of the resource that you want to get.",
+                "required": false,
+                "type": "string"
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "successful operation",
+                "schema": {
+                    "$ref": "#/definitions/UserGroup"
+                }
+            },
+            "400": {
+                "description": "Invalid ID supplied"
+            },
+            "404": {
+                "description": "Resource not found"
+            }
+        }
+    },
+    "put": {
+        "tags": [
+            "usergroup"
+        ],
+        "summary": "Update an existing instance",
+        "description": "",
+        "consumes": [
+            "application/json",
+            "application/xml"
+        ],
+        "produces": [
+            "application/json",
+            "application/xml"
+        ],
+        "parameters": [
+            {
+                "in": "body",
+                "name": "body",
+                "description": "Instance object that needs to be updated.",
+                "required": true,
+                "schema": {
+                    "$ref": "#/definitions/UserGroup"
+                }
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "successful operation",
+                "schema": {
+                    "$ref": "#/definitions/UserGroup"
+                }
+            },
+            "400": {
+                "description": "Invalid ID supplied"
+            },
+            "404": {
+                "description": "Resource not found"
+            },
+            "405": {
+                "description": "Validation exception"
+            }
+        }
+    },
+    "delete": {
+        "tags": [
+            "usergroup"
+        ],
+        "summary": "Deletes an intance with provided id.",
+        "description": "",
+        "produces": [
+            "application/json",
+            "application/xml"
+        ],
+        "parameters": [
+            {
+                "in": "path",
+                "name": "id",
+                "description": "Instance id to be delete",
+                "required": true,
+                "type": "integer",
+                "format": "int64"
+            }
+        ],
+        "responses": {
+            "204": {
+                "description": "Successfully Deleted."
+            },
+            "400": {
+                "description": "Invalid pet value"
+            }
+        }
+    }
+}

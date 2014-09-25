@@ -1,0 +1,783 @@
+/* config */
+/* helpers */
+/*==============================
+ * media
+ *==============================*/
+/*==============================
+ * ABSTRACT
+ *==============================*/
+/*==============================
+ * media plain
+ *==============================*/
+/* This file is for juggernaut framework level mixins */
+.internal-scroll {
+  height: 50%;
+  font-family: monospace;
+  -webkit-overflow-scrolling: touch;
+  overflow: scroll; }
+
+html {
+  background-color: black; }
+
+body.devHome,
+#community-help,
+#community-index,
+#html-page-index,
+#error-error {
+  /** TOPNAV AND FOOTER WIDGETS **/ }
+  body.devHome .page-header,
+  body.devHome .module-header,
+  #community-help .page-header,
+  #community-help .module-header,
+  #community-index .page-header,
+  #community-index .module-header,
+  #html-page-index .page-header,
+  #html-page-index .module-header,
+  #error-error .page-header,
+  #error-error .module-header {
+    font-size: 2em; }
+  body.devHome h1, body.devHome h2, body.devHome h3, body.devHome h4,
+  #community-help h1,
+  #community-help h2,
+  #community-help h3,
+  #community-help h4,
+  #community-index h1,
+  #community-index h2,
+  #community-index h3,
+  #community-index h4,
+  #html-page-index h1,
+  #html-page-index h2,
+  #html-page-index h3,
+  #html-page-index h4,
+  #error-error h1,
+  #error-error h2,
+  #error-error h3,
+  #error-error h4 {
+    font-family: TradeGothicBold; }
+  body.devHome a,
+  #community-help a,
+  #community-index a,
+  #html-page-index a,
+  #error-error a {
+    cursor: pointer; }
+  body.devHome .code-inline code,
+  #community-help .code-inline code,
+  #community-index .code-inline code,
+  #html-page-index .code-inline code,
+  #error-error .code-inline code {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    font-family: monospace;
+    font-size: 1em;
+    padding: 2px 7px; }
+  body.devHome #marvel_topnav, body.devHome #marvel_subnav, body.devHome #marvel_footer, body.devHome .marvel_footer_sub_wrapper, body.devHome .marvel_footer_sub_partners_wrapper,
+  #community-help #marvel_topnav,
+  #community-help #marvel_subnav,
+  #community-help #marvel_footer,
+  #community-help .marvel_footer_sub_wrapper,
+  #community-help .marvel_footer_sub_partners_wrapper,
+  #community-index #marvel_topnav,
+  #community-index #marvel_subnav,
+  #community-index #marvel_footer,
+  #community-index .marvel_footer_sub_wrapper,
+  #community-index .marvel_footer_sub_partners_wrapper,
+  #html-page-index #marvel_topnav,
+  #html-page-index #marvel_subnav,
+  #html-page-index #marvel_footer,
+  #html-page-index .marvel_footer_sub_wrapper,
+  #html-page-index .marvel_footer_sub_partners_wrapper,
+  #error-error #marvel_topnav,
+  #error-error #marvel_subnav,
+  #error-error #marvel_footer,
+  #error-error .marvel_footer_sub_wrapper,
+  #error-error .marvel_footer_sub_partners_wrapper {
+    max-width: 940px; }
+  body.devHome .marvel_footer_sub_partners_wrapper a:first-child,
+  #community-help .marvel_footer_sub_partners_wrapper a:first-child,
+  #community-index .marvel_footer_sub_partners_wrapper a:first-child,
+  #html-page-index .marvel_footer_sub_partners_wrapper a:first-child,
+  #error-error .marvel_footer_sub_partners_wrapper a:first-child {
+    padding-left: 0; }
+  body.devHome #marvel_topnav.inner,
+  #community-help #marvel_topnav.inner,
+  #community-index #marvel_topnav.inner,
+  #html-page-index #marvel_topnav.inner,
+  #error-error #marvel_topnav.inner {
+    margin: auto; }
+  body.devHome #topnav-js,
+  #community-help #topnav-js,
+  #community-index #topnav-js,
+  #html-page-index #topnav-js,
+  #error-error #topnav-js {
+    position: relative;
+    z-index: 999; }
+  body.devHome #marvel_subnav_wrapper,
+  #community-help #marvel_subnav_wrapper,
+  #community-index #marvel_subnav_wrapper,
+  #html-page-index #marvel_subnav_wrapper,
+  #error-error #marvel_subnav_wrapper {
+    font-family: TradeGothicBold;
+    position: relative;
+    z-index: 998; }
+  body.devHome #footer-js,
+  #community-help #footer-js,
+  #community-index #footer-js,
+  #html-page-index #footer-js,
+  #error-error #footer-js {
+    background-color: #fff;
+    padding-top: 30px; }
+
+#docs-idocs #instructions {
+  background: url(/i/images/developers/docs-bg.jpg) no-repeat top center white;
+  min-height: 305px; }
+  #docs-idocs #instructions h4 {
+    font-family: TradeGothicBold;
+    font-size: 1.1em;
+    margin-bottom: 5px; }
+  #docs-idocs #instructions ol {
+    padding-left: 40px; }
+    #docs-idocs #instructions ol li {
+      font-size: 1em;
+      padding-bottom: 0; }
+  #docs-idocs #instructions .main-copy {
+    width: 33%; }
+#docs-idocs #swagger-docs .no-key {
+  color: #f0141e;
+  font-family: TradeGothicBold; }
+  #docs-idocs #swagger-docs .no-key a {
+    color: #f0141e; }
+    #docs-idocs #swagger-docs .no-key a:hover {
+      color: black; }
+#docs-idocs #swagger-docs #swagger-ui-container {
+  margin-top: 20px; }
+  #docs-idocs #swagger-docs #swagger-ui-container h1, #docs-idocs #swagger-docs #swagger-ui-container h2, #docs-idocs #swagger-docs #swagger-ui-container h3, #docs-idocs #swagger-docs #swagger-ui-container h4 {
+    font-family: TradeGothicBold;
+    font-weight: normal; }
+  #docs-idocs #swagger-docs #swagger-ui-container h2 {
+    font-size: 1.5em; }
+  #docs-idocs #swagger-docs #swagger-ui-container h3 {
+    font-size: 1.17em; }
+  #docs-idocs #swagger-docs #swagger-ui-container label, #docs-idocs #swagger-docs #swagger-ui-container input, #docs-idocs #swagger-docs #swagger-ui-container textarea, #docs-idocs #swagger-docs #swagger-ui-container option {
+    text-transform: none;
+    font-family: inherit;
+    font-size: inherit; }
+  #docs-idocs #swagger-docs #swagger-ui-container input[type="text"] {
+    width: inherit;
+    height: inherit;
+    line-height: inherit;
+    padding: 1px; }
+  #docs-idocs #swagger-docs #swagger-ui-container select[multiple] {
+    height: inherit;
+    overflow: inherit; }
+  #docs-idocs #swagger-docs #swagger-ui-container .propDesc, #docs-idocs #swagger-docs #swagger-ui-container .propType {
+    color: #990F1D; }
+  #docs-idocs #swagger-docs #swagger-ui-container ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.get div.content div.response div.block {
+    background-color: #fff;
+    border: 1px solid black;
+    border-color: #fff; }
+  #docs-idocs #swagger-docs #swagger-ui-container ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.get div.content h4 {
+    color: #000;
+    font-family: TradeGothicBold; }
+  #docs-idocs #swagger-docs #swagger-ui-container pre {
+    background-color: #fff;
+    border: 0;
+    border-color: #fff; }
+
+#community-help {
+  /** FANCY DROPDOWN **/ }
+  #community-help .site-container {
+    min-height: 860px; }
+  #community-help .half-box {
+    width: 47%; }
+  #community-help .bgimage {
+    position: absolute;
+    padding-left: 46%;
+    top: 0; }
+  #community-help .main-copy {
+    letter-spacing: 1.02;
+    line-height: 1.5em;
+    margin-bottom: 30px; }
+  #community-help form#help-form > div {
+    margin-top: 15px; }
+  #community-help form#help-form label {
+    text-transform: none;
+    font-size: 1em; }
+  #community-help form#help-form span.deadpool {
+    font-size: 0.8em; }
+  #community-help form#help-form input {
+    border: 1px solid #ccc;
+    height: 35px;
+    text-transform: none;
+    font-size: 1em;
+    font-family: TradeGothic;
+    margin-top: 5px;
+    margin-bottom: 2px; }
+  #community-help form#help-form textarea {
+    display: block;
+    width: 100%;
+    height: 150px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+    border: 1px solid #ccc;
+    text-transform: none;
+    font-size: 1em;
+    font-family: TradeGothic; }
+  #community-help form#help-form .error {
+    font-family: TradeGothicBold;
+    font-size: 0.8em;
+    color: #f0141e; }
+  #community-help form#help-form #submitFeedback {
+    text-transform: none;
+    width: 120px;
+    font-size: 1.1em;
+    float: right; }
+  #community-help div.columnFieldboth {
+    border: 1px solid #ccc;
+    height: 35px;
+    overflow: hidden;
+    margin-top: 5px;
+    margin-bottom: 2px;
+    position: relative;
+    width: 100%; }
+    #community-help div.columnFieldboth .icon-dropdown-arrow {
+      position: absolute;
+      font-size: 10px;
+      left: 94%;
+      top: 12px; }
+    #community-help div.columnFieldboth select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background: transparent;
+      width: 105% !important;
+      padding: 4px;
+      line-height: 1.5em;
+      border: 0;
+      border-radius: 0;
+      height: 35px;
+      padding-top: 3px;
+      margin-top: 0;
+      position: relative;
+      z-index: 1; }
+
+#community-index .bgimage {
+  position: absolute;
+  padding-left: 33%;
+  top: 0; }
+#community-index .main-copy {
+  width: 53%;
+  line-height: 1.5em;
+  margin-top: 200px;
+  margin-bottom: 30px; }
+#community-index .grid-container .module-header {
+  display: none; }
+
+#account-apiaccount #account-module {
+  background: url("/i/images/developers/account-bg.jpg") no-repeat center top white;
+  min-height: 1000px; }
+  #account-apiaccount #account-module .account-details {
+    width: 48%; }
+    #account-apiaccount #account-module .account-details h4,
+    #account-apiaccount #account-module .account-details .member-name {
+      font-family: TradeGothicBold; }
+    #account-apiaccount #account-module .account-details .account-details-sub {
+      margin-top: 25px; }
+      #account-apiaccount #account-module .account-details .account-details-sub h4 {
+        margin-bottom: 20px; }
+      #account-apiaccount #account-module .account-details .account-details-sub .rate-limit {
+        height: 60px;
+        width: 100%; }
+        #account-apiaccount #account-module .account-details .account-details-sub .rate-limit > div {
+          display: inline-block;
+          height: 60px; }
+        #account-apiaccount #account-module .account-details .account-details-sub .rate-limit div:nth-child(1) {
+          width: 22%; }
+        #account-apiaccount #account-module .account-details .account-details-sub .rate-limit div:nth-child(2) {
+          text-align: center;
+          line-height: 0.5em;
+          width: 26%;
+          vertical-align: middle; }
+          #account-apiaccount #account-module .account-details .account-details-sub .rate-limit div:nth-child(2) h1 {
+            font-size: 2.5em; }
+        #account-apiaccount #account-module .account-details .account-details-sub .rate-limit div:nth-child(3) {
+          width: 47%;
+          position: relative;
+          top: 10px; }
+      #account-apiaccount #account-module .account-details .account-details-sub .see-all {
+        font-family: inherit;
+        font-size: inherit; }
+    #account-apiaccount #account-module .account-details .apikey {
+      border: 1px solid #ccc;
+      line-height: 2em;
+      margin-bottom: 10px;
+      text-align: center;
+      width: 100%; }
+    #account-apiaccount #account-module .account-details form#referrers a.remove-button,
+    #account-apiaccount #account-module .account-details form#referrers a#newReferrer {
+      color: #f0141e;
+      cursor: pointer;
+      font-family: TradeGothicBold;
+      font-size: 0.9em; }
+    #account-apiaccount #account-module .account-details form#referrers button {
+      float: right; }
+    #account-apiaccount #account-module .account-details form#referrers ul#referrerHolder {
+      list-style: none; }
+      #account-apiaccount #account-module .account-details form#referrers ul#referrerHolder li {
+        position: relative; }
+        #account-apiaccount #account-module .account-details form#referrers ul#referrerHolder li .ref-error {
+          background-color: #ffeeee;
+          border: 1px solid #ff0000;
+          font-family: TradeGothicBold;
+          padding: 0 10px;
+          position: absolute;
+          left: 102%;
+          top: 0;
+          height: 25px;
+          line-height: 25px;
+          white-space: nowrap; }
+    #account-apiaccount #account-module .account-details form#referrers input {
+      font-family: TradeGothic;
+      font-size: inherit;
+      width: inherit;
+      text-transform: none;
+      padding-left: 4px;
+      width: 90%; }
+    #account-apiaccount #account-module .account-details form#referrers textarea {
+      display: block;
+      width: 100%;
+      height: 150px;
+      margin-top: 5px;
+      margin-bottom: 2px;
+      border: 1px solid #ccc;
+      text-transform: none;
+      font-size: 1em;
+      font-family: TradeGothic; }
+    #account-apiaccount #account-module .account-details form#referrers .submitmessage {
+      float: left;
+      font-family: TradeGothicBold;
+      height: 34px;
+      line-height: 34px;
+      margin: 10px 0;
+      text-align: center;
+      text-transform: uppercase;
+      width: 78%; }
+      #account-apiaccount #account-module .account-details form#referrers .submitmessage.successful {
+        background-color: #e8ffcd;
+        border: 1px solid #73d500; }
+      #account-apiaccount #account-module .account-details form#referrers .submitmessage.erroneous {
+        background-color: #ffeeee;
+        border: 1px solid #ff0000; }
+
+#signup-signup .dev-signupform {
+  margin: 0 0 30px; }
+  #signup-signup .dev-signupform form {
+    height: 60px;
+    line-height: 60px; }
+    #signup-signup .dev-signupform form label {
+      font-size: 1.1em;
+      vertical-align: middle; }
+
+#signup-pleasesignin .signinModule .right {
+  float: none;
+  margin: auto; }
+  #signup-pleasesignin .signinModule .right .newaccount {
+    float: right;
+    top: -5px;
+    position: relative;
+    font-family: TradeGothicBold;
+    margin-bottom: 30px; }
+#signup-pleasesignin .signinModule h4 {
+  margin-bottom: 5px; }
+#signup-pleasesignin .signinModule .checkoutModule input[type="password"],
+#signup-pleasesignin .signinModule .checkoutModule input[type="email"] {
+  width: 90%; }
+
+/** Documentation & Terms pages, hosted on Galactus - wrap them in this class. **/
+.doc-styling h1, .doc-styling h2, .doc-styling h3, .doc-styling h4, .doc-styling a, .doc-styling strong, .doc-styling .bold-line {
+  font-family: TradeGothicBold;
+  font-weight: normal; }
+.doc-styling h1 {
+  font-size: 1.5em; }
+.doc-styling h2 {
+  font-size: 1.5em;
+  padding: 40px 0 10px 0; }
+.doc-styling h3 {
+  font-size: 1.1em;
+  padding-top: 10px; }
+.doc-styling .bold-line, .doc-styling strong {
+  font-size: 1.05em; }
+.doc-styling p, .doc-styling ul, .doc-styling ol {
+  line-height: 1.4em; }
+.doc-styling ul, .doc-styling ol {
+  margin: 16px 0;
+  padding-left: 40px; }
+.doc-styling pre, .doc-styling code {
+  border: 1px solid #ddd;
+  font-family: monospace; }
+.doc-styling code {
+  font-size: 1em;
+  padding: 2px 7px;
+  background-color: #f4f4f4; }
+.doc-styling pre {
+  padding: 20px;
+  padding-left: 40px;
+  white-space: pre-line;
+  background-color: #fcfcfc; }
+  .doc-styling pre code {
+    padding: 0;
+    background-color: transparent;
+    border: none; }
+.doc-styling table {
+  margin: 3px 0 30px 0; }
+  .doc-styling table th {
+    font-family: TradeGothicBold;
+    line-height: 20px;
+    font-weight: normal;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    padding-left: 5px; }
+  .doc-styling table td {
+    border: 1px solid #ddd;
+    padding: 4px 7px;
+    font-size: 13px; }
+  .doc-styling table tr {
+    line-height: 18px; }
+  .doc-styling table tr, .doc-styling table th {
+    vertical-align: top;
+    font-size: 14px;
+    text-align: left; }
+    .doc-styling table tr:nth-child(1), .doc-styling table th:nth-child(1) {
+      width: 130px; }
+    .doc-styling table tr:nth-child(2), .doc-styling table th:nth-child(2) {
+      width: 190px; }
+    .doc-styling table tr:nth-child(3), .doc-styling table th:nth-child(3) {
+      width: 620px; }
+.doc-styling .image-box {
+  margin-bottom: 30px; }
+  .doc-styling .image-box .box-wrapper {
+    background-color: #f4f4f4;
+    display: inline-block; }
+    .doc-styling .image-box .box-wrapper h3.box-header {
+      border-color: #ddd;
+      border-width: 1px 1px 0;
+      border-style: solid;
+      padding: 5px 10px; }
+    .doc-styling .image-box .box-wrapper .box-body {
+      border: 1px solid #ddd;
+      padding: 8px; }
+      .doc-styling .image-box .box-wrapper .box-body > aside {
+        display: inline-block;
+        vertical-align: top; }
+      .doc-styling .image-box .box-wrapper .box-body aside.left {
+        margin-right: 5px;
+        min-width: 270px; }
+      .doc-styling .image-box .box-wrapper .box-body aside.right table {
+        background-color: #fff;
+        font-family: TradeGothicBold;
+        font-size: 1.1em;
+        margin: 0px; }
+        .doc-styling .image-box .box-wrapper .box-body aside.right table td {
+          min-width: 130px; }
+
+/** devHome is an openHTML page, so the CSS is in Galactus. Included here for dev **/
+/* #index-index.devHome {
+    .devportal-banner {
+        background: url("http://i.annihil.us/u/prod/marvel/i/mg/8/e0/52bdf830aa094.jpg") no-repeat center center #0A1117;
+        height: 436px;
+        .skew-box{   
+            position: absolute;
+            height: 436px;
+            width: 64%;
+            margin-left: -65px;
+            background-color: rgba(15,15,15,0.8);
+            transform: skew(-11deg); 
+            -o-transform: skew(-11deg); 
+            -moz-transform: skew(-11deg); 
+            -webkit-transform: skew(-11deg);
+            z-index: 0;
+        }
+        .main-copy {
+            width: 52%;
+            color: white;
+            z-index: 1;
+            position: relative;
+            .headline {
+                font-family: TradeGothicBold;
+                font-size: 2.8em;
+                letter-spacing: -0.02em;
+                line-height: 1;
+                padding-top: 60px;
+                text-transform: uppercase;
+                span.line2 {
+                    font-size: 1.31em;
+                }
+                span.line3 {
+                    font-size: 1.18em;
+                }
+            }
+            .subcopy {
+                line-height: 1.4em;
+                padding-top: 20px;
+                font-size: 1.1em;
+            }
+            button {
+                float: right;
+                margin-top: 20px;
+                width: 160px;
+                &.btn-border {
+                    &:before {
+                        border: 2px solid #fff;
+                        border-right: 0;
+                    }
+                    &:after {
+                        border: 2px solid #fff;
+                        border-left: 0;
+                    }
+                    span {
+                        border-top: 2px solid #fff;
+                        border-bottom: 2px solid #fff;
+                    }
+                }
+            }
+        }
+    }
+    .devportal-details {
+        margin: 50px auto;
+        .detail-box {
+            clear: left;
+            display: inline-block;
+            height: 100px;
+            margin: auto;
+            padding: 1%;
+            width: 30%;
+            vertical-align: top;
+            &.div-lines {
+                border-width: 0 1px;
+                border-color: #eaeaea;
+                border-style: solid;
+            }
+            .detail-link {
+                font-family: TradeGothicBold;
+                font-size: 1.4em;
+                line-height: 49px;
+                margin-left: 8px;
+                .dev-icon {
+                    float: left;
+                }
+                .icon-user:before {
+                    content: "N";
+                    color: #272822;
+                    display: block;
+                    float: left;
+                    font-size: 40px;
+                    line-height: 49px;
+                    width: 49px;
+                }
+            }
+            .detail-copy {
+                font-size: 0.9em;
+                margin-left: 57px;
+            }
+        }
+    }
+    
+} */
+section.hide, div.hide {
+  display: none; }
+
+.promoContainer {
+  margin-top: 15px;
+  padding-right: 20px;
+  /* Sign in Form */
+  /* ERROR HANDLING FOR VALIDATION AND WELL ... USER ERRORS */
+  /* FORGOT PASSWORD SECTION */
+  /* CREATE an ACCOUNT section */
+  /* I FORGOT WHAT THIS IS BEFORE */
+  /* TOOLTIP YO */ }
+  .promoContainer .left {
+    margin-left: 0;
+    width: 48%; }
+    .promoContainer .left .checkoutModule {
+      padding-right: 5%; }
+  .promoContainer .right {
+    width: 48%; }
+  .promoContainer #rememberme-label {
+    display: inline; }
+  .promoContainer #rememberme-element {
+    display: inline; }
+    .promoContainer #rememberme-element label {
+      float: left; }
+  .promoContainer #rememberme {
+    float: left; }
+  .promoContainer label.required:after {
+    content: "*";
+    color: #F0141E; }
+  .promoContainer .btn-blk {
+    width: 85% !important;
+    margin: 15px 0px; }
+    .promoContainer .btn-blk:before, .promoContainer .btn-blk:after {
+      background-color: black; }
+  .promoContainer span.username-row-element input {
+    margin-bottom: 15px; }
+  .promoContainer .errorMessage {
+    display: none; }
+    .promoContainer .errorMessage span {
+      display: block;
+      color: #F0141E !important;
+      position: relative;
+      top: -3px; }
+    .promoContainer .errorMessage i {
+      float: left;
+      background-color: #F0141E !important;
+      color: white;
+      font-weight: bold;
+      padding: 1px 6px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-style: normal;
+      margin-right: 5px;
+      margin-bottom: 10px; }
+  .promoContainer .errorWrapper li {
+    font-size: 15px;
+    color: #F0141E;
+    margin-left: 20px;
+    line-height: 26px;
+    font-family: tradeGothic;
+    list-style: none outside none; }
+  .promoContainer .errorWrapper li.icon-exclamation:before {
+    font-family: 'Marvelicons';
+    position: absolute;
+    left: 0; }
+  .promoContainer .password_error #password,
+  .promoContainer .username_error #username {
+    border: 1px solid #F0141E !important; }
+  .promoContainer .username_error label.required,
+  .promoContainer .password_error label.required {
+    color: #f0141e !important; }
+  .promoContainer section.infoForm a.block {
+    display: block;
+    margin-bottom: 15px;
+    text-decoration: none; }
+    .promoContainer section.infoForm a.block:after {
+      content: '\00BB';
+      padding-left: 5px;
+      color: #F0141E; }
+  .promoContainer #forgotpwd a.btn {
+    width: 86%;
+    margin-bottom: 20px; }
+  .promoContainer section.forgot_password_cont {
+    min-height: 100px; }
+  .promoContainer .registerUser label {
+    display: block; }
+  .promoContainer .registerUser select {
+    background: transparent;
+    width: 133% !important;
+    padding: 5px;
+    font-size: 16px;
+    line-height: 1;
+    border: 0;
+    border-radius: 0;
+    height: 26px;
+    -webkit-appearance: none;
+    padding-top: 1px;
+    margin-top: 0; }
+  .promoContainer div.columnFieldboth {
+    height: 26px;
+    overflow: hidden;
+    background: url(/i/images/juggernaut/icons/iconArrows.png) no-repeat 92% -7px white;
+    border: 1px solid #000;
+    float: left;
+    width: 28%;
+    margin-right: 3%;
+    position: relative;
+    background: none; }
+    .promoContainer div.columnFieldboth select {
+      position: relative;
+      z-index: 100; }
+    .promoContainer div.columnFieldboth span {
+      position: absolute;
+      right: 0;
+      display: block;
+      background: black;
+      width: 18px;
+      height: 100%; }
+      .promoContainer div.columnFieldboth span b {
+        position: absolute;
+        top: 47%;
+        left: 25%;
+        display: block;
+        width: 0;
+        height: 100%;
+        color: #FFF;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid #FFF; }
+  .promoContainer div.columnFieldboth.error {
+    border: 1px solid #F0141E; }
+    .promoContainer div.columnFieldboth.error span {
+      background: #F0141E; }
+  .promoContainer #submit-label, .promoContainer #promocode-label {
+    display: none; }
+  .promoContainer #submit {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: black;
+    display: block;
+    padding: 0 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    white-space: nowrap;
+    width: 100%;
+    height: 47px;
+    cursor: pointer;
+    color: white !important;
+    text-transform: uppercase;
+    font-family: "TradeGothicBold";
+    line-height: 47px;
+    font-size: 15px;
+    outline: 0; }
+  .promoContainer .left .checkoutModule input[type="text"],
+  .promoContainer .checkoutModule input[type="password"],
+  .promoContainer .checkoutModule input[type="email"] {
+    width: 90%; }
+  .promoContainer fieldset > label {
+    padding-bottom: 6px; }
+  .promoContainer div.tooltip.dialogHelp {
+    right: auto;
+    margin-top: auto;
+    max-width: 60%; }
+    .promoContainer div.tooltip.dialogHelp .notch {
+      top: 15px; }
+
+/* START OF MEDIA QUERIES */
+@media only screen and (min-width: 0px) and (max-width: 570px) {
+  .responsive .promoContainer .right {
+    width: 100%;
+    float: none; }
+  .responsive .promoContainer .left {
+    width: 100%;
+    float: none; }
+  .responsive .promoContainer #promocode-element {
+    width: 50%; } }
+@media only screen and (min-width: 570px) and (max-width: 800px) {
+  .responsive div.columnFieldboth {
+    width: 92%;
+    float: none; }
+  .responsive .promo_redeem.left {
+    width: 100%; }
+  .responsive .termsWrap label.choice {
+    width: 81%; } }
+@media only screen and (min-width: 0px) and (max-width: 480px) {
+  .responsive #promocode #promocode-element {
+    width: 90% !important; }
+  .responsive #promocode a.btn-red {
+    float: none;
+    width: 90%; }
+  .responsive div.columnFieldboth {
+    width: 92%;
+    float: none; }
+  .responsive .termsWrap label.choice {
+    width: 81%; } }
