@@ -57,6 +57,12 @@ apiController.getConfig = function(req, res, next) {
 	config.requireEmailConfirmation = parseInt(meta.config.requireEmailConfirmation, 10) === 1;
 	config.topicPostSort = meta.config.topicPostSort || 'oldest_to_newest';
 
+    // To to check if requesting URL si forums.
+    if(req.url == '/forums') {
+        config.isForums = true;
+    }
+
+
 	if (!req.user) {
 		if (res.locals.isAPI) {
 			res.json(200, config);
@@ -85,7 +91,6 @@ apiController.getConfig = function(req, res, next) {
 			next(err, config);
 		}
 	});
-
 };
 
 

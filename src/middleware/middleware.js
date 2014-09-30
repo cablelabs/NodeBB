@@ -207,6 +207,8 @@ middleware.buildHeader = function(req, res, next) {
 
 		res.locals.config = results.config;
 
+        console.log(res.locals.config);
+
 		translator.translate(results.footer, results.config.defaultLang, function(parsedTemplate) {
 			res.locals.footer = parsedTemplate;
 			next();

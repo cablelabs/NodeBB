@@ -11,7 +11,7 @@ var nconf = require('nconf'),
 	metaRoutes = require('./meta'),
 	apiRoutes = require('./api'),
 	adminRoutes = require('./admin'),
-    portalRoutes = require('./portal'),
+//    portalRoutes = require('./portal'),
 	feedRoutes = require('./feeds'),
 	pluginRoutes = require('./plugins'),
 	authRoutes = require('./authentication');
@@ -19,10 +19,11 @@ var nconf = require('nconf'),
 function mainRoutes(app, middleware, controllers) {
 
     app.get('/', middleware.buildHeader, controllers.index);
-//    app.get('/api/home', controllers.home);
+//    app.get('/index', middleware.buildHeader, controllers.index);
+    app.get('/api/home', controllers.home);
 
-    app.get('/apidocs', middleware.buildHeader, controllers.apidocs);
-    app.get('/api/apidocs', controllers.apidocs);
+    app.get('/documentation', middleware.buildHeader, controllers.documentation);
+    app.get('/api/documentation', controllers.documentation);
 
 	app.get('/forums', middleware.buildHeader, controllers.home);
 	app.get('/api/forums', controllers.home);

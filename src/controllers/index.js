@@ -64,29 +64,30 @@ Controllers.index = function(req, res, next) {
             }
 
             next(null);
-        },
-        categories: function (next) {
-            var uid = req.user ? req.user.uid : 0;
-            categories.getVisibleCategories(uid, function (err, categoryData) {
-                if (err) {
-                    return next(err);
-                }
-
-                function getRecentReplies(category, callback) {
-                    categories.getRecentTopicReplies(category.cid, uid, parseInt(category.numRecentReplies, 10), function (err, posts) {
-                        if (err) {
-                            return callback(err);
-                        }
-                        category.posts = posts;
-                        callback();
-                    });
-                }
-
-                async.each(categoryData, getRecentReplies, function (err) {
-                    next(err, categoryData);
-                });
-            });
         }
+//        ,
+//        categories: function (next) {
+//            var uid = req.user ? req.user.uid : 0;
+//            categories.getVisibleCategories(uid, function (err, categoryData) {
+//                if (err) {
+//                    return next(err);
+//                }
+//
+//                function getRecentReplies(category, callback) {
+//                    categories.getRecentTopicReplies(category.cid, uid, parseInt(category.numRecentReplies, 10), function (err, posts) {
+//                        if (err) {
+//                            return callback(err);
+//                        }
+//                        category.posts = posts;
+//                        callback();
+//                    });
+//                }
+//
+//                async.each(categoryData, getRecentReplies, function (err) {
+//                    next(err, categoryData);
+//                });
+//            });
+//        }
     }, function (err, data) {
         if (err) {
             return next(err);
@@ -95,7 +96,7 @@ Controllers.index = function(req, res, next) {
     });
 };
 
-Controllers.apidocs = function(req, res, next) {
+Controllers.documentation = function(req, res, next) {
     async.parallel({
         header: function (next) {
             res.locals.metaTags = [{
@@ -120,34 +121,33 @@ Controllers.apidocs = function(req, res, next) {
             }
 
             next(null);
-        },
-        apis: function (next) {
-            var uid = req.user ? req.user.uid : 0;
-            apis.getVisibleApis(uid, function (err, apiData) {
-                if (err) {
-                    return next(err);
-                }
-
-                function getRecentReplies(category, callback) {
-                    callback();
-                }
-
-                async.each(apiData, getRecentReplies, function (err) {
-                    next(err, apiData);
-                });
-            });
         }
+//        ,
+//        apis: function (next) {
+//            var uid = req.user ? req.user.uid : 0;
+//            apis.getVisibleApis(uid, function (err, apiData) {
+//                if (err) {
+//                    return next(err);
+//                }
+//
+//                function getRecentReplies(category, callback) {
+//                    callback();
+//                }
+//
+//                async.each(apiData, getRecentReplies, function (err) {
+//                    next(err, apiData);
+//                });
+//            });
+//        }
     }, function (err, data) {
         if (err) {
             return next(err);
         }
-        res.render('apidocs', data);
+        res.render('documentation', data);
     });
 };
 
 Controllers.home = function(req, res, next) {
-    console.log("Controller.Home");
-
 	async.parallel({
 		header: function (next) {
 			res.locals.metaTags = [{

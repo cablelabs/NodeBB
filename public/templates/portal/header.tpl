@@ -70,7 +70,8 @@
 </div> -->
 
 <!-- <div class="navbar-collapse collapse navbar-ex1-collapse header_row4"> -->
-<div class="page_width clearfix header_row4">
+<div class="page_width clearfix">
+    <!-- <div id="portal-logo" class ="pull-left"><a href="{relative_path}/#"></a></div> -->
     <ul id="main-nav" class="nav navbar-nav pull-left">
         <li>
             <a href="{relative_path}/">Developer Portal</a>
@@ -89,23 +90,24 @@
                 <a href="http://developer.marvel.com/documentation/images">Images</a>
             </div> -->
         </li>
-        <li>
-            <a href="{relative_path}/apidocs">Interactive API</a>
-        </li>
-        <li>
-            <a href="{relative_path}/apidocs">Get a Key</a>
+        <li class="dropdown-container">
+            <a href="{relative_path}/documentation">API</a>
+            <!--
+            <div class="dropdown">
+                <a href="http://developer.marvel.com/documentation/getting_started">Getting Started</a>
+                <a href="http://developer.marvel.com/documentation/generalinfo">General Information</a>
+                <a href="{relative_path}/apidocs">Get a Key</a>
+            </div> -->
         </li>
         <li>
             <a href="{relative_path}/forums">Forums</a>
         </li>
 
-        <!-- IF isAdmin -->
-        <li>
-           <a href="{relative_path}/admin/designer/"><i class="fa fa-fw fa-" title="API Designer"></i><span class="visible-xs-inline">API Designer</span></a>
-        </li>
-        <!-- ENDIF isAdmin -->
-
         <!-- IF loggedIn -->
+        <!-- IF isForums -->
+        <li>
+            <a href="{relative_path}/unread"><i id="unread-count" class="fa fa-fw fa-inbox" data-content="0" title="[[global:header.unread]]"></i><span class="visible-xs-inline"> [[global:header.unread]]</span></a>
+        </li>
         <li>
             <a href="{relative_path}/recent"><i class="fa fa-fw fa-clock-o" title="[[global:header.recent]]"></i><span class="visible-xs-inline"> [[global:header.recent]]</span></a>
         </li>
@@ -115,19 +117,8 @@
         <li>
             <a href="{relative_path}/popular"><i class="fa fa-fw fa-fire" title="[[global:header.popular]]"></i><span class="visible-xs-inline"> [[global:header.popular]]</span></a>
         </li>
+        <!-- ENDIF isForums -->
         <!-- ENDIF loggedIn -->
-
-        <li>
-            <!-- IF function.displayUsersLink -->
-            <a href="{relative_path}/users"><i class="fa fa-fw fa-users" title="[[global:header.users]]"></i><span class="visible-xs-inline"> [[global:header.users]]</span></a>
-            <!-- ENDIF function.displayUsersLink -->
-        </li>
-
-        <!-- IF isAdmin -->
-        <li>
-            <a href="{relative_path}/admin" target="_top"><i class="fa fa-fw fa-cogs" title="[[global:header.admin]]"></i><span class="visible-xs-inline"> [[global:header.admin]]</span></a>
-        </li>
-        <!-- ENDIF isAdmin -->
     </ul>
 
     <!-- IF loggedIn -->
@@ -141,10 +132,27 @@
             </ul>
         </li>
 
+        <li>
+            <!-- IF function.displayUsersLink -->
+            <a href="{relative_path}/users"><i class="fa fa-fw fa-users" title="[[global:header.users]]"></i><span class="visible-xs-inline"> [[global:header.users]]</span></a>
+            <!-- ENDIF function.displayUsersLink -->
+        </li>
+
+        <!-- IF isAdmin -->
+        <li>
+           <a href="{relative_path}/admin/designer/"><i class="fa fa-fw fa-clock-o" title="API Designer"></i><span class="visible-xs-inline">API Designer</span></a>
+        </li>
+        <!-- ENDIF isAdmin -->
+
+        <!-- IF isAdmin -->
+        <li>
+            <a href="{relative_path}/admin" target="_top"><i class="fa fa-fw fa-cogs" title="[[global:header.admin]]"></i><span class="visible-xs-inline"> [[global:header.admin]]</span></a>
+        </li>
+        <!-- ENDIF isAdmin -->
+
         <li class="visible-xs">
             <a href="{relative_path}/notifications"><i class="fa fa-bell-o fa-fw" title="[[notifications:title]]"></i> [[notifications:title]]</a>
         </li>
-
         <li class="chats dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="chat_dropdown"><i id="chat-count" class="fa fa-comment-o fa-fw" title="[[global:header.chats]]"></i> <span class="visible-xs-inline">[[global:header.chats]]</span></a>
             <ul id="chat-list" class="dropdown-menu" aria-labelledby="chat_dropdown">

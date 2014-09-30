@@ -1,6 +1,6 @@
 <div class="tags">
 	<ol class="breadcrumb">
-		<li><a href="{relative_path}/">[[global:home]]</a></li>
+		<li><a href="{relative_path}/forums">[[global:home]]</a></li>
 		<li class="active">[[tags:tags]]</li>
 	</ol>
 
