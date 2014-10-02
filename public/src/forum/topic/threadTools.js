@@ -60,10 +60,6 @@ define('forum/topic/threadTools', ['forum/topic/fork', 'forum/topic/move'], func
 
 		fork.init();
 
-		socket.emit('topics.followCheck', tid, function(err, state) {
-			setFollowState(state);
-		});
-
 		$('.posts').on('click', '.follow', function() {
 			socket.emit('topics.follow', tid, function(err, state) {
 				if(err) {
@@ -113,7 +109,7 @@ define('forum/topic/threadTools', ['forum/topic/fork', 'forum/topic/move'], func
 				$('.topic-main-buttons .post_reply').attr('disabled', isLocked).html(isLocked ? '<i class="fa fa-lock"></i> ' + translated : translated);
 			});
 
-			threadEl.find('.quote, .edit, .delete').toggleClass('none', isLocked);
+			threadEl.find('.quote, .edit, .delete').toggleClass('hidden', isLocked);
 			$('.topic-title i.fa-lock').toggleClass('hide', !data.isLocked);
 			ThreadTools.threadState.locked = data.isLocked;
 		}
@@ -129,7 +125,7 @@ define('forum/topic/threadTools', ['forum/topic/fork', 'forum/topic/move'], func
 
 		threadEl.toggleClass('deleted', data.isDelete);
 		ThreadTools.threadState.deleted = data.isDelete;
-		$('.purge_thread').toggleClass('none', !data.isDelete);
+		$('.purge_thread').toggleClass('hidden', !data.isDelete);
 
 		if (data.isDelete) {
 			translator.translate('[[topic:deleted_message]]', function(translated) {
@@ -149,10 +145,23 @@ define('forum/topic/threadTools', ['forum/topic/fork', 'forum/topic/move'], func
 			});
 			$('.topic-title i.fa-thumb-tack').toggleClass('hide', !data.isPinned);
 		}
-	}
+	};
 
 	function setFollowState(state) {
-		$('.posts .follow').toggleClass('btn-success', state).attr('title', state ? 'You are currently receiving updates to this topic' : 'Be notified of new replies in this topic');
+		var title = state ? '[[topic:unwatch.title]]' : '[[topic:watch.title]]';
+		var iconClass = state ? 'fa fa-eye-slash' : 'fa fa-eye';
+		var text = state ? '[[topic:unwatch]]' : '[[topic:watch]]';
+
+		var followEl = $('.posts .follow');
+
+		translator.translate(title, function(titleTranslated) {
+			followEl.attr('title', titleTranslated).find('i').attr('class', iconClass);
+			followEl.find('span').text(text);
+
+			translator.translate(followEl.html(), function(translated) {
+				followEl.html(translated);
+			});
+		});
 	}
 
 
