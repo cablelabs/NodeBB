@@ -16,8 +16,6 @@ var async = require('async'),
     pkg = require('../../package.json'),
     validator = require('validator');
 
-
-
 var portalController = {
     categories: {},
     topics: {},
@@ -32,6 +30,119 @@ var portalController = {
     sounds: {},
     users: require('./admin/users'),
     uploads: require('./admin/uploads')
+};
+
+portalController.landing = function(req, res, next) {
+    async.parallel({
+        header: function (next) {
+            res.locals.metaTags = [{
+                name: "title",
+                content: meta.config.title || 'CableLabs Forums'
+            }, {
+                name: "description",
+                content: meta.config.description || ''
+            }, {
+                property: 'og:title',
+                content: 'Index | ' + (meta.config.title || 'CableLabs Forums')
+            }, {
+                property: 'og:type',
+                content: 'website'
+            }];
+
+            if(meta.config['brand:logo']) {
+                res.locals.metaTags.push({
+                    property: 'og:image',
+                    content: meta.config['brand:logo']
+                });
+            }
+
+            next(null);
+        },
+        announcements: function (next) {
+            var uid = req.user ? req.user.uid : 0;
+            announcements.getVisibleAnnouncements(uid, function (err, categoryData) {
+                if (err) {
+                    return next(err);
+                }
+
+                function getRecentReplies(category, callback) {
+//                    categories.getRecentTopicReplies(category.cid, uid, parseInt(category.numRecentReplies, 10), function (err, posts) {
+//                        if (err) {
+//                            return callback(err);
+//                        }
+//                        category.posts = posts;
+                    callback();
+//                    });
+                }
+
+                async.each(categoryData, getRecentReplies, function (err) {
+                    next(err, categoryData);
+                });
+            });
+        }
+    }, function (err, data) {
+        if (err) {
+            return next(err);
+        }
+        res.render('landing', data);
+    });
+};
+
+portalController.documentation = function(req, res, next) {
+    console.log("controller.documentaion");
+    async.parallel({
+        header: function (next) {
+            res.locals.metaTags = [{
+                name: "title",
+                content: meta.config.title || 'CableLabs Forums'
+            }, {
+                name: "description",
+                content: meta.config.description || ''
+            }, {
+                property: 'og:title',
+                content: 'Index | ' + (meta.config.title || 'CableLabs Forums')
+            }, {
+                property: 'og:type',
+                content: 'website'
+            }];
+
+            if(meta.config['brand:logo']) {
+                res.locals.metaTags.push({
+                    property: 'og:image',
+                    content: meta.config['brand:logo']
+                });
+            }
+
+            next(null);
+        },
+        apis: function (next) {
+            var uid = req.user ? req.user.uid : 0;
+            apis.getVisibleApis(uid, function (err, categoryData) {
+                if (err) {
+                    return next(err);
+                }
+
+                function getRecentReplies(category, callback) {
+//                    categories.getRecentTopicReplies(category.cid, uid, parseInt(category.numRecentReplies, 10), function (err, posts) {
+//                        if (err) {
+//                            return callback(err);
+//                        }
+//                        category.posts = posts;
+                    callback();
+//                    });
+                }
+
+                async.each(categoryData, getRecentReplies, function (err) {
+                    next(err, categoryData);
+                });
+            });
+        }
+    }, function (err, data) {
+        if (err) {
+            return next(err);
+        }
+        res.render('documentation', {});
+    });
 };
 
 portalController.home = function(req, res, next) {

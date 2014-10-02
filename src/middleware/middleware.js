@@ -192,6 +192,7 @@ middleware.checkAccountPermissions = function(req, res, next) {
 };
 
 middleware.buildHeader = function(req, res, next) {
+    console.log("middleware.buildHeader");
 	res.locals.renderHeader = true;
 	async.parallel({
 		config: function(next) {
@@ -206,17 +207,17 @@ middleware.buildHeader = function(req, res, next) {
 		}
 
 		res.locals.config = results.config;
-
-        console.log(res.locals.config);
-
 		translator.translate(results.footer, results.config.defaultLang, function(parsedTemplate) {
 			res.locals.footer = parsedTemplate;
+            console.log('Going to call next()');
+
 			next();
 		});
 	});
 };
 
 middleware.renderHeader = function(req, res, callback) {
+    console.log("middleware.renderHeader");
 	var uid = req.user ? parseInt(req.user.uid, 10) : 0;
 
 	var custom_header = {

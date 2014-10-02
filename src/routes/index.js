@@ -11,22 +11,24 @@ var nconf = require('nconf'),
 	metaRoutes = require('./meta'),
 	apiRoutes = require('./api'),
 	adminRoutes = require('./admin'),
-//    portalRoutes = require('./portal'),
+    portalRoutes = require('./portal'),
 	feedRoutes = require('./feeds'),
 	pluginRoutes = require('./plugins'),
 	authRoutes = require('./authentication');
 
 function mainRoutes(app, middleware, controllers) {
 
-    app.get('/', middleware.buildHeader, controllers.index);
-//    app.get('/index', middleware.buildHeader, controllers.index);
-    app.get('/api/home', controllers.home);
+    app.get('/', middleware.buildHeader, controllers.portal.landing);
+    app.get('/api/', controllers.portal.landing);
 
-    app.get('/documentation', middleware.buildHeader, controllers.documentation);
-    app.get('/api/documentation', controllers.documentation);
+    app.get('/home', middleware.buildHeader, controllers.portal.landing);
+    app.get('/api/home', controllers.portal.landing);
 
-	app.get('/forums', middleware.buildHeader, controllers.home);
-	app.get('/api/forums', controllers.home);
+    app.get('/documentation', middleware.buildHeader, controllers.portal.documentation);
+    app.get('/api/documentation', controllers.portal.documentation);
+
+	app.get('/forums', middleware.buildHeader, controllers.forums);
+	app.get('/api/forums', controllers.forums);
 
 	app.get('/login', middleware.redirectToAccountIfLoggedIn, middleware.buildHeader, controllers.login);
 	app.get('/api/login', middleware.redirectToAccountIfLoggedIn, controllers.login);

@@ -24,6 +24,8 @@ var topicsController = require('./topics'),
 	search = require('../search'),
 	plugins = require('../plugins'),
 	categories = require('../categories'),
+	apis = require('../apis'),
+	announcements = require('../announcements'),
 	privileges = require('../privileges');
 
 var Controllers = {
@@ -39,115 +41,7 @@ var Controllers = {
     portal: portalController
 };
 
-Controllers.index = function(req, res, next) {
-    async.parallel({
-        header: function (next) {
-            res.locals.metaTags = [{
-                name: "title",
-                content: meta.config.title || 'CableLabs Forums'
-            }, {
-                name: "description",
-                content: meta.config.description || ''
-            }, {
-                property: 'og:title',
-                content: 'Index | ' + (meta.config.title || 'CableLabs Forums')
-            }, {
-                property: 'og:type',
-                content: 'website'
-            }];
-
-            if(meta.config['brand:logo']) {
-                res.locals.metaTags.push({
-                    property: 'og:image',
-                    content: meta.config['brand:logo']
-                });
-            }
-
-            next(null);
-        }
-//        ,
-//        categories: function (next) {
-//            var uid = req.user ? req.user.uid : 0;
-//            categories.getVisibleCategories(uid, function (err, categoryData) {
-//                if (err) {
-//                    return next(err);
-//                }
-//
-//                function getRecentReplies(category, callback) {
-//                    categories.getRecentTopicReplies(category.cid, uid, parseInt(category.numRecentReplies, 10), function (err, posts) {
-//                        if (err) {
-//                            return callback(err);
-//                        }
-//                        category.posts = posts;
-//                        callback();
-//                    });
-//                }
-//
-//                async.each(categoryData, getRecentReplies, function (err) {
-//                    next(err, categoryData);
-//                });
-//            });
-//        }
-    }, function (err, data) {
-        if (err) {
-            return next(err);
-        }
-        res.render('landing', data);
-    });
-};
-
-Controllers.documentation = function(req, res, next) {
-    async.parallel({
-        header: function (next) {
-            res.locals.metaTags = [{
-                name: "title",
-                content: meta.config.title || 'CableLabs'
-            }, {
-                name: "description",
-                content: meta.config.description || ''
-            }, {
-                property: 'og:title',
-                content: 'Index | ' + (meta.config.title || 'CableLabs')
-            }, {
-                property: 'og:type',
-                content: 'website'
-            }];
-
-            if(meta.config['brand:logo']) {
-                res.locals.metaTags.push({
-                    property: 'og:image',
-                    content: meta.config['brand:logo']
-                });
-            }
-
-            next(null);
-        }
-//        ,
-//        apis: function (next) {
-//            var uid = req.user ? req.user.uid : 0;
-//            apis.getVisibleApis(uid, function (err, apiData) {
-//                if (err) {
-//                    return next(err);
-//                }
-//
-//                function getRecentReplies(category, callback) {
-//                    callback();
-//                }
-//
-//                async.each(apiData, getRecentReplies, function (err) {
-//                    next(err, apiData);
-//                });
-//            });
-//        }
-    }, function (err, data) {
-        if (err) {
-            return next(err);
-        }
-        res.render('documentation', data);
-    });
-};
-
-Controllers.home = function(req, res, next) {
+Controllers.forums = function(req, res, next) {
 	async.parallel({
 		header: function (next) {
 			res.locals.metaTags = [{
