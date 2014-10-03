@@ -16,7 +16,7 @@
     <link href="{relative_path}/flatscroller/assets/css/font-awesome.min.css?{css-buster}" rel="stylesheet">
 
     <!-- Cablelabs.com CSS -->
-    <link href="{relative_path}/css/cl-style.css?{css-buster}" rel="stylesheet">
+    <link href="{relative_path}/custom-css/cl-style.css?{css-buster}" rel="stylesheet">
 
     <!--[if lt IE 7]>
         <link href="{relative_path}/flatscroller/assets/css/font-awesome-ie7.min.css?{css-buster}" rel="stylesheet">
