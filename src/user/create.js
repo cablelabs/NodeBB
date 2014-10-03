@@ -20,6 +20,8 @@ module.exports = function(User) {
 		var userData = {
 			'username': data.username.trim(),
 			'email': data.email,
+			'company': data.company,
+			'designation': data.designation,
 			'joindate': timestamp,
 			'picture': gravatar,
 			'gravatarpicture': gravatar,

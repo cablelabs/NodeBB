@@ -37,6 +37,30 @@
 					</div>
 				</div>
 				<div class="form-group">
+                    <label for="company" class="col-lg-4 control-label">[[register:company]]</label>
+                    <div class="col-lg-8">
+                        <div class="input-group">
+                            <input class="form-control" type="text" placeholder="[[register:company_placeholder]]" name="company" id="company" autocorrect="off" autocapitalize="on" />
+                            <span class="input-group-addon">
+                                <span id="company-notify"><i class="fa fa-circle-o"></i></span>
+                            </span>
+                        </div>
+                        <!-- <span class="help-block">[[register:help.username_restrictions, {minimumUsernameLength}, {maximumUsernameLength}]]</span> -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="designation" class="col-lg-4 control-label">[[register:designation]]</label>
+                    <div class="col-lg-8">
+                        <div class="input-group">
+                            <input class="form-control" type="text" placeholder="[[register:designation_placeholder]]" name="designation" id="designation" autocorrect="off" autocapitalize="on" />
+                            <span class="input-group-addon">
+                                <span id="designation-notify"><i class="fa fa-circle-o"></i></span>
+                            </span>
+                        </div>
+                        <!-- <span class="help-block">[[register:help.username_restrictions, {minimumUsernameLength}, {maximumUsernameLength}]]</span> -->
+                    </div>
+                </div>
+				<div class="form-group">
 					<label for="password" class="col-lg-4 control-label">[[register:password]]</label>
 					<div class="col-lg-8">
 						<div class="input-group">

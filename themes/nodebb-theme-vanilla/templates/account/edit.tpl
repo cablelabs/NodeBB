@@ -1,3 +1,4 @@
+<div class="container" id="content">
 
 <!-- IMPORT partials/account_menu.tpl -->
 
@@ -50,6 +51,20 @@
 							<input class="form-control" type="text" id="inputFullname" placeholder="[[user:fullname]]" value="{fullname}">
 						</div>
 					</div>
+
+					<div class="control-group">
+                        <label class="control-label" for="inputCompany">[[user:company]]</label>
+                        <div class="controls">
+                            <input class="form-control" type="text" id="inputCompany" placeholder="[[user:company]]" value="{company}">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="inputDesignation">[[user:designation]]</label>
+                        <div class="controls">
+                            <input class="form-control" type="text" id="inputDesignation" placeholder="[[user:designation]]" value="{designation}">
+                        </div>
+                    </div>
 
 					<div class="control-group">
 						<label class="control-label" for="inputWebsite">[[user:website]]</label>

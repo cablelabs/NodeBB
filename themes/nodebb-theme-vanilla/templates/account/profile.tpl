@@ -1,4 +1,4 @@
-
+<div class="container" id="content">
 
 <!-- IMPORT partials/account_menu.tpl -->
 
@@ -18,6 +18,12 @@
 							<span>
 								<i class="account-online-status fa fa-circle status {status}" title="[[global:{status}]]"></i>
 								<span class="account-username"> {username}</span>
+								<br/>
+								<span class="account-username"> {fullname}</span>
+								</br/>
+								<span class="account-username"> {company}</span>
+								</br/>
+								<span class="account-username"> {designation}</span>
 							</span>
 
 							<!-- IF !isSelf -->
