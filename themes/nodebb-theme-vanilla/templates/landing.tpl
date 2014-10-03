@@ -493,6 +493,18 @@
                                     </div>
                                     <div class="col-md-4 col-sm-6 hidden-sm hidden-xs">
                                         <div class="block-text rel zmin">
+                                            <h3>Rob B</h3>
+                                            <p class="text-center social-contacts">
+                                                <a href="#"><i class="icon-facebook-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-twitter-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-github-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-linkedin-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-google-plus-sign icon-2x"></i></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 hidden-sm hidden-xs">
+                                        <div class="block-text rel zmin">
                                             <h3>Santhosh</h3>
                                             <p class="text-center social-contacts">
                                                 <a href="#"><i class="icon-facebook-sign icon-2x"></i></a>
@@ -553,6 +565,18 @@
                                             </p>
                                         </div>
                                     </div>
+                                    <div class="col-md-4 col-sm-6 hidden-sm hidden-xs">
+                                        <div class="block-text rel zmin">
+                                            <h3>Rob F</h3>
+                                            <p class="text-center social-contacts">
+                                                <a href="#"><i class="icon-facebook-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-twitter-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-github-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-linkedin-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-google-plus-sign icon-2x"></i></a>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="item">
                                     <div class="col-md-4 col-sm-6">
@@ -594,6 +618,18 @@
                                     <div class="col-md-4 col-sm-6 hidden-sm hidden-xs">
                                         <div class="block-text rel zmin">
                                             <h3>Carmela</h3>
+                                            <p class="text-center social-contacts">
+                                                <a href="#"><i class="icon-facebook-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-twitter-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-github-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-linkedin-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-google-plus-sign icon-2x"></i></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 hidden-sm hidden-xs">
+                                        <div class="block-text rel zmin">
+                                            <h3>Meredith</h3>
                                             <p class="text-center social-contacts">
                                                 <a href="#"><i class="icon-facebook-sign icon-2x"></i></a>
                                                 <a href="#"><i class="icon-twitter-sign icon-2x"></i></a>
