@@ -1,5 +1,5 @@
 <ol class="breadcrumb">
-	<li><a href="{relative_path}/forums">[[global:home]]</a></li>
+	<li><a href="{relative_path}/">[[global:home]]</a></li>
 	<li class="active">[[global:search]]</li>
 </ol>
 

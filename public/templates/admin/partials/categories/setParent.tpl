@@ -6,7 +6,17 @@
 				<h4 class="modal-title" id="setParentLabel">Set Parent Category</h4>
 			</div>
 			<div class="modal-body">
-
+<ul class="category-list">
+	<!-- BEGIN categories -->
+	<li style="
+			<!-- IF categories.bgColor -->background-color: {categories.bgColor};<!-- ENDIF categories.bgColor -->
+			<!-- IF categories.color -->color: {categories.color};<!-- ENDIF categories.color -->
+		"
+		class="<!-- IF categories.disabled -->disabled<!-- ENDIF categories.disabled -->"
+		data-cid="{categories.cid}"
+	><i class="fa fa-fw {categories.icon}"></i> {categories.name}</li>
+	<!-- END categories -->
+</ul>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

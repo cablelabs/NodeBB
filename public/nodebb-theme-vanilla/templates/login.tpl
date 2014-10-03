@@ -18,7 +18,7 @@
 				<strong>[[login:failed_login_attempt]]</strong> <p></p>
 			</div>
 
-			<form class="form-horizontal" role="form" method="post">
+			<form class="form-horizontal" role="form" method="post" id="login-form">
 				<div class="form-group">
 					<label for="username" class="col-lg-2 control-label">[[login:username]]</label>
 					<div class="col-lg-10">

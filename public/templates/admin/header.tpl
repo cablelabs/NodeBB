@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>NodeBB Administration Panel</title>
+	<title>NodeBB Admin Control Panel</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="stylesheet" href="{relative_path}/vendor/jquery/css/smoothness/jquery-ui-1.10.4.custom.min.css">
 	<link rel="stylesheet" type="text/css" href="{relative_path}/vendor/colorpicker/colorpicker.css">
-	<link rel="stylesheet" type="text/css" href="{relative_path}/stylesheet.css?{cache-buster}" />
+	<link rel="stylesheet" type="text/css" href="{relative_path}/vendor/nanoscroller/nanoscroller.css">
+	<link rel="stylesheet" type="text/css" href="{relative_path}/admin.css?{cache-buster}" />
 
 	<script>
 		var RELATIVE_PATH = "{relative_path}";
@@ -19,28 +20,14 @@
 	    <script>__lt_ie_9__ = 1;</script>
 	<![endif]-->
 
-	<script src="{relative_path}/vendor/jquery/js/jquery.js"></script>
-	<script src="{relative_path}/vendor/jquery/js/jquery-ui-1.10.4.custom.js"></script>
-	<script src="{relative_path}/vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="{relative_path}/socket.io/socket.io.js"></script>
-	<script src="{relative_path}/src/templates.js?{cache-buster}"></script>
-	<script src="{relative_path}/src/translator.js?{cache-buster}"></script>
-	<script src="{relative_path}/src/ajaxify.js?{cache-buster}"></script>
-	<script src="{relative_path}/src/variables.js?{cache-buster}"></script>
-	<script src="{relative_path}/src/widgets.js?{cache-buster}"></script>
-	<script src="{relative_path}/vendor/jquery/timeago/jquery.timeago.min.js"></script>
-	<script src="{relative_path}/vendor/jquery/js/jquery.form.min.js"></script>
-	<script src="{relative_path}/vendor/jquery/deserialize/jquery.deserialize.min.js"></script>
-	<script src="{relative_path}/vendor/jquery/serializeObject/jquery.ba-serializeobject.min.js"></script>
-	<script src="{relative_path}/vendor/requirejs/require.js"></script>
-	<script src="{relative_path}/vendor/bootbox/bootbox.min.js"></script>
-	<script src="{relative_path}/vendor/colorpicker/colorpicker.js"></script>
-	<script src="{relative_path}/vendor/xregexp/xregexp.js"></script>
-	<script src="{relative_path}/vendor/xregexp/unicode/unicode-base.js"></script>
-	<script src="{relative_path}/vendor/tabIndent/tabIndent.js"></script>
-	<script src="{relative_path}/src/utils.js"></script>
-	<script src="{relative_path}/src/app.js?{cache-buster}"></script>
-	<script src="{relative_path}/src/admin.js?{cache-buster}"></script>
+	<script type="text/javascript" src="{relative_path}/vendor/chart.js/chart.min.js"></script>
+	<script type="text/javascript" src="{relative_path}/vendor/hammer/hammer.min.js"></script>
+	<script type="text/javascript" src="{relative_path}/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="{relative_path}/nodebb.min.js"></script>
+	<script type="text/javascript" src="{relative_path}/vendor/colorpicker/colorpicker.js"></script>
+	<script type="text/javascript" src="{relative_path}/src/admin.js?{cache-buster}"></script>
+	<script type="text/javascript" src="{relative_path}/vendor/ace/ace.js"></script>
+	<script type="text/javascript" src="{relative_path}/vendor/nanoscroller/nanoscroller.min.js"></script>
 
 	<script>
 		require.config({
@@ -55,8 +42,6 @@
 		});
 	</script>
 
-	<script src="{relative_path}/src/overrides.js"></script>
-
 	<!-- BEGIN scripts -->
 	<script type="text/javascript" src="{scripts.src}"></script>
 	<!-- END scripts -->
@@ -66,103 +51,130 @@
 	<div class="navbar navbar-inverse navbar-fixed-top header">
 		<div class="container">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="{relative_path}/admin/index"> CL Forums Admin</a>
+				<a class="navbar-brand nodebb-logo" href="{relative_path}/admin/general/dashboard"><img src="{relative_path}/images/logo.png" alt="NodeBB ACP" /> Admin Control Panel <span id="breadcrumbs" class="hidden-xs"></span></a>
 			</div>
-			<div class="collapse navbar-collapse">
-				<ul class="nav navbar-nav">
-					<li>
-						<a href="{relative_path}/admin/index"><i class="fa fa-home" title="Home"></i><span class="visible-xs-inline"> Home</span></a>
-					</li>
-					<li>
-						<a href="{relative_path}/admin/settings"><i class="fa fa-cogs" title="Settings"></i><span class="visible-xs-inline"> Settings</span></a>
-					</li>
-					<li>
-						<a href="{relative_path}/" target="_top"><i class="fa fa-book" title="Forum"></i><span class="visible-xs-inline"> Forum</span></a>
-					</li>
-					<li>
-						<a href="#" id="reconnect"></a>
-					</li>
-				</ul>
+			<ul class="nav navbar-nav">
+				<li>
+					<a href="#" id="reconnect"></a>
+				</li>
+			</ul>
 
-				<ul id="logged-in-menu" class="nav navbar-nav navbar-right">
-					<li id="user_label" class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="user_dropdown">
-							<img src="{userpicture}"/>
-						</a>
-						<ul id="user-control-list" class="dropdown-menu" aria-labelledby="user_dropdown">
-							<li>
-								<a id="user-profile-link" href="{relative_path}/user/{userslug}" target="_top"><span>Profile</span></a>
-							</li>
-							<li id="logout-link">
-								<a href="#">Log out</a>
-							</li>
-						</ul>
-					</li>
+			<ul id="logged-in-menu" class="nav navbar-nav navbar-right">
+				<form class="navbar-form navbar-left hidden-xs" role="search">
+					<div class="form-group" id="acp-search" >
+						<div class="dropdown" >
+							<input type="text" data-toggle="dropdown" class="form-control" placeholder="Search ACP...">
+							<ul class="dropdown-menu" role="menu"></ul>
+						</div>
+					</div>
+				</form>
 
-				</ul>
-			</div>
+				<li id="user_label" class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="user_dropdown">
+						<img src="{userpicture}"/>
+					</a>
+					<ul id="user-control-list" class="dropdown-menu" aria-labelledby="user_dropdown">
+						<li>
+							<a id="user-profile-link" href="{relative_path}/user/{userslug}" target="_top"><span>Profile</span></a>
+						</li>
+						<li id="logout-link">
+							<a href="#">Log out</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
 		</div>
 	</div>
 
-	<input id="csrf_token" type="hidden" template-variable="csrf" value="{csrf}" />
-
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-3">
-				<div class="well sidebar-nav">
+	<div class="wrapper">
+		<div id="main-menu" class="nano">
+			<div class="nano-content">
+				<div class="sidebar-nav">
 					<ul class="nav nav-list">
-						<li class="nav-header">NodeBB</li>
-						<li class="active"><a href="{relative_path}/admin/index"><i class="fa fa-fw fa-home"></i> Home</a></li>
-						<li><a href="{relative_path}/admin/designer/active"><i class="fa fa-fw fa-hdd-o"></i> Api Designer</a></li>
-						<li><a href="{relative_path}/admin/categories/active"><i class="fa fa-fw fa-folder"></i> Categories</a></li>
-						<li><a href="{relative_path}/admin/apis/active"><i class="fa fa-fw fa-folder"></i> Api Categories</a></li>
-						<li><a href="{relative_path}/admin/announcements/active"><i class="fa fa-fw fa-bullhorn"></i> Announcements</a></li>
-						<li><a href="{relative_path}/admin/users/latest"><i class="fa fa-fw fa-user"></i> Users</a></li>
-						<li><a href="{relative_path}/admin/groups"><i class="fa fa-fw fa-group"></i> Groups</a></li>
-						<li><a href="{relative_path}/admin/settings"><i class="fa fa-fw fa-cogs"></i> General Settings</a></li>
-						<li><a href="{relative_path}/admin/themes"><i class="fa fa-fw fa-th"></i> Themes</a></li>
-						<li><a href="{relative_path}/admin/plugins"><i class="fa fa-fw fa-code-fork"></i> Plugins</a></li>
-						<li><a href="{relative_path}/admin/languages"><i class="fa fa-fw fa-language"></i> Languages</a></li>
-						<li><a href="{relative_path}/admin/sounds"><i class="fa fa-fw fa-volume-up"></i> Sounds</a></li>
-						<li><a href="{relative_path}/admin/database"><i class="fa fa-fw fa-hdd-o"></i> Database</a></li>
-						<li><a href="{relative_path}/admin/events"><i class="fa fa-fw fa-calendar-o"></i> Events</a></li>
+						<li class="nav-header"><i class="fa fa-fw fa-dashboard"></i> General</li>
+						<li class="active"><a href="{relative_path}/admin/general/dashboard">Dashboard</a></li>
+						<li><a href="{relative_path}/admin/general/languages">Languages</a></li>
+						<li><a href="{relative_path}/admin/general/sounds">Sounds</a></li>
 					</ul>
 				</div>
-				<!-- IF authentication.length -->
-				<div class="well sidebar-nav">
+				<div class="sidebar-nav">
 					<ul class="nav nav-list">
-							<li class="nav-header">Social Authentication</li>
-							<!-- BEGIN authentication -->
-							<li>
-								<a href="{relative_path}/admin{authentication.route}"><i class="fa fa-fw {authentication.icon}"></i> {authentication.name}</a>
-							</li>
-							<!-- END authentication -->
+						<li class="nav-header"><i class="fa fa-fw fa-comments-o"></i> Manage</li>
+						<li><a href="{relative_path}/admin/manage/categories/active">Categories</a></li>
+						<li><a href="{relative_path}/admin/manage/tags">Tags</a></li>
+						<li><a href="{relative_path}/admin/manage/users/latest">Users</a></li>
+						<li><a href="{relative_path}/admin/manage/groups">Groups</a></li>
 					</ul>
 				</div>
-				<!-- ENDIF authentication.length -->
-				<div class="well sidebar-nav">
+				<div class="sidebar-nav">
 					<ul class="nav nav-list">
-						<li class="nav-header">Plugins</li>
+						<li class="nav-header"><i class="fa fa-fw fa-cogs"></i> Settings</li>
+						<li><a href="{relative_path}/admin/settings/general">General</a></li>
+						<li><a href="{relative_path}/admin/settings/reputation">Reputation</a></li>
+						<li><a href="{relative_path}/admin/settings/email">Email</a></li>
+						<li><a href="{relative_path}/admin/settings/user">User</a></li>
+						<li><a href="{relative_path}/admin/settings/post">Post</a></li>
+						<li><a href="{relative_path}/admin/settings/pagination">Pagination</a></li>
+						<li><a href="{relative_path}/admin/settings/tags">Tags</a></li>
+						<li><a href="{relative_path}/admin/settings/notifications">Notifications</a></li>
+						<li><a href="{relative_path}/admin/settings/web-crawler">Web Crawler</a></li>
+						<li><a href="{relative_path}/admin/settings/sockets">Sockets</a></li>
+						<li><a href="{relative_path}/admin/settings/advanced">Advanced</a></li>
+					</ul>
+				</div>
+				<div class="sidebar-nav">
+					<ul class="nav nav-list">
+						<li class="nav-header"><i class="fa fa-fw fa-paint-brush"></i> Appearance</li>
+						<li><a href="{relative_path}/admin/appearance/themes">Themes</a></li>
+						<li><a href="{relative_path}/admin/appearance/skins">Skins</a></li>
+						<li><a href="{relative_path}/admin/appearance/customise">Custom HTML & CSS</a></li>
+					</ul>
+				</div>
+				<div class="sidebar-nav">
+					<ul class="nav nav-list">
+						<li class="nav-header"><i class="fa fa-fw fa-wrench"></i> Extend</li>
+						<li><a href="{relative_path}/admin/extend/plugins">Plugins</a></li>
+						<li><a href="{relative_path}/admin/extend/widgets">Widgets</a></li>
+					</ul>
+				</div>
+				<div class="sidebar-nav">
+					<ul class="nav nav-list">
+						<li class="nav-header"><i class="fa fa-fw fa-hdd-o"></i> Advanced</li>
+						<li><a href="{relative_path}/admin/advanced/database">Database</a></li>
+						<li><a href="{relative_path}/admin/advanced/events">Events</a></li>
+					</ul>
+				</div>
+				<div class="sidebar-nav">
+					<ul class="nav nav-list">
+						<li class="nav-header"><i class="fa fa-fw fa-facebook-square"></i> Social Authentication</li>
+						<!-- IF !authentication.length -->
+						<li><a href="{relative_path}/admin/extend/plugins">Install SSO Plugins</a></li>
+						<!-- ENDIF !authentication.length -->
+						<!-- BEGIN authentication -->
+						<li>
+							<a href="{relative_path}/admin{authentication.route}">{authentication.name}</a>
+						</li>
+						<!-- END authentication -->
+					</ul>
+				</div>
+				<div class="sidebar-nav">
+					<ul class="nav nav-list">
+						<li class="nav-header"><i class="fa fa-fw fa-th"></i> Installed Plugins</li>
 						<!-- BEGIN plugins -->
 						<li>
-							<a href="{relative_path}/admin{plugins.route}"><i class="fa fa-fw {plugins.icon}"></i> {plugins.name}</a>
+							<a href="{relative_path}/admin{plugins.route}">{plugins.name}</a>
 						</li>
 						<!-- END plugins -->
 					</ul>
 				</div>
 				<!-- IF env -->
-				<div class="well sidebar-nav">
+				<div class="sidebar-nav">
 					<ul class="nav nav-list">
-						<li class="nav-header">Development</li>
-						<li><a href="{relative_path}/admin/logger"><i class="fa fa-fw fa-th"></i> Logger</a></li>
+						<li class="nav-header"><i class="fa fa-fw fa-th"></i> Development</li>
+						<li><a href="{relative_path}/admin/development/logger">Logger</a></li>
 					</ul>
 				</div>
 				<!-- ENDIF env -->
-			</div><!--/span-->
-
-			<div class="col-sm-9" id="content">
+			</div>
+		</div>
+		<div class="col-sm-12" id="content">

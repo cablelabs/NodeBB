@@ -99,7 +99,7 @@ function loadConfig() {
 
 	nconf.defaults({
 		base_dir: __dirname,
-		themes_path: path.join(__dirname, 'public'),
+		themes_path: path.join(__dirname, 'themes'),
 		upload_url: '/uploads/',
 		views_dir: path.join(__dirname, 'public/templates'),
         static_dir: path.join(__dirname, 'static')

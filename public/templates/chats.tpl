@@ -6,7 +6,8 @@
 			<h2 class="panel-title">[[modules:chat.message-history]]</h2>
 		</div>
 		<div class="panel-body">
-			<ul class="well well-sm">
+			<span class="since-bar"><a href="#" class="selected" data-since="day">[[modules:chat.yesterday]]</a> &bull; <a href="#" data-since="week">[[modules:chat.seven_days]]</a> &bull; <a href="#" data-since="month">[[modules:chat.thirty_days]]</a> &bull; <a href="#" data-since="threemonths">[[modules:chat.three_months]]</a></span>
+			<ul class="chat-content well well-sm">
 <!-- BEGIN messages -->
 				<li class="chat-message clear" data-uid="{messages.fromuid}" data-self="{messages.self}" data-break="{messages.newSet}">
 					<div class="message-header">
@@ -55,7 +56,7 @@
 			<h2 class="panel-title">[[modules:chat.recent-chats]]</h2>
 		</div>
 		<div class="panel-body">
-			<ul class="chats-list">
+			<ul class="chats-list recent-chats" data-nextstart="{nextStart}">
 				<!-- BEGIN chats -->
 				<li data-username="{chats.username}" data-uid="{chats.uid}" class="<!-- IF chats.unread -->unread<!-- ENDIF chats.unread -->">
 					<i class="fa fa-circle status {chats.status}"></i>

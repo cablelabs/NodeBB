@@ -1,15 +1,14 @@
 <div class="unread">
 	<ol class="breadcrumb">
-		<li><a href="{relative_path}/forums">[[global:home]]</a></li>
+		<li><a href="{relative_path}/">[[global:home]]</a></li>
 		<li class="active">[[unread:title]]</li>
 	</ol>
 
-
-	<div id="category-no-topics" class="alert alert-warning {no_topics_message}">
+	<div id="category-no-topics" class="alert alert-warning <!-- IF topics.length -->hidden<!-- ENDIF topics.length -->">
 		<strong>[[unread:no_unread_topics]]</strong>
 	</div>
 
-	<div class="markread btn-group {show_markread_button}">
+	<div class="markread btn-group <!-- IF !topics.length -->hidden<!-- ENDIF !topics.length -->">
 		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 			[[unread:mark_as_read]] <span class="caret"></span>
 		</button>
@@ -26,12 +25,9 @@
 		</ul>
 	</div>
 
-
-
 	<a href="{relative_path}/unread">
 		<div class="alert alert-warning hide" id="new-topics-alert"></div>
 	</a>
-
 
 	<div class="category row">
 		<div class="col-md-12">
@@ -89,7 +85,7 @@
 						</span>
 <!-- IF topics.tags.length -->
 	<!-- BEGIN tags -->
-		<a href="{relative_path}/tags/{topics.tags.name}"><span class="tag-item" data-tag="{topics.tags.name}">&bull; {topics.tags.name}</span></a>
+		<a href="{relative_path}/tags/{topics.tags.value}"><span class="tag-item" data-tag="{topics.tags.value}" style="<!-- IF topics.tags.color -->color: {topics.tags.color};<!-- ENDIF topics.tags.color --><!-- IF topics.tags.bgColor -->background-color: {topics.tags.bgColor};<!-- ENDIF topics.tags.bgColor -->">{topics.tags.value}</span><span class="tag-topic-count">{topics.tags.score}</span></a>
 	<!-- END tags -->
 <!-- ENDIF topics.tags.length -->
 					</small>

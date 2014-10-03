@@ -7,12 +7,72 @@
 
 <ol class="breadcrumb">
 	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-		<a href="{relative_path}/forums" itemprop="url"><span itemprop="title">[[global:home]]</span></a>
+		<a href="{relative_path}/" itemprop="url"><span itemprop="title">[[global:home]]</span></a>
 	</li>
+	<!-- IF parent -->
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+		<a href="{relative_path}/category/{parent.slug}" itemprop="url"><span itemprop="title">{parent.name}</span></a>
+	</li>
+	<!-- ENDIF parent -->
 	<li class="active" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
 		<span itemprop="title">{name} <!-- IF !feeds:disableRSS --><a target="_blank" href="{relative_path}/category/{cid}.rss"><i class="fa fa-rss-square"></i></a><!-- ENDIF !feeds:disableRSS --></span>
 	</li>
 </ol>
+
+<div class="subcategories">
+	<!-- BEGIN children -->
+		<div class="{children.class}" data-cid="{children.cid}" data-numRecentReplies="{children.numRecentReplies}">
+			<meta itemprop="name" content="{children.name}">
+			<h4 class="category-title">
+				<!-- IF !children.link -->
+				<span class="badge {children.unread-class}">{children.topic_count} </span>
+				<!-- ENDIF !children.link -->
+
+				<!-- IF children.link -->
+				<a href="{children.link}" itemprop="url" target="_blank">
+				<!-- ELSE -->
+				<a href="{relative_path}/category/{children.slug}" itemprop="url">
+				<!-- ENDIF children.link -->
+				{children.name}
+				</a>
+			</h4>
+
+			<!-- IF children.link -->
+			<a style="color: {children.color};" href="{children.link}" itemprop="url" target="_blank">
+			<!-- ELSE -->
+			<a style="color: {children.color};" href="{relative_path}/category/{children.slug}" itemprop="url">
+			<!-- ENDIF children.link -->
+				<div
+					id="category-{children.cid}" class="category-header category-header-image-{children.imageClass}"
+					title="{children.description}"
+					style="
+						<!-- IF children.backgroundImage -->background-image: url({children.backgroundImage});<!-- ENDIF children.backgroundImage -->
+						<!-- IF children.bgColor -->background-color: {children.bgColor};<!-- ENDIF children.bgColor -->
+					"
+				>
+					<div id="category-{children.cid}" class="category-slider-{children.post_count}">
+						<!-- IF children.icon -->
+						<div class="category-box"><i class="fa {children.icon} fa-4x"></i></div>
+						<!-- ENDIF children.icon -->
+						<div class="category-box" itemprop="description">{children.description}</div>
+
+						<!-- BEGIN posts -->
+						<div class="category-box">
+							<div class="post-preview">
+								<img src="{children.posts.user.picture}" class="pull-left" />
+								<p class=""><strong>{children.posts.user.username}</strong>: {children.posts.content}</p>
+							</div>
+						</div>
+						<!-- END posts -->
+						<!-- IF children.icon -->
+						<div class="category-box"><i class="fa {children.icon} fa-4x"></i></div>
+						<!-- ENDIF children.icon -->
+					</div>
+				</div>
+			</a>
+		</div>
+	<!-- END children -->
+</div>
 
 <div class="category row">
 	<div class="{topic_row_size}" no-widget-class="col-lg-12 col-sm-12" no-widget-target="sidebar">
@@ -23,6 +83,8 @@
 			<!-- ENDIF privileges.topics:create -->
 
 			<span class="pull-right">
+				<button type="button" class="btn btn-default btn-success watch <!-- IF !isIgnored -->hidden<!-- ENDIF !isIgnored -->"><i class="fa fa-eye"></i> [[topic:watch]]</button>
+				<button type="button" class="btn btn-default btn-warning ignore <!-- IF isIgnored -->hidden<!-- ENDIF isIgnored -->"><i class="fa fa-eye-slash"></i> [[category:ignore]]</button>
 <!-- IF privileges.editable -->
 <div class="btn-group thread-tools">
 	<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">[[topic:thread_tools.title]] <span class="caret"></span></button>
@@ -132,7 +194,7 @@
 
 <!-- IF topics.tags.length -->
 	<!-- BEGIN tags -->
-		<a href="{relative_path}/tags/{topics.tags.name}"><span class="tag-item" data-tag="{topics.tags.name}">&bull; {topics.tags.name}</span></a>
+		<a href="{relative_path}/tags/{topics.tags.value}"><span class="tag-item" data-tag="{topics.tags.value}" style="<!-- IF topics.tags.color -->color: {topics.tags.color};<!-- ENDIF topics.tags.color --><!-- IF topics.tags.bgColor -->background-color: {topics.tags.bgColor};<!-- ENDIF topics.tags.bgColor -->">{topics.tags.value}</span><span class="tag-topic-count">{topics.tags.score}</span></a>
 	<!-- END tags -->
 <!-- ENDIF topics.tags.length -->
 					</small>
@@ -153,6 +215,8 @@
 	<!-- IF topics.length -->
 	<div widget-area="sidebar" class="col-md-3 col-xs-12 category-sidebar"></div>
 	<!-- ENDIF topics.length -->
+
+	<span class="hidden" id="csrf" data-csrf="{csrf}"></span>
 </div>
 
 <div id="move_thread_modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="Move Topic" aria-hidden="true">
@@ -164,7 +228,6 @@
 			</div>
 			<div class="modal-body">
 				<p id="categories-loading"><i class="fa fa-spin fa-refresh"></i> [[topic:load_categories]]</p>
-				<ul class="category-list"></ul>
 				<p>
 					[[topic:disabled_categories_note]]
 				</p>

@@ -3,7 +3,7 @@
 
 <div class="tag">
 	<ol class="breadcrumb">
-		<li><a href="{relative_path}/forums">[[global:home]]</a></li>
+		<li><a href="{relative_path}/">[[global:home]]</a></li>
 		<li><a href="{relative_path}/tags">[[tags:tags]]</a></li>
 		<li class="active">{tag}</li>
 	</ol>
@@ -70,7 +70,7 @@
 						</span>
 <!-- IF topics.tags.length -->
 	<!-- BEGIN tags -->
-		<a href="{relative_path}/tags/{topics.tags.name}"><span class="tag-item" data-tag="{topics.tags.name}">&bull; {topics.tags.name}</span></a>
+		<a href="{relative_path}/tags/{topics.tags.value}"><span class="tag-item" data-tag="{topics.tags.value}" style="<!-- IF topics.tags.color -->color: {topics.tags.color};<!-- ENDIF topics.tags.color --><!-- IF topics.tags.bgColor -->background-color: {topics.tags.bgColor};<!-- ENDIF topics.tags.bgColor -->">{topics.tags.value}</span><span class="tag-topic-count">{topics.tags.score}</span></a>
 	<!-- END tags -->
 <!-- ENDIF topics.tags.length -->
 					</small>

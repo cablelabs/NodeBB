@@ -36,6 +36,11 @@
 				<img id="user-current-picture" class="user-profile-picture img-thumbnail" src="{picture}" /><br /><br />
 				<a id="changePictureBtn" href="#" class="btn btn-primary">[[user:change_picture]]</a>
 				<br/><br/>
+				<!-- IF config.allowAccountDelete -->
+				<!-- IF isSelf -->
+				<a id="deleteAccountBtn" href="#" class="btn btn-danger">[[user:delete_account]]</a>
+				<!-- ENDIF isSelf -->
+				<!-- ENDIF config.allowAccountDelete -->
 				<!-- IF config.requireEmailConfirmation -->
 				<!-- IF email -->
 				<!-- IF email:confirmed -->
@@ -175,7 +180,10 @@
 						<i class='fa fa-check fa-2x'></i>
 					</div>
 
-					<a id="uploadPictureBtn" href="#">[[user:upload_new_picture]]</a>
+					<a id="uploadPictureBtn" href="#">[[user:upload_new_picture]]</a> <br/>
+					<!-- IF config.hasImageUploadPlugin -->
+					<a id="uploadFromUrlBtn" href="#">[[user:upload_new_picture_from_url]]</a>
+					<!-- ENDIF config.hasImageUploadPlugin -->
 				</div>
 				<div class="modal-footer">
 					<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">[[global:close]]</button>
@@ -184,6 +192,27 @@
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
+	<div id="upload-picture-from-url-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Upload Picture From Url" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3>[[user:upload_picture]]</h3>
+				</div>
+				<div class="modal-body">
+					<input id="uploadFromUrl" class="form-control" type="text"/>
+
+					<div id="alert-status" class="alert alert-info hide"></div>
+					<div id="alert-success" class="alert alert-success hide"></div>
+					<div id="alert-error" class="alert alert-danger hide"></div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+					<button class="btn btn-primary upload-btn">[[user:upload_picture]]</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <input type="hidden" template-variable="yourid" value="{yourid}" />
@@ -191,3 +220,5 @@
 <input type="hidden" template-variable="userslug" value="{userslug}" />
 <input type="hidden" template-variable="gravatarpicture" value="{gravatarpicture}" />
 <input type="hidden" template-variable="uploadedpicture" value="{uploadedpicture}" />
+
+<span class="hidden" id="csrf" data-csrf="{csrf}"></span>

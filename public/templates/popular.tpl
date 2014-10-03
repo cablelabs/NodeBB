@@ -1,6 +1,6 @@
 <div class="popular">
 	<ol class="breadcrumb">
-		<li><a href="{relative_path}/forums">[[global:home]]</a></li>
+		<li><a href="{relative_path}/">[[global:home]]</a></li>
 		<li class="active">[[global:header.popular]] <!-- IF !feeds:disableRSS --><a href="{relative_path}/popular.rss"><i class="fa fa-rss-square"></i></a><!-- ENDIF !feeds:disableRSS --></li>
 	</ol>
 
@@ -9,6 +9,7 @@
 		<li><a href='{relative_path}/popular/weekly'>[[recent:week]]</a></li>
 		<li><a href='{relative_path}/popular/monthly'>[[recent:month]]</a></li>
 		<li><a href='{relative_path}/popular/yearly'>[[recent:year]]</a></li>
+		<li><a href='{relative_path}/popular/alltime'>[[recent:alltime]]</a></li>
 	</ul>
 
 	<br />
@@ -79,7 +80,7 @@
 						</span>
 <!-- IF topics.tags.length -->
 	<!-- BEGIN tags -->
-		<a href="{relative_path}/tags/{topics.tags.name}"><span class="tag-item" data-tag="{topics.tags.name}">&bull; {topics.tags.name}</span></a>
+		<a href="{relative_path}/tags/{topics.tags.value}"><span class="tag-item" data-tag="{topics.tags.value}" style="<!-- IF topics.tags.color -->color: {topics.tags.color};<!-- ENDIF topics.tags.color --><!-- IF topics.tags.bgColor -->background-color: {topics.tags.bgColor};<!-- ENDIF topics.tags.bgColor -->">{topics.tags.value}</span><span class="tag-topic-count">{topics.tags.score}</span></a>
 	<!-- END tags -->
 <!-- ENDIF topics.tags.length -->
 					</small>

@@ -48,6 +48,7 @@
 						<input type="checkbox" data-property="showemail" /> <strong>[[user:show_email]]</strong>
 					</label>
 				</div>
+
 				<!-- IF !disableEmailSubscriptions -->
 				<div class="form-group">
 					<label for="dailyDigestFreq">[[user:digest_label]]</label>
@@ -59,7 +60,27 @@
 					</select>
 					<p class="help-block">[[user:digest_description]]</p>
 				</div>
+
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" data-property="sendChatNotifications" /> <strong>[[user:send_chat_notifications]]</strong>
+					</label>
+				</div>
 				<!-- ENDIF !disableEmailSubscriptions -->
+			</div>
+
+			<h4>[[user:follow]]</h4>
+			<div class="well">
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" data-property="followTopicsOnCreate"> <strong>[[user:follow_topics_you_create]]</strong>
+					</label>
+				</div>
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" data-property="followTopicsOnReply"> <strong>[[user:follow_topics_you_reply_to]]</strong>
+					</label>
+				</div>
 			</div>
 
 			<h4>[[global:pagination]]</h4>

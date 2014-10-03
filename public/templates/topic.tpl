@@ -13,7 +13,7 @@
 <div class="topic">
 	<ol class="breadcrumb">
 		<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-			<a href="{relative_path}/forums" itemprop="url"><span itemprop="title">[[global:home]]</span></a>
+			<a href="{relative_path}/" itemprop="url"><span itemprop="title">[[global:home]]</span></a>
 		</li>
 		<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
 			<a href="{relative_path}/category/{category.slug}" itemprop="url"><span itemprop="title">{category.name}</span></a>
@@ -57,9 +57,9 @@
 						<div class="btn-group">
 
 							<button class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" type="button" title="<!-- IF posts.user.userslug -->[[topic:posted_by, {posts.user.username}]]<!-- ELSE -->[[topic:posted_by_guest]]<!-- ENDIF posts.user.userslug -->">
-								<i class="fa fa-circle status offline"></i>
+								<i class="fa fa-circle status {posts.user.status}" title="[[global:{posts.user.status}]]"></i>
 								<span class="visible-xs-inline visible-md-inline"><img class="" src="{posts.picture}" width=18 height=18 />&nbsp;</span>
-								<span class="username-field" href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->" itemprop="author" data-username="{posts.username}">{posts.user.username}&nbsp;</span>
+								<span class="username-field" href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">{posts.user.username}&nbsp;</span>
 								<span class="caret"></span>
 							</button>
 
@@ -74,7 +74,7 @@
 						</div>
 
 						<div class="btn-group">
-							<button class="btn btn-sm btn-default follow hide" type="button" title="[[topic:notify_me]]"><i class="fa fa-eye"></i></button>
+							<button class="btn btn-sm btn-default follow hide" type="button" title="[[topic:notify_me]]"><!-- IF isFollowing --><i class="fa fa-eye-slash"><!-- ELSE --><i class="fa fa-eye"><!-- ENDIF isFollowing --></i></button>
 							<!-- IF !posts.selfPost -->
 							<button class="btn btn-sm btn-default flag" type="button" title="[[topic:flag_title]]"><i class="fa fa-flag-o"></i></button>
 							<!-- ENDIF !posts.selfPost -->
@@ -94,10 +94,12 @@
 							<button class="upvote btn btn-sm btn-default <!-- IF posts.upvoted --> upvoted btn-primary <!-- ENDIF posts.upvoted -->">
 								<i class="fa fa-chevron-up"></i>
 							</button>
-							<button class="votes btn btn-sm btn-default" data-votes="{posts.votes}" disabled>{posts.votes}</button>
+							<button class="votes btn btn-sm btn-default" data-votes="{posts.votes}">{posts.votes}</button>
+							<!-- IF !downvote:disabled -->
 							<button class="downvote btn btn-sm btn-default <!-- IF posts.downvoted --> downvoted btn-primary <!-- ENDIF posts.downvoted -->">
 								<i class="fa fa-chevron-down"></i>
 							</button>
+							<!-- ENDIF !downvote:disabled -->
 						</div>
 						<!-- ENDIF !reputation:disabled -->
 
@@ -185,7 +187,7 @@
 
 	<span class="tags">
 	<!-- BEGIN tags -->
-	<a href="{relative_path}/tags/{tags.name}"><span class="tag-item" data-tag="{tags.name}">&bull; {tags.name}</span></a>
+	<a href="{relative_path}/tags/{tags.value}"><span class="tag-item" data-tag="{tags.value}" style="<!-- IF tags.color -->color: {tags.color};<!-- ENDIF tags.color --><!-- IF tags.bgColor -->background-color: {tags.bgColor};<!-- ENDIF tags.bgColor -->">{tags.value}</span><span class="tag-topic-count">{tags.score}</span></a>
 	<!-- END tags -->
 	</span>
 
@@ -271,7 +273,7 @@
 
 	<span class="tags">
 	<!-- BEGIN tags -->
-	<a href="{relative_path}/tags/{tags.name}"><span class="tag-item" data-tag="{tags.name}">&bull; {tags.name}</span></a>
+	<a href="{relative_path}/tags/{tags.value}"><span class="tag-item" data-tag="{tags.value}" style="<!-- IF tags.color -->color: {tags.color};<!-- ENDIF tags.color --><!-- IF tags.bgColor -->background-color: {tags.bgColor};<!-- ENDIF tags.bgColor -->">{tags.value}</span><span class="tag-topic-count">{tags.score}</span></a>
 	<!-- END tags -->
 	</span>
 
@@ -367,7 +369,6 @@
 			</div>
 			<div class="modal-body">
 				<p id="categories-loading"><i class="fa fa-spin fa-refresh"></i> [[topic:load_categories]]</p>
-				<ul class="category-list"></ul>
 				<p>
 					[[topic:disabled_categories_note]]
 				</p>
@@ -427,7 +428,7 @@
 		</div>
 	</div>
 </div>
-
+	<span class="hidden" id="csrf" data-csrf="{csrf}"></span>
 </div>
 
 <div widget-area="footer" class="col-xs-12"></div>
