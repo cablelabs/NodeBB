@@ -1,13 +1,13 @@
 {
     "base_url": "http://cl-forum.herokuapp.com",
     "port": "4567",
-    "secret": "8ef98d75-a5b8-41a6-bc6a-efc49b25ea1a",
+    "secret": "4ad56cd2-8361-4da7-9ff3-0561c815a114",
     "bind_address": "0.0.0.0",
     "database": "redis",
     "redis": {
-        "host": "scat.redistogo.com",
-        "port": "9916",
-        "password": "49cdb49f40a1c36732d3d9db94674457",
+        "host": "hoki.redistogo.com",
+        "port": "9956",
+        "password": "5e8de57ae6745dda6eb858c839537e3b",
         "database": "0"
     },
     "bcrypt_rounds": 12,
