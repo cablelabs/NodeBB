@@ -433,9 +433,9 @@
             <!--</div>-->
 
             <!-- GO BTN WRAPPER-->
-            <div class="gobtnwrapper">
+            <!-- <div class="gobtnwrapper">
                 <a class="gobtn" href="#Section-5"><i class="icon-chevron-down icon-large"></i></a>
-            </div>
+            </div> -->
             <!-- /GO BTN WRAPPER-->
         </section>
 
@@ -449,7 +449,175 @@
 
         <!-- / SECTION-3 -->
         <section id="Section-6">
-            <div class="container">
+            <div class="carousel-reviews broun-block">
+                <div class="container">
+                    <div class="row">
+                        <div id="carousel-reviews" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <div class="col-md-4 col-sm-6">
+                                        <div class="block-text rel zmin">
+                                            <h3>Chris</h3>
+                                            <p class="text-center social-contacts">
+                                                <a href="#"><i class="icon-facebook-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-twitter-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-github-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-linkedin-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-google-plus-sign icon-2x"></i></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 hidden-xs">
+                                        <div class="block-text rel zmin">
+                                            <h3>Dan</h3>
+                                            <p class="text-center social-contacts">
+                                                <a href="#"><i class="icon-facebook-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-twitter-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-github-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-linkedin-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-google-plus-sign icon-2x"></i></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 hidden-sm hidden-xs">
+                                        <div class="block-text rel zmin">
+                                            <h3>Mark</h3>
+                                            <p class="text-center social-contacts">
+                                                <a href="#"><i class="icon-facebook-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-twitter-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-github-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-linkedin-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-google-plus-sign icon-2x"></i></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 hidden-sm hidden-xs">
+                                        <div class="block-text rel zmin">
+                                            <h3>Santhosh</h3>
+                                            <p class="text-center social-contacts">
+                                                <a href="#"><i class="icon-facebook-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-twitter-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-github-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-linkedin-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-google-plus-sign icon-2x"></i></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="col-md-4 col-sm-6">
+                                        <div class="block-text rel zmin">
+                                            <h3>Julie</h3>
+                                            <p class="text-center social-contacts">
+                                                <a href="#"><i class="icon-facebook-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-twitter-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-github-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-linkedin-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-google-plus-sign icon-2x"></i></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 hidden-xs">
+                                        <div class="block-text rel zmin">
+                                            <h3>Jenifer</h3>
+                                            <p class="text-center social-contacts">
+                                                <a href="#"><i class="icon-facebook-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-twitter-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-github-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-linkedin-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-google-plus-sign icon-2x"></i></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 hidden-sm hidden-xs">
+                                        <div class="block-text rel zmin">
+                                            <h3>Srivats</h3>
+                                            <p class="text-center social-contacts">
+                                                <a href="#"><i class="icon-facebook-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-twitter-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-github-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-linkedin-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-google-plus-sign icon-2x"></i></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 hidden-sm hidden-xs">
+                                        <div class="block-text rel zmin">
+                                            <h3>Paul</h3>
+                                            <p class="text-center social-contacts">
+                                                <a href="#"><i class="icon-facebook-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-twitter-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-github-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-linkedin-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-google-plus-sign icon-2x"></i></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="col-md-4 col-sm-6">
+                                        <div class="block-text rel zmin">
+                                            <h3>George</h3>
+                                            <p class="text-center social-contacts">
+                                                <a href="#"><i class="icon-facebook-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-twitter-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-github-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-linkedin-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-google-plus-sign icon-2x"></i></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 hidden-xs">
+                                        <div class="block-text rel zmin">
+                                            <h3>Doug</h3>
+                                            <p class="text-center social-contacts">
+                                                <a href="#"><i class="icon-facebook-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-twitter-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-github-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-linkedin-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-google-plus-sign icon-2x"></i></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 hidden-sm hidden-xs">
+                                        <div class="block-text rel zmin">
+                                            <h3>Steven</h3>
+                                            <p class="text-center social-contacts">
+                                                <a href="#"><i class="icon-facebook-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-twitter-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-github-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-linkedin-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-google-plus-sign icon-2x"></i></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 hidden-sm hidden-xs">
+                                        <div class="block-text rel zmin">
+                                            <h3>Carmela</h3>
+                                            <p class="text-center social-contacts">
+                                                <a href="#"><i class="icon-facebook-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-twitter-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-github-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-linkedin-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-google-plus-sign icon-2x"></i></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <a class="left carousel-control" href="#carousel-reviews" role="button" data-slide="prev">
+                                <span class="fa fa-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-reviews" role="button" data-slide="next">
+                                <span class="fa fa-chevron-right"></span>
+                            </a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- <div class="container">
                 <div class="row">
                     <div class="span12 page-header text-center">
                         <h3>Our team - who build this awesome project</h3>
@@ -478,113 +646,8 @@
                         <h3>Santhosh</h3>
                         <p class="text-center social-contacts"> <a href="#"><i class="icon-facebook-sign icon-2x"></i></a> <a href="#"><i class="icon-twitter-sign icon-2x"></i></a> <a href="#"><i class="icon-github-sign icon-2x"></i></a> <a href="#"><i class="icon-linkedin-sign icon-2x"></i></a> <a href="#"><i class="icon-google-plus-sign icon-2x"></i></a></p>
                     </div>
-
                 </div>
-                <hr>
-
-                <!--<div class="row-fluid">-->
-                    <!--&lt;!&ndash; SERVICE SIDE&ndash;&gt;-->
-                    <!--<div class="span7">-->
-                        <!--&lt;!&ndash; INNER ROW&ndash;&gt;-->
-
-                        <!--<h3 class="main-color">OUR SERVICES</h3>-->
-
-                        <!--&lt;!&ndash; SERVICE ITEM&ndash;&gt;-->
-                        <!--<div class="row-fluid about-box">-->
-                            <!--<div class="span3">-->
-                                <!--<div class="circ-wrap">-->
-                                    <!--<i class="icon-beaker icon-4x"></i>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--<div class="span8">-->
-                                <!--<h4><span>WEB &amp; UI DESIGN</span></h4>-->
-
-                                <!--<p class="">-->
-                                    <!--There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.-->
-                                <!--</p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--&lt;!&ndash;/ SERVICE ITEM&ndash;&gt;-->
-
-                        <!--&lt;!&ndash; SERVICE ITEM&ndash;&gt;-->
-                        <!--<div class="row-fluid about-box">-->
-                            <!--<div class="span3">-->
-                                <!--<div class="circ-wrap">-->
-                                    <!--<i class="icon-beaker icon-4x"></i>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--<div class="span8">-->
-                                <!--<h4><span>WEB &amp; UI DESIGN</span></h4>-->
-
-                                <!--<p class="">-->
-                                    <!--There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.-->
-                                <!--</p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--&lt;!&ndash;/ SERVICE ITEM&ndash;&gt;-->
-
-                        <!--&lt;!&ndash; SERVICE ITEM&ndash;&gt;-->
-                        <!--<div class="row-fluid about-box">-->
-                            <!--<div class="span3">-->
-                                <!--<div class="circ-wrap">-->
-                                    <!--<i class="icon-beaker icon-4x"></i>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--<div class="span8">-->
-                                <!--<h4><span>WEB &amp; UI DESIGN</span></h4>-->
-
-                                <!--<p class="">-->
-                                    <!--There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.-->
-                                <!--</p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--&lt;!&ndash;/ SERVICE ITEM&ndash;&gt;-->
-
-                    <!--</div>&lt;!&ndash;/SPAN7&ndash;&gt;-->
-
-                    <!--&lt;!&ndash; SKILLS BAR SIDE&ndash;&gt;-->
-                    <!--<div class="span5">-->
-
-                        <!--<h3 class="main-color">MAIN SKILLS</h3>-->
-                        <!--&lt;!&ndash; BAR ITEM&ndash;&gt;-->
-                        <!--<h4>DESIGN</h4>-->
-                        <!--<div class="progress">-->
-                            <!--<div class="bar" style="width: 75%;"></div>-->
-                        <!--</div>-->
-                        <!--&lt;!&ndash;/ BAR ITEM&ndash;&gt;-->
-
-                        <!--&lt;!&ndash; BAR ITEM&ndash;&gt;-->
-                        <!--<h4>HTML5</h4>-->
-                        <!--<div class="progress">-->
-                            <!--<div class="bar bar-danger" style="width: 60%;"></div>-->
-                        <!--</div>-->
-                        <!--&lt;!&ndash;/ BAR ITEM&ndash;&gt;-->
-
-                        <!--&lt;!&ndash; BAR ITEM&ndash;&gt;-->
-                        <!--<h4>CSS3</h4>-->
-                        <!--<div class="progress">-->
-                            <!--<div class="bar bar-success" style="width: 55%;"></div>-->
-                        <!--</div>-->
-                        <!--&lt;!&ndash;/ BAR ITEM&ndash;&gt;-->
-
-                        <!--&lt;!&ndash; BAR ITEM&ndash;&gt;-->
-                        <!--<h4>JQUERY</h4>-->
-                        <!--<div class="progress">-->
-                            <!--<div class="bar bar-warning" style="width: 75%;"></div>-->
-                        <!--</div>-->
-                        <!--&lt;!&ndash;/ BAR ITEM&ndash;&gt;-->
-
-                        <!--&lt;!&ndash; BAR ITEM&ndash;&gt;-->
-                        <!--<h4>PHP</h4>-->
-                        <!--<div class="progress">-->
-                            <!--<div class="bar bar-info" style="width: 55%;"></div>-->
-                        <!--</div>-->
-                        <!--&lt;!&ndash; / BAR ITEM&ndash;&gt;-->
-
-                    <!--</div>-->
-                    <!--&lt;!&ndash;/ SKILLS BAR SIDE&ndash;&gt;-->
-                <!--</div>-->
-            </div><!-- /CONTAINER-->
+                <hr> -->
         </section>
 
         <footer id="foot-sec">
