@@ -24,7 +24,7 @@ events.log
 pidfile
 
 # templates
-#/public/templates
+/public/templates
 /public/sounds
 
 # compiled files

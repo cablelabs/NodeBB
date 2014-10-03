@@ -1,5 +1,5 @@
 {
-    "base_url": "http://cl-forum.herokuapp.com",
+    "base_url": "http://cl-forum.herokuapp.com/",
     "port": "4567",
     "secret": "4ad56cd2-8361-4da7-9ff3-0561c815a114",
     "bind_address": "0.0.0.0",
