@@ -1,3 +1,4 @@
+<div class="container" id="content">
 <div class="users">
 	<ul class="nav nav-pills">
 		<li class=''><a href='{relative_path}/users/online'>[[global:online]]</a></li>
