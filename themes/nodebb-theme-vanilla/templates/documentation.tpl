@@ -1,4 +1,4 @@
-<div class="container" id="content">
+
     <div class="motd">
     	<div widget-area="motd"></div>
     </div>
@@ -19,4 +19,3 @@
     </script>
 
     <iframe seamless src="swagger/index.html" scrolling="auto" width="100%" height="1000px" id="apidocs" padding-top="30px" marginheight="0" frameborder="0" onresize="resize('apidocs');" />
-</div>

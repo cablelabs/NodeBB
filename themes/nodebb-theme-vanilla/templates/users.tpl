@@ -9,6 +9,9 @@
 	</ul>
 
 	<br />
+	<br />
+	<br />
+	<br />
 
 	<div class="search {search_display} well">
 		<div class="input-group">
