@@ -16,9 +16,12 @@
 		position:relative;
 		padding-top:10px;
 		padding-bottom:80px;
-		width:100%;
-		min-width:100%;
-		margin-top:1px;
+		/*width:100%;*/
+		min-width:75%;
+        margin-left: 10%;
+        margin-right: 10%;
+		margin-top:0px;
+        opacity: 0.94;
 	  }
 
 	  /*.page-header{*/
@@ -104,12 +107,12 @@
 	  ===========================*/
 
 	#Section-1{
-	background: lightsalmon;
-	color:#fff;
+	    background: #96b6bc;
+	    color:#fff;
 	}
 
 	  #Section-2{
-		background:#1dbb90;
+		background: #26bb9e;
 		color:#fff;
 	  }
 
@@ -156,6 +159,11 @@
 		color:#fff;
 
 	  }
+
+    #Section-6{
+        background: #bc8382;
+        color:#fff;
+    }
 
 	hr{
 		margin:40px 0px;

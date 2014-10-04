@@ -1,7 +1,7 @@
 
     <div class="landing">
         <section id="Section-1">
-            <div class="container">
+            <div class="container-fluid">
                 <!-- Example row of columns -->
                 <div class="page-header text-left">
                     <h3>The Project</h3>
@@ -86,7 +86,7 @@
 
             </div><!-- / CONTAINER-->
             <!--<div class="well">-->
-                <!--<div class="container">-->
+                <!--<div class="container-fluid">-->
                     <!--<div class="row-fluid">-->
                         <!--<div class="span9">-->
                             <!--<p class="lead">-->
@@ -112,7 +112,7 @@
 
         <!-- SECTION-2 -->
         <section id="Section-2">
-            <div class="container">
+            <div class="container-fluid">
 
                 <div class="row">
                     <div class="span12 page-header text-center">
@@ -257,7 +257,7 @@
 
             </div><!-- / CONTAINER-->
             <!--<div class="well">-->
-                <!--<div class="container">-->
+                <!--<div class="container-fluid">-->
                     <!--<div class="row-fluid">-->
                         <!--<div class="span9">-->
                             <!--<p class="lead">-->
@@ -282,7 +282,7 @@
         <!-- / SECTION-2 -->
 
         <section id="Section-3">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="span12 page-header text-center">
                         <h3>The Focus</h3>
@@ -350,7 +350,7 @@
             </div>
             <!-- / CONTAINER-->
             <!--<div class="well">-->
-            <!--<div class="container">-->
+            <!--<div class="container-fluid">-->
             <!--<div class="row-fluid">-->
             <!--<div class="span9">-->
             <!--<p class="lead">-->
@@ -373,7 +373,7 @@
         </section>
 
         <section id="Section-4">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="span12 page-header text-center">
                         <h3>The Difference</h3>
@@ -417,7 +417,7 @@
                 </div>
             </div><!-- / CONTAINER-->
             <!--<div class="well">-->
-            <!--<div class="container">-->
+            <!--<div class="container-fluid">-->
             <!--<div class="row-fluid">-->
             <!--<div class="span9">-->
             <!--<p class="lead">-->
@@ -440,7 +440,7 @@
         </section>
 
         <!--<section id="Section-5">-->
-            <!--<div class="container">-->
+            <!--<div class="container-fluid">-->
                 <!--<div class="row">-->
                     <!---->
                 <!--</div>-->
@@ -450,7 +450,7 @@
         <!-- / SECTION-3 -->
         <section id="Section-6">
             <div class="carousel-reviews broun-block">
-                <div class="container">
+                <div class="container-fluid">
                     <div class="row">
                         <div id="carousel-reviews" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
@@ -639,6 +639,18 @@
                                             </p>
                                         </div>
                                     </div>
+                                    <div class="col-md-4 col-sm-6 hidden-sm hidden-xs">
+                                        <div class="block-text rel zmin">
+                                            <h3>Paul</h3>
+                                            <p class="text-center social-contacts">
+                                                <a href="#"><i class="icon-facebook-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-twitter-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-github-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-linkedin-sign icon-2x"></i></a>
+                                                <a href="#"><i class="icon-google-plus-sign icon-2x"></i></a>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <!-- <a class="left carousel-control" href="#carousel-reviews" role="button" data-slide="prev">
@@ -653,7 +665,7 @@
             </div>
 
 
-            <!-- <div class="container">
+            <!-- <div class="container-fluid">
                 <div class="row">
                     <div class="span12 page-header text-center">
                         <h3>Our team - who build this awesome project</h3>
@@ -687,7 +699,7 @@
         </section>
 
         <footer id="foot-sec">
-            <div class="container">
+            <div class="container-fluid">
 
                 <h3 class="pull-left">About CableLabs</h3>
                 <div class="pull-left">

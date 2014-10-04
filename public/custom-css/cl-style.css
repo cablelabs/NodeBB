@@ -120,7 +120,7 @@ img {
 
 html {
     color:#000;
-    background:#FFF;
+    background: #FFF;
 }
 
 body,
@@ -664,6 +664,9 @@ a.big_button {
     background:#e6e6e6;
     line-height:0px;
     font-family:'Oswald',sans-serif;
+
+    border: 2px solid;
+    border-radius: 15px;
 }
 
 .share_page {

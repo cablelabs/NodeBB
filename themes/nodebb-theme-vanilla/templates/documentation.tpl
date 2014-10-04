@@ -1,8 +1,9 @@
 
-    <div class="motd">
+    <!-- <div class="motd">
     	<div widget-area="motd"></div>
-    </div>
+    </div> -->
 
+    <div class="container documentation" id="content">
     <script language="text/javascript">
       function resize(id){
           alert("Trying to resize");

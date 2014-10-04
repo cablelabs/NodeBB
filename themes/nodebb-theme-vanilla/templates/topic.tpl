@@ -13,7 +13,7 @@
 <div class="topic">
 	<ol class="breadcrumb">
 		<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-			<a href="{relative_path}/" itemprop="url"><span itemprop="title">[[global:home]]</span></a>
+			<a href="{relative_path}/forums" itemprop="url"><span itemprop="title">[[global:home]]</span></a>
 		</li>
 		<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
 			<a href="{relative_path}/category/{category.slug}" itemprop="url"><span itemprop="title">{category.name}</span></a>

@@ -123,3 +123,11 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+#swagger-ui-container {
+    background: #fff;
+    opacity: 0.75;
+
+    /*border: 1px solid;*/
+    border-radius: 10px;
+}

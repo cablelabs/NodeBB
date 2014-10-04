@@ -59,5 +59,5 @@
 		<!-- END categories -->
 	</div>
 
-	<div widget-area="sidebar" class="col-lg-3 col-sm-12"></div>
+	<div widget-area="sidebar" class="col-lg-3 col-sm-12" style="background: #fff; opacity: 0.75; border-radius: 10px;"></div>
 </div>
