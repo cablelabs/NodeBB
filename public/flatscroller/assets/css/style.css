@@ -22,6 +22,8 @@
         margin-right: 10%;
 		margin-top:0px;
         opacity: 0.94;
+
+        border-radius: 15px;
 	  }
 
 	  /*.page-header{*/
@@ -217,6 +219,7 @@
 		min-height:200px;
 		background:#292C37;
 		color:#fff;
+        border-radius: 15px;
 	  }
 
 	  footer .circ-wrap{

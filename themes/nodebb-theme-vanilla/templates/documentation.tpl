@@ -4,6 +4,7 @@
     </div> -->
 
     <div class="container documentation" id="content">
+    <!--<div class="float-left" style="opacity: 0.5; background: url('images/vision-future.jpg') no-repeat" />-->
     <script language="text/javascript">
       function resize(id){
           alert("Trying to resize");
