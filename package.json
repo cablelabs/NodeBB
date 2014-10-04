@@ -72,7 +72,8 @@
     "atlassian-crowd": "0.4.4",
     "nodebb-plugin-google-analytics": "0.4.2",
     "swagger-node-express": "~2.0",
-    "nodebb-plugin-emailer-local": "0.1.3"
+    "nodebb-plugin-emailer-local": "0.1.3",
+    "mime": "1.2.11"
   },
   "devDependencies": {
     "mocha": "~1.13.0"

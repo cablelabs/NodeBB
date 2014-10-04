@@ -3,7 +3,8 @@
 var fs = require('fs'),
 	nconf = require('nconf'),
 	path = require('path'),
-	winston = require('winston');
+	winston = require('winston'),
+    mime = require('mime');
 
 var file = {};
 
@@ -32,29 +33,31 @@ file.saveFileToLocal = function(filename, tempPath, callback) {
 
 file.saveFileToCloud = function(filename, tempPath, callback) {
 
-    var uploadPath = nconf.get('cloud_upload_path') + filename;
+    var uploadPath = nconf.get('cloud_upload_url') + filename;
 
     winston.info('Saving file '+ filename +' to : ' + uploadPath);
+    console.log('Saving file '+ filename +' to : ' + uploadPath);
+
+    var content = '';
 
     var is = fs.createReadStream(tempPath);
-
-
-    var file = {
-        name : file
-    }
-//    var os = fs.createWriteStream(uploadPath);
-
-    is.on('end', function () {
+    is.on('data', function(chunk) {
+        content.append(chunk);
+        console.log('got %d bytes of data', chunk.length);
+    })
+    is.on('end', function() {
+        console.log('there will be no more data.');
         callback(null, {
-            url: nconf.get('upload_url') + filename
+            url: nconf.get('cloud_upload_url') + filename
         });
     });
 
-    os.on('error', function (err) {
-        winston.error(err.message);
-        callback(err);
-    });
-
+    var file = {
+        name : filename,
+        path : uploadPath,
+        content: content,
+        type: mime.lookup(tempPath)
+    }
     is.pipe(os);
 };
 
