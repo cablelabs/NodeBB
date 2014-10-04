@@ -30,4 +30,32 @@ file.saveFileToLocal = function(filename, tempPath, callback) {
 	is.pipe(os);
 };
 
+file.saveFileToCloud = function(filename, tempPath, callback) {
+
+    var uploadPath = nconf.get('cloud_upload_path') + filename;
+
+    winston.info('Saving file '+ filename +' to : ' + uploadPath);
+
+    var is = fs.createReadStream(tempPath);
+
+
+    var file = {
+        name : file
+    }
+//    var os = fs.createWriteStream(uploadPath);
+
+    is.on('end', function () {
+        callback(null, {
+            url: nconf.get('upload_url') + filename
+        });
+    });
+
+    os.on('error', function (err) {
+        winston.error(err.message);
+        callback(err);
+    });
+
+    is.pipe(os);
+};
+
 module.exports = file;

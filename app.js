@@ -101,6 +101,7 @@ function loadConfig() {
 		base_dir: __dirname,
 		themes_path: path.join(__dirname, 'themes'),
 		upload_url: '/uploads/',
+		cloud_upload_url: 'http://cloud-file-storage.herokuapp.com/files/',
 		views_dir: path.join(__dirname, 'public/templates'),
         static_dir: path.join(__dirname, 'static')
 	});
