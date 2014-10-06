@@ -14,13 +14,14 @@
 
 	  section {
 		position:relative;
-		padding-top:10px;
+		padding-top:0px;
 		padding-bottom:80px;
 		/*width:100%;*/
 		min-width:75%;
         margin-left: 10%;
         margin-right: 10%;
-		margin-top:0px;
+		margin-top:25px;
+        margin-bottom: -25px;
         opacity: 0.94;
 
         border-radius: 15px;
@@ -212,8 +213,12 @@
 	  ================================*/
 	    footer{
 		display:inline-block;
-		width:100%;
-		min-width:100%;
+        /*width:100%;*/
+        min-width:75%;
+        margin-left: 10%;
+        margin-right: 10%;
+		min-width:75%;
+        margin-top: 25px;
 		padding-top:50px;
 		padding-bottom:50px;
 		min-height:200px;

@@ -484,8 +484,8 @@ accountsController.uploadPicture = function (req, res, next) {
 
 		user.getUserField(updateUid, 'uploadedpicture', function (err, oldpicture) {
 			if (!oldpicture) {
-//				file.saveFileToLocal(filename, req.files.userPhoto.path, done);
-				file.saveFileToCloud(filename, req.files.userPhoto.path, done);
+				file.saveFileToLocal(filename, req.files.userPhoto.path, done);
+//				file.saveFileToCloud(filename, req.files.userPhoto.path, done);
 				return;
 			}
 
@@ -496,8 +496,8 @@ accountsController.uploadPicture = function (req, res, next) {
 					winston.err(err);
 				}
 
-//				file.saveFileToLocal(filename, req.files.userPhoto.path, done);
-				file.saveFileToCloud(filename, req.files.userPhoto.path, done);
+				file.saveFileToLocal(filename, req.files.userPhoto.path, done);
+//				file.saveFileToCloud(filename, req.files.userPhoto.path, done);
 			});
 		});
 	});

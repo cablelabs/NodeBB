@@ -4,9 +4,32 @@ var fs = require('fs'),
 	nconf = require('nconf'),
 	path = require('path'),
 	winston = require('winston'),
-    mime = require('mime');
+    mime = require('mime'),
+    Client = require('node-rest-client').Client;
 
 var file = {};
+
+function restPost(url, data, callback, errorCallBack) {
+    // set content-type header and data as json in args parameter
+    var args = {
+        data: data,
+        headers: {
+            "Content-Type": "application/json"
+        }
+    };
+
+    var errorFunction = function(err){
+        console.log('Something went wrong on the request', err.request.options);
+    }
+
+    if(errorCallBack != null) {
+        errorFunction = errorCallBack;
+    }
+
+    client.post(url, args, callback)
+        .on('error', errorFunction);
+};
+
 
 file.saveFileToLocal = function(filename, tempPath, callback) {
 
@@ -58,7 +81,18 @@ file.saveFileToCloud = function(filename, tempPath, callback) {
         content: content,
         type: mime.lookup(tempPath)
     }
-    is.pipe(os);
+
+    console.log(file);
+
+    // Save file to cloud
+    restPost(nconf.get('cloud_upload_url'), file, function(data, response){
+        console.log("Success");
+    }, function(err) {
+        console.log("Error while saving file...");
+    });
+
+
+//    is.pipe(os);
 };
 
 module.exports = file;

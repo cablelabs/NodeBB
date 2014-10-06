@@ -29,48 +29,46 @@
             <a class="header" href="{relative_path}/#">Developer Portal</a>
             <span>&nbsp;</span>
         </li>
-        <li class="dropdown-container">
-            <a>How-Tos</a>
-            <!--
-            <div class="dropdown">
-                <a href="http://developer.marvel.com/documentation/getting_started">Getting Started</a>
-                <a href="http://developer.marvel.com/documentation/generalinfo">General Information</a>
-                <a href="http://developer.marvel.com/documentation/apiresults">API Results</a>
-                <a href="http://developer.marvel.com/documentation/entity_types">Entity Types</a>
-                <a href="http://developer.marvel.com/documentation/authorization">Authorization</a>
-                <a href="http://developer.marvel.com/documentation/attribution">Attribution &amp; Rate Limits</a>
-                <a href="http://developer.marvel.com/documentation/images">Images</a>
-            </div> -->
-        </li>
-        <li class="dropdown-container">
-            <a href="{relative_path}/documentation">API</a>
-            <!--
-            <div class="dropdown">
-                <a href="http://developer.marvel.com/documentation/getting_started">Getting Started</a>
-                <a href="http://developer.marvel.com/documentation/generalinfo">General Information</a>
-                <a href="{relative_path}/apidocs">Get a Key</a>
-            </div> -->
-        </li>
-        <li>
-            <a href="{relative_path}/forums">Forums</a>
-        </li>
 
-        <!-- IF loggedIn -->
-        <!-- IF isForums -->
-        <li>
-            <a href="{relative_path}/unread"><i id="unread-count" class="fa fa-fw fa-inbox" data-content="0" title="[[global:header.unread]]"></i><span class="visible-xs-inline"> [[global:header.unread]]</span></a>
+        <li class="dropdown"> <a data-toggle="dropdown" class="dropdown-toggle" href="#">How-Tos <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="http://developer.marvel.com/documentation/getting_started">Getting Started</a></li>
+                <li><a href="http://developer.marvel.com/documentation/generalinfo">Entity Types</a></li>
+                <li><a href="http://developer.marvel.com/documentation/apiresults">Authorization</a></li>
+                <li><a href="http://developer.marvel.com/documentation/entity_types">Video Tutorials</a></li>
+                <li><a href="{relative_path}/#">About CIA</a></li>
+            </ul>
         </li>
-        <li>
-            <a href="{relative_path}/recent"><i class="fa fa-fw fa-clock-o" title="[[global:header.recent]]"></i><span class="visible-xs-inline"> [[global:header.recent]]</span></a>
+        <li class="dropdown"> <a data-toggle="dropdown" class="dropdown-toggle" href="#">API's <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="http://developer.marvel.com/documentation/getting_started">General API Info</a></li>
+                <li><a href="http://developer.marvel.com/documentation/apiresults">API Mind Map</a></li>
+                <li><a href="{relative_path}/documentation">Documentation</a></li>
+                <li><a href="http://developer.marvel.com/documentation/authorization">Get a Key</a></li>
+            </ul>
         </li>
-        <li>
-            <a href="{relative_path}/tags"><i class="fa fa-fw fa-tags" title="[[global:header.tags]]"></i><span class="visible-xs-inline"> [[global:header.tags]]</span></a>
+        <li class="dropdown"> <a data-toggle="dropdown" class="dropdown-toggle" href="{relative_path}/forums">Forums<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <!-- IF loggedIn -->
+                <li>
+                    <a href="{relative_path}/unread"><i id="unread-count" class="fa fa-fw fa-inbox" data-content="0" title="[[global:header.unread]]"></i><span class="visible-xs-inline"> [[global:header.unread]]</span>Unread</a>
+                </li>
+                <li>
+                    <a href="{relative_path}/recent"><i class="fa fa-fw fa-clock-o" title="[[global:header.recent]]"></i><span class="visible-xs-inline"> [[global:header.recent]]</span>Recent</a>
+                </li>
+                <li>
+                    <a href="{relative_path}/tags"><i class="fa fa-fw fa-tags" title="[[global:header.tags]]"></i><span class="visible-xs-inline"> [[global:header.tags]]</span>Tags</a>
+                </li>
+                <li>
+                    <a href="{relative_path}/popular"><i class="fa fa-fw fa-fire" title="[[global:header.popular]]"></i><span class="visible-xs-inline"> [[global:header.popular]]</span>Popular</a>
+                </li>
+                <!-- ELSE -->
+                <li>
+                    <a href="{relative_path}/login">Please login to access forums. Login</a>
+                </li>
+                <!-- ENDIF loggedIn -->
+            </ul>
         </li>
-        <li>
-            <a href="{relative_path}/popular"><i class="fa fa-fw fa-fire" title="[[global:header.popular]]"></i><span class="visible-xs-inline"> [[global:header.popular]]</span></a>
-        </li>
-        <!-- ENDIF isForums -->
-        <!-- ENDIF loggedIn -->
     </ul>
 
     <!-- IF loggedIn -->
@@ -145,6 +143,13 @@
     </ul>
     <!-- ELSE -->
     <ul id="logged-out-menu" class="nav navbar-nav navbar-right pull-right">
+        <li>
+            <!-- IF function.displayUsersLink -->
+            <a href="{relative_path}/users" title="[[global:header.users]]">
+                <i class="fa fa-fw fa-users"></i><span class="visible-xs-inline"> [[global:header.users]]</span>
+            </a>
+            <!-- ENDIF function.displayUsersLink -->
+        </li>
         <!-- IF allowRegistration -->
         <li>
             <a href="{relative_path}/register">
