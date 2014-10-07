@@ -87,6 +87,7 @@ module.exports = function(Topics) {
 	};
 
 	Topics.post = function(data, callback) {
+        console.log("Topics.post");
 		var uid = data.uid,
 			title = data.title,
 			content = data.content,

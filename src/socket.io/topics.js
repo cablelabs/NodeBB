@@ -20,6 +20,7 @@ var nconf = require('nconf'),
 	SocketTopics = {};
 
 SocketTopics.post = function(socket, data, callback) {
+    console.log("SocketTopics.post");
 	if(!data) {
 		return callback(new Error('[[error:invalid-data]]'));
 	}

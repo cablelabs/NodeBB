@@ -49,6 +49,9 @@
         </li>
         <li class="dropdown"> <a data-toggle="dropdown" class="dropdown-toggle" href="{relative_path}/forums">Forums<b class="caret"></b></a>
             <ul class="dropdown-menu">
+                <li>
+                    <a href="{relative_path}/forums"><i id="forum-home" class="fa fa-fw fa-home"></i>Home</a>
+                </li>
                 <!-- IF loggedIn -->
                 <li>
                     <a href="{relative_path}/unread"><i id="unread-count" class="fa fa-fw fa-inbox" data-content="0" title="[[global:header.unread]]"></i><span class="visible-xs-inline"> [[global:header.unread]]</span>Unread</a>

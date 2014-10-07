@@ -9,16 +9,17 @@ var async = require('async'),
 	plugins = require('../plugins'),
 	utils = require('../../public/src/utils');
 
-module.exports = function(Topics) {
-	Topics.createTags = function(tags, tid, timestamp, callback) {
-        console.log("Topics.createTags");
+module.exports = function(Users) {
+
+    Users.createUserTags = function(tags, tid, timestamp, callback) {
 		callback = callback || function () {};
 
 		if (!Array.isArray(tags) || !tags.length) {
 			return callback();
 		}
 
-		plugins.fireHook('filter:tags.filter', {tags: tags, tid: tid}, function(err, data) {
+//		plugins.fireHook('filter:tags.filter', {tags: tags, tid: tid}, function(err, data) {
+		plugins.fireHook('filter:usertags.filter', {tags: tags, tid: tid}, function(err, data) {
 			if (err) {
 				return callback(err);
 			}
@@ -26,14 +27,14 @@ module.exports = function(Topics) {
 			tags = data.tags.slice(0, meta.config.tagsPerTopic || 5);
 
 			async.each(tags, function(tag, next) {
-				tag = Topics.cleanUpTag(tag);
+				tag = Users.cleanUpTag(tag);
 
 				if (tag.length < (meta.config.minimumTagLength || 3)) {
 					return next();
 				}
-				db.setAdd('topic:' + tid + ':tags', tag);
+				db.setAdd('user:' + tid + ':usertags', tag);
 
-				db.sortedSetAdd('tag:' + tag + ':topics', timestamp, tid, function(err) {
+				db.sortedSetAdd('usertag:' + tag + ':users', timestamp, tid, function(err) {
 					if (!err) {
 						updateTagCount(tag);
 					}
@@ -43,7 +44,7 @@ module.exports = function(Topics) {
 		});
 	};
 
-	Topics.cleanUpTag = function(tag) {
+    Users.cleanUpUserTag = function(tag) {
 		if (typeof tag !== 'string' || !tag.length ) {
 			return '';
 		}
@@ -57,43 +58,43 @@ module.exports = function(Topics) {
 		return tag;
 	};
 
-	Topics.updateTag = function(tag, data, callback) {
-		db.setObject('tag:' + tag, data, callback);
+	Users.updateTag = function(tag, data, callback) {
+		db.setObject('usertag:' + tag, data, callback);
 	};
 
 	function updateTagCount(tag, callback) {
 		callback = callback || function() {};
-		Topics.getTagTopicCount(tag, function(err, count) {
+		Users.getTagTopicCount(tag, function(err, count) {
 			if (!err) {
-				db.sortedSetAdd('tags:topic:count', count, tag, callback);
+				db.sortedSetAdd('usertags:user:count', count, tag, callback);
 			}
 		});
 	}
 
-	Topics.getTagTids = function(tag, start, end, callback) {
+	Users.getTagTids = function(tag, start, end, callback) {
 		db.getSortedSetRevRange('tag:' + tag + ':topics', start, end, callback);
 	};
 
-	Topics.getTagTopicCount = function(tag, callback) {
+	Users.getTagTopicCount = function(tag, callback) {
 		db.sortedSetCard('tag:' + tag + ':topics', callback);
 	};
 
-	Topics.deleteTag = function(tag) {
+	Users.deleteTag = function(tag) {
 		db.delete('tag:' + tag + ':topics');
 		db.sortedSetRemove('tags:topic:count', tag);
 	};
 
-	Topics.getTags = function(start, end, callback) {
+	Users.getTags = function(start, end, callback) {
 		db.getSortedSetRevRangeWithScores('tags:topic:count', start, end, function(err, tags) {
 			if (err) {
 				return callback(err);
 			}
 
-			Topics.getTagData(tags, callback);
+			Users.getTagData(tags, callback);
 		});
 	};
 
-	Topics.getTagData = function(tags, callback) {
+	Users.getTagData = function(tags, callback) {
 		var keys = tags.map(function(tag) {
 			return 'tag:' + tag.value;
 		});
@@ -111,17 +112,17 @@ module.exports = function(Topics) {
 		});
 	};
 
-	Topics.getTopicTags = function(tid, callback) {
+	Users.getTopicTags = function(tid, callback) {
 		db.getSetMembers('topic:' + tid + ':tags', callback);
 	};
 
-	Topics.getTopicTagsObjects = function(tid, callback) {
-		Topics.getTopicsTagsObjects([tid], function(err, data) {
+	Users.getTopicTagsObjects = function(tid, callback) {
+		Users.getUsersTagsObjects([tid], function(err, data) {
 			callback(err, Array.isArray(data) && data.length ? data[0] : []);
 		});
 	};
 
-	Topics.getTopicsTagsObjects = function(tids, callback) {
+	Users.getUsersTagsObjects = function(tids, callback) {
 		var sets = tids.map(function(tid) {
 			return 'topic:' + tid + ':tags';
 		});
@@ -139,7 +140,7 @@ module.exports = function(Topics) {
 
 			async.parallel({
 				tagData: function(next) {
-					Topics.getTagData(tags, next);
+					Users.getTagData(tags, next);
 				},
 				counts: function(next) {
 					db.sortedSetScores('tags:topic:count', uniqueTopicTags, next);
@@ -166,25 +167,25 @@ module.exports = function(Topics) {
 		});
 	};
 
-	Topics.updateTags = function(tid, tags, callback) {
+	Users.updateTags = function(tid, tags, callback) {
 		callback = callback || function() {};
-		Topics.getTopicField(tid, 'timestamp', function(err, timestamp) {
+		Users.getTopicField(tid, 'timestamp', function(err, timestamp) {
 			if (err) {
 				return callback(err);
 			}
 
-			Topics.deleteTopicTags(tid, function(err) {
+			Users.deleteTopicTags(tid, function(err) {
 				if (err) {
 					return callback(err);
 				}
 
-				Topics.createTags(tags, tid, timestamp, callback);
+				Users.createUserTags(tags, tid, timestamp, callback);
 			});
 		});
 	};
 
-	Topics.deleteTopicTags = function(tid, callback) {
-		Topics.getTopicTags(tid, function(err, tags) {
+	Users.deleteTopicTags = function(tid, callback) {
+		Users.getTopicTags(tid, function(err, tags) {
 			if (err) {
 				return callback(err);
 			}
@@ -209,7 +210,7 @@ module.exports = function(Topics) {
 		});
 	};
 
-	Topics.searchTags = function(data, callback) {
+	Users.searchTags = function(data, callback) {
 		if (!data) {
 			return callback(null, []);
 		}

@@ -66,6 +66,17 @@
                         </div>
                     </div>
 
+                    <!--<div class="tags-container &lt;!&ndash; IF isTopic &ndash;&gt;col-lg-9&lt;!&ndash; ELSE &ndash;&gt;col-lg-12&lt;!&ndash; ENDIF isTopic&ndash;&gt;">-->
+
+                    <!--</div>-->
+
+                    <div class="control-group">
+                        <label class="control-label" for="inputWebsite">[[user:website]]</label>
+                        <div class="controls">
+                            <input class="tags" type="text" id="inputInterest" class="form-control" placeholder="[[tags:enter_tags_here]]" value=""/>
+                        </div>
+                    </div>
+
 					<div class="control-group">
 						<label class="control-label" for="inputWebsite">[[user:website]]</label>
 						<div class="controls">
