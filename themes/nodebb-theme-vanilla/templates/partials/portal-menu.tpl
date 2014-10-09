@@ -32,19 +32,19 @@
 
         <li class="dropdown"> <a data-toggle="dropdown" class="dropdown-toggle" href="#">How-Tos <b class="caret"></b></a>
             <ul class="dropdown-menu">
-                <li><a href="http://developer.marvel.com/documentation/getting_started">Getting Started</a></li>
-                <li><a href="http://developer.marvel.com/documentation/generalinfo">Entity Types</a></li>
-                <li><a href="http://developer.marvel.com/documentation/apiresults">Authorization</a></li>
-                <li><a href="http://developer.marvel.com/documentation/entity_types">Video Tutorials</a></li>
+                <li><a href="#">Getting Started</a></li>
+                <li><a href="#">Entity Types</a></li>
+                <li><a href="#">Authorization</a></li>
+                <li><a href="#">Video Tutorials</a></li>
                 <li><a href="{relative_path}/#">About CIA</a></li>
             </ul>
         </li>
         <li class="dropdown"> <a data-toggle="dropdown" class="dropdown-toggle" href="#">API's <b class="caret"></b></a>
             <ul class="dropdown-menu">
-                <li><a href="http://developer.marvel.com/documentation/getting_started">General API Info</a></li>
-                <li><a href="http://developer.marvel.com/documentation/apiresults">API Mind Map</a></li>
-                <li><a href="{relative_path}/documentation">Documentation</a></li>
-                <li><a href="http://developer.marvel.com/documentation/authorization">Get a Key</a></li>
+                <li><a href="#">General API Info</a></li>
+                <li><a href="#">API Mind Map</a></li>
+                <li><a href="{relative_path}/documentation/#">Documentation</a></li>
+                <li><a href="#">Get a Key</a></li>
             </ul>
         </li>
         <li class="dropdown"> <a data-toggle="dropdown" class="dropdown-toggle" href="{relative_path}/forums">Forums<b class="caret"></b></a>

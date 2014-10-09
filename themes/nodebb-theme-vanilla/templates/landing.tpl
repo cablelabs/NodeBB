@@ -295,7 +295,7 @@
                     <div class="pull-left icon-hand-up icon-4x">
                         <!--<a href="#"><img src="images/iMac.png"></a>-->
                     </div>
-                    <h3 class="pull-left">Zero-Touch Fulfillment</h3>
+                    <h3 class="pull-left">Automated Fulfillment</h3>
 
                     <div class="span4">
                         <p class="lead">Improve/automate data flow for the order-to-activation process by targeting key interface points between B/OSS and provisioning platforms.</p>

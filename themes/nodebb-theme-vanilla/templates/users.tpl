@@ -33,6 +33,18 @@
 					<a href="{relative_path}/user/{users.userslug}">{users.username}</a>
 				</span>
 				<br/>
+                <span>
+					<span class='formatted-number'>{users.fullname}</span>
+				</span>
+                <br/>
+                <span>
+					<span class='formatted-number'>{users.company}</span>
+				</span>
+                <br/>
+                <span>
+					<span class='formatted-number'>{users.designation}</span>
+				</span>
+                <br/>
 				<div title="reputation" class="reputation">
 					<i class='fa fa-star'></i>
 					<span class='formatted-number'>{users.reputation}</span>
