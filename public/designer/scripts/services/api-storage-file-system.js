@@ -65,7 +65,7 @@ angular.module('ramlEditorApp')
                       files[data[id].path] = id;
                       ramlFiles.push({path: data[id].path, contents: decodeURI(data[id].contents)});
                     });
-                  console.log(ramlFiles[0] + " " + ramlFiles[1] + ramlFiles[2]);
+//                  console.log(ramlFiles[0] + " " + ramlFiles[1] + ramlFiles[2]);
                   deferred.resolve({path: '/', meta: {}, children: ramlFiles});
                 })
               .error(deferred.reject.bind(deferred));

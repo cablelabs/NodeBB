@@ -95,7 +95,7 @@
 
         <!-- IF isAdmin -->
         <li>
-           <a href="{relative_path}/admin/designer/"><i class="fa fa-fw fa-clock-o" title="API Designer"></i><span class="visible-xs-inline">API Designer</span></a>
+           <a href="{relative_path}/designer"><i class="fa fa-fw fa-clock-o" title="API Designer"></i><span class="visible-xs-inline">API Designer</span></a>
         </li>
         <!-- ENDIF isAdmin -->
 
