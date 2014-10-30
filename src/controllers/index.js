@@ -42,7 +42,7 @@ var Controllers = {
     portal: portalController
 };
 
-Controllers.forums = function(req, res, next) {
+Controllers.home = function(req, res, next) {
 	async.parallel({
 		header: function (next) {
 			res.locals.metaTags = [{
