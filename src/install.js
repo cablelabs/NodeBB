@@ -273,10 +273,10 @@ function enableDefaultTheme(next) {
 			return next(err);
 		}
 
-		winston.info('Enabling default theme: Lavendar');
+		winston.info('Enabling default theme: Vanilla');
 		meta.themes.set({
 			type: 'local',
-			id: 'nodebb-theme-lavendar'
+			id: 'nodebb-theme-vanilla'
 		}, next);
 	});
 }

@@ -18,9 +18,9 @@ var nconf = require('nconf'),
 
 function mainRoutes(app, middleware, controllers) {
 
-	setupPageRoute(app, '/', middleware, [], controllers.portal.landing);
-	setupPageRoute(app, '/home', middleware, [], controllers.portal.landing);
-	setupPageRoute(app, '/documentation', middleware, [], controllers.portal.documentation);
+	//setupPageRoute(app, '/', middleware, [], controllers.portal.landing);
+	//setupPageRoute(app, '/home', middleware, [], controllers.portal.landing);
+	//setupPageRoute(app, '/documentation', middleware, [], controllers.portal.documentation);
 	setupPageRoute(app, '/forums', middleware, [], controllers.forums);
 
 	var loginRegisterMiddleware = [middleware.applyCSRF, middleware.redirectToAccountIfLoggedIn];
