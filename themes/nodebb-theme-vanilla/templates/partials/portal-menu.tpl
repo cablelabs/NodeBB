@@ -13,7 +13,7 @@
         <a href="{relative_path}/">
             <h1 class="navbar-brand forum-title">{title}</h1>
         </a>
-        <!-- ENDIF showSiteTitle -->
+        <!-- ENDIF showSiteTitle
 
         <div class="header-topic-title visible-xs">
             <span></span>
@@ -22,6 +22,7 @@
 </div> -->
 
 <!-- <div class="navbar-collapse collapse navbar-ex1-collapse header_row4"> -->
+<div class="navbar-collapse collapse navbar-ex1-collapse">
 <div class="page_width clearfix">
     <!-- <div id="portal-logo" class ="pull-left"><a href="{relative_path}/"></a></div> -->
     <ul id="main-nav" class="nav navbar-nav pull-left">
