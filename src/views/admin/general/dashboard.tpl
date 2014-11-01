@@ -1,4 +1,4 @@
-<div class="row dashboard">
+	<div class="row dashboard">
 	<div class="col-lg-9">
 		<div class="panel panel-default">
 			<div class="panel-heading">Forum Traffic</div>
@@ -13,16 +13,16 @@
 			</div>
 		</div>
 
-		<div class="panel panel-default">
-			<div class="panel-heading">Welcome to NodeBB</div>
-			<div class="panel-body">
-				<p>
-					<a target="_blank" href="http://community.nodebb.org" class="btn btn-default btn-sm btn-block"><i class="fa fa-comment"></i> NodeBB Community Forum</a>
-					<a target="_blank" href="http://www.twitter.com/NodeBB" class="btn btn-default btn-sm btn-block"><i class="fa fa-twitter"></i> Follow @NodeBB</a>
-					<a target="_blank" href="https://docs.nodebb.org/en/latest" class="btn btn-default btn-sm btn-block"><i class="fa fa-question-circle"></i> NodeBB Documentation</a>
-				</p>
-			</div>
-		</div>
+		<!--<div class="panel panel-default">-->
+			<!--<div class="panel-heading">Welcome to NodeBB</div>-->
+			<!--<div class="panel-body">-->
+				<!--<p>-->
+					<!--<a target="_blank" href="http://community.nodebb.org" class="btn btn-default btn-sm btn-block"><i class="fa fa-comment"></i> NodeBB Community Forum</a>-->
+					<!--<a target="_blank" href="http://www.twitter.com/NodeBB" class="btn btn-default btn-sm btn-block"><i class="fa fa-twitter"></i> Follow @NodeBB</a>-->
+					<!--<a target="_blank" href="https://docs.nodebb.org/en/latest" class="btn btn-default btn-sm btn-block"><i class="fa fa-question-circle"></i> NodeBB Documentation</a>-->
+				<!--</p>-->
+			<!--</div>-->
+		<!--</div>-->
 
 		<div class="panel panel-default">
 			<div class="panel-heading">Notices</div>
@@ -35,22 +35,21 @@
 			</div>
 		</div>
 
-
 		<div class="panel panel-default">
 			<div class="panel-heading">Updates</div>
 			<div class="panel-body">
 				<div class="alert alert-info version-check">
-					<p>You are running <strong>NodeBB v<span id="version">{version}</span></strong>.</p>
+					<p>You are running <strong>v<span id="version">{version}</span></strong>.</p>
 				</div>
 				<p>
-					Always make sure that your NodeBB is up to date for the latest security patches and bug fixes.
+					Always make sure that your application is up to date for the latest security patches and bug fixes.
 				</p>
 				<p class="text-center">
 					<button class="btn btn-warning reload">Reload</button>
 					<button class="btn btn-danger restart">Restart</button>
 				</p>
 				<p class="help-block text-center">
-					Restarting your NodeBB will drop all existing connections. A reload is lighter and is probably
+					Restarting your application will drop all existing connections. A reload is lighter and is probably
 					what you want 99% of the time.
 				</p>
 			</div>

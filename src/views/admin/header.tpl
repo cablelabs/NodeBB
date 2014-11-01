@@ -51,7 +51,7 @@
 	<div class="navbar navbar-inverse navbar-fixed-top header">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand nodebb-logo" href="{relative_path}/admin/general/dashboard"><img src="{relative_path}/images/logo.png" alt="NodeBB ACP" /> Admin Control Panel <span id="breadcrumbs" class="hidden-xs"></span></a>
+				<a class="navbar-brand nodebb-logo" href="{relative_path}/admin/general/dashboard">Admin Control Panel <span id="breadcrumbs" class="hidden-xs"></span></a>
 			</div>
 			<ul class="nav navbar-nav">
 				<li>
