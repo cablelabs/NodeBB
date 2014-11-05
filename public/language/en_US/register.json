@@ -5,6 +5,8 @@
     "help.minimum_password_length": "Your password's length must be at least %1 characters.",
     "email_address": "Email Address",
     "email_address_placeholder": "Enter Email Address",
+    "fullname": "Name",
+    "fullname_placeholder": "Enter Name",
     "username": "Username",
     "username_placeholder": "Enter Username",
     "company": "Company Name",

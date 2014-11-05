@@ -25,7 +25,7 @@ module.exports = function(User) {
 			'joindate': timestamp,
 			'picture': gravatar,
 			'gravatarpicture': gravatar,
-			'fullname': '',
+			'fullname': data.fullname,
 			'location': '',
 			'birthday': '',
 			'website': '',

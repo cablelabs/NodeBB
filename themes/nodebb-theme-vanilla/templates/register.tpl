@@ -13,6 +13,17 @@
 		<div class="well well-lg">
 			<form class="form-horizontal" role="form" action="{relative_path}/register" method="post">
 				<div class="form-group">
+					<label for="fullname" class="col-lg-4 control-label">[[register:fullname]]</label>
+					<div class="col-lg-8">
+						<div class="input-group">
+							<input class="form-control" type="text" placeholder="[[register:fullname_placeholder]]" name="fullname" id="fullname" autocapitalize="on" />
+							<span class="input-group-addon">
+								<span id="name-notify"><i class="fa fa-circle-o"></i></span>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
 					<label for="email" class="col-lg-4 control-label">[[register:email_address]]</label>
 					<div class="col-lg-8">
 						<div class="input-group">
