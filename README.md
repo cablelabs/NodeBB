@@ -1,5 +1,4 @@
 [ ![Codeship Status for cablelabs/NodeBB](https://www.codeship.io/projects/ccfce780-4754-0132-1a36-7618c80a82ca/status?branch=master)](https://www.codeship.io/projects/30520)
-# <img alt="NodeBB" src="http://i.imgur.com/mYxPPtB.png" />
 [![Build Status](https://travis-ci.org/NodeBB/NodeBB.svg?branch=master)](https://travis-ci.org/NodeBB/NodeBB)
 [![Dependency Status](https://david-dm.org/nodebb/nodebb.svg)](https://david-dm.org/nodebb/nodebb)
 [![Code Climate](https://codeclimate.com/github/NodeBB/NodeBB/badges/gpa.svg)](https://codeclimate.com/github/NodeBB/NodeBB)
