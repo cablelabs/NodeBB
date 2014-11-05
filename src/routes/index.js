@@ -25,7 +25,7 @@ function mainRoutes(app, middleware, controllers) {
 	// This is how
 	//setupPageRoute(app, '/forums', middleware, [middleware.redirectToLoginIfGuest], controllers.home);
 
-	//setupPageRoute(app, '/forums', middleware, [], controllers.home);
+	setupPageRoute(app, '/forums', middleware, [], controllers.home);
 
 	var loginRegisterMiddleware = [middleware.applyCSRF, middleware.redirectToAccountIfLoggedIn];
 

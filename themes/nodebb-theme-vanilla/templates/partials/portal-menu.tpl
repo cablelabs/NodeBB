@@ -27,7 +27,7 @@
         <!-- <div id="portal-logo" class ="pull-left"><a href="{relative_path}/"></a></div> -->
         <ul id="main-nav" class="nav navbar-nav pull-left">
             <li>
-                <a class="header" href="{relative_path}/">Developer Portal</a>
+                <a class="header" href="{relative_path}/#">DEVELOPER PORTAL</a>
                 <span>&nbsp;</span>
             </li>
 
