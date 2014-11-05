@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Le styles -->
+    <link href="/flatscroller/assets/css/bootstrap.css" rel="stylesheet">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="span12">
+            <ul class="nav nav-tabs" id="myTabs">
+                <!--<li class="active"><a href="#home" data-toggle="tab">Home</a></li>-->
+                <li class="active"><a href="#dpa" data-toggle="tab">DPA</a></li>
+                <li><a href="#rn" data-toggle="tab">Antwon</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <!--<div class="tab-pane active" id="home">-->
+                    <!--<p>test</p>-->
+                <!--</div>-->
+                <div class="tab-pane" id="dpa" data-src="swagger/index.html">
+                    <iframe src="" width="100%" height="1000px"></iframe>
+                </div>
+                <div class="tab-pane" id="rn" data-src="swagger/index.html">
+                    <iframe src="" width="100%" height="1000px"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $('#myTabs').bind('show', function(e) {
+            console.log("Binding");
+            var paneID = $(e.target).attr('href');
+            var src = $(paneID).attr('data-src');
+            // if the iframe hasn't already been loaded once
+            if($(paneID+" iframe").attr("src")=="")
+            {
+                $(paneID+" iframe").attr("src",src);
+            }
+        });
+        jQuery(document).ready(function ($) {
+            $('.active').trigger('click');
+        });
+    </script>
+</div> <!-- container -->
+
+
+<script type="text/javascript" src="/flatscroller/assets/js/bootstrap.js"></script>
+
+</body>
+</html>

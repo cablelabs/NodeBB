@@ -49,6 +49,7 @@
     "nodebb-plugin-livereload": "0.0.2-2",
     "nodebb-plugin-markdown": "~0.6.3",
     "nodebb-plugin-soundpack-default": "~0.1.1",
+    "nodebb-plugin-youtube": "0.0.6",
     "nodebb-theme-lavender": "~0.1.0",
     "nodebb-theme-vanilla": "~0.1.0",
     "nodebb-widget-essentials": "~0.1.1",

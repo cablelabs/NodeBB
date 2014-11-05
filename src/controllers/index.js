@@ -43,6 +43,7 @@ var Controllers = {
 };
 
 Controllers.home = function(req, res, next) {
+	console.log("Came to Controller.home");
 	async.parallel({
 		header: function (next) {
 			res.locals.metaTags = [{

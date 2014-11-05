@@ -27,7 +27,7 @@
         <!-- <div id="portal-logo" class ="pull-left"><a href="{relative_path}/"></a></div> -->
         <ul id="main-nav" class="nav navbar-nav pull-left">
             <li>
-                <a class="header" href="{relative_path}/#">Developer Portal</a>
+                <a class="header" href="{relative_path}/">Developer Portal</a>
                 <span>&nbsp;</span>
             </li>
 
@@ -53,7 +53,6 @@
                     <li>
                         <a href="{relative_path}/forums"><i id="forum-home" class="fa fa-fw fa-home"></i>Home</a>
                     </li>
-                    <!-- IF loggedIn -->
                     <li>
                         <a href="{relative_path}/unread"><i id="unread-count" class="fa fa-fw fa-inbox" data-content="0" title="[[global:header.unread]]"></i><span class="visible-xs-inline"> [[global:header.unread]]</span>Unread</a>
                     </li>
@@ -66,11 +65,6 @@
                     <li>
                         <a href="{relative_path}/popular"><i class="fa fa-fw fa-fire" title="[[global:header.popular]]"></i><span class="visible-xs-inline"> [[global:header.popular]]</span>Popular</a>
                     </li>
-                    <!-- ELSE -->
-                    <li>
-                        <a href="{relative_path}/login">Please login to access forums. Login</a>
-                    </li>
-                    <!-- ENDIF loggedIn -->
                 </ul>
             </li>
         </ul>
