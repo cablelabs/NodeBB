@@ -1,13 +1,14 @@
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
                 <div>
-                    <!--<a href="{relative_path}/">-->
-                        <!--<img class="{brand:logo:display} forum-logo" src="{brand:logo}" />-->
-                    <!--</a>-->
+                    <a href="{relative_path}/#">
+                        <img class="{brand:logo:display} forum-logo" src="{brand:logo}" />
+                    </a>
                     <!--<!-- IF showSiteTitle -->-->
                     <!--<a href="{relative_path}/">-->
                         <!--<h1 class="navbar-brand forum-title">{title}</h1>-->
@@ -21,8 +22,8 @@
             </div>
 
             <!-- <div class="navbar-collapse collapse navbar-ex1-collapse header_row4"> -->
-            <div class="navbar-collapse collapse navbar-ex1-collapse">
-                <div class="page_width clearfix">
+            <div class="navbar-collapse navbar-ex1-collapse collapse" id="navbar-collapse" style="height: auto;">
+                <!--<div class="page_width clearfix">-->
                     <!-- <div id="portal-logo" class ="pull-left"><a href="{relative_path}/"></a></div> -->
                     <ul id="main-nav" class="nav navbar-nav pull-left">
                         <li>
@@ -30,7 +31,8 @@
                             <span>&nbsp;</span>
                         </li>
 
-                        <li class="dropdown"> <a data-toggle="dropdown" class="dropdown-toggle" href="#">How-Tos <b class="caret"></b></a>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">How-Tos <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{relative_path}/getting-started">Getting Started</a></li>
                                 <li><a href="{relative_path}/entity-types">Entity Types</a></li>
@@ -173,5 +175,5 @@
                     <div class="header-topic-title hidden-xs">
                         <span></span>
                     </div>
-                </div>
+                <!--</div>-->
             </div>

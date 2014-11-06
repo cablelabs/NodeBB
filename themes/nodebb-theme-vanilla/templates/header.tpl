@@ -145,7 +145,7 @@
 				<!--</div>-->
 			<!--</div>-->
 		<!--</div>-->
-	<div class="navbar navbar-inverse navbar-fixed-top header" role="navigation" id="header-menu">
+	<div class="navbar navbar-fixed-top navbar-inverse header" role="navigation" id="header-menu">
 		<div class="container">
 			<!-- IMPORT partials/portal-menu.tpl -->
 		</div>
