@@ -40,6 +40,8 @@ define('forum/account/edit', ['forum/account/header', 'uploader'], function(head
 			username: $('#inputUsername').val(),
 			email: $('#inputEmail').val(),
 			fullname: $('#inputFullname').val(),
+			company: $('#inputCompany').val(),
+			designation: $('#inputDesignation').val(),
 			website: $('#inputWebsite').val(),
 			birthday: $('#inputBirthday').val(),
 			location: $('#inputLocation').val(),
