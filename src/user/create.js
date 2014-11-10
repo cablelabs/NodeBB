@@ -26,6 +26,7 @@ module.exports = function(User) {
 			'picture': gravatar,
 			'gravatarpicture': gravatar,
 			'fullname': data.fullname,
+			'tags': data.tags,
 			'location': '',
 			'birthday': '',
 			'website': '',
