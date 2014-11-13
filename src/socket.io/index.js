@@ -206,9 +206,6 @@ Sockets.init = function(server) {
 					}
 				});
 			}
-
-			console.log("Socket.on ( '*' ) : " + payload.name);
-
 			if(!payload.name) {
 				return winston.warn('[socket.io] Empty method name');
 			}

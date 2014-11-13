@@ -14,7 +14,6 @@ var async = require('async'),
 module.exports = function(User) {
 
 	User.updateProfile = function(uid, data, callback) {
-		console.log("Updating profile with tag values : " + data.tags + ", name : " + data.fullname);
 		var fields = ['username', 'email', 'fullname', 'company', 'designation', 'tags', 'website', 'location', 'birthday', 'signature'];
 
 		function isSignatureValid(next) {
