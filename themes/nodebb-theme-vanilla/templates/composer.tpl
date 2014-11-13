@@ -67,9 +67,7 @@
 					<!--[if lt IE 9]>
 						<input type="file" id="files" name="files[]" class="lt-ie9 hide" value="Upload"/>
 					<![endif]-->
-
 				</form>
-
 			</div>
 			<div class="btn-group pull-right action-bar">
 				<button class="btn btn-default" data-action="discard" tabIndex="5"><i class="fa fa-times"></i> [[topic:composer.discard]]</button>

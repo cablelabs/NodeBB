@@ -79,17 +79,9 @@
 
 					<div class="control-group">
 						<label class="control-label" for="inputTags">[[user:tags]]</label>
-						<!-- IF isTopic -->
-						<div class="col-lg-3 category-list-container">
-							<select class="form-control category-list"></select>
-						</div>
-						<!-- ENDIF isTopic -->
-						<!-- IF showTags -->
-						<!--<div class="tags-container &lt;!&ndash; IF isTopic &ndash;&gt;col-lg-9&lt;!&ndash; ELSE &ndash;&gt;col-lg-12&lt;!&ndash; ENDIF isTopic&ndash;&gt;">-->
 						<div class="controls">
 							<input class="tags" type="text" id="inputTags" class="form-control" placeholder="[[tags:enter_tags_here]]" value="{tags}"/>
 						</div>
-						<!-- ENDIF showTags -->
 					</div>
 
 					<div class="control-group">

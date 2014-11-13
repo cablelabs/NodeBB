@@ -222,6 +222,8 @@ define('composer', dependencies, function(taskbar, controls, uploads, formatting
 				bodyEl = postContainer.find('textarea'),
 				draft = drafts.getDraft(postData.save_id);
 
+			console.log(postContainer.attr('class') + " --- " + JSON.stringify(composer.posts[post_uuid]));
+
 			tags.init(postContainer, composer.posts[post_uuid]);
 			categoryList.init(postContainer, composer.posts[post_uuid]);
 			updateTitle(postData, postContainer);

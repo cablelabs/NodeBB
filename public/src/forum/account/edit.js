@@ -2,7 +2,13 @@
 
 /* globals define, ajaxify, socket, app, config, utils, translator, bootbox */
 
-define('forum/account/edit', ['forum/account/header', 'uploader'], function(header, uploader) {
+var dependencies = [
+	'forum/account/header',
+	'uploader',
+	'forum/account/tags'
+];
+
+define('forum/account/edit', dependencies, function(header, uploader, tags) {
 	var AccountEdit = {},
 		gravatarPicture = '',
 		uploadedPicture = '',
@@ -32,6 +38,19 @@ define('forum/account/edit', ['forum/account/header', 'uploader'], function(head
 		handlePasswordChange();
 		updateSignature();
 		updateImages();
+
+		var posts =  {
+			"cid":"2",
+			"title":"",
+			"body":"",
+			"modified":false,
+			"isMain":true,
+			"save_id":"composer:1:cid:2"
+		};
+
+		// Initialize handle for tags
+		console.log("Going to init tags for user");
+		tags.init($('.account'), posts);
 	};
 
 	function updateProfile() {
@@ -42,6 +61,7 @@ define('forum/account/edit', ['forum/account/header', 'uploader'], function(head
 			fullname: $('#inputFullname').val(),
 			company: $('#inputCompany').val(),
 			designation: $('#inputDesignation').val(),
+			tags: $('#inputTags').val(),
 			website: $('#inputWebsite').val(),
 			birthday: $('#inputBirthday').val(),
 			location: $('#inputLocation').val(),
