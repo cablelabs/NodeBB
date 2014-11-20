@@ -84,7 +84,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -124,7 +124,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -156,7 +156,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -237,7 +237,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -277,7 +277,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -309,7 +309,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -390,7 +390,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -430,7 +430,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -462,7 +462,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -543,7 +543,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -583,7 +583,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -615,7 +615,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -696,7 +696,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -736,7 +736,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -768,7 +768,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -849,7 +849,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -889,7 +889,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -921,7 +921,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -1002,7 +1002,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -1042,7 +1042,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -1074,7 +1074,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -1155,7 +1155,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -1195,7 +1195,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -1227,7 +1227,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -1308,7 +1308,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -1348,7 +1348,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -1380,7 +1380,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -1461,7 +1461,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -1501,7 +1501,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -1533,7 +1533,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -1614,7 +1614,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -1654,7 +1654,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -1686,7 +1686,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -1767,7 +1767,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -1807,7 +1807,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -1839,7 +1839,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -1920,7 +1920,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -1960,7 +1960,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -1992,7 +1992,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -2073,7 +2073,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -2113,7 +2113,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -2145,7 +2145,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -2232,7 +2232,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -2272,7 +2272,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -2304,7 +2304,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -2385,7 +2385,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -2425,7 +2425,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -2457,7 +2457,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -2538,7 +2538,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -2578,7 +2578,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -2610,7 +2610,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -2691,7 +2691,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -2731,7 +2731,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -2763,7 +2763,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -2844,7 +2844,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -2884,7 +2884,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -2916,7 +2916,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -2997,7 +2997,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -3037,7 +3037,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -3069,7 +3069,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -3150,7 +3150,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -3190,7 +3190,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -3222,7 +3222,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -3303,7 +3303,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -3343,7 +3343,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -3375,7 +3375,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -3456,7 +3456,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -3496,7 +3496,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -3528,7 +3528,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -3609,7 +3609,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -3649,7 +3649,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -3681,7 +3681,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -3762,7 +3762,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -3802,7 +3802,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -3834,7 +3834,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -3915,7 +3915,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -3955,7 +3955,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -3987,7 +3987,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -4068,7 +4068,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -4108,7 +4108,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -4140,7 +4140,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -4221,7 +4221,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -4261,7 +4261,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -4293,7 +4293,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -4374,7 +4374,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -4414,7 +4414,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -4446,7 +4446,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -4527,7 +4527,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -4567,7 +4567,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -4599,7 +4599,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -4680,7 +4680,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -4720,7 +4720,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -4752,7 +4752,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -4760,7 +4760,7 @@
     "/externalsystemreference": {
       "post": {
         "tags": [
-          "ExternalSystemReference"
+          "External System Reference"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -4796,7 +4796,7 @@
     "/externalsystemreference/{id}": {
       "get": {
         "tags": [
-          "ExternalSystemReference"
+          "External System Reference"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -4833,13 +4833,13 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
       "put": {
         "tags": [
-          "ExternalSystemReference"
+          "External System Reference"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -4873,7 +4873,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -4882,7 +4882,7 @@
       },
       "delete": {
         "tags": [
-          "ExternalSystemReference"
+          "External System Reference"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -4905,7 +4905,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -4913,7 +4913,7 @@
     "/featurecollection": {
       "post": {
         "tags": [
-          "FeatureCollection"
+          "Feature Collection"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -4949,7 +4949,7 @@
     "/featurecollection/{id}": {
       "get": {
         "tags": [
-          "FeatureCollection"
+          "Feature Collection"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -4986,13 +4986,13 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
       "put": {
         "tags": [
-          "FeatureCollection"
+          "Feature Collection"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -5026,7 +5026,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -5035,7 +5035,7 @@
       },
       "delete": {
         "tags": [
-          "FeatureCollection"
+          "Feature Collection"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -5058,7 +5058,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -5139,7 +5139,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -5179,7 +5179,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -5211,7 +5211,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -5219,7 +5219,7 @@
     "/usergroup": {
       "post": {
         "tags": [
-          "UserGroup"
+          "User Group"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -5255,7 +5255,7 @@
     "/usergroup/{id}": {
       "get": {
         "tags": [
-          "UserGroup"
+          "User Group"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -5292,13 +5292,13 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
       "put": {
         "tags": [
-          "UserGroup"
+          "User Group"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -5332,7 +5332,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -5341,7 +5341,7 @@
       },
       "delete": {
         "tags": [
-          "UserGroup"
+          "User Group"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -5364,7 +5364,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -5445,7 +5445,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -5485,7 +5485,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -5517,7 +5517,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -5598,7 +5598,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -5638,7 +5638,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -5670,7 +5670,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -5678,7 +5678,7 @@
     "/postalcontact": {
       "post": {
         "tags": [
-          "PostalContact"
+          "Postal Contact"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -5714,7 +5714,7 @@
     "/postalcontact/{id}": {
       "get": {
         "tags": [
-          "PostalContact"
+          "Postal Contact"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -5751,13 +5751,13 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
       "put": {
         "tags": [
-          "PostalContact"
+          "Postal Contact"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -5791,7 +5791,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -5800,7 +5800,7 @@
       },
       "delete": {
         "tags": [
-          "PostalContact"
+          "Postal Contact"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -5823,7 +5823,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -5904,7 +5904,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -5944,7 +5944,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -5976,7 +5976,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -6057,7 +6057,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -6097,7 +6097,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -6129,7 +6129,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -6210,7 +6210,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -6250,7 +6250,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -6282,7 +6282,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -6363,7 +6363,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -6403,7 +6403,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -6435,7 +6435,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -6443,7 +6443,7 @@
     "/customerorder": {
       "post": {
         "tags": [
-          "CustomerOrder"
+          "Customer Order"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -6479,7 +6479,7 @@
     "/customerorder/{id}": {
       "get": {
         "tags": [
-          "CustomerOrder"
+          "Customer Order"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -6516,13 +6516,13 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
       "put": {
         "tags": [
-          "CustomerOrder"
+          "Customer Order"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -6556,7 +6556,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -6565,7 +6565,7 @@
       },
       "delete": {
         "tags": [
-          "CustomerOrder"
+          "Customer Order"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -6588,7 +6588,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -6669,7 +6669,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -6709,7 +6709,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -6741,7 +6741,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -6749,7 +6749,7 @@
     "/productconfiguration": {
       "post": {
         "tags": [
-          "ProductConfiguration"
+          "Product Configuration"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -6785,7 +6785,7 @@
     "/productconfiguration/{id}": {
       "get": {
         "tags": [
-          "ProductConfiguration"
+          "Product Configuration"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -6822,13 +6822,13 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
       "put": {
         "tags": [
-          "ProductConfiguration"
+          "Product Configuration"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -6862,7 +6862,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -6871,7 +6871,7 @@
       },
       "delete": {
         "tags": [
-          "ProductConfiguration"
+          "Product Configuration"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -6894,7 +6894,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -6902,7 +6902,7 @@
     "/service/uniconfiguration": {
       "post": {
         "tags": [
-          "UNI ServiceConfiguration"
+          "UNI Service Configuration"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -6938,7 +6938,7 @@
     "/service/uniconfiguration/{id}": {
       "get": {
         "tags": [
-          "UNI ServiceConfiguration"
+          "UNI Service Configuration"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -6975,13 +6975,13 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
       "put": {
         "tags": [
-          "UNI ServiceConfiguration"
+          "UNI Service Configuration"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -7015,7 +7015,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -7024,7 +7024,7 @@
       },
       "delete": {
         "tags": [
-          "UNI ServiceConfiguration"
+          "UNI Service Configuration"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -7047,12 +7047,12 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
     },
-    "/user/1": {
+    "/user/{id}/tickets": {
       "post": {
         "tags": [
           "Users Tickets"
@@ -7068,6 +7068,14 @@
           "application/xml"
         ],
         "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of User to whom the ticket needs to be created",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
           {
             "in": "body",
             "name": "body",
@@ -7088,7 +7096,7 @@
         }
       }
     },
-    "/user/1/{id}": {
+    "/user/{id}/tickets": {
       "get": {
         "tags": [
           "Users Tickets"
@@ -7104,7 +7112,7 @@
           {
             "in": "path",
             "name": "id",
-            "description": "ID of instance that needs to be fetched",
+            "description": "ID of User whose tickets need to be fetched",
             "required": true,
             "type": "integer",
             "format": "int64"
@@ -7128,13 +7136,13 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
       "put": {
         "tags": [
-          "Users Tickets"
+          "UnSuported"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -7168,7 +7176,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -7177,7 +7185,7 @@
       },
       "delete": {
         "tags": [
-          "Users Tickets"
+          "UnSuported"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -7200,7 +7208,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -7281,7 +7289,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -7321,7 +7329,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -7353,7 +7361,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -7361,7 +7369,7 @@
     "/propertyaddress": {
       "post": {
         "tags": [
-          "PropertyAddress"
+          "Property Address"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -7397,7 +7405,7 @@
     "/propertyaddress/{id}": {
       "get": {
         "tags": [
-          "PropertyAddress"
+          "Property Address"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -7434,13 +7442,13 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
       "put": {
         "tags": [
-          "PropertyAddress"
+          "Property Address"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -7474,7 +7482,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -7483,7 +7491,7 @@
       },
       "delete": {
         "tags": [
-          "PropertyAddress"
+          "Property Address"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -7506,7 +7514,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -7587,7 +7595,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -7627,7 +7635,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -7659,7 +7667,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -7667,7 +7675,7 @@
     "/productprice": {
       "post": {
         "tags": [
-          "ProductPrice"
+          "Product Price"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -7703,7 +7711,7 @@
     "/productprice/{id}": {
       "get": {
         "tags": [
-          "ProductPrice"
+          "Product Price"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -7740,13 +7748,13 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
       "put": {
         "tags": [
-          "ProductPrice"
+          "Product Price"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -7780,7 +7788,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -7789,7 +7797,7 @@
       },
       "delete": {
         "tags": [
-          "ProductPrice"
+          "Product Price"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -7812,7 +7820,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -7820,7 +7828,7 @@
     "/customerquoteitem": {
       "post": {
         "tags": [
-          "CustomerQuoteItem"
+          "Customer Quote Item"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -7856,7 +7864,7 @@
     "/customerquoteitem/{id}": {
       "get": {
         "tags": [
-          "CustomerQuoteItem"
+          "Customer Quote Item"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -7893,13 +7901,13 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
       "put": {
         "tags": [
-          "CustomerQuoteItem"
+          "Customer Quote Item"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -7933,7 +7941,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -7942,7 +7950,7 @@
       },
       "delete": {
         "tags": [
-          "CustomerQuoteItem"
+          "Customer Quote Item"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -7965,7 +7973,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -8046,7 +8054,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -8086,7 +8094,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -8118,7 +8126,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -8199,7 +8207,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -8239,7 +8247,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -8271,7 +8279,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -8279,7 +8287,7 @@
     "/configurationdata": {
       "post": {
         "tags": [
-          "ConfigurationData"
+          "Configuration Data"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -8315,7 +8323,7 @@
     "/configurationdata/{id}": {
       "get": {
         "tags": [
-          "ConfigurationData"
+          "Configuration Data"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -8352,13 +8360,13 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
       "put": {
         "tags": [
-          "ConfigurationData"
+          "Configuration Data"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -8392,7 +8400,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -8401,7 +8409,7 @@
       },
       "delete": {
         "tags": [
-          "ConfigurationData"
+          "Configuration Data"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -8424,7 +8432,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -8505,7 +8513,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -8545,7 +8553,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -8577,7 +8585,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -8658,7 +8666,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -8698,7 +8706,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -8730,7 +8738,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -8811,7 +8819,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -8851,7 +8859,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -8883,7 +8891,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -8891,7 +8899,7 @@
     "/customerorderitem": {
       "post": {
         "tags": [
-          "CustomerOrderItem"
+          "Customer Order Item"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -8927,7 +8935,7 @@
     "/customerorderitem/{id}": {
       "get": {
         "tags": [
-          "CustomerOrderItem"
+          "Customer Order Item"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -8964,13 +8972,13 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
       "put": {
         "tags": [
-          "CustomerOrderItem"
+          "Customer Order Item"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -9004,7 +9012,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -9013,7 +9021,7 @@
       },
       "delete": {
         "tags": [
-          "CustomerOrderItem"
+          "Customer Order Item"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -9036,7 +9044,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -9044,7 +9052,7 @@
     "/paymentplan": {
       "post": {
         "tags": [
-          "PaymentPlan"
+          "Payment Plan"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -9080,7 +9088,7 @@
     "/paymentplan/{id}": {
       "get": {
         "tags": [
-          "PaymentPlan"
+          "Payment Plan"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -9117,13 +9125,13 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
       "put": {
         "tags": [
-          "PaymentPlan"
+          "Payment Plan"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -9157,7 +9165,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -9166,7 +9174,7 @@
       },
       "delete": {
         "tags": [
-          "PaymentPlan"
+          "Payment Plan"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -9189,7 +9197,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -9270,7 +9278,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -9310,7 +9318,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -9342,7 +9350,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -9423,7 +9431,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -9463,7 +9471,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -9495,7 +9503,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -9576,7 +9584,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -9616,7 +9624,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -9648,7 +9656,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -9729,7 +9737,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -9769,7 +9777,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -9801,7 +9809,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -9882,7 +9890,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -9922,7 +9930,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -9954,7 +9962,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -10035,7 +10043,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -10075,7 +10083,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -10107,7 +10115,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -10115,7 +10123,7 @@
     "/customerpayment": {
       "post": {
         "tags": [
-          "CustomerPayment"
+          "Customer Payment"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -10151,7 +10159,7 @@
     "/customerpayment/{id}": {
       "get": {
         "tags": [
-          "CustomerPayment"
+          "Customer Payment"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -10188,13 +10196,13 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
       "put": {
         "tags": [
-          "CustomerPayment"
+          "Customer Payment"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -10228,7 +10236,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -10237,7 +10245,7 @@
       },
       "delete": {
         "tags": [
-          "CustomerPayment"
+          "Customer Payment"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -10260,7 +10268,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -10268,7 +10276,7 @@
     "/customerquote": {
       "post": {
         "tags": [
-          "CustomerQuote"
+          "Customer Quote"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -10304,7 +10312,7 @@
     "/customerquote/{id}": {
       "get": {
         "tags": [
-          "CustomerQuote"
+          "Customer Quote"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -10341,13 +10349,13 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
       "put": {
         "tags": [
-          "CustomerQuote"
+          "Customer Quote"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -10381,7 +10389,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -10390,7 +10398,7 @@
       },
       "delete": {
         "tags": [
-          "CustomerQuote"
+          "Customer Quote"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -10413,7 +10421,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -10421,7 +10429,7 @@
     "/productoffering": {
       "post": {
         "tags": [
-          "ProductOffering"
+          "Product Offering"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -10457,7 +10465,7 @@
     "/productoffering/{id}": {
       "get": {
         "tags": [
-          "ProductOffering"
+          "Product Offering"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -10494,13 +10502,13 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
       "put": {
         "tags": [
-          "ProductOffering"
+          "Product Offering"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -10534,7 +10542,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -10543,7 +10551,7 @@
       },
       "delete": {
         "tags": [
-          "ProductOffering"
+          "Product Offering"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -10566,7 +10574,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -10574,7 +10582,7 @@
     "/ticketlocation": {
       "post": {
         "tags": [
-          "TicketLocation"
+          "Ticket Location"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -10610,7 +10618,7 @@
     "/ticketlocation/{id}": {
       "get": {
         "tags": [
-          "TicketLocation"
+          "Ticket Location"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -10647,13 +10655,13 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
       "put": {
         "tags": [
-          "TicketLocation"
+          "Ticket Location"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -10687,7 +10695,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -10696,7 +10704,7 @@
       },
       "delete": {
         "tags": [
-          "TicketLocation"
+          "Ticket Location"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -10719,7 +10727,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -10727,7 +10735,7 @@
     "/serviceconfiguration": {
       "post": {
         "tags": [
-          "ServiceConfiguration"
+          "Service Configuration"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -10763,7 +10771,7 @@
     "/serviceconfiguration/{id}": {
       "get": {
         "tags": [
-          "ServiceConfiguration"
+          "Service Configuration"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -10800,13 +10808,13 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
       "put": {
         "tags": [
-          "ServiceConfiguration"
+          "Service Configuration"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -10840,7 +10848,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -10849,7 +10857,7 @@
       },
       "delete": {
         "tags": [
-          "ServiceConfiguration"
+          "Service Configuration"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -10872,7 +10880,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -10880,7 +10888,7 @@
     "/cableservicearea": {
       "post": {
         "tags": [
-          "CableServiceArea"
+          "Cable Service Area"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -10916,7 +10924,7 @@
     "/cableservicearea/{id}": {
       "get": {
         "tags": [
-          "CableServiceArea"
+          "Cable Service Area"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -10953,13 +10961,13 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
       "put": {
         "tags": [
-          "CableServiceArea"
+          "Cable Service Area"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -10993,7 +11001,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -11002,7 +11010,7 @@
       },
       "delete": {
         "tags": [
-          "CableServiceArea"
+          "Cable Service Area"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -11025,7 +11033,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -11033,7 +11041,7 @@
     "/customerbill": {
       "post": {
         "tags": [
-          "CustomerBill"
+          "Customer Bill"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -11069,7 +11077,7 @@
     "/customerbill/{id}": {
       "get": {
         "tags": [
-          "CustomerBill"
+          "Customer Bill"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -11106,13 +11114,13 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
       "put": {
         "tags": [
-          "CustomerBill"
+          "Customer Bill"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -11146,7 +11154,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -11155,7 +11163,7 @@
       },
       "delete": {
         "tags": [
-          "CustomerBill"
+          "Customer Bill"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -11178,7 +11186,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -11186,7 +11194,7 @@
     "/resource/ethernetinterface": {
       "post": {
         "tags": [
-          "EthernetInterface"
+          "Ethernet Interface"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -11222,7 +11230,7 @@
     "/resource/ethernetinterface/{id}": {
       "get": {
         "tags": [
-          "EthernetInterface"
+          "Ethernet Interface"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -11259,13 +11267,13 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
       "put": {
         "tags": [
-          "EthernetInterface"
+          "Ethernet Interface"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -11299,7 +11307,7 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -11308,7 +11316,7 @@
       },
       "delete": {
         "tags": [
-          "EthernetInterface"
+          "Ethernet Interface"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -11331,7 +11339,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }
@@ -11358,7 +11366,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Email Contact"
+              "$ref": "#/definitions/EmailContact"
             }
           }
         ],
@@ -11405,14 +11413,14 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/Email Contact"
+              "$ref": "#/definitions/EmailContact"
             }
           },
           "400": {
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           }
         }
       },
@@ -11437,7 +11445,7 @@
             "description": "Instance object that needs to be updated.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Email Contact"
+              "$ref": "#/definitions/EmailContact"
             }
           }
         ],
@@ -11445,14 +11453,14 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/Email Contact"
+              "$ref": "#/definitions/EmailContact"
             }
           },
           "400": {
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "Pet not found"
+            "description": "Instance not found"
           },
           "405": {
             "description": "Validation exception"
@@ -11484,7 +11492,7 @@
             "description": "Successfully Deleted."
           },
           "400": {
-            "description": "Invalid pet value"
+            "description": "Invalid Instance value"
           }
         }
       }

@@ -19,12 +19,13 @@ var path = require('path'),
 	middleware = require('./middleware'),
 	routes = require('./routes'),
 	emitter = require('./emitter'),
-	helpers = require('./../public/src/helpers')(),
-    swagger = require("swagger-node-express");
+	helpers = require('./../public/src/helpers')();
+
+    //var swagger = require("swagger-node-express");
 
 
 // Couple the application to the Swagger module.
-swagger.setAppHandler(WebServer);
+//swagger.setAppHandler(WebServer);
 
 if(nconf.get('ssl')) {
 	server = require('https').createServer({

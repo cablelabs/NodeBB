@@ -33,9 +33,8 @@
       window.swaggerUi = new SwaggerUi({
         url: url,
         dom_id: "swagger-ui-container",
-        supportedSubmitMethods: ['get', 'post', 'put', 'delete'],
+        supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch', 'options'],
         onComplete: function(swaggerApi, swaggerUi){
-          log("Loaded SwaggerUI");
           if(typeof initOAuth == "function") {
             /*
             initOAuth({
@@ -53,7 +52,8 @@
           log("Unable to Load SwaggerUI");
         },
         docExpansion: "none",
-        sorter : "alpha"
+        sorter : "alpha",
+        sortAlphabetically: true
       });
 
       function addApiKeyAuthorization() {

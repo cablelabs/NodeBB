@@ -1,5 +1,4 @@
 // swagger-ui.js
-// version 2.1.0-alpha.5
 $(function() {
 
 	// Helper function for vertically aligning DOM elements
@@ -1544,14 +1543,25 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
     };
 
     MainView.prototype.initialize = function(opts) {
-      var auth, key, name, url, value, _ref3;
+      var auth, key, name, pathSorter, route, url, value, _i, _len, _ref3, _ref4;
       if (opts == null) {
         opts = {};
       }
+      if (opts.swaggerOptions.sortAlphabetically === true) {
+        pathSorter = function(a, b) {
+          return a.path.localeCompare(b.path);
+        };
+        this.model.apisArray.sort(pathSorter);
+        _ref3 = this.model.apisArray;
+        for (_i = 0, _len = _ref3.length; _i < _len; _i++) {
+          route = _ref3[_i];
+          route.operationsArray.sort(pathSorter);
+        }
+      }
       this.model.auths = [];
-      _ref3 = this.model.securityDefinitions;
-      for (key in _ref3) {
-        value = _ref3[key];
+      _ref4 = this.model.securityDefinitions;
+      for (key in _ref4) {
+        value = _ref4[key];
         auth = {
           name: key,
           type: value.type,
@@ -1608,6 +1618,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
       _ref3 = this.model.apisArray;
       for (_i = 0, _len = _ref3.length; _i < _len; _i++) {
         resource = _ref3[_i];
+        console.info(resource);
         id = resource.name;
         while (typeof resources[id] !== 'undefined') {
           id = id + "_" + counter;
