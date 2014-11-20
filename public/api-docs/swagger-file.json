@@ -7094,9 +7094,7 @@
             "description": "Invalid input"
           }
         }
-      }
-    },
-    "/user/{id}/tickets": {
+      },
       "get": {
         "tags": [
           "Users Tickets"
