@@ -11,7 +11,7 @@
     "/statusentry": {
       "post": {
         "tags": [
-          "StatusEntry"
+          "Status Entry"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -47,7 +47,7 @@
     "/statusentry/{id}": {
       "get": {
         "tags": [
-          "StatusEntry"
+          "Status Entry"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -90,7 +90,7 @@
       },
       "put": {
         "tags": [
-          "StatusEntry"
+          "Status Entry"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -133,7 +133,7 @@
       },
       "delete": {
         "tags": [
-          "StatusEntry"
+          "Status Entry"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -314,7 +314,7 @@
         }
       }
     },
-    "//cmts": {
+    "/cmts": {
       "post": {
         "tags": [
           "CMTS"
@@ -350,7 +350,7 @@
         }
       }
     },
-    "//cmts/{id}": {
+    "/cmts/{id}": {
       "get": {
         "tags": [
           "CMTS"
@@ -470,7 +470,7 @@
     "/sitelist": {
       "post": {
         "tags": [
-          "SiteList"
+          "Site List"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -506,7 +506,7 @@
     "/sitelist/{id}": {
       "get": {
         "tags": [
-          "SiteList"
+          "Site List"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -549,7 +549,7 @@
       },
       "put": {
         "tags": [
-          "SiteList"
+          "Site List"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -592,7 +592,7 @@
       },
       "delete": {
         "tags": [
-          "SiteList"
+          "Site List"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -620,7 +620,7 @@
         }
       }
     },
-    "//ack": {
+    "/ack": {
       "post": {
         "tags": [
           "ACK"
@@ -656,7 +656,7 @@
         }
       }
     },
-    "//ack/{id}": {
+    "/ack/{id}": {
       "get": {
         "tags": [
           "ACK"
@@ -776,7 +776,7 @@
     "/productorder": {
       "post": {
         "tags": [
-          "ProductOrder"
+          "Product Order"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -812,7 +812,7 @@
     "/productorder/{id}": {
       "get": {
         "tags": [
-          "ProductOrder"
+          "Product Order"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -855,7 +855,7 @@
       },
       "put": {
         "tags": [
-          "ProductOrder"
+          "Product Order"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -898,7 +898,7 @@
       },
       "delete": {
         "tags": [
-          "ProductOrder"
+          "Product Order"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -1079,7 +1079,7 @@
         }
       }
     },
-    "//billcharge": {
+    "/billcharge": {
       "post": {
         "tags": [
           "Bill Charge"
@@ -1115,7 +1115,7 @@
         }
       }
     },
-    "//billcharge/{id}": {
+    "/billcharge/{id}": {
       "get": {
         "tags": [
           "Bill Charge"
@@ -1388,7 +1388,7 @@
     "/resource/resourceport": {
       "post": {
         "tags": [
-          "ResourcePort"
+          "Resource Port"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -1424,7 +1424,7 @@
     "/resource/resourceport/{id}": {
       "get": {
         "tags": [
-          "ResourcePort"
+          "Resource Port"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -1467,7 +1467,7 @@
       },
       "put": {
         "tags": [
-          "ResourcePort"
+          "Resource Port"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -1510,7 +1510,7 @@
       },
       "delete": {
         "tags": [
-          "ResourcePort"
+          "Resource Port"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -1694,7 +1694,7 @@
     "/faxnumber": {
       "post": {
         "tags": [
-          "FaxNumber"
+          "Fax Number"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -1730,7 +1730,7 @@
     "/faxnumber/{id}": {
       "get": {
         "tags": [
-          "FaxNumber"
+          "Fax Number"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -1773,7 +1773,7 @@
       },
       "put": {
         "tags": [
-          "FaxNumber"
+          "Fax Number"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -1816,7 +1816,7 @@
       },
       "delete": {
         "tags": [
-          "FaxNumber"
+          "Fax Number"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -1847,7 +1847,7 @@
     "/productorder/case3_final/productorderitem": {
       "post": {
         "tags": [
-          "ProductOrderItem"
+          "Product Order Item"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -1883,7 +1883,7 @@
     "/productorder/case3_final/productorderitem/{id}": {
       "get": {
         "tags": [
-          "ProductOrderItem"
+          "Product Order Item"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -1926,7 +1926,7 @@
       },
       "put": {
         "tags": [
-          "ProductOrderItem"
+          "Product Order Item"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -1969,7 +1969,7 @@
       },
       "delete": {
         "tags": [
-          "ProductOrderItem"
+          "Product Order Item"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -2000,7 +2000,7 @@
     "/customerbillspec": {
       "post": {
         "tags": [
-          "CustomerBillSpec"
+          "Customer Bill Spec"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -2036,7 +2036,7 @@
     "/customerbillspec/{id}": {
       "get": {
         "tags": [
-          "CustomerBillSpec"
+          "Customer Bill Spec"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -2079,7 +2079,7 @@
       },
       "put": {
         "tags": [
-          "CustomerBillSpec"
+          "Customer Bill Spec"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -2122,7 +2122,7 @@
       },
       "delete": {
         "tags": [
-          "CustomerBillSpec"
+          "Customer Bill Spec"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -2150,7 +2150,7 @@
         }
       }
     },
-    "/ticket/1": {
+    "/ticket/{id}/assignedgroup": {
       "post": {
         "tags": [
           "Ticket AssignedGroup"
@@ -2166,6 +2166,14 @@
           "application/xml"
         ],
         "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of the ticket",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
           {
             "in": "body",
             "name": "body",
@@ -2184,9 +2192,7 @@
             "description": "Invalid input"
           }
         }
-      }
-    },
-    "/ticket/1/{id}": {
+      },
       "get": {
         "tags": [
           "Ticket AssignedGroup"
@@ -2202,7 +2208,7 @@
           {
             "in": "path",
             "name": "id",
-            "description": "ID of instance that needs to be fetched",
+            "description": "ID of the ticket",
             "required": true,
             "type": "integer",
             "format": "int64"
@@ -2456,10 +2462,10 @@
         }
       }
     },
-    "//resourceorder": {
+    "/resourceorder": {
       "post": {
         "tags": [
-          "ResourceOrder"
+          "Resource Order"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -2492,10 +2498,10 @@
         }
       }
     },
-    "//resourceorder/{id}": {
+    "/resourceorder/{id}": {
       "get": {
         "tags": [
-          "ResourceOrder"
+          "Resource Order"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -2538,7 +2544,7 @@
       },
       "put": {
         "tags": [
-          "ResourceOrder"
+          "Resource Order"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -2581,7 +2587,7 @@
       },
       "delete": {
         "tags": [
-          "ResourceOrder"
+          "Resource Order"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -2609,10 +2615,10 @@
         }
       }
     },
-    "//paymentitem": {
+    "/paymentitem": {
       "post": {
         "tags": [
-          "PaymentItem"
+          "Payment Item"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -2645,10 +2651,10 @@
         }
       }
     },
-    "//paymentitem/{id}": {
+    "/paymentitem/{id}": {
       "get": {
         "tags": [
-          "PaymentItem"
+          "Payment Item"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -2691,7 +2697,7 @@
       },
       "put": {
         "tags": [
-          "PaymentItem"
+          "Payment Item"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -2734,7 +2740,7 @@
       },
       "delete": {
         "tags": [
-          "PaymentItem"
+          "Payment Item"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -3377,7 +3383,7 @@
     "/orderdesign": {
       "post": {
         "tags": [
-          "OrderDesign"
+          "Order Design"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -3413,7 +3419,7 @@
     "/orderdesign/{id}": {
       "get": {
         "tags": [
-          "OrderDesign"
+          "Order Design"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -3456,7 +3462,7 @@
       },
       "put": {
         "tags": [
-          "OrderDesign"
+          "Order Design"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -3499,7 +3505,7 @@
       },
       "delete": {
         "tags": [
-          "OrderDesign"
+          "Order Design"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -3530,7 +3536,7 @@
     "/ticket": {
       "post": {
         "tags": [
-          "Ticket in DB"
+          "Ticket"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -3566,7 +3572,7 @@
     "/ticket/{id}": {
       "get": {
         "tags": [
-          "Ticket in DB"
+          "Ticket"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -3609,7 +3615,7 @@
       },
       "put": {
         "tags": [
-          "Ticket in DB"
+          "Ticket"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -3652,7 +3658,7 @@
       },
       "delete": {
         "tags": [
-          "Ticket in DB"
+          "Ticket"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -3683,7 +3689,7 @@
     "/paymentmethod": {
       "post": {
         "tags": [
-          "PaymentMethod"
+          "Payment Method"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -3719,7 +3725,7 @@
     "/paymentmethod/{id}": {
       "get": {
         "tags": [
-          "PaymentMethod"
+          "Payment Method"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -3762,7 +3768,7 @@
       },
       "put": {
         "tags": [
-          "PaymentMethod"
+          "Payment Method"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -3805,7 +3811,7 @@
       },
       "delete": {
         "tags": [
-          "PaymentMethod"
+          "Payment Method"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -3989,7 +3995,7 @@
     "/servicerole": {
       "post": {
         "tags": [
-          "ServiceRole"
+          "Service Role"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -4025,7 +4031,7 @@
     "/servicerole/{id}": {
       "get": {
         "tags": [
-          "ServiceRole"
+          "Service Role"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -4068,7 +4074,7 @@
       },
       "put": {
         "tags": [
-          "ServiceRole"
+          "Service Role"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -4111,7 +4117,7 @@
       },
       "delete": {
         "tags": [
-          "ServiceRole"
+          "Service Role"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -4295,7 +4301,7 @@
     "/ticketcategory": {
       "post": {
         "tags": [
-          "TicketCategory"
+          "Ticket Category"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -4331,7 +4337,7 @@
     "/ticketcategory/{id}": {
       "get": {
         "tags": [
-          "TicketCategory"
+          "Ticket Category"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -4374,7 +4380,7 @@
       },
       "put": {
         "tags": [
-          "TicketCategory"
+          "Ticket Category"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -4417,7 +4423,7 @@
       },
       "delete": {
         "tags": [
-          "TicketCategory"
+          "Ticket Category"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -4445,10 +4451,10 @@
         }
       }
     },
-    "//cablemodem": {
+    "/cablemodem": {
       "post": {
         "tags": [
-          "CableModem"
+          "Cable Modem"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -4481,10 +4487,10 @@
         }
       }
     },
-    "//cablemodem/{id}": {
+    "/cablemodem/{id}": {
       "get": {
         "tags": [
-          "CableModem"
+          "Cable Modem"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -4527,7 +4533,7 @@
       },
       "put": {
         "tags": [
-          "CableModem"
+          "Cable Modem"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -4570,7 +4576,7 @@
       },
       "delete": {
         "tags": [
-          "CableModem"
+          "Cable Modem"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -4620,7 +4626,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Product Specification"
+              "$ref": "#/definitions/ProductSpecification"
             }
           }
         ],
@@ -4667,7 +4673,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/Product Specification"
+              "$ref": "#/definitions/ProductSpecification"
             }
           },
           "400": {
@@ -4699,7 +4705,7 @@
             "description": "Instance object that needs to be updated.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Product Specification"
+              "$ref": "#/definitions/ProductSpecification"
             }
           }
         ],
@@ -4707,7 +4713,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/Product Specification"
+              "$ref": "#/definitions/ProductSpecification"
             }
           },
           "400": {
@@ -5997,7 +6003,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/EVC Product"
+              "$ref": "#/definitions/EVCProduct"
             }
           }
         ],
@@ -6018,7 +6024,7 @@
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
-        "displayName": "EV C Product",
+        "displayName": "EVC Product",
         "produces": [
           "application/json",
           "application/xml"
@@ -6044,7 +6050,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/EVC Product"
+              "$ref": "#/definitions/EVCProduct"
             }
           },
           "400": {
@@ -6076,7 +6082,7 @@
             "description": "Instance object that needs to be updated.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/EVC Product"
+              "$ref": "#/definitions/EVCProduct"
             }
           }
         ],
@@ -6084,7 +6090,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/EVC Product"
+              "$ref": "#/definitions/EVCProduct"
             }
           },
           "400": {
@@ -6150,7 +6156,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/UNI Product"
+              "$ref": "#/definitions/UNIProduct"
             }
           }
         ],
@@ -6197,7 +6203,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/UNI Product"
+              "$ref": "#/definitions/UNIProduct"
             }
           },
           "400": {
@@ -6229,7 +6235,7 @@
             "description": "Instance object that needs to be updated.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/UNI Product"
+              "$ref": "#/definitions/UNIProduct"
             }
           }
         ],
@@ -6237,7 +6243,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/UNI Product"
+              "$ref": "#/definitions/UNIProduct"
             }
           },
           "400": {
@@ -6587,7 +6593,7 @@
         }
       }
     },
-    "//account": {
+    "/account": {
       "post": {
         "tags": [
           "Account"
@@ -6623,7 +6629,7 @@
         }
       }
     },
-    "//account/{id}": {
+    "/account/{id}": {
       "get": {
         "tags": [
           "Account"
@@ -6915,7 +6921,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/UNI ServiceConfiguration"
+              "$ref": "#/definitions/UNIServiceConfiguration"
             }
           }
         ],
@@ -6962,7 +6968,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/UNI ServiceConfiguration"
+              "$ref": "#/definitions/UNIServiceConfiguration"
             }
           },
           "400": {
@@ -6994,7 +7000,7 @@
             "description": "Instance object that needs to be updated.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/UNI ServiceConfiguration"
+              "$ref": "#/definitions/UNIServiceConfiguration"
             }
           }
         ],
@@ -7002,7 +7008,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/UNI ServiceConfiguration"
+              "$ref": "#/definitions/UNIServiceConfiguration"
             }
           },
           "400": {
@@ -7068,7 +7074,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Users Tickets"
+              "$ref": "#/definitions/UsersTickets"
             }
           }
         ],
@@ -7115,7 +7121,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/Users Tickets"
+              "$ref": "#/definitions/UsersTickets"
             }
           },
           "400": {
@@ -7147,7 +7153,7 @@
             "description": "Instance object that needs to be updated.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Users Tickets"
+              "$ref": "#/definitions/UsersTickets"
             }
           }
         ],
@@ -7155,7 +7161,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/Users Tickets"
+              "$ref": "#/definitions/UsersTickets"
             }
           },
           "400": {
@@ -7221,7 +7227,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/EVC Service Configuration"
+              "$ref": "#/definitions/EVCServiceConfiguration"
             }
           }
         ],
@@ -7268,7 +7274,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/EVC Service Configuration"
+              "$ref": "#/definitions/EVCServiceConfiguration"
             }
           },
           "400": {
@@ -7300,7 +7306,7 @@
             "description": "Instance object that needs to be updated.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/EVC Service Configuration"
+              "$ref": "#/definitions/EVCServiceConfiguration"
             }
           }
         ],
@@ -7308,7 +7314,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/EVC Service Configuration"
+              "$ref": "#/definitions/EVCServiceConfiguration"
             }
           },
           "400": {
@@ -7527,7 +7533,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/EPL Product Configuration"
+              "$ref": "#/definitions/EPLProductConfiguration"
             }
           }
         ],
@@ -7574,7 +7580,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/EPL Product Configuration"
+              "$ref": "#/definitions/EPLProductConfiguration"
             }
           },
           "400": {
@@ -7606,7 +7612,7 @@
             "description": "Instance object that needs to be updated.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/EPL Product Configuration"
+              "$ref": "#/definitions/EPLProductConfiguration"
             }
           }
         ],
@@ -7614,7 +7620,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/EPL Product Configuration"
+              "$ref": "#/definitions/EPLProductConfiguration"
             }
           },
           "400": {
@@ -7986,7 +7992,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Geographic Address"
+              "$ref": "#/definitions/GeographicAddress"
             }
           }
         ],
@@ -8033,7 +8039,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/Geographic Address"
+              "$ref": "#/definitions/GeographicAddress"
             }
           },
           "400": {
@@ -8065,7 +8071,7 @@
             "description": "Instance object that needs to be updated.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Geographic Address"
+              "$ref": "#/definitions/GeographicAddress"
             }
           }
         ],
@@ -8073,7 +8079,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/Geographic Address"
+              "$ref": "#/definitions/GeographicAddress"
             }
           },
           "400": {
@@ -8598,7 +8604,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/UNI Service"
+              "$ref": "#/definitions/UNIService"
             }
           }
         ],
@@ -8645,7 +8651,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/UNI Service"
+              "$ref": "#/definitions/UNIService"
             }
           },
           "400": {
@@ -8677,7 +8683,7 @@
             "description": "Instance object that needs to be updated.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/UNI Service"
+              "$ref": "#/definitions/UNIService"
             }
           }
         ],
@@ -8685,7 +8691,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/UNI Service"
+              "$ref": "#/definitions/UNIService"
             }
           },
           "400": {
@@ -8729,7 +8735,7 @@
         }
       }
     },
-    "//asbuiltorderdesign": {
+    "/asbuiltorderdesign": {
       "post": {
         "tags": [
           "As Built Design"
@@ -8751,7 +8757,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/As Built Design"
+              "$ref": "#/definitions/AsBuiltDesign"
             }
           }
         ],
@@ -8765,7 +8771,7 @@
         }
       }
     },
-    "//asbuiltorderdesign/{id}": {
+    "/asbuiltorderdesign/{id}": {
       "get": {
         "tags": [
           "As Built Design"
@@ -8798,7 +8804,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/As Built Design"
+              "$ref": "#/definitions/AsBuiltDesign"
             }
           },
           "400": {
@@ -8830,7 +8836,7 @@
             "description": "Instance object that needs to be updated.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/As Built Design"
+              "$ref": "#/definitions/AsBuiltDesign"
             }
           }
         ],
@@ -8838,7 +8844,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/As Built Design"
+              "$ref": "#/definitions/AsBuiltDesign"
             }
           },
           "400": {
@@ -9210,7 +9216,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/System Contact"
+              "$ref": "#/definitions/SystemContact"
             }
           }
         ],
@@ -9257,7 +9263,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/System Contact"
+              "$ref": "#/definitions/SystemContact"
             }
           },
           "400": {
@@ -9289,7 +9295,7 @@
             "description": "Instance object that needs to be updated.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/System Contact"
+              "$ref": "#/definitions/SystemContact"
             }
           }
         ],
@@ -9297,7 +9303,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/System Contact"
+              "$ref": "#/definitions/SystemContact"
             }
           },
           "400": {
@@ -9363,7 +9369,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Telephone Number"
+              "$ref": "#/definitions/TelephoneNumber"
             }
           }
         ],
@@ -9410,7 +9416,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/Telephone Number"
+              "$ref": "#/definitions/TelephoneNumber"
             }
           },
           "400": {
@@ -9442,7 +9448,7 @@
             "description": "Instance object that needs to be updated.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Telephone Number"
+              "$ref": "#/definitions/TelephoneNumber"
             }
           }
         ],
@@ -9450,7 +9456,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/Telephone Number"
+              "$ref": "#/definitions/TelephoneNumber"
             }
           },
           "400": {
@@ -9516,7 +9522,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Service Order"
+              "$ref": "#/definitions/ServiceOrder"
             }
           }
         ],
@@ -9563,7 +9569,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/Service Order"
+              "$ref": "#/definitions/ServiceOrder"
             }
           },
           "400": {
@@ -9595,7 +9601,7 @@
             "description": "Instance object that needs to be updated.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Service Order"
+              "$ref": "#/definitions/ServiceOrder"
             }
           }
         ],
@@ -9603,7 +9609,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/Service Order"
+              "$ref": "#/definitions/ServiceOrder"
             }
           },
           "400": {
