@@ -1,0 +1,7 @@
+{
+  "name": "parser",
+  "main": "app.js",
+  "dependencies": {
+    "jsonfile": "^2.0.0"
+  }
+}

@@ -23,9 +23,8 @@ function mainRoutes(app, middleware, controllers) {
 	//setupPageRoute(app, '/documentation', middleware, [], controllers.portal.documentation);
 
 	// This is how
-	//setupPageRoute(app, '/forums', middleware, [middleware.redirectToLoginIfGuest], controllers.home);
-
-	setupPageRoute(app, '/forums', middleware, [], controllers.home);
+	setupPageRoute(app, '/forums', middleware, [middleware.redirectToLoginIfGuest], controllers.home);
+	//setupPageRoute(app, '/forums', middleware, [], controllers.home);
 
 	var loginRegisterMiddleware = [middleware.applyCSRF, middleware.redirectToAccountIfLoggedIn];
 
@@ -51,14 +50,23 @@ function topicRoutes(app, middleware, controllers) {
 }
 
 function tagRoutes(app, middleware, controllers) {
-	setupPageRoute(app, '/tags/:tag', middleware, [], controllers.tags.getTag);
-	setupPageRoute(app, '/tags', middleware, [], controllers.tags.getTags);
+	//setupPageRoute(app, '/tags/:tag', middleware, [], controllers.tags.getTag);
+	//setupPageRoute(app, '/tags', middleware, [], controllers.tags.getTags);
+
+	setupPageRoute(app, '/tags/:tag', middleware, [middleware.redirectToLoginIfGuest], controllers.tags.getTag);
+	setupPageRoute(app, '/tags', middleware, [middleware.redirectToLoginIfGuest], controllers.tags.getTags);
 }
 
 function categoryRoutes(app, middleware, controllers) {
-	setupPageRoute(app, '/popular/:term?', middleware, [], controllers.categories.popular);
-	setupPageRoute(app, '/recent/:term?', middleware, [], controllers.categories.recent);
-	setupPageRoute(app, '/unread', middleware, [middleware.authenticate], controllers.categories.unread);
+
+	//setupPageRoute(app, '/popular/:term?', middleware, [], controllers.categories.popular);
+	//setupPageRoute(app, '/recent/:term?', middleware, [], controllers.categories.recent);
+	//setupPageRoute(app, '/unread', middleware, [middleware.authenticate], controllers.categories.unread);
+
+	setupPageRoute(app, '/popular/:term?', middleware, [middleware.redirectToLoginIfGuest], controllers.categories.popular);
+	setupPageRoute(app, '/recent/:term?', middleware, [middleware.redirectToLoginIfGuest], controllers.categories.recent);
+	setupPageRoute(app, '/unread', middleware, [middleware.redirectToLoginIfGuest, middleware.redirectToLoginIfGuest], controllers.categories.unread);
+
 	app.get('/api/unread/total', middleware.authenticate, controllers.categories.unreadTotal);
 
 	setupPageRoute(app, '/category/:category_id/:slug/:topic_index', middleware, [middleware.applyCSRF, middleware.checkTopicIndex], controllers.categories.get);
@@ -84,7 +92,7 @@ function accountRoutes(app, middleware, controllers) {
 }
 
 function userRoutes(app, middleware, controllers) {
-	var middlewares = [middleware.checkGlobalPrivacySettings];
+	var middlewares = [middleware.checkGlobalPrivacySettings, middleware.redirectToLoginIfGuest];
 
 	setupPageRoute(app, '/users', middleware, middlewares, controllers.users.getOnlineUsers);
 	setupPageRoute(app, '/users/online', middleware, middlewares, controllers.users.getOnlineUsers);
@@ -95,7 +103,7 @@ function userRoutes(app, middleware, controllers) {
  }
 
 function groupRoutes(app, middleware, controllers) {
-	var middlewares = [middleware.checkGlobalPrivacySettings];
+	var middlewares = [middleware.redirectToLoginIfGuest, middleware.checkGlobalPrivacySettings];
 
 	setupPageRoute(app, '/groups', middleware, middlewares, controllers.groups.list);
 	setupPageRoute(app, '/groups/:name', middleware, middlewares, controllers.groups.details);
