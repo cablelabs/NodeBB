@@ -30,25 +30,34 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">How-Tos<strong class="caret"></strong></a>
                         <ul class="dropdown-menu">
+                            <!-- IF loggedIn -->
                             <li><a href="{relative_path}/getting-started">Getting Started</a></li>
                             <li><a href="{relative_path}/entity-types">Entity Types</a></li>
                             <li><a href="{relative_path}/authorization">Authorization</a></li>
                             <li><a href="{relative_path}/video-tutorials">Video Tutorials</a></li>
                             <li><a href="{relative_path}/about-cia">About CIA</a></li>
+                            <!-- ELSE -->
+                            <li><a href="{relative_path}/login">Login</a></li>
+                            <!-- ENDIF loggedIn -->
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">API's <strong class="caret"></strong></a>
                         <ul class="dropdown-menu">
+                            <!-- IF loggedIn -->
                             <li><a href="{relative_path}/api-info">General API Info</a></li>
                             <li><a href="{relative_path}/api-mindmap">Entities Map</a></li>
                             <li><a href="{relative_path}/documentation">Documentation</a></li>
                             <li><a href="{relative_path}/key-management">Get a Key</a></li>
+                            <!-- ELSE -->
+                            <li><a href="{relative_path}/login">Login</a></li>
+                            <!-- ENDIF loggedIn -->
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="{relative_path}/forums">Forums<b class="caret"></b></a>
                         <ul class="dropdown-menu">
+                            <!-- IF loggedIn -->
                             <li>
                                 <a href="{relative_path}/forums"><i id="forum-home" class="fa fa-fw fa-home"></i>Home</a>
                             </li>
@@ -64,6 +73,9 @@
                             <li>
                                 <a href="{relative_path}/popular"><i class="fa fa-fw fa-fire" title="[[global:header.popular]]"></i><span class="visible-xs-inline"> [[global:header.popular]]</span>Popular</a>
                             </li>
+                            <!-- ELSE -->
+                            <li><a href="{relative_path}/login">Login</a></li>
+                            <!-- ENDIF loggedIn -->
                         </ul>
                     </li>
                 </ul>
@@ -140,13 +152,13 @@
                 </ul>
                 <!-- ELSE -->
                 <ul id="logged-out-menu" class="nav navbar-nav navbar-right pull-right">
-                    <li>
-                        <!-- IF function.displayUsersLink -->
-                        <a href="{relative_path}/users" title="[[global:header.users]]">
-                            <i class="fa fa-fw fa-users"></i><span class="visible-xs-inline"> [[global:header.users]]</span>
-                        </a>
-                        <!-- ENDIF function.displayUsersLink -->
-                    </li>
+                    <!--<li>-->
+                        <!--&lt;!&ndash; IF function.displayUsersLink &ndash;&gt;-->
+                        <!--<a href="{relative_path}/users" title="[[global:header.users]]">-->
+                            <!--<i class="fa fa-fw fa-users"></i><span class="visible-xs-inline"> [[global:header.users]]</span>-->
+                        <!--</a>-->
+                        <!--&lt;!&ndash; ENDIF function.displayUsersLink &ndash;&gt;-->
+                    <!--</li>-->
                     <!-- IF allowRegistration -->
                     <li>
                         <a href="{relative_path}/register">
