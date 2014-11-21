@@ -166,6 +166,9 @@ module.exports = function(app, middleware) {
 		require('./debug')(app, middleware, controllers);
 	}
 
+	app.all(relativePath + '/secured/*', middleware.redirectToLoginIfGuest);
+	app.use(relativePath + '/secured', express.static(path.join(__dirname, '../../', 'public/secured')));
+
 	app.use(relativePath, express.static(path.join(__dirname, '../../', 'public'), {
 		maxAge: app.enabled('cache') ? 5184000000 : 0
 	}));
