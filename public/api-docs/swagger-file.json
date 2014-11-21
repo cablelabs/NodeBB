@@ -11555,6 +11555,117 @@
         }
       }
     },
+    "Account": {
+      "type": "object",
+      "properties": {
+        "sites": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "SiteSummary"
+          }
+        },
+        "primaryUser": {
+          "type": "object",
+          "$ref": "UserSummary"
+        },
+        "users": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "UserSummary"
+          }
+        },
+        "taxExemptions": {
+          "type": "object",
+          "$ref": "TaxExemptions"
+        },
+        "status": {
+          "$ref": "AccountStatus"
+        },
+        "link": {
+          "type": "object",
+          "$ref": "Link"
+        },
+        "creditLimit": {
+          "type": "integer"
+        },
+        "type": {
+          "type": "object",
+          "$ref": "AccountType"
+        },
+        "customer": {
+          "type": "object",
+          "$ref": "CustomerSummary",
+          "required": true
+        },
+        "id": {
+          "type": "string"
+        },
+        "billing": {
+          "type": "object",
+          "$ref": "BillingSummary",
+          "required": true
+        },
+        "accountNumber": {
+          "type": "string"
+        },
+        "pin": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "financialStatus": {
+          "type": "object",
+          "$ref": "AccountFinancialStatus",
+          "required": true
+        },
+        "payments": {
+          "type": "object",
+          "$ref": "PaymentSummary",
+          "required": true
+        },
+        "relatedAccounts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "AccountSummary"
+          }
+        },
+        "financials": {
+          "type": "object",
+          "$ref": "FinancialSummary",
+          "required": true
+        },
+        "devices": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "DeviceSummary"
+          }
+        },
+        "products": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "ProductSummary"
+          }
+        },
+        "preferences": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "PreferenceSummary"
+          }
+        },
+        "serviceAddress": {
+          "type": "object",
+          "$ref": "PropertyAddress",
+          "required": true
+        }
+      }
+    },
     "AccountSummary": {
       "id": "AccountSummary",
       "properties": {
@@ -11707,6 +11818,18 @@
     },
     "PropertyAddress": { },
     "Site": { },
+    "SiteSummary": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "type": "object",
+          "$ref": "Link"
+        }
+      }
+    },
     "Location": {
       "id": "Location",
       "properties": {
@@ -12870,6 +12993,15 @@
         }
       }
     },
+    "AccountStatus": {
+      "type": "string",
+      "enum": [
+        "Active",
+        "Suspended",
+        "Inactive",
+        "Closed"
+      ]
+    },
     "BillCharge": { },
     "CableServiceArea": { },
     "Comment": { },
@@ -12908,6 +13040,31 @@
     "TicketLocation": { },
     "TicketCategory": { },
     "User": { },
+    "UserSummary": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "link": {
+          "type": "object",
+          "$ref": "Link"
+        },
+        "contactRole": {
+          "type": "string"
+        },
+        "accountRole": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "object",
+          "$ref": "PartySummary"
+        }
+      }
+    },
     "UserCredential": { },
     "UserGroup": { }
   }
