@@ -6596,7 +6596,7 @@
     "/account": {
       "post": {
         "tags": [
-          "Account"
+          "Account", "Domain : Customer"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -6632,7 +6632,7 @@
     "/account/{id}": {
       "get": {
         "tags": [
-          "Account"
+          "Account", "Domain : Customer"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -6675,7 +6675,7 @@
       },
       "put": {
         "tags": [
-          "Account"
+          "Account", "Domain : Customer"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -6718,7 +6718,7 @@
       },
       "delete": {
         "tags": [
-          "Account"
+          "Account", "Domain : Customer"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -6749,7 +6749,7 @@
     "/productconfiguration": {
       "post": {
         "tags": [
-          "Product Configuration"
+          "Product Configuration", "Domain : Product"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -6785,7 +6785,7 @@
     "/productconfiguration/{id}": {
       "get": {
         "tags": [
-          "Product Configuration"
+          "Product Configuration", "Domain : Product"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -6828,7 +6828,7 @@
       },
       "put": {
         "tags": [
-          "Product Configuration"
+          "Product Configuration", "Domain : Product"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -6871,7 +6871,7 @@
       },
       "delete": {
         "tags": [
-          "Product Configuration"
+          "Product Configuration", "Domain : Product"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -6902,7 +6902,7 @@
     "/service/uniconfiguration": {
       "post": {
         "tags": [
-          "UNI Service Configuration"
+          "UNI Service Configuration", "Domain : Service"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -6938,7 +6938,7 @@
     "/service/uniconfiguration/{id}": {
       "get": {
         "tags": [
-          "UNI Service Configuration"
+          "UNI Service Configuration", "Domain : Service"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -6981,7 +6981,7 @@
       },
       "put": {
         "tags": [
-          "UNI Service Configuration"
+          "UNI Service Configuration", "Domain : Service"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -7024,7 +7024,7 @@
       },
       "delete": {
         "tags": [
-          "UNI Service Configuration"
+          "UNI Service Configuration", "Domain : Service"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -7055,7 +7055,7 @@
     "/user/{id}/tickets": {
       "post": {
         "tags": [
-          "Users Tickets"
+          "Users Tickets", "Domain : Interaction"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -7097,7 +7097,7 @@
       },
       "get": {
         "tags": [
-          "Users Tickets"
+          "Users Tickets", "Domain : Interaction"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -7214,7 +7214,7 @@
     "/service/evcconfiguration": {
       "post": {
         "tags": [
-          "EVC Service Configuration"
+          "EVC Service Configuration", "Domain : Service"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -7250,7 +7250,7 @@
     "/service/evcconfiguration/{id}": {
       "get": {
         "tags": [
-          "EVC Service Configuration"
+          "EVC Service Configuration", "Domain : Service"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -7293,7 +7293,7 @@
       },
       "put": {
         "tags": [
-          "EVC Service Configuration"
+          "EVC Service Configuration", "Domain : Service"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -7336,7 +7336,7 @@
       },
       "delete": {
         "tags": [
-          "EVC Service Configuration"
+          "EVC Service Configuration", "Domain : Service"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -7367,7 +7367,7 @@
     "/propertyaddress": {
       "post": {
         "tags": [
-          "Property Address"
+          "Property Address", "Domain : Location"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -7403,7 +7403,7 @@
     "/propertyaddress/{id}": {
       "get": {
         "tags": [
-          "Property Address"
+          "Property Address", "Domain : Location"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -7446,7 +7446,7 @@
       },
       "put": {
         "tags": [
-          "Property Address"
+          "Property Address", "Domain : Location"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -7489,7 +7489,7 @@
       },
       "delete": {
         "tags": [
-          "Property Address"
+          "Property Address", "Domain : Location"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -7520,7 +7520,7 @@
     "/product/eplconfiguration": {
       "post": {
         "tags": [
-          "EPL Product Configuration"
+          "EPL Product Configuration", "Domain : Product"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -7556,7 +7556,7 @@
     "/product/eplconfiguration/{id}": {
       "get": {
         "tags": [
-          "EPL Product Configuration"
+          "EPL Product Configuration", "Domain : Product"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -7599,7 +7599,7 @@
       },
       "put": {
         "tags": [
-          "EPL Product Configuration"
+          "EPL Product Configuration", "Domain : Product"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -7642,7 +7642,7 @@
       },
       "delete": {
         "tags": [
-          "EPL Product Configuration"
+          "EPL Product Configuration", "Domain : Product"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -7673,7 +7673,7 @@
     "/productprice": {
       "post": {
         "tags": [
-          "Product Price"
+          "Product Price", "Domain : Product"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -7709,7 +7709,7 @@
     "/productprice/{id}": {
       "get": {
         "tags": [
-          "Product Price"
+          "Product Price", "Domain : Product"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -7752,7 +7752,7 @@
       },
       "put": {
         "tags": [
-          "Product Price"
+          "Product Price", "Domain : Product"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -7795,7 +7795,7 @@
       },
       "delete": {
         "tags": [
-          "Product Price"
+          "Product Price", "Domain : Product"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -7826,7 +7826,7 @@
     "/customerquoteitem": {
       "post": {
         "tags": [
-          "Customer Quote Item"
+          "Customer Quote Item", "Domain : Customer"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -7862,7 +7862,7 @@
     "/customerquoteitem/{id}": {
       "get": {
         "tags": [
-          "Customer Quote Item"
+          "Customer Quote Item", "Domain : Customer"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -7905,7 +7905,7 @@
       },
       "put": {
         "tags": [
-          "Customer Quote Item"
+          "Customer Quote Item", "Domain : Customer"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -7948,7 +7948,7 @@
       },
       "delete": {
         "tags": [
-          "Customer Quote Item"
+          "Customer Quote Item", "Domain : Customer"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -7979,7 +7979,7 @@
     "/geographicaddress": {
       "post": {
         "tags": [
-          "Geographic Address"
+          "Geographic Address", "Domain : Location"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -8015,7 +8015,7 @@
     "/geographicaddress/{id}": {
       "get": {
         "tags": [
-          "Geographic Address"
+          "Geographic Address", "Domain : Location"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -8058,7 +8058,7 @@
       },
       "put": {
         "tags": [
-          "Geographic Address"
+          "Geographic Address", "Domain : Location"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -8101,7 +8101,7 @@
       },
       "delete": {
         "tags": [
-          "Geographic Address"
+          "Geographic Address", "Domain : Location"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -8132,7 +8132,7 @@
     "/property": {
       "post": {
         "tags": [
-          "Property"
+          "Property", "Domain : Location"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -8168,7 +8168,7 @@
     "/property/{id}": {
       "get": {
         "tags": [
-          "Property"
+          "Property", "Domain : Location"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -8211,7 +8211,7 @@
       },
       "put": {
         "tags": [
-          "Property"
+          "Property", "Domain : Location"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -8254,7 +8254,7 @@
       },
       "delete": {
         "tags": [
-          "Property"
+          "Property", "Domain : Location"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -8285,7 +8285,7 @@
     "/configurationdata": {
       "post": {
         "tags": [
-          "Configuration Data"
+          "Configuration Data", "Domain : Service"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -8321,7 +8321,7 @@
     "/configurationdata/{id}": {
       "get": {
         "tags": [
-          "Configuration Data"
+          "Configuration Data", "Domain : Service"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -8364,7 +8364,7 @@
       },
       "put": {
         "tags": [
-          "Configuration Data"
+          "Configuration Data", "Domain : Service"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -8407,7 +8407,7 @@
       },
       "delete": {
         "tags": [
-          "Configuration Data"
+          "Configuration Data", "Domain : Service"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -8438,7 +8438,7 @@
     "/feature": {
       "post": {
         "tags": [
-          "Feature"
+          "Feature", "Domain : Location"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -8474,7 +8474,7 @@
     "/feature/{id}": {
       "get": {
         "tags": [
-          "Feature"
+          "Feature", "Domain : Location"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -8517,7 +8517,7 @@
       },
       "put": {
         "tags": [
-          "Feature"
+          "Feature", "Domain : Location"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -8560,7 +8560,7 @@
       },
       "delete": {
         "tags": [
-          "Feature"
+          "Feature", "Domain : Location"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -8591,7 +8591,7 @@
     "/service/uni": {
       "post": {
         "tags": [
-          "UNI Service"
+          "UNI Service", "Domain : Service"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -8627,7 +8627,7 @@
     "/service/uni/{id}": {
       "get": {
         "tags": [
-          "UNI Service"
+          "UNI Service", "Domain : Service"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -8670,7 +8670,7 @@
       },
       "put": {
         "tags": [
-          "UNI Service"
+          "UNI Service", "Domain : Service"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -8713,7 +8713,7 @@
       },
       "delete": {
         "tags": [
-          "UNI Service"
+          "UNI Service", "Domain : Service"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -8744,7 +8744,7 @@
     "/asbuiltorderdesign": {
       "post": {
         "tags": [
-          "As Built Design"
+          "As Built Design", "Domain : Service"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -8780,7 +8780,7 @@
     "/asbuiltorderdesign/{id}": {
       "get": {
         "tags": [
-          "As Built Design"
+          "As Built Design", "Domain : Service"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -8823,7 +8823,7 @@
       },
       "put": {
         "tags": [
-          "As Built Design"
+          "As Built Design", "Domain : Service"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -8866,7 +8866,7 @@
       },
       "delete": {
         "tags": [
-          "As Built Design"
+          "As Built Design", "Domain : Service"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -8897,7 +8897,7 @@
     "/customerorderitem": {
       "post": {
         "tags": [
-          "Customer Order Item"
+          "Customer Order Item", "Domain : Customer"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -8933,7 +8933,7 @@
     "/customerorderitem/{id}": {
       "get": {
         "tags": [
-          "Customer Order Item"
+          "Customer Order Item", "Domain : Customer"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -8976,7 +8976,7 @@
       },
       "put": {
         "tags": [
-          "Customer Order Item"
+          "Customer Order Item", "Domain : Customer"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -9019,7 +9019,7 @@
       },
       "delete": {
         "tags": [
-          "Customer Order Item"
+          "Customer Order Item", "Domain : Customer"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -9050,7 +9050,7 @@
     "/paymentplan": {
       "post": {
         "tags": [
-          "Payment Plan"
+          "Payment Plan", "Domain : Customer"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -9086,7 +9086,7 @@
     "/paymentplan/{id}": {
       "get": {
         "tags": [
-          "Payment Plan"
+          "Payment Plan", "Domain : Customer"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -9129,7 +9129,7 @@
       },
       "put": {
         "tags": [
-          "Payment Plan"
+          "Payment Plan", "Domain : Customer"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -9172,7 +9172,7 @@
       },
       "delete": {
         "tags": [
-          "Payment Plan"
+          "Payment Plan", "Domain : Customer"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -9203,7 +9203,7 @@
     "/systemcontact": {
       "post": {
         "tags": [
-          "System Contact"
+          "System Contact", "Domain : Customer"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -9239,7 +9239,7 @@
     "/systemcontact/{id}": {
       "get": {
         "tags": [
-          "System Contact"
+          "System Contact", "Domain : Customer"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -9282,7 +9282,7 @@
       },
       "put": {
         "tags": [
-          "System Contact"
+          "System Contact", "Domain : Customer"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -9325,7 +9325,7 @@
       },
       "delete": {
         "tags": [
-          "System Contact"
+          "System Contact", "Domain : Customer"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -9356,7 +9356,7 @@
     "/telephonenumber": {
       "post": {
         "tags": [
-          "Telephone Number"
+          "Telephone Number", "Domain : Common"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -9392,7 +9392,7 @@
     "/telephonenumber/{id}": {
       "get": {
         "tags": [
-          "Telephone Number"
+          "Telephone Number", "Domain : Common"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -9435,7 +9435,7 @@
       },
       "put": {
         "tags": [
-          "Telephone Number"
+          "Telephone Number", "Domain : Common"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -9478,7 +9478,7 @@
       },
       "delete": {
         "tags": [
-          "Telephone Number"
+          "Telephone Number", "Domain : Common"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -9509,7 +9509,7 @@
     "/serviceorder": {
       "post": {
         "tags": [
-          "Service Order"
+          "Service Order", "Domain : Interaction"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -9545,7 +9545,7 @@
     "/serviceorder/{id}": {
       "get": {
         "tags": [
-          "Service Order"
+          "Service Order", "Domain : Interaction"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -9588,7 +9588,7 @@
       },
       "put": {
         "tags": [
-          "Service Order"
+          "Service Order", "Domain : Interaction"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -9631,7 +9631,7 @@
       },
       "delete": {
         "tags": [
-          "Service Order"
+          "Service Order", "Domain : Interaction"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -9662,7 +9662,7 @@
     "/serviceorder/sat": {
       "post": {
         "tags": [
-          "SAT"
+          "SAT", "Domain : Interaction"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -9698,7 +9698,7 @@
     "/serviceorder/sat/{id}": {
       "get": {
         "tags": [
-          "SAT"
+          "SAT", "Domain : Interaction"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -9741,7 +9741,7 @@
       },
       "put": {
         "tags": [
-          "SAT"
+          "SAT", "Domain : Interaction"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -9784,7 +9784,7 @@
       },
       "delete": {
         "tags": [
-          "SAT"
+          "SAT", "Domain : Interaction"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -9815,7 +9815,7 @@
     "/product": {
       "post": {
         "tags": [
-          "Product"
+          "Product", "Domain : Product"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -9851,7 +9851,7 @@
     "/product/{id}": {
       "get": {
         "tags": [
-          "Product"
+          "Product", "Domain : Product"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -9894,7 +9894,7 @@
       },
       "put": {
         "tags": [
-          "Product"
+          "Product", "Domain : Product"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -9937,7 +9937,7 @@
       },
       "delete": {
         "tags": [
-          "Product"
+          "Product", "Domain : Product"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -9968,7 +9968,7 @@
     "/comment": {
       "post": {
         "tags": [
-          "Comment"
+          "Comment", "Domain : Interaction"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -10004,7 +10004,7 @@
     "/comment/{id}": {
       "get": {
         "tags": [
-          "Comment"
+          "Comment", "Domain : Interaction"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -10047,7 +10047,7 @@
       },
       "put": {
         "tags": [
-          "Comment"
+          "Comment", "Domain : Interaction"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -10090,7 +10090,7 @@
       },
       "delete": {
         "tags": [
-          "Comment"
+          "Comment", "Domain : Interaction"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -10121,7 +10121,7 @@
     "/customerpayment": {
       "post": {
         "tags": [
-          "Customer Payment"
+          "Customer Payment", "Domain : Customer"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -10157,7 +10157,7 @@
     "/customerpayment/{id}": {
       "get": {
         "tags": [
-          "Customer Payment"
+          "Customer Payment", "Domain : Customer"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
@@ -10200,7 +10200,7 @@
       },
       "put": {
         "tags": [
-          "Customer Payment"
+          "Customer Payment", "Domain : Customer"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -10243,7 +10243,7 @@
       },
       "delete": {
         "tags": [
-          "Customer Payment"
+          "Customer Payment", "Domain : Customer"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
