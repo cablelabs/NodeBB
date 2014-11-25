@@ -50,7 +50,7 @@
           "Common"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "An entry that documents the Lifecycle of a given Incident TicketAn entry that documents the Lifecycle of a given Incident Ticket.",
         "displayName": "Status Entry",
         "produces": [
           "application/json",
