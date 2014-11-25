@@ -12644,8 +12644,111 @@
         }
       }
     },
-    "ServiceOrderItem": { },
-    "ServiceOrder": { },
+    "ServiceOrderItem": {
+      "id": "ServiceOrderItem",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "evcServiceConfiguration": {
+          "$ref": "EVCServiceConfiguration"
+        },
+        "locations": {
+          "type": "array",
+          "items": {
+            "$ref": "Location"
+          }
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "uniServiceConfigurations": {
+          "type": "array",
+          "items": {
+            "$ref": "UNIServiceConfiguration"
+          }
+        },
+        "device": {
+          "$ref": "Device"
+        },
+        "action": {
+          "$ref": "ChangeOrderType"
+        },
+        "serviceConfiguration": {
+          "$ref": "ServiceConfiguration"
+        },
+        "interactionItemStatus": {
+          "type": "string"
+        },
+        "quantity": {
+          "$ref": "Quantity"
+        },
+        "orderDesign": {
+          "$ref": "OrderDesign"
+        }
+      }
+    },
+    "ServiceOrder": {
+      "id": "ServiceOrder",
+      "properties": {
+        "link": {
+          "$ref": "Link"
+        },
+        "characteristics": {
+          "type": "array",
+          "items": {
+            "$ref": "Characteristic"
+          }
+        },
+        "customerAccount": {
+          "type": "array",
+          "items": {
+            "$ref": "Account"
+          }
+        },
+        "customer": {
+          "type": "array",
+          "items": {
+            "$ref": "Customer"
+          }
+        },
+        "asBuiltOrderDesign": {
+          "$ref": "AsBuiltOrderDesign"
+        },
+        "interactionStatus": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "interactionDateComplete": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "serviceOrderItems": {
+          "type": "array",
+          "items": {
+            "$ref": "ServiceOrderItem"
+          }
+        },
+        "locations": {
+          "type": "array",
+          "items": {
+            "$ref": "Location"
+          }
+        },
+        "sat": {
+          "$ref": "SAT"
+        },
+        "description": {
+          "type": "string"
+        },
+        "interactionDate": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
     "EVCServiceConfigurationSummary": {
       "id": "EVCServiceConfiguration",
       "properties": {
@@ -12731,6 +12834,7 @@
       }
     },
     "NetworkPath": {
+      "type" : "object",
       "id": "NetworkPath",
       "properties": {
         "alternatePathIdentifier": {
@@ -12763,6 +12867,7 @@
       }
     },
     "UNIConfig": {
+      "type" : "object",
       "id": "UNIConfig",
       "properties": {
         "configText": {
@@ -12879,8 +12984,8 @@
         }
       }
     },
-    "EvcSummary": {
-      "id": "EvcSummary",
+    "EVCSummary": {
+      "id": "EVCSummary",
       "properties": {
         "id": {
           "type": "string"
@@ -13000,57 +13105,74 @@
       }
     },
     "UNIService": {
+      "type": "object",
       "id": "UNIService",
       "properties": {
-        "id": {
-          "type": "string"
+        "cfsStatus": {
+          "type": "integer"
         },
-        "link": {
-          "$ref": "Link"
+        "startMode": {
+          "type": "integer"
         },
-        "hasStarted": {
-          "type": "boolean"
+        "evc": {
+          "$ref": "EVCService"
         },
         "isServiceEnabled": {
           "type": "boolean"
         },
-        "isMandatory": {
-          "type": "boolean"
-        },
-        "startMode": {
-          "type": "number"
-        },
-        "isStateful": {
-          "type": "boolean"
-        },
-        "isFCCReportable": {
-          "type": "boolean"
+        "link": {
+          "$ref": "Link"
         },
         "isTSP": {
-          "type": "boolean"
-        },
-        "isResourceFacingService": {
           "type": "boolean"
         },
         "isCustomerFacingService": {
           "type": "boolean"
         },
-        "cfsStatus": {
-          "type": "number"
+        "isFCCReportable": {
+          "type": "boolean"
         },
-        "config": {
-          "$ref": "UNIConfig"
+        "id": {
+          "type": "string"
+        },
+        "hasStarted": {
+          "type": "boolean"
         },
         "networkPath": {
           "$ref": "NetworkPath"
         },
-        "evc": {
-          "$ref": "EvcSummary"
+        "isResourceFacingService": {
+          "type": "boolean"
+        },
+        "customerFacingService": {
+          "type": "array",
+          "items": {
+            "$ref": "UNIService"
+          }
+        },
+        "isMandatory": {
+          "type": "boolean"
+        },
+        "config": {
+          "$ref": "UNIConfig"
+        },
+        "resourceFacingService": {
+          "type": "array",
+          "items": {
+            "$ref": "UNIService"
+          }
+        },
+        "isStateful": {
+          "type": "boolean"
+        },
+        "rfsStatus": {
+          "type": "integer"
         }
       }
     },
     "Changes": {
       "id": "Changes",
+      "type": "object",
       "properties": {
         "change": {
           "type": "string"
@@ -13059,20 +13181,38 @@
     },
     "ResourcePortDeltas": {
       "id": "ResourcePortDeltas",
+      "type": "object",
       "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "type": "object",
+          "$ref": "Link",
+          "required": true
+        },
+        "currentPort": {
+          "type": "object",
+          "$ref": "ResourcePort",
+          "required": true
+        },
+        "resourcePortConfiguration": {
+          "type": "object",
+          "$ref": "ResourcePort",
+          "required": true
+        },
         "changes": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "Changes"
           }
-        },
-        "resourcePortConfiguration": {
-          "$ref": "ResourcePort"
         }
       }
     },
     "EthernetInterfaceConfiguration": {
       "id": "EthernetInterfaceConfiguration",
+      "type": "object",
       "properties": {
         "id": {
           "type": "String"
@@ -13114,6 +13254,7 @@
     },
     "EthernetInterfaceDeltas": {
       "id": "EthernetInterfaceDeltas",
+      "type": "object",
       "properties": {
         "id": {
           "type": "String"
@@ -13134,17 +13275,32 @@
     },
     "Resource": {
       "id": "Resource",
+      "type": "object",
       "properties": {
-        "ethernetInterfaceDeltas": {
+        "resourceFacingServices": {
           "type": "array",
           "items": {
-            "$ref": "EthernetInterfaceDeltas"
+            "type": "object",
+            "$ref": "Service"
           }
         },
-        "resourcePortDeltas": {
+        "configurationDatas": {
           "type": "array",
           "items": {
-            "$ref": "ResourcePortDeltas"
+            "type": "object",
+            "$ref": "ConfigurationData"
+          }
+        },
+        "device": {
+          "type": "object",
+          "$ref": "Device",
+          "required": true
+        },
+        "tickets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "ImpactedItem"
           }
         }
       }
