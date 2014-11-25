@@ -12032,40 +12032,28 @@
           }
         },
         "structureHeight": {
-          "$ref": "Quantity",
-          "required": true
+          "$ref": "Quantity"
         },
         "vhCoordinates": {
-          "type": "object",
-          "$ref": "VHCoordinates",
-          "required": true
+          "$ref": "VHCoordinates"
         },
         "customerAccounts": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "Account"
           }
         },
         "status": {
-          "type": "object",
-          "$ref": "SiteStatus",
-          "required": true
+          "$ref": "SiteStatus"
         },
         "link": {
-          "type": "object",
-          "$ref": "Link",
-          "required": true
+          "$ref": "Link"
         },
         "propertyAddress": {
-          "type": "object",
-          "$ref": "PropertyAddress",
-          "required": true
+          "$ref": "PropertyAddress"
         },
         "type": {
-          "type": "object",
-          "$ref": "SiteType",
-          "required": true
+          "$ref": "SiteType"
         },
         "id": {
           "type": "string"
@@ -12074,9 +12062,7 @@
           "type": "string"
         },
         "category": {
-          "type": "object",
-          "$ref": "SiteCategory",
-          "required": true
+          "$ref": "SiteCategory"
         },
         "description": {
           "type": "string"
@@ -12085,24 +12071,17 @@
           "type": "string"
         },
         "validFor": {
-          "type": "object",
-          "$ref": "TimePeriod",
-          "required": true
+          "$ref": "TimePeriod"
         },
         "clliCode": {
-          "type": "object",
-          "$ref": "CLLICode",
-          "required": true
+          "$ref": "CLLICode"
         },
         "typeOfSite": {
-          "type": "object",
-          "$ref": "TypeOfSite",
-          "required": true
+          "$ref": "TypeOfSite"
         },
         "accountContacts": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "AccountContactAssignment"
           }
         }
@@ -12115,7 +12094,6 @@
           "type": "string"
         },
         "link": {
-          "type": "object",
           "$ref": "Link"
         }
       }
@@ -12305,6 +12283,12 @@
           "items": {
             "$ref": "UNIService"
           }
+        },
+        "configuration": {
+          "$ref": "EVCConfiguration"
+        },
+        "path": {
+          "$ref": "NetworkPath"
         }
       }
     },
@@ -12346,35 +12330,35 @@
     "EPLProduct": {
       "id": "EPLProduct",
       "properties": {
-        "id": {
-          "type": "string"
+        "uniProducts": {
+          "type": "array",
+          "items": {
+            "$ref": "UNIProduct"
+          }
         },
         "link": {
           "$ref": "Link"
         },
-        "name": {
-          "type": "string"
+        "evcProduct": {
+          "$ref": "EVCProduct"
+        },
+        "productOrderItem": {
+          "$ref": "ProductOrderItem"
         },
         "isBundle": {
           "type": "boolean"
         },
-        "description": {
+        "id": {
           "type": "string"
+        },
+        "customerAccountInvolvements": {
+          "type": "array",
+          "items": {
+            "$ref": "AccountProductAssignment"
+          }
         },
         "productStatus": {
           "type": "string"
-        },
-        "productSerialNumber": {
-          "type": "string"
-        },
-        "validFor": {
-          "$ref": "TimePeriod"
-        },
-        "products": {
-          "type": "array",
-          "items": {
-            "$ref": "EPLProduct"
-          }
         },
         "productRelationships": {
           "type": "array",
@@ -12382,26 +12366,38 @@
             "$ref": "ProductRelationship"
           }
         },
+        "description": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "validFor": {
+          "$ref": "TimePeriod"
+        },
+        "productSpecification": {
+          "$ref": "ProductSpecification"
+        },
         "productPrices": {
           "type": "array",
           "items": {
             "$ref": "ProductPrice"
           }
         },
-        "productOffering": {
-          "$ref": "ProductOffering"
-        },
         "configuration": {
           "$ref": "EPLConfiguration"
         },
-        "uniProducts": {
+        "productSerialNumber": {
+          "type": "string"
+        },
+        "products": {
           "type": "array",
           "items": {
-            "$ref": "UNIProduct"
+            "$ref": "EPLProduct"
           }
         },
-        "evcProduct": {
-          "$ref": "EVCProduct"
+        "productOffering": {
+          "$ref": "ProductOffering"
         }
       }
     },
@@ -12431,6 +12427,12 @@
         },
         "eplProduct": {
           "$ref": "EPLProduct"
+        },
+        "stateTransitions": {
+          "type": "array",
+          "items": {
+            "$ref": "Link"
+          }
         }
       }
     },
@@ -12466,8 +12468,45 @@
         "id": {
           "type": "string"
         },
+        "contactPhones": {
+          "type": "array",
+          "items": {
+            "$ref": "TelephoneNumber"
+          }
+        },
+        "accounts": {
+          "type": "array",
+          "items": {
+            "$ref": "AccountSummary"
+          }
+        },
+        "customerId": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
         "link": {
           "$ref": "Link"
+        },
+        "customerSegment": {
+          "$ref": "CustomerSegment"
+        },
+        "customerRank": {
+          "type": "string"
+        },
+        "contactEmails": {
+          "type": "array",
+          "items": {
+            "$ref": "EmailContact"
+          }
+        },
+        "profile": {
+          "$ref": "PartySummary",
+          "required": true
         }
       }
     },
@@ -12584,6 +12623,24 @@
         },
         "account": {
           "$ref": "AccountSummary"
+        },
+        "serviceOrder": {
+          "$ref": "ServiceOrder"
+        },
+        "stateTransitions": {
+          "type": "array",
+          "items": {
+            "$ref": "Link"
+          }
+        },
+        "orderState": {
+          "$ref": "OrderState"
+        },
+        "availableFieldChanges": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "boolean"
+          }
         }
       }
     },
