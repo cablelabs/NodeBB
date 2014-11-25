@@ -203,7 +203,7 @@
           "Common"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "A PartyRole for a Party that has a specific Contact role (e.g., Billing Contact)",
         "displayName": "Contact ",
         "produces": [
           "application/json",
