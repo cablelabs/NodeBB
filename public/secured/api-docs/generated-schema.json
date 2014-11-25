@@ -1,4 +1,4 @@
-
+{
   "AccountContactAssignment": {
     "type": "object",
     "properties": {
@@ -8223,4 +8223,4 @@
       }
     }
   }
-
+}

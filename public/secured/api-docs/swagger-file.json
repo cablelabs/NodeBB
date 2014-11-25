@@ -1,5 +1,5 @@
 {
-  "swagger": 2,
+  "swagger": "2.0",
   "info": {
     "description": "Exlpore the cable API's. API's are grouped by Domain.",
     "version": "0.0.1",
@@ -1101,7 +1101,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/BillCharge"
+              "$ref": "#/definitions/Bill Charge"
             }
           }
         ],
@@ -1121,7 +1121,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "A charge or a credit assigned to the customer's account in the course or for the purpose of the billing process. Subclasses further define these elements.",
+        "description": "Retrieves an instance based on the ID",
         "displayName": "Bill  Charge",
         "produces": [
           "application/json",
@@ -1148,7 +1148,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/BillCharge"
+              "$ref": "#/definitions/Bill Charge"
             }
           },
           "400": {
@@ -1274,7 +1274,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "The purpose for the ServiceOrder expressed in terms of a ServiceSpecification or a Service.",
+        "description": "Retrieves an instance based on the ID",
         "displayName": "Service  Order Item",
         "produces": [
           "application/json",
@@ -1427,7 +1427,7 @@
           "Resource"
         ],
         "summary": "Find resource by ID",
-        "description": "The ResourcePort is a type of ResourceElement that consists only of logical termination points (TrailTerminationPointSource, TrailTerminationPointSink, and TrailTerminationPointBiDirectional, to be precise) and PhysicalPorts. This enables the ResourcePort to take on the physical and logical characteristics of a 'port' as defined in G.805. ",
+        "description": "Retrieves an instance based on the ID",
         "displayName": "Resource Port",
         "produces": [
           "application/json",
@@ -1560,7 +1560,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/EPLProduct"
+              "$ref": "#/definitions/EPL Product"
             }
           }
         ],
@@ -1580,8 +1580,8 @@
           "Product"
         ],
         "summary": "Find resource by ID",
-        "description": "A ProductOffering procured by a Customer, or other interested Party playing a PartyRole, appearing as a BusinessInteractionItem, which could take the form of a Agreement. ProductSpecificationCharacteristic(s) in part define the Product. A Product is realized as one or more Service(s) and/or Resource(s).",
-        "displayName": "EPL Product",
+        "description": "Retrieves an instance based on the ID",
+        "displayName": "EP L Product",
         "produces": [
           "application/json",
           "application/xml"
@@ -1607,7 +1607,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/EPLProduct"
+              "$ref": "#/definitions/EPL Product"
             }
           },
           "400": {
@@ -1733,7 +1733,7 @@
           "Common"
         ],
         "summary": "Find resource by ID",
-        "description": "Fax (short for facsimile), sometimes called telecopying or telefax, is the telephonic transmission of scanned printed material (both text and images), normally to a telephone number connected to a printer or other output device.",
+        "description": "Retrieves an instance based on the ID",
         "displayName": "Fax Number",
         "produces": [
           "application/json",
@@ -2039,7 +2039,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "A detailed description of a customer's bill structure. The current version of this class is serving as a placeholder. It will be further developed in the next version of this document.",
+        "description": "Retrieves an instance based on the ID",
         "displayName": "Customer BillSpec",
         "produces": [
           "application/json",
@@ -2180,7 +2180,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/TicketAssignedGroup"
+              "$ref": "#/definitions/Ticket AssignedGroup"
             }
           }
         ],
@@ -2198,7 +2198,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "A group assigned to a BusinessInteraction. For example, an IncidentTicket assigned to a particular organization (e.g., Network Services).",
+        "description": "Retrieves an instance based on the ID",
         "displayName": "Ticket  AssignedGroup",
         "produces": [
           "application/json",
@@ -2225,7 +2225,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/TicketAssignedGroup"
+              "$ref": "#/definitions/Ticket AssignedGroup"
             }
           },
           "400": {
@@ -2351,7 +2351,7 @@
           "Service"
         ],
         "summary": "Find resource by ID",
-        "description": "All Services are characterized as either being possibly visible and usable by a Customer or not. This gives rise to the two subclasses of Service: CustomerFacingService and ResourceFacingService.",
+        "description": "Retrieves an instance based on the ID",
         "displayName": "Service ",
         "produces": [
           "application/json",
@@ -2504,7 +2504,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "A type of Request that represents a Service Order's services decomposed into the resources on which the services will be provisioned.",
+        "description": "Retrieves an instance based on the ID",
         "displayName": "Resource Order",
         "produces": [
           "application/json",
@@ -2657,7 +2657,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "PaymentItem is the application of CustomerPayment. PaymentItem is applied to CustomerBillInvoice, AppliedCustomerBillingRate.",
+        "description": "Retrieves an instance based on the ID",
         "displayName": "Payment Item",
         "produces": [
           "application/json",
@@ -6443,7 +6443,6 @@
     "/site/{id}/services": {
       "get": {
         "tags": [
-
           "Location"
         ],
         "summary": "Find Services in a specific site",
@@ -11539,12 +11538,60 @@
           }
         }
       }
+    },
+    "/import": {
+      "get": {
+        "tags": [
+          "UnSuported"
+        ],
+        "summary": "Find resource by ID",
+        "description": "Retrieves an instance based on the ID",
+        "displayName": "Email  Contact",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "view",
+            "description": "View of the resource that you want to get.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Import"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          }
+        }
+      }
     }
   },
   "schemes": [
     "http"
   ],
   "definitions": {
+    "Import": {
+         "$ref" : "link.json#/definitions/diskDevice"
+    },
     "Link": {
       "id": "Link",
       "properties": {
@@ -11597,6 +11644,31 @@
         },
         "numerator": {
           "$ref": "Money"
+        }
+      }
+    },
+    "TaxExemption": {
+      "id": "TaxExemption",
+      "type": "object",
+      "properties": {
+        "certificateNumber": {
+          "type": "string"
+        },
+        "issuingJurisdiction": {
+          "type": "string"
+        },
+        "taxExemptionCategory": {
+          "type": "object",
+          "$ref": "TaxExemptionCategory",
+          "required": true
+        },
+        "taxType": {
+          "type": "string"
+        },
+        "validFor": {
+          "type": "object",
+          "$ref": "TimePeriod",
+          "required": true
         }
       }
     },
@@ -11985,40 +12057,28 @@
           }
         },
         "structureHeight": {
-          "$ref": "Quantity",
-          "required": true
+          "$ref": "Quantity"
         },
         "vhCoordinates": {
-          "type": "object",
-          "$ref": "VHCoordinates",
-          "required": true
+          "$ref": "VHCoordinates"
         },
         "customerAccounts": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "Account"
           }
         },
         "status": {
-          "type": "object",
-          "$ref": "SiteStatus",
-          "required": true
+          "$ref": "SiteStatus"
         },
         "link": {
-          "type": "object",
-          "$ref": "Link",
-          "required": true
+          "$ref": "Link"
         },
         "propertyAddress": {
-          "type": "object",
-          "$ref": "PropertyAddress",
-          "required": true
+          "$ref": "PropertyAddress"
         },
         "type": {
-          "type": "object",
-          "$ref": "SiteType",
-          "required": true
+          "$ref": "SiteType"
         },
         "id": {
           "type": "string"
@@ -12027,9 +12087,7 @@
           "type": "string"
         },
         "category": {
-          "type": "object",
-          "$ref": "SiteCategory",
-          "required": true
+          "$ref": "SiteCategory"
         },
         "description": {
           "type": "string"
@@ -12038,24 +12096,17 @@
           "type": "string"
         },
         "validFor": {
-          "type": "object",
-          "$ref": "TimePeriod",
-          "required": true
+          "$ref": "TimePeriod"
         },
         "clliCode": {
-          "type": "object",
-          "$ref": "CLLICode",
-          "required": true
+          "$ref": "CLLICode"
         },
         "typeOfSite": {
-          "type": "object",
-          "$ref": "TypeOfSite",
-          "required": true
+          "$ref": "TypeOfSite"
         },
         "accountContacts": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "AccountContactAssignment"
           }
         }
@@ -12068,7 +12119,6 @@
           "type": "string"
         },
         "link": {
-          "type": "object",
           "$ref": "Link"
         }
       }
@@ -12258,6 +12308,12 @@
           "items": {
             "$ref": "UNIService"
           }
+        },
+        "configuration": {
+          "$ref": "EVCConfiguration"
+        },
+        "path": {
+          "$ref": "NetworkPath"
         }
       }
     },
@@ -12299,35 +12355,35 @@
     "EPLProduct": {
       "id": "EPLProduct",
       "properties": {
-        "id": {
-          "type": "string"
+        "uniProducts": {
+          "type": "array",
+          "items": {
+            "$ref": "UNIProduct"
+          }
         },
         "link": {
           "$ref": "Link"
         },
-        "name": {
-          "type": "string"
+        "evcProduct": {
+          "$ref": "EVCProduct"
+        },
+        "productOrderItem": {
+          "$ref": "ProductOrderItem"
         },
         "isBundle": {
           "type": "boolean"
         },
-        "description": {
+        "id": {
           "type": "string"
+        },
+        "customerAccountInvolvements": {
+          "type": "array",
+          "items": {
+            "$ref": "AccountProductAssignment"
+          }
         },
         "productStatus": {
           "type": "string"
-        },
-        "productSerialNumber": {
-          "type": "string"
-        },
-        "validFor": {
-          "$ref": "TimePeriod"
-        },
-        "products": {
-          "type": "array",
-          "items": {
-            "$ref": "EPLProduct"
-          }
         },
         "productRelationships": {
           "type": "array",
@@ -12335,26 +12391,38 @@
             "$ref": "ProductRelationship"
           }
         },
+        "description": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "validFor": {
+          "$ref": "TimePeriod"
+        },
+        "productSpecification": {
+          "$ref": "ProductSpecification"
+        },
         "productPrices": {
           "type": "array",
           "items": {
             "$ref": "ProductPrice"
           }
         },
-        "productOffering": {
-          "$ref": "ProductOffering"
-        },
         "configuration": {
           "$ref": "EPLConfiguration"
         },
-        "uniProducts": {
+        "productSerialNumber": {
+          "type": "string"
+        },
+        "products": {
           "type": "array",
           "items": {
-            "$ref": "UNIProduct"
+            "$ref": "EPLProduct"
           }
         },
-        "evcProduct": {
-          "$ref": "EVCProduct"
+        "productOffering": {
+          "$ref": "ProductOffering"
         }
       }
     },
@@ -12384,6 +12452,12 @@
         },
         "eplProduct": {
           "$ref": "EPLProduct"
+        },
+        "stateTransitions": {
+          "type": "array",
+          "items": {
+            "$ref": "Link"
+          }
         }
       }
     },
@@ -12419,8 +12493,45 @@
         "id": {
           "type": "string"
         },
+        "contactPhones": {
+          "type": "array",
+          "items": {
+            "$ref": "TelephoneNumber"
+          }
+        },
+        "accounts": {
+          "type": "array",
+          "items": {
+            "$ref": "AccountSummary"
+          }
+        },
+        "customerId": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
         "link": {
           "$ref": "Link"
+        },
+        "customerSegment": {
+          "$ref": "CustomerSegment"
+        },
+        "customerRank": {
+          "type": "string"
+        },
+        "contactEmails": {
+          "type": "array",
+          "items": {
+            "$ref": "EmailContact"
+          }
+        },
+        "profile": {
+          "$ref": "PartySummary",
+          "required": true
         }
       }
     },
@@ -12537,6 +12648,24 @@
         },
         "account": {
           "$ref": "AccountSummary"
+        },
+        "serviceOrder": {
+          "$ref": "ServiceOrder"
+        },
+        "stateTransitions": {
+          "type": "array",
+          "items": {
+            "$ref": "Link"
+          }
+        },
+        "orderState": {
+          "$ref": "OrderState"
+        },
+        "availableFieldChanges": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "boolean"
+          }
         }
       }
     },
@@ -13203,12 +13332,16 @@
     },
     "UNIServiceDeltas": {
       "id": "UNIServiceDeltas",
+      "type": "object",
       "properties": {
         "id": {
           "type": "string"
         },
         "link": {
           "$ref": "Link"
+        },
+        "currentUniService": {
+          "$ref": "UNIService"
         },
         "changes": {
           "type": "array",
@@ -13223,62 +13356,158 @@
     },
     "Service": {
       "id": "Service",
+      "type": "object",
       "properties": {
-        "id": {
-          "type": "string"
+        "sites": {
+          "type": "array",
+          "items": {
+            "$ref": "Site"
+          }
+        },
+        "characterisitcs": {
+          "type": "array",
+          "items": {
+            "$ref": "Characteristic"
+          }
+        },
+        "resources": {
+          "type": "array",
+          "items": {
+            "$ref": "Resource"
+          }
+        },
+        "cfsStatus": {
+          "type": "integer"
+        },
+        "configurationDatas": {
+          "type": "array",
+          "items": {
+            "$ref": "ConfigurationData"
+          }
+        },
+        "startMode": {
+          "type": "integer"
+        },
+        "serviceSpecifications": {
+          "$ref": "ServiceSpecification"
+        },
+        "isServiceEnabled": {
+          "type": "boolean"
         },
         "link": {
           "$ref": "Link"
         },
-        "uniServiceDeltas": {
+        "device": {
+          "$ref": "Device"
+        },
+        "isTSP": {
+          "type": "boolean"
+        },
+        "isCustomerFacingService": {
+          "type": "boolean"
+        },
+        "isFCCReportable": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "string"
+        },
+        "hasStarted": {
+          "type": "boolean"
+        },
+        "productProperties": {
+          "$ref": "ProductProperties"
+        },
+        "isResourceFacingService": {
+          "type": "boolean"
+        },
+        "customerFacingService": {
           "type": "array",
           "items": {
-            "$ref": "UNIServiceDeltas"
+            "$ref": "Service"
           }
         },
-        "changes": {
+        "isMandatory": {
+          "type": "boolean"
+        },
+        "prefereneces": {
           "type": "array",
           "items": {
-            "$ref": "Changes"
+            "$ref": "Preference"
           }
+        },
+        "resourceFacingService": {
+          "type": "array",
+          "items": {
+            "$ref": "Service"
+          }
+        },
+        "products": {
+          "type": "array",
+          "items": {
+            "$ref": "Product"
+          }
+        },
+        "tickets": {
+          "type": "array",
+          "items": {
+            "$ref": "ImpactedItem"
+          }
+        },
+        "isStateful": {
+          "type": "boolean"
+        },
+        "rfsStatus": {
+          "type": "integer"
         }
       }
     },
     "OrderDesign": {
       "id": "OrderDesign",
+      "type": "object",
       "properties": {
+        "timestamp": {
+          "type": "string",
+          "$ref": "date-time"
+        },
         "id": {
+          "type": "string"
+        },
+        "serviceDesign": {
+          "$ref": "Services"
+        },
+        "status": {
           "type": "string"
         },
         "link": {
           "$ref": "Link"
         },
-        "status": {
-          "type": "string"
-        },
-        "timestamp": {
-          "type": "string",
-          "format": "date-time"
+        "resourceDesign": {
+          "$ref": "Resources"
         },
         "designArtifact": {
           "$ref": "Link"
-        },
-        "resourceDesign": {
-          "$ref": "Resource"
-        },
-        "serviceDesign": {
-          "$ref": "Service"
         }
       }
     },
     "Slot": {
       "id": "Slot",
+      "type": "object",
       "properties": {
-        "id": {
+        "hasAdapter": {
+          "type": "boolean"
+        },
+        "slotNumber": {
+          "type": "integer"
+        },
+        "purposeDescription": {
           "type": "string"
         },
-        "link": {
-          "$ref": "Link"
+        "card": {
+          "$ref": "Card"
+        },
+        "slotPurpose": {
+          "type": "integer"
         }
       }
     },
