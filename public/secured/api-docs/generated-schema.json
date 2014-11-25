@@ -1,0 +1,8226 @@
+
+  "AccountContactAssignment": {
+    "type": "object",
+    "properties": {
+      "sites": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Site"
+        }
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "contactType": {
+        "type": "object",
+        "$ref": "AccountContactType",
+        "required": true
+      },
+      "contactMediums": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ContactMedium"
+        }
+      },
+      "contact": {
+        "type": "object",
+        "$ref": "Contact",
+        "required": true
+      }
+    }
+  },
+  "AccountProductAssignment": {
+    "type": "object",
+    "properties": {
+      "product": {
+        "type": "object",
+        "$ref": "Product",
+        "required": true
+      },
+      "involventType": {
+        "type": "string"
+      },
+      "eplProducts": {
+        "type": "object",
+        "$ref": "EPLProduct",
+        "required": true
+      },
+      "eplProductConfigurations": {
+        "type": "object",
+        "$ref": "EPLProductConfiguration",
+        "required": true
+      },
+      "customerAccount": {
+        "type": "object",
+        "$ref": "Account",
+        "required": true
+      }
+    }
+  },
+  "Ack": {
+    "type": "object",
+    "properties": {
+      "response": {
+        "type": "string"
+      },
+      "id": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "reference": {
+        "type": "string"
+      }
+    }
+  },
+  "AdministrativeArea": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "type": {
+        "type": "string"
+      },
+      "geometry": {
+        "type": "object",
+        "$ref": "Geometry",
+        "required": true
+      }
+    }
+  },
+  "AllowanceProdPriceAlteration": {
+    "type": "object",
+    "properties": {
+      "price": {
+        "type": "object",
+        "$ref": "Money",
+        "required": true
+      },
+      "priceType": {
+        "type": "string"
+      },
+      "quantity": {
+        "type": "object",
+        "$ref": "Quantity",
+        "required": true
+      },
+      "period": {
+        "type": "string"
+      }
+    }
+  },
+  "AlternateIdentification": {
+    "type": "object",
+    "properties": {
+      "alternateIdDescription": {
+        "type": "string"
+      },
+      "alternateIdNr": {
+        "type": "string"
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "scan": {
+        "type": "string"
+      },
+      "issueDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "alternateIdClassification": {
+        "type": "string"
+      }
+    }
+  },
+  "AppliedCustomerBillingAdjustment": {
+    "type": "object",
+    "properties": {
+      "adjustmentFromDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "adjustmentThroughDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      }
+    }
+  },
+  "AppliedCustomerBillingCharge": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "creationDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "derived_from": {
+        "type": "object",
+        "$ref": "AppliedCustomerBillingRateSpec",
+        "required": true
+      },
+      "rateDescription": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "billingRateCode": {
+        "type": "string"
+      },
+      "rateAmount": {
+        "type": "object",
+        "$ref": "Money",
+        "required": true
+      },
+      "adjusted_by": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "AppliedCustomerBillingAdjustment"
+        }
+      }
+    }
+  },
+  "AppliedCustomerBillingCredit": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "creationDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "derived_from": {
+        "type": "object",
+        "$ref": "AppliedCustomerBillingRateSpec",
+        "required": true
+      },
+      "rateDescription": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "billingRateCode": {
+        "type": "string"
+      },
+      "rateAmount": {
+        "type": "object",
+        "$ref": "Money",
+        "required": true
+      },
+      "adjusted_by": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "AppliedCustomerBillingAdjustment"
+        }
+      }
+    }
+  },
+  "AppliedCustomerBillingProductAlteration": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "creationDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "derived_from": {
+        "type": "object",
+        "$ref": "AppliedCustomerBillingRateSpec",
+        "required": true
+      },
+      "rateDescription": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "billingRateCode": {
+        "type": "string"
+      },
+      "rateAmount": {
+        "type": "object",
+        "$ref": "Money",
+        "required": true
+      },
+      "adjusted_by": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "AppliedCustomerBillingAdjustment"
+        }
+      }
+    }
+  },
+  "AppliedCustomerBillingProductCharge": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      }
+    }
+  },
+  "AppliedCustomerBillingRate": {
+    "type": "object",
+    "properties": {
+      "creationDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "derived_from": {
+        "type": "object",
+        "$ref": "AppliedCustomerBillingRateSpec",
+        "required": true
+      },
+      "rateDescription": {
+        "type": "string"
+      },
+      "billingRateCode": {
+        "type": "string"
+      },
+      "rateAmount": {
+        "type": "object",
+        "$ref": "Money",
+        "required": true
+      },
+      "adjusted_by": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "AppliedCustomerBillingAdjustment"
+        }
+      }
+    }
+  },
+  "AppliedCustomerBillingRateSpec": {
+    "type": "object"
+  },
+  "AppliedCustomerBillingRefund": {
+    "type": "object",
+    "properties": {
+      "refundType": {
+        "type": "object",
+        "$ref": "RefundType",
+        "required": true
+      }
+    }
+  },
+  "AppliedCustomerBillingTaxRate": {
+    "type": "object",
+    "properties": {
+      "customerTaxId": {
+        "type": "string"
+      },
+      "taxType": {
+        "type": "string"
+      },
+      "taxCategory": {
+        "type": "string"
+      }
+    }
+  },
+  "AppliedCustomerBillingTelephoneUsageRate": {
+    "type": "object",
+    "properties": {
+      "calledNumber": {
+        "type": "string"
+      },
+      "callingNumber": {
+        "type": "string"
+      },
+      "callDuration": {
+        "type": "string"
+      },
+      "appliedRate": {
+        "type": "string"
+      },
+      "telephoneUsageType": {
+        "type": "object",
+        "$ref": "TelephoneUsageType",
+        "required": true
+      },
+      "callDestination": {
+        "type": "string"
+      },
+      "callDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      }
+    }
+  },
+  "AppliedCustomerBillingVideoUsageRate": {
+    "type": "object",
+    "properties": {
+      "isAdultContent": {
+        "type": "boolean"
+      },
+      "videoUsageType": {
+        "type": "object",
+        "$ref": "VideoUsageType",
+        "required": true
+      }
+    }
+  },
+  "AsBuiltOrderDesign": {
+    "type": "object",
+    "properties": {
+      "timestamp": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "id": {
+        "type": "string"
+      },
+      "uniServices": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "UNIService"
+        }
+      },
+      "evcService": {
+        "type": "object",
+        "$ref": "EVCService",
+        "required": true
+      },
+      "status": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "fullAsBuiltNetwork": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      }
+    }
+  },
+  "AssignedGroup": {
+    "type": "object",
+    "properties": {
+      "userGroups": {
+        "type": "object",
+        "$ref": "UserGroup",
+        "required": true
+      },
+      "assignedEnd": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "assignedStart": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      }
+    }
+  },
+  "Assignee": {
+    "type": "object",
+    "properties": {
+      "assignedEnd": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "user": {
+        "type": "object",
+        "$ref": "User",
+        "required": true
+      },
+      "assignedStart": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      }
+    }
+  },
+  "AtomicAppliedCustomerBillingRate": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "creationDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "derived_from": {
+        "type": "object",
+        "$ref": "AppliedCustomerBillingRateSpec",
+        "required": true
+      },
+      "rateDescription": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "billingRateCode": {
+        "type": "string"
+      },
+      "rateAmount": {
+        "type": "object",
+        "$ref": "Money",
+        "required": true
+      },
+      "adjusted_by": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "AppliedCustomerBillingAdjustment"
+        }
+      }
+    }
+  },
+  "AttributeValuePair": {
+    "type": "object",
+    "properties": {
+      "attributeName": {
+        "type": "string"
+      },
+      "attributeValue": {
+        "type": "string"
+      }
+    }
+  },
+  "Characteristic": {
+    "type": "object",
+    "properties": {
+      "minCardinality": {
+        "type": "integer"
+      },
+      "unique": {
+        "type": "boolean"
+      },
+      "extensible": {
+        "type": "boolean"
+      },
+      "characteristicId": {
+        "type": "string"
+      },
+      "characteristicSequence": {
+        "type": "integer"
+      },
+      "value": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "CharacteristicValue"
+        }
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "characteristicDescription": {
+        "type": "string"
+      },
+      "valueType": {
+        "type": "string"
+      },
+      "derivationFormula": {
+        "type": "string"
+      },
+      "characteristicName": {
+        "type": "string"
+      },
+      "characteristicCategory": {
+        "type": "object",
+        "$ref": "CharacteristicCategory",
+        "required": true
+      },
+      "maxCardinality": {
+        "type": "integer"
+      }
+    }
+  },
+  "CharacteristicCategory": {
+    "type": "object",
+    "properties": {
+      "categoryName": {
+        "type": "object",
+        "$ref": "Object",
+        "required": true
+      },
+      "categoryDescription": {
+        "type": "object",
+        "$ref": "Object",
+        "required": true
+      },
+      "characteristicCategoryId": {
+        "type": "object",
+        "$ref": "Object",
+        "required": true
+      }
+    }
+  },
+  "CharacteristicCollection": {
+    "type": "object",
+    "properties": {
+      "characteristic": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Characteristic"
+        }
+      }
+    }
+  },
+  "CharacteristicValue": {
+    "type": "object",
+    "properties": {
+      "valueTo": {
+        "type": "string"
+      },
+      "rangeInterval": {
+        "type": "string"
+      },
+      "valueSequence": {
+        "type": "integer"
+      },
+      "valueFrom": {
+        "type": "string"
+      },
+      "value": {
+        "type": "string"
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "valueType": {
+        "type": "string"
+      },
+      "unitOfMeasure": {
+        "type": "string"
+      },
+      "isDefaultValue": {
+        "type": "boolean"
+      }
+    }
+  },
+  "CLLICode": {
+    "type": "object",
+    "properties": {
+      "clliNetSupportSiteCode": {
+        "type": "object",
+        "$ref": "Object",
+        "required": true
+      },
+      "clliNetworkSiteCode": {
+        "type": "object",
+        "$ref": "Object",
+        "required": true
+      },
+      "clliCustomerSiteCode": {
+        "type": "object",
+        "$ref": "Object",
+        "required": true
+      },
+      "clliGeopoliticalCode": {
+        "type": "object",
+        "$ref": "Object",
+        "required": true
+      },
+      "clliNetworkEntityCode": {
+        "type": "object",
+        "$ref": "Object",
+        "required": true
+      },
+      "clliType": {
+        "type": "object",
+        "$ref": "Object",
+        "required": true
+      },
+      "formattedClliCode": {
+        "type": "object",
+        "$ref": "Object",
+        "required": true
+      },
+      "clliGeographicCode": {
+        "type": "object",
+        "$ref": "Object",
+        "required": true
+      }
+    }
+  },
+  "CostRate": {
+    "type": "object",
+    "properties": {
+      "numerator": {
+        "type": "object",
+        "$ref": "Money",
+        "required": true
+      },
+      "denominator": {
+        "type": "object",
+        "$ref": "Duration",
+        "required": true
+      }
+    }
+  },
+  "Duration": {
+    "type": "object",
+    "properties": {
+      "amount": {
+        "type": "integer"
+      },
+      "units": {
+        "type": "string"
+      }
+    }
+  },
+  "Link": {
+    "type": "object",
+    "properties": {
+      "title": {
+        "type": "string"
+      },
+      "method": {
+        "type": "string"
+      },
+      "rel": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string"
+      },
+      "href": {
+        "type": "string"
+      }
+    }
+  },
+  "Money": {
+    "type": "object",
+    "properties": {
+      "amount": {
+        "type": "string"
+      },
+      "units": {
+        "type": "string"
+      }
+    }
+  },
+  "Quantity": {
+    "type": "object",
+    "properties": {
+      "amount": {
+        "type": "string"
+      },
+      "units": {
+        "type": "string"
+      }
+    }
+  },
+  "SiteCategory": {
+    "type": "object",
+    "properties": {
+      "categoryName": {
+        "type": "object",
+        "$ref": "Object",
+        "required": true
+      },
+      "categoryDescription": {
+        "type": "object",
+        "$ref": "Object",
+        "required": true
+      }
+    }
+  },
+  "SiteType": {
+    "type": "object",
+    "properties": {
+      "multiTenant": {
+        "type": "boolean"
+      },
+      "description": {
+        "type": "object",
+        "$ref": "Object",
+        "required": true
+      },
+      "name": {
+        "type": "object",
+        "$ref": "Object",
+        "required": true
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      }
+    }
+  },
+  "TimePeriod": {
+    "type": "object",
+    "properties": {
+      "startDateTime": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "endDateTime": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      }
+    }
+  },
+  "TimePeriodJoda": {
+    "type": "object",
+    "properties": {
+      "startDateTime": {
+        "type": "object",
+        "$ref": "DateTime",
+        "required": true
+      },
+      "endDateTime": {
+        "type": "object",
+        "$ref": "DateTime",
+        "required": true
+      }
+    }
+  },
+  "VHCoordinates": {
+    "type": "object",
+    "properties": {
+      "horizontalCoordinate": {
+        "type": "object",
+        "$ref": "Object",
+        "required": true
+      },
+      "verticalCoordinate": {
+        "type": "object",
+        "$ref": "Object",
+        "required": true
+      }
+    }
+  },
+  "BillCharge": {
+    "type": "object",
+    "properties": {
+      "oneTimeAppliedCustomerBillingProductCharge": {
+        "type": "object",
+        "$ref": "OneTimeAppliedCustomerBillingProductCharge",
+        "required": true
+      },
+      "recurringAppliedCustomerBillingProductCharge": {
+        "type": "object",
+        "$ref": "RecurringAppliedCustomerBillingProductCharge",
+        "required": true
+      },
+      "customerBill": {
+        "type": "object",
+        "$ref": "CustomerBill",
+        "required": true
+      },
+      "appliedCustomerBillingVideoUsageRate": {
+        "type": "object",
+        "$ref": "AppliedCustomerBillingVideoUsageRate",
+        "required": true
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "rateAmount": {
+        "type": "object",
+        "$ref": "Money",
+        "required": true
+      },
+      "customerAccount": {
+        "type": "object",
+        "$ref": "Account",
+        "required": true
+      },
+      "id": {
+        "type": "string"
+      },
+      "creationDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "paymentItem": {
+        "type": "object",
+        "$ref": "PaymentItem",
+        "required": true
+      },
+      "appliedCustomerBillingTelephoneUsageRate": {
+        "type": "object",
+        "$ref": "AppliedCustomerBillingTelephoneUsageRate",
+        "required": true
+      },
+      "appliedCustomerBillingAdjustment": {
+        "type": "object",
+        "$ref": "AppliedCustomerBillingAdjustment",
+        "required": true
+      },
+      "appliedCustomerBillingRateSpec": {
+        "type": "object",
+        "$ref": "AppliedCustomerBillingRateSpec",
+        "required": true
+      },
+      "rateDescription": {
+        "type": "string"
+      },
+      "appliedCustomerBillingTaxRate": {
+        "type": "object",
+        "$ref": "AppliedCustomerBillingTaxRate",
+        "required": true
+      },
+      "appliedCustomerBillingRefund": {
+        "type": "object",
+        "$ref": "AppliedCustomerBillingRefund",
+        "required": true
+      },
+      "billingRateCode": {
+        "type": "string"
+      }
+    }
+  },
+  "BillingPeriod": {
+    "type": "object",
+    "properties": {
+      "description": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      }
+    }
+  },
+  "BirthCertificateIdentification": {
+    "type": "object",
+    "properties": {
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "scan": {
+        "type": "string"
+      },
+      "issueDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "certificateNr": {
+        "type": "string"
+      }
+    }
+  },
+  "BusinessInteractionRole": {
+    "type": "object",
+    "properties": {
+      "modifier": {
+        "type": "object",
+        "$ref": "Modifier",
+        "required": true
+      },
+      "serviceInteractionRole": {
+        "type": "object",
+        "$ref": "ServiceInteractionRole",
+        "required": true
+      },
+      "businessInteractionRoleId": {
+        "type": "string"
+      },
+      "submitter": {
+        "type": "object",
+        "$ref": "Submitter",
+        "required": true
+      },
+      "interactionRole": {
+        "type": "string"
+      },
+      "assignee": {
+        "type": "object",
+        "$ref": "Assignee",
+        "required": true
+      },
+      "resourceInteractionRole": {
+        "type": "object",
+        "$ref": "ResourceInteractionRole",
+        "required": true
+      },
+      "watcher": {
+        "type": "object",
+        "$ref": "Watcher",
+        "required": true
+      },
+      "customerAccountInteractionRole": {
+        "type": "object",
+        "$ref": "AccountInteractionRole",
+        "required": true
+      },
+      "assignedGroup": {
+        "type": "object",
+        "$ref": "AssignedGroup",
+        "required": true
+      },
+      "involved_in": {
+        "type": "object",
+        "$ref": "Ticket",
+        "required": true
+      }
+    }
+  },
+  "CableModem": {
+    "type": "object",
+    "properties": {
+      "serviceSite": {
+        "type": "object",
+        "$ref": "Site",
+        "required": true
+      },
+      "deviceManagementType": {
+        "type": "object",
+        "$ref": "DeviceManagementType",
+        "required": true
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "deviceProviderType": {
+        "type": "object",
+        "$ref": "DeviceProviderType",
+        "required": true
+      },
+      "maxChannelsSupported": {
+        "type": "integer"
+      },
+      "deviceActivationStatus": {
+        "type": "object",
+        "$ref": "DeviceActivationStatus",
+        "required": true
+      },
+      "serialNumber": {
+        "type": "string"
+      },
+      "macAddress": {
+        "type": "object",
+        "$ref": "MACAddress",
+        "required": true
+      },
+      "assignedCMTS": {
+        "type": "object",
+        "$ref": "CMTSCableModemAssignment",
+        "required": true
+      },
+      "id": {
+        "type": "string"
+      },
+      "numActiveChannels": {
+        "type": "integer"
+      },
+      "backplaneNumber": {
+        "type": "integer"
+      },
+      "installedDOCSISVersion": {
+        "type": "string"
+      },
+      "backplaneIndependent": {
+        "type": "boolean"
+      },
+      "usageState": {
+        "type": "integer"
+      },
+      "powerManagementCapabilities": {
+        "type": "string"
+      },
+      "clliCode": {
+        "type": "object",
+        "$ref": "CLLICode",
+        "required": true
+      },
+      "manufactureDate": {
+        "type": "string"
+      },
+      "hasPowerManagement": {
+        "type": "boolean"
+      },
+      "canMixPower": {
+        "type": "boolean"
+      },
+      "isComposite": {
+        "type": "boolean"
+      },
+      "docsisinterface": {
+        "type": "object",
+        "$ref": "DOCSISCableInterface",
+        "required": true
+      },
+      "deviceGroupID": {
+        "type": "string"
+      },
+      "fiberNode": {
+        "type": "object",
+        "$ref": "FiberNode",
+        "required": true
+      },
+      "otherIdentifier": {
+        "type": "string"
+      },
+      "powerState": {
+        "type": "integer"
+      },
+      "manufactureDateStamp": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "configurationOrder": {
+        "type": "string"
+      },
+      "channel": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "CableModemChannel"
+        }
+      },
+      "versionNumber": {
+        "type": "string"
+      }
+    }
+  },
+  "CableModemChannel": {
+    "type": "object",
+    "properties": {
+      "snr": {
+        "type": "object",
+        "$ref": "Quantity",
+        "required": true
+      },
+      "modulationType": {
+        "type": "integer"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "warnThresholdPercent": {
+        "type": "integer"
+      },
+      "operationalState": {
+        "type": "integer"
+      },
+      "isPreEqualized": {
+        "type": "boolean"
+      },
+      "overSubscription": {
+        "type": "string"
+      },
+      "id": {
+        "type": "string"
+      },
+      "modulationProfileNumber": {
+        "type": "integer"
+      },
+      "originalMteID": {
+        "type": "string"
+      },
+      "logicalAlarmStatus": {
+        "type": "integer"
+      },
+      "mteAdministrativeState": {
+        "type": "integer"
+      },
+      "bpsAvailable": {
+        "type": "integer"
+      },
+      "mteID": {
+        "type": "string"
+      },
+      "channelWidthHz": {
+        "type": "number"
+      },
+      "modulationChannelType": {
+        "type": "integer"
+      },
+      "additionalInfo": {
+        "type": "string"
+      },
+      "isMTEOperational": {
+        "type": "boolean"
+      },
+      "transmitOffset": {
+        "type": "integer"
+      },
+      "bpsAssigned": {
+        "type": "integer"
+      },
+      "transmitPower": {
+        "type": "object",
+        "$ref": "Quantity",
+        "required": true
+      },
+      "logicalAlarmReportingEnabled": {
+        "type": "boolean"
+      },
+      "channelFrequencyHz": {
+        "type": "number"
+      },
+      "typeOfMTE": {
+        "type": "integer"
+      },
+      "modulationConstellation": {
+        "type": "integer"
+      },
+      "receivePower": {
+        "type": "object",
+        "$ref": "Quantity",
+        "required": true
+      }
+    }
+  },
+  "CableServiceArea": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "code": {
+        "type": "string"
+      },
+      "geometry": {
+        "type": "object",
+        "$ref": "Geometry",
+        "required": true
+      }
+    }
+  },
+  "Card": {
+    "type": "object",
+    "properties": {
+      "isConfigurablePhysically": {
+        "type": "boolean"
+      },
+      "isUniquePhysical": {
+        "type": "boolean"
+      },
+      "distToLeft": {
+        "type": "string"
+      },
+      "isMotherBoard": {
+        "type": "boolean"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "cardMemorySize": {
+        "type": "number"
+      },
+      "cardType": {
+        "type": "string"
+      },
+      "daughterCardInstallStatus": {
+        "type": "integer"
+      },
+      "maxDataWidth": {
+        "type": "integer"
+      },
+      "distToFront": {
+        "type": "string"
+      },
+      "id": {
+        "type": "string"
+      },
+      "slotLayout": {
+        "type": "string"
+      },
+      "distToBase": {
+        "type": "string"
+      },
+      "uniqueRequirementsPhysical": {
+        "type": "string"
+      },
+      "slots": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Slot"
+        }
+      },
+      "numberOfPorts": {
+        "type": "integer"
+      },
+      "cardCompatibilityResults": {
+        "type": "string"
+      },
+      "daughterCardOperatingStatus": {
+        "type": "integer"
+      },
+      "daughterCardRequirements": {
+        "type": "integer"
+      },
+      "slotsRequired": {
+        "type": "integer"
+      },
+      "hardwareVersion": {
+        "type": "string"
+      }
+    }
+  },
+  "Cash": {
+    "type": "object",
+    "properties": {
+      "cashierinfo": {
+        "type": "string"
+      }
+    }
+  },
+  "Changes": {
+    "type": "object",
+    "properties": {
+      "description": {
+        "type": "string"
+      },
+      "type": {
+        "type": "object",
+        "$ref": "ChangeType",
+        "required": true
+      }
+    }
+  },
+  "Check": {
+    "type": "object",
+    "properties": {
+      "bankRoutingNumber": {
+        "type": "string"
+      },
+      "transitNumber": {
+        "type": "string"
+      },
+      "billingAddress": {
+        "type": "object",
+        "$ref": "PropertyAddress",
+        "required": true
+      },
+      "bankAccountNumber": {
+        "type": "string"
+      },
+      "checkNumber": {
+        "type": "string"
+      }
+    }
+  },
+  "CMTS": {
+    "type": "object",
+    "properties": {
+      "commonName": {
+        "type": "string"
+      },
+      "hasPowerManagement": {
+        "type": "boolean"
+      },
+      "deviceManagementType": {
+        "type": "object",
+        "$ref": "DeviceManagementType",
+        "required": true
+      },
+      "deviceProviderType": {
+        "type": "object",
+        "$ref": "DeviceProviderType",
+        "required": true
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "deviceActivationStatus": {
+        "type": "object",
+        "$ref": "DeviceActivationStatus",
+        "required": true
+      },
+      "channels": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "CableModemChannel"
+        }
+      },
+      "serialNumber": {
+        "type": "string"
+      },
+      "canMixPower": {
+        "type": "boolean"
+      },
+      "isComposite": {
+        "type": "boolean"
+      },
+      "deviceGroupID": {
+        "type": "string"
+      },
+      "id": {
+        "type": "string"
+      },
+      "otherIdentifier": {
+        "type": "string"
+      },
+      "backplaneNumber": {
+        "type": "integer"
+      },
+      "powerState": {
+        "type": "integer"
+      },
+      "assignedCableModems": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "CMTSCableModemAssignment"
+        }
+      },
+      "backplaneIndependent": {
+        "type": "boolean"
+      },
+      "usageState": {
+        "type": "integer"
+      },
+      "manufactureDateStamp": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "powerManagementCapabilities": {
+        "type": "string"
+      },
+      "clliCode": {
+        "type": "object",
+        "$ref": "CLLICode",
+        "required": true
+      },
+      "configurationOrder": {
+        "type": "string"
+      },
+      "manufactureDate": {
+        "type": "string"
+      },
+      "versionNumber": {
+        "type": "string"
+      }
+    }
+  },
+  "CMTSCableModemAssignment": {
+    "type": "object",
+    "properties": {
+      "cableModem": {
+        "type": "object",
+        "$ref": "CableModem",
+        "required": true
+      },
+      "cmPreEqualized": {
+        "type": "boolean"
+      },
+      "cmStatus": {
+        "type": "integer"
+      },
+      "cmts": {
+        "type": "object",
+        "$ref": "CMTS",
+        "required": true
+      }
+    }
+  },
+  "Comment": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "createTime": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "visibility": {
+        "type": "string"
+      },
+      "submitter": {
+        "type": "object",
+        "$ref": "User",
+        "required": true
+      },
+      "description": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      }
+    }
+  },
+  "CompanyRegistration": {
+    "type": "object",
+    "properties": {
+      "registrationNumber": {
+        "type": "string"
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "issueDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "scan": {
+        "type": "string"
+      }
+    }
+  },
+  "ComponentPrice": {
+    "type": "object",
+    "properties": {
+      "price": {
+        "type": "object",
+        "$ref": "Money",
+        "required": true
+      },
+      "priceType": {
+        "type": "string"
+      },
+      "unitOfMeasure": {
+        "type": "object",
+        "$ref": "Quantity",
+        "required": true
+      }
+    }
+  },
+  "ComponentProdPrice": {
+    "type": "object",
+    "properties": {
+      "price": {
+        "type": "object",
+        "$ref": "Money",
+        "required": true
+      },
+      "priceType": {
+        "type": "string"
+      },
+      "unitOfMeasure": {
+        "type": "object",
+        "$ref": "Quantity",
+        "required": true
+      }
+    }
+  },
+  "CompositeProductSpecification": {
+    "type": "object",
+    "properties": {
+      "productSpecifications": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ProductSpecification"
+        }
+      }
+    }
+  },
+  "ConfigurationData": {
+    "type": "object",
+    "properties": {
+      "resources": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Resource"
+        }
+      },
+      "configLocation": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "retrievalMethodCurrent": {
+        "type": "integer"
+      },
+      "serviceConfiguration": {
+        "type": "object",
+        "$ref": "ServiceConfiguration",
+        "required": true
+      },
+      "configText": {
+        "type": "string"
+      },
+      "id": {
+        "type": "string"
+      },
+      "mgmtInfoValidFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "specification": {
+        "type": "object",
+        "$ref": "ConfigurationDataSpecification",
+        "required": true
+      },
+      "retrievalMethodsSupported": {
+        "type": "string"
+      },
+      "service": {
+        "type": "object",
+        "$ref": "Service",
+        "required": true
+      },
+      "attributes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "AttributeValuePair"
+        }
+      },
+      "configBinary": {
+        "type": "object",
+        "$ref": "Byte[]",
+        "required": true
+      }
+    }
+  },
+  "ConfigurationDataSpecification": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      }
+    }
+  },
+  "Contact": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "partyDetails": {
+        "type": "object",
+        "$ref": "Party",
+        "required": true
+      },
+      "individual": {
+        "type": "object",
+        "$ref": "Individual",
+        "required": true
+      },
+      "status": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "contactType": {
+        "type": "string"
+      },
+      "contactMediums": {
+        "type": "object",
+        "$ref": "ContactMedium",
+        "required": true
+      }
+    }
+  },
+  "ContactMedium": {
+    "type": "object",
+    "properties": {
+      "telephoneNumbers": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "TelephoneNumber"
+        }
+      },
+      "systemContacts": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "SystemContact"
+        }
+      },
+      "postalContacts": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "PostalContact"
+        }
+      },
+      "emailContacts": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "EmailContact"
+        }
+      },
+      "faxNumbers": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "FaxNumber"
+        }
+      }
+    }
+  },
+  "ContractorIdentification": {
+    "type": "object",
+    "properties": {
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "scan": {
+        "type": "string"
+      },
+      "issueDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "contractorNr": {
+        "type": "string"
+      }
+    }
+  },
+  "Customer": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "contactPhones": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "TelephoneNumber"
+        }
+      },
+      "accounts": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "AccountSummary"
+        }
+      },
+      "customerId": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "customerSegment": {
+        "type": "object",
+        "$ref": "CustomerSegment",
+        "required": true
+      },
+      "customerRank": {
+        "type": "string"
+      },
+      "contactEmails": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "EmailContact"
+        }
+      },
+      "profile": {
+        "type": "object",
+        "$ref": "PartySummary",
+        "required": true
+      }
+    }
+  },
+  "Account": {
+    "type": "object",
+    "properties": {
+      "sites": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Site"
+        }
+      },
+      "paymentPlans": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "PaymentPlan"
+        }
+      },
+      "taxExemptions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "AccountTaxExemption"
+        }
+      },
+      "accountProductAssignment": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "AccountProductAssignment"
+        }
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "accountFinancialStatus": {
+        "type": "object",
+        "$ref": "AccountFinancialStatus",
+        "required": true
+      },
+      "creditLimit": {
+        "type": "integer"
+      },
+      "customers": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Customer"
+        }
+      },
+      "id": {
+        "type": "string"
+      },
+      "serviceOrders": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ServiceOrder"
+        }
+      },
+      "pin": {
+        "type": "integer"
+      },
+      "accountStatus": {
+        "type": "object",
+        "$ref": "AccountStatus",
+        "required": true
+      },
+      "billCharges": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "BillCharge"
+        }
+      },
+      "name": {
+        "type": "string"
+      },
+      "accountType": {
+        "type": "object",
+        "$ref": "AccountType",
+        "required": true
+      },
+      "assignedUsers": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "UserAccountAssignment"
+        }
+      },
+      "paymentMethods": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "PaymentMethod"
+        }
+      },
+      "customerBills": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "CustomerBill"
+        }
+      },
+      "tickets": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ImpactedItem"
+        }
+      },
+      "preferences": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Preference"
+        }
+      },
+      "accountContactAssignments": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "AccountContactAssignment"
+        }
+      },
+      "customerBillSpecs": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "CustomerBillSpec"
+        }
+      }
+    }
+  },
+  "AccountContact": {
+    "type": "object",
+    "properties": {
+      "serviceSites": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Site"
+        }
+      },
+      "acccount": {
+        "type": "object",
+        "$ref": "Account",
+        "required": true
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "contactType": {
+        "type": "object",
+        "$ref": "AccountContactType",
+        "required": true
+      },
+      "contactMediums": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ContactMedium"
+        }
+      },
+      "contact": {
+        "type": "object",
+        "$ref": "Contact",
+        "required": true
+      }
+    }
+  },
+  "AccountInteractionRole": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "ticket": {
+        "type": "object",
+        "$ref": "Ticket",
+        "required": true
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "customerAccount": {
+        "type": "object",
+        "$ref": "Account",
+        "required": true
+      }
+    }
+  },
+  "AccountProductInvolvement": {
+    "type": "object",
+    "properties": {
+      "involventType": {
+        "type": "string"
+      },
+      "customerAccount": {
+        "type": "object",
+        "$ref": "Account",
+        "required": true
+      },
+      "products": {
+        "type": "object",
+        "$ref": "Product",
+        "required": true
+      }
+    }
+  },
+  "AccountTaxExemption": {
+    "type": "object",
+    "properties": {
+      "certificateNumber": {
+        "type": "string"
+      },
+      "issuingJurisdiction": {
+        "type": "string"
+      },
+      "taxExemptionCategory": {
+        "type": "object",
+        "$ref": "TaxExemptionCategory",
+        "required": true
+      },
+      "taxType": {
+        "type": "string"
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      }
+    }
+  },
+  "CustomerBill": {
+    "type": "object",
+    "properties": {
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "billDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "chargeDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "customerAccount": {
+        "type": "object",
+        "$ref": "Account",
+        "required": true
+      },
+      "billAmount": {
+        "type": "object",
+        "$ref": "Money",
+        "required": true
+      },
+      "id": {
+        "type": "string"
+      },
+      "paymentItem": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "PaymentItem"
+        }
+      },
+      "document": {
+        "type": "object",
+        "$ref": "Document",
+        "required": true
+      },
+      "customerBillSpec": {
+        "type": "object",
+        "$ref": "CustomerBillSpec",
+        "required": true
+      },
+      "financialCharges": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "FinancialCharge"
+        }
+      },
+      "billNo": {
+        "type": "string"
+      },
+      "creditDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "paymentDueDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "billCharges": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "BillCharge"
+        }
+      },
+      "mailingDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      }
+    }
+  },
+  "CustomerBillFormat": {
+    "type": "object",
+    "properties": {
+      "presentationMedia": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "CustomerBillPresentationMedia"
+        }
+      },
+      "description": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      }
+    }
+  },
+  "CustomerBillingCycleSpecification": {
+    "type": "object",
+    "properties": {
+      "billingPeriod": {
+        "type": "object",
+        "$ref": "BillingPeriod",
+        "required": true
+      },
+      "creditDateOffset": {
+        "type": "integer"
+      },
+      "description": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "paymentDueDateOffset": {
+        "type": "integer"
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "mailingDateOffset": {
+        "type": "integer"
+      },
+      "chargeDateOffset": {
+        "type": "integer"
+      },
+      "customerBillSpecs": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "CustomerBillSpec"
+        }
+      },
+      "billingDateShift": {
+        "type": "integer"
+      }
+    }
+  },
+  "CustomerBillPresentationMedia": {
+    "type": "object",
+    "properties": {
+      "description": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      }
+    }
+  },
+  "CustomerBillSpec": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "customerBillingCycleSpecifications": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "CustomerBillingCycleSpecification"
+        }
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "customerBills": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "CustomerBill"
+        }
+      },
+      "customerAccount": {
+        "type": "object",
+        "$ref": "Account",
+        "required": true
+      },
+      "format": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "CustomerBillFormat"
+        }
+      }
+    }
+  },
+  "CustomerOrder": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      }
+    }
+  },
+  "CustomerOrderItem": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "action": {
+        "type": "string"
+      },
+      "quantity": {
+        "type": "object",
+        "$ref": "Quantity",
+        "required": true
+      },
+      "interactionItemStatus": {
+        "type": "string"
+      }
+    }
+  },
+  "CustomerPayment": {
+    "type": "object",
+    "properties": {
+      "amount": {
+        "type": "object",
+        "$ref": "Money",
+        "required": true
+      },
+      "id": {
+        "type": "string"
+      },
+      "paymentItem": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "PaymentItem"
+        }
+      },
+      "paymentDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "remainingAmount": {
+        "type": "object",
+        "$ref": "Money",
+        "required": true
+      },
+      "paymentConfirmation": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "paymentMethods": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "PaymentMethod"
+        }
+      }
+    }
+  },
+  "CustomerQuote": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "interactionDateComplete": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "description": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "interactionDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "customerQuoteItem": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "CustomerQuoteItem"
+        }
+      },
+      "customer": {
+        "type": "object",
+        "$ref": "Customer",
+        "required": true
+      },
+      "interactionStatus": {
+        "type": "string"
+      }
+    }
+  },
+  "CustomerQuoteItem": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "action": {
+        "type": "string"
+      },
+      "quantity": {
+        "type": "object",
+        "$ref": "Quantity",
+        "required": true
+      },
+      "interactionItemStatus": {
+        "type": "string"
+      },
+      "nonRecurringCost": {
+        "type": "object",
+        "$ref": "Money",
+        "required": true
+      },
+      "recurringCost": {
+        "type": "object",
+        "$ref": "CostRate",
+        "required": true
+      }
+    }
+  },
+  "CustomerSegment": {
+    "type": "object",
+    "properties": {
+      "description": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "customers": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Customer"
+        }
+      }
+    }
+  },
+  "Device": {
+    "type": "object",
+    "properties": {
+      "characterisitcs": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Characteristic"
+        }
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "hostname": {
+        "type": "string"
+      },
+      "serialNumber": {
+        "type": "string"
+      },
+      "managementMethodSupported": {
+        "type": "integer"
+      },
+      "macAddress": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string"
+      },
+      "version": {
+        "type": "string"
+      },
+      "id": {
+        "type": "string"
+      },
+      "otherIdentifier": {
+        "type": "string"
+      },
+      "powerState": {
+        "type": "integer"
+      },
+      "description": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "usageState": {
+        "type": "integer"
+      },
+      "manufactureDateStamp": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "ownedBy": {
+        "type": "object",
+        "$ref": "Customer",
+        "required": true
+      },
+      "slot": {
+        "type": "object",
+        "$ref": "Slot",
+        "required": true
+      },
+      "versionNumber": {
+        "type": "string"
+      },
+      "managementMethodCurrent": {
+        "type": "integer"
+      }
+    }
+  },
+  "DiscountProdPriceAlteration": {
+    "type": "object",
+    "properties": {
+      "price": {
+        "type": "object",
+        "$ref": "Money",
+        "required": true
+      },
+      "priceType": {
+        "type": "string"
+      },
+      "quantity": {
+        "type": "object",
+        "$ref": "Quantity",
+        "required": true
+      },
+      "period": {
+        "type": "string"
+      }
+    }
+  },
+  "DOCSISCableInterface": {
+    "type": "object",
+    "properties": {
+      "mtuSupported": {
+        "type": "integer"
+      },
+      "hasDataLink": {
+        "type": "boolean"
+      },
+      "vendorInterfaceNumber": {
+        "type": "string"
+      },
+      "lrStatus": {
+        "type": "integer"
+      },
+      "t3RangingResponseTimeouts": {
+        "type": "integer"
+      },
+      "mtuCurrent": {
+        "type": "integer"
+      },
+      "isInterfaceEnabled": {
+        "type": "boolean"
+      },
+      "networkPath": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "NetworkPath"
+        }
+      },
+      "isOperational": {
+        "type": "boolean"
+      },
+      "correctedCodewordsIn": {
+        "type": "integer"
+      },
+      "customerInterfaceNumber": {
+        "type": "string"
+      },
+      "t4RangingRequestWindowTimeouts": {
+        "type": "integer"
+      },
+      "usageState": {
+        "type": "integer"
+      },
+      "interfaceInitResetCount": {
+        "type": "integer"
+      },
+      "clliCode": {
+        "type": "object",
+        "$ref": "CLLICode",
+        "required": true
+      },
+      "serviceState": {
+        "type": "integer"
+      },
+      "supportsMLPPP": {
+        "type": "boolean"
+      },
+      "badCodewordsIn": {
+        "type": "integer"
+      },
+      "hasCarrierDetect": {
+        "type": "boolean"
+      },
+      "syncLostCount": {
+        "type": "integer"
+      },
+      "goodCodewordsIn": {
+        "type": "integer"
+      },
+      "deviceConfigMethod": {
+        "type": "integer"
+      }
+    }
+  },
+  "Document": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "documentLocation": {
+        "type": "string"
+      },
+      "documentNumber": {
+        "type": "string"
+      }
+    }
+  },
+  "DriversLicenseIdentification": {
+    "type": "object",
+    "properties": {
+      "licenseNr": {
+        "type": "string"
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "scan": {
+        "type": "string"
+      },
+      "issueDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      }
+    }
+  },
+  "EmailContact": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "emailAddress": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string"
+      },
+      "preferred": {
+        "type": "boolean"
+      }
+    }
+  },
+  "EmergencyServiceZone": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "code": {
+        "type": "string"
+      },
+      "geometry": {
+        "type": "object",
+        "$ref": "Geometry",
+        "required": true
+      }
+    }
+  },
+  "EmployeeIdentification": {
+    "type": "object",
+    "properties": {
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "scan": {
+        "type": "string"
+      },
+      "issueDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "photo": {
+        "type": "string"
+      },
+      "employeeNr": {
+        "type": "string"
+      }
+    }
+  },
+  "EPLConfiguration": {
+    "type": "object",
+    "properties": {
+      "z_Address": {
+        "type": "object",
+        "$ref": "Site",
+        "required": true
+      },
+      "a_Address": {
+        "type": "object",
+        "$ref": "Site",
+        "required": true
+      },
+      "bandwidth": {
+        "type": "object",
+        "$ref": "Quantity",
+        "required": true
+      }
+    }
+  },
+  "EPLProduct": {
+    "type": "object",
+    "properties": {
+      "uniProducts": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "UNIProduct"
+        }
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "evcProduct": {
+        "type": "object",
+        "$ref": "EVCProduct",
+        "required": true
+      },
+      "unnamed_ProductOrderItem_": {
+        "type": "object",
+        "$ref": "ProductOrderItem",
+        "required": true
+      },
+      "isBundle": {
+        "type": "boolean"
+      },
+      "id": {
+        "type": "string"
+      },
+      "customerAccountInvolvements": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "AccountProductAssignment"
+        }
+      },
+      "productStatus": {
+        "type": "string"
+      },
+      "productRelationships": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ProductRelationship"
+        }
+      },
+      "description": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "productSpecification": {
+        "type": "object",
+        "$ref": "ProductSpecification",
+        "required": true
+      },
+      "productPrices": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ProductPrice"
+        }
+      },
+      "configuration": {
+        "type": "object",
+        "$ref": "EPLConfiguration",
+        "required": true
+      },
+      "productSerialNumber": {
+        "type": "string"
+      },
+      "products": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "EPLProduct"
+        }
+      },
+      "productOffering": {
+        "type": "object",
+        "$ref": "ProductOffering",
+        "required": true
+      }
+    }
+  },
+  "EPLProductConfiguration": {
+    "type": "object",
+    "properties": {
+      "evc": {
+        "type": "object",
+        "$ref": "EVCServiceConfiguration",
+        "required": true
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "eplProduct": {
+        "type": "object",
+        "$ref": "EPLProduct",
+        "required": true
+      },
+      "uni": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "UNIServiceConfiguration"
+        }
+      },
+      "isBundle": {
+        "type": "boolean"
+      },
+      "id": {
+        "type": "string"
+      },
+      "customerAccountInvolvements": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "AccountProductAssignment"
+        }
+      },
+      "productStatus": {
+        "type": "string"
+      },
+      "productRelationships": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ProductRelationship"
+        }
+      },
+      "description": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "productSpecification": {
+        "type": "object",
+        "$ref": "ProductSpecification",
+        "required": true
+      },
+      "productPrices": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ProductPrice"
+        }
+      },
+      "configuration": {
+        "type": "object",
+        "$ref": "EPLConfiguration",
+        "required": true
+      },
+      "productSerialNumber": {
+        "type": "string"
+      },
+      "products": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "EPLProductConfiguration"
+        }
+      },
+      "productOffering": {
+        "type": "object",
+        "$ref": "ProductOffering",
+        "required": true
+      }
+    }
+  },
+  "EPLProductDeltas": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "eplproductConfiguration": {
+        "type": "object",
+        "$ref": "EPLProductConfiguration",
+        "required": true
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "changeses": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Changes"
+        }
+      }
+    }
+  },
+  "EthernetInterface": {
+    "type": "object",
+    "properties": {
+      "hasDataLink": {
+        "type": "boolean"
+      },
+      "resourcePort": {
+        "type": "object",
+        "$ref": "ResourcePort",
+        "required": true
+      },
+      "vendorInterfaceNumber": {
+        "type": "integer"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "physicalPort": {
+        "type": "object",
+        "$ref": "PhysicalPort",
+        "required": true
+      },
+      "macAddress": {
+        "type": "object",
+        "$ref": "MACAddress",
+        "required": true
+      },
+      "isInterfaceEnabled": {
+        "type": "boolean"
+      },
+      "id": {
+        "type": "string"
+      },
+      "customerInterfaceNumber": {
+        "type": "integer"
+      },
+      "interfaceInitResetCount": {
+        "type": "integer"
+      },
+      "hasCarrierDetect": {
+        "type": "boolean"
+      },
+      "deviceConfigMethod": {
+        "type": "string"
+      },
+      "syncLostCount": {
+        "type": "integer"
+      }
+    }
+  },
+  "EthernetInterfaceConfiguration": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "hasDataLink": {
+        "type": "boolean"
+      },
+      "customerInterfaceNumber": {
+        "type": "integer"
+      },
+      "vendorInterfaceNumber": {
+        "type": "integer"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "interfaceInitResetCount": {
+        "type": "integer"
+      },
+      "isInterfaceEnabled": {
+        "type": "boolean"
+      },
+      "hasCarrierDetect": {
+        "type": "boolean"
+      },
+      "ethernetInterface": {
+        "type": "object",
+        "$ref": "EthernetInterface",
+        "required": true
+      },
+      "syncLostCount": {
+        "type": "integer"
+      },
+      "deviceConfigMethod": {
+        "type": "string"
+      }
+    }
+  },
+  "EthernetInterfaceDeltas": {
+    "type": "object",
+    "properties": {
+      "ethernetInterfaceConfiguration": {
+        "type": "object",
+        "$ref": "EthernetInterfaceConfiguration",
+        "required": true
+      },
+      "id": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "changes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Changes"
+        }
+      }
+    }
+  },
+  "EVCConfiguration": {
+    "type": "object",
+    "properties": {
+      "isColorBlind": {
+        "type": "boolean"
+      },
+      "configLocation": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "configActivationType": {
+        "type": "object",
+        "$ref": "ConfigurationActivationTypeEnum",
+        "required": true
+      },
+      "configText": {
+        "type": "string"
+      },
+      "configBinary": {
+        "type": "object",
+        "$ref": "Byte[]",
+        "required": true
+      },
+      "bandwidth": {
+        "type": "object",
+        "$ref": "Quantity",
+        "required": true
+      }
+    }
+  },
+  "EVCProduct": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "evcProductConfiguration": {
+        "type": "object",
+        "$ref": "EVCProductConfiguration",
+        "required": true
+      },
+      "evcService": {
+        "type": "object",
+        "$ref": "EVCService",
+        "required": true
+      },
+      "productStatus": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "productSerialNumber": {
+        "type": "string"
+      },
+      "isBundle": {
+        "type": "boolean"
+      }
+    }
+  },
+  "EVCProductConfiguration": {
+    "type": "object",
+    "properties": {
+      "z_Address": {
+        "type": "object",
+        "$ref": "Site",
+        "required": true
+      },
+      "a_Address": {
+        "type": "object",
+        "$ref": "Site",
+        "required": true
+      },
+      "bandwidth": {
+        "type": "object",
+        "$ref": "Quantity",
+        "required": true
+      }
+    }
+  },
+  "EVCService": {
+    "type": "object",
+    "properties": {
+      "cfsStatus": {
+        "type": "integer"
+      },
+      "startMode": {
+        "type": "integer"
+      },
+      "isServiceEnabled": {
+        "type": "boolean"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "isTSP": {
+        "type": "boolean"
+      },
+      "isCustomerFacingService": {
+        "type": "boolean"
+      },
+      "isFCCReportable": {
+        "type": "boolean"
+      },
+      "id": {
+        "type": "string"
+      },
+      "hasStarted": {
+        "type": "boolean"
+      },
+      "isResourceFacingService": {
+        "type": "boolean"
+      },
+      "unis": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "UNIService"
+        }
+      },
+      "customerFacingService": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "EVCService"
+        }
+      },
+      "isMandatory": {
+        "type": "boolean"
+      },
+      "path": {
+        "type": "object",
+        "$ref": "NetworkPath",
+        "required": true
+      },
+      "resourceFacingService": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "EVCService"
+        }
+      },
+      "configuration": {
+        "type": "object",
+        "$ref": "EVCConfiguration",
+        "required": true
+      },
+      "isStateful": {
+        "type": "boolean"
+      },
+      "rfsStatus": {
+        "type": "integer"
+      }
+    }
+  },
+  "EVCServiceConfiguration": {
+    "type": "object",
+    "properties": {
+      "cfsStatus": {
+        "type": "integer"
+      },
+      "startMode": {
+        "type": "integer"
+      },
+      "isServiceEnabled": {
+        "type": "boolean"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "isTSP": {
+        "type": "boolean"
+      },
+      "isCustomerFacingService": {
+        "type": "boolean"
+      },
+      "isFCCReportable": {
+        "type": "boolean"
+      },
+      "id": {
+        "type": "string"
+      },
+      "hasStarted": {
+        "type": "boolean"
+      },
+      "isResourceFacingService": {
+        "type": "boolean"
+      },
+      "unis": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "UNIServiceConfiguration"
+        }
+      },
+      "customerFacingService": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "EVCServiceConfiguration"
+        }
+      },
+      "isMandatory": {
+        "type": "boolean"
+      },
+      "service": {
+        "type": "object",
+        "$ref": "EVCService",
+        "required": true
+      },
+      "path": {
+        "type": "object",
+        "$ref": "NetworkPath",
+        "required": true
+      },
+      "resourceFacingService": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "EVCServiceConfiguration"
+        }
+      },
+      "configuration": {
+        "type": "object",
+        "$ref": "EVCConfiguration",
+        "required": true
+      },
+      "isStateful": {
+        "type": "boolean"
+      },
+      "rfsStatus": {
+        "type": "integer"
+      }
+    }
+  },
+  "EVCServiceDeltas": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "uniServiceConfiguration": {
+        "type": "object",
+        "$ref": "EVCServiceConfiguration",
+        "required": true
+      },
+      "changeses": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Changes"
+        }
+      }
+    }
+  },
+  "ExchangeServiceArea": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "code": {
+        "type": "string"
+      },
+      "geometry": {
+        "type": "object",
+        "$ref": "Geometry",
+        "required": true
+      }
+    }
+  },
+  "ExternalSystemReference": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "referenceType": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "systemName": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      }
+    }
+  },
+  "FaxNumber": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "number": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string"
+      }
+    }
+  },
+  "FiberNode": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      }
+    }
+  },
+  "FinancialCharge": {
+    "type": "object"
+  },
+  "FundingInstrument": {
+    "type": "object",
+    "properties": {
+      "tokenizedThirdParties": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "TokenizedThirdParty"
+        }
+      },
+      "tokenizedPaymentCards": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "TokenizedPaymentCard"
+        }
+      },
+      "paymentCards": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "PaymentCard"
+        }
+      },
+      "fundsTransfers": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "FundsTransfer"
+        }
+      }
+    }
+  },
+  "FundsTransfer": {
+    "type": "object",
+    "properties": {
+      "bankRoutingNumber": {
+        "type": "string"
+      },
+      "accountType": {
+        "type": "object",
+        "$ref": "BankAccountType",
+        "required": true
+      },
+      "transitNumber": {
+        "type": "string"
+      },
+      "billingAddress": {
+        "type": "object",
+        "$ref": "PropertyAddress",
+        "required": true
+      },
+      "bankAccountNumber": {
+        "type": "string"
+      }
+    }
+  },
+  "GeographicAddress": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "postalcode": {
+        "type": "string"
+      },
+      "state_province": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "locality": {
+        "type": "string"
+      },
+      "formattedAddressLine2": {
+        "type": "string"
+      },
+      "formattedAddressLine1": {
+        "type": "string"
+      },
+      "postalContacts": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "PostalContact"
+        }
+      },
+      "country": {
+        "type": "string"
+      }
+    }
+  },
+  "GeographicArea": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "code": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string"
+      },
+      "geometry": {
+        "type": "object",
+        "$ref": "Geometry",
+        "required": true
+      }
+    }
+  },
+  "GeographicLocation": {
+    "type": "object",
+    "properties": {
+      "cableServiceArea": {
+        "type": "object",
+        "$ref": "CableServiceArea",
+        "required": true
+      },
+      "adiminstrativeArea": {
+        "type": "object",
+        "$ref": "AdministrativeArea",
+        "required": true
+      },
+      "emergencyServiceZone": {
+        "type": "object",
+        "$ref": "EmergencyServiceZone",
+        "required": true
+      },
+      "geographicArea": {
+        "type": "object",
+        "$ref": "GeographicArea",
+        "required": true
+      },
+      "timeZoneRegion": {
+        "type": "object",
+        "$ref": "TimeZoneRegion",
+        "required": true
+      },
+      "property": {
+        "type": "object",
+        "$ref": "Property",
+        "required": true
+      },
+      "marketArea": {
+        "type": "object",
+        "$ref": "MarketArea",
+        "required": true
+      },
+      "exchangeServiceArea": {
+        "type": "object",
+        "$ref": "ExchangeServiceArea",
+        "required": true
+      },
+      "rateGroupRegion": {
+        "type": "object",
+        "$ref": "RateGroupRegion",
+        "required": true
+      },
+      "accuracy": {
+        "type": "string"
+      },
+      "geometry": {
+        "type": "object",
+        "$ref": "Geometry",
+        "required": true
+      },
+      "rateCenter": {
+        "type": "object",
+        "$ref": "RateCenter",
+        "required": true
+      }
+    }
+  },
+  "GeographicLocationRelationship": {
+    "type": "object",
+    "properties": {
+      "to": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "GeographicLocation"
+        }
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "from": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "GeographicLocation"
+        }
+      },
+      "interactionType": {
+        "type": "object",
+        "$ref": "Object",
+        "required": true
+      }
+    }
+  },
+  "GeographicPlace": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      }
+    }
+  },
+  "GeographicSite": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      }
+    }
+  },
+  "GeographicSubAddress": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      }
+    }
+  },
+  "ImpactedItem": {
+    "type": "object",
+    "properties": {
+      "resources": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Resource"
+        }
+      },
+      "services": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Service"
+        }
+      },
+      "customerAccounts": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Account"
+        }
+      },
+      "ticket": {
+        "type": "object",
+        "$ref": "Ticket",
+        "required": true
+      },
+      "description": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string"
+      }
+    }
+  },
+  "ImpactedItems": {
+    "type": "object",
+    "properties": {
+      "impactedItems": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ImpactedItem"
+        }
+      }
+    }
+  },
+  "Individual": {
+    "type": "object",
+    "properties": {
+      "skills": {
+        "type": "string"
+      },
+      "alternateNames": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "IndividualName"
+        }
+      },
+      "placeOfBirth": {
+        "type": "string"
+      },
+      "partyRoles": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "PartyRole"
+        }
+      },
+      "disabilities": {
+        "type": "object",
+        "$ref": "DisabilityType",
+        "required": true
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "aliveDuring": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "individualName": {
+        "type": "object",
+        "$ref": "IndividualName",
+        "required": true
+      },
+      "preferedName": {
+        "type": "string"
+      },
+      "maritalStatus": {
+        "type": "object",
+        "$ref": "MaritalStatus",
+        "required": true
+      },
+      "id": {
+        "type": "string"
+      },
+      "identificationDetails": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "IndividualIdentification"
+        }
+      },
+      "nationality": {
+        "type": "string"
+      },
+      "gender": {
+        "type": "object",
+        "$ref": "GenderType",
+        "required": true
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      }
+    }
+  },
+  "IndividualIdentification": {
+    "type": "object",
+    "properties": {
+      "stateIdentification": {
+        "type": "object",
+        "$ref": "StateIdentification",
+        "required": true
+      },
+      "studentIdentification": {
+        "type": "object",
+        "$ref": "StudentIdentification",
+        "required": true
+      },
+      "passportIdentification": {
+        "type": "object",
+        "$ref": "PassportIdentification",
+        "required": true
+      },
+      "contractorIdentification": {
+        "type": "object",
+        "$ref": "ContractorIdentification",
+        "required": true
+      },
+      "driversLicenseIdentification": {
+        "type": "object",
+        "$ref": "DriversLicenseIdentification",
+        "required": true
+      },
+      "birthCertificateIdentification": {
+        "type": "object",
+        "$ref": "BirthCertificateIdentification",
+        "required": true
+      },
+      "nationalIdentityCardIdentification": {
+        "type": "object",
+        "$ref": "NationalIdentityCardIdentification",
+        "required": true
+      },
+      "socialInsuranceIdentification": {
+        "type": "object",
+        "$ref": "SocialInsuranceIdentification",
+        "required": true
+      },
+      "provincialIdentification": {
+        "type": "object",
+        "$ref": "ProvincialIdentification",
+        "required": true
+      },
+      "employeeIdentification": {
+        "type": "object",
+        "$ref": "EmployeeIdentification",
+        "required": true
+      },
+      "medicalHealthCardIdentification": {
+        "type": "object",
+        "$ref": "MedicalHealthCardIdentification",
+        "required": true
+      },
+      "membershipCardIdentification": {
+        "type": "object",
+        "$ref": "MembershipCardIdentification",
+        "required": true
+      },
+      "socialSecurityNrIdentification": {
+        "type": "object",
+        "$ref": "SocialSecurityNrIdentification",
+        "required": true
+      },
+      "alternateIdentification": {
+        "type": "object",
+        "$ref": "AlternateIdentification",
+        "required": true
+      }
+    }
+  },
+  "IndividualName": {
+    "type": "object",
+    "properties": {
+      "legalName": {
+        "type": "string"
+      },
+      "familyNames": {
+        "type": "string"
+      },
+      "qualifications": {
+        "type": "string"
+      },
+      "formOfAddress": {
+        "type": "string"
+      },
+      "givenNames": {
+        "type": "string"
+      },
+      "aristocraticTitle": {
+        "type": "string"
+      },
+      "familyGeneration": {
+        "type": "string"
+      },
+      "preferredGivenName": {
+        "type": "string"
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "formattedName": {
+        "type": "string"
+      },
+      "generation": {
+        "type": "string"
+      },
+      "middleNames": {
+        "type": "string"
+      },
+      "familyNamePrefix": {
+        "type": "string"
+      }
+    }
+  },
+  "Feature": {
+    "type": "object",
+    "properties": {
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "properties": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "geometry": {
+        "type": "object",
+        "$ref": "Geometry",
+        "required": true
+      }
+    }
+  },
+  "FeatureCollection": {
+    "type": "object",
+    "properties": {
+      "features": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Feature"
+        }
+      }
+    }
+  },
+  "Geometry": {
+    "type": "object",
+    "properties": {
+      "geometryCollection": {
+        "type": "object",
+        "$ref": "GeometryCollection",
+        "required": true
+      },
+      "spatialReferenceSystem": {
+        "type": "object",
+        "$ref": "SpatialReferenceSystem",
+        "required": true
+      },
+      "geographicLocation": {
+        "type": "object",
+        "$ref": "GeographicLocation",
+        "required": true
+      }
+    }
+  },
+  "GeometryCollection": {
+    "type": "object",
+    "properties": {
+      "geometryCollection": {
+        "type": "object",
+        "$ref": "GeometryCollection",
+        "required": true
+      },
+      "spatialReferenceSystem": {
+        "type": "object",
+        "$ref": "SpatialReferenceSystem",
+        "required": true
+      },
+      "geometry": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Geometry"
+        }
+      },
+      "geographicLocation": {
+        "type": "object",
+        "$ref": "GeographicLocation",
+        "required": true
+      }
+    }
+  },
+  "Line": {
+    "type": "object",
+    "properties": {
+      "polygon": {
+        "type": "object",
+        "$ref": "Polygon",
+        "required": true
+      },
+      "geometryCollection": {
+        "type": "object",
+        "$ref": "GeometryCollection",
+        "required": true
+      },
+      "multiLineString": {
+        "type": "object",
+        "$ref": "MultiLineString",
+        "required": true
+      },
+      "spatialReferenceSystem": {
+        "type": "object",
+        "$ref": "SpatialReferenceSystem",
+        "required": true
+      },
+      "points": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Point"
+        }
+      },
+      "geographicLocation": {
+        "type": "object",
+        "$ref": "GeographicLocation",
+        "required": true
+      }
+    }
+  },
+  "LinearRing": {
+    "type": "object",
+    "properties": {
+      "polygon": {
+        "type": "object",
+        "$ref": "Polygon",
+        "required": true
+      },
+      "geometryCollection": {
+        "type": "object",
+        "$ref": "GeometryCollection",
+        "required": true
+      },
+      "multiLineString": {
+        "type": "object",
+        "$ref": "MultiLineString",
+        "required": true
+      },
+      "spatialReferenceSystem": {
+        "type": "object",
+        "$ref": "SpatialReferenceSystem",
+        "required": true
+      },
+      "points": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Point"
+        }
+      },
+      "geographicLocation": {
+        "type": "object",
+        "$ref": "GeographicLocation",
+        "required": true
+      }
+    }
+  },
+  "LineString": {
+    "type": "object",
+    "properties": {
+      "polygon": {
+        "type": "object",
+        "$ref": "Polygon",
+        "required": true
+      },
+      "geometryCollection": {
+        "type": "object",
+        "$ref": "GeometryCollection",
+        "required": true
+      },
+      "multiLineString": {
+        "type": "object",
+        "$ref": "MultiLineString",
+        "required": true
+      },
+      "spatialReferenceSystem": {
+        "type": "object",
+        "$ref": "SpatialReferenceSystem",
+        "required": true
+      },
+      "points": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Point"
+        }
+      },
+      "geographicLocation": {
+        "type": "object",
+        "$ref": "GeographicLocation",
+        "required": true
+      }
+    }
+  },
+  "MultiLineString": {
+    "type": "object",
+    "properties": {
+      "lineStrings": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "LineString"
+        }
+      },
+      "geometryCollection": {
+        "type": "object",
+        "$ref": "GeometryCollection",
+        "required": true
+      },
+      "spatialReferenceSystem": {
+        "type": "object",
+        "$ref": "SpatialReferenceSystem",
+        "required": true
+      },
+      "geographicLocation": {
+        "type": "object",
+        "$ref": "GeographicLocation",
+        "required": true
+      }
+    }
+  },
+  "MultiPoint": {
+    "type": "object",
+    "properties": {
+      "geometryCollection": {
+        "type": "object",
+        "$ref": "GeometryCollection",
+        "required": true
+      },
+      "spatialReferenceSystem": {
+        "type": "object",
+        "$ref": "SpatialReferenceSystem",
+        "required": true
+      },
+      "points": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Point"
+        }
+      },
+      "geographicLocation": {
+        "type": "object",
+        "$ref": "GeographicLocation",
+        "required": true
+      }
+    }
+  },
+  "MultiPolygon": {
+    "type": "object",
+    "properties": {
+      "geometryCollection": {
+        "type": "object",
+        "$ref": "GeometryCollection",
+        "required": true
+      },
+      "spatialReferenceSystem": {
+        "type": "object",
+        "$ref": "SpatialReferenceSystem",
+        "required": true
+      },
+      "polygons": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Polygon"
+        }
+      },
+      "geographicLocation": {
+        "type": "object",
+        "$ref": "GeographicLocation",
+        "required": true
+      }
+    }
+  },
+  "Point": {
+    "type": "object",
+    "properties": {
+      "geometryCollection": {
+        "type": "object",
+        "$ref": "GeometryCollection",
+        "required": true
+      },
+      "spatialReferenceSystem": {
+        "type": "object",
+        "$ref": "SpatialReferenceSystem",
+        "required": true
+      },
+      "elevation": {
+        "type": "string"
+      },
+      "multiPoint": {
+        "type": "object",
+        "$ref": "MultiPoint",
+        "required": true
+      },
+      "longitude": {
+        "type": "string"
+      },
+      "latitude": {
+        "type": "string"
+      },
+      "lineString": {
+        "type": "object",
+        "$ref": "LineString",
+        "required": true
+      },
+      "geographicLocation": {
+        "type": "object",
+        "$ref": "GeographicLocation",
+        "required": true
+      }
+    }
+  },
+  "Polygon": {
+    "type": "object",
+    "properties": {
+      "lineStrings": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "LineString"
+        }
+      },
+      "geometryCollection": {
+        "type": "object",
+        "$ref": "GeometryCollection",
+        "required": true
+      },
+      "spatialReferenceSystem": {
+        "type": "object",
+        "$ref": "SpatialReferenceSystem",
+        "required": true
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "multiPolygon": {
+        "type": "object",
+        "$ref": "MultiPolygon",
+        "required": true
+      },
+      "geographicLocation": {
+        "type": "object",
+        "$ref": "GeographicLocation",
+        "required": true
+      }
+    }
+  },
+  "Location": {
+    "type": "object",
+    "properties": {
+      "site": {
+        "type": "object",
+        "$ref": "Site",
+        "required": true
+      },
+      "propertyAddress": {
+        "type": "object",
+        "$ref": "PropertyAddress",
+        "required": true
+      }
+    }
+  },
+  "LogicalAddress": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      }
+    }
+  },
+  "MACAddress": {
+    "type": "object",
+    "properties": {
+      "hostname": {
+        "type": "string"
+      },
+      "macAddress": {
+        "type": "string"
+      }
+    }
+  },
+  "MarketArea": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "marketRank": {
+        "type": "integer"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "marketAreaType": {
+        "type": "string"
+      },
+      "marketAreaName": {
+        "type": "string"
+      },
+      "geometry": {
+        "type": "object",
+        "$ref": "Geometry",
+        "required": true
+      }
+    }
+  },
+  "MedicalHealthCardIdentification": {
+    "type": "object",
+    "properties": {
+      "medicalHealthCardNr": {
+        "type": "string"
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "scan": {
+        "type": "string"
+      },
+      "issueDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      }
+    }
+  },
+  "MembershipCardIdentification": {
+    "type": "object",
+    "properties": {
+      "membershipClassification": {
+        "type": "string"
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "scan": {
+        "type": "string"
+      },
+      "issueDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "membershipIdNr": {
+        "type": "string"
+      }
+    }
+  },
+  "Modifier": {
+    "type": "object",
+    "properties": {
+      "modifiedTime": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "user": {
+        "type": "object",
+        "$ref": "User",
+        "required": true
+      }
+    }
+  },
+  "Modifiers": {
+    "type": "object",
+    "properties": {
+      "modifers": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Modifier"
+        }
+      }
+    }
+  },
+  "NationalIdentityCardIdentification": {
+    "type": "object",
+    "properties": {
+      "cardNr": {
+        "type": "string"
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "scan": {
+        "type": "string"
+      },
+      "issueDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      }
+    }
+  },
+  "NetworkPath": {
+    "type": "object",
+    "properties": {
+      "framing": {
+        "type": "string"
+      },
+      "channelType": {
+        "type": "string"
+      },
+      "signaling": {
+        "type": "string"
+      },
+      "direction": {
+        "type": "string"
+      },
+      "noOfChannels": {
+        "type": "integer"
+      },
+      "terminationPoints": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "TerminationPoint"
+        }
+      },
+      "topology": {
+        "type": "string"
+      },
+      "alternatePathIdentifier": {
+        "type": "string"
+      }
+    }
+  },
+  "OneTimeAppliedCustomerBillingProductCharge": {
+    "type": "object",
+    "properties": {
+      "oneTimeChargeType": {
+        "type": "string"
+      }
+    }
+  },
+  "OneTimeChargeProdPriceCharge": {
+    "type": "object",
+    "properties": {
+      "price": {
+        "type": "object",
+        "$ref": "Money",
+        "required": true
+      },
+      "priceType": {
+        "type": "string"
+      },
+      "quantity": {
+        "type": "object",
+        "$ref": "Quantity",
+        "required": true
+      },
+      "period": {
+        "type": "string"
+      }
+    }
+  },
+  "OrderDesign": {
+    "type": "object",
+    "properties": {
+      "timestamp": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "id": {
+        "type": "string"
+      },
+      "serviceDesign": {
+        "type": "object",
+        "$ref": "Services",
+        "required": true
+      },
+      "status": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "resourceDesign": {
+        "type": "object",
+        "$ref": "Resources",
+        "required": true
+      },
+      "designArtifact": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      }
+    }
+  },
+  "Organization": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "alternateNames": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "OrganizationName"
+        }
+      },
+      "identificationDetails": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "OrganizationIdentification"
+        }
+      },
+      "existsDuring": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "partyRoles": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "PartyRole"
+        }
+      },
+      "organizationName": {
+        "type": "object",
+        "$ref": "OrganizationName",
+        "required": true
+      },
+      "name": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "type": {
+        "type": "string"
+      },
+      "isLegalEntity": {
+        "type": "boolean"
+      }
+    }
+  },
+  "OrganizationIdentification": {
+    "type": "object",
+    "properties": {
+      "companyRegistration": {
+        "type": "object",
+        "$ref": "CompanyRegistration",
+        "required": true
+      },
+      "taxIdentification": {
+        "type": "object",
+        "$ref": "TaxIdentification",
+        "required": true
+      }
+    }
+  },
+  "OrganizationName": {
+    "type": "object",
+    "properties": {
+      "organizationName": {
+        "type": "string"
+      },
+      "tradingName": {
+        "type": "string"
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "nameType": {
+        "type": "string"
+      }
+    }
+  },
+  "Party": {
+    "type": "object",
+    "properties": {
+      "organization": {
+        "type": "object",
+        "$ref": "Organization",
+        "required": true
+      },
+      "individual": {
+        "type": "object",
+        "$ref": "Individual",
+        "required": true
+      }
+    }
+  },
+  "PartyIdentification": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      }
+    }
+  },
+  "PartyName": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      }
+    }
+  },
+  "PartyRole": {
+    "type": "object",
+    "properties": {
+      "customer": {
+        "type": "object",
+        "$ref": "Customer",
+        "required": true
+      },
+      "contact": {
+        "type": "object",
+        "$ref": "Contact",
+        "required": true
+      },
+      "user": {
+        "type": "object",
+        "$ref": "User",
+        "required": true
+      }
+    }
+  },
+  "PassportIdentification": {
+    "type": "object",
+    "properties": {
+      "issuingCountry": {
+        "type": "string"
+      },
+      "passportNr": {
+        "type": "string"
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "passportType": {
+        "type": "string"
+      },
+      "scan": {
+        "type": "string"
+      },
+      "issueDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      }
+    }
+  },
+  "PaymentCard": {
+    "type": "object",
+    "properties": {
+      "paymentCardNumber": {
+        "type": "integer"
+      },
+      "expirationDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "nameOnCard": {
+        "type": "string"
+      },
+      "billingAddress": {
+        "type": "object",
+        "$ref": "PropertyAddress",
+        "required": true
+      },
+      "cardVerificationCode": {
+        "type": "string"
+      },
+      "paymentCardType": {
+        "type": "object",
+        "$ref": "PaymentCardType",
+        "required": true
+      }
+    }
+  },
+  "PaymentItem": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "billCharge": {
+        "type": "object",
+        "$ref": "BillCharge",
+        "required": true
+      },
+      "customerBill": {
+        "type": "object",
+        "$ref": "CustomerBill",
+        "required": true
+      },
+      "appliedAmount": {
+        "type": "object",
+        "$ref": "Money",
+        "required": true
+      },
+      "customerPayment": {
+        "type": "object",
+        "$ref": "CustomerPayment",
+        "required": true
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      }
+    }
+  },
+  "PaymentMethod": {
+    "type": "object",
+    "properties": {
+      "tokenizedPaymentCard": {
+        "type": "object",
+        "$ref": "TokenizedPaymentCard",
+        "required": true
+      },
+      "tokenizedThirdParty": {
+        "type": "object",
+        "$ref": "TokenizedThirdParty",
+        "required": true
+      },
+      "id": {
+        "type": "string"
+      },
+      "paymentCard": {
+        "type": "object",
+        "$ref": "PaymentCard",
+        "required": true
+      },
+      "check": {
+        "type": "object",
+        "$ref": "Check",
+        "required": true
+      },
+      "fundsTransfer": {
+        "type": "object",
+        "$ref": "FundsTransfer",
+        "required": true
+      },
+      "paymentPlan": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "PaymentPlan"
+        }
+      },
+      "customerPayment": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "CustomerPayment"
+        }
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "cash": {
+        "type": "object",
+        "$ref": "Cash",
+        "required": true
+      },
+      "paymentDescription": {
+        "type": "string"
+      },
+      "paymentMethodName": {
+        "type": "string"
+      }
+    }
+  },
+  "PaymentPlan": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "customerAccounts": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Account"
+        }
+      },
+      "status": {
+        "type": "boolean"
+      },
+      "priority": {
+        "type": "integer"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "paymentPlanType": {
+        "type": "object",
+        "$ref": "PaymentPlanType",
+        "required": true
+      },
+      "paymentMethod": {
+        "type": "object",
+        "$ref": "PaymentMethod",
+        "required": true
+      },
+      "paymentLimit": {
+        "type": "object",
+        "$ref": "Money",
+        "required": true
+      }
+    }
+  },
+  "PhysicalPort": {
+    "type": "object",
+    "properties": {
+      "duplexMode": {
+        "type": "integer"
+      },
+      "portNumber": {
+        "type": "integer"
+      },
+      "ifType": {
+        "type": "integer"
+      },
+      "vendorPortName": {
+        "type": "string"
+      },
+      "card": {
+        "type": "object",
+        "$ref": "Card",
+        "required": true
+      },
+      "typeOfPort": {
+        "type": "integer"
+      },
+      "configuration": {
+        "type": "object",
+        "$ref": "PhysicalPortConfig",
+        "required": true
+      }
+    }
+  },
+  "PhysicalPortConfig": {
+    "type": "object",
+    "properties": {
+      "duplexMode": {
+        "type": "integer"
+      },
+      "mgmtInfoValidFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "maxSpeed": {
+        "type": "object",
+        "$ref": "Quantity",
+        "required": true
+      },
+      "configLocation": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "retrievalMethodsSupported": {
+        "type": "string"
+      },
+      "retrievalMethodCurrent": {
+        "type": "integer"
+      },
+      "configText": {
+        "type": "string"
+      },
+      "configBinary": {
+        "type": "object",
+        "$ref": "Byte[]",
+        "required": true
+      },
+      "physicalMediaType": {
+        "type": "integer"
+      }
+    }
+  },
+  "Place": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      }
+    }
+  },
+  "PostalContact": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "propertyAddress": {
+        "type": "object",
+        "$ref": "PropertyAddress",
+        "required": true
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "type": {
+        "type": "string"
+      },
+      "additionalDeliveryDetail": {
+        "type": "string"
+      }
+    }
+  },
+  "PostalDeliveryAddress": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      }
+    }
+  },
+  "Preference": {
+    "type": "object",
+    "properties": {
+      "rangeInterval": {
+        "type": "string"
+      },
+      "isSet": {
+        "type": "boolean"
+      },
+      "characteristicSequence": {
+        "type": "integer"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "id": {
+        "type": "string"
+      },
+      "specCharacteristicDescription": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "preferenceName": {
+        "type": "string"
+      },
+      "value": {
+        "type": "string"
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "specCharacteristicName": {
+        "type": "string"
+      },
+      "valueType": {
+        "type": "string"
+      },
+      "unitOfMeasure": {
+        "type": "string"
+      },
+      "preferenceCategory": {
+        "type": "object",
+        "$ref": "PreferenceCategory",
+        "required": true
+      },
+      "preferences": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Preference"
+        }
+      }
+    }
+  },
+  "PreferenceCategory": {
+    "type": "object",
+    "properties": {
+      "preferenceCategoryName": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "preferenceCategoryId": {
+        "type": "string"
+      }
+    }
+  },
+  "Presentation": {
+    "type": "object",
+    "properties": {
+      "presentationType": {
+        "type": "object",
+        "$ref": "PresentationType",
+        "required": true
+      },
+      "presentationContentLocation": {
+        "type": "string"
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "presentationCategories": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "PresentationCategory"
+        }
+      },
+      "productSpecifications": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ProductSpecification"
+        }
+      },
+      "presentationId": {
+        "type": "string"
+      },
+      "presentationName": {
+        "type": "string"
+      }
+    }
+  },
+  "PresentationCategory": {
+    "type": "object",
+    "properties": {
+      "presentations": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Presentation"
+        }
+      },
+      "presentationDescription": {
+        "type": "string"
+      },
+      "presentationCategoryName": {
+        "type": "string"
+      },
+      "presentationCategoryType": {
+        "type": "object",
+        "$ref": "PresentationCategoryType",
+        "required": true
+      }
+    }
+  },
+  "ProdPriceAlteration": {
+    "type": "object",
+    "properties": {
+      "price": {
+        "type": "object",
+        "$ref": "Money",
+        "required": true
+      },
+      "priceType": {
+        "type": "string"
+      },
+      "quantity": {
+        "type": "object",
+        "$ref": "Quantity",
+        "required": true
+      },
+      "period": {
+        "type": "string"
+      }
+    }
+  },
+  "ProdPriceCharge": {
+    "type": "object",
+    "properties": {
+      "price": {
+        "type": "object",
+        "$ref": "Money",
+        "required": true
+      },
+      "priceType": {
+        "type": "string"
+      },
+      "quantity": {
+        "type": "object",
+        "$ref": "Quantity",
+        "required": true
+      },
+      "period": {
+        "type": "string"
+      }
+    }
+  },
+  "Product": {
+    "type": "object",
+    "properties": {
+      "productProperties": {
+        "type": "object",
+        "$ref": "ProductProperties",
+        "required": true
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "customerFacingServices": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Service"
+        }
+      },
+      "isBundle": {
+        "type": "boolean"
+      },
+      "id": {
+        "type": "string"
+      },
+      "customerAccountInvolvements": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "AccountProductAssignment"
+        }
+      },
+      "productStatus": {
+        "type": "string"
+      },
+      "productRelationships": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ProductRelationship"
+        }
+      },
+      "description": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "productSpecification": {
+        "type": "object",
+        "$ref": "ProductSpecification",
+        "required": true
+      },
+      "productPrices": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ProductPrice"
+        }
+      },
+      "productSerialNumber": {
+        "type": "string"
+      },
+      "products": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Product"
+        }
+      },
+      "productOffering": {
+        "type": "object",
+        "$ref": "ProductOffering",
+        "required": true
+      }
+    }
+  },
+  "ProductCategory": {
+    "type": "object",
+    "properties": {
+      "description": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      }
+    }
+  },
+  "ProductConfiguration": {
+    "type": "object",
+    "properties": {
+      "productPropertieses": {
+        "type": "object",
+        "$ref": "ProductProperties",
+        "required": true
+      },
+      "product": {
+        "type": "object",
+        "$ref": "Product",
+        "required": true
+      },
+      "id": {
+        "type": "string"
+      },
+      "productStatus": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "serviceConfigurations": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ServiceConfiguration"
+        }
+      },
+      "name": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "productSerialNumber": {
+        "type": "string"
+      },
+      "products": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ProductConfiguration"
+        }
+      },
+      "isBundle": {
+        "type": "boolean"
+      }
+    }
+  },
+  "ProductInvolvementRole": {
+    "type": "object",
+    "properties": {
+      "productInvolvementRole": {
+        "type": "string"
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "productInvolvementRoleId": {
+        "type": "string"
+      }
+    }
+  },
+  "ProductLine": {
+    "type": "object",
+    "properties": {
+      "description": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      }
+    }
+  },
+  "ProductOffering": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "eplProducts": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "EPLProduct"
+        }
+      },
+      "status": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "eplProductConfigurations": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "EPLProductConfiguration"
+        }
+      },
+      "products": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Product"
+        }
+      },
+      "isBundle": {
+        "type": "boolean"
+      }
+    }
+  },
+  "ProductOrder": {
+    "type": "object",
+    "properties": {
+      "customerQuote": {
+        "type": "object",
+        "$ref": "CustomerQuote",
+        "required": true
+      },
+      "assignedResponseDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "stateTransitions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Link"
+        }
+      },
+      "orderState": {
+        "type": "object",
+        "$ref": "OrderState",
+        "required": true
+      },
+      "assignedPriority": {
+        "type": "integer"
+      },
+      "newSite": {
+        "type": "object",
+        "$ref": "Site",
+        "required": true
+      },
+      "customerOrderType": {
+        "type": "object",
+        "$ref": "CustomerOrderType",
+        "required": true
+      },
+      "productOrderItems": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ProductOrderItem"
+        }
+      },
+      "orderType": {
+        "type": "object",
+        "$ref": "OrderType",
+        "required": true
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "interactionStatus": {
+        "type": "string"
+      },
+      "id": {
+        "type": "string"
+      },
+      "interactionDateComplete": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "feasibility": {
+        "type": "object",
+        "$ref": "Feasibility",
+        "required": true
+      },
+      "availableFieldChanges": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "boolean"
+        }
+      },
+      "serviceOrder": {
+        "type": "object",
+        "$ref": "ServiceOrder",
+        "required": true
+      },
+      "description": {
+        "type": "string"
+      },
+      "saleSource": {
+        "type": "string"
+      },
+      "purchaceOrderNumber": {
+        "type": "string"
+      },
+      "account": {
+        "type": "object",
+        "$ref": "Account",
+        "required": true
+      },
+      "interactionDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "newState": {
+        "type": "object",
+        "$ref": "Quantity",
+        "required": true
+      },
+      "dueDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "existingSite": {
+        "type": "object",
+        "$ref": "Site",
+        "required": true
+      }
+    }
+  },
+  "ProductOrderItem": {
+    "type": "object",
+    "properties": {
+      "orderItemState": {
+        "type": "object",
+        "$ref": "OrderItemState",
+        "required": true
+      },
+      "id": {
+        "type": "string"
+      },
+      "stateTransitions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Link"
+        }
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "device": {
+        "type": "object",
+        "$ref": "Device",
+        "required": true
+      },
+      "action": {
+        "type": "string"
+      },
+      "eplProduct": {
+        "type": "object",
+        "$ref": "EPLProduct",
+        "required": true
+      },
+      "quantity": {
+        "type": "object",
+        "$ref": "Quantity",
+        "required": true
+      },
+      "productConfigurations": {
+        "type": "object",
+        "$ref": "ProductConfiguration",
+        "required": true
+      }
+    }
+  },
+  "ProductPrice": {
+    "type": "object",
+    "properties": {
+      "eplProductConfiguration": {
+        "type": "object",
+        "$ref": "EPLProductConfiguration",
+        "required": true
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "eplProduct": {
+        "type": "object",
+        "$ref": "EPLProduct",
+        "required": true
+      },
+      "id": {
+        "type": "string"
+      },
+      "product": {
+        "type": "object",
+        "$ref": "Product",
+        "required": true
+      },
+      "description": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "prodPriceCharge": {
+        "type": "object",
+        "$ref": "ProdPriceCharge",
+        "required": true
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "partOf": {
+        "type": "object",
+        "$ref": "ProductPrice",
+        "required": true
+      },
+      "compositePrices": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ProductPrice"
+        }
+      },
+      "componentPrice": {
+        "type": "object",
+        "$ref": "ComponentPrice",
+        "required": true
+      },
+      "prodPriceAlteration": {
+        "type": "object",
+        "$ref": "ProdPriceAlteration",
+        "required": true
+      }
+    }
+  },
+  "ProductProperties": {
+    "type": "object",
+    "properties": {
+      "unnamed_Service_": {
+        "type": "object",
+        "$ref": "Service",
+        "required": true
+      }
+    }
+  },
+  "ProductRelationship": {
+    "type": "object",
+    "properties": {
+      "eplProductConfiguration": {
+        "type": "object",
+        "$ref": "EPLProductConfiguration",
+        "required": true
+      },
+      "product": {
+        "type": "object",
+        "$ref": "Product",
+        "required": true
+      },
+      "relationshipType": {
+        "type": "string"
+      },
+      "eplProduct": {
+        "type": "object",
+        "$ref": "EPLProduct",
+        "required": true
+      }
+    }
+  },
+  "Products": {
+    "type": "object",
+    "properties": {
+      "eplProductDeltas": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "EPLProductDeltas"
+        }
+      }
+    }
+  },
+  "ProductSpecification": {
+    "type": "object",
+    "properties": {
+      "eplProducts": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "EPLProduct"
+        }
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "lineOfBusiness": {
+        "type": "object",
+        "$ref": "ProductLineOfBusiness",
+        "required": true
+      },
+      "characteristics": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Characteristic"
+        }
+      },
+      "attribute": {
+        "type": "string"
+      },
+      "productSpecifications": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ProductSpecification"
+        }
+      },
+      "composite": {
+        "type": "boolean"
+      },
+      "id": {
+        "type": "string"
+      },
+      "productNumber": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "lifecycleStatus": {
+        "type": "string"
+      },
+      "brand": {
+        "type": "string"
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "eplProductConfigurations": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "EPLProductConfiguration"
+        }
+      },
+      "productSpecificationTypes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ProductSpecificationType"
+        }
+      },
+      "products": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Product"
+        }
+      }
+    }
+  },
+  "ProductSpecificationType": {
+    "type": "object",
+    "properties": {
+      "description": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      }
+    }
+  },
+  "Property": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "lotNr": {
+        "type": "string"
+      },
+      "landUse": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "elevation": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "landCover": {
+        "type": "string"
+      },
+      "propertyAddresses": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "PropertyAddress"
+        }
+      },
+      "naturalRisks": {
+        "type": "string"
+      },
+      "geometry": {
+        "type": "object",
+        "$ref": "Geometry",
+        "required": true
+      }
+    }
+  },
+  "PropertyAddress": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "postalcode": {
+        "type": "string"
+      },
+      "state_province": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "locality": {
+        "type": "string"
+      },
+      "property": {
+        "type": "object",
+        "$ref": "Property",
+        "required": true
+      },
+      "formattedAddressLine2": {
+        "type": "string"
+      },
+      "formattedAddressLine1": {
+        "type": "string"
+      },
+      "postcodeExtension": {
+        "type": "string"
+      },
+      "country": {
+        "type": "string"
+      }
+    }
+  },
+  "ProvincialIdentification": {
+    "type": "object",
+    "properties": {
+      "provincialIdNr": {
+        "type": "string"
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "scan": {
+        "type": "string"
+      },
+      "issueDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      }
+    }
+  },
+  "RateCenter": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "rateGroupCode": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "rateCenterName": {
+        "type": "string"
+      },
+      "geometry": {
+        "type": "object",
+        "$ref": "Geometry",
+        "required": true
+      }
+    }
+  },
+  "RateGroupRegion": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "rateGroupRegionName": {
+        "type": "string"
+      },
+      "rateGroup": {
+        "type": "string"
+      },
+      "geometry": {
+        "type": "object",
+        "$ref": "Geometry",
+        "required": true
+      }
+    }
+  },
+  "RecurringAppliedCustomerBillingProductCharge": {
+    "type": "object",
+    "properties": {
+      "recurringChargeFromDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "recurringChargeThroughDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      }
+    }
+  },
+  "RecurringChargeProdPriceCharge": {
+    "type": "object",
+    "properties": {
+      "price": {
+        "type": "object",
+        "$ref": "Money",
+        "required": true
+      },
+      "priceType": {
+        "type": "string"
+      },
+      "quantity": {
+        "type": "object",
+        "$ref": "Quantity",
+        "required": true
+      },
+      "period": {
+        "type": "string"
+      }
+    }
+  },
+  "Account": {
+    "type": "object",
+    "properties": {
+      "sites": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "SiteSummary"
+        }
+      },
+      "primaryUser": {
+        "type": "object",
+        "$ref": "UserSummary",
+        "required": true
+      },
+      "users": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "UserSummary"
+        }
+      },
+      "taxExemptions": {
+        "type": "object",
+        "$ref": "TaxExemptions",
+        "required": true
+      },
+      "status": {
+        "type": "object",
+        "$ref": "AccountStatus",
+        "required": true
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "creditLimit": {
+        "type": "integer"
+      },
+      "type": {
+        "type": "object",
+        "$ref": "AccountType",
+        "required": true
+      },
+      "customer": {
+        "type": "object",
+        "$ref": "CustomerSummary",
+        "required": true
+      },
+      "id": {
+        "type": "string"
+      },
+      "billing": {
+        "type": "object",
+        "$ref": "BillingSummary",
+        "required": true
+      },
+      "accountNumber": {
+        "type": "string"
+      },
+      "pin": {
+        "type": "integer"
+      },
+      "name": {
+        "type": "string"
+      },
+      "financialStatus": {
+        "type": "object",
+        "$ref": "AccountFinancialStatus",
+        "required": true
+      },
+      "payments": {
+        "type": "object",
+        "$ref": "PaymentSummary",
+        "required": true
+      },
+      "relatedAccounts": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "AccountSummary"
+        }
+      },
+      "financials": {
+        "type": "object",
+        "$ref": "FinancialSummary",
+        "required": true
+      },
+      "devices": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "DeviceSummary"
+        }
+      },
+      "products": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ProductSummary"
+        }
+      },
+      "preferences": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "PreferenceSummary"
+        }
+      },
+      "serviceAddress": {
+        "type": "object",
+        "$ref": "PropertyAddress",
+        "required": true
+      }
+    }
+  },
+  "AccountSummary": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "accountNumber": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      }
+    }
+  },
+  "UserAccountAssignmentSummary": {
+    "type": "object"
+  },
+  "Resource": {
+    "type": "object",
+    "properties": {
+      "resourceFacingServices": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Service"
+        }
+      },
+      "configurationDatas": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ConfigurationData"
+        }
+      },
+      "device": {
+        "type": "object",
+        "$ref": "Device",
+        "required": true
+      },
+      "tickets": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ImpactedItem"
+        }
+      }
+    }
+  },
+  "ResourceConfiguration": {
+    "type": "object",
+    "properties": {
+      "resources": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ServiceConfiguration"
+        }
+      }
+    }
+  },
+  "ResourceInteractionRole": {
+    "type": "object"
+  },
+  "ResourceOrder": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "newSite": {
+        "type": "object",
+        "$ref": "Site",
+        "required": true
+      },
+      "interactionDateComplete": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "description": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "device": {
+        "type": "object",
+        "$ref": "Device",
+        "required": true
+      },
+      "ethernetInterfaces": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "EthernetInterface"
+        }
+      },
+      "interactionDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "orderDesign": {
+        "type": "object",
+        "$ref": "OrderDesign",
+        "required": true
+      },
+      "interactionStatus": {
+        "type": "string"
+      }
+    }
+  },
+  "ResourceOrderItem": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "action": {
+        "type": "string"
+      },
+      "quantity": {
+        "type": "object",
+        "$ref": "Quantity",
+        "required": true
+      },
+      "interactionItemStatus": {
+        "type": "string"
+      }
+    }
+  },
+  "ResourcePort": {
+    "type": "object",
+    "properties": {
+      "crcStatus": {
+        "type": "integer"
+      },
+      "id": {
+        "type": "string"
+      },
+      "isEdgeResourcePort": {
+        "type": "boolean"
+      },
+      "cllicode": {
+        "type": "object",
+        "$ref": "CLLICode",
+        "required": true
+      },
+      "physicalPort": {
+        "type": "object",
+        "$ref": "PhysicalPort",
+        "required": true
+      },
+      "usageState": {
+        "type": "integer"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      }
+    }
+  },
+  "ResourcePortDeltas": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "currentPort": {
+        "type": "object",
+        "$ref": "ResourcePort",
+        "required": true
+      },
+      "resourcePortConfiguration": {
+        "type": "object",
+        "$ref": "ResourcePort",
+        "required": true
+      },
+      "changes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Changes"
+        }
+      }
+    }
+  },
+  "Resources": {
+    "type": "object",
+    "properties": {
+      "ethernetInterfaceDeltas": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "EthernetInterfaceDeltas"
+        }
+      },
+      "resourcePortDeltas": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ResourcePortDeltas"
+        }
+      }
+    }
+  },
+  "SAT": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "latency": {
+        "type": "object",
+        "$ref": "Quantity",
+        "required": true
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "systemrecover": {
+        "type": "boolean"
+      },
+      "throughput": {
+        "type": "object",
+        "$ref": "Quantity",
+        "required": true
+      },
+      "systemreset": {
+        "type": "boolean"
+      },
+      "frameloss": {
+        "type": "object",
+        "$ref": "Quantity",
+        "required": true
+      },
+      "pass": {
+        "type": "boolean"
+      }
+    }
+  },
+  "Service": {
+    "type": "object",
+    "properties": {
+      "sites": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Site"
+        }
+      },
+      "characterisitcs": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Characteristic"
+        }
+      },
+      "resources": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Resource"
+        }
+      },
+      "cfsStatus": {
+        "type": "integer"
+      },
+      "configurationDatas": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ConfigurationData"
+        }
+      },
+      "startMode": {
+        "type": "integer"
+      },
+      "serviceSpecifications": {
+        "type": "object",
+        "$ref": "ServiceSpecification",
+        "required": true
+      },
+      "isServiceEnabled": {
+        "type": "boolean"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "unnamed_Device_": {
+        "type": "object",
+        "$ref": "Device",
+        "required": true
+      },
+      "isTSP": {
+        "type": "boolean"
+      },
+      "isCustomerFacingService": {
+        "type": "boolean"
+      },
+      "isFCCReportable": {
+        "type": "boolean"
+      },
+      "id": {
+        "type": "string"
+      },
+      "hasStarted": {
+        "type": "boolean"
+      },
+      "unnamed_ProductProperties_": {
+        "type": "object",
+        "$ref": "ProductProperties",
+        "required": true
+      },
+      "isResourceFacingService": {
+        "type": "boolean"
+      },
+      "customerFacingService": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Service"
+        }
+      },
+      "isMandatory": {
+        "type": "boolean"
+      },
+      "prefereneces": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Preference"
+        }
+      },
+      "resourceFacingService": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Service"
+        }
+      },
+      "products": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Product"
+        }
+      },
+      "tickets": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ImpactedItem"
+        }
+      },
+      "isStateful": {
+        "type": "boolean"
+      },
+      "rfsStatus": {
+        "type": "integer"
+      }
+    }
+  },
+  "Serviceability": {
+    "type": "object",
+    "properties": {
+      "site": {
+        "type": "object",
+        "$ref": "Site",
+        "required": true
+      },
+      "id": {
+        "type": "string"
+      },
+      "isServiceable": {
+        "type": "boolean"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      }
+    }
+  },
+  "ServiceArea": {
+    "type": "object",
+    "properties": {
+      "emergencyServiceZone": {
+        "type": "object",
+        "$ref": "EmergencyServiceZone",
+        "required": true
+      },
+      "property": {
+        "type": "object",
+        "$ref": "Property",
+        "required": true
+      },
+      "timeZoneRegion": {
+        "type": "object",
+        "$ref": "TimeZoneRegion",
+        "required": true
+      },
+      "code": {
+        "type": "string"
+      },
+      "rateCenter": {
+        "type": "object",
+        "$ref": "RateCenter",
+        "required": true
+      },
+      "geometry": {
+        "type": "object",
+        "$ref": "Geometry",
+        "required": true
+      },
+      "cableServiceArea": {
+        "type": "object",
+        "$ref": "CableServiceArea",
+        "required": true
+      },
+      "adiminstrativeArea": {
+        "type": "object",
+        "$ref": "AdministrativeArea",
+        "required": true
+      },
+      "name": {
+        "type": "string"
+      },
+      "geographicArea": {
+        "type": "object",
+        "$ref": "GeographicArea",
+        "required": true
+      },
+      "marketArea": {
+        "type": "object",
+        "$ref": "MarketArea",
+        "required": true
+      },
+      "exchangeServiceArea": {
+        "type": "object",
+        "$ref": "ExchangeServiceArea",
+        "required": true
+      },
+      "accuracy": {
+        "type": "string"
+      },
+      "rateGroupRegion": {
+        "type": "object",
+        "$ref": "RateGroupRegion",
+        "required": true
+      }
+    }
+  },
+  "ServiceConfiguration": {
+    "type": "object",
+    "properties": {
+      "resourceFacingServices": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ResourceConfiguration"
+        }
+      },
+      "cfsStatus": {
+        "type": "integer"
+      },
+      "configurationDatas": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ConfigurationData"
+        }
+      },
+      "startMode": {
+        "type": "integer"
+      },
+      "isServiceEnabled": {
+        "type": "boolean"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "isTSP": {
+        "type": "boolean"
+      },
+      "isCustomerFacingService": {
+        "type": "boolean"
+      },
+      "isFCCReportable": {
+        "type": "boolean"
+      },
+      "id": {
+        "type": "string"
+      },
+      "hasStarted": {
+        "type": "boolean"
+      },
+      "isResourceFacingService": {
+        "type": "boolean"
+      },
+      "customerFacingService": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ServiceConfiguration"
+        }
+      },
+      "isMandatory": {
+        "type": "boolean"
+      },
+      "service": {
+        "type": "object",
+        "$ref": "Service",
+        "required": true
+      },
+      "resourceFacingService": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ServiceConfiguration"
+        }
+      },
+      "isStateful": {
+        "type": "boolean"
+      },
+      "rfsStatus": {
+        "type": "integer"
+      }
+    }
+  },
+  "ServiceInteractionRole": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "services": {
+        "type": "object",
+        "$ref": "Service",
+        "required": true
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "tickets": {
+        "type": "object",
+        "$ref": "Ticket",
+        "required": true
+      }
+    }
+  },
+  "ServiceInterface": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      }
+    }
+  },
+  "ServiceOrder": {
+    "type": "object",
+    "properties": {
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "characteristics": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Characteristic"
+        }
+      },
+      "customerAccount": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Account"
+        }
+      },
+      "customer": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Customer"
+        }
+      },
+      "asBuiltOrderDesign": {
+        "type": "object",
+        "$ref": "AsBuiltOrderDesign",
+        "required": true
+      },
+      "interactionStatus": {
+        "type": "string"
+      },
+      "id": {
+        "type": "string"
+      },
+      "interactionDateComplete": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "serviceOrderItems": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ServiceOrderItem"
+        }
+      },
+      "locations": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Location"
+        }
+      },
+      "sat": {
+        "type": "object",
+        "$ref": "SAT",
+        "required": true
+      },
+      "description": {
+        "type": "string"
+      },
+      "interactionDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      }
+    }
+  },
+  "ServiceOrderItem": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "evcServiceConfiguration": {
+        "type": "object",
+        "$ref": "EVCServiceConfiguration",
+        "required": true
+      },
+      "locations": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Location"
+        }
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "uniServiceConfigurations": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "UNIServiceConfiguration"
+        }
+      },
+      "device": {
+        "type": "object",
+        "$ref": "Device",
+        "required": true
+      },
+      "action": {
+        "type": "object",
+        "$ref": "ChangeOrderType",
+        "required": true
+      },
+      "serviceConfiguration": {
+        "type": "object",
+        "$ref": "ServiceConfiguration",
+        "required": true
+      },
+      "interactionItemStatus": {
+        "type": "string"
+      },
+      "quantity": {
+        "type": "object",
+        "$ref": "Quantity",
+        "required": true
+      },
+      "orderDesign": {
+        "type": "object",
+        "$ref": "OrderDesign",
+        "required": true
+      }
+    }
+  },
+  "ServiceRole": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "commonName": {
+        "type": "string"
+      },
+      "requiredBy": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ServiceRole"
+        }
+      },
+      "roleCombination": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "service": {
+        "type": "object",
+        "$ref": "Service",
+        "required": true
+      },
+      "roleSelectionMethod": {
+        "type": "integer"
+      },
+      "requires": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ServiceRole"
+        }
+      }
+    }
+  },
+  "Services": {
+    "type": "object",
+    "properties": {
+      "uniServiceDeltas": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "UNIServiceDeltas"
+        }
+      },
+      "evcServcieDeltas": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "EVCServiceDeltas"
+        }
+      }
+    }
+  },
+  "ServiceSpecification": {
+    "type": "object",
+    "properties": {
+      "commonName": {
+        "type": "string"
+      },
+      "isResourceFacing": {
+        "type": "boolean"
+      },
+      "services": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Service"
+        }
+      },
+      "resourceFacingServiceSpec": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ServiceSpecification"
+        }
+      },
+      "serviceSpecificationTypes": {
+        "type": "object",
+        "$ref": "ServiceSpecificationType",
+        "required": true
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "characteristics": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Characteristic"
+        }
+      },
+      "isBundle": {
+        "type": "boolean"
+      },
+      "id": {
+        "type": "string"
+      },
+      "isComposedOf": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ServiceSpecification"
+        }
+      },
+      "isCustomerFacing": {
+        "type": "boolean"
+      },
+      "description": {
+        "type": "string"
+      },
+      "customerFacingServiceSpecificaiton": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ServiceSpecification"
+        }
+      }
+    }
+  },
+  "ServiceSpecificationType": {
+    "type": "object",
+    "properties": {
+      "serviceSpecTypeName": {
+        "type": "string"
+      }
+    }
+  },
+  "Site": {
+    "type": "object",
+    "properties": {
+      "geographicLocations": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "GeographicLocation"
+        }
+      },
+      "services": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Service"
+        }
+      },
+      "structureHeight": {
+        "type": "object",
+        "$ref": "Quantity",
+        "required": true
+      },
+      "vhCoordinates": {
+        "type": "object",
+        "$ref": "VHCoordinates",
+        "required": true
+      },
+      "customerAccounts": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Account"
+        }
+      },
+      "status": {
+        "type": "object",
+        "$ref": "SiteStatus",
+        "required": true
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "propertyAddress": {
+        "type": "object",
+        "$ref": "PropertyAddress",
+        "required": true
+      },
+      "type": {
+        "type": "object",
+        "$ref": "SiteType",
+        "required": true
+      },
+      "id": {
+        "type": "string"
+      },
+      "siteHours": {
+        "type": "string"
+      },
+      "category": {
+        "type": "object",
+        "$ref": "SiteCategory",
+        "required": true
+      },
+      "description": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "clliCode": {
+        "type": "object",
+        "$ref": "CLLICode",
+        "required": true
+      },
+      "typeOfSite": {
+        "type": "object",
+        "$ref": "TypeOfSite",
+        "required": true
+      },
+      "accountContacts": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "AccountContactAssignment"
+        }
+      }
+    }
+  },
+  "SiteList": {
+    "type": "object",
+    "properties": {
+      "sites": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Site"
+        }
+      },
+      "id": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      }
+    }
+  },
+  "Slot": {
+    "type": "object",
+    "properties": {
+      "hasAdapter": {
+        "type": "boolean"
+      },
+      "slotNumber": {
+        "type": "integer"
+      },
+      "purposeDescription": {
+        "type": "string"
+      },
+      "card": {
+        "type": "object",
+        "$ref": "Card",
+        "required": true
+      },
+      "slotPurpose": {
+        "type": "integer"
+      }
+    }
+  },
+  "SocialInsuranceIdentification": {
+    "type": "object",
+    "properties": {
+      "socialInsuranceIdNr": {
+        "type": "string"
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "scan": {
+        "type": "string"
+      },
+      "issueDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      }
+    }
+  },
+  "SocialSecurityNrIdentification": {
+    "type": "object",
+    "properties": {
+      "socialSecurityNr": {
+        "type": "string"
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "scan": {
+        "type": "string"
+      },
+      "issueDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      }
+    }
+  },
+  "SpatialReferenceSystem": {
+    "type": "object",
+    "properties": {
+      "geometrys": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Geometry"
+        }
+      }
+    }
+  },
+  "StateIdentification": {
+    "type": "object",
+    "properties": {
+      "stateIdNr": {
+        "type": "string"
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "scan": {
+        "type": "string"
+      },
+      "issueDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      }
+    }
+  },
+  "StatusEntry": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "priorState": {
+        "type": "string"
+      },
+      "submitter": {
+        "type": "string"
+      },
+      "currentState": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      }
+    }
+  },
+  "StudentIdentification": {
+    "type": "object",
+    "properties": {
+      "sutdentIdNr": {
+        "type": "string"
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "scan": {
+        "type": "string"
+      },
+      "issueDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      }
+    }
+  },
+  "Submitter": {
+    "type": "object",
+    "properties": {
+      "user": {
+        "type": "object",
+        "$ref": "User",
+        "required": true
+      }
+    }
+  },
+  "SystemContact": {
+    "type": "object",
+    "properties": {
+      "contactNotificationID": {
+        "type": "string"
+      },
+      "id": {
+        "type": "string"
+      },
+      "contactNotificationMethod": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "type": {
+        "type": "string"
+      }
+    }
+  },
+  "TaxIdentification": {
+    "type": "object",
+    "properties": {
+      "taxIdentificationNumber": {
+        "type": "string"
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "issueDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "scan": {
+        "type": "string"
+      }
+    }
+  },
+  "TelephoneNumber": {
+    "type": "object",
+    "properties": {
+      "extension": {
+        "type": "string"
+      },
+      "id": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "number": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string"
+      }
+    }
+  },
+  "TelevisionMarketArea": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "marketRank": {
+        "type": "integer"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "marketAreaType": {
+        "type": "string"
+      },
+      "marketAreaName": {
+        "type": "string"
+      },
+      "geometry": {
+        "type": "object",
+        "$ref": "Geometry",
+        "required": true
+      }
+    }
+  },
+  "TerminationPoint": {
+    "type": "object",
+    "properties": {
+      "sideType": {
+        "type": "string"
+      },
+      "endPointLabel": {
+        "type": "string"
+      },
+      "direction": {
+        "type": "string"
+      },
+      "typeOfTP": {
+        "type": "string"
+      },
+      "vendorTPName": {
+        "type": "string"
+      },
+      "ethernetInterface": {
+        "type": "object",
+        "$ref": "EthernetInterface",
+        "required": true
+      }
+    }
+  },
+  "Ticket": {
+    "type": "object",
+    "properties": {
+      "relatedFrom": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "TicketRelationship"
+        }
+      },
+      "originatingSystem": {
+        "type": "string"
+      },
+      "submitter": {
+        "type": "object",
+        "$ref": "Submitter",
+        "required": true
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "externalSystemReference": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ExternalSystemReference"
+        }
+      },
+      "statusEntries": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "StatusEntry"
+        }
+      },
+      "type": {
+        "type": "object",
+        "$ref": "TicketType",
+        "required": true
+      },
+      "assignedGroup": {
+        "type": "object",
+        "$ref": "AssignedGroup",
+        "required": true
+      },
+      "interactionStatus": {
+        "type": "string"
+      },
+      "detailDescription": {
+        "type": "string"
+      },
+      "impact": {
+        "type": "string"
+      },
+      "id": {
+        "type": "string"
+      },
+      "interactionDateComplete": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "impactedItems": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "ImpactedItem"
+        }
+      },
+      "description": {
+        "type": "string"
+      },
+      "createDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "modifiers": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Modifier"
+        }
+      },
+      "watchers": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Watcher"
+        }
+      },
+      "ticketContacts": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Contact"
+        }
+      },
+      "relatedTo": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "TicketRelationship"
+        }
+      },
+      "ticketCategory": {
+        "type": "object",
+        "$ref": "TicketCategory",
+        "required": true
+      },
+      "originatingTicketId": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "universalIdentifier": {
+        "type": "string"
+      },
+      "characteristics": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Characteristic"
+        }
+      },
+      "primaryTicket": {
+        "type": "object",
+        "$ref": "Ticket",
+        "required": true
+      },
+      "assignee": {
+        "type": "object",
+        "$ref": "Assignee",
+        "required": true
+      },
+      "severity": {
+        "type": "string"
+      },
+      "tasks": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Ticket"
+        }
+      },
+      "ticketLocation": {
+        "type": "object",
+        "$ref": "TicketLocation",
+        "required": true
+      },
+      "interactionDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "comments": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Comment"
+        }
+      }
+    }
+  },
+  "TicketCategory": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "level": {
+        "type": "string"
+      },
+      "subCategory": {
+        "type": "object",
+        "$ref": "TicketCategory",
+        "required": true
+      },
+      "description": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "value": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string"
+      }
+    }
+  },
+  "TicketLocation": {
+    "type": "object",
+    "properties": {
+      "sites": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Site"
+        }
+      },
+      "id": {
+        "type": "string"
+      },
+      "unnamed_Ticket_": {
+        "type": "object",
+        "$ref": "Ticket",
+        "required": true
+      },
+      "cableServiceArea": {
+        "type": "object",
+        "$ref": "CableServiceArea",
+        "required": true
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "marketArea": {
+        "type": "object",
+        "$ref": "MarketArea",
+        "required": true
+      }
+    }
+  },
+  "TicketRelationship": {
+    "type": "object",
+    "properties": {
+      "relationshipType": {
+        "type": "object",
+        "$ref": "TicketRelationshipType",
+        "required": true
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "relatedTicket": {
+        "type": "object",
+        "$ref": "Ticket",
+        "required": true
+      },
+      "tickets": {
+        "type": "object",
+        "$ref": "Ticket",
+        "required": true
+      }
+    }
+  },
+  "Tickets": {
+    "type": "object",
+    "properties": {
+      "tickets": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Ticket"
+        }
+      }
+    }
+  },
+  "TimeZoneRegion": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "timeZoneCode": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "timeZoneName": {
+        "type": "string"
+      },
+      "geometry": {
+        "type": "object",
+        "$ref": "Geometry",
+        "required": true
+      }
+    }
+  },
+  "TokenizedPaymentCard": {
+    "type": "object",
+    "properties": {
+      "expirationDate": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "creditCardLastThreeDigits": {
+        "type": "string"
+      },
+      "paymentCardType": {
+        "type": "object",
+        "$ref": "PaymentCardType",
+        "required": true
+      },
+      "paymentCardToken": {
+        "type": "string"
+      }
+    }
+  },
+  "TokenizedThirdParty": {
+    "type": "object",
+    "properties": {
+      "thirdPartyId": {
+        "type": "string"
+      },
+      "merchantId": {
+        "type": "string"
+      },
+      "thirdPartyToken": {
+        "type": "string"
+      }
+    }
+  },
+  "UNIConfig": {
+    "type": "object",
+    "properties": {
+      "duplexMode": {
+        "type": "integer"
+      },
+      "isColorBlind": {
+        "type": "boolean"
+      },
+      "configLocation": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "macLayer": {
+        "type": "integer"
+      },
+      "vlanTagging": {
+        "type": "integer"
+      },
+      "configActivationType": {
+        "type": "object",
+        "$ref": "ConfigurationActivationTypeEnum",
+        "required": true
+      },
+      "configText": {
+        "type": "string"
+      },
+      "configBinary": {
+        "type": "object",
+        "$ref": "Byte[]",
+        "required": true
+      },
+      "mtuSize": {
+        "type": "integer"
+      },
+      "isServiceMultiplexed": {
+        "type": "boolean"
+      },
+      "bandwidth": {
+        "type": "object",
+        "$ref": "Quantity",
+        "required": true
+      }
+    }
+  },
+  "UNIProduct": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "uniProductConfiguration": {
+        "type": "object",
+        "$ref": "UNIProductConfiguration",
+        "required": true
+      },
+      "productStatus": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "uniService": {
+        "type": "object",
+        "$ref": "UNIService",
+        "required": true
+      },
+      "productSerialNumber": {
+        "type": "string"
+      },
+      "isBundle": {
+        "type": "boolean"
+      }
+    }
+  },
+  "UNIProductConfiguration": {
+    "type": "object",
+    "properties": {
+      "address": {
+        "type": "object",
+        "$ref": "Site",
+        "required": true
+      },
+      "bandwidth": {
+        "type": "object",
+        "$ref": "Quantity",
+        "required": true
+      }
+    }
+  },
+  "UNIService": {
+    "type": "object",
+    "properties": {
+      "cfsStatus": {
+        "type": "integer"
+      },
+      "startMode": {
+        "type": "integer"
+      },
+      "evc": {
+        "type": "object",
+        "$ref": "EVCService",
+        "required": true
+      },
+      "isServiceEnabled": {
+        "type": "boolean"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "isTSP": {
+        "type": "boolean"
+      },
+      "isCustomerFacingService": {
+        "type": "boolean"
+      },
+      "isFCCReportable": {
+        "type": "boolean"
+      },
+      "id": {
+        "type": "string"
+      },
+      "hasStarted": {
+        "type": "boolean"
+      },
+      "networkPath": {
+        "type": "object",
+        "$ref": "NetworkPath",
+        "required": true
+      },
+      "isResourceFacingService": {
+        "type": "boolean"
+      },
+      "customerFacingService": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "UNIService"
+        }
+      },
+      "isMandatory": {
+        "type": "boolean"
+      },
+      "config": {
+        "type": "object",
+        "$ref": "UNIConfig",
+        "required": true
+      },
+      "resourceFacingService": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "UNIService"
+        }
+      },
+      "isStateful": {
+        "type": "boolean"
+      },
+      "rfsStatus": {
+        "type": "integer"
+      }
+    }
+  },
+  "UNIServiceConfiguration": {
+    "type": "object",
+    "properties": {
+      "cfsStatus": {
+        "type": "integer"
+      },
+      "startMode": {
+        "type": "integer"
+      },
+      "evc": {
+        "type": "object",
+        "$ref": "EVCServiceConfiguration",
+        "required": true
+      },
+      "isServiceEnabled": {
+        "type": "boolean"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "isTSP": {
+        "type": "boolean"
+      },
+      "isCustomerFacingService": {
+        "type": "boolean"
+      },
+      "uniService": {
+        "type": "object",
+        "$ref": "UNIService",
+        "required": true
+      },
+      "isFCCReportable": {
+        "type": "boolean"
+      },
+      "id": {
+        "type": "string"
+      },
+      "hasStarted": {
+        "type": "boolean"
+      },
+      "isResourceFacingService": {
+        "type": "boolean"
+      },
+      "customerFacingService": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "UNIServiceConfiguration"
+        }
+      },
+      "isMandatory": {
+        "type": "boolean"
+      },
+      "path": {
+        "type": "object",
+        "$ref": "NetworkPath",
+        "required": true
+      },
+      "config": {
+        "type": "object",
+        "$ref": "UNIConfig",
+        "required": true
+      },
+      "resourceFacingService": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "UNIServiceConfiguration"
+        }
+      },
+      "isStateful": {
+        "type": "boolean"
+      },
+      "rfsStatus": {
+        "type": "integer"
+      }
+    }
+  },
+  "UNIServiceDeltas": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "currentUniService": {
+        "type": "object",
+        "$ref": "UNIService",
+        "required": true
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "uniServiceConfiguration": {
+        "type": "object",
+        "$ref": "UNIService",
+        "required": true
+      },
+      "changes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Changes"
+        }
+      }
+    }
+  },
+  "User": {
+    "type": "object",
+    "properties": {
+      "userCredentials": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "UserCredential"
+        }
+      },
+      "id": {
+        "type": "string"
+      },
+      "individual": {
+        "type": "object",
+        "$ref": "Individual",
+        "required": true
+      },
+      "userGroups": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "UserGroup"
+        }
+      },
+      "status": {
+        "type": "string"
+      },
+      "primaryUserId": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "assignedAccounts": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "UserAccountAssignment"
+        }
+      }
+    }
+  },
+  "UserAccountAssignment": {
+    "type": "object",
+    "properties": {
+      "userRoleType": {
+        "type": "object",
+        "$ref": "UserAccountRoleType",
+        "required": true
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "customerAccount": {
+        "type": "object",
+        "$ref": "Account",
+        "required": true
+      },
+      "user": {
+        "type": "object",
+        "$ref": "User",
+        "required": true
+      }
+    }
+  },
+  "UserCredential": {
+    "type": "object",
+    "properties": {
+      "serviceProviderName": {
+        "type": "string"
+      },
+      "placeOfBirth": {
+        "type": "string"
+      },
+      "adminStatus": {
+        "type": "object",
+        "$ref": "AccountStatus",
+        "required": true
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "characteristics": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Characteristic"
+        }
+      },
+      "usageType": {
+        "type": "object",
+        "$ref": "AccountType",
+        "required": true
+      },
+      "type": {
+        "type": "string"
+      },
+      "password": {
+        "type": "string"
+      },
+      "id": {
+        "type": "string"
+      },
+      "userCredentialCategory": {
+        "type": "string"
+      },
+      "userId": {
+        "type": "string"
+      },
+      "userAccountController": {
+        "type": "string"
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      },
+      "serviceProvider": {
+        "type": "string"
+      },
+      "serviceProviderData": {
+        "type": "string"
+      }
+    }
+  },
+  "UserGroup": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "organization": {
+        "type": "object",
+        "$ref": "Organization",
+        "required": true
+      },
+      "users": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "User"
+        }
+      },
+      "status": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "$ref": "Link",
+        "required": true
+      },
+      "validFor": {
+        "type": "object",
+        "$ref": "TimePeriod",
+        "required": true
+      }
+    }
+  },
+  "Watcher": {
+    "type": "object",
+    "properties": {
+      "watchEnd": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "watchStart": {
+        "type": "object",
+        "$ref": "Date",
+        "required": true
+      },
+      "user": {
+        "type": "object",
+        "$ref": "User",
+        "required": true
+      }
+    }
+  },
+  "Watchers": {
+    "type": "object",
+    "properties": {
+      "watchers": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "$ref": "Watcher"
+        }
+      }
+    }
+  }
+
