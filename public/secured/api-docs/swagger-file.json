@@ -356,7 +356,7 @@
           "Resource"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "Cable Modem Termination System.  Device that CableModems 'talk' to via Channels.",
         "displayName": "CM TS",
         "produces": [
           "application/json",
@@ -509,7 +509,7 @@
           "Location"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "A collection of Site instances.",
         "displayName": "Site List",
         "produces": [
           "application/json",
@@ -815,7 +815,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "A type of order that is not governed by any industry committee. Product Orders represent orders that would typically originate at an end user. Product Orders may spawn ASRs, LSRs, or other PSRs in order to fill the end users request, if facility, equipment, or plant assignments are not available for designing the requested Product.",
         "displayName": "Product Order",
         "produces": [
           "application/json",
@@ -968,7 +968,7 @@
           "Customer"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "A combination of user ID and password that is used to authenticate a user for access to provider services or account management.",
         "displayName": "User  Credential",
         "produces": [
           "application/json",
