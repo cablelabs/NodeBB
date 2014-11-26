@@ -12014,6 +12014,7 @@
     },
     "PropertyAddress": {
       "id": "PropertyAddress",
+      "type": "object",
       "properties": {
         "id": {
           "type": "string"
@@ -13513,12 +13514,63 @@
     },
     "Characteristic": {
       "id": "Characteristic",
+      "type": "object",
       "properties": {
-        "id": {
+        "minCardinality": {
+          "type": "integer"
+        },
+        "unique": {
+          "type": "boolean"
+        },
+        "extensible": {
+          "type": "boolean"
+        },
+        "characteristicId": {
           "type": "string"
         },
-        "link": {
-          "$ref": "Link"
+        "characteristicSequence": {
+          "type": "integer"
+        },
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "CharacteristicValue"
+          }
+        },
+        "validFor": {
+          "$ref": "TimePeriod"
+        },
+        "characteristicDescription": {
+          "type": "string"
+        },
+        "valueType": {
+          "type": "string"
+        },
+        "derivationFormula": {
+          "type": "string"
+        },
+        "characteristicName": {
+          "type": "string"
+        },
+        "characteristicCategory": {
+          "$ref": "CharacteristicCategory"
+        },
+        "maxCardinality": {
+          "type": "integer"
+        }
+      }
+    },
+    "CharacteristicCategory": {
+      "type": "object",
+      "properties": {
+        "categoryName": {
+          "type": "string"
+        },
+        "categoryDescription": {
+          "type": "string"
+        },
+        "characteristicCategoryId": {
+          "type": "string"
         }
       }
     },
@@ -13618,6 +13670,18 @@
         },
         "orderDesign": {
           "$ref": "OrderDesign"
+        },
+        "newSite": {
+          "type": "object",
+          "$ref": "Site",
+          "required": true
+        },
+        "ethernetInterfaces": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "EthernetInterface"
+          }
         }
       }
     },
@@ -13630,10 +13694,127 @@
         "Closed"
       ]
     },
-    "BillCharge": { },
-    "CableServiceArea": { },
-    "Comment": { },
-    "CustomerAccount": { },
+    "AccountType": {
+      "type": "string",
+      "enum": [
+        "Individual",
+        "Joint",
+        "Other"
+      ]
+    },
+    "AccountFinancialStatus": {
+      "type": "string",
+      "enum": [
+        "Current",
+        "Due",
+        "InArrears",
+        "Delinquent"
+      ]
+    },
+    "BillCharge": {
+      "id": "BillCharge",
+      "type": "object",
+      "properties": {
+        "oneTimeAppliedCustomerBillingProductCharge": {
+          "$ref": "OneTimeAppliedCustomerBillingProductCharge"
+        },
+        "recurringAppliedCustomerBillingProductCharge": {
+          "$ref": "RecurringAppliedCustomerBillingProductCharge"
+        },
+        "customerBill": {
+          "$ref": "CustomerBill"
+        },
+        "appliedCustomerBillingVideoUsageRate": {
+          "$ref": "AppliedCustomerBillingVideoUsageRate"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "rateAmount": {
+          "$ref": "Money"
+        },
+        "customerAccount": {
+          "$ref": "Account"
+        },
+        "id": {
+          "type": "string"
+        },
+        "creationDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "paymentItem": {
+          "$ref": "PaymentItem"
+        },
+        "appliedCustomerBillingTelephoneUsageRate": {
+          "$ref": "AppliedCustomerBillingTelephoneUsageRate"
+        },
+        "appliedCustomerBillingAdjustment": {
+          "$ref": "AppliedCustomerBillingAdjustment"
+        },
+        "appliedCustomerBillingRateSpec": {
+          "$ref": "AppliedCustomerBillingRateSpec"
+        },
+        "rateDescription": {
+          "type": "string"
+        },
+        "appliedCustomerBillingTaxRate": {
+          "$ref": "AppliedCustomerBillingTaxRate"
+        },
+        "appliedCustomerBillingRefund": {
+          "$ref": "AppliedCustomerBillingRefund"
+        },
+        "billingRateCode": {
+          "type": "string"
+        }
+      }
+    },
+    "CableServiceArea": {
+      "id": "CableServiceArea",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "code": {
+          "type": "string"
+        },
+        "geometry": {
+          "$ref": "Geometry"
+        }
+      }
+    },
+    "Comment": {
+      "id": "Comment",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "visibility": {
+          "type": "string"
+        },
+        "submitter": {
+          "$ref": "UserSummary"
+        },
+        "description": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        }
+      }
+    },
     "CustomerBill": { },
     "CustomerBillSpec": { },
     "CustomerOrder": { },
@@ -13667,7 +13848,74 @@
     "Ticket": { },
     "TicketLocation": { },
     "TicketCategory": { },
-    "User": { },
+    "User": {
+      "type": "object",
+      "properties": {
+        "contactPhones": {
+          "type": "array",
+          "items": {
+            "$ref": "TelephoneNumber"
+          }
+        },
+        "accounts": {
+          "type": "array",
+          "items": {
+            "$ref": "AccountSummary"
+          }
+        },
+        "primaryAccount": {
+          "$ref": "AccountSummary"
+        },
+        "status": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "id": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "transitions": {
+          "type": "array",
+          "items": {
+            "$ref": "Link"
+          }
+        },
+        "name": {
+          "type": "string"
+        },
+        "devices": {
+          "type": "array",
+          "items": {
+            "$ref": "DeviceSummary"
+          }
+        },
+        "interactions": {
+          "type": "array",
+          "items": {
+            "$ref": "Link"
+          }
+        },
+        "profile": {
+          "$ref": "PartySummary"
+        },
+        "contactEmails": {
+          "type": "array",
+          "items": {
+            "$ref": "EmailContact"
+          }
+        },
+        "userCredentials": {
+          "type": "array",
+          "items": {
+            "$ref": "UserCredential"
+          }
+        }
+      }
+    },
     "UserSummary": {
       "type": "object",
       "properties": {
