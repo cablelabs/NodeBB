@@ -1,5 +1,5 @@
 {
-  "swagger": 2,
+  "swagger": "2.0",
   "info": {
     "description": "Exlpore the cable API's. API's are grouped by Domain.",
     "version": "0.0.1",
@@ -357,7 +357,7 @@
         ],
         "summary": "Find resource by ID",
         "description": "Cable Modem Termination System.  Device that CableModems 'talk' to via Channels.",
-        "displayName": "CM TS",
+        "displayName": "CMTS",
         "produces": [
           "application/json",
           "application/xml"
@@ -623,7 +623,7 @@
     "/ack": {
       "post": {
         "tags": [
-          "Common"
+          "UnSuported"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -659,11 +659,11 @@
     "/ack/{id}": {
       "get": {
         "tags": [
-          "Common"
+          "UnSuported"
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
-        "displayName": "AC K",
+        "displayName": "ACK",
         "produces": [
           "application/json",
           "application/xml"
@@ -702,7 +702,7 @@
       },
       "put": {
         "tags": [
-          "Common"
+          "UnSuported"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -745,7 +745,7 @@
       },
       "delete": {
         "tags": [
-          "Common"
+          "UnSuported"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -7605,7 +7605,7 @@
         ],
         "summary": "Find resource by ID",
         "description": "Ethernet Private Line (EPL) – A port-based version of the MEF-defined E-Line service type that connects two UNIs via a single EVC. EPL does not allow more than one EVC to be established between the two end points (UNIs) of the links, and all customer traffic present at an Operator's Provider Edge device is bundled into a single virtual circuit (i.e., the EVC). ",
-        "displayName": "EP L Product Configuration",
+        "displayName": "EPL Product Configuration",
         "produces": [
           "application/json",
           "application/xml"
@@ -8024,7 +8024,7 @@
     "/geographicaddress": {
       "post": {
         "tags": [
-          "Location"
+          "UnSuported"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -8060,7 +8060,7 @@
     "/geographicaddress/{id}": {
       "get": {
         "tags": [
-          "Location"
+          "UnSuported"
         ],
         "summary": "Find resource by ID",
         "description": "A structured textual way of describing how to find a Geographic Location. It is usually composed of an ordered list of Geographic Location names based on context specific rulesIt is an abstract modeling concept that provides a linking point to other parts of the SID model.It holds attributes common to all Geographic Address subclasses.",
@@ -8103,7 +8103,7 @@
       },
       "put": {
         "tags": [
-          "Location"
+          "UnSuported"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -8146,7 +8146,7 @@
       },
       "delete": {
         "tags": [
-          "Location"
+          "UnSuported"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -13067,6 +13067,7 @@
     },
     "Service": {
       "id": "Service",
+      "type": "object",
       "properties": {
         "id": {
           "type": "string"
@@ -13085,6 +13086,17 @@
           "items": {
             "$ref": "Changes"
           }
+        }
+      }
+    },
+    "ServiceSummary": {
+      "id": "ServiceSummary",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
         }
       }
     },
@@ -13329,6 +13341,42 @@
         },
         "geometry": {
           "$ref": "Geometry"
+        }
+      }
+    },
+    "GeographicAddress": {
+      "id": "GeographicAddress",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "postalcode": {
+          "type": "string"
+        },
+        "state_province": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "locality": {
+          "type": "string"
+        },
+        "formattedAddressLine2": {
+          "type": "string"
+        },
+        "formattedAddressLine1": {
+          "type": "string"
+        },
+        "postalContacts": {
+          "type": "array",
+          "items": {
+            "$ref": "PostalContact"
+          }
+        },
+        "country": {
+          "type": "string"
         }
       }
     },
@@ -13899,9 +13947,207 @@
         }
       }
     },
-    "PostalContact": { },
-    "Preference": { },
-    "Product": { },
+    "PostalContact": {
+      "id": "PostalContact",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "propertyAddress": {
+          "$ref": "PropertyAddress"
+        },
+        "validFor": {
+          "$ref": "TimePeriod"
+        },
+        "type": {
+          "type": "string"
+        },
+        "additionalDeliveryDetail": {
+          "type": "string"
+        }
+      }
+    },
+    "Preference": {
+      "id": "Preference",
+      "type": "object",
+      "properties": {
+        "rangeInterval": {
+          "type": "string"
+        },
+        "isSet": {
+          "type": "boolean"
+        },
+        "characteristicSequence": {
+          "type": "integer"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "id": {
+          "type": "string"
+        },
+        "specCharacteristicDescription": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "preferenceName": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "validFor": {
+          "$ref": "TimePeriod"
+        },
+        "specCharacteristicName": {
+          "type": "string"
+        },
+        "valueType": {
+          "type": "string"
+        },
+        "unitOfMeasure": {
+          "type": "string"
+        },
+        "preferenceCategory": {
+          "$ref": "PreferenceCategory"
+        },
+        "preferences": {
+          "type": "array",
+          "items": {
+            "$ref": "PreferenceSummary"
+          }
+        }
+      }
+    },
+    "PreferenceSummary": {
+      "id": "PreferenceSummary",
+      "type": "object",
+      "properties": {
+        "isSet": {
+          "type": "boolean"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "id": {
+          "type": "string"
+        },
+        "preferenceName": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "valueType": {
+          "type": "string"
+        },
+        "unitOfMeasure": {
+          "type": "string"
+        },
+        "preferenceCategory": {
+          "$ref": "PreferenceCategory"
+        }
+      }
+    },
+    "PreferenceCategory": {
+      "id": "PreferenceCategory",
+      "type": "object",
+      "properties": {
+        "preferenceCategoryName": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "preferenceCategoryId": {
+          "type": "string"
+        }
+      }
+    },
+    "Product": {
+      "id": "Product",
+      "type": "object",
+      "properties": {
+        "productProperties": {
+          "$ref": "ProductProperties"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "customerFacingServices": {
+          "type": "array",
+          "items": {
+            "$ref": "Service"
+          }
+        },
+        "isBundle": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "string"
+        },
+        "customerAccountInvolvements": {
+          "type": "array",
+          "items": {
+            "$ref": "AccountProductAssignment"
+          }
+        },
+        "productStatus": {
+          "type": "string"
+        },
+        "productRelationships": {
+          "type": "array",
+          "items": {
+            "$ref": "ProductRelationship"
+          }
+        },
+        "description": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "validFor": {
+          "$ref": "TimePeriod"
+        },
+        "productSpecification": {
+          "$ref": "ProductSpecification"
+        },
+        "productPrices": {
+          "type": "array",
+          "items": {
+            "$ref": "ProductPrice"
+          }
+        },
+        "productSerialNumber": {
+          "type": "string"
+        },
+        "products": {
+          "type": "array",
+          "items": {
+            "$ref": "ProductSummary"
+          }
+        },
+        "productOffering": {
+          "$ref": "ProductOffering"
+        }
+      }
+    },
+    "ProductProperties": {
+      "id": "ProductProperties",
+      "type": "object",
+      "properties": {
+        "service": {
+          "$ref": "ServiceSummary"
+        }
+      }
+    },
     "ProductOffering": { },
     "ProductPrice": { },
     "ProductProperties": { },
