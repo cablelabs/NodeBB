@@ -6023,7 +6023,7 @@
           "Product"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "A ProductOffering procured by a Customer, or other interested Party playing a PartyRole, appearing as a BusinessInteractionItem, which could take the form of a Agreement. ProductSpecificationCharacteristic(s) in part define the Product. A Product is realized as one or more Service(s) and/or Resource(s).",
         "displayName": "EVC Product",
         "produces": [
           "application/json",
@@ -6176,7 +6176,7 @@
           "Product"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "A ProductOffering procured by a Customer, or other interested Party playing a PartyRole, appearing as a BusinessInteractionItem, which could take the form of a Agreement. ProductSpecificationCharacteristic(s) in part define the Product. A Product is realized as one or more Service(s) and/or Resource(s).",
         "displayName": "UN I Product",
         "produces": [
           "application/json",
@@ -6329,7 +6329,7 @@
           "Location"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "ServiceSite is a customer location where a customer is receiving service. It is the point at which service is delivered to a customer, and is associated with a service address (UrbanPropertyAddress).",
         "displayName": "Site ",
         "produces": [
           "application/json",
@@ -6447,7 +6447,7 @@
           "Location"
         ],
         "summary": "Find Services in a specific site",
-        "description": "Find Services in a specific site",
+        "description": "A Service represents the object that will be instantiated. Each Service instance can be different; therefore, Service is limited to owning just the changeable attributes, methods, relationships, and constraints that can be instantiated. The invariant attributes, methods, relationships, and constraints that can be instantiated are defined by a ServiceSpecification.",
         "produces": [
           "application/json",
           "application/xml"
@@ -6527,7 +6527,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "A CustomerOrder is a communication used to procure a Product. There are different types of CustomerOrders, such as AccessServiceRequests (ASRs), LocalServiceRequests (LSRs), DirectoryServiceRequests (DSRs), ProductOrders (PSRs).",
         "displayName": "Customer Order",
         "produces": [
           "application/json",
@@ -6680,7 +6680,7 @@
           "Customer"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "An entity that defines the relationship between the customer and provider with respect to billing, payments, and other financial transactions. The customer account is also used to grant entitlement tokens based on services purchased.",
         "displayName": "Account ",
         "produces": [
           "application/json",
