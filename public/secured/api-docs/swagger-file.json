@@ -1,5 +1,5 @@
 {
-  "swagger": "2.0",
+  "swagger": 2,
   "info": {
     "description": "Exlpore the cable API's. API's are grouped by Domain.",
     "version": "0.0.1",
@@ -1101,7 +1101,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Bill Charge"
+              "$ref": "#/definitions/BillCharge"
             }
           }
         ],
@@ -1121,7 +1121,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "A charge or a credit assigned to the customer's account in the course or for the purpose of the billing process. Subclasses further define these elements.",
         "displayName": "Bill  Charge",
         "produces": [
           "application/json",
@@ -1148,7 +1148,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/Bill Charge"
+              "$ref": "#/definitions/BillCharge"
             }
           },
           "400": {
@@ -1274,7 +1274,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "The purpose for the ServiceOrder expressed in terms of a ServiceSpecification or a Service.",
         "displayName": "Service  Order Item",
         "produces": [
           "application/json",
@@ -1427,7 +1427,7 @@
           "Resource"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "The ResourcePort is a type of ResourceElement that consists only of logical termination points (TrailTerminationPointSource, TrailTerminationPointSink, and TrailTerminationPointBiDirectional, to be precise) and PhysicalPorts. This enables the ResourcePort to take on the physical and logical characteristics of a 'port' as defined in G.805. ",
         "displayName": "Resource Port",
         "produces": [
           "application/json",
@@ -1560,7 +1560,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/EPL Product"
+              "$ref": "#/definitions/EPLProduct"
             }
           }
         ],
@@ -1580,8 +1580,8 @@
           "Product"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
-        "displayName": "EP L Product",
+        "description": "A ProductOffering procured by a Customer, or other interested Party playing a PartyRole, appearing as a BusinessInteractionItem, which could take the form of a Agreement. ProductSpecificationCharacteristic(s) in part define the Product. A Product is realized as one or more Service(s) and/or Resource(s).",
+        "displayName": "EPL Product",
         "produces": [
           "application/json",
           "application/xml"
@@ -1607,7 +1607,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/EPL Product"
+              "$ref": "#/definitions/EPLProduct"
             }
           },
           "400": {
@@ -1733,7 +1733,7 @@
           "Common"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "Fax (short for facsimile), sometimes called telecopying or telefax, is the telephonic transmission of scanned printed material (both text and images), normally to a telephone number connected to a printer or other output device.",
         "displayName": "Fax Number",
         "produces": [
           "application/json",
@@ -1886,7 +1886,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "The purpose for the Customer Order expressed in terms of a Product Offering or a Product (for a change order) inherited from BusinessInteractionItem.",
         "displayName": "Product OrderItem",
         "produces": [
           "application/json",
@@ -2039,7 +2039,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "A detailed description of a customer's bill structure. The current version of this class is serving as a placeholder. It will be further developed in the next version of this document.",
         "displayName": "Customer BillSpec",
         "produces": [
           "application/json",
@@ -2180,7 +2180,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Ticket AssignedGroup"
+              "$ref": "#/definitions/TicketAssignedGroup"
             }
           }
         ],
@@ -2198,7 +2198,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "A group assigned to a BusinessInteraction. For example, an IncidentTicket assigned to a particular organization (e.g., Network Services).",
         "displayName": "Ticket  AssignedGroup",
         "produces": [
           "application/json",
@@ -2225,7 +2225,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/Ticket AssignedGroup"
+              "$ref": "#/definitions/TicketAssignedGroup"
             }
           },
           "400": {
@@ -2351,7 +2351,7 @@
           "Service"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "All Services are characterized as either being possibly visible and usable by a Customer or not. This gives rise to the two subclasses of Service: CustomerFacingService and ResourceFacingService.",
         "displayName": "Service ",
         "produces": [
           "application/json",
@@ -2504,7 +2504,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "A type of Request that represents a Service Order's services decomposed into the resources on which the services will be provisioned.",
         "displayName": "Resource Order",
         "produces": [
           "application/json",
@@ -2657,7 +2657,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "PaymentItem is the application of CustomerPayment. PaymentItem is applied to CustomerBillInvoice, AppliedCustomerBillingRate.",
         "displayName": "Payment Item",
         "produces": [
           "application/json",
@@ -2810,7 +2810,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "A reference to a physical document such as a contract, manual or email.",
         "displayName": "Document ",
         "produces": [
           "application/json",
@@ -2963,7 +2963,7 @@
           "Customer"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "A Preference refers to a particular area of control, such as Parental Restriction or Email Marketing, for a particular PartyRole, Resource, CustomerAccount, or Service.",
         "displayName": "Preference ",
         "produces": [
           "application/json",
@@ -3116,7 +3116,7 @@
           "Service"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "A ServiceSpecification defines the invariant characteristics of a Service. It can be conceptually thought of as a template that different Service instances can be instantiated from.",
         "displayName": "Service  Specification",
         "produces": [
           "application/json",
@@ -3269,7 +3269,7 @@
           "Resource"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "This class represents a type of physical container that can be plugged into a Slot. It may represent a primary function (e.g., a networking card) or an auxiliary function (e.g., a memory card) that supports another card. All objects of this type are capable of carrying electrical and/or optical signals. They also provide a mounting point for other types of ManagedePhysicalElements, such as Chips or Cards.",
         "displayName": "Card ",
         "produces": [
           "application/json",
@@ -3575,7 +3575,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "A record containing the details of an Incident. Each Ticket documents the lifecycle of a single incident.",
         "displayName": "Ticket  in DB",
         "produces": [
           "application/json",
@@ -3728,7 +3728,7 @@
           "Customer"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "PaymentMethod is the way in which customer provides payment, for example cash ,credit,transfer.",
         "displayName": "Payment Method",
         "produces": [
           "application/json",
@@ -3881,7 +3881,7 @@
           "Customer"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "A person or organization that buys products and services from the enterprise or receives free offers or services. This is modeled as a Party playing the role of Customer. A Customer is a type of PartyRole. Customers can also be other service providers who resell the enterprises products, other service providers that lease the enterprise's resources for utilization by the other service provider's products and services, and so forth.",
         "displayName": "Customer ",
         "produces": [
           "application/json",
@@ -4034,7 +4034,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "This is an abstract base class that defines a Service in terms of a set of roles. The roles are then used to characterize the functionality of the Service, regardless of whether it is a resource- or a customer-facing service.",
         "displayName": "Service Role",
         "produces": [
           "application/json",
@@ -4167,7 +4167,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/EVC Service"
+              "$ref": "#/definitions/EVCService"
             }
           }
         ],
@@ -4187,8 +4187,8 @@
           "Service"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
-        "displayName": "EV C Service",
+        "description": "An association of two or more UNIs (The physical point in a 'network' that defines the demarcation between the responsibility of a Service Provider and the responsibility of a Subscriber) across one or more Metro Ethernet Networks.",
+        "displayName": "EVC Service",
         "produces": [
           "application/json",
           "application/xml"
@@ -4246,7 +4246,7 @@
             "description": "Instance object that needs to be updated.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/EVC Service"
+              "$ref": "#/definitions/EVCService"
             }
           }
         ],
@@ -4340,7 +4340,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "A category of BusinessInteraction.",
         "displayName": "Ticket Category",
         "produces": [
           "application/json",
@@ -4493,7 +4493,7 @@
           "Resource"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "A cable modem is a type of network device that provides bi-directional data communication via radio frequency channels on a hybrid fibre-coaxial (HFC) and RFoG infrastructure. Cable modems are primarily used to deliver broadband Internet access in the form of cable Internet, taking advantage of the high bandwidth of a HFC and RFoG network.",
         "displayName": "Cable Modem",
         "produces": [
           "application/json",
@@ -4610,7 +4610,7 @@
           "Product"
         ],
         "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "description": "A detailed description of a tangible or intangible object made available externally in the form of a ProductOffering to Customers or other Parties playing a PartyRole. A ProductSpecification may consist of other ProductSpecifications supplied together as a collection. Members of the collection may be offered in their own right. ProductSpecifications may also exist within groupings, such as ProductCategories, ProductLines, and ProductTypes.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -4646,7 +4646,7 @@
           "Product"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "A detailed description of a tangible or intangible object made available externally in the form of a ProductOffering to Customers or other Parties playing a PartyRole. A ProductSpecification may consist of other ProductSpecifications supplied together as a collection. Members of the collection may be offered in their own right. ProductSpecifications may also exist within groupings, such as ProductCategories, ProductLines, and ProductTypes.",
         "displayName": "Product  Specification",
         "produces": [
           "application/json",
@@ -4799,7 +4799,7 @@
           "UnSuported"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "Entity used to provide reference to an external system.",
         "displayName": "External SystemReference",
         "produces": [
           "application/json",
@@ -5105,7 +5105,7 @@
           "Customer"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "A person or organization that uses products and services from the enterprise (external), or an operator working on management systems in the service provider environment (internal). This is modeled as a Party playing the role of User. A User is a type of PartyRole.",
         "displayName": "User ",
         "produces": [
           "application/json",
@@ -5258,7 +5258,7 @@
           "Customer"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "A collection of Users. Can be used independently without the User entity.",
         "displayName": "User Group",
         "produces": [
           "application/json",
@@ -5411,7 +5411,7 @@
           "Customer"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "A party that is an individual (i.e., a person).",
         "displayName": "Individual ",
         "produces": [
           "application/json",
@@ -5564,7 +5564,7 @@
           "Customer"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "A group of people identified by shared interests or purpose. Examples include business, department, enterprise. Both organizations and organizational units are represented by this business entity.User.",
         "displayName": "Organization ",
         "produces": [
           "application/json",
@@ -5717,7 +5717,7 @@
           "Common"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "The postal information to use when contacting a given PartyRole. The actual address information is stored in the relationship to GeographicAddress. A PostalContact is a type of ContactMedium.",
         "displayName": "Postal Contact",
         "produces": [
           "application/json",
@@ -6023,7 +6023,7 @@
           "Product"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "A ProductOffering procured by a Customer, or other interested Party playing a PartyRole, appearing as a BusinessInteractionItem, which could take the form of a Agreement. ProductSpecificationCharacteristic(s) in part define the Product. A Product is realized as one or more Service(s) and/or Resource(s).",
         "displayName": "EVC Product",
         "produces": [
           "application/json",
@@ -6176,7 +6176,7 @@
           "Product"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "A ProductOffering procured by a Customer, or other interested Party playing a PartyRole, appearing as a BusinessInteractionItem, which could take the form of a Agreement. ProductSpecificationCharacteristic(s) in part define the Product. A Product is realized as one or more Service(s) and/or Resource(s).",
         "displayName": "UN I Product",
         "produces": [
           "application/json",
@@ -6329,7 +6329,7 @@
           "Location"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "ServiceSite is a customer location where a customer is receiving service. It is the point at which service is delivered to a customer, and is associated with a service address (UrbanPropertyAddress).",
         "displayName": "Site ",
         "produces": [
           "application/json",
@@ -6443,10 +6443,11 @@
     "/site/{id}/services": {
       "get": {
         "tags": [
+
           "Location"
         ],
         "summary": "Find Services in a specific site",
-        "description": "Find Services in a specific site",
+        "description": "A Service represents the object that will be instantiated. Each Service instance can be different; therefore, Service is limited to owning just the changeable attributes, methods, relationships, and constraints that can be instantiated. The invariant attributes, methods, relationships, and constraints that can be instantiated are defined by a ServiceSpecification.",
         "produces": [
           "application/json",
           "application/xml"
@@ -6526,7 +6527,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "A CustomerOrder is a communication used to procure a Product. There are different types of CustomerOrders, such as AccessServiceRequests (ASRs), LocalServiceRequests (LSRs), DirectoryServiceRequests (DSRs), ProductOrders (PSRs).",
         "displayName": "Customer Order",
         "produces": [
           "application/json",
@@ -6679,7 +6680,7 @@
           "Customer"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "An entity that defines the relationship between the customer and provider with respect to billing, payments, and other financial transactions. The customer account is also used to grant entitlement tokens based on services purchased.",
         "displayName": "Account ",
         "produces": [
           "application/json",
@@ -11538,60 +11539,12 @@
           }
         }
       }
-    },
-    "/import": {
-      "get": {
-        "tags": [
-          "UnSuported"
-        ],
-        "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
-        "displayName": "Email  Contact",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "id",
-            "description": "ID of instance that needs to be fetched",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "in": "query",
-            "name": "view",
-            "description": "View of the resource that you want to get.",
-            "required": false,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/Import"
-            }
-          },
-          "400": {
-            "description": "Invalid ID supplied"
-          },
-          "404": {
-            "description": "Instance not found"
-          }
-        }
-      }
     }
   },
   "schemes": [
     "http"
   ],
   "definitions": {
-    "Import": {
-         "$ref" : "link.json#/definitions/diskDevice"
-    },
     "Link": {
       "id": "Link",
       "properties": {
@@ -11644,31 +11597,6 @@
         },
         "numerator": {
           "$ref": "Money"
-        }
-      }
-    },
-    "TaxExemption": {
-      "id": "TaxExemption",
-      "type": "object",
-      "properties": {
-        "certificateNumber": {
-          "type": "string"
-        },
-        "issuingJurisdiction": {
-          "type": "string"
-        },
-        "taxExemptionCategory": {
-          "type": "object",
-          "$ref": "TaxExemptionCategory",
-          "required": true
-        },
-        "taxType": {
-          "type": "string"
-        },
-        "validFor": {
-          "type": "object",
-          "$ref": "TimePeriod",
-          "required": true
         }
       }
     },
@@ -12058,28 +11986,40 @@
           }
         },
         "structureHeight": {
-          "$ref": "Quantity"
+          "$ref": "Quantity",
+          "required": true
         },
         "vhCoordinates": {
-          "$ref": "VHCoordinates"
+          "type": "object",
+          "$ref": "VHCoordinates",
+          "required": true
         },
         "customerAccounts": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "Account"
           }
         },
         "status": {
-          "$ref": "SiteStatus"
+          "type": "object",
+          "$ref": "SiteStatus",
+          "required": true
         },
         "link": {
-          "$ref": "Link"
+          "type": "object",
+          "$ref": "Link",
+          "required": true
         },
         "propertyAddress": {
-          "$ref": "PropertyAddress"
+          "type": "object",
+          "$ref": "PropertyAddress",
+          "required": true
         },
         "type": {
-          "$ref": "SiteType"
+          "type": "object",
+          "$ref": "SiteType",
+          "required": true
         },
         "id": {
           "type": "string"
@@ -12088,7 +12028,9 @@
           "type": "string"
         },
         "category": {
-          "$ref": "SiteCategory"
+          "type": "object",
+          "$ref": "SiteCategory",
+          "required": true
         },
         "description": {
           "type": "string"
@@ -12097,17 +12039,24 @@
           "type": "string"
         },
         "validFor": {
-          "$ref": "TimePeriod"
+          "type": "object",
+          "$ref": "TimePeriod",
+          "required": true
         },
         "clliCode": {
-          "$ref": "CLLICode"
+          "type": "object",
+          "$ref": "CLLICode",
+          "required": true
         },
         "typeOfSite": {
-          "$ref": "TypeOfSite"
+          "type": "object",
+          "$ref": "TypeOfSite",
+          "required": true
         },
         "accountContacts": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "AccountContactAssignment"
           }
         }
@@ -12120,6 +12069,7 @@
           "type": "string"
         },
         "link": {
+          "type": "object",
           "$ref": "Link"
         }
       }
@@ -12309,12 +12259,6 @@
           "items": {
             "$ref": "UNIService"
           }
-        },
-        "configuration": {
-          "$ref": "EVCConfiguration"
-        },
-        "path": {
-          "$ref": "NetworkPath"
         }
       }
     },
@@ -12356,65 +12300,29 @@
     "EPLProduct": {
       "id": "EPLProduct",
       "properties": {
-        "uniProducts": {
-          "type": "array",
-          "items": {
-            "$ref": "UNIProduct"
-          }
+        "id": {
+          "type": "string"
         },
         "link": {
           "$ref": "Link"
         },
-        "evcProduct": {
-          "$ref": "EVCProduct"
-        },
-        "productOrderItem": {
-          "$ref": "ProductOrderItem"
+        "name": {
+          "type": "string"
         },
         "isBundle": {
           "type": "boolean"
         },
-        "id": {
+        "description": {
           "type": "string"
-        },
-        "customerAccountInvolvements": {
-          "type": "array",
-          "items": {
-            "$ref": "AccountProductAssignment"
-          }
         },
         "productStatus": {
           "type": "string"
         },
-        "productRelationships": {
-          "type": "array",
-          "items": {
-            "$ref": "ProductRelationship"
-          }
-        },
-        "description": {
-          "type": "string"
-        },
-        "name": {
+        "productSerialNumber": {
           "type": "string"
         },
         "validFor": {
           "$ref": "TimePeriod"
-        },
-        "productSpecification": {
-          "$ref": "ProductSpecification"
-        },
-        "productPrices": {
-          "type": "array",
-          "items": {
-            "$ref": "ProductPrice"
-          }
-        },
-        "configuration": {
-          "$ref": "EPLConfiguration"
-        },
-        "productSerialNumber": {
-          "type": "string"
         },
         "products": {
           "type": "array",
@@ -12422,8 +12330,32 @@
             "$ref": "EPLProduct"
           }
         },
+        "productRelationships": {
+          "type": "array",
+          "items": {
+            "$ref": "ProductRelationship"
+          }
+        },
+        "productPrices": {
+          "type": "array",
+          "items": {
+            "$ref": "ProductPrice"
+          }
+        },
         "productOffering": {
           "$ref": "ProductOffering"
+        },
+        "configuration": {
+          "$ref": "EPLConfiguration"
+        },
+        "uniProducts": {
+          "type": "array",
+          "items": {
+            "$ref": "UNIProduct"
+          }
+        },
+        "evcProduct": {
+          "$ref": "EVCProduct"
         }
       }
     },
@@ -12453,12 +12385,6 @@
         },
         "eplProduct": {
           "$ref": "EPLProduct"
-        },
-        "stateTransitions": {
-          "type": "array",
-          "items": {
-            "$ref": "Link"
-          }
         }
       }
     },
@@ -12494,45 +12420,8 @@
         "id": {
           "type": "string"
         },
-        "contactPhones": {
-          "type": "array",
-          "items": {
-            "$ref": "TelephoneNumber"
-          }
-        },
-        "accounts": {
-          "type": "array",
-          "items": {
-            "$ref": "AccountSummary"
-          }
-        },
-        "customerId": {
-          "type": "string"
-        },
-        "status": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
         "link": {
           "$ref": "Link"
-        },
-        "customerSegment": {
-          "$ref": "CustomerSegment"
-        },
-        "customerRank": {
-          "type": "string"
-        },
-        "contactEmails": {
-          "type": "array",
-          "items": {
-            "$ref": "EmailContact"
-          }
-        },
-        "profile": {
-          "$ref": "PartySummary",
-          "required": true
         }
       }
     },
@@ -12649,132 +12538,11 @@
         },
         "account": {
           "$ref": "AccountSummary"
-        },
-        "serviceOrder": {
-          "$ref": "ServiceOrder"
-        },
-        "stateTransitions": {
-          "type": "array",
-          "items": {
-            "$ref": "Link"
-          }
-        },
-        "orderState": {
-          "$ref": "OrderState"
-        },
-        "availableFieldChanges": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "boolean"
-          }
         }
       }
     },
-    "ServiceOrderItem": {
-      "id": "ServiceOrderItem",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "evcServiceConfiguration": {
-          "$ref": "EVCServiceConfiguration"
-        },
-        "locations": {
-          "type": "array",
-          "items": {
-            "$ref": "Location"
-          }
-        },
-        "link": {
-          "$ref": "Link"
-        },
-        "uniServiceConfigurations": {
-          "type": "array",
-          "items": {
-            "$ref": "UNIServiceConfiguration"
-          }
-        },
-        "device": {
-          "$ref": "Device"
-        },
-        "action": {
-          "$ref": "ChangeOrderType"
-        },
-        "serviceConfiguration": {
-          "$ref": "ServiceConfiguration"
-        },
-        "interactionItemStatus": {
-          "type": "string"
-        },
-        "quantity": {
-          "$ref": "Quantity"
-        },
-        "orderDesign": {
-          "$ref": "OrderDesign"
-        }
-      }
-    },
-    "ServiceOrder": {
-      "id": "ServiceOrder",
-      "properties": {
-        "link": {
-          "$ref": "Link"
-        },
-        "characteristics": {
-          "type": "array",
-          "items": {
-            "$ref": "Characteristic"
-          }
-        },
-        "customerAccount": {
-          "type": "array",
-          "items": {
-            "$ref": "Account"
-          }
-        },
-        "customer": {
-          "type": "array",
-          "items": {
-            "$ref": "Customer"
-          }
-        },
-        "asBuiltOrderDesign": {
-          "$ref": "AsBuiltOrderDesign"
-        },
-        "interactionStatus": {
-          "type": "string"
-        },
-        "id": {
-          "type": "string"
-        },
-        "interactionDateComplete": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "serviceOrderItems": {
-          "type": "array",
-          "items": {
-            "$ref": "ServiceOrderItem"
-          }
-        },
-        "locations": {
-          "type": "array",
-          "items": {
-            "$ref": "Location"
-          }
-        },
-        "sat": {
-          "$ref": "SAT"
-        },
-        "description": {
-          "type": "string"
-        },
-        "interactionDate": {
-          "type": "string",
-          "format": "date-time"
-        }
-      }
-    },
+    "ServiceOrderItem": { },
+    "ServiceOrder": { },
     "EVCServiceConfigurationSummary": {
       "id": "EVCServiceConfiguration",
       "properties": {
@@ -12860,7 +12628,6 @@
       }
     },
     "NetworkPath": {
-      "type" : "object",
       "id": "NetworkPath",
       "properties": {
         "alternatePathIdentifier": {
@@ -12893,7 +12660,6 @@
       }
     },
     "UNIConfig": {
-      "type" : "object",
       "id": "UNIConfig",
       "properties": {
         "configText": {
@@ -13010,8 +12776,8 @@
         }
       }
     },
-    "EVCSummary": {
-      "id": "EVCSummary",
+    "EvcSummary": {
+      "id": "EvcSummary",
       "properties": {
         "id": {
           "type": "string"
@@ -13131,74 +12897,57 @@
       }
     },
     "UNIService": {
-      "type": "object",
       "id": "UNIService",
       "properties": {
-        "cfsStatus": {
-          "type": "integer"
-        },
-        "startMode": {
-          "type": "integer"
-        },
-        "evc": {
-          "$ref": "EVCService"
-        },
-        "isServiceEnabled": {
-          "type": "boolean"
+        "id": {
+          "type": "string"
         },
         "link": {
           "$ref": "Link"
         },
-        "isTSP": {
+        "hasStarted": {
           "type": "boolean"
         },
-        "isCustomerFacingService": {
+        "isServiceEnabled": {
+          "type": "boolean"
+        },
+        "isMandatory": {
+          "type": "boolean"
+        },
+        "startMode": {
+          "type": "number"
+        },
+        "isStateful": {
           "type": "boolean"
         },
         "isFCCReportable": {
           "type": "boolean"
         },
-        "id": {
-          "type": "string"
-        },
-        "hasStarted": {
+        "isTSP": {
           "type": "boolean"
-        },
-        "networkPath": {
-          "$ref": "NetworkPath"
         },
         "isResourceFacingService": {
           "type": "boolean"
         },
-        "customerFacingService": {
-          "type": "array",
-          "items": {
-            "$ref": "UNIService"
-          }
-        },
-        "isMandatory": {
+        "isCustomerFacingService": {
           "type": "boolean"
+        },
+        "cfsStatus": {
+          "type": "number"
         },
         "config": {
           "$ref": "UNIConfig"
         },
-        "resourceFacingService": {
-          "type": "array",
-          "items": {
-            "$ref": "UNIService"
-          }
+        "networkPath": {
+          "$ref": "NetworkPath"
         },
-        "isStateful": {
-          "type": "boolean"
-        },
-        "rfsStatus": {
-          "type": "integer"
+        "evc": {
+          "$ref": "EvcSummary"
         }
       }
     },
     "Changes": {
       "id": "Changes",
-      "type": "object",
       "properties": {
         "change": {
           "type": "string"
@@ -13207,38 +12956,20 @@
     },
     "ResourcePortDeltas": {
       "id": "ResourcePortDeltas",
-      "type": "object",
       "properties": {
-        "id": {
-          "type": "string"
-        },
-        "link": {
-          "type": "object",
-          "$ref": "Link",
-          "required": true
-        },
-        "currentPort": {
-          "type": "object",
-          "$ref": "ResourcePort",
-          "required": true
-        },
-        "resourcePortConfiguration": {
-          "type": "object",
-          "$ref": "ResourcePort",
-          "required": true
-        },
         "changes": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "Changes"
           }
+        },
+        "resourcePortConfiguration": {
+          "$ref": "ResourcePort"
         }
       }
     },
     "EthernetInterfaceConfiguration": {
       "id": "EthernetInterfaceConfiguration",
-      "type": "object",
       "properties": {
         "id": {
           "type": "String"
@@ -13280,7 +13011,6 @@
     },
     "EthernetInterfaceDeltas": {
       "id": "EthernetInterfaceDeltas",
-      "type": "object",
       "properties": {
         "id": {
           "type": "String"
@@ -13301,48 +13031,29 @@
     },
     "Resource": {
       "id": "Resource",
-      "type": "object",
       "properties": {
-        "resourceFacingServices": {
+        "ethernetInterfaceDeltas": {
           "type": "array",
           "items": {
-            "type": "object",
-            "$ref": "Service"
+            "$ref": "EthernetInterfaceDeltas"
           }
         },
-        "configurationDatas": {
+        "resourcePortDeltas": {
           "type": "array",
           "items": {
-            "type": "object",
-            "$ref": "ConfigurationData"
-          }
-        },
-        "device": {
-          "type": "object",
-          "$ref": "Device",
-          "required": true
-        },
-        "tickets": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "ImpactedItem"
+            "$ref": "ResourcePortDeltas"
           }
         }
       }
     },
     "UNIServiceDeltas": {
       "id": "UNIServiceDeltas",
-      "type": "object",
       "properties": {
         "id": {
           "type": "string"
         },
         "link": {
           "$ref": "Link"
-        },
-        "currentUniService": {
-          "$ref": "UNIService"
         },
         "changes": {
           "type": "array",
@@ -13357,158 +13068,62 @@
     },
     "Service": {
       "id": "Service",
-      "type": "object",
       "properties": {
-        "sites": {
-          "type": "array",
-          "items": {
-            "$ref": "Site"
-          }
-        },
-        "characterisitcs": {
-          "type": "array",
-          "items": {
-            "$ref": "Characteristic"
-          }
-        },
-        "resources": {
-          "type": "array",
-          "items": {
-            "$ref": "Resource"
-          }
-        },
-        "cfsStatus": {
-          "type": "integer"
-        },
-        "configurationDatas": {
-          "type": "array",
-          "items": {
-            "$ref": "ConfigurationData"
-          }
-        },
-        "startMode": {
-          "type": "integer"
-        },
-        "serviceSpecifications": {
-          "$ref": "ServiceSpecification"
-        },
-        "isServiceEnabled": {
-          "type": "boolean"
+        "id": {
+          "type": "string"
         },
         "link": {
           "$ref": "Link"
         },
-        "device": {
-          "$ref": "Device"
-        },
-        "isTSP": {
-          "type": "boolean"
-        },
-        "isCustomerFacingService": {
-          "type": "boolean"
-        },
-        "isFCCReportable": {
-          "type": "boolean"
-        },
-        "id": {
-          "type": "string"
-        },
-        "hasStarted": {
-          "type": "boolean"
-        },
-        "productProperties": {
-          "$ref": "ProductProperties"
-        },
-        "isResourceFacingService": {
-          "type": "boolean"
-        },
-        "customerFacingService": {
+        "uniServiceDeltas": {
           "type": "array",
           "items": {
-            "$ref": "Service"
+            "$ref": "UNIServiceDeltas"
           }
         },
-        "isMandatory": {
-          "type": "boolean"
-        },
-        "prefereneces": {
+        "changes": {
           "type": "array",
           "items": {
-            "$ref": "Preference"
+            "$ref": "Changes"
           }
-        },
-        "resourceFacingService": {
-          "type": "array",
-          "items": {
-            "$ref": "Service"
-          }
-        },
-        "products": {
-          "type": "array",
-          "items": {
-            "$ref": "Product"
-          }
-        },
-        "tickets": {
-          "type": "array",
-          "items": {
-            "$ref": "ImpactedItem"
-          }
-        },
-        "isStateful": {
-          "type": "boolean"
-        },
-        "rfsStatus": {
-          "type": "integer"
         }
       }
     },
     "OrderDesign": {
       "id": "OrderDesign",
-      "type": "object",
       "properties": {
-        "timestamp": {
-          "type": "string",
-          "$ref": "date-time"
-        },
         "id": {
-          "type": "string"
-        },
-        "serviceDesign": {
-          "$ref": "Services"
-        },
-        "status": {
           "type": "string"
         },
         "link": {
           "$ref": "Link"
         },
-        "resourceDesign": {
-          "$ref": "Resources"
+        "status": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
         },
         "designArtifact": {
           "$ref": "Link"
+        },
+        "resourceDesign": {
+          "$ref": "Resource"
+        },
+        "serviceDesign": {
+          "$ref": "Service"
         }
       }
     },
     "Slot": {
       "id": "Slot",
-      "type": "object",
       "properties": {
-        "hasAdapter": {
-          "type": "boolean"
-        },
-        "slotNumber": {
-          "type": "integer"
-        },
-        "purposeDescription": {
+        "id": {
           "type": "string"
         },
-        "card": {
-          "$ref": "Card"
-        },
-        "slotPurpose": {
-          "type": "integer"
+        "link": {
+          "$ref": "Link"
         }
       }
     },
