@@ -12468,22 +12468,14 @@
         },
         "feasibility": {
           "type": "string",
-          "enum": [
-            "FEASIBLE",
-            "CHANGED",
-            "NOTFEASIBLE"
-          ]
+          "description": "FEASIBLE, CHANGED, NOTFEASIBLE"
         },
         "purchaceOrderNumber": {
           "type": "string"
         },
         "orderType": {
           "type": "string",
-          "enum": [
-            "ADDRESSCHANGE",
-            "BANDWIDTHCHANGE",
-            "OTHER"
-          ]
+          "description": "ADDRESSCHANGE, BANDWIDTHCHANGE, OTHER"
         },
         "newState": {
           "$ref": "Quantity"
@@ -12502,12 +12494,7 @@
         },
         "customerOrderType": {
           "type": "string",
-          "enum": [
-            "NewConnect",
-            "Disconnect",
-            "RecordsCorrection",
-            "Modifiy"
-          ]
+          "description": "NewConnect, Disconnect, RecordsCorrection, Modifiy"
         },
         "interactionDate": {
           "type": "date"
@@ -12603,12 +12590,7 @@
       "properties": {
         "direction": {
           "type": "string",
-          "enum": [
-            "Unknown",
-            "Sources Traffic",
-            "Sinks Traffic",
-            "Carries Traffic Bi-Directional"
-          ]
+          "description": "Unknown, Sources Traffic, Sinks Traffic, Carries Traffic Bi-Directional"
         },
         "vendorTPName": {
           "type": "string"
@@ -12676,14 +12658,7 @@
         },
         "configActivationType": {
           "type": "string",
-          "enum": [
-            "Base",
-            "Current",
-            "Backup",
-            "Planned",
-            "Test",
-            "Template"
-          ]
+          "description": "Base, Current, Backup, Planned, Test, Template"
         },
         "bandwidth": {
           "$ref": "Quantity"
@@ -13302,29 +13277,15 @@
     },
     "AccountStatus": {
       "type": "string",
-      "enum": [
-        "Active",
-        "Suspended",
-        "Inactive",
-        "Closed"
-      ]
+      "description": "Active, Suspended, Inactive, Closed"
     },
     "AccountType": {
       "type": "string",
-      "enum": [
-        "Individual",
-        "Joint",
-        "Other"
-      ]
+      "description": "Individual, Joint, Other"
     },
     "AccountFinancialStatus": {
       "type": "string",
-      "enum": [
-        "Current",
-        "Due",
-        "InArrears",
-        "Delinquent"
-      ]
+      "description": "Current, Due ,InArrears, Delinquent"
     },
     "BillCharge": {
       "id": "BillCharge",
@@ -13430,11 +13391,184 @@
         }
       }
     },
-    "CustomerBill": { },
-    "CustomerBillSpec": { },
-    "CustomerOrder": { },
-    "CustomerOrderItem": { },
-    "CustomerPayment": { },
+    "CustomerBill": {
+      "id": "CustomerBill",
+      "type": "object",
+      "properties": {
+        "link": {
+          "$ref": "Link"
+        },
+        "billDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "chargeDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "customerAccount": {
+          "$ref": "AccountSummary"
+        },
+        "billAmount": {
+          "$ref": "Money"
+        },
+        "id": {
+          "type": "string"
+        },
+        "paymentItem": {
+          "type": "array",
+          "items": {
+            "$ref": "PaymentItem"
+          }
+        },
+        "document": {
+          "$ref": "Document"
+        },
+        "customerBillSpec": {
+          "$ref": "CustomerBillSpec"
+        },
+        "financialCharges": {
+          "type": "array",
+          "items": {
+            "$ref": "FinancialCharge"
+          }
+        },
+        "billNo": {
+          "type": "string"
+        },
+        "creditDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "paymentDueDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "billCharges": {
+          "type": "array",
+          "items": {
+            "$ref": "BillCharge"
+          }
+        },
+        "mailingDate": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "CustomerBillSpec": {
+      "id": "CustomerBillSpec",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "customerBillingCycleSpecifications": {
+          "type": "array",
+          "items": {
+            "$ref": "CustomerBillingCycleSpecification"
+          }
+        },
+        "validFor": {
+          "$ref": "TimePeriod"
+        },
+        "customerBills": {
+          "type": "array",
+          "items": {
+            "$ref": "CustomerBill"
+          }
+        },
+        "customerAccount": {
+          "$ref": "AccountSummary"
+        },
+        "format": {
+          "type": "array",
+          "items": {
+            "$ref": "CustomerBillFormat"
+          }
+        }
+      }
+    },
+    "CustomerOrder": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "type": "object",
+          "$ref": "Link",
+          "required": true
+        }
+      }
+    },
+    "CustomerOrderItem": {
+      "id": "CustomerOrderItem",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "action": {
+          "type": "string"
+        },
+        "quantity": {
+          "$ref": "Quantity"
+        },
+        "interactionItemStatus": {
+          "type": "string"
+        }
+      }
+    },
+    "CustomerPayment": {
+      "id": "CustomerPayment",
+      "type": "object",
+      "properties": {
+        "amount": {
+          "$ref": "Money"
+        },
+        "id": {
+          "type": "string"
+        },
+        "paymentItem": {
+          "type": "array",
+          "items": {
+            "$ref": "PaymentItem"
+          }
+        },
+        "paymentDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "remainingAmount": {
+          "$ref": "Money"
+        },
+        "paymentConfirmation": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "paymentMethods": {
+          "type": "array",
+          "items": {
+            "$ref": "PaymentMethod"
+          }
+        }
+      }
+    },
     "Document": { },
     "EmailContact": { },
     "ExternalSystemReference": { },
