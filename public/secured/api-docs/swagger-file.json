@@ -9440,7 +9440,7 @@
           "Common"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "The phone number to use when contacting a given PartyRole. A TelephoneNumber is a type of ContactMedium.",
         "displayName": "Telephone  Number",
         "produces": [
           "application/json",
@@ -9593,7 +9593,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "A type of Request that represents a Customer Order's products decomposed into the services through which the products are realized.",
         "displayName": "Service  Order",
         "produces": [
           "application/json",
@@ -9899,7 +9899,7 @@
           "Product"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "A ProductOffering procured by a Customer, or other interested Party playing a PartyRole, appearing as a BusinessInteractionItem, which could take the form of a Agreement. ProductSpecificationCharacteristic(s) in part define the Product. A Product is realized as one or more Service(s) and/or Resource(s).",
         "displayName": "Product ",
         "produces": [
           "application/json",
@@ -10052,7 +10052,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "An entry to the log of an Incident Ticket.",
         "displayName": "Comment ",
         "produces": [
           "application/json",
@@ -10205,7 +10205,7 @@
           "Customer"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "CustomerPayment represents the transfer of wealth from a customer for a product or usage of product.",
         "displayName": "Customer Payment",
         "produces": [
           "application/json",
@@ -10358,7 +10358,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "An price estimate (quote) or a presentation for sale (offer) of product offerings to a party playing a role.",
         "displayName": "Customer Quote",
         "produces": [
           "application/json",
@@ -10511,7 +10511,7 @@
           "Product"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "The presentation of one or more ProductSpecifications to the marketplace for sale, rental, or lease for a ProductOfferingPrice. A ProductOffering may target one or more MarketSegments, be included in one or more ProductCatalog, presented in support of one or more ProductStrategies, and made available in one or more Places. ProductOffering may represent a simple offering of a single ProductSpecification or could represent a bundling of one or more other ProductOffering",
         "displayName": "Product Offering",
         "produces": [
           "application/json",
