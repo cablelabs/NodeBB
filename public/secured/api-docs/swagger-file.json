@@ -13569,16 +13569,370 @@
         }
       }
     },
-    "Document": { },
-    "EmailContact": { },
-    "ExternalSystemReference": { },
-    "FaxNumber": { },
-    "GeographicAddress": { },
-    "Individual": { },
-    "Organization": { },
-    "PaymentItem": { },
-    "PaymentMethod": { },
-    "PaymentPlan": { },
+    "Document": {
+      "id": "Document",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "documentLocation": {
+          "type": "string"
+        },
+        "documentNumber": {
+          "type": "string"
+        }
+      }
+    },
+    "EmailContact": {
+      "id": "EmailContact",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "validFor": {
+          "$ref": "TimePeriod"
+        },
+        "emailAddress": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "preferred": {
+          "type": "boolean"
+        }
+      }
+    },
+    "FaxNumber": {
+      "id": "FaxNumber",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "validFor": {
+          "$ref": "TimePeriod"
+        },
+        "number": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    },
+    "Individual": {
+      "id": "Individual",
+      "type": "object",
+      "properties": {
+        "skills": {
+          "type": "string"
+        },
+        "alternateNames": {
+          "type": "array",
+          "items": {
+            "$ref": "IndividualName"
+          }
+        },
+        "placeOfBirth": {
+          "type": "string"
+        },
+        "disabilities": {
+          "$ref": "DisabilityType"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "aliveDuring": {
+          "$ref": "TimePeriod"
+        },
+        "individualName": {
+          "$ref": "IndividualName"
+        },
+        "preferedName": {
+          "type": "string"
+        },
+        "maritalStatus": {
+          "$ref": "MaritalStatus"
+        },
+        "id": {
+          "type": "string"
+        },
+        "identificationDetails": {
+          "type": "array",
+          "items": {
+            "$ref": "IndividualIdentification"
+          }
+        },
+        "nationality": {
+          "type": "string"
+        },
+        "gender": {
+          "$ref": "GenderType"
+        },
+        "validFor": {
+          "$ref": "TimePeriod"
+        }
+      }
+    },
+    "IndividualIdentification": {
+      "id": "IndividualIdentification",
+      "type": "object",
+      "properties": {
+        "identification": {
+          "oneOf": [
+            {"$ref": "StateIdentification"},
+            {"$ref": "StudentIdentification"},
+            {"$ref": "PassportIdentification"},
+            {"$ref": "ContractorIdentification"},
+            {"$ref": "DriversLicenseIdentification"},
+            {"$ref": "BirthCertificateIdentification"},
+            {"$ref": "NationalIdentityCardIdentification"},
+            {"$ref": "SocialInsuranceIdentification"},
+            {"$ref": "ProvincialIdentification"},
+            {"$ref": "EmployeeIdentification"},
+            {"$ref": "MedicalHealthCardIdentification"},
+            {"$ref": "MembershipCardIdentification"},
+            {"$ref": "SocialSecurityNrIdentification"},
+            {"$ref": "AlternateIdentification"}
+          ]
+        }
+      }
+    },
+    "IndividualName": {
+      "id": "IndividualName",
+      "type": "object",
+      "properties": {
+        "legalName": {
+          "type": "string"
+        },
+        "familyNames": {
+          "type": "string"
+        },
+        "qualifications": {
+          "type": "string"
+        },
+        "formOfAddress": {
+          "type": "string"
+        },
+        "givenNames": {
+          "type": "string"
+        },
+        "aristocraticTitle": {
+          "type": "string"
+        },
+        "familyGeneration": {
+          "type": "string"
+        },
+        "preferredGivenName": {
+          "type": "string"
+        },
+        "validFor": {
+          "$ref": "TimePeriod"
+        },
+        "formattedName": {
+          "type": "string"
+        },
+        "generation": {
+          "type": "string"
+        },
+        "middleNames": {
+          "type": "string"
+        },
+        "familyNamePrefix": {
+          "type": "string"
+        }
+      }
+    },
+    "Organization": {
+      "id": "Organization",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "alternateNames": {
+          "type": "array",
+          "items": {
+            "$ref": "OrganizationName"
+          }
+        },
+        "identificationDetails": {
+          "type": "array",
+          "items": {
+            "$ref": "OrganizationIdentification"
+          }
+        },
+        "existsDuring": {
+          "$ref": "TimePeriod"
+        },
+        "organizationName": {
+          "$ref": "OrganizationName"
+        },
+        "name": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "validFor": {
+          "$ref": "TimePeriod"
+        },
+        "type": {
+          "type": "string"
+        },
+        "isLegalEntity": {
+          "type": "boolean"
+        }
+      }
+    },
+    "OrganizationIdentification": {
+      "id": "OrganizationIdentification",
+      "type": "object",
+      "properties": {
+        "identification" : {
+          "type": "object",
+          "oneOf": [
+            { "$ref": "CompanyRegistration"},
+            { "$ref": "TaxIdentification"}
+          ]
+        }
+      }
+    },
+    "OrganizationName": {
+      "id": "OrganizationName",
+      "type": "object",
+      "properties": {
+        "organizationName": {
+          "type": "string"
+        },
+        "tradingName": {
+          "type": "string"
+        },
+        "validFor": {
+          "$ref": "TimePeriod"
+        },
+        "nameType": {
+          "type": "string"
+        }
+      }
+    },
+    "PaymentItem": {
+      "id": "PaymentItem",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "billCharge": {
+          "$ref": "BillCharge"
+        },
+        "customerBill": {
+          "$ref": "CustomerBill"
+        },
+        "appliedAmount": {
+          "$ref": "Money"
+        },
+        "customerPayment": {
+          "$ref": "CustomerPayment"
+        },
+        "link": {
+          "$ref": "Link"
+        }
+      }
+    },
+    "PaymentMethod": {
+      "id": "PaymentMethod",
+      "type": "object",
+      "properties": {
+        "tokenizedPaymentCard": {
+          "$ref": "TokenizedPaymentCard"
+        },
+        "tokenizedThirdParty": {
+          "$ref": "TokenizedThirdParty"
+        },
+        "id": {
+          "type": "string"
+        },
+        "paymentCard": {
+          "$ref": "PaymentCard"
+        },
+        "check": {
+          "$ref": "Check"
+        },
+        "fundsTransfer": {
+          "$ref": "FundsTransfer"
+        },
+        "paymentPlan": {
+          "type": "array",
+          "items": {
+            "$ref": "PaymentPlan"
+          }
+        },
+        "customerPayment": {
+          "type": "array",
+          "items": {
+            "$ref": "CustomerPayment"
+          }
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "cash": {
+          "$ref": "Cash"
+        },
+        "paymentDescription": {
+          "type": "string"
+        },
+        "paymentMethodName": {
+          "type": "string"
+        }
+      }
+    },
+    "PaymentPlan": {
+      "id": "PaymentPlan",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "customerAccounts": {
+          "type": "array",
+          "items": {
+            "$ref": "Account"
+          }
+        },
+        "status": {
+          "type": "boolean"
+        },
+        "priority": {
+          "type": "integer"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "paymentPlanType": {
+          "$ref": "PaymentPlanType"
+        },
+        "paymentMethod": {
+          "$ref": "PaymentMethod"
+        },
+        "paymentLimit": {
+          "$ref": "Money"
+        }
+      }
+    },
     "PostalContact": { },
     "Preference": { },
     "Product": { },
