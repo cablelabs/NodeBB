@@ -101,9 +101,9 @@
                     "name": "Individual ",
                     "description": "A party that is an individual (i.e., a person).",
                     "links": [
+                        "user",
                         "customer",
-                        "contact",
-                        "user"
+                        "contact"
                     ]
                 },
                 {
