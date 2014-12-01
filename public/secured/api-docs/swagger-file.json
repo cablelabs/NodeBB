@@ -13975,38 +13975,40 @@
       "id": "Individual",
       "type": "object",
       "properties": {
-        "skills": {
+        "id": {
           "type": "string"
-        },
-        "alternateNames": {
-          "type": "array",
-          "items": {
-            "$ref": "IndividualName"
-          }
-        },
-        "placeOfBirth": {
-          "type": "string"
-        },
-        "disabilities": {
-          "$ref": "DisabilityType"
         },
         "link": {
           "$ref": "Link"
         },
+        "preferredName": {
+          "type": "string"
+        },
+        "nationality": {
+          "type": "string"
+        },
+        "placeOfBirth": {
+          "type": "string"
+        },
+        "skills": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string",
+          "description": "Male, Female"
+        },
+        "maritalStatus": {
+          "type": "string",
+          "description": "Single, Married"
+        },
+        "disabilities": {
+          "description": "Vision_Impaired, Hearing_Impaired, Other"
+        },
         "aliveDuring": {
           "$ref": "TimePeriod"
         },
-        "individualName": {
-          "$ref": "IndividualName"
-        },
-        "preferedName": {
-          "type": "string"
-        },
-        "maritalStatus": {
-          "$ref": "MaritalStatus"
-        },
-        "id": {
-          "type": "string"
+        "validFor": {
+          "$ref": "TimePeriod"
         },
         "identificationDetails": {
           "type": "array",
@@ -14014,14 +14016,14 @@
             "$ref": "IndividualIdentification"
           }
         },
-        "nationality": {
-          "type": "string"
+        "alternateNames": {
+          "type": "array",
+          "items": {
+            "$ref": "IndividualName"
+          }
         },
-        "gender": {
-          "$ref": "GenderType"
-        },
-        "validFor": {
-          "$ref": "TimePeriod"
+        "individualName": {
+          "$ref": "IndividualName"
         }
       }
     },
