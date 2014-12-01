@@ -12415,12 +12415,57 @@
     },
     "Customer": {
       "id": "Customer",
+      "type": "object",
       "properties": {
         "id": {
           "type": "string"
         },
         "link": {
+          "type": "object",
           "$ref": "Link"
+        },
+        "name": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "object",
+          "$ref": "PartySummary",
+          "required": true
+        },
+        "customerId": {
+          "type": "string"
+        },
+        "customerRank": {
+          "type": "string"
+        },
+        "customerSegment": {
+          "type": "object",
+          "$ref": "CustomerSegment",
+          "required": true
+        },
+        "status": {
+          "type": "string"
+        },
+        "contactPhones": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "TelephoneNumber"
+          }
+        },
+        "contactEmails": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "EmailContact"
+          }
+        },
+        "accounts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "AccountSummary"
+          }
         }
       }
     },
