@@ -1,8 +1,8 @@
 var request = require('request'),
 	async   = require('async'),
 	fs      = require('fs'),
-	config  = require('./config.json'),
-	path 	= require('path');
+	path 	= require('path'),
+	config  = path.join(__dirname, '/src/mind-map/config.json');
 
 module.exports.init = function (callback) {
 

@@ -1,6 +1,5 @@
 {
     "apiUriBase": "http://cable-api.herokuapp.com/api-docs",
-    "swaggerUriBase": "/secured/swagger/#!/",
     "domains": [
         {
             "name": "Common",
@@ -102,9 +101,9 @@
                     "name": "Individual ",
                     "description": "A party that is an individual (i.e., a person).",
                     "links": [
-                        "user",
                         "customer",
-                        "contact"
+                        "contact",
+                        "user"
                     ]
                 },
                 {
