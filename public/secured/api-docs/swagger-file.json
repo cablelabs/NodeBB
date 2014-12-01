@@ -13552,15 +13552,123 @@
           }
         },
         "customerBillSpec": {
-          "$ref": "CustomerBillSpec"
+          "$ref": "CustomerBillSpecSummary"
         },
         "account": {
           "$ref": "AccountSummary"
         },
-        "paymentItem": {
+        "paymentItems": {
           "type": "array",
           "items": {
-            "$ref": "PaymentItem"
+            "$ref": "PaymentItemSummary"
+          }
+        }
+      }
+    },
+    "FinancialCharge": {
+      "type": "object"
+    },
+    "BillingPeriod": {
+      "id": "BillingPeriod",
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "CustomerBillingCycleSpecification": {
+      "id": "CustomerBillingCycleSpecification",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "billingDateShift": {
+          "type": "integer"
+        },
+        "chargeDateOffset": {
+          "type": "integer"
+        },
+        "creditDateOffset": {
+          "type": "integer"
+        },
+        "mailingDateOffset": {
+          "type": "integer"
+        },
+        "paymentDueDateOffset": {
+          "type": "integer"
+        },
+        "validFor": {
+          "$ref": "TimePeriod"
+        },
+        "customerBillSpecs": {
+          "type": "array",
+          "items": {
+            "$ref": "CustomerBillSpecSummary"
+          }
+        },
+        "billingPeriod": {
+          "$ref": "BillingPeriod"
+        }
+      }
+    },
+    "CustomerBillPresentationMedia": {
+      "id": "CustomerBillPresentationMedia",
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "CustomerBillFormat": {
+      "id": "CustomerBillFormat",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "presentationMedia": {
+          "type": "array",
+          "items": {
+            "$ref": "CustomerBillPresentationMedia"
+          }
+        }
+      }
+    },
+    "CustomerBillSpecSummary": {
+      "id": "CustomerBillSpecSummary",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "format": {
+          "type": "array",
+          "items": {
+            "$ref": "CustomerBillFormat"
           }
         }
       }
@@ -13572,20 +13680,14 @@
         "id": {
           "type": "string"
         },
-        "description": {
-          "type": "string"
+        "link": {
+          "$ref": "Link"
         },
         "name": {
           "type": "string"
         },
-        "link": {
-          "$ref": "Link"
-        },
-        "customerBillingCycleSpecifications": {
-          "type": "array",
-          "items": {
-            "$ref": "CustomerBillingCycleSpecification"
-          }
+        "description": {
+          "type": "string"
         },
         "validFor": {
           "$ref": "TimePeriod"
@@ -13593,16 +13695,22 @@
         "customerBills": {
           "type": "array",
           "items": {
-            "$ref": "CustomerBill"
+            "$ref": "CustomerBillSummary"
           }
-        },
-        "customerAccount": {
-          "$ref": "AccountSummary"
         },
         "format": {
           "type": "array",
           "items": {
             "$ref": "CustomerBillFormat"
+          }
+        },
+        "account": {
+          "$ref": "AccountSummary"
+        },
+        "customerBillingCycleSpecifications": {
+          "type": "array",
+          "items": {
+            "$ref": "CustomerBillingCycleSpecification"
           }
         }
       }
