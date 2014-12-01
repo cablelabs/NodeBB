@@ -14105,6 +14105,24 @@
         }
       }
     },
+    "OrganizationSummary": {
+      "id": "OrganizationSummary",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    },
     "Organization": {
       "id": "Organization",
       "type": "object",
@@ -14912,6 +14930,35 @@
         }
       }
     },
-    "UserGroup": { }
+    "UserGroup": {
+      "id": "UserGroup",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "name": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "validFor": {
+          "$ref": "TimePeriod"
+        },
+        "users": {
+          "type": "array",
+          "items": {
+            "$ref": "UserSummary"
+          }
+        },
+        "organization": {
+          "$ref": "OrganizationSummary"
+        }
+      }
+    }
   }
 }
