@@ -13656,9 +13656,6 @@
         "link": {
           "$ref": "Link"
         },
-        "validFor": {
-          "$ref": "TimePeriod"
-        },
         "emailAddress": {
           "type": "string"
         },
@@ -13667,6 +13664,9 @@
         },
         "preferred": {
           "type": "boolean"
+        },
+        "validFor": {
+          "$ref": "TimePeriod"
         }
       }
     },
