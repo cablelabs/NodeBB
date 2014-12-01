@@ -13303,61 +13303,92 @@
       "type": "string",
       "description": "Current, Due ,InArrears, Delinquent"
     },
-    "BillCharge": {
-      "id": "BillCharge",
+    "BillChargeSummary": {
+      "id": "BillChargeSummary",
       "type": "object",
       "properties": {
-        "oneTimeAppliedCustomerBillingProductCharge": {
-          "$ref": "OneTimeAppliedCustomerBillingProductCharge"
-        },
-        "recurringAppliedCustomerBillingProductCharge": {
-          "$ref": "RecurringAppliedCustomerBillingProductCharge"
-        },
-        "customerBill": {
-          "$ref": "CustomerBill"
-        },
-        "appliedCustomerBillingVideoUsageRate": {
-          "$ref": "AppliedCustomerBillingVideoUsageRate"
+        "id": {
+          "type": "string"
         },
         "link": {
           "$ref": "Link"
-        },
-        "rateAmount": {
-          "$ref": "Money"
-        },
-        "customerAccount": {
-          "$ref": "Account"
-        },
-        "id": {
-          "type": "string"
         },
         "creationDate": {
           "type": "string",
           "format": "date-time"
         },
-        "paymentItem": {
-          "$ref": "PaymentItem"
-        },
-        "appliedCustomerBillingTelephoneUsageRate": {
-          "$ref": "AppliedCustomerBillingTelephoneUsageRate"
-        },
-        "appliedCustomerBillingAdjustment": {
-          "$ref": "AppliedCustomerBillingAdjustment"
-        },
-        "appliedCustomerBillingRateSpec": {
-          "$ref": "AppliedCustomerBillingRateSpec"
+        "rateAmount": {
+          "$ref": "Money"
         },
         "rateDescription": {
           "type": "string"
         },
+        "billingRateCode": {
+          "type": "string"
+        },
+        "account": {
+          "$ref": "AccountSummary"
+        },
+        "customerBill": {
+          "$ref": "CustomerBillSummary"
+        }
+      }
+    },
+    "BillCharge": {
+      "id": "BillCharge",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "creationDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "rateAmount": {
+          "$ref": "Money"
+        },
+        "rateDescription": {
+          "type": "string"
+        },
+        "billingRateCode": {
+          "type": "string"
+        },
+        "account": {
+          "$ref": "AccountSummary"
+        },
+        "customerBill": {
+          "$ref": "CustomerBill"
+        },
+        "paymentItem": {
+          "$ref": "PaymentItem"
+        },
+        "appliedCustomerBillingRateSpec": {
+          "$ref": "AppliedCustomerBillingRateSpec"
+        },
+        "appliedCustomerBillingVideoUsageRate": {
+          "$ref": "AppliedCustomerBillingVideoUsageRate"
+        },
+        "appliedCustomerBillingTelephoneUsageRate": {
+          "$ref": "AppliedCustomerBillingTelephoneUsageRate"
+        },
         "appliedCustomerBillingTaxRate": {
           "$ref": "AppliedCustomerBillingTaxRate"
+        },
+        "recurringAppliedCustomerBillingProductCharge": {
+          "$ref": "RecurringAppliedCustomerBillingProductCharge"
+        },
+        "oneTimeAppliedCustomerBillingProductCharge": {
+          "$ref": "OneTimeAppliedCustomerBillingProductCharge"
         },
         "appliedCustomerBillingRefund": {
           "$ref": "AppliedCustomerBillingRefund"
         },
-        "billingRateCode": {
-          "type": "string"
+        "appliedCustomerBillingAdjustment": {
+          "$ref": "AppliedCustomerBillingAdjustment"
         }
       }
     },
@@ -13443,12 +13474,47 @@
         }
       }
     },
+    "CustomerBillSummary": {
+      "id": "CustomerBillSummary",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "billNo": {
+          "type": "string"
+        },
+        "billAmount": {
+          "$ref": "Money"
+        },
+        "billDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "paymentDueDate": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
     "CustomerBill": {
       "id": "CustomerBill",
       "type": "object",
       "properties": {
+        "id": {
+          "type": "string"
+        },
         "link": {
           "$ref": "Link"
+        },
+        "billNo": {
+          "type": "string"
+        },
+        "billAmount": {
+          "$ref": "Money"
         },
         "billDate": {
           "type": "string",
@@ -13458,37 +13524,11 @@
           "type": "string",
           "format": "date-time"
         },
-        "customerAccount": {
-          "$ref": "AccountSummary"
-        },
-        "billAmount": {
-          "$ref": "Money"
-        },
-        "id": {
-          "type": "string"
-        },
-        "paymentItem": {
-          "type": "array",
-          "items": {
-            "$ref": "PaymentItem"
-          }
-        },
-        "document": {
-          "$ref": "Document"
-        },
-        "customerBillSpec": {
-          "$ref": "CustomerBillSpec"
-        },
-        "financialCharges": {
-          "type": "array",
-          "items": {
-            "$ref": "FinancialCharge"
-          }
-        },
-        "billNo": {
-          "type": "string"
-        },
         "creditDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "mailingDate": {
           "type": "string",
           "format": "date-time"
         },
@@ -13499,12 +13539,29 @@
         "billCharges": {
           "type": "array",
           "items": {
-            "$ref": "BillCharge"
+            "$ref": "BillChargeSummary"
           }
         },
-        "mailingDate": {
-          "type": "string",
-          "format": "date-time"
+        "document": {
+          "$ref": "Document"
+        },
+        "financialCharges": {
+          "type": "array",
+          "items": {
+            "$ref": "FinancialCharge"
+          }
+        },
+        "customerBillSpec": {
+          "$ref": "CustomerBillSpec"
+        },
+        "account": {
+          "$ref": "AccountSummary"
+        },
+        "paymentItem": {
+          "type": "array",
+          "items": {
+            "$ref": "PaymentItem"
+          }
         }
       }
     },
@@ -13584,34 +13641,59 @@
         }
       }
     },
+    "CustomerPaymentSummary": {
+      "id": "CustomerPaymentSummary",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "paymentConfirmation": {
+          "type": "string"
+        },
+        "amount": {
+          "$ref": "Money"
+        },
+        "remainingAmount": {
+          "$ref": "Money"
+        },
+        "paymentDate": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
     "CustomerPayment": {
       "id": "CustomerPayment",
       "type": "object",
       "properties": {
-        "amount": {
-          "$ref": "Money"
-        },
         "id": {
           "type": "string"
         },
-        "paymentItem": {
-          "type": "array",
-          "items": {
-            "$ref": "PaymentItem"
-          }
+        "link": {
+          "$ref": "Link"
+        },
+        "paymentConfirmation": {
+          "type": "string"
+        },
+        "amount": {
+          "$ref": "Money"
+        },
+        "remainingAmount": {
+          "$ref": "Money"
         },
         "paymentDate": {
           "type": "string",
           "format": "date-time"
         },
-        "remainingAmount": {
-          "$ref": "Money"
-        },
-        "paymentConfirmation": {
-          "type": "string"
-        },
-        "link": {
-          "$ref": "Link"
+        "paymentItems": {
+          "type": "array",
+          "items": {
+            "$ref": "PaymentItemSummary"
+          }
         },
         "paymentMethods": {
           "type": "array",
@@ -13880,6 +13962,21 @@
         }
       }
     },
+    "PaymentItemSummary": {
+      "id": "PaymentItemSummary",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "appliedAmount": {
+          "$ref": "Money"
+        }
+      }
+    },
     "PaymentItem": {
       "id": "PaymentItem",
       "type": "object",
@@ -13887,20 +13984,38 @@
         "id": {
           "type": "string"
         },
-        "billCharge": {
-          "$ref": "BillCharge"
-        },
-        "customerBill": {
-          "$ref": "CustomerBill"
+        "link": {
+          "$ref": "Link"
         },
         "appliedAmount": {
           "$ref": "Money"
         },
+        "customerBill": {
+          "$ref": "CustomerBillSummary"
+        },
+        "billCharge": {
+          "$ref": "BillChargeSummary"
+        },
         "customerPayment": {
-          "$ref": "CustomerPayment"
+          "$ref": "CustomerPaymentSummary"
+        }
+      }
+    },
+    "PaymentMethodSummary": {
+      "id": "PaymentMethod",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
         },
         "link": {
           "$ref": "Link"
+        },
+        "paymentMethodName": {
+          "type": "string"
+        },
+        "paymentDescription": {
+          "type": "string"
         }
       }
     },
@@ -13908,47 +14023,71 @@
       "id": "PaymentMethod",
       "type": "object",
       "properties": {
-        "tokenizedPaymentCard": {
-          "$ref": "TokenizedPaymentCard"
-        },
-        "tokenizedThirdParty": {
-          "$ref": "TokenizedThirdParty"
-        },
         "id": {
           "type": "string"
-        },
-        "paymentCard": {
-          "$ref": "PaymentCard"
-        },
-        "check": {
-          "$ref": "Check"
-        },
-        "fundsTransfer": {
-          "$ref": "FundsTransfer"
-        },
-        "paymentPlan": {
-          "type": "array",
-          "items": {
-            "$ref": "PaymentPlan"
-          }
-        },
-        "customerPayment": {
-          "type": "array",
-          "items": {
-            "$ref": "CustomerPayment"
-          }
         },
         "link": {
           "$ref": "Link"
         },
-        "cash": {
-          "$ref": "Cash"
+        "paymentMethodName": {
+          "type": "string"
         },
         "paymentDescription": {
           "type": "string"
         },
-        "paymentMethodName": {
+        "customerPayment": {
+          "type": "array",
+          "items": {
+            "$ref": "CustomerPaymentSummary"
+          }
+        },
+        "paymentPlan": {
+          "type": "array",
+          "items": {
+            "$ref": "PaymentPlanSummary"
+          }
+        },
+        "paymentCard": {
+          "$ref": "PaymentCard"
+        },
+        "tokenizedThirdParty": {
+          "$ref": "TokenizedThirdParty"
+        },
+        "tokenizedPaymentCard": {
+          "$ref": "TokenizedPaymentCard"
+        },
+        "fundsTransfer": {
+          "$ref": "FundsTransfer"
+        },
+        "cash": {
+          "$ref": "Cash"
+        },
+        "check": {
+          "$ref": "Check"
+        }
+      }
+    },
+    "PaymentPlanSummary": {
+      "id": "PaymentPlanSummary",
+      "type": "object",
+      "properties": {
+        "id": {
           "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "priority": {
+          "type": "integer"
+        },
+        "status": {
+          "type": "boolean"
+        },
+        "paymentPlanType": {
+          "$ref": "PaymentPlanType"
+        },
+        "paymentLimit": {
+          "$ref": "Money"
         }
       }
     },
@@ -13959,29 +14098,29 @@
         "id": {
           "type": "string"
         },
-        "customerAccounts": {
-          "type": "array",
-          "items": {
-            "$ref": "Account"
-          }
-        },
-        "status": {
-          "type": "boolean"
+        "link": {
+          "$ref": "Link"
         },
         "priority": {
           "type": "integer"
         },
-        "link": {
-          "$ref": "Link"
+        "status": {
+          "type": "boolean"
         },
         "paymentPlanType": {
           "$ref": "PaymentPlanType"
         },
-        "paymentMethod": {
-          "$ref": "PaymentMethod"
-        },
         "paymentLimit": {
           "$ref": "Money"
+        },
+        "paymentMethod": {
+          "$ref": "PaymentMethodSummary"
+        },
+        "accounts": {
+          "type": "array",
+          "items": {
+            "$ref": "AccountSummary"
+          }
         }
       }
     },
