@@ -11617,16 +11617,19 @@
           "type": "string"
         },
         "type": {
-          "$ref": "AccountType"
+          "type": "string",
+          "description": "Individual, Joint, Other"
         },
         "pin": {
           "type": "integer"
         },
         "status": {
-          "$ref": "AccountStatus"
+          "type": "string",
+          "description": "Active, Suspended, Inactive, Closed"
         },
         "financialStatus": {
-          "$ref": "AccountFinancialStatus"
+          "type": "string",
+          "description": "Current, Due ,InArrears, Delinquent"
         },
         "creditLimit": {
           "type": "integer"
@@ -13286,22 +13289,116 @@
         }
       }
     },
-    "AccountStatus": {
-      "type": "string",
-      "enum": [
-        "Active",
-        "Suspended",
-        "Inactive",
-        "Closed"
-      ]
+    "AppliedCustomerBillingRateSpec": {
+      "id": "AppliedCustomerBillingRateSpec",
+      "type": "object",
+      "properties": {
+
+      }
     },
-    "AccountType": {
-      "type": "string",
-      "description": "Individual, Joint, Other"
+    "AppliedCustomerBillingVideoUsageRate": {
+      "id": "AppliedCustomerBillingVideoUsageRate",
+      "type": "object",
+      "properties": {
+        "isAdultContent": {
+          "type": "boolean"
+        },
+        "videoUsageType": {
+          "type": "string",
+          "description": "VIDEO_ON_DEMAND, PAY_PER_VIEW"
+        }
+      }
     },
-    "AccountFinancialStatus": {
-      "type": "string",
-      "description": "Current, Due ,InArrears, Delinquent"
+    "AppliedCustomerBillingTelephoneUsageRate": {
+      "id": "AppliedCustomerBillingTelephoneUsageRate",
+      "type": "object",
+      "properties": {
+        "calledNumber": {
+          "type": "string"
+        },
+        "callingNumber": {
+          "type": "string"
+        },
+        "callDuration": {
+          "type": "string"
+        },
+        "appliedRate": {
+          "type": "string"
+        },
+        "telephoneUsageType": {
+          "type": "string",
+          "description": "LONG_DISTANCE, DIRECTORY_ASSISTANCE, COLLECT, THIRD_PARTY, AT_LONG_DISTANCE"
+        },
+        "callDestination": {
+          "type": "string"
+        },
+        "callDate": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "AppliedCustomerBillingTaxRate": {
+      "id": "AppliedCustomerBillingTaxRate",
+      "type": "object",
+      "properties": {
+        "customerTaxId": {
+          "type": "string"
+        },
+        "taxType": {
+          "type": "string"
+        },
+        "taxCategory": {
+          "type": "string"
+        }
+      }
+    },
+    "RecurringAppliedCustomerBillingProductCharge": {
+      "id": "RecurringAppliedCustomerBillingProductCharge",
+      "type": "object",
+      "properties": {
+        "recurringChargeFromDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "recurringChargeThroughDate": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "OneTimeAppliedCustomerBillingProductCharge": {
+      "id": "OneTimeAppliedCustomerBillingProductCharge",
+      "type": "object",
+      "properties": {
+        "oneTimeChargeType": {
+          "type": "string"
+        }
+      }
+    },
+    "AppliedCustomerBillingRefund": {
+      "id": "AppliedCustomerBillingRefund",
+      "type": "object",
+      "properties": {
+        "refundType": {
+          "type": "string",
+          "description": "Cash, CreditCard"
+        }
+      }
+    },
+    "AppliedCustomerBillingAdjustment": {
+      "id": "AppliedCustomerBillingAdjustment",
+      "type": "object",
+      "properties": {
+        "adjustmentFromDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "adjustmentThroughDate": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
     },
     "BillChargeSummary": {
       "id": "BillChargeSummary",
@@ -13361,10 +13458,10 @@
           "$ref": "AccountSummary"
         },
         "customerBill": {
-          "$ref": "CustomerBill"
+          "$ref": "CustomerBillSummary"
         },
         "paymentItem": {
-          "$ref": "PaymentItem"
+          "$ref": "PaymentItemSummary"
         },
         "appliedCustomerBillingRateSpec": {
           "$ref": "AppliedCustomerBillingRateSpec"
