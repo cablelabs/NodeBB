@@ -14255,7 +14255,30 @@
     "SiteList": { },
     "StatusEntry": { },
     "SystemContact": { },
-    "TelephoneNumber": { },
+    "TelephoneNumber": {
+      "id": "TelephoneNumber",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "type": {
+          "type": "string"
+        },
+        "number": {
+          "type": "string"
+        },
+        "extension": {
+          "type": "string"
+        },
+        "validFor": {
+          "$ref": "TimePeriod"
+        }
+      }
+    },
     "Ticket": { },
     "TicketLocation": { },
     "TicketCategory": { },
