@@ -11603,11 +11603,38 @@
     "Account": {
       "type": "object",
       "properties": {
-        "sites": {
-          "type": "array",
-          "items": {
-            "$ref": "SiteSummary"
-          }
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "accountNumber": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "AccountType"
+        },
+        "pin": {
+          "type": "integer"
+        },
+        "status": {
+          "$ref": "AccountStatus"
+        },
+        "financialStatus": {
+          "$ref": "AccountFinancialStatus"
+        },
+        "creditLimit": {
+          "type": "integer"
+        },
+        "customer": {
+          "$ref": "CustomerSummary"
+        },
+        "serviceAddress": {
+          "$ref": "PropertyAddress"
         },
         "primaryUser": {
           "$ref": "UserSummary"
@@ -11618,53 +11645,20 @@
             "$ref": "UserSummary"
           }
         },
-        "taxExemptions": {
-          "$ref": "TaxExemptions"
-        },
-        "status": {
-          "$ref": "AccountStatus"
-        },
-        "link": {
-          "$ref": "Link"
-        },
-        "creditLimit": {
-          "type": "integer"
-        },
-        "type": {
-          "$ref": "AccountType"
-        },
-        "customer": {
-          "$ref": "CustomerSummary"
-        },
-        "id": {
-          "type": "string"
+        "financials": {
+          "$ref": "FinancialSummary"
         },
         "billing": {
           "$ref": "BillingSummary"
         },
-        "accountNumber": {
-          "type": "string"
-        },
-        "pin": {
-          "type": "integer"
-        },
-        "name": {
-          "type": "string"
-        },
-        "financialStatus": {
-          "$ref": "AccountFinancialStatus"
-        },
         "payments": {
           "$ref": "PaymentSummary"
         },
-        "relatedAccounts": {
+        "products": {
           "type": "array",
           "items": {
-            "$ref": "AccountSummary"
+            "$ref": "ProductSummary"
           }
-        },
-        "financials": {
-          "$ref": "FinancialSummary"
         },
         "devices": {
           "type": "array",
@@ -11672,10 +11666,13 @@
             "$ref": "DeviceSummary"
           }
         },
-        "products": {
+        "taxExemptions": {
+          "$ref": "TaxExemptions"
+        },
+        "sites": {
           "type": "array",
           "items": {
-            "$ref": "ProductSummary"
+            "$ref": "SiteSummary"
           }
         },
         "preferences": {
@@ -11684,8 +11681,11 @@
             "$ref": "PreferenceSummary"
           }
         },
-        "serviceAddress": {
-          "$ref": "PropertyAddress"
+        "relatedAccounts": {
+          "type": "array",
+          "items": {
+            "$ref": "AccountSummary"
+          }
         }
       }
     },
@@ -14148,7 +14148,58 @@
         }
       }
     },
-    "ProductOffering": { },
+    "ProductOffering": {
+      "id": "ProductOffering",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "eplProducts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "EPLProduct"
+          }
+        },
+        "status": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "link": {
+          "type": "object",
+          "$ref": "Link",
+          "required": true
+        },
+        "validFor": {
+          "type": "object",
+          "$ref": "TimePeriod",
+          "required": true
+        },
+        "eplProductConfigurations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "EPLProductConfiguration"
+          }
+        },
+        "products": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "Product"
+          }
+        },
+        "isBundle": {
+          "type": "boolean"
+        }
+      }
+    },
     "ProductPrice": { },
     "ProductProperties": { },
     "ProductRelationship": { },
