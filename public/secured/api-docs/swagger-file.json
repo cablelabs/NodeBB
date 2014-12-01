@@ -14103,11 +14103,23 @@
         "id": {
           "type": "string"
         },
-        "alternateNames": {
-          "type": "array",
-          "items": {
-            "$ref": "OrganizationName"
-          }
+        "link": {
+          "$ref": "Link"
+        },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "isLegalEntity": {
+          "type": "boolean"
+        },
+        "existsDuring": {
+          "$ref": "TimePeriod"
+        },
+        "validFor": {
+          "$ref": "TimePeriod"
         },
         "identificationDetails": {
           "type": "array",
@@ -14115,26 +14127,14 @@
             "$ref": "OrganizationIdentification"
           }
         },
-        "existsDuring": {
-          "$ref": "TimePeriod"
+        "alternateNames": {
+          "type": "array",
+          "items": {
+            "$ref": "OrganizationName"
+          }
         },
         "organizationName": {
           "$ref": "OrganizationName"
-        },
-        "name": {
-          "type": "string"
-        },
-        "link": {
-          "$ref": "Link"
-        },
-        "validFor": {
-          "$ref": "TimePeriod"
-        },
-        "type": {
-          "type": "string"
-        },
-        "isLegalEntity": {
-          "type": "boolean"
         }
       }
     },
