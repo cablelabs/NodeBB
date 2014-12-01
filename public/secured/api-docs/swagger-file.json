@@ -8942,7 +8942,7 @@
     "/customerorderitem": {
       "post": {
         "tags": [
-          "Customer"
+          "Interaction"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -8978,7 +8978,7 @@
     "/customerorderitem/{id}": {
       "get": {
         "tags": [
-          "Customer"
+          "Interaction"
         ],
         "summary": "Find resource by ID",
         "description": "The purpose for the Customer Order expressed in terms of a Product Offering or a Product (for a change order) inherited from BusinessInteractionItem.",
@@ -9021,7 +9021,7 @@
       },
       "put": {
         "tags": [
-          "Customer"
+          "Interaction"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -9064,7 +9064,7 @@
       },
       "delete": {
         "tags": [
-          "Customer"
+          "Interaction"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -11558,12 +11558,13 @@
     },
     "Quantity": {
       "id": "Quantity",
+      "type": "Object",
       "properties": {
         "amount": {
-          "type": "String"
+          "type": "string"
         },
         "units": {
-          "type": "String"
+          "type": "string"
         }
       }
     },
@@ -11571,10 +11572,10 @@
       "id": "Money",
       "properties": {
         "amount": {
-          "type": "String"
+          "type": "string"
         },
         "units": {
-          "type": "String"
+          "type": "string"
         }
       }
     },
@@ -11582,10 +11583,10 @@
       "id": "Duration",
       "properties": {
         "units": {
-          "type": "String"
+          "type": "string"
         },
         "amount": {
-          "type": "Number"
+          "type": "number"
         }
       }
     },
@@ -12421,16 +12422,13 @@
           "type": "string"
         },
         "link": {
-          "type": "object",
           "$ref": "Link"
         },
         "name": {
           "type": "string"
         },
         "profile": {
-          "type": "object",
-          "$ref": "PartySummary",
-          "required": true
+          "$ref": "PartySummary"
         },
         "customerId": {
           "type": "string"
@@ -12439,9 +12437,7 @@
           "type": "string"
         },
         "customerSegment": {
-          "type": "object",
-          "$ref": "CustomerSegment",
-          "required": true
+          "$ref": "CustomerSegment"
         },
         "status": {
           "type": "string"
@@ -12449,21 +12445,18 @@
         "contactPhones": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "TelephoneNumber"
           }
         },
         "contactEmails": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "EmailContact"
           }
         },
         "accounts": {
           "type": "array",
           "items": {
-            "type": "object",
             "$ref": "AccountSummary"
           }
         }
@@ -12479,7 +12472,7 @@
           "$ref": "Link"
         },
         "description": {
-          "type": "String"
+          "type": "string"
         },
         "interactionDate": {
           "type": "date"
@@ -12602,7 +12595,7 @@
       "id": "EthernetInterface",
       "properties": {
         "id": {
-          "type": "String"
+          "type": "string"
         },
         "link": {
           "$ref": "Link"
@@ -12611,7 +12604,7 @@
           "type": "number"
         },
         "deviceConfigMethod": {
-          "type": "String"
+          "type": "string"
         },
         "hasCarrierDetect": {
           "type": "boolean"
@@ -13016,7 +13009,7 @@
       "id": "EthernetInterfaceConfiguration",
       "properties": {
         "id": {
-          "type": "String"
+          "type": "string"
         },
         "link": {
           "$ref": "Link"
@@ -13025,7 +13018,7 @@
           "type": "number"
         },
         "deviceConfigMethod": {
-          "type": "String"
+          "type": "string"
         },
         "hasCarrierDetect": {
           "type": "boolean"
@@ -13057,7 +13050,7 @@
       "id": "EthernetInterfaceDeltas",
       "properties": {
         "id": {
-          "type": "String"
+          "type": "string"
         },
         "link": {
           "$ref": "Link"
@@ -13204,16 +13197,16 @@
           "$ref": "Link"
         },
         "description": {
-          "type": "String"
+          "type": "string"
         },
         "name": {
-          "type": "String"
+          "type": "string"
         },
         "type": {
-          "type": "String"
+          "type": "string"
         },
         "version": {
-          "type": "String"
+          "type": "string"
         },
         "managementMethodCurrent": {
           "type": "number"
@@ -13225,13 +13218,13 @@
           "type": "number"
         },
         "macAddress": {
-          "type": "String"
+          "type": "string"
         },
         "manufactureDateStamp": {
           "type": "date"
         },
         "otherIdentifier": {
-          "type": "String"
+          "type": "string"
         },
         "powerState": {
           "type": "number"
@@ -13246,7 +13239,7 @@
           "$ref": "TimePeriod"
         },
         "hostName": {
-          "type": "String"
+          "type": "string"
         },
         "ownedBy": {
           "$ref": "Customer"
@@ -13583,11 +13576,11 @@
         "action": {
           "type": "string"
         },
-        "quantity": {
-          "$ref": "Quantity"
-        },
         "interactionItemStatus": {
           "type": "string"
+        },
+        "quantity": {
+          "$ref": "Quantity"
         }
       }
     },
