@@ -6330,7 +6330,7 @@
         ],
         "summary": "Find resource by ID",
         "description": "ServiceSite is a customer location where a customer is receiving service. It is the point at which service is delivered to a customer, and is associated with a service address (UrbanPropertyAddress).",
-        "displayName": "Site ",
+        "displayName": "Site",
         "produces": [
           "application/json",
           "application/xml"
@@ -6443,11 +6443,11 @@
     "/site/{id}/services": {
       "get": {
         "tags": [
-
           "Location"
         ],
         "summary": "Find Services in a specific site",
         "description": "A Service represents the object that will be instantiated. Each Service instance can be different; therefore, Service is limited to owning just the changeable attributes, methods, relationships, and constraints that can be instantiated. The invariant attributes, methods, relationships, and constraints that can be instantiated are defined by a ServiceSpecification.",
+        "displayName": "Service on Site",
         "produces": [
           "application/json",
           "application/xml"

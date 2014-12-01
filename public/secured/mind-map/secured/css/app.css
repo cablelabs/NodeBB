@@ -1,0 +1,190 @@
+body {
+  font-family: Roboto, 'Lucida Grande', sans-serif;
+}
+.noshow,
+opacity: 0 {
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
+#graph {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 0 1em 1em;
+  min-width: 700px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1000px) {
+  #graph {
+    font-size: 80%;
+  }
+}
+@media screen and (max-width: 800px) {
+  #graph {
+    font-size: 70%;
+  }
+}
+.domain.open .entities {
+  height: auto;
+  padding: 0.5em 1em;
+  opacity: 1;
+}
+.domain {
+  flex: 0 1 18em;
+  height: calc(100% - 7em);
+  border-radius: 2em;
+  text-align: center;
+  margin: 2em 0.2em;
+  vertical-align: top;
+  background: rgba(0,0,0,0.6);
+}
+.domain .domain-title {
+  background: #000;
+  font-size: 1.3em;
+  color: #919191;
+  margin: 0;
+  padding: 1em 0.5em;
+  border-top-left-radius: 1.2em;
+  border-top-right-radius: 1.2em;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+}
+.domain .domain-title::first-letter {
+  color: #bebebe;
+  font-size: 1.5em;
+}
+.entities {
+  height: 0;
+  padding: 0 1em;
+  opacity: 0;
+  transition: 0.3s all ease-out;
+  border-bottom-left-radius: 1.2em;
+  border-bottom-right-radius: 1.2em;
+}
+.entity {
+  display: block;
+  margin: 1.5em auto;
+  padding: 0.2em 0.5em 1em;
+  border-radius: 0.6em;
+  cursor: pointer;
+  background: #fafafa;
+  color: #000;
+  letter-spacing: 0.08em;
+  transition: all 0.3s ease-out;
+  overflow: hidden;
+}
+.entity.selected {
+  border: 3px solid #f00;
+  color: #000;
+}
+.entity.noshow {
+  padding: 0;
+  margin: 0;
+  height: 0;
+}
+.entity-title {
+  font-size: 1.2em;
+  margin: 0.5em 0 0;
+  letter-spacing: 0.1em;
+}
+.glyphs {
+  display: flex;
+  transition: all 0.1s ease-out;
+  justify-content: space-around;
+  opacity: 0;
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+}
+.api-link,
+.description {
+  flex: 0 1 2em;
+  display: none;
+  color: #000;
+  text-decoration: none;
+}
+.hop-trail {
+  color: #fff;
+}
+.glyphs.selected .description,
+.description:hover,
+.api-link:hover {
+  color: #f00;
+}
+.entity:hover .glyphs,
+.entity.selected .glyphs,
+.glyphs.selected {
+  height: 1.5em;
+  opacity: 1;
+  margin-top: 1em;
+}
+.entity:hover .glyphs .api-link,
+.entity.selected .glyphs .api-link,
+.glyphs.selected .api-link,
+.entity:hover .glyphs .description,
+.entity.selected .glyphs .description,
+.glyphs.selected .description {
+  display: block;
+}
+.depth-2 {
+  background: #a1acbb;
+}
+.depth-3 {
+  background: #aa9a9b;
+}
+.view-depth-select {
+  display: inline-block;
+  border: 1px solid #c0c0c0;
+  width: 40px;
+  height: 40px;
+  border-radius: 0.5em;
+  margin-left: 1em;
+  vertical-align: middle;
+  line-height: 37px;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+.view-depth-select.selected {
+  border: 3px solid #f00;
+}
+.popover.bottom {
+  padding: 0;
+}
+.popover.bottom>.arrow:after {
+  border-bottom-color: #000;
+}
+.popover-title {
+  background: #000;
+}
+.graph-settings {
+  text-align: center;
+  padding-top: 20px;
+}
+#search-form,
+#depth-select {
+  vertical-align: middle;
+}
+#depth-select {
+  margin-left: 1em;
+}
+#search-form {
+  max-width: 500px;
+  display: inline-block;
+}
+#search-form input,
+#search-form button {
+  background: #d0d0d0;
+  color: #8d8d8d;
+}
+.depth-set-wrap {
+  width: 400px;
+  display: inline-block;
+  margin-left: 50px;
+  margin-top: 1em;
+}
+#depth-select {
+  width: 50px;
+  display: inline-block;
+}
