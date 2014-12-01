@@ -14359,53 +14359,53 @@
       "id": "Preference",
       "type": "object",
       "properties": {
-        "rangeInterval": {
+        "id": {
           "type": "string"
-        },
-        "isSet": {
-          "type": "boolean"
-        },
-        "characteristicSequence": {
-          "type": "integer"
         },
         "link": {
           "$ref": "Link"
         },
-        "id": {
-          "type": "string"
-        },
-        "specCharacteristicDescription": {
+        "preferenceName": {
           "type": "string"
         },
         "description": {
           "type": "string"
         },
-        "preferenceName": {
-          "type": "string"
-        },
         "value": {
-          "type": "string"
-        },
-        "validFor": {
-          "$ref": "TimePeriod"
-        },
-        "specCharacteristicName": {
-          "type": "string"
-        },
-        "valueType": {
           "type": "string"
         },
         "unitOfMeasure": {
           "type": "string"
         },
-        "preferenceCategory": {
-          "$ref": "PreferenceCategory"
+        "rangeInterval": {
+          "type": "string"
+        },
+        "specCharacteristicName": {
+          "type": "string"
+        },
+        "specCharacteristicDescription": {
+          "type": "string"
+        },
+        "valueType": {
+          "type": "string"
+        },
+        "characteristicSequence": {
+          "type": "integer"
+        },
+        "isSet": {
+          "type": "boolean"
+        },
+        "validFor": {
+          "$ref": "TimePeriod"
         },
         "preferences": {
           "type": "array",
           "items": {
             "$ref": "PreferenceSummary"
           }
+        },
+        "preferenceCategory": {
+          "$ref": "PreferenceCategory"
         }
       }
     },
