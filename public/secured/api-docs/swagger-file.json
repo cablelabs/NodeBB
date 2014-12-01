@@ -948,7 +948,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/User Credential"
+              "$ref": "#/definitions/UserCredential"
             }
           }
         ],
@@ -995,7 +995,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/User Credential"
+              "$ref": "#/definitions/UserCredential"
             }
           },
           "400": {
@@ -1027,7 +1027,7 @@
             "description": "Instance object that needs to be updated.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/User Credential"
+              "$ref": "#/definitions/UserCredential"
             }
           }
         ],
@@ -1035,7 +1035,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/User Credential"
+              "$ref": "#/definitions/UserCredential"
             }
           },
           "400": {
@@ -13179,14 +13179,23 @@
         }
       }
     },
-    "Characteristic": {
-      "id": "Characteristic",
+    "DeviceSummary": {
+      "id": "DeviceSummary",
       "properties": {
         "id": {
           "type": "string"
         },
         "link": {
           "$ref": "Link"
+        },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "macAddress": {
+          "type": "string"
         }
       }
     },
@@ -14644,33 +14653,265 @@
     "Ticket": { },
     "TicketLocation": { },
     "TicketCategory": { },
-    "User": { },
     "UserSummary": {
       "type": "object",
       "properties": {
         "id": {
           "type": "string"
         },
+        "link": {
+          "$ref": "Link"
+        },
+        "username": {
+          "type": "string"
+        },
         "name": {
           "type": "string"
         },
-        "link": {
-          "type": "object",
-          "$ref": "Link"
-        },
-        "contactRole": {
-          "type": "string"
-        },
-        "accountRole": {
+        "status": {
           "type": "string"
         },
         "profile": {
-          "type": "object",
           "$ref": "PartySummary"
         }
       }
     },
-    "UserCredential": { },
+    "User": {
+      "id": "User",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "username": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "profile": {
+          "$ref": "PartySummary"
+        },
+        "contactPhones": {
+          "type": "array",
+          "items": {
+            "$ref": "TelephoneNumber"
+          }
+        },
+        "contactEmails": {
+          "type": "array",
+          "items": {
+            "$ref": "EmailContact"
+          }
+        },
+        "primaryAccount": {
+          "$ref": "AccountSummary"
+        },
+        "accounts": {
+          "type": "array",
+          "items": {
+            "$ref": "AccountSummary"
+          }
+        },
+        "devices": {
+          "type": "array",
+          "items": {
+            "$ref": "DeviceSummary"
+          }
+        },
+        "interactions": {
+          "type": "array",
+          "items": {
+            "$ref": "Link"
+          }
+        },
+        "transitions": {
+          "type": "array",
+          "items": {
+            "$ref": "Link"
+          }
+        },
+        "userCredentials": {
+          "type": "array",
+          "items": {
+            "$ref": "UserCredential"
+          }
+        }
+      }
+    },
+    "UserCredential": {
+      "id": "UserCredential",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "type": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "userAccountController": {
+          "type": "string"
+        },
+        "placeOfBirth": {
+          "type": "string"
+        },
+        "userCredentialCategory": {
+          "type": "string"
+        },
+        "validFor": {
+          "$ref": "TimePeriod"
+        },
+        "adminStatus": {
+          "type": "string",
+          "description": "Active, Suspended, Inactive, Closed"
+        },
+        "usageType": {
+          "type": "string",
+          "description": "Individual, Joint, Other"
+        },
+        "password": {
+          "type": "string"
+        },
+        "serviceProvider": {
+          "type": "string"
+        },
+        "serviceProviderName": {
+          "type": "string"
+        },
+        "serviceProviderData": {
+          "type": "string"
+        },
+        "characteristics": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "Characteristic"
+          }
+        }
+      }
+    },
+    "Characteristic": {
+      "id": "Characteristic",
+      "type": "object",
+      "properties": {
+        "characteristicId": {
+          "type": "string"
+        },
+        "characteristicName": {
+          "type": "string"
+        },
+        "characteristicDescription": {
+          "type": "string"
+        },
+        "unique": {
+          "type": "boolean"
+        },
+        "valueType": {
+          "type": "string"
+        },
+        "minCardinality": {
+          "type": "integer"
+        },
+        "maxCardinality": {
+          "type": "integer"
+        },
+        "extensible": {
+          "type": "boolean"
+        },
+        "derivationFormula": {
+          "type": "string"
+        },
+        "characteristicSequence": {
+          "type": "integer"
+        },
+        "validFor": {
+          "$ref": "TimePeriod"
+        },
+        "characteristicCategory": {
+          "type": "object",
+          "$ref": "CharacteristicCategory",
+          "required": true
+        },
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "CharacteristicValue"
+          }
+        }
+      }
+    },
+    "CharacteristicCategory": {
+      "id": "CharacteristicCategory",
+      "type": "object",
+      "properties": {
+        "characteristicCategoryId": {
+          "type": "string"
+        },
+        "categoryName": {
+          "type": "string"
+        },
+        "categoryDescription": {
+          "type": "string"
+        }
+      }
+    },
+    "CharacteristicCollection": {
+      "id": "CharacteristicCollection",
+      "type": "object",
+      "properties": {
+        "characteristic": {
+          "type": "array",
+          "items": {
+            "$ref": "Characteristic"
+          }
+        }
+      }
+    },
+    "CharacteristicValue": {
+      "id": "CharacteristicValue",
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "unitOfMeasure": {
+          "type": "string"
+        },
+        "valueType": {
+          "type": "string"
+        },
+        "isDefaultValue": {
+          "type": "boolean"
+        },
+        "valueFrom": {
+          "type": "string"
+        },
+        "valueTo": {
+          "type": "string"
+        },
+        "rangeInterval": {
+          "type": "string"
+        },
+        "valueSequence": {
+          "type": "integer"
+        },
+        "validFor": {
+          "$ref": "TimePeriod"
+        }
+      }
+    },
     "UserGroup": { }
   }
 }
