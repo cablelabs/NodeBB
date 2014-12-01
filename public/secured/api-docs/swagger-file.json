@@ -14593,7 +14593,30 @@
     "ServiceConfiguration": { },
     "SiteList": { },
     "StatusEntry": { },
-    "SystemContact": { },
+    "SystemContact": {
+      "id": "SystemContact",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "type": {
+          "type": "string"
+        },
+        "contactNotificationMethod": {
+          "type": "string"
+        },
+        "contactNotificationID": {
+          "type": "string"
+        },
+        "validFor": {
+          "$ref": "TimePeriod"
+        }
+      }
+    },
     "TelephoneNumber": {
       "id": "TelephoneNumber",
       "type": "object",
