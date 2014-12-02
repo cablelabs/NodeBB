@@ -2969,23 +2969,39 @@
     }
   },
   "EthernetInterface": {
+    "id": "EthernetInterface",
     "type": "object",
     "properties": {
+      "id": {
+        "type": "string"
+      },
+      "link": {
+        "$ref": "Link"
+      },
+      "customerInterfaceNumber": {
+        "type": "integer"
+      },
+      "deviceConfigMethod": {
+        "type": "string",
+        "description" : "0 - not configured, 1 - using the CONSOLE port, 2 - using the AUXILIARY port, 3 - using a virtual terminal interface, 4 - download through a TFTP server, 5 - download through an FTP server, 6 - download through a NMS"
+      },
+      "hasCarrierDetect": {
+        "type": "boolean"
+      },
       "hasDataLink": {
         "type": "boolean"
       },
-      "resourcePort": {
-        "type": "object",
-        "$ref": "ResourcePort",
-        "required": true
+      "isInterfaceEnabled": {
+        "type": "boolean"
       },
       "vendorInterfaceNumber": {
         "type": "integer"
       },
-      "link": {
-        "type": "object",
-        "$ref": "Link",
-        "required": true
+      "interfaceInitResetCount": {
+        "type": "integer"
+      },
+      "syncLostCount": {
+        "type": "integer"
       },
       "physicalPort": {
         "type": "object",
@@ -2997,26 +3013,10 @@
         "$ref": "MACAddress",
         "required": true
       },
-      "isInterfaceEnabled": {
-        "type": "boolean"
-      },
-      "id": {
-        "type": "string"
-      },
-      "customerInterfaceNumber": {
-        "type": "integer"
-      },
-      "interfaceInitResetCount": {
-        "type": "integer"
-      },
-      "hasCarrierDetect": {
-        "type": "boolean"
-      },
-      "deviceConfigMethod": {
-        "type": "string"
-      },
-      "syncLostCount": {
-        "type": "integer"
+      "resourcePort": {
+        "type": "object",
+        "$ref": "ResourcePort",
+        "required": true
       }
     }
   },
@@ -4450,12 +4450,16 @@
     }
   },
   "NetworkPath": {
+    "id": "NetworkPath",
     "type": "object",
     "properties": {
-      "framing": {
+      "alternatePathIdentifier": {
         "type": "string"
       },
-      "channelType": {
+      "noOfChannels": {
+        "type": "integer"
+      },
+      "topology": {
         "type": "string"
       },
       "signaling": {
@@ -4464,21 +4468,17 @@
       "direction": {
         "type": "string"
       },
-      "noOfChannels": {
-        "type": "integer"
+      "channelType": {
+        "type": "string"
+      },
+      "framing": {
+        "type": "string"
       },
       "terminationPoints": {
         "type": "array",
         "items": {
-          "type": "object",
           "$ref": "TerminationPoint"
         }
-      },
-      "topology": {
-        "type": "string"
-      },
-      "alternatePathIdentifier": {
-        "type": "string"
       }
     }
   },
@@ -4886,32 +4886,34 @@
     }
   },
   "PhysicalPort": {
+    "id": "PhysicalPort",
     "type": "object",
     "properties": {
       "duplexMode": {
-        "type": "integer"
+        "type": "integer",
+        "description": "0: Unknown, 1: Full Duplex, 2: Half Duplex"
       },
       "portNumber": {
         "type": "integer"
       },
-      "ifType": {
-        "type": "integer"
+      "typeOfPort": {
+        "type": "integer",
+        "description": "0: Unknown, 1: Ethernet, 2: FastEthernet, 3: Auto-Sensing, 4: GigabitEthernet, 5: FastGigabitEthernet, 6: DS-0, 7: DS-1, 8: DS-3, 9: T1, 10: T3, 11: E1, 12: E3, 13: OC-3, 14: OC-12, 15: OC-48, 16: OC-192, 17: RS-232C",
+        "required": "true"
       },
       "vendorPortName": {
         "type": "string"
       },
-      "card": {
-        "type": "object",
-        "$ref": "Card",
-        "required": true
+      "ifType": {
+        "type": "integer",
+        "description": "0: Unknown, 1: 10BaseT, 2: 100BaseT, 3: 10-100BaseT, 4: 1000BaseT, 5: 10000BaseT, 6: DS-0, 7: DS-1, 8: DS-3, 9: OC-3, 10: OC-12, 11: OC-48, 12: OC-192",
+        "required": "true"
       },
-      "typeOfPort": {
-        "type": "integer"
+      "card": {
+        "$ref": "Card"
       },
       "configuration": {
-        "type": "object",
-        "$ref": "PhysicalPortConfig",
-        "required": true
+        "$ref": "PhysicalPortConfig"
       }
     }
   },
@@ -7334,27 +7336,26 @@
     }
   },
   "TerminationPoint": {
+    "id": "TerminationPoint",
     "type": "object",
     "properties": {
-      "sideType": {
-        "type": "string"
-      },
-      "endPointLabel": {
-        "type": "string"
-      },
       "direction": {
-        "type": "string"
-      },
-      "typeOfTP": {
         "type": "string"
       },
       "vendorTPName": {
         "type": "string"
       },
+      "typeOfTP": {
+        "type": "string"
+      },
+      "endPointLabel": {
+        "type": "string"
+      },
+      "sideType": {
+        "type": "string"
+      },
       "ethernetInterface": {
-        "type": "object",
-        "$ref": "EthernetInterface",
-        "required": true
+        "$ref": "EthernetInterface"
       }
     }
   },
@@ -7687,48 +7688,45 @@
     }
   },
   "UNIConfig": {
+    "id": "UNIConfig",
     "type": "object",
     "properties": {
+      "configText": {
+        "type": "string"
+      },
+      "configBinary": {
+        "type": "array",
+        "items": {
+          "$ref": "Byte[]"
+        }
+      },
+      "configLocation": {
+        "$ref": "Link"
+      },
+      "configActivationType": {
+        "type": "string",
+        "description": "Base, Current, Backup, Planned, Test, Template"
+      },
+      "bandwidth": {
+        "$ref": "Quantity"
+      },
       "duplexMode": {
+        "type": "integer"
+      },
+      "macLayer": {
         "type": "integer"
       },
       "isColorBlind": {
         "type": "boolean"
       },
-      "configLocation": {
-        "type": "object",
-        "$ref": "Link",
-        "required": true
-      },
-      "macLayer": {
-        "type": "integer"
+      "isServiceMultiplexed": {
+        "type": "boolean"
       },
       "vlanTagging": {
         "type": "integer"
       },
-      "configActivationType": {
-        "type": "object",
-        "$ref": "ConfigurationActivationTypeEnum",
-        "required": true
-      },
-      "configText": {
-        "type": "string"
-      },
-      "configBinary": {
-        "type": "object",
-        "$ref": "Byte[]",
-        "required": true
-      },
       "mtuSize": {
         "type": "integer"
-      },
-      "isServiceMultiplexed": {
-        "type": "boolean"
-      },
-      "bandwidth": {
-        "type": "object",
-        "$ref": "Quantity",
-        "required": true
       }
     }
   },
@@ -7861,80 +7859,74 @@
   "UNIServiceConfiguration": {
     "type": "object",
     "properties": {
-      "cfsStatus": {
-        "type": "integer"
+      "id": {
+        "type": "string"
       },
-      "startMode": {
-        "type": "integer"
+      "link": {
+        "$ref": "Link"
       },
-      "evc": {
-        "type": "object",
-        "$ref": "EVCServiceConfiguration",
-        "required": true
+      "hasStarted": {
+        "type": "boolean"
       },
       "isServiceEnabled": {
         "type": "boolean"
       },
-      "link": {
-        "type": "object",
-        "$ref": "Link",
-        "required": true
-      },
-      "isTSP": {
+      "isMandatory": {
         "type": "boolean"
       },
-      "isCustomerFacingService": {
-        "type": "boolean"
+      "startMode": {
+        "type": "integer"
       },
-      "uniService": {
-        "type": "object",
-        "$ref": "UNIService",
-        "required": true
+      "isStateful": {
+        "type": "boolean"
       },
       "isFCCReportable": {
         "type": "boolean"
       },
-      "id": {
-        "type": "string"
-      },
-      "hasStarted": {
+      "isTSP": {
         "type": "boolean"
       },
       "isResourceFacingService": {
         "type": "boolean"
       },
+      "isCustomerFacingService": {
+        "type": "boolean"
+      },
+      "rfsStatus": {
+        "type": "integer"
+      },
+      "cfsStatus": {
+        "type": "integer"
+      },
       "customerFacingService": {
         "type": "array",
         "items": {
-          "type": "object",
           "$ref": "UNIServiceConfiguration"
         }
       },
-      "isMandatory": {
-        "type": "boolean"
-      },
-      "path": {
-        "type": "object",
-        "$ref": "NetworkPath",
-        "required": true
+      "resourceFacingService": {
+        "type": "array",
+        "items": {
+          "$ref": "UNIServiceConfiguration"
+        }
       },
       "config": {
         "type": "object",
         "$ref": "UNIConfig",
         "required": true
       },
-      "resourceFacingService": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "$ref": "UNIServiceConfiguration"
-        }
+      "path": {
+        "$ref": "NetworkPath"
       },
-      "isStateful": {
-        "type": "boolean"
+      "uniService": {
+        "type": "object",
+        "$ref": "UNIService",
+        "required": true
       },
-      "rfsStatus": {
-        "type": "integer"
+      "evc": {
+        "type": "object",
+        "$ref": "EVCServiceConfiguration",
+        "required": true
       }
     }
   },
