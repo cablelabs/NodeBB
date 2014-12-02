@@ -12837,6 +12837,7 @@
     },
     "UNIConfig": {
       "id": "UNIConfig",
+      "type": "object",
       "properties": {
         "configText": {
           "type": "string"
@@ -12844,7 +12845,7 @@
         "configBinary": {
           "type": "array",
           "items": {
-            "type": "number"
+            "$ref": "number"
           }
         },
         "configLocation": {
@@ -12852,23 +12853,16 @@
         },
         "configActivationType": {
           "type": "string",
-          "enum": [
-            "Base",
-            "Current",
-            "Backup",
-            "Planned",
-            "Test",
-            "Template"
-          ]
+          "description": "Base, Current, Backup, Planned, Test, Template"
         },
         "bandwidth": {
           "$ref": "Quantity"
         },
         "duplexMode": {
-          "type": "number"
+          "type": "integer"
         },
         "macLayer": {
-          "type": "number"
+          "type": "integer"
         },
         "isColorBlind": {
           "type": "boolean"
@@ -12877,10 +12871,11 @@
           "type": "boolean"
         },
         "vlanTagging": {
-          "type": "number"
+          "type": "integer",
+          "description": "Defines how 802.1q VLAN Tags are handled at the UNI. Legal values are:  0 - unknown / undefined, 1 - VLAN Tags are prohibited at the UNI, 2 - VLAN Tags are mapped at the UNI (see the VLANtoEVCMap), 3 - VLAN Tags are preserved at the UNI via Q-in-Q VLAN Tag Stacking, 4 - VLAN Tags are preserved at the UNI via MAC-in-MAC Header Stacking"
         },
         "mtuSize": {
-          "type": "number"
+          "type": "integer"
         }
       }
     },
@@ -13202,6 +13197,7 @@
     },
     "UNIService": {
       "id": "UNIService",
+      "type": "object",
       "properties": {
         "id": {
           "type": "string"
@@ -13219,7 +13215,8 @@
           "type": "boolean"
         },
         "startMode": {
-          "type": "number"
+          "type": "number",
+          "description": "0:  Unknown, 1:  Automatically by the managed environment, 2:  Automatically by the owning device, 3:  Manually by the Provider of the Service, 4:  Manually by a Customer of the Provider, 5:  Any of the above"
         },
         "isStateful": {
           "type": "boolean"
@@ -13236,8 +13233,22 @@
         "isCustomerFacingService": {
           "type": "boolean"
         },
-        "cfsStatus": {
+        "rfsStatus": {
           "type": "number"
+        },"cfsStatus": {
+          "type": "number"
+        },
+        "customerFacingService": {
+          "type": "array",
+          "items": {
+            "$ref": "UNIService"
+          }
+        },
+        "resourceFacingService": {
+          "type": "array",
+          "items": {
+            "$ref": "UNIService"
+          }
         },
         "config": {
           "$ref": "UNIConfig"
