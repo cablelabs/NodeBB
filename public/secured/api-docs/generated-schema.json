@@ -1344,6 +1344,7 @@
     }
   },
   "Changes": {
+    "id": "Changes",
     "type": "object",
     "properties": {
       "description": {
@@ -3258,107 +3259,93 @@
     }
   },
   "EVCServiceConfiguration": {
+    "id": "EVCServiceConfiguration",
     "type": "object",
     "properties": {
-      "cfsStatus": {
-        "type": "integer"
+      "id": {
+        "type": "string"
       },
-      "startMode": {
-        "type": "integer"
+      "link": {
+        "$ref": "Link"
+      },
+      "hasStarted": {
+        "type": "boolean"
       },
       "isServiceEnabled": {
         "type": "boolean"
       },
-      "link": {
-        "type": "object",
-        "$ref": "Link",
-        "required": true
-      },
-      "isTSP": {
+      "isMandatory": {
         "type": "boolean"
       },
-      "isCustomerFacingService": {
+      "startMode": {
+        "type": "integer"
+      },
+      "isStateful": {
         "type": "boolean"
       },
       "isFCCReportable": {
         "type": "boolean"
       },
-      "id": {
-        "type": "string"
-      },
-      "hasStarted": {
+      "isTSP": {
         "type": "boolean"
       },
       "isResourceFacingService": {
         "type": "boolean"
       },
-      "unis": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "$ref": "UNIServiceConfiguration"
-        }
-      },
-      "customerFacingService": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "$ref": "EVCServiceConfiguration"
-        }
-      },
-      "isMandatory": {
-        "type": "boolean"
-      },
-      "service": {
-        "type": "object",
-        "$ref": "EVCService",
-        "required": true
-      },
-      "path": {
-        "type": "object",
-        "$ref": "NetworkPath",
-        "required": true
-      },
-      "resourceFacingService": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "$ref": "EVCServiceConfiguration"
-        }
-      },
-      "configuration": {
-        "type": "object",
-        "$ref": "EVCConfiguration",
-        "required": true
-      },
-      "isStateful": {
+      "isCustomerFacingService": {
         "type": "boolean"
       },
       "rfsStatus": {
         "type": "integer"
+      },
+      "cfsStatus": {
+        "type": "integer"
+      },
+      "customerFacingService": {
+        "type": "array",
+        "items": {
+          "$ref": "EVCServiceConfiguration"
+        }
+      },
+      "resourceFacingService": {
+        "type": "array",
+        "items": {
+          "$ref": "EVCServiceConfiguration"
+        }
+      },
+      "unis": {
+        "type": "array",
+        "items": {
+          "$ref": "UNIServiceConfiguration"
+        }
+      },
+      "configuration": {
+        "$ref": "EVCConfiguration"
+      },
+      "path": {
+        "$ref": "NetworkPath"
+      },
+      "service": {
+        "$ref": "EVCService"
       }
     }
   },
   "EVCServiceDeltas": {
+    "id": "EVCServiceDeltas",
     "type": "object",
     "properties": {
       "id": {
         "type": "string"
       },
       "link": {
-        "type": "object",
-        "$ref": "Link",
-        "required": true
+        "$ref": "Link"
       },
       "uniServiceConfiguration": {
-        "type": "object",
-        "$ref": "EVCServiceConfiguration",
-        "required": true
+        "$ref": "EVCServiceConfiguration"
       },
-      "changeses": {
+      "changes": {
         "type": "array",
         "items": {
-          "type": "object",
           "$ref": "Changes"
         }
       }
@@ -4525,38 +4512,30 @@
     }
   },
   "OrderDesign": {
+    "id": "OrderDesign",
     "type": "object",
     "properties": {
-      "timestamp": {
-        "type": "object",
-        "$ref": "Date",
-        "required": true
-      },
       "id": {
         "type": "string"
       },
-      "serviceDesign": {
-        "type": "object",
-        "$ref": "Services",
-        "required": true
+      "link": {
+        "$ref": "Link"
       },
       "status": {
         "type": "string"
       },
-      "link": {
-        "type": "object",
-        "$ref": "Link",
-        "required": true
-      },
-      "resourceDesign": {
-        "type": "object",
-        "$ref": "Resources",
-        "required": true
+      "timestamp": {
+        "type": "string",
+        "format": "date-time"
       },
       "designArtifact": {
-        "type": "object",
-        "$ref": "Link",
-        "required": true
+        "$ref": "Link"
+      },
+      "serviceDesign": {
+        "$ref": "Services"
+      },
+      "resourceDesign": {
+        "$ref": "Resources"
       }
     }
   },
@@ -6889,14 +6868,12 @@
       "uniServiceDeltas": {
         "type": "array",
         "items": {
-          "type": "object",
           "$ref": "UNIServiceDeltas"
         }
       },
       "evcServcieDeltas": {
         "type": "array",
         "items": {
-          "type": "object",
           "$ref": "EVCServiceDeltas"
         }
       }
@@ -7816,75 +7793,68 @@
   "UNIService": {
     "type": "object",
     "properties": {
-      "cfsStatus": {
-        "type": "integer"
+      "id": {
+        "type": "string"
       },
-      "startMode": {
-        "type": "integer"
+      "link": {
+        "$ref": "Link"
       },
-      "evc": {
-        "type": "object",
-        "$ref": "EVCService",
-        "required": true
+      "hasStarted": {
+        "type": "boolean"
       },
       "isServiceEnabled": {
         "type": "boolean"
       },
-      "link": {
-        "type": "object",
-        "$ref": "Link",
-        "required": true
-      },
-      "isTSP": {
+      "isMandatory": {
         "type": "boolean"
       },
-      "isCustomerFacingService": {
+      "startMode": {
+        "type": "integer"
+      },
+      "isStateful": {
         "type": "boolean"
       },
       "isFCCReportable": {
         "type": "boolean"
       },
-      "id": {
-        "type": "string"
-      },
-      "hasStarted": {
+      "isTSP": {
         "type": "boolean"
-      },
-      "networkPath": {
-        "type": "object",
-        "$ref": "NetworkPath",
-        "required": true
       },
       "isResourceFacingService": {
         "type": "boolean"
       },
-      "customerFacingService": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "$ref": "UNIService"
-        }
-      },
-      "isMandatory": {
-        "type": "boolean"
-      },
-      "config": {
-        "type": "object",
-        "$ref": "UNIConfig",
-        "required": true
-      },
-      "resourceFacingService": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "$ref": "UNIService"
-        }
-      },
-      "isStateful": {
+      "isCustomerFacingService": {
         "type": "boolean"
       },
       "rfsStatus": {
         "type": "integer"
+      },
+      "cfsStatus": {
+        "type": "integer"
+      },
+      "customerFacingService": {
+        "type": "array",
+        "items": {
+          "$ref": "UNIService"
+        }
+      },
+      "resourceFacingService": {
+        "type": "array",
+        "items": {
+          "$ref": "UNIService"
+        }
+      },
+      "config": {
+        "$ref": "UNIConfig",
+        "required": true
+      },
+      "networkPath": {
+        "$ref": "NetworkPath",
+        "required": true
+      },
+      "evc": {
+        "$ref": "EVCService",
+        "required": true
       }
     }
   },
@@ -7969,32 +7939,26 @@
     }
   },
   "UNIServiceDeltas": {
+    "id": "UNIServiceDeltas",
     "type": "object",
     "properties": {
       "id": {
         "type": "string"
       },
-      "currentUniService": {
-        "type": "object",
-        "$ref": "UNIService",
-        "required": true
-      },
       "link": {
-        "type": "object",
-        "$ref": "Link",
-        "required": true
-      },
-      "uniServiceConfiguration": {
-        "type": "object",
-        "$ref": "UNIService",
-        "required": true
+        "$ref": "Link"
       },
       "changes": {
         "type": "array",
         "items": {
-          "type": "object",
           "$ref": "Changes"
         }
+      },
+      "uniServiceConfiguration": {
+        "$ref": "UNIService"
+      },
+      "currentUniService": {
+        "$ref": "UNIService"
       }
     }
   },
