@@ -13008,22 +13008,27 @@
       "id": "PhysicalPortConfig",
       "properties": {
         "physicalMediaType": {
-          "type": "number"
+          "type": "number",
+          "description": "0: Unknown, 1: 10BaseT, 2: 100BaseT, 3: 10-100BaseT, 4: 1000BaseT, 5: 10000BaseT, 6: DS-0, 7: DS-1, 8: DS-3, 9: OC-3, 10: OC-12, 11: OC-48, 12: OC-192, 13: T1, 14: T3, 15: E1, 16: E3, 17: RS-232C"
         },
         "maxSpeed": {
-          "$ref": "Quantity"
+          "$ref": "Quantity",
+          "description": "Special values:: 0: unknown, -1: auto-sense"
         },
         "duplexMode": {
-          "type": "number"
+          "type": "number",
+          "description": "0: auto-negotiate duplex operation, 1: full-duplex, 2: half-duplex"
         },
         "mgmtInfoValidFor": {
           "$ref": "TimePeriod"
         },
         "retrievalMethodCurrent": {
-          "type": "number"
+          "type": "number",
+          "description": "0:  Unknown, 1:  None, 2:  CLI, 3:  SNMP, 4:  TL1, 5:  CMIP, 6:  RMON, 7:  Proprietary"
         },
         "retrievalMethodsSupported": {
-          "type": "number"
+          "type": "number",
+          "description": "0:  Unknown, 1:  None, 2:  CLI, 3:  SNMP, 4:  TL1, 5:  CMIP, 6:  RMON, 7:  Proprietary"
         },
         "configText": {
           "type": "string"
