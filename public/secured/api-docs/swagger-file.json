@@ -8,42 +8,6 @@
   "host": "cable-api.herokuapp.com",
   "basePath": "/api-docs",
   "paths": {
-    "/statusentry": {
-      "post": {
-        "tags": [
-          "Common"
-        ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
-        "consumes": [
-          "application/json",
-          "application/xml"
-        ],
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "description": "",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/StatusEntry"
-            }
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "Instance Created"
-          },
-          "405": {
-            "description": "Invalid input"
-          }
-        }
-      }
-    },
     "/statusentry/{id}": {
       "get": {
         "tags": [
@@ -157,6 +121,42 @@
           },
           "400": {
             "description": "Invalid Instance value"
+          }
+        }
+      }
+    },
+    "/statusentry": {
+      "post": {
+        "tags": [
+          "Common"
+        ],
+        "summary": "Create a new resource",
+        "description": "Create a new instance of the resource.",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/StatusEntry"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Instance Created"
+          },
+          "405": {
+            "description": "Invalid input"
           }
         }
       }
@@ -6177,7 +6177,7 @@
         ],
         "summary": "Find resource by ID",
         "description": "A ProductOffering procured by a Customer, or other interested Party playing a PartyRole, appearing as a BusinessInteractionItem, which could take the form of a Agreement. ProductSpecificationCharacteristic(s) in part define the Product. A Product is realized as one or more Service(s) and/or Resource(s).",
-        "displayName": "UN I Product",
+        "displayName": "UNI Product",
         "produces": [
           "application/json",
           "application/xml"
@@ -8369,7 +8369,7 @@
           "Service"
         ],
         "summary": "Find resource by ID",
-        "description": "Abstract class to hold common properties of all captured configuration data (files, strings, binary data, ...).  Subclasses specify base, current, backup, proposed, disaster recovery, etc configuration data.",
+        "description": "Class to hold common properties of all captured configuration data (files, strings, binary data, ...).  Subclasses specify base, current, backup, proposed, disaster recovery, etc configuration data.",
         "displayName": "Configuration Data",
         "produces": [
           "application/json",
