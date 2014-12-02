@@ -14021,14 +14021,14 @@
         "link": {
           "$ref": "Link"
         },
-        "validFor": {
-          "$ref": "TimePeriod"
+        "type": {
+          "type": "string"
         },
         "number": {
           "type": "string"
         },
-        "type": {
-          "type": "string"
+        "validFor": {
+          "$ref": "TimePeriod"
         }
       }
     },
@@ -14435,17 +14435,17 @@
         "link": {
           "$ref": "Link"
         },
-        "propertyAddress": {
-          "$ref": "PropertyAddress"
-        },
-        "validFor": {
-          "$ref": "TimePeriod"
-        },
         "type": {
           "type": "string"
         },
         "additionalDeliveryDetail": {
           "type": "string"
+        },
+        "propertyAddress": {
+          "$ref": "PropertyAddress"
+        },
+        "validFor": {
+          "$ref": "TimePeriod"
         }
       }
     },
@@ -14686,7 +14686,27 @@
     "ServiceSpecification": { },
     "ServiceConfiguration": { },
     "SiteList": { },
-    "StatusEntry": { },
+    "StatusEntry": {
+      "id": "StatusEntry",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "priorState": {
+          "type": "string"
+        },
+        "currentState": {
+          "type": "string"
+        },
+        "submitter": {
+          "$ref": "UserSummary"
+        }
+      }
+    },
     "SystemContact": {
       "id": "SystemContact",
       "type": "object",
