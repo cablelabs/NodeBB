@@ -151,17 +151,17 @@
 		<!--</div>-->
 	<!--</div>-->
 
-	<div class="container">
+	<!-- <div class="container">
 		<div class="row clearfix">
-			<div class="col-md-12 column">
+			<div class="col-md-12 column"> -->
 				<nav class="navbar navbar-inverse navbar-fixed-top header" role="navigation" id="header-menu">
 					<div class="container">
 						<!-- IMPORT partials/portal-menu.tpl -->
 					</div>
 				</nav>
-			</div>
+			<!-- </div>
 		</div>
-	</div>
+	</div> -->
 
 
 	<div class="container" id="content">
