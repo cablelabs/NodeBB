@@ -11709,18 +11709,70 @@
     },
     "Contact": {
       "id": "Contact",
+      "type": "object",
       "properties": {
-        "contactType": {
-          "type": "string"
-        },
         "id": {
           "type": "string"
         },
         "link": {
           "$ref": "Link"
         },
+        "contactType": {
+          "type": "string"
+        },
         "name": {
           "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "validFor": {
+          "$ref": "TimePeriod"
+        },
+        "individual": {
+          "$ref": "Individual"
+        },
+        "contactMediums": {
+          "$ref": "ContactMedium"
+        },
+        "partyDetails": {
+          "$ref": "PartySummary"
+        }
+      }
+    },
+    "ContactMedium": {
+      "id": "ContactMedium",
+      "type": "object",
+      "properties": {
+        "telephoneNumbers": {
+          "type": "array",
+          "items": {
+            "$ref": "TelephoneNumber"
+          }
+        },
+        "faxNumbers": {
+          "type": "array",
+          "items": {
+            "$ref": "FaxNumber"
+          }
+        },
+        "emailContacts": {
+          "type": "array",
+          "items": {
+            "$ref": "EmailContact"
+          }
+        },
+        "postalContacts": {
+          "type": "array",
+          "items": {
+            "$ref": "PostalContact"
+          }
+        },
+        "systemContacts": {
+          "type": "array",
+          "items": {
+            "$ref": "SystemContact"
+          }
         }
       }
     },
@@ -13976,6 +14028,21 @@
           "type": "string"
         },
         "type": {
+          "type": "string"
+        }
+      }
+    },
+    "PartySummary": {
+      "id": "PartySummary",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "name": {
           "type": "string"
         }
       }
