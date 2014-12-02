@@ -5,9 +5,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <div>
+                <div class="forum-logo">
                     <a href="{relative_path}/#">
-                        <img class="{brand:logo:display} forum-logo" src="{brand:logo}" />
+                        <img class="{brand:logo:display}" src="{brand:logo}" />
                         <span><strong>DEVELOPER PORTAL</strong></span>
                     </a>
                     <!--<!-- IF showSiteTitle -->-->
