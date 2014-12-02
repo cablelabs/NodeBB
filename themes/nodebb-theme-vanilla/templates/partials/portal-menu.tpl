@@ -25,7 +25,6 @@
                 <ul class="nav navbar-nav">
                     <li class="active">
                         <a class="header" href="{relative_path}/#"><p style="font-size: large"><strong>DEVELOPER PORTAL</strong></p></a>
-                        <span>&nbsp;</span>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">How-Tos<strong class="caret"></strong></a>
