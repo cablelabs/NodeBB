@@ -11830,39 +11830,40 @@
       }
     },
     "CLLICode": {
+      "id": "CLLICode",
       "type": "object",
       "properties": {
-        "clliNetSupportSiteCode": {
+        "formattedClliCode": {
           "type": "string",
-          "required": true
-        },
-        "clliNetworkSiteCode": {
-          "type": "string",
-          "required": true
-        },
-        "clliCustomerSiteCode": {
-          "type": "string",
-          "required": true
-        },
-        "clliGeopoliticalCode": {
-          "type": "string",
-          "required": true
-        },
-        "clliNetworkEntityCode": {
-          "type": "string",
-          "required": true
+          "description": "Eight or eleven digit formatted CLLI code string."
         },
         "clliType": {
           "type": "string",
-          "required": true
-        },
-        "formattedClliCode": {
-          "type": "string",
-          "required": true
+          "description": "0 = Unknown, 1 = Network Site (location) format; used by ProviderSite., 2 = Network Support Site format; used by ProviderSite., 3 = Network Entity format; used by Resource., 4 = Customer Site format; used by ServiceSite."
         },
         "clliGeographicCode": {
           "type": "string",
-          "required": true
+          "description": "Four-character geographical area and geographical area type. Regex: [A-Z0-9][A-Z0-9][A-Z0-9][A-Z0-9][A-Z0-9][A-Z0-9]"
+        },
+        "clliGeopoliticalCode": {
+          "type": "string",
+          "description": "Two characters to denote the state, province, or country. Each territory is identified using its two-letter ISO 3166-2:CA or ISO 3166-2:US postal abbreviation suffix (with exceptions: Qu�bec as PQ and Nunavut written as VU). Regex: [A-Z][A-Z]"
+        },
+        "clliNetworkSiteCode": {
+          "type": "string",
+          "description": "The Network Site code denotes the specific location or building address. These will be either two letters or two numbers. Regex: \\([0-9][0-9]\\)|\\([A-Z][A-Z]\\)"
+        },
+        "clliNetworkEntityCode": {
+          "type": "string",
+          "description": "Three-character Network Entity codes specify a particular type of equipment function at a Network Site location. Regex: [A-Z][A-Z][A-Z]"
+        },
+        "clliNetSupportSiteCode": {
+          "type": "string",
+          "description": "A Network Support Site code consists of 5 characters representing any non-building structures or outside plant equipment such as Wireless Access Points, International Boundary Crossing Points, End-Points, Fiber Nodes, Junctions, Manholes, Poles, Base Transceiver Station / Radio Equipment and Repeaters. This is either structured as 1-char location type and 4-digit identifying number, or STLT (satellite) EO (earth orbit satellite). Regex: \\([A-Z][0-9][0-9][0-9][0-9]\\)|\\(STLT\\)|\\(EO\\)"
+        },
+        "clliCustomerSiteCode": {
+          "type": "string",
+          "description": "A Customer Site code is used to uniquely identify customer locations. These locations are required to identify customers, circuit terminations, facilities, or equipment for each specific customer for facility provisioning or other requirements. �This is structured as a digit, followed by a letter, then three more digits. Regex: [0-9][A-Z][0-9][0-9][0-9]"
         }
       }
     },
@@ -12984,11 +12985,12 @@
     },
     "MACAddress": {
       "id": "MACAddress",
+      "type": "object",
       "properties": {
-        "hostname": {
+        "macAddress": {
           "type": "string"
         },
-        "macAddress": {
+        "hostname": {
           "type": "string"
         }
       }
@@ -13069,7 +13071,7 @@
           "required": true
         },
         "card": {
-          "$ref": "Card"
+          "$ref": "CardSummary"
         },
         "configuration": {
           "$ref": "PhysicalPortConfig"
@@ -13173,6 +13175,7 @@
     },
     "ResourcePort": {
       "id": "ResourcePort",
+      "type": "object",
       "properties": {
         "id": {
           "type": "string"
