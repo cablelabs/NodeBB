@@ -2360,77 +2360,64 @@
     }
   },
   "CustomerQuote": {
+    "id": "CustomerQuote",
     "type": "object",
     "properties": {
       "id": {
         "type": "string"
       },
-      "interactionDateComplete": {
-        "type": "object",
-        "$ref": "Date",
-        "required": true
+      "link": {
+        "$ref": "Link"
       },
       "description": {
         "type": "string"
       },
-      "link": {
-        "type": "object",
-        "$ref": "Link",
-        "required": true
-      },
       "interactionDate": {
-        "type": "object",
-        "$ref": "Date",
-        "required": true
+        "type": "string",
+        "format": "date-time"
+      },
+      "interactionDateComplete": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "interactionStatus": {
+        "type": "string"
+      },
+      "customer": {
+        "$ref": "CustomerSummary"
       },
       "customerQuoteItem": {
         "type": "array",
         "items": {
-          "type": "object",
           "$ref": "CustomerQuoteItem"
         }
-      },
-      "customer": {
-        "type": "object",
-        "$ref": "Customer",
-        "required": true
-      },
-      "interactionStatus": {
-        "type": "string"
       }
     }
   },
   "CustomerQuoteItem": {
+    "id": "CustomerQuoteItem",
     "type": "object",
     "properties": {
       "id": {
         "type": "string"
       },
       "link": {
-        "type": "object",
-        "$ref": "Link",
-        "required": true
+        "$ref": "Link"
+      },
+      "nonRecurringCost": {
+        "$ref": "Money"
+      },
+      "recurringCost": {
+        "$ref": "CostRate"
       },
       "action": {
         "type": "string"
       },
-      "quantity": {
-        "type": "object",
-        "$ref": "Quantity",
-        "required": true
-      },
       "interactionItemStatus": {
         "type": "string"
       },
-      "nonRecurringCost": {
-        "type": "object",
-        "$ref": "Money",
-        "required": true
-      },
-      "recurringCost": {
-        "type": "object",
-        "$ref": "CostRate",
-        "required": true
+      "quantity": {
+        "$ref": "Quantity"
       }
     }
   },
