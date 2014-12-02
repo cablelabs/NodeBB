@@ -1,6 +1,3 @@
-body {
-  font-family: Roboto, 'Lucida Grande', sans-serif;
-}
 .noshow,
 opacity: 0 {
   height: 0;
@@ -8,6 +5,7 @@ opacity: 0 {
   margin: 0;
 }
 #graph {
+  font-family: Roboto, 'Lucida Grande', sans-serif;
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
@@ -16,14 +14,24 @@ opacity: 0 {
   min-width: 700px;
   margin: 0 auto;
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 90em) {
+  #graph {
+    font-size: 90%;
+  }
+}
+@media screen and (max-width: 80em) {
   #graph {
     font-size: 80%;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 70em) {
   #graph {
     font-size: 70%;
+  }
+}
+@media screen and (max-width: 60em) {
+  #graph {
+    font-size: 60%;
   }
 }
 .domain.open .entities {
@@ -85,7 +93,7 @@ opacity: 0 {
   height: 0;
 }
 .entity-title {
-  font-size: 1.2em;
+  font-size: 1em;
   margin: 0.5em 0 0;
   letter-spacing: 0.1em;
 }
