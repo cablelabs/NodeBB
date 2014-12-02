@@ -13614,6 +13614,12 @@
         "id": {
           "type": "string"
         },
+        "link": {
+          "$ref": "Link"
+        },
+        "description": {
+          "type": "string"
+        },
         "createTime": {
           "type": "string",
           "format": "date-time"
@@ -13623,12 +13629,6 @@
         },
         "submitter": {
           "$ref": "UserSummary"
-        },
-        "description": {
-          "type": "string"
-        },
-        "link": {
-          "$ref": "Link"
         }
       }
     },
