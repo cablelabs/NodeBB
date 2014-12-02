@@ -13071,6 +13071,101 @@
         }
       }
     },
+    "CardSummary": {
+      "id": "CardSummary",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "cardType": {
+          "type": "string"
+        },
+        "cardMemorySize": {
+          "type": "number"
+        },
+        "numberOfPorts": {
+          "type": "integer"
+        }
+      }
+    },
+    "Card": {
+      "id": "Card",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "cardCompatibilityResults": {
+          "type": "string"
+        },
+        "daughterCardInstallStatus": {
+          "type": "integer",
+          "description": "0: Not Applicable (doesn't have any DaughterCards), 1: All Daughter Cards are installed, 2: Some Daughter Cards are installed, 3: No Daughter Cards are installed, 9: Daughter Card status and capability unknown"
+        },
+        "daughterCardOperatingStatus": {
+          "type": "integer",
+          "description": "0: Not Applicable (doesn't have any DaughterCards), 1: All Daughter Cards are operating correctly, 2: Some Daughter Cards are operating incorrectly, 3: No Daughter Cards are operating correctly, 9: Status and operating characteristics of daughter cards unknown"
+        },
+        "daughterCardRequirements": {
+          "type": "integer"
+        },
+        "isConfigurablePhysically": {
+          "type": "boolean"
+        },
+        "isMotherBoard": {
+          "type": "boolean"
+        },
+        "isUniquePhysical": {
+          "type": "boolean"
+        },
+        "maxDataWidth": {
+          "type": "integer"
+        },
+        "slotLayout": {
+          "type": "string"
+        },
+        "slotsRequired": {
+          "type": "integer"
+        },
+        "uniqueRequirementsPhysical": {
+          "type": "string"
+        },
+        "hardwareVersion": {
+          "type": "string"
+        },
+        "cardType": {
+          "type": "string"
+        },
+        "distToBase": {
+          "type": "string"
+        },
+        "distToFront": {
+          "type": "string"
+        },
+        "distToLeft": {
+          "type": "string"
+        },
+        "cardMemorySize": {
+          "type": "number"
+        },
+        "numberOfPorts": {
+          "type": "integer"
+        },
+        "slots": {
+          "type": "array",
+          "items": {
+            "$ref": "Slot"
+          }
+        }
+      }
+    },
     "ResourcePort": {
       "id": "ResourcePort",
       "properties": {
@@ -13331,12 +13426,23 @@
     },
     "Slot": {
       "id": "Slot",
+      "type": "object",
       "properties": {
-        "id": {
+        "hasAdapter": {
+          "type": "boolean"
+        },
+        "slotNumber": {
+          "type": "integer"
+        },
+        "slotPurpose": {
+          "type": "integer",
+          "description": "0: Unknown, 1: System, 2: Networking, 3: Port Adapter, 4: Memory, 5: Hardware Assist, 6: Video, 7: General Computing, 8: General Purpose"
+        },
+        "purposeDescription": {
           "type": "string"
         },
-        "link": {
-          "$ref": "Link"
+        "card": {
+          "$ref": "CardSummary"
         }
       }
     },
