@@ -61,7 +61,13 @@
                     "links": [
                         "customer",
                         "user",
-                        "site"
+                        "billing",
+                        "payment",
+                        "product",
+                        "device",
+                        "taxexemptions",
+                        "site",
+                        "preference"
                     ]
                 },
                 {
@@ -69,9 +75,10 @@
                     "name": "Customer ",
                     "description": "A person or organization that buys products and services from the enterprise or receives free offers or services. This is modeled as a Party playing the role of Customer. A Customer is a type of PartyRole. Customers can also be other service providers who resell the enterprises products, other service providers that lease the enterprise's resources for utilization by the other service provider's products and services, and so forth.",
                     "links": [
-                        "customeraccount",
                         "individual",
-                        "device"
+                        "telephonenumber",
+                        "emailcontact",
+                        "account"
                     ]
                 },
                 {
@@ -95,9 +102,9 @@
                     "name": "Individual ",
                     "description": "A party that is an individual (i.e., a person).",
                     "links": [
-                        "user",
                         "customer",
-                        "contact"
+                        "contact",
+                        "user"
                     ]
                 },
                 {
@@ -105,9 +112,9 @@
                     "name": "Organization ",
                     "description": "A group of people identified by shared interests or purpose. Examples include business, department, enterprise. Both organizations and organizational units are represented by this business entity.User.",
                     "links": [
+                        "user",
                         "customer",
-                        "contact",
-                        "user"
+                        "contact"
                     ]
                 },
                 {
@@ -146,9 +153,11 @@
                     "name": "User ",
                     "description": "A person or organization that uses products and services from the enterprise (external), or an operator working on management systems in the service provider environment (internal). This is modeled as a Party playing the role of User. A User is a type of PartyRole.",
                     "links": [
-                        "customeraccount",
                         "individual",
-                        "usercredential"
+                        "telephonenumber",
+                        "emailcontact",
+                        "account",
+                        "device"
                     ]
                 },
                 {

@@ -3004,19 +3004,13 @@
         "type": "integer"
       },
       "physicalPort": {
-        "type": "object",
-        "$ref": "PhysicalPort",
-        "required": true
+        "$ref": "PhysicalPort"
       },
       "macAddress": {
-        "type": "object",
-        "$ref": "MACAddress",
-        "required": true
+        "$ref": "MACAddress"
       },
       "resourcePort": {
-        "type": "object",
-        "$ref": "ResourcePort",
-        "required": true
+        "$ref": "ResourcePort"
       }
     }
   },

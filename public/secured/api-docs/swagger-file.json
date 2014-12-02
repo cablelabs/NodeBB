@@ -12731,6 +12731,7 @@
     },
     "EthernetInterface": {
       "id": "EthernetInterface",
+      "type": "object",
       "properties": {
         "id": {
           "type": "string"
@@ -12739,10 +12740,11 @@
           "$ref": "Link"
         },
         "customerInterfaceNumber": {
-          "type": "number"
+          "type": "integer"
         },
         "deviceConfigMethod": {
-          "type": "string"
+          "type": "string",
+          "description" : "0 - not configured, 1 - using the CONSOLE port, 2 - using the AUXILIARY port, 3 - using a virtual terminal interface, 4 - download through a TFTP server, 5 - download through an FTP server, 6 - download through a NMS"
         },
         "hasCarrierDetect": {
           "type": "boolean"
@@ -12754,13 +12756,13 @@
           "type": "boolean"
         },
         "vendorInterfaceNumber": {
-          "type": "number"
+          "type": "integer"
         },
         "interfaceInitResetCount": {
-          "type": "number"
+          "type": "integer"
         },
         "syncLostCount": {
-          "type": "number"
+          "type": "integer"
         },
         "physicalPort": {
           "$ref": "PhysicalPort"
@@ -12775,29 +12777,27 @@
     },
     "TerminationPoint": {
       "id": "TerminationPoint",
+      "type": "object",
       "properties": {
         "direction": {
           "type": "string",
-          "enum": [
-            "Unknown",
-            "Sources Traffic",
-            "Sinks Traffic",
-            "Carries Traffic Bi-Directional"
-          ]
+          "description": "0: Unknown, 1: Sources Traffic, 2: Sinks Traffic, 3: Carries Traffic Bi-directionally"
         },
         "vendorTPName": {
           "type": "string"
         },
         "typeOfTP": {
-          "type": "string"
+          "type": "string",
+          "description": "0: unknown, 1: uni-directional, source, 2: uni-directional, sink, 3: bi-directional, source, 4: bi-directional, sink"
         },
         "endPointLabel": {
           "type": "string"
         },
         "sideType": {
-          "type": "string"
+          "type": "string",
+          "description": "Legal values::  0 - unknown, 1 - ProviderEdge, 2 - CustomerEdge, 3 - ProviderCore, 9 - Other"
         },
-        "ethernetInterfaces": {
+        "ethernetInterface": {
           "$ref": "EthernetInterface"
         }
       }
