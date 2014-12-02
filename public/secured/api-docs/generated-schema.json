@@ -2301,20 +2301,16 @@
         "type": "string"
       },
       "link": {
-        "type": "object",
-        "$ref": "Link",
-        "required": true
+        "$ref": "Link"
       },
       "action": {
         "type": "string"
       },
-      "quantity": {
-        "type": "object",
-        "$ref": "Quantity",
-        "required": true
-      },
       "interactionItemStatus": {
         "type": "string"
+      },
+      "quantity": {
+        "$ref": "Quantity"
       }
     }
   },
