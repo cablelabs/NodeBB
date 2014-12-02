@@ -1,6 +1,6 @@
 .header {
 
-	padding: 1em 0 0.5em;
+	padding: 1em 1.5em 0.5em;
 	border-bottom: 1px solid #fff;
 
 	#user_label {
@@ -24,7 +24,13 @@
 		float: left;
 		max-height: 50px;
 		width: auto;
+
+		@media screen and (min-width: 768px) {
+    		max-height: 30px
+    	}
 	}
+
+
 
 	.header-topic-title {
 		text-align: right;

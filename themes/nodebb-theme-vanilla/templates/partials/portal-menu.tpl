@@ -8,6 +8,7 @@
                 <div>
                     <a href="{relative_path}/#">
                         <img class="{brand:logo:display} forum-logo" src="{brand:logo}" />
+                        <span><strong>DEVELOPER PORTAL</strong></span>
                     </a>
                     <!--<!-- IF showSiteTitle -->-->
                     <!--<a href="{relative_path}/">-->
@@ -118,9 +119,6 @@
                 </ul>
                 <!-- ENDIF loggedIn -->
                 <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="{relative_path}/#"><p style="font-size: large"><strong>DEVELOPER PORTAL</strong></p></a>
-                    </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">How-Tos<strong class="caret"></strong></a>
                         <ul class="dropdown-menu">
