@@ -24,7 +24,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a class="header" href="{relative_path}/#"><p style="font-size: large"><strong>DEVELOPER PORTAL</strong></p></a>
+                        <a href="{relative_path}/#"><p style="font-size: large"><strong>DEVELOPER PORTAL</strong></p></a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">How-Tos<strong class="caret"></strong></a>
