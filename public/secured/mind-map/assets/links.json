@@ -75,12 +75,6 @@
                     ]
                 },
                 {
-                    "path": "/customerorderitem/{id}",
-                    "name": "Customer OrderItem",
-                    "description": "The purpose for the Customer Order expressed in terms of a Product Offering or a Product (for a change order) inherited from BusinessInteractionItem.",
-                    "links": []
-                },
-                {
                     "path": "/customerpayment/{id}",
                     "name": "Customer Payment",
                     "description": "CustomerPayment represents the transfer of wealth from a customer for a product or usage of product.",
@@ -111,9 +105,9 @@
                     "name": "Organization ",
                     "description": "A group of people identified by shared interests or purpose. Examples include business, department, enterprise. Both organizations and organizational units are represented by this business entity.User.",
                     "links": [
-                        "user",
                         "customer",
-                        "contact"
+                        "contact",
+                        "user"
                     ]
                 },
                 {
@@ -221,6 +215,12 @@
                     "path": "/customerorder/{id}",
                     "name": "Customer Order",
                     "description": "A CustomerOrder is a communication used to procure a Product. There are different types of CustomerOrders, such as AccessServiceRequests (ASRs), LocalServiceRequests (LSRs), DirectoryServiceRequests (DSRs), ProductOrders (PSRs).",
+                    "links": []
+                },
+                {
+                    "path": "/customerorderitem/{id}",
+                    "name": "Customer OrderItem",
+                    "description": "The purpose for the Customer Order expressed in terms of a Product Offering or a Product (for a change order) inherited from BusinessInteractionItem.",
                     "links": []
                 },
                 {

@@ -12636,13 +12636,95 @@
     "ServiceOrderItem": { },
     "ServiceOrder": { },
     "EVCServiceConfigurationSummary": {
-      "id": "EVCServiceConfiguration",
+      "id": "EVCServiceConfigurationSummary",
+      "type": "object",
       "properties": {
         "id": {
           "type": "string"
         },
         "link": {
           "$ref": "Link"
+        },
+        "hasStarted": {
+          "type": "boolean"
+        },
+        "isServiceEnabled": {
+          "type": "boolean"
+        },
+        "isMandatory": {
+          "type": "boolean"
+        }
+      }
+    },
+    "EVCServiceConfiguration": {
+      "id": "EVCServiceConfiguration",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "hasStarted": {
+          "type": "boolean"
+        },
+        "isServiceEnabled": {
+          "type": "boolean"
+        },
+        "isMandatory": {
+          "type": "boolean"
+        },
+        "startMode": {
+          "type": "integer"
+        },
+        "isStateful": {
+          "type": "boolean"
+        },
+        "isFCCReportable": {
+          "type": "boolean"
+        },
+        "isTSP": {
+          "type": "boolean"
+        },
+        "isResourceFacingService": {
+          "type": "boolean"
+        },
+        "isCustomerFacingService": {
+          "type": "boolean"
+        },
+        "rfsStatus": {
+          "type": "integer"
+        },
+        "cfsStatus": {
+          "type": "integer"
+        },
+        "customerFacingService": {
+          "type": "array",
+          "items": {
+            "$ref": "EVCServiceConfigurationSummary"
+          }
+        },
+        "resourceFacingService": {
+          "type": "array",
+          "items": {
+            "$ref": "EVCServiceConfigurationSummary"
+          }
+        },
+        "unis": {
+          "type": "array",
+          "items": {
+            "$ref": "UNIServiceConfiguration"
+          }
+        },
+        "configuration": {
+          "$ref": "EVCConfiguration"
+        },
+        "path": {
+          "$ref": "NetworkPath"
+        },
+        "service": {
+          "$ref": "EVCService"
         }
       }
     },
@@ -12721,6 +12803,7 @@
     },
     "NetworkPath": {
       "id": "NetworkPath",
+      "type": "object",
       "properties": {
         "alternatePathIdentifier": {
           "type": "string"
@@ -12800,6 +12883,26 @@
         }
       }
     },
+    "UNIServiceConfigurationSummary": {
+      "id": "UNIServiceConfigurationSummary",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "hasStarted": {
+          "type": "boolean"
+        },
+        "isServiceEnabled": {
+          "type": "boolean"
+        },
+        "isMandatory": {
+          "type": "boolean"
+        }
+      }
+    },
     "UNIServiceConfiguration": {
       "id": "UNIServiceConfiguration",
       "properties": {
@@ -12845,13 +12948,13 @@
         "customerFacingService": {
           "type": "array",
           "items": {
-            "$ref": "UNIServiceConfiguration"
+            "$ref": "UNIServiceConfigurationSummary"
           }
         },
         "resourceFacingService": {
           "type": "array",
           "items": {
-            "$ref": "UNIServiceConfiguration"
+            "$ref": "UNIServiceConfigurationSummary"
           }
         },
         "config": {
@@ -12938,24 +13041,30 @@
     },
     "PhysicalPort": {
       "id": "PhysicalPort",
+      "type": "object",
       "properties": {
         "duplexMode": {
-          "type": "number"
+          "type": "integer",
+          "description": "0: Unknown, 1: Full Duplex, 2: Half Duplex"
         },
         "portNumber": {
-          "type": "number"
+          "type": "integer"
         },
         "typeOfPort": {
-          "type": "number"
+          "type": "integer",
+          "description": "0: Unknown, 1: Ethernet, 2: FastEthernet, 3: Auto-Sensing, 4: GigabitEthernet, 5: FastGigabitEthernet, 6: DS-0, 7: DS-1, 8: DS-3, 9: T1, 10: T3, 11: E1, 12: E3, 13: OC-3, 14: OC-12, 15: OC-48, 16: OC-192, 17: RS-232C",
+          "required": true
         },
         "vendorPortName": {
           "type": "string"
         },
         "ifType": {
-          "type": "number"
+          "type": "integer",
+          "description": "0: Unknown, 1: 10BaseT, 2: 100BaseT, 3: 10-100BaseT, 4: 1000BaseT, 5: 10000BaseT, 6: DS-0, 7: DS-1, 8: DS-3, 9: OC-3, 10: OC-12, 11: OC-48, 12: OC-192",
+          "required": true
         },
         "card": {
-          "$ref": "CardSummary"
+          "$ref": "Card"
         },
         "configuration": {
           "$ref": "PhysicalPortConfig"
