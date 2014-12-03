@@ -102,9 +102,9 @@
                     "name": "Individual ",
                     "description": "A party that is an individual (i.e., a person).",
                     "links": [
+                        "user",
                         "customer",
-                        "contact",
-                        "user"
+                        "contact"
                     ]
                 },
                 {
@@ -112,9 +112,9 @@
                     "name": "Organization ",
                     "description": "A group of people identified by shared interests or purpose. Examples include business, department, enterprise. Both organizations and organizational units are represented by this business entity.User.",
                     "links": [
-                        "user",
                         "customer",
-                        "contact"
+                        "contact",
+                        "user"
                     ]
                 },
                 {
@@ -561,7 +561,7 @@
                 },
                 {
                     "path": "/product/uni/{id}",
-                    "name": "UN I Product",
+                    "name": "UNI Product",
                     "description": "A ProductOffering procured by a Customer, or other interested Party playing a PartyRole, appearing as a BusinessInteractionItem, which could take the form of a Agreement. ProductSpecificationCharacteristic(s) in part define the Product. A Product is realized as one or more Service(s) and/or Resource(s).",
                     "links": [
                         "service/uni",
@@ -628,7 +628,7 @@
                 {
                     "path": "/configurationdata/{id}",
                     "name": "Configuration Data",
-                    "description": "Abstract class to hold common properties of all captured configuration data (files, strings, binary data, ...).  Subclasses specify base, current, backup, proposed, disaster recovery, etc configuration data.",
+                    "description": "Class to hold common properties of all captured configuration data (files, strings, binary data, ...).  Subclasses specify base, current, backup, proposed, disaster recovery, etc configuration data.",
                     "links": [
                         "service",
                         "device"

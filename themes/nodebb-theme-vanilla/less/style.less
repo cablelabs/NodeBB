@@ -91,6 +91,11 @@ a:hover, .btn-link:hover, .btn-link:active, .btn-link:focus {
 	}
 
     min-height: 800px;
+    max-width: 1700px;
+    margin: 0 3em;
+    @media screen and (max-width: 768px) {
+    	margin: 0 .5em
+    }
 }
 
 .profile-image {
@@ -221,3 +226,9 @@ a:hover, .btn-link:hover, .btn-link:active, .btn-link:focus {
 	vertical-align: 17%;
 }
 //END: FIXES FOR BS3, may need to remove these when we get out of the RC releases
+
+
+
+div[widget-area="hp-content"] > div.row {
+	margin-left: 0
+}
