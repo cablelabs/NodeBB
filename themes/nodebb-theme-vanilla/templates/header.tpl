@@ -8,8 +8,6 @@
 	<!-- END metaTags -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="{relative_path}/stylesheet.css?{css-buster}" />
-	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="secured/mind-map/secured/css/app.css">
 	<!-- IF bootswatchCSS --><link href="{bootswatchCSS}" rel="stylesheet" media="screen"><!-- ENDIF bootswatchCSS -->
 	<!-- BEGIN linkTags -->
 	<link<!-- IF linkTags.link --> link="{linkTags.link}"<!-- ENDIF linkTags.link --><!-- IF linkTags.rel --> rel="{linkTags.rel}"<!-- ENDIF linkTags.rel --><!-- IF linkTags.type --> type="{linkTags.type}"<!-- ENDIF linkTags.type --><!-- IF linkTags.href --> href="{linkTags.href}"<!-- ENDIF linkTags.href --> />
@@ -41,36 +39,6 @@
 			}
 		});
 	</script>
-	<!--
-	<script type="text/javascript">
-		var iFrameNode = {}
-		function iFrameInit() {
-			console.log('iframe init called')
-			iFrameNode.self = window.frames['ifrm']
-		    if (iFrameNode.self) {	
-		    	iFrameNode.body = iFrameNode.self.contentDocument.querySelector('body')
-		    	iFrameNode.body.addEventListener('resize', reSize);
-			}
-		}
-		function reSize(e) {
-			console.log('resize called')
-	    	try {	
-				//var height = iFrameNode.body.scrollHeight + (iFrameNode.body.offsetHeight - iFrameNode.body.clientHeight);
-				var height = iFrameNode.body.offsetHeight;
-				console.log('height:', height)
-				iFrameNode.self.setAttribute('style', 'height: ' + height + 'px');
-				iFrameNode.self.setAttribute('height', height + 'px');
-			}
-			//An error is raised if the IFrame domain != its container's domain
-			catch(e) {
-				console.error(e);
-			}
-		}
-	</script>
-	-->
-	<script src="secured/mind-map/secured/js/dom-element.js"></script>
-	<script src="secured/mind-map/secured/js/entity-graph.js"></script>
-	<script src="secured/mind-map/secured/js/app.js"></script>
 	-->
 	<!-- IF useCustomJS -->
 	{customJS}
