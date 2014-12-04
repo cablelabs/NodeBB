@@ -112,9 +112,9 @@
                     "name": "Organization ",
                     "description": "A group of people identified by shared interests or purpose. Examples include business, department, enterprise. Both organizations and organizational units are represented by this business entity.User.",
                     "links": [
-                        "user",
                         "customer",
-                        "contact"
+                        "contact",
+                        "user"
                     ]
                 },
                 {

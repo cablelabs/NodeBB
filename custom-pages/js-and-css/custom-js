@@ -1,0 +1,8 @@
+<!-- Mind-map css imports -->
+<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="secured/mind-map/secured/css/app.css">
+
+    <!-- Mind-map js imports -->
+<script src="secured/mind-map/secured/js/dom-element.js"></script>
+<script src="secured/mind-map/secured/js/entity-graph.js"></script>
+<script src="secured/mind-map/secured/js/app.js"></script>
