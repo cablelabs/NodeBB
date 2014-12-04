@@ -75,10 +75,22 @@ a:hover, .btn-link:hover, .btn-link:active, .btn-link:focus {
 	word-wrap: break-word;
 }
 
-#content{
+.parent-container {
+	max-width: 1700px;
+    margin: 0 3em;
+    @media screen and (max-width: 768px) {
+    	margin: 0 .5em;
+    }
+    @media screen and (min-width: 1700px) {
+    	margin: 0 auto;
+    }
+}
+
+#content {
 	padding-bottom:20px;
     padding-top: 40px;
-	-webkit-transition: opacity 100ms linear;
+
+    -webkit-transition: opacity 100ms linear;
 	-moz-transition: opacity 100ms linear;
 	-ms-transition: opacity 100ms linear;
 	-o-transition: opacity 100ms linear;
@@ -89,16 +101,7 @@ a:hover, .btn-link:hover, .btn-link:active, .btn-link:focus {
 		opacity: 0.00;
 		-ms-filter:~"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 	}
-
-    min-height: 800px;
-    max-width: 1700px;
-    margin: 0 3em;
-    @media screen and (max-width: 768px) {
-    	margin: 0 .5em;
-    }
-    @media screen and (min-width: 1700px) {
-    	margin: 0 auto;
-    }
+	min-height: 800px;
 }
 
 .profile-image {
@@ -229,17 +232,3 @@ a:hover, .btn-link:hover, .btn-link:active, .btn-link:focus {
 	vertical-align: 17%;
 }
 //END: FIXES FOR BS3, may need to remove these when we get out of the RC releases
-
-
-
-// Start Widget customizations
-
-// about CIA
-.landing section {
-	border-radius: 0;
-}
-
-#Section-1 {
-	border-radius: 0;
-}
-

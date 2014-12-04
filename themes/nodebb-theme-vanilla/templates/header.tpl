@@ -165,5 +165,5 @@
 	</div> -->
 
 
-	<div class="container-fluid" id="content">
+	<div class="container-fluid parent-container" id="content">
 	<!-- IMPORT partials/noscript/warning.tpl -->
