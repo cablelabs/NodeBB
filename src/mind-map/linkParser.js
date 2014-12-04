@@ -2,7 +2,7 @@ var request = require('request'),
 	async   = require('async'),
 	fs      = require('fs'),
 	path 	= require('path'),
-	config  = path.join(__dirname, '/src/mind-map/settings.json');
+	config  = path.join(__dirname, '/../../src/mind-map/settings.json');
 
 module.exports.init = function (callback) {
 
