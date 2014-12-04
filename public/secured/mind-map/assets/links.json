@@ -102,9 +102,9 @@
                     "name": "Individual ",
                     "description": "A party that is an individual (i.e., a person).",
                     "links": [
-                        "user",
                         "customer",
-                        "contact"
+                        "contact",
+                        "user"
                     ]
                 },
                 {
@@ -695,7 +695,12 @@
                     "path": "/service/uni/{id}",
                     "name": "UNI Service",
                     "description": "Serves as the point of demarcation that specifies where the Service Provider's (Operator's) responsibility ends and the customer's responsibility begins. The UNI is typically considered to reside at the customer network facing side of the PE equipment that the Service Provider places at the customer premises. The UNI has two sides: the UNI-C represents the customer premise facing side of the Provider Edge device, and the UNI-N represents the side of the PE that faces back towards the Service Provider (Operator) network. The organization responsible for the UNI-to-UNI (end-to-end) Ethernet service, i.e., the company that the end user Subscriber has the primary commercial relationship with for Ethernet services.",
-                    "links": []
+                    "links": [
+                        "ethernetinterface",
+                        "resource/resourceport",
+                        "resource/card",
+                        "service/evc"
+                    ]
                 },
                 {
                     "path": "/service/uniconfiguration/{id}",
@@ -703,6 +708,10 @@
                     "description": "Serves as the point of demarcation that specifies where the Service Provider's (Operator's) responsibility ends and the customer's responsibility begins. The UNI is typically considered to reside at the customer network facing side of the PE equipment that the Service Provider places at the customer premises.The UNI has two sides: the UNI-C represents the customer premise facing side of the Provider Edge device, and the UNI-N represents the side of the PE that faces back towards the Service Provider (Operator) network.",
                     "links": [
                         "ethernetinterface",
+                        "service/uni",
+                        "resource/resourceport",
+                        "resource/card",
+                        "service/evc",
                         "service/evcconfiguration"
                     ]
                 }
