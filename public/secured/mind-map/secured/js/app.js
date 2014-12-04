@@ -1,7 +1,5 @@
 (function (window, document, $, undefined) {
 
-window.initMindMap = function (element) {
-
     var $searchField = $('#search-field'),
         $viewDepthSelect = $('.view-depth-select'),
         graph;
@@ -30,10 +28,8 @@ window.initMindMap = function (element) {
 
         //graph is the id of the element in which we'll create the graph
         //EntityGraph depends on jQuery.  Please include it in index.html
-        graph = EntityGraph.create(data, element)
+        graph = EntityGraph.create(data, 'graph');
 
     }).fail(function() { alert('unable to download graph data')} );
-
-}
 
 }(window, document, jQuery))

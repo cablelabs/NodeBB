@@ -11,10 +11,10 @@ var EntityGraph = (function () {
 var swaggerUriBase;
 
 
-function create (data, element) {
+function create (data, elementID) {
     swaggerUriBase = data.swaggerUriBase;
     var graph = new Graph({
-        elem: element,
+        elem: document.getElementById('graph'),
         data: data
     });
     //setup jQuery popover component
