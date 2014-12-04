@@ -1,0 +1,5 @@
+{
+	"swaggerUri" : "/secured/api-docs/swagger-file.json",
+	"key" : "Bearer 5f7691da-9847-4f73-9fae-43f3a2f16bfd",
+	"swaggerUriBase" : "/secured/swagger/#!/"
+}

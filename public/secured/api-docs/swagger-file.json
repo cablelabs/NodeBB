@@ -12636,6 +12636,31 @@
     },
     "ServiceOrderItem": { },
     "ServiceOrder": { },
+    "EVCConfiguration": {
+      "type": "object",
+      "properties": {
+        "configText": {
+          "type": "string"
+        },
+        "configBinary": {
+          "type": "number"
+        },
+        "configLocation": {
+          "type": "object",
+          "$ref": "Link"
+        },
+        "configActivationType": {
+          "type": "string",
+          "description": "Base, Current, Backup, Planned, Test, Template"
+        },
+        "isColorBlind": {
+          "type": "boolean"
+        },
+        "bandwidth": {
+          "$ref": "Quantity"
+        }
+      }
+    },
     "EVCServiceConfigurationSummary": {
       "id": "EVCServiceConfigurationSummary",
       "type": "object",
@@ -12715,7 +12740,7 @@
         "unis": {
           "type": "array",
           "items": {
-            "$ref": "UNIServiceConfiguration"
+            "$ref": "UNIServiceConfigurationSummary"
           }
         },
         "configuration": {
@@ -13195,6 +13220,27 @@
         }
       }
     },
+    "UNIServiceSummary": {
+      "id": "UNIServiceSummary",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "hasStarted": {
+          "type": "boolean"
+        },
+        "isServiceEnabled": {
+          "type": "boolean"
+        },
+        "isMandatory": {
+          "type": "boolean"
+        }
+      }
+    },
     "UNIService": {
       "id": "UNIService",
       "type": "object",
@@ -13241,13 +13287,13 @@
         "customerFacingService": {
           "type": "array",
           "items": {
-            "$ref": "UNIService"
+            "$ref": "UNIServiceSummary"
           }
         },
         "resourceFacingService": {
           "type": "array",
           "items": {
-            "$ref": "UNIService"
+            "$ref": "UNIServiceSummary"
           }
         },
         "config": {

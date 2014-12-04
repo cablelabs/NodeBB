@@ -1,0 +1,36 @@
+.voffset  { margin-top: 2px; }
+.voffset1 { margin-top: 5px; }
+.voffset2 { margin-top: 10px; }
+.voffset3 { margin-top: 15px; }
+.voffset4 { margin-top: 30px; }
+.voffset5 { margin-top: 40px; }
+.voffset6 { margin-top: 60px; }
+.voffset7 { margin-top: 80px; }
+.voffset8 { margin-top: 100px; }
+.voffset9 { margin-top: 150px; }
+
+.navbar-inverse {
+    background-color: black;
+}
+
+html, body {
+    height: 100%;
+}
+
+.landing section {
+    border-radius: 0;
+    padding: 4em 2em;
+}
+.landing section:first-child {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.landing footer {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding: 4em 2em;
+}
+
+h4.category-title {
+    text-align: center;
+}
