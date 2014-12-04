@@ -6,7 +6,6 @@
 	<!-- BEGIN metaTags -->
 	{function.buildMetaTag}
 	<!-- END metaTags -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="{relative_path}/stylesheet.css?{css-buster}" />
 	<!-- IF bootswatchCSS --><link href="{bootswatchCSS}" rel="stylesheet" media="screen"><!-- ENDIF bootswatchCSS -->
 	<!-- BEGIN linkTags -->
