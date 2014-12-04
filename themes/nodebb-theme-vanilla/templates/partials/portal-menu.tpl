@@ -5,9 +5,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <div>
+                <div class="forum-logo">
                     <a href="{relative_path}/#">
-                        <img class="{brand:logo:display} forum-logo" src="{brand:logo}" />
+                        <img class="{brand:logo:display}" src="{brand:logo}" />
+                        <span><strong>DEVELOPER PORTAL</strong></span>
                     </a>
                     <!--<!-- IF showSiteTitle -->-->
                     <!--<a href="{relative_path}/">-->
@@ -22,63 +23,6 @@
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a class="header" href="{relative_path}/#"><p style="font-size: large"><strong>DEVELOPER PORTAL</strong></p></a>
-                        <span>&nbsp;</span>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">How-Tos<strong class="caret"></strong></a>
-                        <ul class="dropdown-menu">
-                            <!-- IF loggedIn -->
-                            <li><a href="{relative_path}/getting-started">Getting Started</a></li>
-                            <li><a href="{relative_path}/authorization">Authorization</a></li>
-                            <li><a href="{relative_path}/video-tutorials">Video Tutorials</a></li>
-                            <li><a href="{relative_path}/about-cia">About CIA</a></li>
-                            <!-- ELSE -->
-                            <li><a href="{relative_path}/login">Login</a></li>
-                            <!-- ENDIF loggedIn -->
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">API's <strong class="caret"></strong></a>
-                        <ul class="dropdown-menu">
-                            <!-- IF loggedIn -->
-                            <li><a href="{relative_path}/api-info">General API Info</a></li>
-                            <li><a href="{relative_path}/entity-map">Entities Map</a></li>
-                            <li><a href="{relative_path}/documentation">Documentation</a></li>
-                            <li><a href="{relative_path}/key-management">Get a Key</a></li>
-                            <!-- ELSE -->
-                            <li><a href="{relative_path}/login">Login</a></li>
-                            <!-- ENDIF loggedIn -->
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="{relative_path}/forums">Forums<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <!-- IF loggedIn -->
-                            <li>
-                                <a href="{relative_path}/forums"><i id="forum-home" class="fa fa-fw fa-home"></i>Home</a>
-                            </li>
-                            <li>
-                                <a href="{relative_path}/unread"><i id="unread-count" class="fa fa-fw fa-inbox" data-content="0" title="[[global:header.unread]]"></i><span class="visible-xs-inline"> [[global:header.unread]]</span>Unread</a>
-                            </li>
-                            <li>
-                                <a href="{relative_path}/recent"><i class="fa fa-fw fa-clock-o" title="[[global:header.recent]]"></i><span class="visible-xs-inline"> [[global:header.recent]]</span>Recent</a>
-                            </li>
-                            <li>
-                                <a href="{relative_path}/tags"><i class="fa fa-fw fa-tags" title="[[global:header.tags]]"></i><span class="visible-xs-inline"> [[global:header.tags]]</span>Tags</a>
-                            </li>
-                            <li>
-                                <a href="{relative_path}/popular"><i class="fa fa-fw fa-fire" title="[[global:header.popular]]"></i><span class="visible-xs-inline"> [[global:header.popular]]</span>Popular</a>
-                            </li>
-                            <!-- ELSE -->
-                            <li><a href="{relative_path}/login">Login</a></li>
-                            <!-- ENDIF loggedIn -->
-                        </ul>
-                    </li>
-                </ul>
-
                 <!-- IF loggedIn -->
                 <ul id="logged-in-menu" class="nav navbar-nav navbar-right">
                     <li class="notifications dropdown text-center hidden-xs">
@@ -174,6 +118,58 @@
                     </li>
                 </ul>
                 <!-- ENDIF loggedIn -->
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">How-Tos<strong class="caret"></strong></a>
+                        <ul class="dropdown-menu">
+                            <!-- IF loggedIn -->
+                            <li><a href="{relative_path}/getting-started">Getting Started</a></li>
+                            <li><a href="{relative_path}/authorization">Authorization</a></li>
+                            <li><a href="{relative_path}/video-tutorials">Video Tutorials</a></li>
+                            <li><a href="{relative_path}/about-cia">About CIA</a></li>
+                            <!-- ELSE -->
+                            <li><a href="{relative_path}/login">Login</a></li>
+                            <!-- ENDIF loggedIn -->
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">API's <strong class="caret"></strong></a>
+                        <ul class="dropdown-menu">
+                            <!-- IF loggedIn -->
+                            <li><a href="{relative_path}/api-info">General API Info</a></li>
+                            <li><a href="{relative_path}/entity-map">Entities Map</a></li>
+                            <li><a href="{relative_path}/documentation">Documentation</a></li>
+                            <li><a href="{relative_path}/key-management">Get a Key</a></li>
+                            <!-- ELSE -->
+                            <li><a href="{relative_path}/login">Login</a></li>
+                            <!-- ENDIF loggedIn -->
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="{relative_path}/forums">Forums<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <!-- IF loggedIn -->
+                            <li>
+                                <a href="{relative_path}/forums"><i id="forum-home" class="fa fa-fw fa-home"></i>Home</a>
+                            </li>
+                            <li>
+                                <a href="{relative_path}/unread"><i id="unread-count" class="fa fa-fw fa-inbox" data-content="0" title="[[global:header.unread]]"></i><span class="visible-xs-inline"> [[global:header.unread]]</span>Unread</a>
+                            </li>
+                            <li>
+                                <a href="{relative_path}/recent"><i class="fa fa-fw fa-clock-o" title="[[global:header.recent]]"></i><span class="visible-xs-inline"> [[global:header.recent]]</span>Recent</a>
+                            </li>
+                            <li>
+                                <a href="{relative_path}/tags"><i class="fa fa-fw fa-tags" title="[[global:header.tags]]"></i><span class="visible-xs-inline"> [[global:header.tags]]</span>Tags</a>
+                            </li>
+                            <li>
+                                <a href="{relative_path}/popular"><i class="fa fa-fw fa-fire" title="[[global:header.popular]]"></i><span class="visible-xs-inline"> [[global:header.popular]]</span>Popular</a>
+                            </li>
+                            <!-- ELSE -->
+                            <li><a href="{relative_path}/login">Login</a></li>
+                            <!-- ENDIF loggedIn -->
+                        </ul>
+                    </li>
+                </ul>
 
                 <ul class="nav navbar-nav navbar-right pull-right">
                     <li>

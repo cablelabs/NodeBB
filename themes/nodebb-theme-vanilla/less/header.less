@@ -1,5 +1,8 @@
 .header {
 
+	padding: 1em 1.5em 0.5em;
+	border-bottom: 1px solid #fff;
+
 	#user_label {
 		img {
 			border: 1px solid #454;
@@ -18,10 +21,26 @@
 	}
 
 	.forum-logo {
-		float: left;
-		max-height: 50px;
-		width: auto;
+		width: 285px;
+		margin-right: 5vw;
+		a {
+			color: #fff;
+			text-decoration: none;
+		}
+		img {
+			float: left;
+			max-height: 40px;
+			width: auto;
+			@media screen and (max-width: 768px) {
+	    		max-height: 30px
+	    	}
+		}
+		span {
+			float: right;
+		}
 	}
+
+
 
 	.header-topic-title {
 		text-align: right;

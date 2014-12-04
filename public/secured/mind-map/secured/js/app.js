@@ -1,35 +1,39 @@
 (function (window, document, $, undefined) {
 
-var $searchField = $('#search-field'),
-    $viewDepthSelect = $('.view-depth-select'),
-    graph;
+window.initMindMap = function (element) {
 
-$searchField.on('keyup', function (evt) {
-    graph.search($searchField.val())
-})
+    var $searchField = $('#search-field'),
+        $viewDepthSelect = $('.view-depth-select'),
+        graph;
 
-$('#search-form').on('submit', function (evt) {
-    evt.preventDefault();
-})
+    $searchField.on('keyup', function (evt) {
+        graph.search($searchField.val())
+    })
 
-$('#clear-search-btn').on('click', function () {
-    $searchField.val('');
-    graph.reset();
-})
+    $('#search-form').on('submit', function (evt) {
+        evt.preventDefault();
+    })
 
-$viewDepthSelect.on('click', function (event) {
-    $viewDepthSelect.removeClass('selected')
-    $(this).addClass('selected')
-    graph.setDepth($(this).data('depth'))
-})
+    $('#clear-search-btn').on('click', function () {
+        $searchField.val('');
+        graph.reset();
+    })
 
-/* Ajax Request to fetch Graph Data */
-$.ajax({url: '/secured/mind-map/assets/links.json'}).done(function (data) {
+    $viewDepthSelect.on('click', function (event) {
+        $viewDepthSelect.removeClass('selected')
+        $(this).addClass('selected')
+        graph.setDepth($(this).data('depth'))
+    })
 
-    //graph is the id of the element in which we'll create the graph
-    //EntityGraph depends on jQuery.  Please include it in index.html
-    graph = EntityGraph.create(data, 'graph')
+    /* Ajax Request to fetch Graph Data */
+    $.ajax({url: '/secured/mind-map/assets/links.json'}).done(function (data) {
 
-}).fail(function() { alert('unable to download graph data')} );
+        //graph is the id of the element in which we'll create the graph
+        //EntityGraph depends on jQuery.  Please include it in index.html
+        graph = EntityGraph.create(data, element)
+
+    }).fail(function() { alert('unable to download graph data')} );
+
+}
 
 }(window, document, jQuery))
