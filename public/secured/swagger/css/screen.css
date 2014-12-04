@@ -6,11 +6,11 @@
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  height: 100%;
 }
 
 .swagger-section .container {
   width: 960px;
-  overflow-x: auto;
 }
 
 /* Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org> */
