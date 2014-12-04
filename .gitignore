@@ -34,3 +34,4 @@ pidfile
 /public/nodebb.min.js.map
 
 dump.rdb
+/public/secured/mind-map/assets/links.json
