@@ -14,7 +14,7 @@ var swaggerUriBase;
 function create (data, elementID) {
     swaggerUriBase = data.swaggerUriBase;
     var graph = new Graph({
-        elem: document.getElementById('graph'),
+        elem: document.getElementById(elementID),
         data: data
     });
     //setup jQuery popover component
@@ -31,7 +31,6 @@ function create (data, elementID) {
 //Graph
 function Graph (spec) {
     DomElement.call(this, spec)
-    this.depth = 1
 }
 
 Graph.prototype = Object.create(DomElement.prototype)
@@ -46,6 +45,13 @@ Graph.prototype.init = function() {
             }))
         }
     })
+
+    this.depth = localStorage.getItem('entityMapDepth') || 1;
+
+    var selectedEntityName = localStorage.getItem('entityMapSelected')
+    if (selectedEntityName) {
+        this.broadcast('setSelected', selectedEntityName)
+    }
 };
 
 Graph.prototype.onEmit = function(event, data) {
@@ -74,15 +80,22 @@ Graph.prototype.search = function(term) {
 
 Graph.prototype.setDepth = function(depth) {
     this.broadcast('reset')
-    this.depth = depth
+    this.depth = depth;
+    localStorage.entityMapDepth = depth;
+
     if (this.selectedEntity) {
         this.selectedEntity.toggle('selected', true)
         this.selectedEntity.setDepth()
     }
 };
 
+Graph.prototype.getDepth = function () {
+    return this.depth;
+}
+
 Graph.prototype.onReset = function (data) {
     this.selectedEntity = null;
+    localStorage.removeItem('entityMapSelected');
     this.broadcast('reset', data)
 }
 
@@ -90,6 +103,7 @@ Graph.prototype.onDepth = function (data) {
     data.graphDepth = this.depth
     if (data.entity.depth === 0) {
         this.selectedEntity = data.entity
+        localStorage.setItem('entityMapSelected', data.entity.name);
     }
     this.broadcast('depth', data)
 }
@@ -139,6 +153,7 @@ Domain.prototype.clickHandler = function(event) {
 //Entity
 function Entity (spec) {
     this.name = spec.data.name
+    this.depth = -1
     this.domainName = spec.domainName
     DomElement.call(this, spec)
 }
@@ -241,6 +256,9 @@ Entity.prototype.onBroadcast = function(event, data) {
         case 'reset':
             this.onReset()
             break
+        case 'setSelected':
+            this.onSetSelected(data)
+            break
         default:
             this.broadcast(event, data)
     }
@@ -280,6 +298,13 @@ Entity.prototype.onSearch = function(term) {
         }
     }
 };
+
+Entity.prototype.onSetSelected = function (selectedEntityName) {
+    if (this.name === selectedEntityName) {
+        this.toggle('selected', true)
+        this.setDepth()
+    }
+}
 
 Entity.prototype.getLink = function () {
     var linkBase = swaggerUriBase + this.domainName,

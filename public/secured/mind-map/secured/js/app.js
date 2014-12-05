@@ -29,6 +29,7 @@
         //graph is the id of the element in which we'll create the graph
         //EntityGraph depends on jQuery.  Please include it in index.html
         graph = EntityGraph.create(data, 'graph');
+        $viewDepthSelect.eq(graph.getDepth() - 1).addClass('selected');
 
     }).fail(function() { alert('unable to download graph data')} );
 
