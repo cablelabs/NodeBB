@@ -15326,6 +15326,293 @@
           "$ref": "OrganizationSummary"
         }
       }
+    },
+    "CableModem": {
+      "id" : "CableModem",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "installedDOCSISVersion": {
+          "type": "string"
+        },
+        "maxChannelsSupported": {
+          "type": "integer"
+        },
+        "numActiveChannels": {
+          "type": "integer"
+        },
+        "usageState": {
+          "type": "integer"
+        },
+        "manufactureDateStamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "otherIdentifier": {
+          "type": "string"
+        },
+        "powerState": {
+          "type": "integer"
+        },
+        "serialNumber": {
+          "type": "string"
+        },
+        "versionNumber": {
+          "type": "string"
+        },
+        "clliCode": {
+          "$ref": "CLLICode"
+        },
+        "deviceActivationStatus": {
+          "type": "string",
+          "description": "Activation_Pending, Activated, Activation_Failed"
+        },
+        "backplaneIndependent": {
+          "type": "boolean"
+        },
+        "backplaneNumber": {
+          "type": "integer"
+        },
+        "configurationOrder": {
+          "type": "string"
+        },
+        "deviceGroupID": {
+          "type": "string"
+        },
+        "isComposite": {
+          "type": "boolean"
+        },
+        "canMixPower": {
+          "type": "boolean"
+        },
+        "hasPowerManagement": {
+          "type": "boolean"
+        },
+        "powerManagementCapabilities": {
+          "type": "string"
+        },
+        "deviceProviderType": {
+          "type": "string",
+          "description": "CustomerProvided, CompanyProvided"
+        },
+        "deviceManagementType": {
+          "type": "string",
+          "description": "CustomerManaged, ProviderManaged"
+        },
+        "macAddress": {
+          "$ref": "MACAddress"
+        },
+        "channel": {
+          "type": "array",
+          "items": {
+            "$ref": "CableModemChannel"
+          }
+        },
+        "assignedCMTS": {
+          "$ref": "CMTSCableModemAssignment"
+        },
+        "docsisinterface": {
+          "$ref": "DOCSISCableInterface"
+        },
+        "serviceSite": {
+          "$ref": "SiteSummary"
+        },
+        "fiberNode": {
+          "$ref": "FiberNode"
+        }
+      }
+    },
+    "DOCSISCableInterface": {
+      "type": "object",
+      "properties": {
+        "mtuSupported": {
+          "type": "integer"
+        },
+        "hasDataLink": {
+          "type": "boolean"
+        },
+        "vendorInterfaceNumber": {
+          "type": "string"
+        },
+        "lrStatus": {
+          "type": "integer"
+        },
+        "t3RangingResponseTimeouts": {
+          "type": "integer"
+        },
+        "mtuCurrent": {
+          "type": "integer"
+        },
+        "isInterfaceEnabled": {
+          "type": "boolean"
+        },
+        "networkPath": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "NetworkPath"
+          }
+        },
+        "isOperational": {
+          "type": "boolean"
+        },
+        "correctedCodewordsIn": {
+          "type": "integer"
+        },
+        "customerInterfaceNumber": {
+          "type": "string"
+        },
+        "t4RangingRequestWindowTimeouts": {
+          "type": "integer"
+        },
+        "usageState": {
+          "type": "integer"
+        },
+        "interfaceInitResetCount": {
+          "type": "integer"
+        },
+        "clliCode": {
+          "type": "object",
+          "$ref": "CLLICode",
+          "required": true
+        },
+        "serviceState": {
+          "type": "integer"
+        },
+        "supportsMLPPP": {
+          "type": "boolean"
+        },
+        "badCodewordsIn": {
+          "type": "integer"
+        },
+        "hasCarrierDetect": {
+          "type": "boolean"
+        },
+        "syncLostCount": {
+          "type": "integer"
+        },
+        "goodCodewordsIn": {
+          "type": "integer"
+        },
+        "deviceConfigMethod": {
+          "type": "integer"
+        }
+      }
+    },
+    "CMTSCableModemAssignment": {
+      "id": "CMTSCableModemAssignment",
+      "type": "object",
+      "properties": {
+        "cmStatus": {
+          "type": "integer",
+          "description": "1 - other than below, 2 - ranging, 3 - ranging aborted, 4 - ranging complete, 5 - IP complete (IP Address DHCP-assigned), 6 - registration complete (aka operational), 7 - access denied, 8 - RESERVED, 9 - registered, BPI initialized"
+        },
+        "cmPreEqualized": {
+          "type": "boolean"
+        },
+        "cableModem": {
+          "$ref": "CableModemSummary"
+        },
+        "cmts": {
+          "$ref": "CMTSSummary"
+        }
+      }
+    },
+    "CableModemChannel": {
+      "type": "object",
+      "properties": {
+        "snr": {
+          "type": "object",
+          "$ref": "Quantity",
+          "required": true
+        },
+        "modulationType": {
+          "type": "integer"
+        },
+        "link": {
+          "type": "object",
+          "$ref": "Link",
+          "required": true
+        },
+        "warnThresholdPercent": {
+          "type": "integer"
+        },
+        "operationalState": {
+          "type": "integer"
+        },
+        "isPreEqualized": {
+          "type": "boolean"
+        },
+        "overSubscription": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "modulationProfileNumber": {
+          "type": "integer"
+        },
+        "originalMteID": {
+          "type": "string"
+        },
+        "logicalAlarmStatus": {
+          "type": "integer"
+        },
+        "mteAdministrativeState": {
+          "type": "integer"
+        },
+        "bpsAvailable": {
+          "type": "integer"
+        },
+        "mteID": {
+          "type": "string"
+        },
+        "channelWidthHz": {
+          "type": "number"
+        },
+        "modulationChannelType": {
+          "type": "integer"
+        },
+        "additionalInfo": {
+          "type": "string"
+        },
+        "isMTEOperational": {
+          "type": "boolean"
+        },
+        "transmitOffset": {
+          "type": "integer"
+        },
+        "bpsAssigned": {
+          "type": "integer"
+        },
+        "transmitPower": {
+          "type": "object",
+          "$ref": "Quantity",
+          "required": true
+        },
+        "logicalAlarmReportingEnabled": {
+          "type": "boolean"
+        },
+        "channelFrequencyHz": {
+          "type": "number"
+        },
+        "typeOfMTE": {
+          "type": "integer"
+        },
+        "modulationConstellation": {
+          "type": "integer"
+        },
+        "receivePower": {
+          "type": "object",
+          "$ref": "Quantity",
+          "required": true
+        }
+      }
     }
   }
 }
