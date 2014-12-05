@@ -2,7 +2,7 @@ var request = require('request'),
 	async   = require('async'),
 	fs      = require('fs'),
 	path 	= require('path'),
-	config  = path.join(__dirname + '/../../src/mind-map/settings.json');
+	config  = require(path.join(__dirname + '/../../src/mind-map/settings.json'));
 
 module.exports.init = function (callback) {
 
@@ -21,7 +21,7 @@ module.exports.init = function (callback) {
 				if (!exists) {
 					fs.mkdirSync(path.join(__dirname + '/../../public/secured/mind-map/assets'))
 				}
-				fs.writeFile(path.join(__dirname, '/../../public/secured/mind-map/assets/links.json'), JSON.stringify(result, null, 4))
+				fs.writeFile(path.join(__dirname + '/../../public/secured/mind-map/assets/links.json'), JSON.stringify(result, null, 4))
 				callback();
 			});
 		}
@@ -50,6 +50,7 @@ function buildEndpointProfiles (body, pathNames, callback) {
 		swaggerUriBase: config.swaggerUriBase,
 		paths: []
 	}
+	console.log(result);
 	pathNames.forEach( function (path) {
 		var get = body.paths[path].get
 		var endpoint = {
