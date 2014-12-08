@@ -13400,6 +13400,7 @@
     },
     "EthernetInterfaceDeltas": {
       "id": "EthernetInterfaceDeltas",
+      "type": "object",
       "properties": {
         "id": {
           "type": "string"
@@ -13437,6 +13438,7 @@
     },
     "UNIServiceDeltas": {
       "id": "UNIServiceDeltas",
+      "type": "object",
       "properties": {
         "id": {
           "type": "string"
@@ -13451,12 +13453,36 @@
           }
         },
         "uniServiceConfiguration": {
-          "$ref": "UNIServiceConfiguration"
+          "$ref": "UNIServiceConfigurationSummary"
+        },
+        "currentUniService": {
+          "$ref": "UNIServiceSummary"
         }
       }
     },
-    "Service": {
-      "id": "Service",
+    "EVCServiceDeltas": {
+      "id": "EVCServiceDeltas",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "uniServiceConfiguration": {
+          "$ref": "EVCServiceConfiguration"
+        },
+        "changes": {
+          "type": "array",
+          "items": {
+            "$ref": "Changes"
+          }
+        }
+      }
+    },
+    "Services": {
+      "id": "Services",
       "type": "object",
       "properties": {
         "id": {
@@ -13471,10 +13497,35 @@
             "$ref": "UNIServiceDeltas"
           }
         },
+        "evcServiceDeltas": {
+          "type": "array",
+          "items": {
+            "$ref": "EVCServiceDeltas"
+          }
+        },
         "changes": {
           "type": "array",
           "items": {
             "$ref": "Changes"
+          }
+        }
+      }
+    },
+    "Resources": {
+      "type": "object",
+      "properties": {
+        "ethernetInterfaceDeltas": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "EthernetInterfaceDeltas"
+          }
+        },
+        "resourcePortDeltas": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "ResourcePortDeltas"
           }
         }
       }
@@ -13509,11 +13560,11 @@
         "designArtifact": {
           "$ref": "Link"
         },
-        "resourceDesign": {
-          "$ref": "Resource"
-        },
         "serviceDesign": {
-          "$ref": "Service"
+          "$ref": "Services"
+        },
+        "resourceDesign": {
+          "$ref": "Resources"
         }
       }
     },
