@@ -1844,7 +1844,7 @@
         }
       }
     },
-    "/productorder/case3_final/productorderitem": {
+    "/productorder/{id}/productorderitem": {
       "post": {
         "tags": [
           "Interaction"
@@ -1860,6 +1860,14 @@
           "application/xml"
         ],
         "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of the Product Order instance",
+            "required": true,
+            "default": "case3_final",
+            "type": "string"
+          },
           {
             "in": "body",
             "name": "body",
@@ -1880,7 +1888,148 @@
         }
       }
     },
-    "/productorder/case3_final/productorderitem/{id}": {
+    "/productorder/{po-id}/productorderitem/{id}": {
+      "get": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Find resource by ID",
+        "description": "The purpose for the Customer Order expressed in terms of a Product Offering or a Product (for a change order) inherited from BusinessInteractionItem.",
+        "displayName": "Product OrderItem",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "po-id",
+            "description": "ID of the Product Order instance",
+            "required": true,
+            "default": "case3_final",
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "view",
+            "description": "View of the resource that you want to get.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/ProductOrderItem"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Update an existing resource",
+        "description": "Update a specific instance of the resource by ID.",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "po-id",
+            "description": "ID of the Product Order instance",
+            "required": true,
+            "default": "case3_final",
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Instance object that needs to be updated.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ProductOrderItem"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/ProductOrderItem"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Deletes an resource based on ID.",
+        "description": "Delete a specific instance based on the ID",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "po-id",
+            "description": "ID of the Product Order instance",
+            "required": true,
+            "default": "case3_final",
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Instance id to be deleted",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully Deleted."
+          },
+          "400": {
+            "description": "Invalid Instance value"
+          }
+        }
+      }
+    },
+    "/productorderitem/{id}": {
       "get": {
         "tags": [
           "Interaction"
@@ -1940,6 +2089,14 @@
         ],
         "parameters": [
           {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
             "in": "body",
             "name": "body",
             "description": "Instance object that needs to be updated.",
@@ -1964,35 +2121,6 @@
           },
           "405": {
             "description": "Validation exception"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Interaction"
-        ],
-        "summary": "Deletes an resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "id",
-            "description": "Instance id to be deleted",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Successfully Deleted."
-          },
-          "400": {
-            "description": "Invalid Instance value"
           }
         }
       }
@@ -12381,6 +12509,32 @@
         }
       }
     },
+    "EPLProductSummary": {
+      "id": "EPLProductSummary",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "name": {
+          "type": "string"
+        },
+        "isBundle": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": "string"
+        },
+        "productStatus": {
+          "type": "string"
+        },
+        "productSerialNumber": {
+          "type": "string"
+        }
+      }
+    },
     "EPLProduct": {
       "id": "EPLProduct",
       "properties": {
@@ -12455,8 +12609,9 @@
         "action": {
           "type": "string"
         },
-        "interactionItemStatus": {
-          "type": "string"
+        "orderItemState": {
+          "type": "string",
+          "description": "NEW, PRESALES, POSTSALES, PROVISIONING, ACTIVATION, CANCELED, COMPLETED, WAITING_ON_EXTERNAL_ACTION"
         },
         "quantity": {
           "$ref": "Quantity"
@@ -12465,10 +12620,16 @@
           "$ref": "ProductConfiguration"
         },
         "device": {
-          "$ref": "Device"
+          "$ref": "DeviceSummary"
         },
         "eplProduct": {
-          "$ref": "EPLProduct"
+          "$ref": "EPLProductSummary"
+        },
+        "stateTransitions": {
+          "type": "array",
+          "items": {
+            "$ref": "Link"
+          }
         }
       }
     },
