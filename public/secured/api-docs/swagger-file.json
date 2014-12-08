@@ -12256,6 +12256,26 @@
         }
       }
     },
+    "EVCServiceSummary": {
+      "id": "EVCServiceSummary",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "hasStarted": {
+          "type": "boolean"
+        },
+        "isServiceEnabled": {
+          "type": "boolean"
+        },
+        "isMandatory": {
+          "type": "boolean"
+        }
+      }
+    },
     "EVCService": {
       "id": "EVCService",
       "properties": {
@@ -12275,7 +12295,8 @@
           "type": "boolean"
         },
         "startMode": {
-          "type": "number"
+          "type": "number",
+          "description" : "0:  Unknown, 1:  Automatically by the managed environment, 2:  Automatically by the owning device, 3:  Manually by the Provider of the Service, 4:  Manually by a Customer of the Provider, 5:  Any of the above"
         },
         "isStateful": {
           "type": "boolean"
@@ -12301,21 +12322,28 @@
         "customerFacingService": {
           "type": "array",
           "items": {
-            "$ref": "EVCService"
+            "$ref": "EVCServiceSummary"
           }
         },
         "resourceFacingService": {
           "type": "array",
           "items": {
-            "$ref": "EVCService"
+            "$ref": "EVCServiceSummary"
           }
         },
         "unis": {
           "type": "array",
           "items": {
-            "$ref": "UNIService"
+            "$ref": "UNIServiceSummary"
           }
+        },
+        "configuration": {
+          "$ref": "EVCConfiguration"
+        },
+        "path": {
+          "$ref": "NetworkPath"
         }
+
       }
     },
     "EVCProduct": {
