@@ -12782,6 +12782,31 @@
         }
       }
     },
+    "EthernetInterfaceSummary": {
+      "id": "EthernetInterfaceSummary",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "customerInterfaceNumber": {
+          "type": "integer"
+        },
+        "deviceConfigMethod": {
+          "type": "string",
+          "description" : "0 - not configured, 1 - using the CONSOLE port, 2 - using the AUXILIARY port, 3 - using a virtual terminal interface, 4 - download through a TFTP server, 5 - download through an FTP server, 6 - download through a NMS"
+        },
+        "physicalPort": {
+          "$ref": "PhysicalPort"
+        },
+        "macAddress": {
+          "$ref": "MACAddress"
+        }
+      }
+    },
     "EthernetInterface": {
       "id": "EthernetInterface",
       "type": "object",
@@ -13346,6 +13371,12 @@
     "ResourcePortDeltas": {
       "id": "ResourcePortDeltas",
       "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
         "changes": {
           "type": "array",
           "items": {
@@ -13353,6 +13384,9 @@
           }
         },
         "resourcePortConfiguration": {
+          "$ref": "ResourcePortConfiguration"
+        },
+        "currentPort": {
           "$ref": "ResourcePort"
         }
       }
@@ -13370,7 +13404,8 @@
           "type": "number"
         },
         "deviceConfigMethod": {
-          "type": "string"
+          "type": "string",
+          "description": "0 - not configured, 1 - using the CONSOLE port, 2 - using the AUXILIARY port, 3 - using a virtual terminal interface, 4 - download through a TFTP server, 5 - download through an FTP server, 6 - download through a NMS"
         },
         "hasCarrierDetect": {
           "type": "boolean"
@@ -13393,7 +13428,7 @@
         "ethernetInterface": {
           "type": "object",
           "items": {
-            "$ref": "EthernetInterface"
+            "$ref": "EthernetInterfaceSummary"
           }
         }
       }
