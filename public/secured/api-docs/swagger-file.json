@@ -13903,37 +13903,32 @@
     "ImpactedItem": {
       "type": "object",
       "properties": {
-        "resources": {
+        "type": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "ticket": {
+          "$ref": "TicketSummary"
+        },
+        "accounts": {
           "type": "array",
           "items": {
-            "type": "object",
-            "$ref": "Resource"
+            "$ref": "AccountSummary"
           }
         },
         "services": {
           "type": "array",
           "items": {
-            "type": "object",
-            "$ref": "Service"
+            "$ref": "ServiceSummary"
           }
         },
-        "customerAccounts": {
+        "resources": {
           "type": "array",
           "items": {
-            "type": "object",
-            "$ref": "Account"
+            "$ref": "ResourceSummary"
           }
-        },
-        "ticket": {
-          "type": "object",
-          "$ref": "Ticket",
-          "required": true
-        },
-        "description": {
-          "type": "string"
-        },
-        "type": {
-          "type": "string"
         }
       }
     },
