@@ -12578,6 +12578,36 @@
         }
       }
     },
+    "ProductOrderSummary": {
+      "id": "ProductOrderSummary",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "orderState": {
+          "type": "string",
+          "description": "NEW, SUBMITTED, INPROGRESS, CANCELED, COMPLETED, WAITING_ON_EXTERNAL_ACTION"
+        },
+        "customerOrderType": {
+          "type": "string",
+          "description": "NewConnect, Disconnect, RecordsCorrection, Modifiy"
+        },
+        "feasibility": {
+          "type": "string",
+          "description": "FEASIBLE, CHANGED, NOTFEASIBLE"
+        },
+        "purchaceOrderNumber": {
+          "type": "string"
+        },
+        "dueDate": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
     "ProductOrder": {
       "id": "ProductOrder",
       "properties": {
@@ -12587,24 +12617,24 @@
         "link": {
           "$ref": "Link"
         },
+        "orderState": {
+          "type": "string",
+          "description": "NEW, SUBMITTED, INPROGRESS, CANCELED, COMPLETED, WAITING_ON_EXTERNAL_ACTION"
+        },
+        "customerOrderType": {
+          "type": "string",
+          "description": "NewConnect, Disconnect, RecordsCorrection, Modifiy"
+        },
         "feasibility": {
           "type": "string",
-          "enum": [
-            "FEASIBLE",
-            "CHANGED",
-            "NOTFEASIBLE"
-          ]
+          "description": "FEASIBLE, CHANGED, NOTFEASIBLE"
         },
         "purchaceOrderNumber": {
           "type": "string"
         },
         "orderType": {
           "type": "string",
-          "enum": [
-            "ADDRESSCHANGE",
-            "BANDWIDTHCHANGE",
-            "OTHER"
-          ]
+          "description": "ADDRESSCHANGE, BANDWIDTHCHANGE, OTHER"
         },
         "newState": {
           "$ref": "Quantity"
@@ -12621,26 +12651,21 @@
         "assignedPriority": {
           "type": "number"
         },
-        "customerOrderType": {
-          "type": "string",
-          "enum": [
-            "NewConnect",
-            "Disconnect",
-            "RecordsCorrection",
-            "Modifiy"
-          ]
-        },
         "interactionDate": {
-          "type": "date"
+          "type": "string",
+          "format": "date-time"
         },
         "interactionDateComplete": {
-          "type": "date"
+          "type": "string",
+          "format": "date-time"
         },
         "assignedResponseDate": {
-          "type": "date"
+          "type": "string",
+          "format": "date-time"
         },
         "dueDate": {
-          "type": "date"
+          "type": "string",
+          "format": "date-time"
         },
         "productOrderItems": {
           "type": "array",
@@ -12652,10 +12677,10 @@
           "$ref": "CustomerQuote"
         },
         "existingSite": {
-          "$ref": "Site"
+          "$ref": "SiteSummary"
         },
         "newSite": {
-          "$ref": "Site"
+          "$ref": "SiteSummary"
         },
         "account": {
           "$ref": "AccountSummary"
