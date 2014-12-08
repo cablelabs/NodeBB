@@ -12848,8 +12848,268 @@
         }
       }
     },
-    "ServiceOrderItem": { },
-    "ServiceOrder": { },
+    "ServiceConfigurationSummary": {
+      "id": "ServiceConfigurationSummary",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "hasStarted": {
+          "type": "boolean"
+        },
+        "isServiceEnabled": {
+          "type": "boolean"
+        },
+        "isMandatory": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ServiceConfiguration": {
+      "id": "ServiceConfiguration",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "hasStarted": {
+          "type": "boolean"
+        },
+        "isServiceEnabled": {
+          "type": "boolean"
+        },
+        "isMandatory": {
+          "type": "boolean"
+        },
+        "startMode": {
+          "type": "integer",
+          "description": "0:  Unknown, 1:  Automatically by the managed environment, 2:  Automatically by the owning device, 3:  Manually by the Provider of the Service, 4:  Manually by a Customer of the Provider, 5:  Any of the above"
+        },
+        "isStateful": {
+          "type": "boolean"
+        },
+        "isFCCReportable": {
+          "type": "boolean"
+        },
+        "isTSP": {
+          "type": "boolean"
+        },
+        "isResourceFacingService": {
+          "type": "boolean"
+        },
+        "isCustomerFacingService": {
+          "type": "boolean"
+        },
+        "rfsStatus": {
+          "type": "integer"
+        },
+        "cfsStatus": {
+          "type": "integer"
+        },
+        "customerFacingService": {
+          "type": "array",
+          "items": {
+            "$ref": "ServiceConfigurationSummary"
+          }
+        },
+        "resourceFacingService": {
+          "type": "array",
+          "items": {
+            "$ref": "ServiceConfigurationSummary"
+          }
+        },
+        "service": {
+          "$ref": "ServiceSummary"
+        },
+        "configurationDatas": {
+          "type": "array",
+          "items": {
+            "$ref": "ConfigurationData"
+          }
+        },
+        "resourceFacingServices": {
+          "type": "array",
+          "items": {
+            "$ref": "ResourceConfiguration"
+          }
+        }
+      }
+    },
+    "ServiceOrderItem": {
+      "id": "ServiceOrderItem",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "action": {
+          "type": "string",
+          "description": "ADDRESSCHANGE, BANDWIDTHCHANGE, OTHER"
+        },
+        "quantity": {
+          "$ref": "Quantity"
+        },
+        "interactionItemStatus": {
+          "type": "string"
+        },
+        "locations": {
+          "type": "array",
+          "items": {
+            "$ref": "Location"
+          }
+        },
+        "serviceConfiguration": {
+          "$ref": "ServiceConfiguration"
+        },
+        "device": {
+          "$ref": "DeviceSummary"
+        },
+        "evcServiceConfiguration": {
+          "$ref": "EVCServiceConfigurationSummary"
+        },
+        "uniServiceConfigurations": {
+          "type": "array",
+          "items": {
+            "$ref": "UNIServiceConfigurationSummary"
+          }
+        },
+        "orderDesign": {
+          "$ref": "OrderDesign"
+        }
+      }
+    },
+    "ServiceOrder": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "description": {
+          "type": "string"
+        },
+        "interactionDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "interactionDateComplete": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "interactionStatus": {
+          "type": "string"
+        },
+        "serviceOrderItems": {
+          "type": "array",
+          "items": {
+            "$ref": "ServiceOrderItem"
+          }
+        },
+        "locations": {
+          "type": "array",
+          "items": {
+            "$ref": "Location"
+          }
+        },
+        "characteristics": {
+          "type": "array",
+          "items": {
+            "$ref": "Characteristic"
+          }
+        },
+        "customers": {
+          "type": "array",
+          "items": {
+            "$ref": "CustomerSummary"
+          }
+        },
+        "accounts": {
+          "type": "array",
+          "items": {
+            "$ref": "AccountSummary"
+          }
+        },
+        "sat": {
+          "$ref": "SAT"
+        },
+        "asBuiltOrderDesign": {
+          "$ref": "AsBuiltOrderDesign"
+        }
+      }
+    },
+    "SAT": {
+      "id": "SAT",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "pass": {
+          "type": "boolean"
+        },
+        "throughput": {
+          "$ref": "Quantity"
+        },
+        "frameloss": {
+          "$ref": "Quantity"
+        },
+        "latency": {
+          "$ref": "Quantity"
+        },
+        "systemreset": {
+          "type": "boolean"
+        },
+        "systemrecover": {
+          "type": "boolean"
+        }
+      }
+    },
+    "AsBuiltOrderDesign": {
+      "id": "AsBuiltOrderDesign",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "status": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "fullAsBuiltNetwork": {
+          "$ref": "Link"
+        },
+        "evcService": {
+          "$ref": "EVCServiceSummary"
+        },
+        "uniServices": {
+          "type": "array",
+          "items": {
+            "$ref": "UNIServiceSummary"
+          }
+        }
+      }
+    },
     "EVCConfiguration": {
       "type": "object",
       "properties": {
@@ -13062,7 +13322,7 @@
           "description": "Legal values::  0 - unknown, 1 - ProviderEdge, 2 - CustomerEdge, 3 - ProviderCore, 9 - Other"
         },
         "ethernetInterface": {
-          "$ref": "EthernetInterface"
+          "$ref": "EthernetInterfaceSummary"
         }
       }
     },
@@ -13640,22 +13900,243 @@
         }
       }
     },
-    "Resource": {
-      "id": "Resource",
+    "ImpactedItem": {
+      "type": "object",
       "properties": {
-        "ethernetInterfaceDeltas": {
+        "resources": {
           "type": "array",
           "items": {
-            "$ref": "EthernetInterfaceDeltas"
+            "type": "object",
+            "$ref": "Resource"
           }
         },
-        "resourcePortDeltas": {
+        "services": {
           "type": "array",
           "items": {
-            "$ref": "ResourcePortDeltas"
+            "type": "object",
+            "$ref": "Service"
           }
+        },
+        "customerAccounts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "Account"
+          }
+        },
+        "ticket": {
+          "type": "object",
+          "$ref": "Ticket",
+          "required": true
+        },
+        "description": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
         }
       }
+    },
+    "ServiceSpecificationSummary": {
+      "id": "ServiceSpecificationSummary",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "description": {
+          "type": "string"
+        },
+        "commonName": {
+          "type": "string"
+        },
+        "isBundle": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ServiceSpecification": {
+      "id": "ServiceSpecification",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "description": {
+          "type": "string"
+        },
+        "commonName": {
+          "type": "string"
+        },
+        "isBundle": {
+          "type": "boolean"
+        },
+        "isCustomerFacing": {
+          "type": "boolean"
+        },
+        "isResourceFacing": {
+          "type": "boolean"
+        },
+        "isComposedOf": {
+          "type": "array",
+          "items": {
+            "$ref": "ServiceSpecificationSummary"
+          }
+        },
+        "customerFacingServiceSpec": {
+          "type": "array",
+          "items": {
+            "$ref": "ServiceSpecificationSummary"
+          }
+        },
+        "resourceFacingServiceSpec": {
+          "type": "array",
+          "items": {
+            "$ref": "ServiceSpecificationSummary"
+          }
+        },
+        "services": {
+          "type": "array",
+          "items": {
+            "$ref": "ServiceSummary"
+          }
+        },
+        "characteristics": {
+          "type": "array",
+          "items": {
+            "$ref": "Characteristic"
+          }
+        },
+        "serviceSpecificationTypes": {
+          "$ref": "ServiceSpecificationType"
+        }
+      }
+    },
+    "ServiceSpecificationType": {
+      "id": "ServiceSpecificationType",
+      "type": "object",
+      "properties": {
+        "serviceSpecTypeName": {
+          "type": "string"
+        }
+      }
+    },
+    "Service": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "hasStarted": {
+          "type": "boolean"
+        },
+        "isServiceEnabled": {
+          "type": "boolean"
+        },
+        "isMandatory": {
+          "type": "boolean"
+        },
+        "startMode": {
+          "type": "integer",
+          "description": "0:  Unknown, 1:  Automatically by the managed environment, 2:  Automatically by the owning device, 3:  Manually by the Provider of the Service, 4:  Manually by a Customer of the Provider, 5:  Any of the above"
+        },
+        "isStateful": {
+          "type": "boolean"
+        },
+        "isFCCReportable": {
+          "type": "boolean"
+        },
+        "isTSP": {
+          "type": "boolean"
+        },
+        "isResourceFacingService": {
+          "type": "boolean"
+        },
+        "isCustomerFacingService": {
+          "type": "boolean"
+        },
+        "rfsStatus": {
+          "type": "integer"
+        },
+        "cfsStatus": {
+          "type": "integer"
+        },
+        "serviceSpecification": {
+          "$ref": "ServiceSpecificationSummary"
+        },
+        "tickets": {
+          "type": "array",
+          "items": {
+            "$ref": "ImpactedItem"
+          }
+        },
+        "resources": {
+          "type": "array",
+          "items": {
+            "$ref": "ResourceSummary"
+          }
+        },
+        "products": {
+          "type": "array",
+          "items": {
+            "$ref": "ProductSummary"
+          }
+        },
+        "customerFacingService": {
+          "type": "array",
+          "items": {
+            "$ref": "ServiceSummary"
+          }
+        },
+        "resourceFacingService": {
+          "type": "array",
+          "items": {
+            "$ref": "ServiceSummary"
+          }
+        },
+        "sites": {
+          "type": "array",
+          "items": {
+            "$ref": "SiteSummary"
+          }
+        },
+        "characterisitcs": {
+          "type": "array",
+          "items": {
+            "$ref": "Characteristic"
+          }
+        },
+        "prefereneces": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "Preference"
+          }
+        },
+        "configurationDatas": {
+          "type": "array",
+          "items": {
+            "$ref": "ConfigurationData"
+          }
+        },
+        "device": {
+          "$ref": "DeviceSummary"
+        },
+        "productProperties": {
+          "$ref": "ProductProperties"
+        }
+      }
+    },
+    "Resource": {
     },
     "UNIServiceDeltas": {
       "id": "UNIServiceDeltas",
@@ -13923,7 +14404,16 @@
           "type": "string"
         },
         "device": {
-          "$ref": "Device"
+          "$ref": "DeviceSummary"
+        },
+        "newSite": {
+          "$ref": "SiteSummary"
+        },
+        "ethernetInterfaces": {
+          "type": "array",
+          "items": {
+            "$ref": "EthernetInterfaceSummary"
+          }
         },
         "orderDesign": {
           "$ref": "OrderDesign"
