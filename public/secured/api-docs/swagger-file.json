@@ -15613,36 +15613,66 @@
         }
       }
     },
-    "Product": {
-      "id": "Product",
+    "ProductSummary": {
+      "id": "ProductSummary",
       "type": "object",
       "properties": {
-        "productProperties": {
-          "$ref": "ProductProperties"
+        "id": {
+          "type": "string"
         },
         "link": {
           "$ref": "Link"
         },
-        "customerFacingServices": {
-          "type": "array",
-          "items": {
-            "$ref": "Service"
-          }
+        "name": {
+          "type": "string"
         },
         "isBundle": {
           "type": "boolean"
         },
-        "id": {
+        "description": {
           "type": "string"
-        },
-        "customerAccountInvolvements": {
-          "type": "array",
-          "items": {
-            "$ref": "AccountProductAssignment"
-          }
         },
         "productStatus": {
           "type": "string"
+        },
+        "productSerialNumber": {
+          "type": "string"
+        }
+      }
+    },
+    "Product": {
+      "id": "Product",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "name": {
+          "type": "string"
+        },
+        "isBundle": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": "string"
+        },
+        "productStatus": {
+          "type": "string"
+        },
+        "productSerialNumber": {
+          "type": "string"
+        },
+        "validFor": {
+          "$ref": "TimePeriod"
+        },
+        "productPrices": {
+          "type": "array",
+          "items": {
+            "$ref": "ProductPriceSummary"
+          }
         },
         "productRelationships": {
           "type": "array",
@@ -15650,35 +15680,32 @@
             "$ref": "ProductRelationship"
           }
         },
-        "description": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "validFor": {
-          "$ref": "TimePeriod"
-        },
-        "productSpecification": {
-          "$ref": "ProductSpecification"
-        },
-        "productPrices": {
-          "type": "array",
-          "items": {
-            "$ref": "ProductPrice"
-          }
-        },
-        "productSerialNumber": {
-          "type": "string"
-        },
         "products": {
           "type": "array",
           "items": {
             "$ref": "ProductSummary"
           }
         },
+        "customerAccountInvolvements": {
+          "type": "array",
+          "items": {
+            "$ref": "AccountProductAssignment"
+          }
+        },
+        "productSpecification": {
+          "$ref": "ProductSpecificationSummary"
+        },
         "productOffering": {
-          "$ref": "ProductOffering"
+          "$ref": "ProductOfferingSummary"
+        },
+        "customerFacingServices": {
+          "type": "array",
+          "items": {
+            "$ref": "ServiceSummary"
+          }
+        },
+        "productProperties": {
+          "$ref": "ProductProperties"
         }
       }
     },
@@ -15743,7 +15770,72 @@
         }
       }
     },
-    "ProductPrice": { },
+    "ProductPrice": {
+      "type": "object",
+      "properties": {
+        "eplProductConfiguration": {
+          "type": "object",
+          "$ref": "EPLProductConfiguration",
+          "required": true
+        },
+        "link": {
+          "type": "object",
+          "$ref": "Link",
+          "required": true
+        },
+        "eplProduct": {
+          "type": "object",
+          "$ref": "EPLProduct",
+          "required": true
+        },
+        "id": {
+          "type": "string"
+        },
+        "product": {
+          "type": "object",
+          "$ref": "Product",
+          "required": true
+        },
+        "description": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "prodPriceCharge": {
+          "type": "object",
+          "$ref": "ProdPriceCharge",
+          "required": true
+        },
+        "validFor": {
+          "type": "object",
+          "$ref": "TimePeriod",
+          "required": true
+        },
+        "partOf": {
+          "type": "object",
+          "$ref": "ProductPrice",
+          "required": true
+        },
+        "compositePrices": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "ProductPrice"
+          }
+        },
+        "componentPrice": {
+          "type": "object",
+          "$ref": "ComponentPrice",
+          "required": true
+        },
+        "prodPriceAlteration": {
+          "type": "object",
+          "$ref": "ProdPriceAlteration",
+          "required": true
+        }
+      }
+    },
     "ProductProperties": { },
     "ProductRelationship": { },
     "ProductSpecification": { },
