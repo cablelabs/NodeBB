@@ -9875,7 +9875,7 @@
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
-        "displayName": "SA T",
+        "displayName": "SAT",
         "produces": [
           "application/json",
           "application/xml"
