@@ -12312,6 +12312,7 @@
     },
     "EPLConfiguration": {
       "id": "EPLConfiguration",
+      "type": "obkect",
       "properties": {
         "bandwidth": {
           "$ref": "Quantity"
@@ -12537,6 +12538,7 @@
     },
     "EPLProduct": {
       "id": "EPLProduct",
+      "type": "object",
       "properties": {
         "id": {
           "type": "string"
@@ -12565,7 +12567,7 @@
         "products": {
           "type": "array",
           "items": {
-            "$ref": "EPLProduct"
+            "$ref": "EPLProductSummary"
           }
         },
         "productRelationships": {
@@ -12577,11 +12579,23 @@
         "productPrices": {
           "type": "array",
           "items": {
-            "$ref": "ProductPrice"
+            "$ref": "ProductPriceSummary"
           }
         },
+        "customerAccountInvolvements": {
+          "type": "array",
+          "items": {
+            "$ref": "AccountProductAssignment"
+          }
+        },
+        "productOrderItem": {
+          "$ref": "ProductOrderItem"
+        },
+        "productSpecification": {
+          "$ref": "ProductSpecificationSummary"
+        },
         "productOffering": {
-          "$ref": "ProductOffering"
+          "$ref": "ProductOfferingSummary"
         },
         "configuration": {
           "$ref": "EPLConfiguration"
@@ -12589,11 +12603,11 @@
         "uniProducts": {
           "type": "array",
           "items": {
-            "$ref": "UNIProduct"
+            "$ref": "UNIProductSummary"
           }
         },
         "evcProduct": {
-          "$ref": "EVCProduct"
+          "$ref": "EVCProductSummary"
         }
       }
     },
@@ -15709,6 +15723,44 @@
         }
       }
     },
+    "ProductRelationship": {
+      "id": "ProductRelationship",
+      "type": "object",
+      "properties": {
+        "relationshipType": {
+          "type": "string"
+        },
+        "product": {
+          "$ref": "ProductSummary"
+        },
+        "eplProduct": {
+          "$ref": "EPLProductSummary"
+        },
+        "eplProductConfiguration": {
+          "$ref": "EPLProductConfiguration"
+        }
+      }
+    },
+    "AccountProductAssignment": {
+      "type": "object",
+      "properties": {
+        "involventType": {
+          "type": "string"
+        },
+        "account": {
+          "$ref": "Account"
+        },
+        "product": {
+          "$ref": "ProductSummary"
+        },
+        "eplProducts": {
+          "$ref": "EPLProductSummary"
+        },
+        "eplProductConfigurations": {
+          "$ref": "EPLProductConfigurationSummary"
+        }
+      }
+    },
     "ProductProperties": {
       "id": "ProductProperties",
       "type": "object",
@@ -15770,79 +15822,108 @@
         }
       }
     },
-    "ProductPrice": {
+    "ProductPriceSummary": {
+      "id": "ProductPriceSummary",
       "type": "object",
       "properties": {
-        "eplProductConfiguration": {
-          "type": "object",
-          "$ref": "EPLProductConfiguration",
-          "required": true
-        },
-        "link": {
-          "type": "object",
-          "$ref": "Link",
-          "required": true
-        },
-        "eplProduct": {
-          "type": "object",
-          "$ref": "EPLProduct",
-          "required": true
-        },
         "id": {
           "type": "string"
         },
-        "product": {
-          "type": "object",
-          "$ref": "Product",
-          "required": true
-        },
-        "description": {
-          "type": "string"
+        "link": {
+          "$ref": "Link"
         },
         "name": {
           "type": "string"
         },
-        "prodPriceCharge": {
-          "type": "object",
-          "$ref": "ProdPriceCharge",
-          "required": true
+        "description": {
+          "type": "string"
         },
         "validFor": {
-          "type": "object",
-          "$ref": "TimePeriod",
-          "required": true
+          "$ref": "TimePeriod"
+        }
+      }
+    },
+    "ProductPrice": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
         },
-        "partOf": {
-          "type": "object",
-          "$ref": "ProductPrice",
-          "required": true
+        "link": {
+          "$ref": "Link"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "validFor": {
+          "$ref": "TimePeriod"
         },
         "compositePrices": {
           "type": "array",
           "items": {
-            "type": "object",
-            "$ref": "ProductPrice"
+            "$ref": "ProductPriceSummary"
           }
         },
-        "componentPrice": {
-          "type": "object",
-          "$ref": "ComponentPrice",
-          "required": true
+        "partOf": {
+          "$ref": "ProductPriceSummary"
+        },
+        "product": {
+          "$ref": "ProductSummary"
         },
         "prodPriceAlteration": {
+          "$ref": "ProdPriceAlteration"
+        },
+        "prodPriceCharge": {
+          "$ref": "ProdPriceCharge"
+        },
+        "componentPrice": {
+          "$ref": "ComponentPrice"
+        },
+        "eplProduct": {
+          "$ref": "EPLProduct"
+        },
+        "eplProductConfiguration": {
           "type": "object",
-          "$ref": "ProdPriceAlteration",
+          "$ref": "EPLProductConfiguration",
           "required": true
         }
       }
     },
-    "ProductProperties": { },
-    "ProductRelationship": { },
-    "ProductSpecification": { },
-    "ServiceRole": { },
-    "ServiceSpecification": { },
-    "ServiceConfiguration": { },
-    "SiteList": { },
+    "ProdPriceCharge": {
+      "id": "ProdPriceCharge",
+      "type": "object",
+      "properties": {
+        "price": {
+          "$ref": "Money"
+        },
+        "priceType": {
+          "type": "string"
+        },
+        "quantity": {
+          "$ref": "Quantity"
+        },
+        "period": {
+          "type": "string"
+        }
+      }
+    },
+    "ComponentPrice": {
+      "type": "object",
+      "properties": {
+        "priceType": {
+          "type": "string"
+        },
+        "unitOfMeasure": {
+          "$ref": "Quantity"
+        },
+        "price": {
+          "$ref": "Money"
+        }
+      }
+    },
     "StatusEntry": {
       "id": "StatusEntry",
       "type": "object",
@@ -15912,9 +15993,6 @@
         }
       }
     },
-    "Ticket": { },
-    "TicketLocation": { },
-    "TicketCategory": { },
     "UserSummary": {
       "type": "object",
       "properties": {

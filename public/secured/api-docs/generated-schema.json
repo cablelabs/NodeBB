@@ -36,28 +36,20 @@
   "AccountProductAssignment": {
     "type": "object",
     "properties": {
-      "product": {
-        "type": "object",
-        "$ref": "Product",
-        "required": true
-      },
       "involventType": {
         "type": "string"
       },
+      "account": {
+        "$ref": "Account"
+      },
+      "product": {
+        "$ref": "ProductSummary"
+      },
       "eplProducts": {
-        "type": "object",
-        "$ref": "EPLProduct",
-        "required": true
+        "$ref": "EPLProductSummary"
       },
       "eplProductConfigurations": {
-        "type": "object",
-        "$ref": "EPLProductConfiguration",
-        "required": true
-      },
-      "customerAccount": {
-        "type": "object",
-        "$ref": "Account",
-        "required": true
+        "$ref": "EPLProductConfigurationSummary"
       }
     }
   },
@@ -1550,18 +1542,14 @@
   "ComponentPrice": {
     "type": "object",
     "properties": {
-      "price": {
-        "type": "object",
-        "$ref": "Money",
-        "required": true
-      },
       "priceType": {
         "type": "string"
       },
       "unitOfMeasure": {
-        "type": "object",
-        "$ref": "Quantity",
-        "required": true
+        "$ref": "Quantity"
+      },
+      "price": {
+        "$ref": "Money"
       }
     }
   },
@@ -2740,113 +2728,88 @@
   "EPLConfiguration": {
     "type": "object",
     "properties": {
-      "z_Address": {
-        "type": "object",
-        "$ref": "Site",
-        "required": true
+      "bandwidth": {
+        "$ref": "Quantity"
       },
       "a_Address": {
-        "type": "object",
-        "$ref": "Site",
-        "required": true
+        "$ref": "SiteSummary"
       },
-      "bandwidth": {
-        "type": "object",
-        "$ref": "Quantity",
-        "required": true
+      "z_Address": {
+        "$ref": "SiteSummary"
       }
     }
   },
   "EPLProduct": {
     "type": "object",
     "properties": {
-      "uniProducts": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "$ref": "UNIProduct"
-        }
-      },
-      "link": {
-        "type": "object",
-        "$ref": "Link",
-        "required": true
-      },
-      "evcProduct": {
-        "type": "object",
-        "$ref": "EVCProduct",
-        "required": true
-      },
-      "unnamed_ProductOrderItem_": {
-        "type": "object",
-        "$ref": "ProductOrderItem",
-        "required": true
-      },
-      "isBundle": {
-        "type": "boolean"
-      },
       "id": {
         "type": "string"
       },
-      "customerAccountInvolvements": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "$ref": "AccountProductAssignment"
-        }
-      },
-      "productStatus": {
-        "type": "string"
-      },
-      "productRelationships": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "$ref": "ProductRelationship"
-        }
-      },
-      "description": {
-        "type": "string"
+      "link": {
+        "$ref": "Link"
       },
       "name": {
         "type": "string"
       },
-      "validFor": {
-        "type": "object",
-        "$ref": "TimePeriod",
-        "required": true
+      "isBundle": {
+        "type": "boolean"
       },
-      "productSpecification": {
-        "type": "object",
-        "$ref": "ProductSpecification",
-        "required": true
+      "description": {
+        "type": "string"
       },
-      "productPrices": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "$ref": "ProductPrice"
-        }
-      },
-      "configuration": {
-        "type": "object",
-        "$ref": "EPLConfiguration",
-        "required": true
+      "productStatus": {
+        "type": "string"
       },
       "productSerialNumber": {
         "type": "string"
       },
+      "validFor": {
+        "$ref": "TimePeriod"
+      },
       "products": {
         "type": "array",
         "items": {
-          "type": "object",
-          "$ref": "EPLProduct"
+          "$ref": "EPLProductSummary"
         }
       },
+      "productRelationships": {
+        "type": "array",
+        "items": {
+          "$ref": "ProductRelationship"
+        }
+      },
+      "productPrices": {
+        "type": "array",
+        "items": {
+          "$ref": "ProductPriceSummary"
+        }
+      },
+      "customerAccountInvolvements": {
+        "type": "array",
+        "items": {
+          "$ref": "AccountProductAssignment"
+        }
+      },
+      "productOrderItem": {
+        "$ref": "ProductOrderItem"
+      },
+      "productSpecification": {
+        "$ref": "ProductSpecificationSummary"
+      },
       "productOffering": {
-        "type": "object",
-        "$ref": "ProductOffering",
-        "required": true
+        "$ref": "ProductOfferingSummary"
+      },
+      "configuration": {
+        "$ref": "EPLConfiguration"
+      },
+      "uniProducts": {
+        "type": "array",
+        "items": {
+          "$ref": "UNIProductSummary"
+        }
+      },
+      "evcProduct": {
+        "$ref": "EVCProductSummary"
       }
     }
   },
@@ -5142,20 +5105,17 @@
     }
   },
   "ProdPriceAlteration": {
+    "id": "ProdPriceAlteration",
     "type": "object",
     "properties": {
       "price": {
-        "type": "object",
-        "$ref": "Money",
-        "required": true
+        "$ref": "Money"
       },
       "priceType": {
         "type": "string"
       },
       "quantity": {
-        "type": "object",
-        "$ref": "Quantity",
-        "required": true
+        "$ref": "Quantity"
       },
       "period": {
         "type": "string"
@@ -5163,20 +5123,17 @@
     }
   },
   "ProdPriceCharge": {
+    "id": "ProdPriceCharge",
     "type": "object",
     "properties": {
       "price": {
-        "type": "object",
-        "$ref": "Money",
-        "required": true
+        "$ref": "Money"
       },
       "priceType": {
         "type": "string"
       },
       "quantity": {
-        "type": "object",
-        "$ref": "Quantity",
-        "required": true
+        "$ref": "Quantity"
       },
       "period": {
         "type": "string"
@@ -5657,23 +5614,17 @@
   "ProductRelationship": {
     "type": "object",
     "properties": {
-      "eplProductConfiguration": {
-        "type": "object",
-        "$ref": "EPLProductConfiguration",
-        "required": true
-      },
-      "product": {
-        "type": "object",
-        "$ref": "Product",
-        "required": true
-      },
       "relationshipType": {
         "type": "string"
       },
+      "product": {
+        "$ref": "ProductSummary"
+      },
       "eplProduct": {
-        "type": "object",
-        "$ref": "EPLProduct",
-        "required": true
+        "$ref": "EPLProductSummary"
+      },
+      "eplProductConfiguration": {
+        "$ref": "EPLProductConfiguration"
       }
     }
   },
@@ -7731,59 +7682,75 @@
       "id": {
         "type": "string"
       },
-      "uniProductConfiguration": {
-        "type": "object",
-        "$ref": "UNIProductConfiguration",
-        "required": true
-      },
-      "productStatus": {
-        "type": "string"
-      },
-      "description": {
-        "type": "string"
+      "link": {
+        "$ref": "Link"
       },
       "name": {
         "type": "string"
       },
-      "link": {
-        "type": "object",
-        "$ref": "Link",
-        "required": true
+      "isBundle": {
+        "type": "boolean"
       },
-      "validFor": {
-        "type": "object",
-        "$ref": "TimePeriod",
-        "required": true
+      "description": {
+        "type": "string"
       },
-      "uniService": {
-        "type": "object",
-        "$ref": "UNIService",
-        "required": true
+      "productStatus": {
+        "type": "string"
       },
       "productSerialNumber": {
         "type": "string"
       },
-      "isBundle": {
-        "type": "boolean"
+      "validFor": {
+        "$ref": "TimePeriod"
+      },
+      "uniService": {
+        "$ref": "UNIServiceSummary"
+      },
+      "uniProductConfiguration": {
+        "$ref": "UNIProductConfiguration"
       }
     }
   },
   "UNIProductConfiguration": {
     "type": "object",
     "properties": {
-      "address": {
-        "type": "object",
-        "$ref": "Site",
-        "required": true
-      },
       "bandwidth": {
-        "type": "object",
-        "$ref": "Quantity",
-        "required": true
+        "$ref": "Quantity"
+      },
+      "address": {
+        "$ref": "Site"
+      }
+    }
+  },
+  "UNIServiceSummary": {
+    "id": "UNIServiceSummary",
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "link": {
+        "$ref": "Link"
+      },
+      "hasStarted": {
+        "type": "boolean"
+      },
+      "isServiceEnabled": {
+        "type": "boolean"
+      },
+      "isMandatory": {
+        "type": "boolean"
+      },
+      "startMode": {
+        "type": "integer"
+      },
+      "isStateful": {
+        "type": "boolean"
       }
     }
   },
   "UNIService": {
+    "id": "UNIService",
     "type": "object",
     "properties": {
       "id": {
