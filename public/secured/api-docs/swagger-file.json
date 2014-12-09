@@ -5080,7 +5080,7 @@
           "Location"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "Lists of geometries are represented by a GeometryCollection. Geometries with additional properties are Feature objects. And lists of features are represented by a FeatureCollection.",
         "displayName": "Feature Collection",
         "produces": [
           "application/json",
@@ -5998,7 +5998,7 @@
           "Resource"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "A type of Physical Resource that represents hardware devices that can be managed.  Examples includes routers and switches, computers, and other end-devices that are managed.",
         "displayName": "Device ",
         "produces": [
           "application/json",
@@ -7579,7 +7579,7 @@
           "Location"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "This is a structured textual way of describing how to find a Property in an urban area (country properties are often defined differently).",
         "displayName": "Property Address",
         "produces": [
           "application/json",
