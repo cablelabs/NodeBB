@@ -10180,7 +10180,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "An entry to the log of an Incident Ticket.",
+        "description": "An entry to the log of an Ticket.",
         "displayName": "Comment ",
         "produces": [
           "application/json",
