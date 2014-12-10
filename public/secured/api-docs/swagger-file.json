@@ -4372,7 +4372,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "A category of BusinessInteraction.",
+        "description": "A category of Ticket.",
         "displayName": "Ticket Category",
         "produces": [
           "application/json",
