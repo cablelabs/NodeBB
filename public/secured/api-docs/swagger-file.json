@@ -14,7 +14,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "An entry that documents the Lifecycle of a given Incident TicketAn entry that documents the Lifecycle of a given Incident Ticket.",
+        "description": "An entry that documents the Lifecycle of a given Ticket.",
         "displayName": "Status Entry",
         "produces": [
           "application/json",
@@ -2230,7 +2230,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "A group assigned to a BusinessInteraction. For example, an IncidentTicket assigned to a particular organization (e.g., Network Services).",
+        "description": "A group assigned to a BusinessInteraction. For example, an Ticket assigned to a particular organization (e.g., Network Services).",
         "displayName": "Ticket  AssignedGroup",
         "produces": [
           "application/json",
