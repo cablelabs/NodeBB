@@ -5998,7 +5998,7 @@
           "Resource"
         ],
         "summary": "Find resource by ID",
-        "description": "A type of Physical Resource that represents hardware devices that can be managed.  Examples includes routers and switches, computers, and other end-devices that are managed.",
+        "description": "A piece of equipment that provides functionality or is used to access services from the provider (e.g. mobile phone, tablet, gateway, etc.).",
         "displayName": "Device ",
         "produces": [
           "application/json",
@@ -6574,7 +6574,7 @@
           "Location"
         ],
         "summary": "Find Services in a specific site",
-        "description": "A Service represents the object that will be instantiated. Each Service instance can be different; therefore, Service is limited to owning just the changeable attributes, methods, relationships, and constraints that can be instantiated. The invariant attributes, methods, relationships, and constraints that can be instantiated are defined by a ServiceSpecification.",
+        "description": "ServiceSite is a customer location where a customer is receiving service.  It is the point at which service is delivered to a customer, and is associated with a service address (UrbanPropertyAddress)..",
         "displayName": "Service on Site",
         "produces": [
           "application/json",
@@ -8956,7 +8956,7 @@
           "Service"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "Retrieve the portion of the as-built diagram relevant to a particular order (i.e., not the customer's entire network, just those portions that would be involved in a particular change order).",
         "displayName": "As  Built Design",
         "produces": [
           "application/json",
@@ -9874,7 +9874,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "The SiteAcceptanceTest is to invoke, and get results from, end-to-end acceptance testing.",
         "displayName": "SAT",
         "produces": [
           "application/json",
@@ -10486,7 +10486,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "An price estimate (quote) or a presentation for sale (offer) of product offerings to a party playing a role.",
+        "description": "A price estimate (quote) or a presentation for sale (offer) of product offerings to a party playing a role.",
         "displayName": "Customer Quote",
         "produces": [
           "application/json",
@@ -11251,7 +11251,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "A total amount due from a CustomerAccount for all products during the billing period.",
         "displayName": "Customer Bill",
         "produces": [
           "application/json",
@@ -11557,7 +11557,7 @@
           "Common"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "The eMail address to use when contacting a given PartyRole. An eMailContact is a type of ContactMedium.",
         "displayName": "Email  Contact",
         "produces": [
           "application/json",
