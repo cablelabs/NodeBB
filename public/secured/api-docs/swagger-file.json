@@ -12956,6 +12956,18 @@
         }
       }
     },
+    "ResourceConfiguration": {
+      "id": "ResourceConfiguration",
+      "type": "object",
+      "properties": {
+        "resources": {
+          "type": "array",
+          "items": {
+            "$ref": "ServiceConfigurationSummary"
+          }
+        }
+      }
+    },
     "ServiceOrderItem": {
       "id": "ServiceOrderItem",
       "type": "object",
