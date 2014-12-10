@@ -15886,9 +15886,106 @@
           "$ref": "EPLProduct"
         },
         "eplProductConfiguration": {
-          "type": "object",
-          "$ref": "EPLProductConfiguration",
-          "required": true
+          "$ref": "EPLProductConfiguration"
+        }
+      }
+    },
+    "EPLProductConfigurationSummary": {
+      "id": "EPLProductConfigurationSummary",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "name": {
+          "type": "string"
+        },
+        "isBundle": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": "string"
+        },
+        "productStatus": {
+          "type": "string"
+        }
+      }
+    },
+    "EPLProductConfiguration": {
+      "id": "EPLProductConfiguration",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "name": {
+          "type": "string"
+        },
+        "isBundle": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": "string"
+        },
+        "productStatus": {
+          "type": "string"
+        },
+        "productSerialNumber": {
+          "type": "string"
+        },
+        "validFor": {
+          "$ref": "TimePeriod"
+        },
+        "products": {
+          "type": "array",
+          "items": {
+            "$ref": "EPLProductConfigurationSummary"
+          }
+        },
+        "productRelationships": {
+          "type": "array",
+          "items": {
+            "$ref": "ProductRelationship"
+          }
+        },
+        "productPrices": {
+          "type": "array",
+          "items": {
+            "$ref": "ProductPriceSummary"
+          }
+        },
+        "customerAccountInvolvements": {
+          "type": "array",
+          "items": {
+            "$ref": "AccountProductAssignment"
+          }
+        },
+        "productSpecification": {
+          "$ref": "ProductSpecificationSummary"
+        },
+        "productOffering": {
+          "$ref": "ProductOfferingSummary"
+        },
+        "uni": {
+          "type": "array",
+          "items": {
+            "$ref": "UNIServiceConfigurationSummary"
+          }
+        },
+        "evc": {
+          "$ref": "EVCServiceConfigurationSummary"
+        },
+        "configuration": {
+          "$ref": "EPLConfigurationSummary"
+        },
+        "eplProduct": {
+          "$ref": "EPLProductSummary"
         }
       }
     },
