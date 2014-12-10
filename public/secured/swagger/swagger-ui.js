@@ -162,6 +162,19 @@ var Docs = {
 		});
 	},
 
+    expandDocumentationForResource: function(resource) {
+      // Make sure the resource container is open..
+      Docs.expandEndpointListForResource(resource);
+
+      if (resource == '') {
+        $('.resource ul.endpoints li.operation div.content').slideDown();
+        return;
+      }
+      $('li#resource_' + Docs.escapeResourceName(resource) + ' li.get div.content').each(function() {
+        Docs.expandOperation($(this));
+      });
+    },
+
 	collapseOperationsForResource: function(resource) {
 		// Make sure the resource container is open..
 		Docs.expandEndpointListForResource(resource);
@@ -1191,7 +1204,11 @@ function program3(depth0,data) {
   if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.id; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\">\n        List Operations\n      </a>\n    </li>\n    <li>\n      <a href='#' class=\"expandResource\" data-id=";
+    + "\">\n        List Operations\n      </a>\n    </li>\n    <li>\n      <a href='#' class=\"expandDocumentation\" data-id=";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.id; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + ">\n        Expand Documentation\n      </a>\n    </li>\n    <li>\n      <a href='#' class=\"expandResource\" data-id=";
   if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.id; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -1618,7 +1635,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
       _ref3 = this.model.apisArray;
       for (_i = 0, _len = _ref3.length; _i < _len; _i++) {
         resource = _ref3[_i];
-        console.info(resource);
+        //console.info(resource);
         id = resource.name;
         while (typeof resources[id] !== 'undefined') {
           id = id + "_" + counter;
@@ -1695,6 +1712,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
       $('.toggleEndpointList', this.el).click(this.callDocs.bind(this, 'toggleEndpointListForResource'));
       $('.collapseResource', this.el).click(this.callDocs.bind(this, 'collapseOperationsForResource'));
       $('.expandResource', this.el).click(this.callDocs.bind(this, 'expandOperationsForResource'));
+      $('.expandDocumentation', this.el).click(this.callDocs.bind(this, 'expandDocumentationForResource'));
       return this;
     };
 
@@ -2447,7 +2465,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
       var template;
       template = this.template();
       $(this.el).html(template(this.model));
-      this.switchToSnippet();
+      this.switchToDescription();
       this.isParam = this.model.isParam;
       if (this.isParam) {
         $('.notice', $(this.el)).text('Click to set as parameter value');
