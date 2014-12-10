@@ -38,7 +38,8 @@
 			}
 		});
 	</script>
-	-->
+	<!-- // <script src="{relative_path}/HTMLImports/HTMLImports/HTMLImports.js"></script> -->
+	
 	<!-- IF useCustomJS -->
 	{customJS}
 	<!-- ENDIF useCustomJS -->

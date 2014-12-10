@@ -14,60 +14,60 @@
                             <a style="color: {categories.color};" href="{relative_path}/category/{categories.slug}" itemprop="url">
                                 <!-- ENDIF categories.link -->
                                 <div id="category-{categories.cid}" class="category-header category-header-image-{categories.imageClass}"
-                                        style="
-								<!-- IF categories.backgroundImage -->background-image: url({categories.backgroundImage});<!-- ENDIF categories.backgroundImage -->
-								<!-- IF categories.bgColor -->background-color: {categories.bgColor};<!-- ENDIF categories.bgColor -->
-								color: {categories.color};
-							"
-                                        >
-                                    <!-- IF !categories.link -->
-                                    <span class="badge {categories.unread-class}"><i class="fa fa-book" data-toggle="tooltip" title="[[global:topics]]"></i> <span class="human-readable-number" title="{categories.topic_count}">{categories.topic_count}</span>&nbsp; <i class="fa fa-pencil" data-toggle="tooltip" title="[[global:posts]]"></i> <span class="human-readable-number" title="{categories.post_count}">{categories.post_count}</span></span>
-                                    <!-- ENDIF !categories.link -->
+                                style="
+                                <!-- IF categories.backgroundImage -->background-image: url({categories.backgroundImage});<!-- ENDIF categories.backgroundImage -->
+                                <!-- IF categories.bgColor -->background-color: {categories.bgColor};<!-- ENDIF categories.bgColor -->
+                                color: {categories.color};
+                                "
+                                >
+                                <!-- IF !categories.link -->
+                                <span class="badge {categories.unread-class}"><i class="fa fa-book" data-toggle="tooltip" title="[[global:topics]]"></i> <span class="human-readable-number" title="{categories.topic_count}">{categories.topic_count}</span>&nbsp; <i class="fa fa-pencil" data-toggle="tooltip" title="[[global:posts]]"></i> <span class="human-readable-number" title="{categories.post_count}">{categories.post_count}</span></span>
+                                <!-- ENDIF !categories.link -->
 
-                                    <!-- IF categories.icon -->
-                                    <div><i class="fa {categories.icon} fa-4x"></i></div>
-                                    <!-- ENDIF categories.icon -->
-                                </div>
-                            </a>
+                                <!-- IF categories.icon -->
+                                <div><i class="fa {categories.icon} fa-4x"></i></div>
+                                <!-- ENDIF categories.icon -->
+                            </div>
+                        </a>
 
-                            <div class="category-box">
-                                <div class="category-info">
-                                    <!-- IF categories.link -->
-                                    <a href="{categories.link}" itemprop="url" target="_blank">
-                                        <!-- ELSE -->
-                                        <a href="{relative_path}/category/{categories.slug}" itemprop="url">
-                                            <!-- ENDIF categories.link-->
-                                            <h4 class="category-title"><!-- IF categories.icon --><i class="fa {categories.icon} visible-xs-inline"></i> <!-- ENDIF categories.icon -->{categories.name}</h4>
-                                        </a>
-                                        <!--<div class="description" itemprop="description">{categories.description}</div>-->
+                        <div class="category-box">
+                            <div class="category-info">
+                                <!-- IF categories.link -->
+                                <a href="{categories.link}" itemprop="url" target="_blank">
+                                    <!-- ELSE -->
+                                    <a href="{relative_path}/category/{categories.slug}" itemprop="url">
+                                        <!-- ENDIF categories.link-->
+                                        <h4 class="category-title"><!-- IF categories.icon --><i class="fa {categories.icon} visible-xs-inline"></i> <!-- ENDIF categories.icon -->{categories.name}</h4>
+                                    </a>
+                                    <!--<div class="description" itemprop="description">{categories.description}</div>-->
                                 </div>
                                 <!-- IF !categories.link -->
                                 <!-- BEGIN posts -->
                                 <!--<div class="post-preview clearfix">-->
-                                    <!--<div class="post-preview-content">-->
-                                        <!--<a style="color: {categories.color};" href="&lt;!&ndash; IF categories.posts.user.userslug &ndash;&gt;{relative_path}/user/{categories.posts.user.userslug}&lt;!&ndash; ELSE &ndash;&gt;#&lt;!&ndash; ENDIF categories.posts.user.userslug&ndash;&gt;">-->
-                                            <!--<img src="{categories.posts.user.picture}" title="{categories.posts.user.username}" class="pull-left user-img" />-->
-                                        <!--</a>-->
-                                        <!--<div class="content">-->
-                                            <!--<strong><a href="{relative_path}/topic/{categories.posts.topic.slug}">{categories.posts.topic.title}</a></strong>-->
-                                            <!--<hr/>-->
-                                            <!--{categories.posts.content}-->
-                                            <!--<p class="fade-out"></p>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-							<!--<span class="pull-right footer">-->
-								<!--<span class="timeago" title="{categories.posts.relativeTime}"></span> &bull;-->
+                                <!--<div class="post-preview-content">-->
+                                <!--<a style="color: {categories.color};" href="&lt;!&ndash; IF categories.posts.user.userslug &ndash;&gt;{relative_path}/user/{categories.posts.user.userslug}&lt;!&ndash; ELSE &ndash;&gt;#&lt;!&ndash; ENDIF categories.posts.user.userslug&ndash;&gt;">-->
+                                <!--<img src="{categories.posts.user.picture}" title="{categories.posts.user.username}" class="pull-left user-img" />-->
+                                <!--</a>-->
+                                <!--<div class="content">-->
+                                <!--<strong><a href="{relative_path}/topic/{categories.posts.topic.slug}">{categories.posts.topic.title}</a></strong>-->
+                                <!--<hr/>-->
+                                <!--{categories.posts.content}-->
+                                <!--<p class="fade-out"></p>-->
+                                <!--</div>-->
+                                <!--</div>-->
+                                <!--<span class="pull-right footer">-->
+                                <!--<span class="timeago" title="{categories.posts.relativeTime}"></span> &bull;-->
                                 <!--<a href="{relative_path}/topic/{categories.posts.topic.slug}&lt;!&ndash; IF categories.posts.index &ndash;&gt;/{categories.posts.index}&lt;!&ndash; ENDIF categories.posts.index &ndash;&gt;">[[global:read_more]]</a>-->
-							<!--</span>-->
+                                <!--</span>-->
                                 <!--</div>-->
                                 <!-- END posts -->
                                 <!-- ENDIF !categories.link -->
                             </div>
+                        </div>
                     </div>
+                    <!-- END categories -->
                 </div>
-                <!-- END categories -->
             </div>
-        </div>
 
-        <div widget-area="sidebar" class="col-lg-3 col-sm-12"></div>
-    </div>
+            <div widget-area="sidebar" class="col-lg-3 col-sm-12"></div>
+        </div>
