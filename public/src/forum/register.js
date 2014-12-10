@@ -43,6 +43,19 @@ define('forum/register', function() {
 			return;
 		}
 
+		// Check if user's company is in whitelist
+		var whiteList = ["cablelabs.com"];
+		var accepted = false;
+		whiteList.forEach(function(item, index){
+			if (isFromDomain(item, email)) {
+				accepted = true;
+			}
+		});
+		if (!accepted) {
+			showError(email_notify, '[[error:email-not-whitelist]]');
+			return;
+		}
+
 		socket.emit('user.emailExists', {
 			email: email
 		}, function(err, exists) {
@@ -58,6 +71,11 @@ define('forum/register', function() {
 
 			callback();
 		});
+	}
+
+	function isFromDomain(domain, email) {
+		var index = email.indexOf('@');
+		return index > 0 && domain === email.substring(index + 1)
 	}
 
 	function validateUsername(username, callback) {
