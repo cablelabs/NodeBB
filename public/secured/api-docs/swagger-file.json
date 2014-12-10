@@ -6478,7 +6478,7 @@
           "Location"
         ],
         "summary": "Find Services in a specific site",
-        "description": "ServiceSite is a customer location where a customer is receiving service.  It is the point at which service is delivered to a customer, and is associated with a service address (UrbanPropertyAddress)..",
+        "description": "Returns a collection of Services found at the specified Site.",
         "displayName": "Service on Site",
         "produces": [
           "application/json",
@@ -7177,7 +7177,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "A record containing the details of an Incident. Each Ticket documents the lifecycle of a single incident.",
+        "description": "Tickets associated with a given User.",
         "displayName": "Users  Tickets",
         "produces": [
           "application/json",
@@ -7597,7 +7597,7 @@
     "/product/eplconfiguration": {
       "post": {
         "tags": [
-          "Product"
+          "UnSuported"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -7633,7 +7633,7 @@
     "/product/eplconfiguration/{id}": {
       "get": {
         "tags": [
-          "Product"
+          "UnSuported"
         ],
         "summary": "Find resource by ID",
         "description": "Ethernet Private Line (EPL) – A port-based version of the MEF-defined E-Line service type that connects two UNIs via a single EVC. EPL does not allow more than one EVC to be established between the two end points (UNIs) of the links, and all customer traffic present at an Operator's Provider Edge device is bundled into a single virtual circuit (i.e., the EVC). ",
@@ -7676,7 +7676,7 @@
       },
       "put": {
         "tags": [
-          "Product"
+          "UnSuported"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -7719,7 +7719,7 @@
       },
       "delete": {
         "tags": [
-          "Product"
+          "UnSuported"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
