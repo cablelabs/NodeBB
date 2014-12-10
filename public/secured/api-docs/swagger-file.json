@@ -11,10 +11,10 @@
     "/statusentry/{id}": {
       "get": {
         "tags": [
-          "Interaction"
+          "Common"
         ],
         "summary": "Find resource by ID",
-        "description": "An entry that documents the Lifecycle of a given Ticket.",
+        "description": "An entry that documents the Lifecycle of a given Incident TicketAn entry that documents the Lifecycle of a given Incident Ticket.",
         "displayName": "Status Entry",
         "produces": [
           "application/json",
@@ -54,7 +54,7 @@
       },
       "put": {
         "tags": [
-          "Interaction"
+          "Common"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -97,7 +97,7 @@
       },
       "delete": {
         "tags": [
-          "Interaction"
+          "Common"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -128,7 +128,7 @@
     "/statusentry": {
       "post": {
         "tags": [
-          "Interaction"
+          "Common"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -662,7 +662,7 @@
           "UnSuported"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "Message that indicates the status of communications received.",
         "displayName": "ACK",
         "produces": [
           "application/json",
@@ -815,7 +815,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "A type of order that is not governed by any industry committee. Product Orders represent orders that would typically originate at an end user. Product Orders may spawn ASRs, LSRs, or other PSRs in order to fill the end users request, if facility, equipment, or plant assignments are not available for designing the requested Product.",
+        "description": " Product Orders represent orders that would typically originate at an end user. Product Orders may spawn ASRs, LSRs, or other PSRs in order to fill the end users request, if facility, equipment, or plant assignments are not available for designing the requested Product.",
         "displayName": "Product Order",
         "produces": [
           "application/json",
@@ -1121,7 +1121,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "A charge or a credit assigned to the customer's account in the course or for the purpose of the billing process. Subclasses further define these elements.",
+        "description": "A charge or a credit assigned to the customer's account in the course or for the purpose of the billing process.",
         "displayName": "Bill  Charge",
         "produces": [
           "application/json",
@@ -1580,7 +1580,7 @@
           "Product"
         ],
         "summary": "Find resource by ID",
-        "description": "A ProductOffering procured by a Customer, or other interested Party playing a PartyRole, appearing as a BusinessInteractionItem, which could take the form of a Agreement. ProductSpecificationCharacteristic(s) in part define the Product. A Product is realized as one or more Service(s) and/or Resource(s).",
+        "description": "Access EPL service uses a Point-to-Point OVC to associate one OVC End Point at a UNI and one OVC End Point at an ENNI. One UNI can support only a single instance of the Access EPL service.",
         "displayName": "EPL Product",
         "produces": [
           "application/json",
@@ -2029,6 +2029,102 @@
         }
       }
     },
+    "/productorderitem/{id}": {
+      "get": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Find resource by ID",
+        "description": "The purpose for the Customer Order expressed in terms of a Product Offering or a Product (for a change order) inherited from BusinessInteractionItem.",
+        "displayName": "Product OrderItem",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "view",
+            "description": "View of the resource that you want to get.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/ProductOrderItem"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Update an existing resource",
+        "description": "Update a specific instance of the resource by ID.",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Instance object that needs to be updated.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ProductOrderItem"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/ProductOrderItem"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        }
+      }
+    },
     "/customerbillspec": {
       "post": {
         "tags": [
@@ -2230,7 +2326,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "A group assigned to a BusinessInteraction. For example, an Ticket assigned to a particular organization (e.g., Network Services).",
+        "description": "A group assigned to a BusinessInteraction. For example, an IncidentTicket assigned to a particular organization (e.g., Network Services).",
         "displayName": "Ticket  AssignedGroup",
         "produces": [
           "application/json",
@@ -3454,7 +3550,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "The difference in changes that were made as from as-built.",
         "displayName": "Order Design",
         "produces": [
           "application/json",
@@ -4372,7 +4468,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "A category of Ticket.",
+        "description": "A category of BusinessInteraction.",
         "displayName": "Ticket Category",
         "produces": [
           "application/json",
@@ -5596,7 +5692,7 @@
           "Customer"
         ],
         "summary": "Find resource by ID",
-        "description": "A group of people identified by shared interests or purpose. Examples include business, department, enterprise. Both organizations and organizational units are represented by this business entity.User.",
+        "description": "A group of people identified by shared interests or purpose. Examples include business, department, enterprise. Both organizations and organizational units are represented by this business entity.",
         "displayName": "Organization ",
         "produces": [
           "application/json",
@@ -6055,7 +6151,7 @@
           "Product"
         ],
         "summary": "Find resource by ID",
-        "description": "A ProductOffering procured by a Customer, or other interested Party playing a PartyRole, appearing as a BusinessInteractionItem, which could take the form of a Agreement. ProductSpecificationCharacteristic(s) in part define the Product. A Product is realized as one or more Service(s) and/or Resource(s).",
+        "description": "The logical circuit that connects two or more customer networks (end points). The end points of an EVC are defined as UNIs. A given UNI can support more than one EVC via the Service Multiplexing attribute.There are three types of EVCs: Point-to-point, Multipoint and Rooted EVCs.",
         "displayName": "EVC Product",
         "produces": [
           "application/json",
@@ -6208,7 +6304,7 @@
           "Product"
         ],
         "summary": "Find resource by ID",
-        "description": "A ProductOffering procured by a Customer, or other interested Party playing a PartyRole, appearing as a BusinessInteractionItem, which could take the form of a Agreement. ProductSpecificationCharacteristic(s) in part define the Product. A Product is realized as one or more Service(s) and/or Resource(s).",
+        "description": "UNI Serves as the point of demarcation that specifies where the Service Provider's(Operator's) responsibility ends and the customer's responsibility begins. The UNI  defines the means for the Subscriber and the MEN Service Provider to agree on which Ethernet service(s) will be offered and on the characteristics of this service.",
         "displayName": "UNI Product",
         "produces": [
           "application/json",
@@ -6478,7 +6574,7 @@
           "Location"
         ],
         "summary": "Find Services in a specific site",
-        "description": "Returns a collection of Services found at the specified Site.",
+        "description": "ServiceSite is a customer location where a customer is receiving service.  It is the point at which service is delivered to a customer, and is associated with a service address (UrbanPropertyAddress)..",
         "displayName": "Service on Site",
         "produces": [
           "application/json",
@@ -6865,7 +6961,7 @@
           "Product"
         ],
         "summary": "Find resource by ID",
-        "description": "A ProductOffering procured by a Customer, or other interested Party playing a PartyRole, appearing as a BusinessInteractionItem, which could take the form of a Agreement. ProductSpecificationCharacteristic(s) in part define the Product. A Product is realized as one or more Service(s) and/or Resource(s).",
+        "description": "The complete set of characteristics associated with a product in the catalog. Specifically, the parts of the product model exposed to the customer that can be referenced during the ordering process. It must inform the requirements for service and resource ordering as well.",
         "displayName": "Product Configuration",
         "produces": [
           "application/json",
@@ -7177,7 +7273,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "Tickets associated with a given User.",
+        "description": "A record containing the details of an Incident. Each Ticket documents the lifecycle of a single incident.",
         "displayName": "Users  Tickets",
         "produces": [
           "application/json",
@@ -7597,7 +7693,7 @@
     "/product/eplconfiguration": {
       "post": {
         "tags": [
-          "UnSuported"
+          "Product"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -7633,10 +7729,10 @@
     "/product/eplconfiguration/{id}": {
       "get": {
         "tags": [
-          "UnSuported"
+          "Product"
         ],
         "summary": "Find resource by ID",
-        "description": "Ethernet Private Line (EPL) – A port-based version of the MEF-defined E-Line service type that connects two UNIs via a single EVC. EPL does not allow more than one EVC to be established between the two end points (UNIs) of the links, and all customer traffic present at an Operator's Provider Edge device is bundled into a single virtual circuit (i.e., the EVC). ",
+        "description": "Access EPL service uses a Point-to-Point OVC to associate one OVC End Point at a UNI and one OVC End Point at an ENNI. One UNI can support only a single instance of the Access EPL service. ",
         "displayName": "EPL Product Configuration",
         "produces": [
           "application/json",
@@ -7676,7 +7772,7 @@
       },
       "put": {
         "tags": [
-          "UnSuported"
+          "Product"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -7719,7 +7815,7 @@
       },
       "delete": {
         "tags": [
-          "UnSuported"
+          "Product"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -7942,7 +8038,7 @@
           "Customer"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "An price estimate (quote) or a presentation for sale (offer) of product offerings to a party playing a role.",
         "displayName": "Customer QuoteItem",
         "produces": [
           "application/json",
@@ -8818,7 +8914,7 @@
         }
       }
     },
-    "/servicedesign": {
+    "/asbuiltorderdesign": {
       "post": {
         "tags": [
           "Service"
@@ -8854,7 +8950,7 @@
         }
       }
     },
-    "/servicedesign/{id}": {
+    "/asbuiltorderdesign/{id}": {
       "get": {
         "tags": [
           "Service"
@@ -9931,7 +10027,7 @@
           "Product"
         ],
         "summary": "Find resource by ID",
-        "description": "A ProductOffering procured by a Customer, or other interested Party playing a PartyRole, appearing as a BusinessInteractionItem, which could take the form of a Agreement. ProductSpecificationCharacteristic(s) in part define the Product. A Product is realized as one or more Service(s) and/or Resource(s).",
+        "description": "The instance of a ProductOffering assigned to a Customer.",
         "displayName": "Product ",
         "produces": [
           "application/json",
@@ -10084,7 +10180,7 @@
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "An entry to the log of an Ticket.",
+        "description": "An entry to the log of an Incident Ticket.",
         "displayName": "Comment ",
         "produces": [
           "application/json",
@@ -11002,7 +11098,7 @@
           "Location"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "An area that it served by a Cable provider.  Typically this area would be that served by 1 or more Nodes in the cable plant.",
         "displayName": "Cable ServiceArea",
         "produces": [
           "application/json",
@@ -12860,18 +12956,6 @@
         }
       }
     },
-    "ResourceConfiguration": {
-      "id": "ResourceConfiguration",
-      "type": "object",
-      "properties": {
-        "resources": {
-          "type": "array",
-          "items": {
-            "$ref": "ServiceConfigurationSummary"
-          }
-        }
-      }
-    },
     "ServiceOrderItem": {
       "id": "ServiceOrderItem",
       "type": "object",
@@ -13641,6 +13725,9 @@
         "crcStatus": {
           "type": "number"
         },
+        "cllicode": {
+          "$ref": "CLLICode"
+        },
         "physicalPort": {
           "$ref": "PhysicalPort"
         }
@@ -13827,319 +13914,6 @@
         }
       }
     },
-    "Ticket": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "link": {
-          "$ref": "Link"
-        },
-        "description": {
-          "type": "string"
-        },
-        "type": {
-          "type": "string",
-          "description": "Master, Primary, Subtask",
-          "enum": ["Master", "Primary", "Subtask"]
-        },
-        "status": {
-          "type": "string"
-        },
-        "detailDescription": {
-          "type": "string"
-        },
-        "severity": {
-          "type": "string"
-        },
-        "universalIdentifier": {
-          "type": "string"
-        },
-        "originatingSystem": {
-          "type": "string"
-        },
-        "originatingTicketId": {
-          "type": "string"
-        },
-        "impact": {
-          "type": "string"
-        },
-        "interactionStatus": {
-          "type": "string"
-        },
-        "interactionDate": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "interactionDateComplete": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "createDate": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "relatedTo": {
-          "type": "array",
-          "items": {
-            "$ref": "TicketRelationship"
-          }
-        },
-        "primaryTicket": {
-          "$ref": "TicketSummary"
-        },
-        "tasks": {
-          "type": "array",
-          "items": {
-            "$ref": "TicketSummary"
-          }
-        },
-
-
-
-
-
-
-
-
-
-
-
-        "relatedFrom": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "TicketRelationship"
-          }
-        },
-
-        "submitter": {
-          "type": "object",
-          "$ref": "Submitter",
-          "required": true
-        },
-
-        "externalSystemReference": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "ExternalSystemReference"
-          }
-        },
-        "statusEntries": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "StatusEntry"
-          }
-        },
-
-        "assignedGroup": {
-          "type": "object",
-          "$ref": "AssignedGroup",
-          "required": true
-        },
-
-
-
-
-
-        "impactedItems": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "ImpactedItem"
-          }
-        },
-
-
-        "modifiers": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "Modifier"
-          }
-        },
-        "watchers": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "Watcher"
-          }
-        },
-        "ticketContacts": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "Contact"
-          }
-        },
-
-        "ticketCategory": {
-          "type": "object",
-          "$ref": "TicketCategory",
-          "required": true
-        },
-
-
-
-        "characteristics": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "Characteristic"
-          }
-        },
-
-        "assignee": {
-          "type": "object",
-          "$ref": "Assignee",
-          "required": true
-        },
-
-
-        "ticketLocation": {
-          "type": "object",
-          "$ref": "TicketLocation",
-          "required": true
-        },
-
-        "comments": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "Comment"
-          }
-        }
-      }
-    },
-    "TicketCategory": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "level": {
-          "type": "string"
-        },
-        "subCategory": {
-          "type": "object",
-          "$ref": "TicketCategory",
-          "required": true
-        },
-        "description": {
-          "type": "string"
-        },
-        "link": {
-          "type": "object",
-          "$ref": "Link",
-          "required": true
-        },
-        "value": {
-          "type": "string"
-        },
-        "type": {
-          "type": "string"
-        }
-      }
-    },
-    "TicketLocation": {
-      "type": "object",
-      "properties": {
-        "sites": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "Site"
-          }
-        },
-        "id": {
-          "type": "string"
-        },
-        "unnamed_Ticket_": {
-          "type": "object",
-          "$ref": "Ticket",
-          "required": true
-        },
-        "cableServiceArea": {
-          "type": "object",
-          "$ref": "CableServiceArea",
-          "required": true
-        },
-        "link": {
-          "type": "object",
-          "$ref": "Link",
-          "required": true
-        },
-        "marketArea": {
-          "type": "object",
-          "$ref": "MarketArea",
-          "required": true
-        }
-      }
-    },
-    "TicketRelationship": {
-      "type": "object",
-      "properties": {
-        "relationshipType": {
-          "type": "object",
-          "$ref": "TicketRelationshipType",
-          "required": true
-        },
-        "validFor": {
-          "type": "object",
-          "$ref": "TimePeriod",
-          "required": true
-        },
-        "relatedTicket": {
-          "type": "object",
-          "$ref": "Ticket",
-          "required": true
-        },
-        "tickets": {
-          "type": "object",
-          "$ref": "Ticket",
-          "required": true
-        }
-      }
-    },
-    "Tickets": {
-      "type": "object",
-      "properties": {
-        "tickets": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "Ticket"
-          }
-        }
-      }
-    },
-    "TimeZoneRegion": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "timeZoneCode": {
-          "type": "string"
-        },
-        "link": {
-          "type": "object",
-          "$ref": "Link",
-          "required": true
-        },
-        "timeZoneName": {
-          "type": "string"
-        },
-        "geometry": {
-          "type": "object",
-          "$ref": "Geometry",
-          "required": true
-        }
-      }
-    },
     "ImpactedItem": {
       "type": "object",
       "properties": {
@@ -14262,111 +14036,7 @@
         }
       }
     },
-    "ConfigurationData": {
-      "id": "ConfigurationData",
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "link": {
-          "$ref": "Link"
-        },
-        "mgmtInfoValidFor": {
-          "$ref": "TimePeriod"
-        },
-        "retrievalMethodCurrent": {
-          "type": "integer",
-          "description": "0:  Unknown, 1:  None, 2:  CLI, 3:  SNMP, 4:  TL1, 5:  CMIP, 6:  RMON, 7:  Proprietary"
-        },
-        "retrievalMethodsSupported": {
-          "type": "string",
-          "description": "0:  Unknown, 1:  None, 2:  CLI, 3:  SNMP, 4:  TL1, 5:  CMIP, 6:  RMON, 7:  Proprietary"
-        },
-        "configText": {
-          "type": "string"
-        },
-        "configBinary": {
-          "$ref": "integer"
-        },
-        "configLocation": {
-          "$ref": "Link"
-        },
-        "service": {
-          "$ref": "ServiceSummary"
-        },
-        "resources": {
-          "type": "array",
-          "items": {
-            "$ref": "ResourceSummary"
-          }
-        },
-        "serviceConfiguration": {
-          "$ref": "ServiceConfigurationSummary"
-        },
-        "attributes": {
-          "type": "array",
-          "items": {
-            "$ref": "AttributeValuePair"
-          }
-        },
-        "specification": {
-          "$ref": "ConfigurationDataSpecification"
-        }
-      }
-    },
-    "ConfigurationDataSpecification": {
-      "id": "ConfigurationDataSpecification",
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "link": {
-          "$ref": "Link"
-        },
-        "name": {
-          "type": "string"
-        },
-        "description": {
-          "type": "string"
-        }
-      }
-    },
-    "AttributeValuePair": {
-      "type": "object",
-      "properties": {
-        "attributeName": {
-          "type": "string"
-        },
-        "attributeValue": {
-          "type": "string"
-        }
-      }
-    },
-    "ServiceSummary": {
-      "id": "ServiceSummary",
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "link": {
-          "$ref": "Link"
-        },
-        "hasStarted": {
-          "type": "boolean"
-        },
-        "isServiceEnabled": {
-          "type": "boolean"
-        },
-        "isMandatory": {
-          "type": "boolean"
-        }
-      }
-    },
     "Service": {
-      "id": "Service",
       "type": "object",
       "properties": {
         "id": {
@@ -14683,9 +14353,6 @@
         },
         "macAddress": {
           "type": "string"
-        },
-        "clliCode": {
-          "$ref": "CLLICode"
         },
         "manufactureDateStamp": {
           "type": "date"
@@ -16219,106 +15886,9 @@
           "$ref": "EPLProduct"
         },
         "eplProductConfiguration": {
-          "$ref": "EPLProductConfiguration"
-        }
-      }
-    },
-    "EPLProductConfigurationSummary": {
-      "id": "EPLProductConfigurationSummary",
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "link": {
-          "$ref": "Link"
-        },
-        "name": {
-          "type": "string"
-        },
-        "isBundle": {
-          "type": "boolean"
-        },
-        "description": {
-          "type": "string"
-        },
-        "productStatus": {
-          "type": "string"
-        }
-      }
-    },
-    "EPLProductConfiguration": {
-      "id": "EPLProductConfiguration",
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "link": {
-          "$ref": "Link"
-        },
-        "name": {
-          "type": "string"
-        },
-        "isBundle": {
-          "type": "boolean"
-        },
-        "description": {
-          "type": "string"
-        },
-        "productStatus": {
-          "type": "string"
-        },
-        "productSerialNumber": {
-          "type": "string"
-        },
-        "validFor": {
-          "$ref": "TimePeriod"
-        },
-        "products": {
-          "type": "array",
-          "items": {
-            "$ref": "EPLProductConfigurationSummary"
-          }
-        },
-        "productRelationships": {
-          "type": "array",
-          "items": {
-            "$ref": "ProductRelationship"
-          }
-        },
-        "productPrices": {
-          "type": "array",
-          "items": {
-            "$ref": "ProductPriceSummary"
-          }
-        },
-        "customerAccountInvolvements": {
-          "type": "array",
-          "items": {
-            "$ref": "AccountProductAssignment"
-          }
-        },
-        "productSpecification": {
-          "$ref": "ProductSpecificationSummary"
-        },
-        "productOffering": {
-          "$ref": "ProductOfferingSummary"
-        },
-        "uni": {
-          "type": "array",
-          "items": {
-            "$ref": "UNIServiceConfigurationSummary"
-          }
-        },
-        "evc": {
-          "$ref": "EVCServiceConfigurationSummary"
-        },
-        "configuration": {
-          "$ref": "EPLConfigurationSummary"
-        },
-        "eplProduct": {
-          "$ref": "EPLProductSummary"
+          "type": "object",
+          "$ref": "EPLProductConfiguration",
+          "required": true
         }
       }
     },
@@ -16750,6 +16320,9 @@
         "versionNumber": {
           "type": "string"
         },
+        "clliCode": {
+          "$ref": "CLLICode"
+        },
         "deviceActivationStatus": {
           "type": "string",
           "description": "Activation_Pending, Activated, Activation_Failed"
@@ -16857,6 +16430,11 @@
         },
         "interfaceInitResetCount": {
           "type": "integer"
+        },
+        "clliCode": {
+          "type": "object",
+          "$ref": "CLLICode",
+          "required": true
         },
         "serviceState": {
           "type": "integer"
