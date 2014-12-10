@@ -322,23 +322,23 @@ function program8(depth0,data) {
 function program10(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n    <span style=\"float:right\"><a href=\"";
-  if (stack1 = helpers.validatorUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.validatorUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "/debug?url=";
-  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"><img id=\"validator\" src=\"";
-  if (stack1 = helpers.validatorUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.validatorUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "?url=";
-  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"></a>\n    </span>\n    ";
+  //buffer += "\n    <span style=\"float:right\"><a href=\"";
+  //if (stack1 = helpers.validatorUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  //else { stack1 = depth0.validatorUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  //buffer += escapeExpression(stack1)
+  //  + "/debug?url=";
+  //if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  //else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  //buffer += escapeExpression(stack1)
+  //  + "\"><img id=\"validator\" src=\"";
+  //if (stack1 = helpers.validatorUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  //else { stack1 = depth0.validatorUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  //buffer += escapeExpression(stack1)
+  //  + "?url=";
+  //if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  //else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  //buffer += escapeExpression(stack1)
+  //  + "\"></a>\n    </span>\n    ";
   return buffer;
   }
 
