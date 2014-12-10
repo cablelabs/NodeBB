@@ -88,7 +88,6 @@ middleware.redirectToAccountIfLoggedIn = function(req, res, next) {
 };
 
 middleware.redirectToLoginIfGuest = function(req, res, next) {
-	console.log("Came to middleware.redirectTOLoginIfGuest");
 	if (!req.user || parseInt(req.user.uid, 10) === 0) {
 		req.session.returnTo = req.url;
 		return res.redirect('/login');

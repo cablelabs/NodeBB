@@ -18,13 +18,16 @@ var nconf = require('nconf'),
 
 function mainRoutes(app, middleware, controllers) {
 
-	//setupPageRoute(app, '/', middleware, [], controllers.portal.landing);
+	setupPageRoute(app, '/', middleware, [], function(req, res, next) {
+		res.redirect('/index');
+	});
 	//setupPageRoute(app, '/home', middleware, [], controllers.portal.landing);
 	//setupPageRoute(app, '/documentation', middleware, [], controllers.portal.documentation);
 
 	// This is how
 	setupPageRoute(app, '/forums', middleware, [middleware.redirectToLoginIfGuest], controllers.home);
 	//setupPageRoute(app, '/forums', middleware, [], controllers.home);
+	//setupPageRoute(app, 'docs', middleware, [middleware.redirectToLoginIfGuest], )
 
 	var loginRegisterMiddleware = [middleware.applyCSRF, middleware.redirectToAccountIfLoggedIn];
 

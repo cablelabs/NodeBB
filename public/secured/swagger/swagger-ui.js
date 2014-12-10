@@ -1,5 +1,4 @@
 // swagger-ui.js
-// version 2.1.0-alpha.7
 $(function() {
 
 	// Helper function for vertically aligning DOM elements
@@ -712,7 +711,7 @@ function program5(depth0,data) {
   
   var buffer = "", stack1;
   buffer += "\n      ";
-  stack1 = helpers['if'].call(depth0, depth0['default'], {hash:{},inverse:self.program(8, program8, data),fn:self.program(6, program6, data),data:data});
+  stack1 = helpers['if'].call(depth0, depth0.defaultValue, {hash:{},inverse:self.program(8, program8, data),fn:self.program(6, program6, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n    ";
   return buffer;
@@ -830,8 +829,8 @@ function program1(depth0,data) {
   else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
     + "'>";
-  if (stack1 = helpers['default']) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0['default']; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  if (stack1 = helpers.defaultValue) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.defaultValue; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
     + "</textarea>\n    ";
   return buffer;
@@ -841,7 +840,7 @@ function program3(depth0,data) {
   
   var buffer = "", stack1;
   buffer += "\n        ";
-  stack1 = helpers['if'].call(depth0, depth0['default'], {hash:{},inverse:self.program(6, program6, data),fn:self.program(4, program4, data),data:data});
+  stack1 = helpers['if'].call(depth0, depth0.defaultValue, {hash:{},inverse:self.program(6, program6, data),fn:self.program(4, program4, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n    ";
   return buffer;
@@ -850,8 +849,8 @@ function program4(depth0,data) {
   
   var buffer = "", stack1;
   buffer += "\n            ";
-  if (stack1 = helpers['default']) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0['default']; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  if (stack1 = helpers.defaultValue) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.defaultValue; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
     + "\n        ";
   return buffer;
@@ -898,8 +897,8 @@ function program1(depth0,data) {
   else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
     + "'>";
-  if (stack1 = helpers['default']) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0['default']; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  if (stack1 = helpers.defaultValue) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.defaultValue; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
     + "</textarea>\n    ";
   return buffer;
@@ -909,7 +908,7 @@ function program3(depth0,data) {
   
   var buffer = "", stack1;
   buffer += "\n        ";
-  stack1 = helpers['if'].call(depth0, depth0['default'], {hash:{},inverse:self.program(6, program6, data),fn:self.program(4, program4, data),data:data});
+  stack1 = helpers['if'].call(depth0, depth0.defaultValue, {hash:{},inverse:self.program(6, program6, data),fn:self.program(4, program4, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n    ";
   return buffer;
@@ -918,8 +917,8 @@ function program4(depth0,data) {
   
   var buffer = "", stack1;
   buffer += "\n            ";
-  if (stack1 = helpers['default']) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0['default']; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  if (stack1 = helpers.defaultValue) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.defaultValue; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
     + "\n        ";
   return buffer;
@@ -982,7 +981,7 @@ function program4(depth0,data) {
   
   var buffer = "", stack1;
   buffer += "\n			";
-  stack1 = helpers['if'].call(depth0, depth0['default'], {hash:{},inverse:self.program(7, program7, data),fn:self.program(5, program5, data),data:data});
+  stack1 = helpers['if'].call(depth0, depth0.defaultValue, {hash:{},inverse:self.program(7, program7, data),fn:self.program(5, program5, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n		";
   return buffer;
@@ -990,13 +989,13 @@ function program4(depth0,data) {
 function program5(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n				<textarea class='body-textarea required' placeholder='(required)' name='";
+  buffer += "\n				<textarea class='body-textarea' placeholder='(required)' name='";
   if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
     + "'>";
-  if (stack1 = helpers['default']) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0['default']; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  if (stack1 = helpers.defaultValue) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.defaultValue; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
     + "</textarea>\n			";
   return buffer;
@@ -1005,7 +1004,7 @@ function program5(depth0,data) {
 function program7(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n				<textarea class='body-textarea required' placeholder='(required)' name='";
+  buffer += "\n				<textarea class='body-textarea' placeholder='(required)' name='";
   if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -1037,7 +1036,7 @@ function program12(depth0,data) {
   
   var buffer = "", stack1;
   buffer += "\n			";
-  stack1 = helpers['if'].call(depth0, depth0['default'], {hash:{},inverse:self.program(15, program15, data),fn:self.program(13, program13, data),data:data});
+  stack1 = helpers['if'].call(depth0, depth0.defaultValue, {hash:{},inverse:self.program(15, program15, data),fn:self.program(13, program13, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n		";
   return buffer;
@@ -1050,8 +1049,8 @@ function program13(depth0,data) {
   else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
     + "' placeholder='(required)' type='text' value='";
-  if (stack1 = helpers['default']) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0['default']; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  if (stack1 = helpers.defaultValue) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.defaultValue; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
     + "'/>\n			";
   return buffer;
@@ -1386,18 +1385,6 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
       return this.api.build();
     };
 
-    SwaggerUi.prototype.collapseAll = function() {
-      return Docs.collapseEndpointListForResource('');
-    };
-
-    SwaggerUi.prototype.listAll = function() {
-      return Docs.collapseOperationsForResource('');
-    };
-
-    SwaggerUi.prototype.expandAll = function() {
-      return Docs.expandOperationsForResource('');
-    };
-
     SwaggerUi.prototype.render = function() {
       var _this = this;
       this.showMessage('Finished Loading Resource Information. Rendering Swagger UI...');
@@ -1409,10 +1396,10 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
       this.showMessage();
       switch (this.options.docExpansion) {
         case "full":
-          this.expandAll();
+          Docs.expandOperationsForResource('');
           break;
         case "list":
-          this.listAll();
+          Docs.collapseOperationsForResource('');
       }
       if (this.options.onComplete) {
         this.options.onComplete(this.api, this);
@@ -1556,14 +1543,25 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
     };
 
     MainView.prototype.initialize = function(opts) {
-      var auth, key, name, url, value, _ref3;
+      var auth, key, name, pathSorter, route, url, value, _i, _len, _ref3, _ref4;
       if (opts == null) {
         opts = {};
       }
+      if (opts.swaggerOptions.sortAlphabetically === true) {
+        pathSorter = function(a, b) {
+          return a.path.localeCompare(b.path);
+        };
+        this.model.apisArray.sort(pathSorter);
+        _ref3 = this.model.apisArray;
+        for (_i = 0, _len = _ref3.length; _i < _len; _i++) {
+          route = _ref3[_i];
+          route.operationsArray.sort(pathSorter);
+        }
+      }
       this.model.auths = [];
-      _ref3 = this.model.securityDefinitions;
-      for (key in _ref3) {
-        value = _ref3[key];
+      _ref4 = this.model.securityDefinitions;
+      for (key in _ref4) {
+        value = _ref4[key];
         auth = {
           name: key,
           type: value.type,
@@ -1587,8 +1585,8 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
       if (this.model.swaggerVersion === "2.0") {
         if ("validatorUrl" in opts.swaggerOptions) {
           return this.model.validatorUrl = opts.swaggerOptions.validatorUrl;
-        } else if (this.model.url.indexOf("localhost") > 0) {
-          return this.model.validatorUrl = null;
+        } else if (this.model.url.match(/https?:\/\/localhost/)) {
+          return this.model.validatorUrl = this.model.url;
         } else {
           return this.model.validatorUrl = "http://online.swagger.io/validator";
         }
@@ -1620,6 +1618,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
       _ref3 = this.model.apisArray;
       for (_i = 0, _len = _ref3.length; _i < _len; _i++) {
         resource = _ref3[_i];
+        console.info(resource);
         id = resource.name;
         while (typeof resources[id] !== 'undefined') {
           id = id + "_" + counter;
@@ -1961,19 +1960,6 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
           return error_free = false;
         }
       });
-      form.find("textarea.required").each(function() {
-        var _this = this;
-        $(this).removeClass("error");
-        if (jQuery.trim($(this).val()) === "") {
-          $(this).addClass("error");
-          $(this).wiggle({
-            callback: function() {
-              return $(_this).focus();
-            }
-          });
-          return error_free = false;
-        }
-      });
       if (error_free) {
         map = {};
         opts = {
@@ -2287,7 +2273,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 
     OperationView.prototype.toggleOperationContent = function() {
       var elem;
-      elem = $('#' + Docs.escapeResourceName(this.model.parentId + "_" + this.model.nickname + "_content"));
+      elem = $('#' + Docs.escapeResourceName(this.model.parentId) + "_" + this.model.nickname + "_content");
       if (elem.is(':visible')) {
         return Docs.collapseOperation(elem);
       } else {
@@ -2379,9 +2365,6 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
         this.model.isFile = true;
       }
       this.model["default"] = this.model["default"] || this.model.defaultValue;
-      if (this.model.allowableValues) {
-        this.model.isList = true;
-      }
       template = this.template();
       $(this.el).html(template(this.model));
       signatureModel = {
