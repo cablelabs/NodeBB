@@ -11,7 +11,7 @@
     "/statusentry/{id}": {
       "get": {
         "tags": [
-          "Common"
+          "Interaction"
         ],
         "summary": "Find resource by ID",
         "description": "An entry that documents the Lifecycle of a given Incident TicketAn entry that documents the Lifecycle of a given Incident Ticket.",
@@ -54,7 +54,7 @@
       },
       "put": {
         "tags": [
-          "Common"
+          "Interaction"
         ],
         "summary": "Update an existing resource",
         "description": "Update a specific instance of the resource by ID.",
@@ -97,7 +97,7 @@
       },
       "delete": {
         "tags": [
-          "Common"
+          "Interaction"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -128,7 +128,7 @@
     "/statusentry": {
       "post": {
         "tags": [
-          "Common"
+          "Interaction"
         ],
         "summary": "Create a new resource",
         "description": "Create a new instance of the resource.",
@@ -13737,9 +13737,6 @@
         "crcStatus": {
           "type": "number"
         },
-        "cllicode": {
-          "$ref": "CLLICode"
-        },
         "physicalPort": {
           "$ref": "PhysicalPort"
         }
@@ -14469,6 +14466,9 @@
         },
         "macAddress": {
           "type": "string"
+        },
+        "clliCode": {
+          "$ref": "CLLICode"
         },
         "manufactureDateStamp": {
           "type": "date"
@@ -16533,9 +16533,6 @@
         "versionNumber": {
           "type": "string"
         },
-        "clliCode": {
-          "$ref": "CLLICode"
-        },
         "deviceActivationStatus": {
           "type": "string",
           "description": "Activation_Pending, Activated, Activation_Failed"
@@ -16643,11 +16640,6 @@
         },
         "interfaceInitResetCount": {
           "type": "integer"
-        },
-        "clliCode": {
-          "type": "object",
-          "$ref": "CLLICode",
-          "required": true
         },
         "serviceState": {
           "type": "integer"
