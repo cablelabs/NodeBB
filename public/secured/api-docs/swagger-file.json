@@ -8818,7 +8818,7 @@
         }
       }
     },
-    "/asbuiltorderdesign": {
+    "/servicedesign": {
       "post": {
         "tags": [
           "Service"
@@ -8854,7 +8854,7 @@
         }
       }
     },
-    "/asbuiltorderdesign/{id}": {
+    "/servicedesign/{id}": {
       "get": {
         "tags": [
           "Service"
@@ -13824,6 +13824,319 @@
           "items": {
             "$ref": "Changes"
           }
+        }
+      }
+    },
+    "Ticket": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "description": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "description": "Master, Primary, Subtask",
+          "enum": ["Master", "Primary", "Subtask"]
+        },
+        "status": {
+          "type": "string"
+        },
+        "detailDescription": {
+          "type": "string"
+        },
+        "severity": {
+          "type": "string"
+        },
+        "universalIdentifier": {
+          "type": "string"
+        },
+        "originatingSystem": {
+          "type": "string"
+        },
+        "originatingTicketId": {
+          "type": "string"
+        },
+        "impact": {
+          "type": "string"
+        },
+        "interactionStatus": {
+          "type": "string"
+        },
+        "interactionDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "interactionDateComplete": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "createDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "relatedTo": {
+          "type": "array",
+          "items": {
+            "$ref": "TicketRelationship"
+          }
+        },
+        "primaryTicket": {
+          "$ref": "TicketSummary"
+        },
+        "tasks": {
+          "type": "array",
+          "items": {
+            "$ref": "TicketSummary"
+          }
+        },
+
+
+
+
+
+
+
+
+
+
+
+        "relatedFrom": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "TicketRelationship"
+          }
+        },
+
+        "submitter": {
+          "type": "object",
+          "$ref": "Submitter",
+          "required": true
+        },
+
+        "externalSystemReference": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "ExternalSystemReference"
+          }
+        },
+        "statusEntries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "StatusEntry"
+          }
+        },
+
+        "assignedGroup": {
+          "type": "object",
+          "$ref": "AssignedGroup",
+          "required": true
+        },
+
+
+
+
+
+        "impactedItems": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "ImpactedItem"
+          }
+        },
+
+
+        "modifiers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "Modifier"
+          }
+        },
+        "watchers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "Watcher"
+          }
+        },
+        "ticketContacts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "Contact"
+          }
+        },
+
+        "ticketCategory": {
+          "type": "object",
+          "$ref": "TicketCategory",
+          "required": true
+        },
+
+
+
+        "characteristics": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "Characteristic"
+          }
+        },
+
+        "assignee": {
+          "type": "object",
+          "$ref": "Assignee",
+          "required": true
+        },
+
+
+        "ticketLocation": {
+          "type": "object",
+          "$ref": "TicketLocation",
+          "required": true
+        },
+
+        "comments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "Comment"
+          }
+        }
+      }
+    },
+    "TicketCategory": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "level": {
+          "type": "string"
+        },
+        "subCategory": {
+          "type": "object",
+          "$ref": "TicketCategory",
+          "required": true
+        },
+        "description": {
+          "type": "string"
+        },
+        "link": {
+          "type": "object",
+          "$ref": "Link",
+          "required": true
+        },
+        "value": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    },
+    "TicketLocation": {
+      "type": "object",
+      "properties": {
+        "sites": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "Site"
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "unnamed_Ticket_": {
+          "type": "object",
+          "$ref": "Ticket",
+          "required": true
+        },
+        "cableServiceArea": {
+          "type": "object",
+          "$ref": "CableServiceArea",
+          "required": true
+        },
+        "link": {
+          "type": "object",
+          "$ref": "Link",
+          "required": true
+        },
+        "marketArea": {
+          "type": "object",
+          "$ref": "MarketArea",
+          "required": true
+        }
+      }
+    },
+    "TicketRelationship": {
+      "type": "object",
+      "properties": {
+        "relationshipType": {
+          "type": "object",
+          "$ref": "TicketRelationshipType",
+          "required": true
+        },
+        "validFor": {
+          "type": "object",
+          "$ref": "TimePeriod",
+          "required": true
+        },
+        "relatedTicket": {
+          "type": "object",
+          "$ref": "Ticket",
+          "required": true
+        },
+        "tickets": {
+          "type": "object",
+          "$ref": "Ticket",
+          "required": true
+        }
+      }
+    },
+    "Tickets": {
+      "type": "object",
+      "properties": {
+        "tickets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "Ticket"
+          }
+        }
+      }
+    },
+    "TimeZoneRegion": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "timeZoneCode": {
+          "type": "string"
+        },
+        "link": {
+          "type": "object",
+          "$ref": "Link",
+          "required": true
+        },
+        "timeZoneName": {
+          "type": "string"
+        },
+        "geometry": {
+          "type": "object",
+          "$ref": "Geometry",
+          "required": true
         }
       }
     },
