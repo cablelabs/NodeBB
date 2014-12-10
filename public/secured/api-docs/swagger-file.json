@@ -14036,7 +14036,111 @@
         }
       }
     },
+    "ConfigurationData": {
+      "id": "ConfigurationData",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "mgmtInfoValidFor": {
+          "$ref": "TimePeriod"
+        },
+        "retrievalMethodCurrent": {
+          "type": "integer",
+          "description": "0:  Unknown, 1:  None, 2:  CLI, 3:  SNMP, 4:  TL1, 5:  CMIP, 6:  RMON, 7:  Proprietary"
+        },
+        "retrievalMethodsSupported": {
+          "type": "string",
+          "description": "0:  Unknown, 1:  None, 2:  CLI, 3:  SNMP, 4:  TL1, 5:  CMIP, 6:  RMON, 7:  Proprietary"
+        },
+        "configText": {
+          "type": "string"
+        },
+        "configBinary": {
+          "$ref": "integer"
+        },
+        "configLocation": {
+          "$ref": "Link"
+        },
+        "service": {
+          "$ref": "ServiceSummary"
+        },
+        "resources": {
+          "type": "array",
+          "items": {
+            "$ref": "ResourceSummary"
+          }
+        },
+        "serviceConfiguration": {
+          "$ref": "ServiceConfigurationSummary"
+        },
+        "attributes": {
+          "type": "array",
+          "items": {
+            "$ref": "AttributeValuePair"
+          }
+        },
+        "specification": {
+          "$ref": "ConfigurationDataSpecification"
+        }
+      }
+    },
+    "ConfigurationDataSpecification": {
+      "id": "ConfigurationDataSpecification",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "AttributeValuePair": {
+      "type": "object",
+      "properties": {
+        "attributeName": {
+          "type": "string"
+        },
+        "attributeValue": {
+          "type": "string"
+        }
+      }
+    },
+    "ServiceSummary": {
+      "id": "ServiceSummary",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "hasStarted": {
+          "type": "boolean"
+        },
+        "isServiceEnabled": {
+          "type": "boolean"
+        },
+        "isMandatory": {
+          "type": "boolean"
+        }
+      }
+    },
     "Service": {
+      "id": "Service",
       "type": "object",
       "properties": {
         "id": {
