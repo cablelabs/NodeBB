@@ -45,6 +45,7 @@
     "nodebb-plugin-custom-secured-pages": "0.0.2",
     "nodebb-plugin-dbsearch": "0.0.10",
     "nodebb-plugin-desktop-notifications": "~0.0.10",
+    "nodebb-plugin-emailer-mandrill": "^0.2.2",
     "nodebb-plugin-emoji": "~0.1.4-2",
     "nodebb-plugin-google-analytics": "0.4.2",
     "nodebb-plugin-livereload": "0.0.2-2",
