@@ -1385,7 +1385,7 @@
         }
       }
     },
-    "/resource/resourceport": {
+    "/resource/port": {
       "post": {
         "tags": [
           "Resource"
@@ -1407,7 +1407,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/ResourcePort"
+              "$ref": "#/definitions/Port"
             }
           }
         ],
@@ -1421,13 +1421,13 @@
         }
       }
     },
-    "/resource/resourceport/{id}": {
+    "/resource/port/{id}": {
       "get": {
         "tags": [
           "Resource"
         ],
         "summary": "Find resource by ID",
-        "description": "The ResourcePort is a type of ResourceElement that consists only of logical termination points (TrailTerminationPointSource, TrailTerminationPointSink, and TrailTerminationPointBiDirectional, to be precise) and PhysicalPorts. This enables the ResourcePort to take on the physical and logical characteristics of a 'port' as defined in G.805. ",
+        "description": "The Port is a type of ResourceElement that consists only of logical termination points (TrailTerminationPointSource, TrailTerminationPointSink, and TrailTerminationPointBiDirectional, to be precise) and PhysicalPorts. This enables the Port to take on the physical and logical characteristics of a 'port' as defined in G.805. ",
         "displayName": "Resource Port",
         "produces": [
           "application/json",
@@ -1454,7 +1454,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/ResourcePort"
+              "$ref": "#/definitions/Port"
             }
           },
           "400": {
@@ -1486,7 +1486,7 @@
             "description": "Instance object that needs to be updated.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/ResourcePort"
+              "$ref": "#/definitions/Port"
             }
           }
         ],
@@ -1494,7 +1494,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/ResourcePort"
+              "$ref": "#/definitions/Port"
             }
           },
           "400": {
@@ -3587,7 +3587,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Ticket in DB"
+              "$ref": "#/definitions/Ticket"
             }
           }
         ],
@@ -3608,7 +3608,7 @@
         ],
         "summary": "Find resource by ID",
         "description": "A record containing the details of an Incident. Each Ticket documents the lifecycle of a single incident.",
-        "displayName": "Ticket  in DB",
+        "displayName": "Ticket",
         "produces": [
           "application/json",
           "application/xml"
@@ -3634,7 +3634,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/Ticket in DB"
+              "$ref": "#/definitions/Ticket"
             }
           },
           "400": {
@@ -3666,7 +3666,7 @@
             "description": "Instance object that needs to be updated.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Ticket in DB"
+              "$ref": "#/definitions/Ticket"
             }
           }
         ],
@@ -3674,7 +3674,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/Ticket in DB"
+              "$ref": "#/definitions/Ticket"
             }
           },
           "400": {
@@ -13225,7 +13225,7 @@
           "$ref": "MACAddress"
         },
         "resourcePort": {
-          "$ref": "ResourcePort"
+          "$ref": "Port"
         }
       }
     },
@@ -13622,8 +13622,8 @@
         }
       }
     },
-    "ResourcePort": {
-      "id": "ResourcePort",
+    "Port": {
+      "id": "Port",
       "type": "object",
       "properties": {
         "id": {
@@ -13632,7 +13632,7 @@
         "link": {
           "$ref": "Link"
         },
-        "isEdgeResourcePort": {
+        "isEdgePort": {
           "type": "boolean"
         },
         "usageState": {
@@ -13741,8 +13741,8 @@
         }
       }
     },
-    "ResourcePortDeltas": {
-      "id": "ResourcePortDeltas",
+    "PortDeltas": {
+      "id": "PortDeltas",
       "properties": {
         "id": {
           "type": "string"
@@ -13757,10 +13757,10 @@
           }
         },
         "resourcePortConfiguration": {
-          "$ref": "ResourcePortConfiguration"
+          "$ref": "PortConfiguration"
         },
         "currentPort": {
-          "$ref": "ResourcePort"
+          "$ref": "Port"
         }
       }
     },
@@ -14566,7 +14566,7 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "ResourcePortDeltas"
+            "$ref": "PortDeltas"
           }
         }
       }
