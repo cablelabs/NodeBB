@@ -96,6 +96,25 @@ middleware.redirectToLoginIfGuest = function(req, res, next) {
 	}
 };
 
+middleware.checkIfConfirmed = function(req, res, next) {
+	if (!req.user || parseInt(req.user.uid, 10) === 0) {
+		req.session.returnTo = req.url;
+		return res.redirect('/login');
+	} else {
+		user.getUserData(req.user.uid, function(err, user){
+			var emailConfirmed = !!parseInt(user['email:confirmed'], 10)
+			console.log("email confirmed : " + emailConfirmed);
+			if(emailConfirmed) {
+				console.log("confirmed email");
+				next();
+			} else {
+				console.log("not yet confirmed email");
+				res.render('confirmation-needed');
+			}
+		});
+	}
+};
+
 middleware.addSlug = function(req, res, next) {
 	function redirect(method, id, name) {
 		method(id, 'slug', function(err, slug) {

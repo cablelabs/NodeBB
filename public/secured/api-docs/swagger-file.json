@@ -12082,11 +12082,11 @@
           "$ref": "VHCoordinates",
           "required": true
         },
-        "customerAccounts": {
+        "accounts": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "Account"
+            "$ref": "AccountSummary"
           }
         },
         "status": {

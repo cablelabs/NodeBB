@@ -525,6 +525,8 @@ var socket,
 
 			$('#logout-link').on('click', app.logout);
 
+			$('.logout').on('click', app.logout);
+
 			$window.blur(function(){
 				app.isFocused = false;
 			});

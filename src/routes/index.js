@@ -18,14 +18,14 @@ var nconf = require('nconf'),
 
 function mainRoutes(app, middleware, controllers) {
 
-	setupPageRoute(app, '/', middleware, [], function(req, res, next) {
+	setupPageRoute(app, '/', middleware, [middleware.checkIfConfirmed], function(req, res, next) {
 		res.redirect('/index');
 	});
 	//setupPageRoute(app, '/home', middleware, [], controllers.portal.landing);
 	//setupPageRoute(app, '/documentation', middleware, [], controllers.portal.documentation);
 
 	// This is how
-	setupPageRoute(app, '/forums', middleware, [middleware.redirectToLoginIfGuest], controllers.home);
+	setupPageRoute(app, '/forums', middleware, [middleware.redirectToLoginIfGuest, middleware.checkIfConfirmed], controllers.home);
 	//setupPageRoute(app, '/forums', middleware, [], controllers.home);
 	//setupPageRoute(app, 'docs', middleware, [middleware.redirectToLoginIfGuest], )
 
@@ -57,7 +57,7 @@ function tagRoutes(app, middleware, controllers) {
 	//setupPageRoute(app, '/tags', middleware, [], controllers.tags.getTags);
 
 	setupPageRoute(app, '/tags/:tag', middleware, [middleware.redirectToLoginIfGuest], controllers.tags.getTag);
-	setupPageRoute(app, '/tags', middleware, [middleware.redirectToLoginIfGuest], controllers.tags.getTags);
+	setupPageRoute(app, '/tags', middleware, [middleware.redirectToLoginIfGuest, middleware.checkIfConfirmed], controllers.tags.getTags);
 }
 
 function categoryRoutes(app, middleware, controllers) {
@@ -66,9 +66,9 @@ function categoryRoutes(app, middleware, controllers) {
 	//setupPageRoute(app, '/recent/:term?', middleware, [], controllers.categories.recent);
 	//setupPageRoute(app, '/unread', middleware, [middleware.authenticate], controllers.categories.unread);
 
-	setupPageRoute(app, '/popular/:term?', middleware, [middleware.redirectToLoginIfGuest], controllers.categories.popular);
-	setupPageRoute(app, '/recent/:term?', middleware, [middleware.redirectToLoginIfGuest], controllers.categories.recent);
-	setupPageRoute(app, '/unread', middleware, [middleware.redirectToLoginIfGuest, middleware.redirectToLoginIfGuest], controllers.categories.unread);
+	setupPageRoute(app, '/popular/:term?', middleware, [middleware.redirectToLoginIfGuest, middleware.checkIfConfirmed], controllers.categories.popular);
+	setupPageRoute(app, '/recent/:term?', middleware, [middleware.redirectToLoginIfGuest, middleware.checkIfConfirmed], controllers.categories.recent);
+	setupPageRoute(app, '/unread', middleware, [middleware.redirectToLoginIfGuest, middleware.checkIfConfirmed], controllers.categories.unread);
 
 	app.get('/api/unread/total', middleware.authenticate, controllers.categories.unreadTotal);
 
@@ -175,6 +175,8 @@ module.exports = function(app, middleware) {
 	app.use(relativePath, express.static(path.join(__dirname, '../../', 'public'), {
 		maxAge: app.enabled('cache') ? 5184000000 : 0
 	}));
+
+	app.all(relativePath + '**', middleware.checkIfConfirmed);
 
 	app.use(catch404);
 	app.use(handleErrors);

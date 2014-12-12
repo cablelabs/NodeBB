@@ -8,6 +8,6 @@
 	<p>[[notifications:email-confirm-error-message]]</p>
 <!-- ENDIF status -->
 	<p>
-		<a href="{relative_path}/">[[notifications:back_to_home, {config.siteTitle}]]</a>
+		Please <a class="logout" href="#">Logout</a> and log back in.
 	</p>
 </div>

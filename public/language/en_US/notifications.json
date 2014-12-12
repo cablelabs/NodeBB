@@ -20,6 +20,8 @@
     "user_started_following_you": "<strong>%1</strong> started following you.",
     "email-confirmed": "Email Confirmed",
     "email-confirmed-message": "Thank you for validating your email. Your account is now fully activated.",
+    "email-confirmation-needed-message": "You have not confirmed you email address yet. Please confirm to gain full access to portal.",
+    "email-confirmation-needed": "Email Confirmation needed",
     "email-confirm-error": "An error occurred...",
     "email-confirm-error-message": "There was a problem validating your email address. Perhaps the code was invalid or has expired.",
     "email-confirm-sent": "Confirmation email sent."

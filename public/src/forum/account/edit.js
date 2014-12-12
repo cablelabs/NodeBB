@@ -223,8 +223,13 @@ define('forum/account/edit', dependencies, function(header, uploader, tags) {
 	}
 
 	function handleEmailConfirm() {
+		var userData = {
+			uid: $('#inputUID').val()
+		};
+
 		$('#confirm-email').on('click', function() {
-			socket.emit('user.emailConfirm', {}, function(err) {
+			console.log("++++++ " + userData.uid);
+			socket.emit('user.emailConfirm', userData, function(err) {
 				if (err) {
 					return app.alertError(err.message);
 				}

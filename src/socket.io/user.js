@@ -43,7 +43,7 @@ SocketUser.emailExists = function(socket, data, callback) {
 
 SocketUser.emailConfirm = function(socket, data, callback) {
 	if (socket.uid && parseInt(meta.config.requireEmailConfirmation, 10) === 1) {
-		user.getUserField(socket.uid, 'email', function(err, email) {
+		user.getUserField(data.uid, 'email', function(err, email) {
 			if (err) {
 				return callback(err);
 			}
@@ -52,7 +52,7 @@ SocketUser.emailConfirm = function(socket, data, callback) {
 				return;
 			}
 
-			user.email.verify(socket.uid, email);
+			user.email.verify(data.uid, email);
 			callback();
 		});
 	}
