@@ -103,12 +103,10 @@ middleware.checkIfConfirmed = function(req, res, next) {
 	} else {
 		user.getUserData(req.user.uid, function(err, user){
 			var emailConfirmed = !!parseInt(user['email:confirmed'], 10)
-			console.log("email confirmed : " + emailConfirmed);
 			if(emailConfirmed) {
-				console.log("confirmed email");
 				next();
 			} else {
-				console.log("not yet confirmed email");
+				winston.error("Email confirmation not done yet. User ID : " + req.user.id);
 				res.render('confirmation-needed');
 			}
 		});

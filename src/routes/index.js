@@ -176,7 +176,7 @@ module.exports = function(app, middleware) {
 		maxAge: app.enabled('cache') ? 5184000000 : 0
 	}));
 
-	app.all(relativePath + '**', middleware.checkIfConfirmed);
+	//app.all(relativePath + '**', middleware.checkIfConfirmed);
 
 	app.use(catch404);
 	app.use(handleErrors);
