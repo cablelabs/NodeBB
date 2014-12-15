@@ -11070,6 +11070,478 @@
         }
       }
     },
+    "/ticket/{t-id}/contacts": {
+      "get": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Find list of contacts for a ticket.",
+        "description": "List of contacts for a given ticket.",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of the ticket instance",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "view",
+            "description": "View of the resource that you want to get.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/ContactList"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Create a new resource",
+        "description": "Create a new instance of the resource.",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance ",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Contact"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Instance Created"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/ticket/{t-id}/contact/{id}": {
+      "get": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Find resource by ID",
+        "description": "A modifier of a specific ticket.",
+        "displayName": "Modifier",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance to get contact",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "view",
+            "description": "View of the resource that you want to get.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Contact"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Update an existing resource",
+        "description": "Update a specific instance of the resource by ID.",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance to update contact",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Instance object that needs to be updated.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Contact"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Contact"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Deletes a resource based on ID.",
+        "description": "Delete a specific instance based on the ID",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance to delete contact",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Instance id to be deleted",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully Deleted."
+          },
+          "400": {
+            "description": "Invalid Instance value"
+          }
+        }
+      }
+    },
+
+
+    "/ticket/{t-id}/locations": {
+      "get": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Find list of contacts for a ticket.",
+        "description": "List of contacts for a given ticket.",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of the ticket instance",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "view",
+            "description": "View of the resource that you want to get.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/TicketLocationList"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Create a new resource",
+        "description": "Create a new instance of the resource.",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance ",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TicketLocation"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Instance Created"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/ticket/{t-id}/location/{id}": {
+      "get": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Find resource by ID",
+        "description": "A modifier of a specific ticket.",
+        "displayName": "Modifier",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance to get location",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "view",
+            "description": "View of the resource that you want to get.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/TicketLocation"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Update an existing resource",
+        "description": "Update a specific instance of the resource by ID.",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance to update location",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Instance object that needs to be updated.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TicketLocation"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/TicketLocation"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Deletes a resource based on ID.",
+        "description": "Delete a specific instance based on the ID",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance to delete location",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Instance id to be deleted",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully Deleted."
+          },
+          "400": {
+            "description": "Invalid Instance value"
+          }
+        }
+      }
+    },
     "/customerpayment": {
       "post": {
         "tags": [
@@ -12608,6 +13080,49 @@
         },
         "link": {
           "$ref": "Link"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "ContactList": {
+      "id": "ContactList",
+      "type": "object",
+      "properties": {
+        "available": {
+          "type": "integer",
+          "description": "The number of total available contacts in this list. Will always be greater than or equal to the \"returned\" value."
+        },
+        "returned": {
+          "type": "integer",
+          "description": "The number of contacts returned in this collection (up to 20)."
+        },
+        "collectionURI": {
+          "type": "string",
+          "description": "The path to the full list of contacts in this collection."
+        },
+        "items": {
+          "type": "array",
+          "description": "The list of returned contacts in this collection.",
+          "items": {
+            "$ref": "ContactSummary"
+          }
+        }
+      }
+    },
+    "ContactSummary": {
+      "id": "ContactSummary",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "contactType": {
+          "type": "string"
         },
         "name": {
           "type": "string"
@@ -14904,7 +15419,7 @@
             "$ref": "Characteristic"
           }
         },
-        "ticketContacts": {
+        "contacts": {
           "type": "array",
           "items": {
             "type": "object",
@@ -14918,7 +15433,7 @@
             "$ref": "ImpactedItem"
           }
         },
-        "ticketLocation": {
+        "location": {
           "type": "object",
           "$ref": "TicketLocation"
         },
@@ -15040,7 +15555,33 @@
         }
       }
     },
+    "TicketLocationList": {
+      "id": "TicketLocationList",
+      "type": "object",
+      "properties": {
+        "available": {
+          "type": "integer",
+          "description": "The number of total available locations in this list. Will always be greater than or equal to the \"returned\" value."
+        },
+        "returned": {
+          "type": "integer",
+          "description": "The number of locations returned in this collection (up to 20)."
+        },
+        "collectionURI": {
+          "type": "string",
+          "description": "The path to the full list of locations in this collection."
+        },
+        "items": {
+          "type": "array",
+          "description": "The list of returned locations in this collection.",
+          "items": {
+            "$ref": "TicketLocation"
+          }
+        }
+      }
+    },
     "TicketLocation": {
+      "id": "TicketLocation",
       "type": "object",
       "properties": {
         "sites": {
