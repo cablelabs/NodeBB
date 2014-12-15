@@ -10835,6 +10835,241 @@
         }
       }
     },
+    "/ticket/{t-id}/tasks": {
+      "get": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Find list of Tasks for a ticket.",
+        "description": "List of Tasks for a given ticket.",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of the ticket instance",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "view",
+            "description": "View of the resource that you want to get.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/TaskList"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Create a new resource",
+        "description": "Create a new instance of the resource.",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance ",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Ticket"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Instance Created"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/ticket/{t-id}/task/{id}": {
+      "get": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Find resource by ID",
+        "description": "A modifier of a specific ticket.",
+        "displayName": "Modifier",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance to get task",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "view",
+            "description": "View of the resource that you want to get.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Ticket"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Update an existing resource",
+        "description": "Update a specific instance of the resource by ID.",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance to update task",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Instance object that needs to be updated.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Ticket"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Ticket"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Deletes a resource based on ID.",
+        "description": "Delete a specific instance based on the ID",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance to delete task",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Instance id to be deleted",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully Deleted."
+          },
+          "400": {
+            "description": "Invalid Instance value"
+          }
+        }
+      }
+    },
     "/customerpayment": {
       "post": {
         "tags": [
@@ -14482,6 +14717,64 @@
         "userGroups": {
           "type": "object",
           "$ref": "UserGroup"
+        }
+      }
+    },
+    "TaskList": {
+      "id": "TaskList",
+      "type": "object",
+      "properties": {
+        "available": {
+          "type": "integer",
+          "description": "The number of total available tasks in this list. Will always be greater than or equal to the \"returned\" value."
+        },
+        "returned": {
+          "type": "integer",
+          "description": "The number of tasks returned in this collection (up to 20)."
+        },
+        "collectionURI": {
+          "type": "string",
+          "description": "The path to the full list of tasks in this collection."
+        },
+        "items": {
+          "type": "array",
+          "description": "The list of returned tasks in this collection.",
+          "items": {
+            "$ref": "TicketSummary"
+          }
+        }
+      }
+    },
+    "TicketSummary": {
+      "id": "TicketSummary",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "description": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "description": "Master, Primary, Subtask",
+          "enum": [
+            "Master",
+            "Primary",
+            "Subtask"
+          ]
+        },
+        "status": {
+          "type": "string"
+        },
+        "detailDescription": {
+          "type": "string"
+        },
+        "severity": {
+          "type": "string"
         }
       }
     },
