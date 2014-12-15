@@ -10130,7 +10130,50 @@
         }
       }
     },
-    "/comment": {
+    "/ticket/{id}/comment": {
+      "get": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Find list of comments for a ticket.",
+        "description": "An entry to the log of an Ticket.",
+        "displayName": "Comment ",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of the ticket instance",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "view",
+            "description": "View of the resource that you want to get.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/CommentList"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          }
+        }
+      },
       "post": {
         "tags": [
           "Interaction"
@@ -10146,6 +10189,14 @@
           "application/xml"
         ],
         "parameters": [
+          {
+            "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance ",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
           {
             "in": "body",
             "name": "body",
@@ -10166,7 +10217,7 @@
         }
       }
     },
-    "/comment/{id}": {
+    "/ticekt/{t-id}/comment/{id}": {
       "get": {
         "tags": [
           "Interaction"
@@ -10179,6 +10230,14 @@
           "application/xml"
         ],
         "parameters": [
+          {
+            "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance to get comment",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
           {
             "in": "path",
             "name": "id",
@@ -10226,6 +10285,22 @@
         ],
         "parameters": [
           {
+            "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance to update comment",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
             "in": "body",
             "name": "body",
             "description": "Instance object that needs to be updated.",
@@ -10257,13 +10332,21 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes an resource based on ID.",
+        "summary": "Deletes a resource based on ID.",
         "description": "Delete a specific instance based on the ID",
         "produces": [
           "application/json",
           "application/xml"
         ],
         "parameters": [
+          {
+            "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance to update comment",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
           {
             "in": "path",
             "name": "id",
@@ -15120,6 +15203,32 @@
         }
       }
     },
+    "CommentList": {
+      "id": "Comment",
+      "type": "object",
+      "properties": {
+        "available": {
+          "type": "integer",
+          "description": "The number of total available issues in this list. Will always be greater than or equal to the \"returned\" value."
+        },
+        "returned": {
+          "type": "integer",
+          "description": "The number of issues returned in this collection (up to 20)."
+        },
+        "collectionURI": {
+          "type": "string",
+          "description": "The path to the full list of comments in this collection."
+        },
+        "items": {
+          "type": "array",
+          "description": "The list of returned commets in this collection.",
+          "items": {
+            "$ref": "Comment"
+          }
+        }
+}
+      }
+    },
     "Comment": {
       "id": "Comment",
       "type": "object",
@@ -15131,7 +15240,8 @@
           "$ref": "Link"
         },
         "description": {
-          "type": "string"
+          "type": "string",
+          "decription": "The content of the Comment."
         },
         "createTime": {
           "type": "string",
@@ -16833,7 +16943,8 @@
           "type": "integer"
         },
         "usageState": {
-          "type": "integer"
+          "type": "integer",
+          "description": "0: Unknown, 1: Not Installed, 2: Installed, 3: Inactive, 4: Idle, 5: Active, but able to communicate, 6: Busy (Active and unable to communicate)"
         },
         "manufactureDateStamp": {
           "type": "string",
@@ -16843,7 +16954,8 @@
           "type": "string"
         },
         "powerState": {
-          "type": "integer"
+          "type": "integer",
+          "description": "0: Unknown, 1: Not Applicable, 2: No Power Applied, 3: Full Power Applied, 4: Power Save - Normal, 5: Power Save - Degraded, 6: Power Save - Standby, 7: Power Save - Critical, 8: Power Save - Low Power Mode, 9: Power Save - Unknown, 10: Power Cycle, 11: Power Warning, 12: Power Off"
         },
         "serialNumber": {
           "type": "string"
