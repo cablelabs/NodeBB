@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "Exlpore the cable API's. API's are grouped by Domain.",
+    "description": "Explore the cable API's. API's are grouped by Domain.",
     "version": "0.0.1",
     "title": "Cable API"
   },
@@ -2212,7 +2212,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/TicketAssignedGroup"
+              "$ref": "#/definitions/AssignedGroup"
             }
           }
         ],
@@ -2231,7 +2231,7 @@
         ],
         "summary": "Find resource by ID",
         "description": "A group assigned to a Ticket. For example, an Ticket assigned to a particular organization (e.g., Network Services).",
-        "displayName": "Ticket  AssignedGroup",
+        "displayName": "Ticket AssignedGroup",
         "produces": [
           "application/json",
           "application/xml"
@@ -2257,7 +2257,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/TicketAssignedGroup"
+              "$ref": "#/definitions/AssignedGroup"
             }
           },
           "400": {
@@ -2289,7 +2289,7 @@
             "description": "Instance object that needs to be updated.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Ticket AssignedGroup"
+              "$ref": "#/definitions/AssignedGroup"
             }
           }
         ],
@@ -2297,7 +2297,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/Ticket AssignedGroup"
+              "$ref": "#/definitions/AssignedGroup"
             }
           },
           "400": {
@@ -13827,6 +13827,24 @@
         }
       }
     },
+    "AssignedGroup": {
+      "id": "AssignedGroup",
+      "type": "object",
+      "properties": {
+        "assignedStart": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "assignedEnd": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "userGroups": {
+          "type": "object",
+          "$ref": "UserGroup"
+        }
+      }
+    },
     "Ticket": {
       "type": "object",
       "properties": {
@@ -13895,31 +13913,10 @@
             "$ref": "TicketSummary"
           }
         },
-
-
-
-
-
-
-
-
-
-
-
-        "relatedFrom": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "TicketRelationship"
-          }
-        },
-
-        "submitter": {
+        "assignedGroup": {
           "type": "object",
-          "$ref": "Submitter",
-          "required": true
+          "$ref": "AssignedGroup"
         },
-
         "externalSystemReference": {
           "type": "array",
           "items": {
@@ -13927,33 +13924,18 @@
             "$ref": "ExternalSystemReference"
           }
         },
-        "statusEntries": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "StatusEntry"
-          }
-        },
-
-        "assignedGroup": {
+        "ticketCategory": {
           "type": "object",
-          "$ref": "AssignedGroup",
-          "required": true
+          "$ref": "TicketCategory"
         },
-
-
-
-
-
-        "impactedItems": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "ImpactedItem"
-          }
+        "submitter": {
+          "type": "object",
+          "$ref": "UserSummary"
         },
-
-
+        "assignee": {
+          "type": "object",
+          "$ref": "UserSummary"
+        },
         "modifiers": {
           "type": "array",
           "items": {
@@ -13968,22 +13950,20 @@
             "$ref": "Watcher"
           }
         },
-        "ticketContacts": {
+        "comments": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "Contact"
+            "$ref": "Comment"
           }
         },
-
-        "ticketCategory": {
-          "type": "object",
-          "$ref": "TicketCategory",
-          "required": true
+        "statusEntries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "StatusEntry"
+          }
         },
-
-
-
         "characteristics": {
           "type": "array",
           "items": {
@@ -13991,26 +13971,61 @@
             "$ref": "Characteristic"
           }
         },
-
-        "assignee": {
-          "type": "object",
-          "$ref": "Assignee",
-          "required": true
-        },
-
-
-        "ticketLocation": {
-          "type": "object",
-          "$ref": "TicketLocation",
-          "required": true
-        },
-
-        "comments": {
+        "ticketContacts": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "Comment"
+            "$ref": "Contact"
           }
+        },
+        "impactedItems": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "ImpactedItem"
+          }
+        },
+        "ticketLocation": {
+          "type": "object",
+          "$ref": "TicketLocation"
+        },
+        "relatedFrom": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "TicketRelationship"
+          }
+        }
+      }
+    },
+    "Modifier": {
+      "id": "Modifier",
+      "type": "object",
+      "properties": {
+        "modifiedTime": {
+          "type": "string",
+          "$ref": "date-time"
+        },
+        "user": {
+          "type": "object",
+          "$ref": "UserSummary"
+        }
+      }
+    },
+    "Watcher": {
+      "type": "object",
+      "properties": {
+        "watchStart": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "watchEnd": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "user": {
+          "type": "object",
+          "$ref": "UserSummary"
         }
       }
     },
@@ -14020,27 +14035,25 @@
         "id": {
           "type": "string"
         },
+        "link": {
+          "type": "object",
+          "$ref": "Link"
+        },
+        "description": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
         "level": {
           "type": "string"
         },
         "subCategory": {
           "type": "object",
-          "$ref": "TicketCategory",
-          "required": true
-        },
-        "description": {
-          "type": "string"
-        },
-        "link": {
-          "type": "object",
-          "$ref": "Link",
-          "required": true
-        },
-        "value": {
-          "type": "string"
-        },
-        "type": {
-          "type": "string"
+          "$ref": "TicketCategory"
         }
       }
     },

@@ -136,10 +136,10 @@
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">API's <strong class="caret"></strong></a>
                         <ul class="dropdown-menu">
                             <!-- IF loggedIn -->
-                            <li><a href="{relative_path}/api-info">General API Info</a></li>
-                            <li><a href="{relative_path}/entity-map">Entities Map</a></li>
+                            <!--<li><a href="{relative_path}/api-info">General API Info</a></li>-->
+                            <li><a href="{relative_path}/entity-map">Entity Map</a></li>
                             <li><a href="{relative_path}/documentation">Documentation</a></li>
-                            <li><a href="{relative_path}/key-management">Get a Key</a></li>
+                            <!--<li><a href="{relative_path}/key-management">Get a Key</a></li>-->
                             <!-- ELSE -->
                             <li><a href="{relative_path}/login">Login</a></li>
                             <!-- ENDIF loggedIn -->
