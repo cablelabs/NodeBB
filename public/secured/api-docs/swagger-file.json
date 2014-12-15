@@ -8,7 +8,7 @@
   "host": "cable-api.herokuapp.com",
   "basePath": "/api-docs",
   "paths": {
-    "/statusentry/{id}": {
+    "/ticket/{t-id}/statusentry/{id}": {
       "get": {
         "tags": [
           "Interaction"
@@ -21,6 +21,14 @@
           "application/xml"
         ],
         "parameters": [
+          {
+            "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance whose status needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
           {
             "in": "path",
             "name": "id",
@@ -68,6 +76,22 @@
         ],
         "parameters": [
           {
+            "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance whose status needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
             "in": "body",
             "name": "body",
             "description": "Instance object that needs to be updated.",
@@ -108,8 +132,16 @@
         "parameters": [
           {
             "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance whose status needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "path",
             "name": "id",
-            "description": "Instance id to be deleted",
+            "description": "ID of instance that needs to be fetched",
             "required": true,
             "type": "integer",
             "format": "int64"
@@ -125,7 +157,7 @@
         }
       }
     },
-    "/statusentry": {
+    "/ticket/{t-id}/statusentry": {
       "post": {
         "tags": [
           "Interaction"
@@ -141,6 +173,14 @@
           "application/xml"
         ],
         "parameters": [
+          {
+            "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance to add status entry",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
           {
             "in": "body",
             "name": "body",
@@ -4330,7 +4370,7 @@
         }
       }
     },
-    "/ticketcategory": {
+    "/ticket/{t-id}/category": {
       "post": {
         "tags": [
           "Interaction"
@@ -4347,12 +4387,20 @@
         ],
         "parameters": [
           {
+            "in": "path",
+            "name": "t-id",
+            "description": "ID of instance ticket instance to add category",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
             "in": "body",
             "name": "body",
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/TicketCategory"
+              "$ref": "#/definitions/Category"
             }
           }
         ],
@@ -4366,7 +4414,7 @@
         }
       }
     },
-    "/ticketcategory/{id}": {
+    "/ticket/{t-id}/category/{id}": {
       "get": {
         "tags": [
           "Interaction"
@@ -4379,6 +4427,14 @@
           "application/xml"
         ],
         "parameters": [
+          {
+            "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance whose category needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
           {
             "in": "path",
             "name": "id",
@@ -4399,7 +4455,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/TicketCategory"
+              "$ref": "#/definitions/Category"
             }
           },
           "400": {
@@ -4426,12 +4482,28 @@
         ],
         "parameters": [
           {
+            "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance whose status needs to be updated",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
             "in": "body",
             "name": "body",
             "description": "Instance object that needs to be updated.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/TicketCategory"
+              "$ref": "#/definitions/Category"
             }
           }
         ],
@@ -4439,7 +4511,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/TicketCategory"
+              "$ref": "#/definitions/Category"
             }
           },
           "400": {
@@ -4466,8 +4538,16 @@
         "parameters": [
           {
             "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance whose status needs to be deleted",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "path",
             "name": "id",
-            "description": "Instance id to be deleted",
+            "description": "ID of instance that needs to be fetched",
             "required": true,
             "type": "integer",
             "format": "int64"
@@ -4578,6 +4658,14 @@
           "application/xml"
         ],
         "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be updated",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
           {
             "in": "body",
             "name": "body",
@@ -12899,7 +12987,7 @@
           }
         },
         "serviceConfiguration": {
-          "$ref": "ServiceConfiguration"
+          "$ref": "ServiceConfigurationSummary"
         },
         "device": {
           "$ref": "DeviceSummary"
@@ -13924,9 +14012,9 @@
             "$ref": "ExternalSystemReference"
           }
         },
-        "ticketCategory": {
+        "category": {
           "type": "object",
-          "$ref": "TicketCategory"
+          "$ref": "Category"
         },
         "submitter": {
           "type": "object",
@@ -14029,7 +14117,7 @@
         }
       }
     },
-    "TicketCategory": {
+    "Category": {
       "type": "object",
       "properties": {
         "id": {
@@ -14053,7 +14141,7 @@
         },
         "subCategory": {
           "type": "object",
-          "$ref": "TicketCategory"
+          "$ref": "Category"
         }
       }
     },
