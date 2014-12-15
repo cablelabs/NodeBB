@@ -158,6 +158,48 @@
       }
     },
     "/ticket/{t-id}/statusentry": {
+      "get": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Find list of status entries for a ticket.",
+        "description": "A status entry to the log of an Ticket.",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of the ticket instance",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "view",
+            "description": "View of the resource that you want to get.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/StatusEntryList"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          }
+        }
+      },
       "post": {
         "tags": [
           "Interaction"
@@ -7247,7 +7289,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/UsersTickets"
+              "$ref": "#/definitions/Ticket"
             }
           }
         ],
@@ -7292,7 +7334,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/UsersTickets"
+              "$ref": "#/definitions/TicketList"
             }
           },
           "400": {
@@ -10137,6 +10179,7 @@
         ],
         "summary": "Find list of comments for a ticket.",
         "description": "An entry to the log of an Ticket.",
+        "displayName": "Comment Collection",
         "produces": [
           "application/json",
           "application/xml"
@@ -10223,7 +10266,7 @@
         ],
         "summary": "Find resource by ID",
         "description": "An entry to the log of an Ticket.",
-        "displayName": "Comment ",
+        "displayName": "Comment",
         "produces": [
           "application/json",
           "application/xml"
@@ -10372,6 +10415,7 @@
         ],
         "summary": "Find list of watchers for a ticket.",
         "description": "List of watchers for a given ticket.",
+        "displayName": "Watcher Collection",
         "produces": [
           "application/json",
           "application/xml"
@@ -10607,6 +10651,7 @@
         ],
         "summary": "Find list of Modifiers for a ticket.",
         "description": "List of Modifiers for a given ticket.",
+        "displayName": "Modifier Collection",
         "produces": [
           "application/json",
           "application/xml"
@@ -10842,6 +10887,7 @@
         ],
         "summary": "Find list of Tasks for a ticket.",
         "description": "List of Tasks for a given ticket.",
+        "displayName": "Task Collection",
         "produces": [
           "application/json",
           "application/xml"
@@ -10928,7 +10974,7 @@
         ],
         "summary": "Find resource by ID",
         "description": "A modifier of a specific ticket.",
-        "displayName": "Modifier",
+        "displayName": "Task",
         "produces": [
           "application/json",
           "application/xml"
@@ -11077,6 +11123,7 @@
         ],
         "summary": "Find list of contacts for a ticket.",
         "description": "List of contacts for a given ticket.",
+        "displayName": "Ticket Contact Collection",
         "produces": [
           "application/json",
           "application/xml"
@@ -11314,6 +11361,7 @@
         ],
         "summary": "Find list of contacts for a ticket.",
         "description": "List of contacts for a given ticket.",
+        "displayName": "Task Location Collection",
         "produces": [
           "application/json",
           "application/xml"
@@ -13289,55 +13337,587 @@
         }
       }
     },
-    "GeographicLocation": {
+    "CableServiceArea": {
       "type": "object",
       "properties": {
-        "cableServiceArea": {
-          "type": "object",
-          "$ref": "CableServiceArea"
+        "id": {
+          "type": "string"
         },
-        "adiminstrativeArea": {
+        "link": {
           "type": "object",
-          "$ref": "AdministrativeArea"
+          "$ref": "Link"
         },
-        "emergencyServiceZone": {
-          "type": "object",
-          "$ref": "EmergencyServiceZone"
+        "name": {
+          "type": "string"
         },
-        "geographicArea": {
-          "type": "object",
-          "$ref": "GeographicArea"
-        },
-        "timeZoneRegion": {
-          "type": "object",
-          "$ref": "TimeZoneRegion"
-        },
-        "property": {
-          "type": "object",
-          "$ref": "Property"
-        },
-        "marketArea": {
-          "type": "object",
-          "$ref": "MarketArea"
-        },
-        "exchangeServiceArea": {
-          "type": "object",
-          "$ref": "ExchangeServiceArea"
-        },
-        "rateGroupRegion": {
-          "type": "object",
-          "$ref": "RateGroupRegion"
-        },
-        "accuracy": {
+        "code": {
           "type": "string"
         },
         "geometry": {
           "type": "object",
           "$ref": "Geometry"
+        }
+      }
+    },
+    "Geometry": {
+      "type": "object",
+      "properties": {
+        "geographicLocation": {
+          "type": "object",
+          "$ref": "GeographicLocation"
+        },
+        "spatialReferenceSystem": {
+          "type": "object",
+          "$ref": "SpatialReferenceSystem"
+        },
+        "geometryCollection": {
+          "type": "object",
+          "$ref": "GeometryCollection"
+        }
+      }
+    },
+    "SpatialReferenceSystem": {
+      "type": "object",
+      "properties": {
+        "geometrys": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "Geometry"
+          }
+        }
+      }
+    },
+    "GeometryCollection": {
+      "type": "object",
+      "properties": {
+        "geometryCollection": {
+          "type": "object",
+          "$ref": "GeometryCollection",
+          "required": true
+        },
+        "spatialReferenceSystem": {
+          "type": "object",
+          "$ref": "SpatialReferenceSystem",
+          "required": true
+        },
+        "geometry": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "Geometry"
+          }
+        },
+        "geographicLocation": {
+          "type": "object",
+          "$ref": "GeographicLocation",
+          "required": true
+        }
+      }
+    },
+    "Line": {
+      "type": "object",
+      "properties": {
+        "polygon": {
+          "type": "object",
+          "$ref": "Polygon",
+          "required": true
+        },
+        "geometryCollection": {
+          "type": "object",
+          "$ref": "GeometryCollection",
+          "required": true
+        },
+        "multiLineString": {
+          "type": "object",
+          "$ref": "MultiLineString",
+          "required": true
+        },
+        "spatialReferenceSystem": {
+          "type": "object",
+          "$ref": "SpatialReferenceSystem",
+          "required": true
+        },
+        "points": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "Point"
+          }
+        },
+        "geographicLocation": {
+          "type": "object",
+          "$ref": "GeographicLocation",
+          "required": true
+        }
+      }
+    },
+    "LinearRing": {
+      "type": "object",
+      "properties": {
+        "polygon": {
+          "type": "object",
+          "$ref": "Polygon",
+          "required": true
+        },
+        "geometryCollection": {
+          "type": "object",
+          "$ref": "GeometryCollection",
+          "required": true
+        },
+        "multiLineString": {
+          "type": "object",
+          "$ref": "MultiLineString",
+          "required": true
+        },
+        "spatialReferenceSystem": {
+          "type": "object",
+          "$ref": "SpatialReferenceSystem",
+          "required": true
+        },
+        "points": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "Point"
+          }
+        },
+        "geographicLocation": {
+          "type": "object",
+          "$ref": "GeographicLocation",
+          "required": true
+        }
+      }
+    },
+    "LineString": {
+      "type": "object",
+      "properties": {
+        "polygon": {
+          "type": "object",
+          "$ref": "Polygon",
+          "required": true
+        },
+        "geometryCollection": {
+          "type": "object",
+          "$ref": "GeometryCollection",
+          "required": true
+        },
+        "multiLineString": {
+          "type": "object",
+          "$ref": "MultiLineString",
+          "required": true
+        },
+        "spatialReferenceSystem": {
+          "type": "object",
+          "$ref": "SpatialReferenceSystem",
+          "required": true
+        },
+        "points": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "Point"
+          }
+        },
+        "geographicLocation": {
+          "type": "object",
+          "$ref": "GeographicLocation",
+          "required": true
+        }
+      }
+    },
+    "MultiLineString": {
+      "type": "object",
+      "properties": {
+        "lineStrings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "LineString"
+          }
+        },
+        "geometryCollection": {
+          "type": "object",
+          "$ref": "GeometryCollection",
+          "required": true
+        },
+        "spatialReferenceSystem": {
+          "type": "object",
+          "$ref": "SpatialReferenceSystem",
+          "required": true
+        },
+        "geographicLocation": {
+          "type": "object",
+          "$ref": "GeographicLocation",
+          "required": true
+        }
+      }
+    },
+    "MultiPoint": {
+      "type": "object",
+      "properties": {
+        "geometryCollection": {
+          "type": "object",
+          "$ref": "GeometryCollection",
+          "required": true
+        },
+        "spatialReferenceSystem": {
+          "type": "object",
+          "$ref": "SpatialReferenceSystem",
+          "required": true
+        },
+        "points": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "Point"
+          }
+        },
+        "geographicLocation": {
+          "type": "object",
+          "$ref": "GeographicLocation",
+          "required": true
+        }
+      }
+    },
+    "MultiPolygon": {
+      "type": "object",
+      "properties": {
+        "geometryCollection": {
+          "type": "object",
+          "$ref": "GeometryCollection",
+          "required": true
+        },
+        "spatialReferenceSystem": {
+          "type": "object",
+          "$ref": "SpatialReferenceSystem",
+          "required": true
+        },
+        "polygons": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "Polygon"
+          }
+        },
+        "geographicLocation": {
+          "type": "object",
+          "$ref": "GeographicLocation",
+          "required": true
+        }
+      }
+    },
+    "Point": {
+      "type": "object",
+      "properties": {
+        "geometryCollection": {
+          "type": "object",
+          "$ref": "GeometryCollection",
+          "required": true
+        },
+        "spatialReferenceSystem": {
+          "type": "object",
+          "$ref": "SpatialReferenceSystem",
+          "required": true
+        },
+        "elevation": {
+          "type": "string"
+        },
+        "multiPoint": {
+          "type": "object",
+          "$ref": "MultiPoint",
+          "required": true
+        },
+        "longitude": {
+          "type": "string"
+        },
+        "latitude": {
+          "type": "string"
+        },
+        "lineString": {
+          "type": "object",
+          "$ref": "LineString",
+          "required": true
+        },
+        "geographicLocation": {
+          "type": "object",
+          "$ref": "GeographicLocation",
+          "required": true
+        }
+      }
+    },
+    "Polygon": {
+      "type": "object",
+      "properties": {
+        "lineStrings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "LineString"
+          }
+        },
+        "geometryCollection": {
+          "type": "object",
+          "$ref": "GeometryCollection",
+          "required": true
+        },
+        "spatialReferenceSystem": {
+          "type": "object",
+          "$ref": "SpatialReferenceSystem",
+          "required": true
+        },
+        "link": {
+          "type": "object",
+          "$ref": "Link",
+          "required": true
+        },
+        "multiPolygon": {
+          "type": "object",
+          "$ref": "MultiPolygon",
+          "required": true
+        },
+        "geographicLocation": {
+          "type": "object",
+          "$ref": "GeographicLocation",
+          "required": true
+        }
+      }
+    },
+    "GeographicLocation": {
+      "type": "object",
+      "properties": {
+        "accuracy": {
+          "type": "string"
+        },
+        "property": {
+          "type": "object",
+          "$ref": "Property"
+        },
+        "cableServiceArea": {
+          "type": "object",
+          "$ref": "CableServiceArea"
+        },
+        "exchangeServiceArea": {
+          "type": "object",
+          "$ref": "ExchangeServiceArea"
+        },
+        "marketArea": {
+          "type": "object",
+          "$ref": "MarketArea"
+        },
+        "geographicArea": {
+          "type": "object",
+          "$ref": "GeographicArea"
+        },
+        "rateGroupRegion": {
+          "type": "object",
+          "$ref": "RateGroupRegion"
         },
         "rateCenter": {
           "type": "object",
           "$ref": "RateCenter"
+        },
+        "emergencyServiceZone": {
+          "type": "object",
+          "$ref": "EmergencyServiceZone"
+        },
+        "timeZoneRegion": {
+          "type": "object",
+          "$ref": "TimeZoneRegion"
+        },
+        "administrativeArea": {
+          "type": "object",
+          "$ref": "AdministrativeArea"
+        },
+        "geometry": {
+          "type": "object",
+          "$ref": "Geometry"
+        }
+      }
+    },
+    "AdministrativeArea": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "type": "object",
+          "$ref": "Link"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "description": "MUNICIPALITY, CENSUS DISTRICT, ELECTORAL AREA, COUNTY, PARISH"
+        },
+        "geometry": {
+          "type": "object",
+          "$ref": "Geometry"
+        }
+      }
+    },
+    "TimeZoneRegion": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "type": "object",
+          "$ref": "Link"
+        },
+        "timeZoneName": {
+          "type": "string"
+        },
+        "timeZoneCode": {
+          "type": "string"
+        },
+        "geometry": {
+          "type": "object",
+          "$ref": "Geometry"
+        }
+      }
+    },
+    "EmergencyServiceZone": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "type": "object",
+          "$ref": "Link"
+        },
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "geometry": {
+          "type": "object",
+          "$ref": "Geometry"
+        }
+      }
+    },
+    "ExchangeServiceArea": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "type": "object",
+          "$ref": "Link"
+        },
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "geometry": {
+          "type": "object",
+          "$ref": "Geometry"
+        }
+      }
+    },
+    "MarketArea": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "type": "object",
+          "$ref": "Link"
+        },
+        "marketAreaName": {
+          "type": "string"
+        },
+        "marketAreaType": {
+          "type": "string"
+        },
+        "marketRank": {
+          "type": "integer"
+        },
+        "geometry": {
+          "type": "object",
+          "$ref": "Geometry"
+        }
+      }
+    },
+    "GeographicArea": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "type": "object",
+          "$ref": "Link"
+        },
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "geometry": {
+          "type": "object",
+          "$ref": "Geometry"
+        }
+      }
+    },
+    "RateGroupRegion": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "type": "object",
+          "$ref": "Link"
+        },
+        "rateGroupRegionName": {
+          "type": "string"
+        },
+        "rateGroup": {
+          "type": "string"
+        },
+        "geometry": {
+          "type": "object",
+          "$ref": "Geometry"
+        }
+      }
+    },
+    "RateCenter": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "type": "object",
+          "$ref": "Link"
+        },
+        "rateCenterName": {
+          "type": "string"
+        },
+        "rateGroupCode": {
+          "type": "string"
+        },
+        "geometry": {
+          "type": "object",
+          "$ref": "Geometry"
         }
       }
     },
@@ -13375,8 +13955,7 @@
           "type": "string"
         },
         "geometry": {
-          "$ref": "Geometry",
-          "required": true
+          "$ref": "Geometry"
         }
       }
     },
@@ -15316,6 +15895,31 @@
         "items": {
           "type": "array",
           "description": "The list of returned tasks in this collection.",
+          "items": {
+            "$ref": "TicketSummary"
+          }
+        }
+      }
+    },
+    "TicketList": {
+      "id": "TicketList",
+      "type": "object",
+      "properties": {
+        "available": {
+          "type": "integer",
+          "description": "The number of total available tickets in this list. Will always be greater than or equal to the \"returned\" value."
+        },
+        "returned": {
+          "type": "integer",
+          "description": "The number of tickets returned in this collection (up to 20)."
+        },
+        "collectionURI": {
+          "type": "string",
+          "description": "The path to the full list of tickets in this collection."
+        },
+        "items": {
+          "type": "array",
+          "description": "The list of returned tickets in this collection.",
           "items": {
             "$ref": "TicketSummary"
           }
@@ -17976,6 +18580,31 @@
         },
         "price": {
           "$ref": "Money"
+        }
+      }
+    },
+    "StatusEntryList": {
+      "id": "StatusEntryList",
+      "type": "object",
+      "properties": {
+        "available": {
+          "type": "integer",
+          "description": "The number of total available status entries in this list. Will always be greater than or equal to the \"returned\" value."
+        },
+        "returned": {
+          "type": "integer",
+          "description": "The number of status entries returned in this collection (up to 20)."
+        },
+        "collectionURI": {
+          "type": "string",
+          "description": "The path to the full list of status entries in this collection."
+        },
+        "items": {
+          "type": "array",
+          "description": "The list of returned status entries in this collection.",
+          "items": {
+            "$ref": "Modifier"
+          }
         }
       }
     },
