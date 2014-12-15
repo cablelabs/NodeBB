@@ -10130,14 +10130,13 @@
         }
       }
     },
-    "/ticket/{id}/comment": {
+    "/ticket/{t-id}/comments": {
       "get": {
         "tags": [
           "Interaction"
         ],
         "summary": "Find list of comments for a ticket.",
         "description": "An entry to the log of an Ticket.",
-        "displayName": "Comment ",
         "produces": [
           "application/json",
           "application/xml"
@@ -10217,7 +10216,7 @@
         }
       }
     },
-    "/ticekt/{t-id}/comment/{id}": {
+    "/ticket/{t-id}/comment/{id}": {
       "get": {
         "tags": [
           "Interaction"
@@ -10343,6 +10342,476 @@
             "in": "path",
             "name": "t-id",
             "description": "ID of the ticket instance to update comment",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Instance id to be deleted",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully Deleted."
+          },
+          "400": {
+            "description": "Invalid Instance value"
+          }
+        }
+      }
+    },
+    "/ticket/{t-id}/watchers": {
+      "get": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Find list of watchers for a ticket.",
+        "description": "List of watchers for a given ticket.",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of the ticket instance",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "view",
+            "description": "View of the resource that you want to get.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/WatcherList"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Create a new resource",
+        "description": "Create a new instance of the resource.",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance ",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Watcher"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Instance Created"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/ticket/{t-id}/watcher/{id}": {
+      "get": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Find resource by ID",
+        "description": "A watcher of a specific ticket.",
+        "displayName": "Watcher",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance to get watcher",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "view",
+            "description": "View of the resource that you want to get.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Watcher"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Update an existing resource",
+        "description": "Update a specific instance of the resource by ID.",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance to update watcher",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Instance object that needs to be updated.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Watcher"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Watcher"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Deletes a resource based on ID.",
+        "description": "Delete a specific instance based on the ID",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance to update watcher",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Instance id to be deleted",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully Deleted."
+          },
+          "400": {
+            "description": "Invalid Instance value"
+          }
+        }
+      }
+    },
+    "/ticket/{t-id}/modifiers": {
+      "get": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Find list of Modifiers for a ticket.",
+        "description": "List of Modifiers for a given ticket.",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of the ticket instance",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "view",
+            "description": "View of the resource that you want to get.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/ModifierList"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Create a new resource",
+        "description": "Create a new instance of the resource.",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance ",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Modifier"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Instance Created"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/ticket/{t-id}/modifier/{id}": {
+      "get": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Find resource by ID",
+        "description": "A modifier of a specific ticket.",
+        "displayName": "Modifier",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance to get modifier",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "view",
+            "description": "View of the resource that you want to get.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Watcher"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Update an existing resource",
+        "description": "Update a specific instance of the resource by ID.",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance to update modifier",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Instance object that needs to be updated.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Modifier"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Modifier"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Interaction"
+        ],
+        "summary": "Deletes a resource based on ID.",
+        "description": "Delete a specific instance based on the ID",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "t-id",
+            "description": "ID of the ticket instance to update watcher",
             "required": true,
             "type": "integer",
             "format": "int64"
@@ -14169,6 +14638,31 @@
         }
       }
     },
+    "ModifierList": {
+      "id": "ModifierList",
+      "type": "object",
+      "properties": {
+        "available": {
+          "type": "integer",
+          "description": "The number of total available modifiers in this list. Will always be greater than or equal to the \"returned\" value."
+        },
+        "returned": {
+          "type": "integer",
+          "description": "The number of modifiers returned in this collection (up to 20)."
+        },
+        "collectionURI": {
+          "type": "string",
+          "description": "The path to the full list of modifiers in this collection."
+        },
+        "items": {
+          "type": "array",
+          "description": "The list of returned modifiers in this collection.",
+          "items": {
+            "$ref": "Modifier"
+          }
+        }
+      }
+    },
     "Modifier": {
       "id": "Modifier",
       "type": "object",
@@ -14180,6 +14674,31 @@
         "user": {
           "type": "object",
           "$ref": "UserSummary"
+        }
+      }
+    },
+    "WatcherList": {
+      "id": "WatcherList",
+      "type": "object",
+      "properties": {
+        "available": {
+          "type": "integer",
+          "description": "The number of total available watchers in this list. Will always be greater than or equal to the \"returned\" value."
+        },
+        "returned": {
+          "type": "integer",
+          "description": "The number of watchers returned in this collection (up to 20)."
+        },
+        "collectionURI": {
+          "type": "string",
+          "description": "The path to the full list of watchers in this collection."
+        },
+        "items": {
+          "type": "array",
+          "description": "The list of returned watchers in this collection.",
+          "items": {
+            "$ref": "Watcher"
+          }
         }
       }
     },
@@ -15204,7 +15723,7 @@
       }
     },
     "CommentList": {
-      "id": "Comment",
+      "id": "CommentList",
       "type": "object",
       "properties": {
         "available": {
@@ -15221,12 +15740,11 @@
         },
         "items": {
           "type": "array",
-          "description": "The list of returned commets in this collection.",
+          "description": "The list of returned comments in this collection.",
           "items": {
             "$ref": "Comment"
           }
         }
-}
       }
     },
     "Comment": {
