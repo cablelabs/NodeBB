@@ -14262,6 +14262,68 @@
         }
       }
     },
+    "ServiceRoleSummary": {
+      "id": "ServiceRoleSummary",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "type": "object",
+          "$ref": "Link"
+        },
+        "description": {
+          "type": "string"
+        },
+        "commonName": {
+          "type": "string"
+        }
+      }
+    },
+    "ServiceRole": {
+      "id": "ServiceRole",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "type": "object",
+          "$ref": "Link"
+        },
+        "description": {
+          "type": "string"
+        },
+        "commonName": {
+          "type": "string"
+        },
+        "roleCombination": {
+          "type": "string"
+        },
+        "roleSelectionMethod": {
+          "type": "integer"
+        },
+        "requiredBy": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "ServiceRoleSummary"
+          }
+        },
+        "requires": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "ServiceRoleSummary"
+          }
+        },
+        "service": {
+          "type": "object",
+          "$ref": "ServiceSummary"
+        }
+      }
+    },
     "ServiceOrderItem": {
       "id": "ServiceOrderItem",
       "type": "object",
