@@ -164,6 +164,7 @@
         ],
         "summary": "Find list of status entries for a ticket.",
         "description": "A status entry to the log of an Ticket.",
+        "displayName": "Status Entry Collection",
         "produces": [
           "application/json",
           "application/xml"
@@ -13359,6 +13360,38 @@
         }
       }
     },
+    "Feature": {
+      "type": "object",
+      "properties": {
+        "link": {
+          "type": "object",
+          "$ref": "Link"
+        },
+        "properties": {
+          "type": "array",
+          "items": [
+            { "type": "string" },
+            { "type": "string" }
+          ]
+        },
+        "geometry": {
+          "type": "object",
+          "$ref": "Geometry"
+        }
+      }
+    },
+    "FeatureCollection": {
+      "type": "object",
+      "properties": {
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "Feature"
+          }
+        }
+      }
+    },
     "Geometry": {
       "type": "object",
       "properties": {
@@ -13391,27 +13424,12 @@
     "GeometryCollection": {
       "type": "object",
       "properties": {
-        "geometryCollection": {
-          "type": "object",
-          "$ref": "GeometryCollection",
-          "required": true
-        },
-        "spatialReferenceSystem": {
-          "type": "object",
-          "$ref": "SpatialReferenceSystem",
-          "required": true
-        },
         "geometry": {
           "type": "array",
           "items": {
             "type": "object",
             "$ref": "Geometry"
           }
-        },
-        "geographicLocation": {
-          "type": "object",
-          "$ref": "GeographicLocation",
-          "required": true
         }
       }
     },
