@@ -550,6 +550,1135 @@
         }
       }
     },
+
+
+    "/geometrycollection": {
+      "post": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Create a new resource",
+        "description": "Create a new instance of the resource.",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GeometryCollection"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Instance Created"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/geometrycollection/{id}": {
+      "get": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Find resource by ID",
+        "description": "A geometry collection object. A GeoJSON object with type \"GeometryCollection\" is a geometry object which represents a collection of geometry objects. A geometry collection must have a member with the name \"geometries\". The value corresponding to \"geometries\"is an array. Each element in this array is a GeoJSON geometry object.",
+        "displayName": "Geometry Collection",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "view",
+            "description": "View of the resource that you want to get.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/GeometryCollection"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Update an existing resource",
+        "description": "Update a specific instance of the resource by ID.",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Instance object that needs to be updated.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GeometryCollection"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/GeometryCollection"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Deletes an resource based on ID.",
+        "description": "Delete a specific instance based on the ID",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Instance id to be deleted",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully Deleted."
+          },
+          "400": {
+            "description": "Invalid Instance value"
+          }
+        }
+      }
+    },
+    "/multipolygon": {
+      "post": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Create a new resource",
+        "description": "Create a new instance of the resource.",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/MultiPolygon"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Instance Created"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/multipolygon/{id}": {
+      "get": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Find resource by ID",
+        "description": "A geometry multi polygon object. For type \"MultiPolygon\", the \"coordinates\" member must be an array of Polygon coordinate arrays.",
+        "displayName": "Multi Polygon",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "view",
+            "description": "View of the resource that you want to get.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/MultiPolygon"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Update an existing resource",
+        "description": "Update a specific instance of the resource by ID.",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Instance object that needs to be updated.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/MultiPolygon"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/MultiPolygon"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Deletes an resource based on ID.",
+        "description": "Delete a specific instance based on the ID",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Instance id to be deleted",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully Deleted."
+          },
+          "400": {
+            "description": "Invalid Instance value"
+          }
+        }
+      }
+    },
+    "/polygon": {
+      "post": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Create a new resource",
+        "description": "Create a new instance of the resource.",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Polygon"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Instance Created"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/polygon/{id}": {
+      "get": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Find resource by ID",
+        "description": "A geometry polygon object. For type \"Polygon\", the \"coordinates\" member must be an array of LinearRing coordinate arrays. For Polygons with multiple rings, the first must be the exterior ring and any others must be interior rings or holes.",
+        "displayName": "Polygon",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "view",
+            "description": "View of the resource that you want to get.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Polygon"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Update an existing resource",
+        "description": "Update a specific instance of the resource by ID.",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Instance object that needs to be updated.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Polygon"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Polygon"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Deletes an resource based on ID.",
+        "description": "Delete a specific instance based on the ID",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Instance id to be deleted",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully Deleted."
+          },
+          "400": {
+            "description": "Invalid Instance value"
+          }
+        }
+      }
+    },
+    "/multilinestring": {
+      "post": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Create a new resource",
+        "description": "Create a new instance of the resource.",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/MultiLineString"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Instance Created"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/multilinestring/{id}": {
+      "get": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Find resource by ID",
+        "description": "A geometry multi linestring object. For type \"MultiLineString\", the \"coordinates\" member must be an array of LineString coordinate arrays.",
+        "displayName": "Multi Line String",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "view",
+            "description": "View of the resource that you want to get.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/MultiLineString"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Update an existing resource",
+        "description": "Update a specific instance of the resource by ID.",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Instance object that needs to be updated.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/MultiLineString"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/MultiLineString"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Deletes an resource based on ID.",
+        "description": "Delete a specific instance based on the ID",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Instance id to be deleted",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully Deleted."
+          },
+          "400": {
+            "description": "Invalid Instance value"
+          }
+        }
+      }
+    },
+    "/linestring": {
+      "post": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Create a new resource",
+        "description": "Create a new instance of the resource.",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LineString"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Instance Created"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/linestring/{id}": {
+      "get": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Find resource by ID",
+        "description": "A geometry linestring object. Geo Json Spec: For type \"LineString\", the \"coordinates\" member must be an array of two or more positions. A LinearRing is closed LineString with 4 or more positions. The first and last positions are equivalent (they represent equivalent points). Though a LinearRing is not explicitly represented as a GeoJSON geometry type, it is referred to in the Polygon geometry type definition.",
+        "displayName": "Line String",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "view",
+            "description": "View of the resource that you want to get.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/LineString"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Update an existing resource",
+        "description": "Update a specific instance of the resource by ID.",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Instance object that needs to be updated.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LineString"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/LineString"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Deletes an resource based on ID.",
+        "description": "Delete a specific instance based on the ID",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Instance id to be deleted",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully Deleted."
+          },
+          "400": {
+            "description": "Invalid Instance value"
+          }
+        }
+      }
+    },
+    "/multipoint": {
+      "post": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Create a new resource",
+        "description": "Create a new instance of the resource.",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Point"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Instance Created"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/multipoint/{id}": {
+      "get": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Find resource by ID",
+        "description": "A geometry multi point object. Geo Json Spec : For type \"MultiPoint\", the \"coordinates\" member must be an array of positions.",
+        "displayName": "Multi Point",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "view",
+            "description": "View of the resource that you want to get.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/MultiPoint"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Update an existing resource",
+        "description": "Update a specific instance of the resource by ID.",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Instance object that needs to be updated.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/MultiPoint"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/MultiPoint"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Deletes an resource based on ID.",
+        "description": "Delete a specific instance based on the ID",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Instance id to be deleted",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully Deleted."
+          },
+          "400": {
+            "description": "Invalid Instance value"
+          }
+        }
+      }
+    },
+    "/point": {
+      "post": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Create a new resource",
+        "description": "Create a new instance of the resource.",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Point"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Instance Created"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/point/{id}": {
+      "get": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Find resource by ID",
+        "description": "A geometry point object. Geo Json Spec : For type \"Point\", the \"coordinates\" member must be a single position.",
+        "displayName": "Point",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "view",
+            "description": "View of the resource that you want to get.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Point"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Update an existing resource",
+        "description": "Update a specific instance of the resource by ID.",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of instance that needs to be fetched",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Instance object that needs to be updated.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Point"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Point"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Instance not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Deletes an resource based on ID.",
+        "description": "Delete a specific instance based on the ID",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Instance id to be deleted",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully Deleted."
+          },
+          "400": {
+            "description": "Invalid Instance value"
+          }
+        }
+      }
+    },
     "/sitelist": {
       "post": {
         "tags": [
@@ -11353,8 +12482,6 @@
         }
       }
     },
-
-
     "/ticket/{t-id}/locations": {
       "get": {
         "tags": [
@@ -12023,159 +13150,6 @@
       "delete": {
         "tags": [
           "Product"
-        ],
-        "summary": "Deletes an resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "id",
-            "description": "Instance id to be deleted",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Successfully Deleted."
-          },
-          "400": {
-            "description": "Invalid Instance value"
-          }
-        }
-      }
-    },
-    "/ticketlocation": {
-      "post": {
-        "tags": [
-          "Location"
-        ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
-        "consumes": [
-          "application/json",
-          "application/xml"
-        ],
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "description": "",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/TicketLocation"
-            }
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "Instance Created"
-          },
-          "405": {
-            "description": "Invalid input"
-          }
-        }
-      }
-    },
-    "/ticketlocation/{id}": {
-      "get": {
-        "tags": [
-          "Location"
-        ],
-        "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
-        "displayName": "Ticket Location",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "id",
-            "description": "ID of instance that needs to be fetched",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "in": "query",
-            "name": "view",
-            "description": "View of the resource that you want to get.",
-            "required": false,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/TicketLocation"
-            }
-          },
-          "400": {
-            "description": "Invalid ID supplied"
-          },
-          "404": {
-            "description": "Instance not found"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Location"
-        ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
-        "consumes": [
-          "application/json",
-          "application/xml"
-        ],
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "description": "Instance object that needs to be updated.",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/TicketLocation"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/TicketLocation"
-            }
-          },
-          "400": {
-            "description": "Invalid ID supplied"
-          },
-          "404": {
-            "description": "Instance not found"
-          },
-          "405": {
-            "description": "Validation exception"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Location"
         ],
         "summary": "Deletes an resource based on ID.",
         "description": "Delete a specific instance based on the ID",
@@ -13368,11 +14342,10 @@
           "$ref": "Link"
         },
         "properties": {
-          "type": "array",
-          "items": [
-            { "type": "string" },
-            { "type": "string" }
-          ]
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
         },
         "geometry": {
           "type": "object",
@@ -13395,10 +14368,6 @@
     "Geometry": {
       "type": "object",
       "properties": {
-        "geographicLocation": {
-          "type": "object",
-          "$ref": "GeographicLocation"
-        },
         "spatialReferenceSystem": {
           "type": "object",
           "$ref": "SpatialReferenceSystem"
@@ -13507,43 +14476,6 @@
         }
       }
     },
-    "LineString": {
-      "type": "object",
-      "properties": {
-        "polygon": {
-          "type": "object",
-          "$ref": "Polygon",
-          "required": true
-        },
-        "geometryCollection": {
-          "type": "object",
-          "$ref": "GeometryCollection",
-          "required": true
-        },
-        "multiLineString": {
-          "type": "object",
-          "$ref": "MultiLineString",
-          "required": true
-        },
-        "spatialReferenceSystem": {
-          "type": "object",
-          "$ref": "SpatialReferenceSystem",
-          "required": true
-        },
-        "points": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "Point"
-          }
-        },
-        "geographicLocation": {
-          "type": "object",
-          "$ref": "GeographicLocation",
-          "required": true
-        }
-      }
-    },
     "MultiLineString": {
       "type": "object",
       "properties": {
@@ -13554,36 +14486,16 @@
             "$ref": "LineString"
           }
         },
-        "geometryCollection": {
-          "type": "object",
-          "$ref": "GeometryCollection",
-          "required": true
-        },
         "spatialReferenceSystem": {
           "type": "object",
           "$ref": "SpatialReferenceSystem",
-          "required": true
-        },
-        "geographicLocation": {
-          "type": "object",
-          "$ref": "GeographicLocation",
           "required": true
         }
       }
     },
-    "MultiPoint": {
+    "LineString": {
       "type": "object",
       "properties": {
-        "geometryCollection": {
-          "type": "object",
-          "$ref": "GeometryCollection",
-          "required": true
-        },
-        "spatialReferenceSystem": {
-          "type": "object",
-          "$ref": "SpatialReferenceSystem",
-          "required": true
-        },
         "points": {
           "type": "array",
           "items": {
@@ -13591,10 +14503,44 @@
             "$ref": "Point"
           }
         },
-        "geographicLocation": {
+        "spatialReferenceSystem": {
           "type": "object",
-          "$ref": "GeographicLocation",
+          "$ref": "SpatialReferenceSystem"
+        }
+      }
+    },
+    "MultiPoint": {
+      "type": "object",
+      "properties": {
+        "points": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "Point"
+          }
+        },
+        "spatialReferenceSystem": {
+          "type": "object",
+          "$ref": "SpatialReferenceSystem",
           "required": true
+        }
+      }
+    },
+    "Point": {
+      "type": "object",
+      "properties": {
+        "latitude": {
+          "type": "string"
+        },
+        "longitude": {
+          "type": "string"
+        },
+        "elevation": {
+          "type": "string"
+        },
+        "spatialReferenceSystem": {
+          "type": "object",
+          "$ref": "SpatialReferenceSystem"
         }
       }
     },
@@ -13617,45 +14563,6 @@
             "type": "object",
             "$ref": "Polygon"
           }
-        },
-        "geographicLocation": {
-          "type": "object",
-          "$ref": "GeographicLocation",
-          "required": true
-        }
-      }
-    },
-    "Point": {
-      "type": "object",
-      "properties": {
-        "geometryCollection": {
-          "type": "object",
-          "$ref": "GeometryCollection",
-          "required": true
-        },
-        "spatialReferenceSystem": {
-          "type": "object",
-          "$ref": "SpatialReferenceSystem",
-          "required": true
-        },
-        "elevation": {
-          "type": "string"
-        },
-        "multiPoint": {
-          "type": "object",
-          "$ref": "MultiPoint",
-          "required": true
-        },
-        "longitude": {
-          "type": "string"
-        },
-        "latitude": {
-          "type": "string"
-        },
-        "lineString": {
-          "type": "object",
-          "$ref": "LineString",
-          "required": true
         },
         "geographicLocation": {
           "type": "object",
@@ -13687,16 +14594,6 @@
         "link": {
           "type": "object",
           "$ref": "Link",
-          "required": true
-        },
-        "multiPolygon": {
-          "type": "object",
-          "$ref": "MultiPolygon",
-          "required": true
-        },
-        "geographicLocation": {
-          "type": "object",
-          "$ref": "GeographicLocation",
           "required": true
         }
       }
@@ -14051,88 +14948,31 @@
         }
       }
     },
-    "Site": {
-      "id": "Site",
+    "SiteList": {
+      "type": "object",
       "properties": {
-        "geographicLocations": {
-          "type": "array",
-          "items": {
-            "$ref": "GeographicLocation"
-          }
-        },
-        "structureHeight": {
-          "$ref": "Quantity",
-          "required": true
-        },
-        "vhCoordinates": {
-          "type": "object",
-          "$ref": "VHCoordinates",
-          "required": true
-        },
-        "accounts": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "AccountSummary"
-          }
-        },
-        "status": {
-          "type": "object",
-          "$ref": "SiteStatus",
-          "required": true
-        },
-        "link": {
-          "type": "object",
-          "$ref": "Link",
-          "required": true
-        },
-        "propertyAddress": {
-          "type": "object",
-          "$ref": "PropertyAddress",
-          "required": true
-        },
-        "type": {
-          "type": "object",
-          "$ref": "SiteType",
-          "required": true
-        },
         "id": {
           "type": "string"
         },
-        "siteHours": {
-          "type": "string"
-        },
-        "category": {
+        "link": {
           "type": "object",
-          "$ref": "SiteCategory",
-          "required": true
-        },
-        "description": {
-          "type": "string"
+          "$ref": "Link"
         },
         "name": {
           "type": "string"
         },
+        "description": {
+          "type": "string"
+        },
         "validFor": {
           "type": "object",
-          "$ref": "TimePeriod",
-          "required": true
+          "$ref": "TimePeriod"
         },
-        "clliCode": {
-          "type": "object",
-          "$ref": "CLLICode",
-          "required": true
-        },
-        "typeOfSite": {
-          "type": "object",
-          "$ref": "TypeOfSite",
-          "required": true
-        },
-        "accountContacts": {
+        "sites": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "AccountContactAssignment"
+            "$ref": "Site"
           }
         }
       }
@@ -14146,6 +14986,99 @@
         "link": {
           "type": "object",
           "$ref": "Link"
+        },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "object",
+          "$ref": "SiteType"
+        },
+        "siteHours": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "description": "Active, Off, Pending",
+          "enum": ["Active", "Off", "Pending"]
+        }
+      }
+    },
+    "Site": {
+      "id": "Site",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "type": "object",
+          "$ref": "Link"
+        },
+        "typeOfSite": {
+          "type": "string",
+          "description": "ServiceSite, ProviderSite, Other",
+          "enum": [ "ServiceSite", "ProviderSite", "Other" ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "object",
+          "$ref": "SiteType"
+        },
+        "siteHours": {
+          "type": "string"
+        },
+        "structureHeight": {
+          "$ref": "Quantity"
+        },
+        "description": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "description": "Active, Off, Pending",
+          "enum": ["Active", "Off", "Pending"]
+        },
+        "clliCode": {
+          "type": "object",
+          "$ref": "CLLICode"
+        },
+        "category": {
+          "type": "object",
+          "$ref": "SiteCategory"
+        },
+        "vhCoordinates": {
+          "type": "object",
+          "$ref": "VHCoordinates"
+        },
+        "validFor": {
+          "type": "object",
+          "$ref": "TimePeriod"
+        },
+        "accountContacts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "AccountContactAssignment"
+          }
+        },
+        "accounts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "AccountSummary"
+          }
+        },
+        "propertyAddress": {
+          "type": "object",
+          "$ref": "PropertyAddress"
+        },
+        "geographicLocations": {
+          "type": "array",
+          "items": {
+            "$ref": "GeographicLocation"
+          }
         }
       }
     },
@@ -14521,14 +15454,9 @@
         "quantity": {
           "$ref": "Quantity"
         },
-        "productConfiguration": {
-          "$ref": "ProductConfiguration"
-        },
+
         "device": {
           "$ref": "DeviceSummary"
-        },
-        "eplProduct": {
-          "$ref": "EPLProductSummary"
         },
         "stateTransitions": {
           "type": "array",
