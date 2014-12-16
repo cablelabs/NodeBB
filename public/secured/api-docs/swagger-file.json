@@ -15540,6 +15540,28 @@
         }
       }
     },
+    "CustomerQuoteSummary": {
+      "id": "CustomerQuoteSummary",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "description": {
+          "type": "string"
+        },
+        "interactionDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "interactionDateComplete": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
     "CustomerQuote": {
       "id": "CustomerQuote",
       "properties": {
@@ -15553,10 +15575,12 @@
           "type": "string"
         },
         "interactionDate": {
-          "type": "date"
+          "type": "string",
+          "format": "date-time"
         },
         "interactionDateComplete": {
-          "type": "date"
+          "type": "string",
+          "format": "date-time"
         },
         "interactionStatus": {
           "type": "string"
@@ -15668,7 +15692,7 @@
           }
         },
         "customerQuote": {
-          "$ref": "CustomerQuote"
+          "$ref": "CustomerQuoteSummary"
         },
         "existingSite": {
           "$ref": "SiteSummary"
@@ -18468,8 +18492,39 @@
         },
         "link": {
           "type": "object",
-          "$ref": "Link",
-          "required": true
+          "$ref": "Link"
+        },
+        "description": {
+          "type": "string"
+        },
+        "interactionDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "interactionDateComplete": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "interactionStatus": {
+          "type": "string"
+        },
+        "customerOrderType": {
+          "type": "string",
+          "description": ""
+        },
+        "assignedResponseDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "purchaseOrderNumber": {
+          "type": "string"
+        },
+        "assignedPriority": {
+          "type": "integer"
+        },
+        "dueDate": {
+          "type": "string",
+          "format": "date-time"
         }
       }
     },
@@ -18483,14 +18538,14 @@
         "link": {
           "$ref": "Link"
         },
+        "quantity": {
+          "$ref": "Quantity"
+        },
         "action": {
           "type": "string"
         },
         "interactionItemStatus": {
           "type": "string"
-        },
-        "quantity": {
-          "$ref": "Quantity"
         }
       }
     },

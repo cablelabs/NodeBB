@@ -1279,8 +1279,14 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 
 
   buffer += "<div>\n<ul class=\"signature-nav\">\n  <li><a class=\"description-link\" href=\"#\">Model</a></li>\n  <li><a class=\"snippet-link\" href=\"#\">Model Schema</a></li>\n</ul>\n<div>\n\n<div class=\"signature-container\">\n  <div class=\"description\">\n    ";
-  if (stack1 = helpers.signature) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.signature; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  if (stack1 = helpers.signature) { console.log("Came to if"); stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else {
+    stack1 = depth0.signature;
+    stack1 = stack1.slice(0,0) + "<div class=\"well\">" + stack1.slice(0);
+    var index = stack1.indexOf("}</span>");
+    stack1 = stack1.slice(0,index+1) + "</div>" + stack1.slice(index+1);
+    stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1;
+  }
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n  </div>\n\n  <div class=\"snippet\">\n    <pre><code>";
   if (stack1 = helpers.sampleJSON) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
