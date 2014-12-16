@@ -6807,7 +6807,7 @@
           "Customer"
         ],
         "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "description": "Account defines the relationship between the customer and provider with respect to billing, payments, and other financial transactions. The customer account is also used to grant entitlement tokens based on services purchased.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -6843,7 +6843,7 @@
           "Customer"
         ],
         "summary": "Find resource by ID",
-        "description": "An entity that defines the relationship between the customer and provider with respect to billing, payments, and other financial transactions. The customer account is also used to grant entitlement tokens based on services purchased.",
+        "description": "Account defines the relationship between the customer and provider with respect to billing, payments, and other financial transactions. The customer account is also used to grant entitlement tokens based on services purchased.",
         "displayName": "Account ",
         "produces": [
           "application/json",
@@ -6886,7 +6886,7 @@
           "Customer"
         ],
         "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "description": "Account defines the relationship between the customer and provider with respect to billing, payments, and other financial transactions. The customer account is also used to grant entitlement tokens based on services purchased.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -6929,7 +6929,7 @@
           "Customer"
         ],
         "summary": "Deletes an resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "description": "Account defines the relationship between the customer and provider with respect to billing, payments, and other financial transactions. The customer account is also used to grant entitlement tokens based on services purchased.",
         "produces": [
           "application/json",
           "application/xml"
