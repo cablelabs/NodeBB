@@ -15093,6 +15093,23 @@
         }
       }
     },
+    "ProductConfigurationSummary": {
+      "id": "ProductConfigurationSummary",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "name": {
+          "type": "string"
+        },
+        "isBundle": {
+          "type": "boolean"
+        }
+      }
+    },
     "ProductConfiguration": {
       "id": "ProductConfiguration",
       "properties": {
@@ -15121,7 +15138,7 @@
           "$ref": "TimePeriod"
         },
         "products": {
-          "$ref": "ProductConfiguration"
+          "$ref": "ProductConfigurationSummary"
         },
         "serviceConfigurations": {
           "$ref": "ServiceConfiguration"
@@ -19306,7 +19323,7 @@
           "$ref": "EPLProductSummary"
         },
         "eplProductConfiguration": {
-          "$ref": "EPLProductConfiguration"
+          "$ref": "EPLProductConfigurationSummary"
         }
       }
     },
@@ -19317,7 +19334,7 @@
           "type": "string"
         },
         "account": {
-          "$ref": "Account"
+          "$ref": "AccountSummary"
         },
         "product": {
           "$ref": "ProductSummary"
@@ -19346,48 +19363,25 @@
         "id": {
           "type": "string"
         },
-        "eplProducts": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "EPLProduct"
-          }
+        "link": {
+          "type": "object",
+          "$ref": "Link"
         },
-        "status": {
+        "name": {
           "type": "string"
         },
         "description": {
           "type": "string"
         },
-        "name": {
+        "status": {
           "type": "string"
-        },
-        "link": {
-          "type": "object",
-          "$ref": "Link",
-          "required": true
-        },
-        "validFor": {
-          "type": "object",
-          "$ref": "TimePeriod",
-          "required": true
-        },
-        "eplProductConfigurations": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "EPLProductConfiguration"
-          }
-        },
-        "products": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "Product"
-          }
         },
         "isBundle": {
           "type": "boolean"
+        },
+        "validFor": {
+          "type": "object",
+          "$ref": "TimePeriod"
         }
       }
     },
