@@ -18525,6 +18525,12 @@
         "dueDate": {
           "type": "string",
           "format": "date-time"
+        },
+        "customerOrderItems": {
+          "type": "array",
+          "items": {
+            "$ref": "CustomerOrderItem"
+          }
         }
       }
     },
@@ -18538,14 +18544,14 @@
         "link": {
           "$ref": "Link"
         },
-        "quantity": {
-          "$ref": "Quantity"
-        },
         "action": {
           "type": "string"
         },
         "interactionItemStatus": {
           "type": "string"
+        },
+        "quantity": {
+          "$ref": "Quantity"
         }
       }
     },
