@@ -133,7 +133,7 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">API's <strong class="caret"></strong></a>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">APIs <strong class="caret"></strong></a>
                         <ul class="dropdown-menu">
                             <!-- IF loggedIn -->
                             <!--<li><a href="{relative_path}/api-info">General API Info</a></li>-->

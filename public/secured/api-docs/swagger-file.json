@@ -1985,7 +1985,7 @@
         }
       }
     },
-    "/productorder": {
+    "/order": {
       "post": {
         "tags": [
           "Interaction"
@@ -2007,7 +2007,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/ProductOrder"
+              "$ref": "#/definitions/Order"
             }
           }
         ],
@@ -2021,14 +2021,14 @@
         }
       }
     },
-    "/productorder/{id}": {
+    "/order/{id}": {
       "get": {
         "tags": [
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": " Product Orders represent orders that would typically originate at an end user. Product Orders may spawn ASRs, LSRs, or other PSRs in order to fill the end users request, if facility, equipment, or plant assignments are not available for designing the requested Product.",
-        "displayName": "Product Order",
+        "description": "Orders represent orders that would typically originate at an end user. Product Orders may spawn ASRs, LSRs, or other PSRs in order to fill the end users request, if facility, equipment, or plant assignments are not available for designing the requested Product.",
+        "displayName": "Order",
         "produces": [
           "application/json",
           "application/xml"
@@ -2054,7 +2054,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/ProductOrder"
+              "$ref": "#/definitions/Order"
             }
           },
           "400": {
@@ -2086,7 +2086,7 @@
             "description": "Instance object that needs to be updated.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/ProductOrder"
+              "$ref": "#/definitions/Order"
             }
           }
         ],
@@ -2094,7 +2094,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/ProductOrder"
+              "$ref": "#/definitions/Order"
             }
           },
           "400": {
@@ -2466,7 +2466,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Service Order Item"
+              "$ref": "#/definitions/ServiceOrderItem"
             }
           }
         ],
@@ -2513,7 +2513,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/Service Order Item"
+              "$ref": "#/definitions/ServiceOrderItem"
             }
           },
           "400": {
@@ -2545,7 +2545,7 @@
             "description": "Instance object that needs to be updated.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Service Order Item"
+              "$ref": "#/definitions/ServiceOrderItem"
             }
           }
         ],
@@ -2553,7 +2553,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/Service Order Item"
+              "$ref": "#/definitions/ServiceOrderItem"
             }
           },
           "400": {
@@ -3056,7 +3056,7 @@
         }
       }
     },
-    "/productorder/{id}/productorderitem": {
+    "/order/{id}/orderitem": {
       "post": {
         "tags": [
           "Interaction"
@@ -3075,7 +3075,7 @@
           {
             "in": "path",
             "name": "id",
-            "description": "ID of the Product Order instance",
+            "description": "ID of the Order instance",
             "required": true,
             "default": "case3_final",
             "type": "string"
@@ -3086,7 +3086,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/ProductOrderItem"
+              "$ref": "#/definitions/OrderItem"
             }
           }
         ],
@@ -3100,13 +3100,13 @@
         }
       }
     },
-    "/productorder/{po-id}/productorderitem/{id}": {
+    "/order/{po-id}/orderitem/{id}": {
       "get": {
         "tags": [
           "Interaction"
         ],
         "summary": "Find resource by ID",
-        "description": "The purpose for the Customer Order expressed in terms of a Product Offering or a Product (for a change order) inherited from BusinessInteractionItem.",
+        "description": "The purpose for the Order expressed in terms of a Product Offering or a Product (for a change order) inherited from BusinessInteractionItem.",
         "displayName": "Product OrderItem",
         "produces": [
           "application/json",
@@ -3116,7 +3116,7 @@
           {
             "in": "path",
             "name": "po-id",
-            "description": "ID of the Product Order instance",
+            "description": "ID of the Order instance",
             "required": true,
             "default": "case3_final",
             "type": "string"
@@ -3141,7 +3141,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/ProductOrderItem"
+              "$ref": "#/definitions/OrderItem"
             }
           },
           "400": {
@@ -3170,7 +3170,7 @@
           {
             "in": "path",
             "name": "po-id",
-            "description": "ID of the Product Order instance",
+            "description": "ID of the Order instance",
             "required": true,
             "default": "case3_final",
             "type": "string"
@@ -3181,7 +3181,7 @@
             "description": "Instance object that needs to be updated.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/ProductOrderItem"
+              "$ref": "#/definitions/OrderItem"
             }
           }
         ],
@@ -3189,7 +3189,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/ProductOrderItem"
+              "$ref": "#/definitions/OrderItem"
             }
           },
           "400": {
@@ -3217,7 +3217,7 @@
           {
             "in": "path",
             "name": "po-id",
-            "description": "ID of the Product Order instance",
+            "description": "ID of the Order instance",
             "required": true,
             "default": "case3_final",
             "type": "string"
@@ -7773,159 +7773,6 @@
           },
           "404": {
             "description": "Instance not found"
-          }
-        }
-      }
-    },
-    "/customerorder": {
-      "post": {
-        "tags": [
-          "Interaction"
-        ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
-        "consumes": [
-          "application/json",
-          "application/xml"
-        ],
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "description": "",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/CustomerOrder"
-            }
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "Instance Created"
-          },
-          "405": {
-            "description": "Invalid input"
-          }
-        }
-      }
-    },
-    "/customerorder/{id}": {
-      "get": {
-        "tags": [
-          "Interaction"
-        ],
-        "summary": "Find resource by ID",
-        "description": "A CustomerOrder is a communication used to procure a Product. There are different types of CustomerOrders, such as AccessServiceRequests (ASRs), LocalServiceRequests (LSRs), DirectoryServiceRequests (DSRs), ProductOrders (PSRs).",
-        "displayName": "Customer Order",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "id",
-            "description": "ID of instance that needs to be fetched",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "in": "query",
-            "name": "view",
-            "description": "View of the resource that you want to get.",
-            "required": false,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/CustomerOrder"
-            }
-          },
-          "400": {
-            "description": "Invalid ID supplied"
-          },
-          "404": {
-            "description": "Instance not found"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Interaction"
-        ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
-        "consumes": [
-          "application/json",
-          "application/xml"
-        ],
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "description": "Instance object that needs to be updated.",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/CustomerOrder"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/CustomerOrder"
-            }
-          },
-          "400": {
-            "description": "Invalid ID supplied"
-          },
-          "404": {
-            "description": "Instance not found"
-          },
-          "405": {
-            "description": "Validation exception"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Interaction"
-        ],
-        "summary": "Deletes an resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "id",
-            "description": "Instance id to be deleted",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Successfully Deleted."
-          },
-          "400": {
-            "description": "Invalid Instance value"
           }
         }
       }
@@ -13955,6 +13802,15 @@
         },
         "rel": {
           "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "method": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
         }
       }
     },
@@ -15430,7 +15286,7 @@
           }
         },
         "productOrderItem": {
-          "$ref": "ProductOrderItem"
+          "$ref": "OrderItem"
         },
         "productSpecification": {
           "$ref": "ProductSpecificationSummary"
@@ -15452,8 +15308,8 @@
         }
       }
     },
-    "ProductOrderItem": {
-      "id": "ProductOrderItem",
+    "OrderItem": {
+      "id": "OrderItem",
       "properties": {
         "id": {
           "type": "string"
@@ -15464,14 +15320,22 @@
         "action": {
           "type": "string"
         },
-        "orderItemState": {
+        "status": {
           "type": "string",
           "description": "NEW, PRESALES, POSTSALES, PROVISIONING, ACTIVATION, CANCELED, COMPLETED, WAITING_ON_EXTERNAL_ACTION"
         },
         "quantity": {
           "$ref": "Quantity"
         },
-
+        "product": {
+          "$ref": "OrderProduct"
+        },
+        "existingSite": {
+          "$ref": "SiteSummary"
+        },
+        "newSite": {
+          "$ref": "SiteSummary"
+        },
         "device": {
           "$ref": "DeviceSummary"
         },
@@ -15480,6 +15344,35 @@
           "items": {
             "$ref": "Link"
           }
+        }
+      }
+    },
+    "OrderProduct": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "type": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "isBundle": {
+          "type": "boolean"
+        },
+        "configuration": {
+          "type": "object",
+          "oneOf": [
+            { "$ref": "EVCConfiguration" },
+            { "$ref": "EPLConfiguration" },
+            { "$ref": "UNIConfiguration" },
+            { "$ref": "GenericConfiguration" }
+          ]
         }
       }
     },
@@ -15613,8 +15506,8 @@
         }
       }
     },
-    "ProductOrderSummary": {
-      "id": "ProductOrderSummary",
+    "OrderSummary": {
+      "id": "OrderSummary",
       "properties": {
         "id": {
           "type": "string"
@@ -15634,7 +15527,7 @@
           "type": "string",
           "description": "FEASIBLE, CHANGED, NOTFEASIBLE"
         },
-        "purchaceOrderNumber": {
+        "purchaseOrderNumber": {
           "type": "string"
         },
         "dueDate": {
@@ -15643,8 +15536,8 @@
         }
       }
     },
-    "ProductOrder": {
-      "id": "ProductOrder",
+    "Order": {
+      "id": "Order",
       "properties": {
         "id": {
           "type": "string"
@@ -15652,27 +15545,28 @@
         "link": {
           "$ref": "Link"
         },
-        "orderState": {
+        "status": {
           "type": "string",
-          "description": "NEW, SUBMITTED, INPROGRESS, CANCELED, COMPLETED, WAITING_ON_EXTERNAL_ACTION"
-        },
-        "customerOrderType": {
-          "type": "string",
-          "description": "NewConnect, Disconnect, RecordsCorrection, Modifiy"
-        },
-        "feasibility": {
-          "type": "string",
-          "description": "FEASIBLE, CHANGED, NOTFEASIBLE"
-        },
-        "purchaceOrderNumber": {
-          "type": "string"
+          "description": "NEW, SUBMITTED, INPROGRESS, CANCELED, COMPLETED, WAITING_ON_EXTERNAL_ACTION",
+          "enum": ["NEW, SUBMITTED, INPROGRESS, CANCELED, COMPLETED, WAITING_ON_EXTERNAL_ACTION"]
         },
         "orderType": {
           "type": "string",
-          "description": "ADDRESSCHANGE, BANDWIDTHCHANGE, OTHER"
+          "description": "NewConnect, Disconnect, RecordsCorrection, Modify",
+          "enum": ["NewConnect, Disconnect, RecordsCorrection, Modify"]
         },
-        "newState": {
-          "$ref": "Quantity"
+        "feasibility": {
+          "type": "string",
+          "description": "FEASIBLE, CHANGED, NOTFEASIBLE",
+          "enum": ["FEASIBLE, CHANGED, NOTFEASIBLE"]
+        },
+        "purchaseOrderNumber": {
+          "type": "string"
+        },
+        "orderCategory": {
+          "type": "string",
+          "description": "ADDRESSCHANGE, BANDWIDTHCHANGE, OTHER",
+          "enum": ["ADDRESSCHANGE, BANDWIDTHCHANGE, OTHER"]
         },
         "description": {
           "type": "string"
@@ -15680,17 +15574,14 @@
         "saleSource": {
           "type": "string"
         },
-        "interactionStatus": {
-          "type": "string"
-        },
         "assignedPriority": {
           "type": "number"
         },
-        "interactionDate": {
+        "orderDate": {
           "type": "string",
           "format": "date-time"
         },
-        "interactionDateComplete": {
+        "dateComplete": {
           "type": "string",
           "format": "date-time"
         },
@@ -15702,23 +15593,23 @@
           "type": "string",
           "format": "date-time"
         },
-        "productOrderItems": {
+        "orderItems": {
           "type": "array",
           "items": {
-            "$ref": "ProductOrderItem"
+            "$ref": "OrderItem"
           }
         },
         "customerQuote": {
           "$ref": "CustomerQuoteSummary"
         },
-        "existingSite": {
-          "$ref": "SiteSummary"
-        },
-        "newSite": {
-          "$ref": "SiteSummary"
-        },
         "account": {
           "$ref": "AccountSummary"
+        },
+        "stateTransitions": {
+          "type": "array",
+          "items": {
+            "$ref": "Link"
+          }
         }
       }
     },
@@ -18498,77 +18389,6 @@
           "items": {
             "$ref": "CustomerBillingCycleSpecification"
           }
-        }
-      }
-    },
-    "CustomerOrder": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "link": {
-          "type": "object",
-          "$ref": "Link"
-        },
-        "description": {
-          "type": "string"
-        },
-        "interactionDate": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "interactionDateComplete": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "interactionStatus": {
-          "type": "string"
-        },
-        "customerOrderType": {
-          "type": "string",
-          "description": ""
-        },
-        "assignedResponseDate": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "purchaseOrderNumber": {
-          "type": "string"
-        },
-        "assignedPriority": {
-          "type": "integer"
-        },
-        "dueDate": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "customerOrderItems": {
-          "type": "array",
-          "items": {
-            "$ref": "CustomerOrderItem"
-          }
-        }
-      }
-    },
-    "CustomerOrderItem": {
-      "id": "CustomerOrderItem",
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "link": {
-          "$ref": "Link"
-        },
-        "action": {
-          "type": "string"
-        },
-        "interactionItemStatus": {
-          "type": "string"
-        },
-        "quantity": {
-          "$ref": "Quantity"
         }
       }
     },
