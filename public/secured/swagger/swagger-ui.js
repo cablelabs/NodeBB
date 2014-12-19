@@ -1282,9 +1282,9 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.signature) { console.log("Came to if"); stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else {
     stack1 = depth0.signature;
-    stack1 = stack1.slice(0,0) + "<span class=\"strong\">Entity</span><div class=\"well primary-entity\">" + stack1.slice(0);
+    stack1 = stack1.slice(0,0) + "<span class=\"strong\">ENTITY</span><div class=\"well well-lg primary-entity\">" + stack1.slice(0);
     var index = stack1.indexOf("}</span>");
-    stack1 = stack1.slice(0,index+1) + "</div><span class=\"strong\">Types</span><div class=\"well references\">" + stack1.slice(index+1) + "</div>";
+    stack1 = stack1.slice(0,index+1) + "</div><span class=\"strong\">TYPES</span><div class=\"well references\">" + stack1.slice(index+1) + "</div>";
     stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1;
   }
   if(stack1 || stack1 === 0) { buffer += stack1; }

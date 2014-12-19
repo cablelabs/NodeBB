@@ -8876,7 +8876,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/ProductPrice"
+              "$ref": "#/definitions/Price"
             }
           }
         ],
@@ -8923,7 +8923,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/ProductPrice"
+              "$ref": "#/definitions/Price"
             }
           },
           "400": {
@@ -8955,7 +8955,7 @@
             "description": "Instance object that needs to be updated.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/ProductPrice"
+              "$ref": "#/definitions/Price"
             }
           }
         ],
@@ -8963,7 +8963,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/ProductPrice"
+              "$ref": "#/definitions/Price"
             }
           },
           "400": {
@@ -14130,44 +14130,6 @@
         }
       }
     },
-    "CLLICode": {
-      "id": "CLLICode",
-      "type": "object",
-      "properties": {
-        "formattedClliCode": {
-          "type": "string",
-          "description": "Eight or eleven digit formatted CLLI code string."
-        },
-        "clliType": {
-          "type": "string",
-          "description": "0 = Unknown, 1 = Network Site (location) format; used by ProviderSite., 2 = Network Support Site format; used by ProviderSite., 3 = Network Entity format; used by Resource., 4 = Customer Site format; used by ServiceSite."
-        },
-        "clliGeographicCode": {
-          "type": "string",
-          "description": "Four-character geographical area and geographical area type. Regex: [A-Z0-9][A-Z0-9][A-Z0-9][A-Z0-9][A-Z0-9][A-Z0-9]"
-        },
-        "clliGeopoliticalCode": {
-          "type": "string",
-          "description": "Two characters to denote the state, province, or country. Each territory is identified using its two-letter ISO 3166-2:CA or ISO 3166-2:US postal abbreviation suffix (with exceptions: Qu�bec as PQ and Nunavut written as VU). Regex: [A-Z][A-Z]"
-        },
-        "clliNetworkSiteCode": {
-          "type": "string",
-          "description": "The Network Site code denotes the specific location or building address. These will be either two letters or two numbers. Regex: \\([0-9][0-9]\\)|\\([A-Z][A-Z]\\)"
-        },
-        "clliNetworkEntityCode": {
-          "type": "string",
-          "description": "Three-character Network Entity codes specify a particular type of equipment function at a Network Site location. Regex: [A-Z][A-Z][A-Z]"
-        },
-        "clliNetSupportSiteCode": {
-          "type": "string",
-          "description": "A Network Support Site code consists of 5 characters representing any non-building structures or outside plant equipment such as Wireless Access Points, International Boundary Crossing Points, End-Points, Fiber Nodes, Junctions, Manholes, Poles, Base Transceiver Station / Radio Equipment and Repeaters. This is either structured as 1-char location type and 4-digit identifying number, or STLT (satellite) EO (earth orbit satellite). Regex: \\([A-Z][0-9][0-9][0-9][0-9]\\)|\\(STLT\\)|\\(EO\\)"
-        },
-        "clliCustomerSiteCode": {
-          "type": "string",
-          "description": "A Customer Site code is used to uniquely identify customer locations. These locations are required to identify customers, circuit terminations, facilities, or equipment for each specific customer for facility provisioning or other requirements. �This is structured as a digit, followed by a letter, then three more digits. Regex: [0-9][A-Z][0-9][0-9][0-9]"
-        }
-      }
-    },
     "CableServiceArea": {
       "type": "object",
       "properties": {
@@ -14741,23 +14703,6 @@
         }
       }
     },
-    "SiteType": {
-      "id": "SiteType",
-      "properties": {
-        "description": {
-          "type": "string"
-        },
-        "multiTenant": {
-          "type": "boolean"
-        },
-        "name": {
-          "type": "string"
-        },
-        "validFor": {
-          "$ref": "TimePeriod"
-        }
-      }
-    },
     "VHCoordinates": {
       "id": "VHCoordinates",
       "properties": {
@@ -14846,9 +14791,11 @@
         "name": {
           "type": "string"
         },
-        "type": {
-          "type": "object",
-          "$ref": "SiteType"
+        "multiTenant": {
+          "type": "boolean"
+        },
+        "clliCode": {
+          "type": "string"
         },
         "siteHours": {
           "type": "string"
@@ -14870,7 +14817,7 @@
           "type": "object",
           "$ref": "Link"
         },
-        "typeOfSite": {
+        "type": {
           "type": "string",
           "description": "ServiceSite, ProviderSite, Other",
           "enum": [ "ServiceSite", "ProviderSite", "Other" ]
@@ -14878,9 +14825,8 @@
         "name": {
           "type": "string"
         },
-        "type": {
-          "type": "object",
-          "$ref": "SiteType"
+        "multiTenant": {
+          "type": "boolean"
         },
         "siteHours": {
           "type": "string"
@@ -14897,8 +14843,7 @@
           "enum": ["Active", "Off", "Pending"]
         },
         "clliCode": {
-          "type": "object",
-          "$ref": "CLLICode"
+          "type": "string"
         },
         "category": {
           "type": "object",
@@ -17766,7 +17711,7 @@
           "type": "string"
         },
         "clliCode": {
-          "$ref": "CLLICode"
+          "type": "string"
         },
         "manufactureDateStamp": {
           "type": "date"
@@ -19085,31 +19030,16 @@
         "productSerialNumber": {
           "type": "string"
         },
-        "validFor": {
-          "$ref": "TimePeriod"
-        },
         "productPrices": {
           "type": "array",
           "items": {
-            "$ref": "ProductPriceSummary"
+            "$ref": "Price"
           }
         },
-        "productRelationships": {
+        "relatedProducts": {
           "type": "array",
           "items": {
             "$ref": "ProductRelationship"
-          }
-        },
-        "products": {
-          "type": "array",
-          "items": {
-            "$ref": "ProductSummary"
-          }
-        },
-        "customerAccountInvolvements": {
-          "type": "array",
-          "items": {
-            "$ref": "AccountProductAssignment"
           }
         },
         "productSpecification": {
@@ -19118,14 +19048,56 @@
         "productOffering": {
           "$ref": "ProductOfferingSummary"
         },
-        "customerFacingServices": {
+        "services": {
           "type": "array",
           "items": {
             "$ref": "ServiceSummary"
           }
         },
-        "productProperties": {
-          "$ref": "ProductProperties"
+        "devices": {
+          "type": "array",
+          "items": {
+            "$ref": "DeviceSummary"
+          }
+        },
+        "currentLocation": {
+          "type" : "object",
+          "$ref": "SiteSummary"
+        },
+        "locationHistory": {
+          "type" : "array",
+          "items": {
+            "$ref": "SiteSummary"
+          }
+        },
+        "documentation": {
+          "type": "object",
+          "$ref": "Document"
+        },
+        "entitlements": {
+          "type": "array",
+          "items": {
+            "$ref": "EntitlementGrant"
+          }
+        }
+      }
+    },
+    "EntitlementGrant": {
+      "id": "EntitlementGrant",
+      "type": "object",
+      "properties": {
+        "grantId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "validFor": {
+          "type": "object",
+          "$ref": "TimePeriod"
+        },
+        "token": {
+          "type": "string"
         }
       }
     },
@@ -19138,12 +19110,6 @@
         },
         "product": {
           "$ref": "ProductSummary"
-        },
-        "eplProduct": {
-          "$ref": "EPLProductSummary"
-        },
-        "eplProductConfiguration": {
-          "$ref": "EPLProductConfigurationSummary"
         }
       }
     },
@@ -19158,12 +19124,6 @@
         },
         "product": {
           "$ref": "ProductSummary"
-        },
-        "eplProducts": {
-          "$ref": "EPLProductSummary"
-        },
-        "eplProductConfigurations": {
-          "$ref": "EPLProductConfigurationSummary"
         }
       }
     },
@@ -19226,7 +19186,8 @@
         }
       }
     },
-    "ProductPrice": {
+    "Alteration": {
+      "id": "ProdPriceCharge",
       "type": "object",
       "properties": {
         "id": {
@@ -19241,35 +19202,76 @@
         "description": {
           "type": "string"
         },
-        "validFor": {
-          "$ref": "TimePeriod"
+        "price": {
+          "$ref": "Money"
         },
-        "compositePrices": {
+        "priceType": {
+          "type": "string"
+        },
+        "quantity": {
+          "$ref": "Quantity"
+        },
+        "period": {
+          "type": "string"
+        }
+      }
+    },
+    "Charge": {
+      "id": "ProdPriceCharge",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "price": {
+          "$ref": "Money"
+        },
+        "priceType": {
+          "type": "string"
+        },
+        "quantity": {
+          "$ref": "Quantity"
+        },
+        "period": {
+          "type": "string"
+        },
+        "alterations": {
           "type": "array",
           "items": {
-            "$ref": "ProductPriceSummary"
+            "$ref": "Alteration"
           }
+        }
+      }
+    },
+    "Price": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
         },
-        "partOf": {
-          "$ref": "ProductPriceSummary"
+        "link": {
+          "$ref": "Link"
         },
-        "product": {
-          "$ref": "ProductSummary"
+        "name": {
+          "type": "string"
         },
-        "prodPriceAlteration": {
-          "$ref": "ProdPriceAlteration"
+        "description": {
+          "type": "string"
         },
-        "prodPriceCharge": {
-          "$ref": "ProdPriceCharge"
-        },
-        "componentPrice": {
-          "$ref": "ComponentPrice"
-        },
-        "eplProduct": {
-          "$ref": "EPLProduct"
-        },
-        "eplProductConfiguration": {
-          "$ref": "EPLProductConfiguration"
+        "charges": {
+          "type": "array",
+          "items": {
+            "$ref": "Charge"
+          }
         }
       }
     },
@@ -19372,24 +19374,7 @@
         }
       }
     },
-    "ProdPriceCharge": {
-      "id": "ProdPriceCharge",
-      "type": "object",
-      "properties": {
-        "price": {
-          "$ref": "Money"
-        },
-        "priceType": {
-          "type": "string"
-        },
-        "quantity": {
-          "$ref": "Quantity"
-        },
-        "period": {
-          "type": "string"
-        }
-      }
-    },
+
     "ComponentPrice": {
       "type": "object",
       "properties": {
