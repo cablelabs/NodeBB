@@ -2909,7 +2909,7 @@
           "Common"
         ],
         "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "description": "FaxNumber is the fax number to use when contacting a given PartyRole. It is a type of ContactMedium.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -2945,7 +2945,7 @@
           "Common"
         ],
         "summary": "Find resource by ID",
-        "description": "Fax (short for facsimile), sometimes called telecopying or telefax, is the telephonic transmission of scanned printed material (both text and images), normally to a telephone number connected to a printer or other output device.",
+        "description": "FaxNumber is the fax number to use when contacting a given PartyRole. It is a type of ContactMedium.",
         "displayName": "Fax Number",
         "produces": [
           "application/json",
@@ -2988,7 +2988,7 @@
           "Common"
         ],
         "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "description": "FaxNumber is the fax number to use when contacting a given PartyRole. It is a type of ContactMedium.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -3031,7 +3031,7 @@
           "Common"
         ],
         "summary": "Deletes an resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "description": "FaxNumber is the fax number to use when contacting a given PartyRole. It is a type of ContactMedium.",
         "produces": [
           "application/json",
           "application/xml"
