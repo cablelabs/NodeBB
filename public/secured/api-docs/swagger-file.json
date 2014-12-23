@@ -6820,7 +6820,7 @@
           "Customer"
         ],
         "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "description": "An Organization is a group of people identified by shared interests or purpose, such as a business or a department within a business. Organization is a type of Party.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -6856,7 +6856,7 @@
           "Customer"
         ],
         "summary": "Find resource by ID",
-        "description": "A group of people identified by shared interests or purpose. Examples include business, department, enterprise. Both organizations and organizational units are represented by this business entity.",
+        "description": "An Organization is a group of people identified by shared interests or purpose, such as a business or a department within a business. Organization is a type of Party.",
         "displayName": "Organization ",
         "produces": [
           "application/json",
@@ -6899,7 +6899,7 @@
           "Customer"
         ],
         "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "description": "An Organization is a group of people identified by shared interests or purpose, such as a business or a department within a business. Organization is a type of Party.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -6942,7 +6942,7 @@
           "Customer"
         ],
         "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "description": "An Organization is a group of people identified by shared interests or purpose, such as a business or a department within a business. Organization is a type of Party.",
         "produces": [
           "application/json",
           "application/xml"
