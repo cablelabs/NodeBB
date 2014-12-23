@@ -6514,7 +6514,7 @@
           "Customer"
         ],
         "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "description": "UserGroup is a collection of users. It is a type of PartyRole and can be used independently of the User entity.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -6550,7 +6550,7 @@
           "Customer"
         ],
         "summary": "Find resource by ID",
-        "description": "A collection of Users. Can be used independently without the User entity.",
+        "description": "UserGroup is a collection of users. It is a type of PartyRole and can be used independently of the User entity.",
         "displayName": "User Group",
         "produces": [
           "application/json",
@@ -6593,7 +6593,7 @@
           "Customer"
         ],
         "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "description": "UserGroup is a collection of users. It is a type of PartyRole and can be used independently of the User entity.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -6636,7 +6636,7 @@
           "Customer"
         ],
         "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "description": "UserGroup is a collection of users. It is a type of PartyRole and can be used independently of the User entity.",
         "produces": [
           "application/json",
           "application/xml"
