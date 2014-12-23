@@ -2144,7 +2144,7 @@
           "Customer"
         ],
         "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "description": "UserCredential is a combination of user ID and password used to authenticate a user for account management or access to provider services.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -2180,7 +2180,7 @@
           "Customer"
         ],
         "summary": "Find resource by ID",
-        "description": "A combination of user ID and password that is used to authenticate a user for access to provider services or account management.",
+        "description": "UserCredential is a combination of user ID and password used to authenticate a user for account management or access to provider services.",
         "displayName": "User  Credential",
         "produces": [
           "application/json",
@@ -2223,7 +2223,7 @@
           "Customer"
         ],
         "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "description": "UserCredential is a combination of user ID and password used to authenticate a user for account management or access to provider services.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -2266,7 +2266,7 @@
           "Customer"
         ],
         "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "description": "UserCredential is a combination of user ID and password used to authenticate a user for account management or access to provider services.",
         "produces": [
           "application/json",
           "application/xml"
