@@ -12571,7 +12571,7 @@
           "Customer"
         ],
         "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "description": "A CustomerPayment is the transfer of money from a Customer for products or services.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -12607,7 +12607,7 @@
           "Customer"
         ],
         "summary": "Find resource by ID",
-        "description": "CustomerPayment represents the transfer of wealth from a customer for a product or usage of product.",
+        "description": "A CustomerPayment is the transfer of money from a Customer for products or services.",
         "displayName": "Customer Payment",
         "produces": [
           "application/json",
@@ -12650,7 +12650,7 @@
           "Customer"
         ],
         "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "description": "A CustomerPayment is the transfer of money from a Customer for products or services.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -12693,7 +12693,7 @@
           "Customer"
         ],
         "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "description": "A CustomerPayment is the transfer of money from a Customer for products or services.",
         "produces": [
           "application/json",
           "application/xml"
