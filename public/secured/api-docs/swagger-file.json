@@ -6361,7 +6361,7 @@
           "Customer"
         ],
         "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "description": "A user is a single person or organization that uses products and services. User is a type of PartyRole.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -6397,7 +6397,7 @@
           "Customer"
         ],
         "summary": "Find resource by ID",
-        "description": "A person or organization that uses products and services from the enterprise (external), or an operator working on management systems in the service provider environment (internal). This is modeled as a Party playing the role of User. A User is a type of PartyRole.",
+        "description": "A user is a single person or organization that uses products and services. User is a type of PartyRole.",
         "displayName": "User ",
         "produces": [
           "application/json",
@@ -6440,7 +6440,7 @@
           "Customer"
         ],
         "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "description": "A user is a single person or organization that uses products and services. User is a type of PartyRole.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -6483,7 +6483,7 @@
           "Customer"
         ],
         "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "description": "A user is a single person or organization that uses products and services. User is a type of PartyRole.",
         "produces": [
           "application/json",
           "application/xml"
