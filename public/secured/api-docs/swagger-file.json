@@ -10237,7 +10237,7 @@
           "Customer"
         ],
         "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "description": "PaymentPlan defines a plan for customer payment and is associated with a CustomerAccount.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -10273,7 +10273,7 @@
           "Customer"
         ],
         "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "description": "PaymentPlan defines a plan for customer payment and is associated with a CustomerAccount.",
         "displayName": "Payment Plan",
         "produces": [
           "application/json",
@@ -10316,7 +10316,7 @@
           "Customer"
         ],
         "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "description": "PaymentPlan defines a plan for customer payment and is associated with a CustomerAccount.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -10359,7 +10359,7 @@
           "Customer"
         ],
         "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "description": "PaymentPlan defines a plan for customer payment and is associated with a CustomerAccount.",
         "produces": [
           "application/json",
           "application/xml"
