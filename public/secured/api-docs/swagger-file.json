@@ -4171,7 +4171,7 @@
           "Customer"
         ],
         "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "description": "A Preference is a favored interaction in a particular area of control, such as parental restriction or e-mail marketing, for a specific PartyRole, Resource, CustomerAccount, or Service.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -4207,7 +4207,7 @@
           "Customer"
         ],
         "summary": "Find resource by ID",
-        "description": "A Preference refers to a particular area of control, such as Parental Restriction or Email Marketing, for a particular PartyRole, Resource, CustomerAccount, or Service.",
+        "description": "A Preference is a favored interaction in a particular area of control, such as parental restriction or e-mail marketing, for a specific PartyRole, Resource, CustomerAccount, or Service.",
         "displayName": "Preference ",
         "produces": [
           "application/json",
@@ -4250,7 +4250,7 @@
           "Customer"
         ],
         "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "description": "A Preference is a favored interaction in a particular area of control, such as parental restriction or e-mail marketing, for a specific PartyRole, Resource, CustomerAccount, or Service.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -4293,7 +4293,7 @@
           "Customer"
         ],
         "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "description": "A Preference is a favored interaction in a particular area of control, such as parental restriction or e-mail marketing, for a specific PartyRole, Resource, CustomerAccount, or Service.",
         "produces": [
           "application/json",
           "application/xml"
