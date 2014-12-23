@@ -6973,7 +6973,7 @@
           "Common"
         ],
         "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "description": "PostalContact is the postal information to use when contacting a given PartyRole. It is a type of ContactMedium.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -7009,7 +7009,7 @@
           "Common"
         ],
         "summary": "Find resource by ID",
-        "description": "The postal information to use when contacting a given PartyRole. The actual address information is stored in the relationship to GeographicAddress. A PostalContact is a type of ContactMedium.",
+        "description": "PostalContact is the postal information to use when contacting a given PartyRole. It is a type of ContactMedium.",
         "displayName": "Postal Contact",
         "produces": [
           "application/json",
@@ -7052,7 +7052,7 @@
           "Common"
         ],
         "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "description": "PostalContact is the postal information to use when contacting a given PartyRole. It is a type of ContactMedium.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -7095,7 +7095,7 @@
           "Common"
         ],
         "summary": "Deletes an resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "description": "PostalContact is the postal information to use when contacting a given PartyRole. It is a type of ContactMedium.",
         "produces": [
           "application/json",
           "application/xml"
