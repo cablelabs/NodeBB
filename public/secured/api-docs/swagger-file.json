@@ -10390,7 +10390,7 @@
           "Customer"
         ],
         "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "description": "SystemContact is a type of ContactMedium that provides a means of contact for a specific PartyRole that is not defined by other types of ContactMedium; for example, notification by instant message or trouble ticket generation and auto-assignment.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -10426,7 +10426,7 @@
           "Customer"
         ],
         "summary": "Find resource by ID",
-        "description": "Provides a system application means of contact for a particular party role, that is not defined by other ContactMedium subclasses/mechanisms. For example notification by instant message or trouble ticket generation and auto-assignment.",
+        "description": "SystemContact is a type of ContactMedium that provides a means of contact for a specific PartyRole that is not defined by other types of ContactMedium; for example, notification by instant message or trouble ticket generation and auto-assignment.",
         "displayName": "System  Contact",
         "produces": [
           "application/json",
@@ -10469,7 +10469,7 @@
           "Customer"
         ],
         "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "description": "SystemContact is a type of ContactMedium that provides a means of contact for a specific PartyRole that is not defined by other types of ContactMedium; for example, notification by instant message or trouble ticket generation and auto-assignment.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -10512,7 +10512,7 @@
           "Customer"
         ],
         "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "description": "SystemContact is a type of ContactMedium that provides a means of contact for a specific PartyRole that is not defined by other types of ContactMedium; for example, notification by instant message or trouble ticket generation and auto-assignment.",
         "produces": [
           "application/json",
           "application/xml"
