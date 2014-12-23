@@ -5089,7 +5089,7 @@
           "Customer"
         ],
         "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "description": "A person or organization that buys products and services from the service provider. A Customer is a Party playing a PartyRole.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -5125,7 +5125,7 @@
           "Customer"
         ],
         "summary": "Find resource by ID",
-        "description": "A person or organization that buys products and services from the enterprise or receives free offers or services. This is modeled as a Party playing the role of Customer. A Customer is a type of PartyRole. Customers can also be other service providers who resell the enterprises products, other service providers that lease the enterprise's resources for utilization by the other service provider's products and services, and so forth.",
+        "description": "A person or organization that buys products and services from the service provider. A Customer is a Party playing a PartyRole.",
         "displayName": "Customer ",
         "produces": [
           "application/json",
@@ -5168,7 +5168,7 @@
           "Customer"
         ],
         "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "description": "A person or organization that buys products and services from the service provider. A Customer is a Party playing a PartyRole.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -5211,7 +5211,7 @@
           "Customer"
         ],
         "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "description": "A person or organization that buys products and services from the service provider. A Customer is a Party playing a PartyRole.",
         "produces": [
           "application/json",
           "application/xml"
