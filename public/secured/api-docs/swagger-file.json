@@ -4936,7 +4936,7 @@
           "Customer"
         ],
         "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "description": "PaymentMethod is the way in which a customer provides payment, such as by cash, credit, or transfer.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -4972,7 +4972,7 @@
           "Customer"
         ],
         "summary": "Find resource by ID",
-        "description": "PaymentMethod is the way in which customer provides payment, for example cash ,credit,transfer.",
+        "description": "PaymentMethod is the way in which a customer provides payment, such as by cash, credit, or transfer.",
         "displayName": "Payment Method",
         "produces": [
           "application/json",
@@ -5015,7 +5015,7 @@
           "Customer"
         ],
         "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "description": "PaymentMethod is the way in which a customer provides payment, such as by cash, credit, or transfer.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -5058,7 +5058,7 @@
           "Customer"
         ],
         "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "description": "PaymentMethod is the way in which a customer provides payment, such as by cash, credit, or transfer.",
         "produces": [
           "application/json",
           "application/xml"
