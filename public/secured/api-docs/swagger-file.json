@@ -250,7 +250,7 @@
           "Common"
         ],
         "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "description": "Contact is a PartyRole for a Party that acts as a specific type of contact, such as a billing contact.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -286,7 +286,7 @@
           "Common"
         ],
         "summary": "Find resource by ID",
-        "description": "A PartyRole for a Party that has a specific Contact role (e.g., Billing Contact)",
+        "description": "Contact is a PartyRole for a Party that acts as a specific type of contact, such as a billing contact.",
         "displayName": "Contact ",
         "produces": [
           "application/json",
@@ -329,7 +329,7 @@
           "Common"
         ],
         "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "description": "Contact is a PartyRole for a Party that acts as a specific type of contact, such as a billing contact.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -372,7 +372,7 @@
           "Common"
         ],
         "summary": "Deletes an resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "description": "Contact is a PartyRole for a Party that acts as a specific type of contact, such as a billing contact.",
         "produces": [
           "application/json",
           "application/xml"
