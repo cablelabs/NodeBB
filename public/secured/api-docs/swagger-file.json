@@ -9013,7 +9013,7 @@
           "Customer"
         ],
         "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "description": "A price estimate (quote) or presentation for sale (offer) of product offerings to a Party playing the PartyRole of Customer.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -9049,7 +9049,7 @@
           "Customer"
         ],
         "summary": "Find resource by ID",
-        "description": "An price estimate (quote) or a presentation for sale (offer) of product offerings to a party playing a role.",
+        "description": "A price estimate (quote) or presentation for sale (offer) of product offerings to a Party playing the PartyRole of Customer.",
         "displayName": "Customer QuoteItem",
         "produces": [
           "application/json",
@@ -9092,7 +9092,7 @@
           "Customer"
         ],
         "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "description": "A price estimate (quote) or presentation for sale (offer) of product offerings to a Party playing the PartyRole of Customer.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -9135,7 +9135,7 @@
           "Customer"
         ],
         "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "description": "A price estimate (quote) or presentation for sale (offer) of product offerings to a Party playing the PartyRole of Customer.",
         "produces": [
           "application/json",
           "application/xml"
