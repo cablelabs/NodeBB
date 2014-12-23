@@ -6667,7 +6667,7 @@
           "Customer"
         ],
         "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "description": "An Individual is a single person. Individual is a type of Party.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -6703,7 +6703,7 @@
           "Customer"
         ],
         "summary": "Find resource by ID",
-        "description": "A party that is an individual (i.e., a person).",
+        "description": "An Individual is a single person. Individual is a type of Party.",
         "displayName": "Individual ",
         "produces": [
           "application/json",
@@ -6746,7 +6746,7 @@
           "Customer"
         ],
         "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "description": "An Individual is a single person. Individual is a type of Party.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -6789,7 +6789,7 @@
           "Customer"
         ],
         "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "description": "An Individual is a single person. Individual is a type of Party.",
         "produces": [
           "application/json",
           "application/xml"
