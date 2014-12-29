@@ -11001,8 +11001,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a new product.",
+        "description": "A Product is the result of a ProductOffering being procured by a Customer or other Party. A Product is realized as one or more Services and/or Resources.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -11037,8 +11037,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find resource by ID",
-        "description": "The instance of a ProductOffering assigned to a Customer.",
+        "summary": "Find a product by ID.",
+        "description": "A Product is the result of a ProductOffering being procured by a Customer or other Party. A Product is realized as one or more Services and/or Resources.",
         "displayName": "Product ",
         "produces": [
           "application/json",
@@ -11080,8 +11080,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing product.",
+        "description": "A Product is the result of a ProductOffering being procured by a Customer or other Party. A Product is realized as one or more Services and/or Resources.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -11123,8 +11123,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a product based on ID.",
+        "description": "A Product is the result of a ProductOffering being procured by a Customer or other Party. A Product is realized as one or more Services and/or Resources.",
         "produces": [
           "application/json",
           "application/xml"
