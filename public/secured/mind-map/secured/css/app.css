@@ -144,6 +144,7 @@ opacity: 0 {
 }
 .view-depth-select {
   display: inline-block;
+  text-align: center;
   border: 1px solid #c0c0c0;
   width: 40px;
   height: 40px;
@@ -153,6 +154,9 @@ opacity: 0 {
   line-height: 37px;
   font-size: 1.5em;
   cursor: pointer;
+}
+.view-depth-select:nth-child(2) {
+  margin-left: 0;
 }
 .view-depth-select.selected {
   border: 3px solid #f00;
@@ -166,33 +170,98 @@ opacity: 0 {
 .popover-title {
   background: #000;
 }
-.graph-settings {
-  text-align: center;
-  padding-top: 20px;
+.graph-settings > div {
+  padding: 20px 2em 0;
+  vertical-align: bottom;
 }
-#search-form,
-#depth-select {
-  vertical-align: middle;
+.graph-settings > div:first-child {
+  position: relative;
+  top: -10px;
 }
-#depth-select {
-  margin-left: 1em;
-}
-#search-form {
-  max-width: 500px;
-  display: inline-block;
+@media screen and (min-width: 75em) {
+  .graph-settings > div {
+    padding: 20px 4em 0;
+  }
 }
 #search-form input,
-#search-form button {
+#search-form button,
+#entity-sets select {
   background: #d0d0d0;
   color: #8d8d8d;
 }
-.depth-set-wrap {
-  width: 400px;
-  display: inline-block;
-  margin-left: 50px;
-  margin-top: 1em;
+
+#entity-sets select {
+  font-size: 1.25em;
+  height: 46px;
 }
-#depth-select {
-  width: 50px;
+
+#entity-sets > div {
   display: inline-block;
+}
+
+#entity-sets > div:nth-child(2) {
+  width: 90%;
+}
+
+#entity-sets > div:nth-child(3) {
+  width: 6%;
+  margin-left: 2%;
+}
+
+.depth-set-wrap > span {
+  font-weight: bold;
+  display: block;
+  margin-bottom: .4em;
+}
+
+#edit-set-btn {
+  background: #d0d0d0;
+  border: none;
+  border-radius: 100%;
+  outline: none;
+  font-size: 1.3em;
+}
+#edit-set-btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+#entity-set-sort-list {
+  list-style: none;
+  background: #d8d8d8;
+  padding-left: 0;
+  border: 2px solid #000;
+}
+
+#entity-set-sort-list li{
+  font-size: 1.5em;
+  line-height: 1.5em;
+  padding: 0.5em 1em;
+}
+
+#entity-set-sort-list li:hover {
+  cursor: move;
+  background: #7c7c7c;
+}
+
+#entity-set-sort-list li:active {
+  opacity: 0.5;
+}
+
+#set-manager .modal-body .input-group {
+  margin-bottom: 1em;
+}
+
+#entity-set-sort-list li .remove-icon {
+  background: #b80019;
+  border-radius: 100%;
+  float: right;
+  padding: 0 0.1em 0.1em 0;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0;
+}
+
+#entity-set-sort-list li:hover .remove-icon {
+  opacity: 1;
 }
