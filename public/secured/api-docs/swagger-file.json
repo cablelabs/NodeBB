@@ -5901,8 +5901,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Create a new resource",
-        "description": "A detailed description of a tangible or intangible object made available externally in the form of a ProductOffering to Customers or other Parties playing a PartyRole. A ProductSpecification may consist of other ProductSpecifications supplied together as a collection. Members of the collection may be offered in their own right. ProductSpecifications may also exist within groupings, such as ProductCategories, ProductLines, and ProductTypes.",
+        "summary": "Create a ProductSpecification.",
+        "description": "A ProductSpecification is a technical blueprint for a set of Products, defining their common portions. It specifies the invariant characteristics of a Product and describes it independently of the current existence of any instance of that Product.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -5937,8 +5937,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find resource by ID",
-        "description": "A detailed description of a tangible or intangible object made available externally in the form of a ProductOffering to Customers or other Parties playing a PartyRole. A ProductSpecification may consist of other ProductSpecifications supplied together as a collection. Members of the collection may be offered in their own right. ProductSpecifications may also exist within groupings, such as ProductCategories, ProductLines, and ProductTypes.",
+        "summary": "Find a ProductSpecification by ID.",
+        "description": "A ProductSpecification is a technical blueprint for a set of Products, defining their common portions. It specifies the invariant characteristics of a Product and describes it independently of the current existence of any instance of that Product.",
         "displayName": "Product  Specification",
         "produces": [
           "application/json",
@@ -5980,8 +5980,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing ProductSpecification.",
+        "description": "A ProductSpecification is a technical blueprint for a set of Products, defining their common portions. It specifies the invariant characteristics of a Product and describes it independently of the current existence of any instance of that Product.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -6023,8 +6023,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a ProductSpecification based on ID.",
+        "description": "A ProductSpecification is a technical blueprint for a set of Products, defining their common portions. It specifies the invariant characteristics of a Product and describes it independently of the current existence of any instance of that Product.",
         "produces": [
           "application/json",
           "application/xml"
@@ -7935,8 +7935,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a ProductConfiguration.",
+        "description": "ProductConfiguration is the complete set of characteristics associated with a product in the catalog. Specifically, it is the parts of the product that are exposed to the customer and can be referenced during the ordering process. It also informs the requirements for service and resource ordering.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -7971,8 +7971,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find resource by ID",
-        "description": "The complete set of characteristics associated with a product in the catalog. Specifically, the parts of the product model exposed to the customer that can be referenced during the ordering process. It must inform the requirements for service and resource ordering as well.",
+        "summary": "Find ProductConfiguration by ID.",
+        "description": "ProductConfiguration is the complete set of characteristics associated with a product in the catalog. Specifically, it is the parts of the product that are exposed to the customer and can be referenced during the ordering process. It also informs the requirements for service and resource ordering.",
         "displayName": "Product Configuration",
         "produces": [
           "application/json",
@@ -8014,8 +8014,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing ProductConfiguration.",
+        "description": "ProductConfiguration is the complete set of characteristics associated with a product in the catalog. Specifically, it is the parts of the product that are exposed to the customer and can be referenced during the ordering process. It also informs the requirements for service and resource ordering.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -8057,8 +8057,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a ProductConfiguration based on ID.",
+        "description": "ProductConfiguration is the complete set of characteristics associated with a product in the catalog. Specifically, it is the parts of the product that are exposed to the customer and can be referenced during the ordering process. It also informs the requirements for service and resource ordering.",
         "produces": [
           "application/json",
           "application/xml"
@@ -8859,8 +8859,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a new ProductPrice.",
+        "description": "ProductPrice is the actual price paid by a Customer for a purchase or lease of a Product.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -8895,8 +8895,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find resource by ID",
-        "description": "An amount, usually of money, that represents the actual price paid by a Customer for a purchase, a rent or a lease of a Product. The price is valid for a defined period of time.",
+        "summary": "Find a ProductPrice by ID.",
+        "description": "ProductPrice is the actual price paid by a Customer for a purchase or lease of a Product.",
         "displayName": "Product Price",
         "produces": [
           "application/json",
@@ -8938,8 +8938,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing ProductPrice.",
+        "description": "ProductPrice is the actual price paid by a Customer for a purchase or lease of a Product.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -8981,8 +8981,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a ProductPrice based on ID.",
+        "description": "ProductPrice is the actual price paid by a Customer for a purchase or lease of a Product.",
         "produces": [
           "application/json",
           "application/xml"
@@ -12876,8 +12876,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a ProductOffering.",
+        "description": "A ProductOffering is the presentation of one or more ProductSpecifications for sale or lease. A ProductOffering may include a single ProductSpecification or may be a bundling of one or more other ProductOfferings.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -12912,8 +12912,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find resource by ID",
-        "description": "The presentation of one or more ProductSpecifications to the marketplace for sale, rental, or lease for a ProductOfferingPrice. A ProductOffering may target one or more MarketSegments, be included in one or more ProductCatalog, presented in support of one or more ProductStrategies, and made available in one or more Places. ProductOffering may represent a simple offering of a single ProductSpecification or could represent a bundling of one or more other ProductOffering",
+        "summary": "Find a ProductOffering by ID.",
+        "description": "A ProductOffering is the presentation of one or more ProductSpecifications for sale or lease. A ProductOffering may include a single ProductSpecification or may be a bundling of one or more other ProductOfferings.",
         "displayName": "Product Offering",
         "produces": [
           "application/json",
@@ -12955,8 +12955,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing ProductOffering.",
+        "description": "A ProductOffering is the presentation of one or more ProductSpecifications for sale or lease. A ProductOffering may include a single ProductSpecification or may be a bundling of one or more other ProductOfferings.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -12998,8 +12998,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a ProductOffering based on ID.",
+        "description": "A ProductOffering is the presentation of one or more ProductSpecifications for sale or lease. A ProductOffering may include a single ProductSpecification or may be a bundling of one or more other ProductOfferings.",
         "produces": [
           "application/json",
           "application/xml"
