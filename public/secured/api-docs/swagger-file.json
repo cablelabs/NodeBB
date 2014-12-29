@@ -2834,7 +2834,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Update an existing an Ethernet Private Line (EPL) product.",
+        "summary": "Update an existing Ethernet Private Line (EPL) product.",
         "description": "A Product for Ethernet Private Line (EPL). EPL provides a point-to-point ethernet virtual connection (EVC) between a pair of dedicated user network interfaces (UNIs).",
         "consumes": [
           "application/json",
@@ -7971,7 +7971,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find ProductConfiguration by ID.",
+        "summary": "Find a ProductConfiguration by ID.",
         "description": "ProductConfiguration is the complete set of characteristics associated with a product in the catalog. Specifically, it is the parts of the product that are exposed to the customer and can be referenced during the ordering process. It also informs the requirements for service and resource ordering.",
         "displayName": "Product Configuration",
         "produces": [
@@ -8859,7 +8859,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Create a new ProductPrice.",
+        "summary": "Create a ProductPrice.",
         "description": "ProductPrice is the actual price paid by a Customer for a purchase or lease of a Product.",
         "consumes": [
           "application/json",
@@ -11001,7 +11001,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Create a new product.",
+        "summary": "Create a product.",
         "description": "A Product is the result of a ProductOffering being procured by a Customer or other Party. A Product is realized as one or more Services and/or Resources.",
         "consumes": [
           "application/json",
