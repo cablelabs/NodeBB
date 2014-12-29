@@ -5901,8 +5901,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Create a new resource",
-        "description": "A detailed description of a tangible or intangible object made available externally in the form of a ProductOffering to Customers or other Parties playing a PartyRole. A ProductSpecification may consist of other ProductSpecifications supplied together as a collection. Members of the collection may be offered in their own right. ProductSpecifications may also exist within groupings, such as ProductCategories, ProductLines, and ProductTypes.",
+        "summary": "Create a ProductSpecification.",
+        "description": "A ProductSpecification is a technical blueprint for a set of Products, defining their common portions. It specifies the invariant characteristics of a Product and describes it independently of the current existence of any instance of that Product.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -5937,8 +5937,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find resource by ID",
-        "description": "A detailed description of a tangible or intangible object made available externally in the form of a ProductOffering to Customers or other Parties playing a PartyRole. A ProductSpecification may consist of other ProductSpecifications supplied together as a collection. Members of the collection may be offered in their own right. ProductSpecifications may also exist within groupings, such as ProductCategories, ProductLines, and ProductTypes.",
+        "summary": "Find a ProductSpecification by ID.",
+        "description": "A ProductSpecification is a technical blueprint for a set of Products, defining their common portions. It specifies the invariant characteristics of a Product and describes it independently of the current existence of any instance of that Product.",
         "displayName": "Product  Specification",
         "produces": [
           "application/json",
@@ -5980,8 +5980,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing ProductSpecification.",
+        "description": "A ProductSpecification is a technical blueprint for a set of Products, defining their common portions. It specifies the invariant characteristics of a Product and describes it independently of the current existence of any instance of that Product.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -6023,8 +6023,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a ProductSpecification based on ID.",
+        "description": "A ProductSpecification is a technical blueprint for a set of Products, defining their common portions. It specifies the invariant characteristics of a Product and describes it independently of the current existence of any instance of that Product.",
         "produces": [
           "application/json",
           "application/xml"
