@@ -2755,8 +2755,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create an Ethernet Private Line (EPL) product.",
+        "description": "A Product for Ethernet Private Line (EPL). EPL provides a point-to-point ethernet virtual connection (EVC) between a pair of dedicated user network interfaces (UNIs).",
         "consumes": [
           "application/json",
           "application/xml"
@@ -2791,8 +2791,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find resource by ID",
-        "description": "Access EPL service uses a Point-to-Point OVC to associate one OVC End Point at a UNI and one OVC End Point at an ENNI. One UNI can support only a single instance of the Access EPL service.",
+        "summary": "Find an Ethernet Private Line (EPL) product by ID.",
+        "description": "A Product for Ethernet Private Line (EPL). EPL provides a point-to-point ethernet virtual connection (EVC) between a pair of dedicated user network interfaces (UNIs).",
         "displayName": "EPL Product",
         "produces": [
           "application/json",
@@ -2834,8 +2834,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing an Ethernet Private Line (EPL) product.",
+        "description": "A Product for Ethernet Private Line (EPL). EPL provides a point-to-point ethernet virtual connection (EVC) between a pair of dedicated user network interfaces (UNIs).",
         "consumes": [
           "application/json",
           "application/xml"
@@ -2877,8 +2877,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete an Ethernet Private Line (EPL) product based on ID.",
+        "description": "A Product for Ethernet Private Line (EPL). EPL provides a point-to-point ethernet virtual connection (EVC) between a pair of dedicated user network interfaces (UNIs).",
         "produces": [
           "application/json",
           "application/xml"
@@ -7357,7 +7357,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Update an existing Ethernet Virtual Connection (EVC).",
+        "summary": "Update an existing Ethernet Virtual Connection (EVC) product.",
         "description": "An Ethernet Virtual Connection (EVC) is an association between two or more user network interfaces that identifies a point-to-point or multipoint-to-multipoint path within the service provider network. Each endpoint of an EVC is defined as a user-to-network interface (UNI). There are three types of EVCs: point-to-point, multipoint and rooted EVCs.",
         "consumes": [
           "application/json",
