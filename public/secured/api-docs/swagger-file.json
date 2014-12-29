@@ -7431,7 +7431,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Create a UNI product.",
+        "summary": "Create a User Network Interface (UNI) product.",
         "description": "User Network Interface (UNI) is a service used as part of an Ethernet Private Line (EPL) product. A UNI serves as the point of demarcation that specifies where the service provider's (operator's) responsibility ends and the customer's responsibility begins. The UNI defines the means for the subscriber and the service provider to agree on which Ethernet service(s) will be offered and the characteristics of this service.",
         "consumes": [
           "application/json",
@@ -7467,7 +7467,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find a UNI product by ID.",
+        "summary": "Find a User Network Interface (UNI) product by ID.",
         "description": "User Network Interface (UNI) is a service used as part of an Ethernet Private Line (EPL) product. A UNI serves as the point of demarcation that specifies where the service provider's (operator's) responsibility ends and the customer's responsibility begins. The UNI defines the means for the subscriber and the service provider to agree on which Ethernet service(s) will be offered and the characteristics of this service.",
         "displayName": "UNI Product",
         "produces": [
@@ -7510,7 +7510,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Update an existing UNI product.",
+        "summary": "Update an existing User Network Interface (UNI) product.",
         "description": "User Network Interface (UNI) is a service used as part of an Ethernet Private Line (EPL) product. A UNI serves as the point of demarcation that specifies where the service provider's (operator's) responsibility ends and the customer's responsibility begins. The UNI defines the means for the subscriber and the service provider to agree on which Ethernet service(s) will be offered and the characteristics of this service.",
         "consumes": [
           "application/json",
@@ -7553,7 +7553,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Delete a UNI product based on ID.",
+        "summary": "Delete a User Network Interface (UNI) product based on ID.",
         "description": "User Network Interface (UNI) is a service used as part of an Ethernet Private Line (EPL) product. A UNI serves as the point of demarcation that specifies where the service provider's (operator's) responsibility ends and the customer's responsibility begins. The UNI defines the means for the subscriber and the service provider to agree on which Ethernet service(s) will be offered and the characteristics of this service.",
         "produces": [
           "application/json",
