@@ -8859,8 +8859,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a new ProductPrice.",
+        "description": "ProductPrice is the actual price paid by a Customer for a purchase or lease of a Product.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -8895,8 +8895,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find resource by ID",
-        "description": "An amount, usually of money, that represents the actual price paid by a Customer for a purchase, a rent or a lease of a Product. The price is valid for a defined period of time.",
+        "summary": "Find a ProductPrice by ID.",
+        "description": "ProductPrice is the actual price paid by a Customer for a purchase or lease of a Product.",
         "displayName": "Product Price",
         "produces": [
           "application/json",
@@ -8938,8 +8938,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing ProductPrice.",
+        "description": "ProductPrice is the actual price paid by a Customer for a purchase or lease of a Product.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -8981,8 +8981,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a ProductPrice based on ID.",
+        "description": "ProductPrice is the actual price paid by a Customer for a purchase or lease of a Product.",
         "produces": [
           "application/json",
           "application/xml"
