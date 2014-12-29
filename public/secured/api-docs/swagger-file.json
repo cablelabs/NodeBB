@@ -7278,8 +7278,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Create an Ethernet Virtual Connection (EVC).",
-        "description": "An Ethernet Virtual Connection (EVC) is an association between two or more user network interfaces that identifies a point-to-point or multipoint-to-multipoint path within the service provider network. Each endpoint of an EVC is defined as a user-to-network interface (UNI). There are three types of EVCs: point-to-point, multipoint and rooted EVCs.",
+        "summary": "Create an Ethernet Virtual Connection (EVC) product.",
+        "description": "A Product for an Ethernet Virtual Connection (EVC). EVC is an association between two or more user network interfaces that identifies a point-to-point or multipoint-to-multipoint path within the service provider network. Each endpoint of an EVC is defined as a user-to-network interface (UNI). There are three types of EVCs: point-to-point, multipoint and rooted EVCs.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -7314,8 +7314,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find Ethernet Virtual Connection (EVC) by ID.",
-        "description": "An Ethernet Virtual Connection (EVC) is an association between two or more user network interfaces that identifies a point-to-point or multipoint-to-multipoint path within the service provider network. Each endpoint of an EVC is defined as a user-to-network interface (UNI). There are three types of EVCs: point-to-point, multipoint and rooted EVCs.",
+        "summary": "Find an Ethernet Virtual Connection (EVC) product by ID.",
+        "description": "A Product for an Ethernet Virtual Connection (EVC). EVC is an association between two or more user network interfaces that identifies a point-to-point or multipoint-to-multipoint path within the service provider network. Each endpoint of an EVC is defined as a user-to-network interface (UNI). There are three types of EVCs: point-to-point, multipoint and rooted EVCs.",
         "displayName": "EVC Product",
         "produces": [
           "application/json",
@@ -7358,7 +7358,7 @@
           "Product"
         ],
         "summary": "Update an existing Ethernet Virtual Connection (EVC) product.",
-        "description": "An Ethernet Virtual Connection (EVC) is an association between two or more user network interfaces that identifies a point-to-point or multipoint-to-multipoint path within the service provider network. Each endpoint of an EVC is defined as a user-to-network interface (UNI). There are three types of EVCs: point-to-point, multipoint and rooted EVCs.",
+        "description": "A Product for an Ethernet Virtual Connection (EVC). EVC is an association between two or more user network interfaces that identifies a point-to-point or multipoint-to-multipoint path within the service provider network. Each endpoint of an EVC is defined as a user-to-network interface (UNI). There are three types of EVCs: point-to-point, multipoint and rooted EVCs.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -7400,8 +7400,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Delete an Ethernet Virtual Connection (EVC) based on ID.",
-        "description": "An Ethernet Virtual Connection (EVC) is an association between two or more user network interfaces that identifies a point-to-point or multipoint-to-multipoint path within the service provider network. Each endpoint of an EVC is defined as a user-to-network interface (UNI). There are three types of EVCs: point-to-point, multipoint and rooted EVCs.",
+        "summary": "Delete an Ethernet Virtual Connection (EVC) product based on ID.",
+        "description": "A Product for an Ethernet Virtual Connection (EVC). EVC is an association between two or more user network interfaces that identifies a point-to-point or multipoint-to-multipoint path within the service provider network. Each endpoint of an EVC is defined as a user-to-network interface (UNI). There are three types of EVCs: point-to-point, multipoint and rooted EVCs.",
         "produces": [
           "application/json",
           "application/xml"
