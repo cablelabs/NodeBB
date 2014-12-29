@@ -7935,8 +7935,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a ProductConfiguration.",
+        "description": "ProductConfiguration is the complete set of characteristics associated with a product in the catalog. Specifically, it is the parts of the product that are exposed to the customer and can be referenced during the ordering process. It also informs the requirements for service and resource ordering.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -7971,8 +7971,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find resource by ID",
-        "description": "The complete set of characteristics associated with a product in the catalog. Specifically, the parts of the product model exposed to the customer that can be referenced during the ordering process. It must inform the requirements for service and resource ordering as well.",
+        "summary": "Find ProductConfiguration by ID.",
+        "description": "ProductConfiguration is the complete set of characteristics associated with a product in the catalog. Specifically, it is the parts of the product that are exposed to the customer and can be referenced during the ordering process. It also informs the requirements for service and resource ordering.",
         "displayName": "Product Configuration",
         "produces": [
           "application/json",
@@ -8014,8 +8014,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing ProductConfiguration.",
+        "description": "ProductConfiguration is the complete set of characteristics associated with a product in the catalog. Specifically, it is the parts of the product that are exposed to the customer and can be referenced during the ordering process. It also informs the requirements for service and resource ordering.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -8057,8 +8057,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a ProductConfiguration based on ID.",
+        "description": "ProductConfiguration is the complete set of characteristics associated with a product in the catalog. Specifically, it is the parts of the product that are exposed to the customer and can be referenced during the ordering process. It also informs the requirements for service and resource ordering.",
         "produces": [
           "application/json",
           "application/xml"
