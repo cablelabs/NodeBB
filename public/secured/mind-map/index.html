@@ -7,7 +7,7 @@
     <title>CIA Entities Map</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 	  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="secured/css/app.css">
+    <link rel="stylesheet" type="text/css" href="secured/css/app-with-sets.css">
 </head>
 
 <body>
@@ -29,7 +29,7 @@
         </select>
       </div>
       <div>
-        <button type="button" id="edit-set-btn">
+        <button type="button" id="edit-set-btn" class="btn btn-default">
           <span class="glyphicon glyphicon-edit"></span>
         </button>
       </div>
@@ -45,11 +45,11 @@
         </div>
       </form>
     </div>
-    <div class="depth-set-wrap col-md-4">
+    <div class="hops-away-wrap col-md-4">
       <span>Hops Away </span>
-      <div data-depth="1" class="depth-1 view-depth-select">1</div>
-      <div data-depth="2" class="depth-2 view-depth-select">2</div>
-      <div data-depth="3" class="depth-3 view-depth-select">3</div>
+      <div data-hops="1" class="depth-1 hops-away-btn">1</div>
+      <div data-hops="2" class="depth-2 hops-away-btn">2</div>
+      <div data-hops="3" class="depth-3 hops-away-btn">3</div>
     </div>
   </div>
   <div id="graph"></div>
@@ -65,14 +65,16 @@
       </div>
       <div class="modal-body">
         <div>
-          <div class="input-group input-group-lg">
+          <form role="add" id="add-set-form">
+            <div class="input-group input-group-lg">
             <input type="text" class="form-control" placeholder="Add Entity Set" id="add-set-text">
             <span class="input-group-btn">
-              <button class="btn btn-default" id="add-set-btn" type="button">
+              <button class="btn btn-default" id="add-set-btn" type="submit">
                 <span class="glyphicon glyphicon-plus"></span>
               </button>
             </span>
           </div>
+          </form>
           <ul id="entity-set-sort-list"></ul>
         </div>
       </div>
