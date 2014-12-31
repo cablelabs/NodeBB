@@ -101,6 +101,7 @@
                         sets.edit.fadeIn();
                 }
                 graph.reset();
+                window.localStorage.setItem('entity_set_selected_index', selected.val());
             },
             "update sort": function () {
                 sets.reorder($(this).sortable('toArray'));
@@ -181,9 +182,11 @@
         btns: $('.hops-away-btn'),
         handlers: {
             "click btn": function (e) {
+                var hops_away = $(this).data('hops');
+                window.localStorage.setItem('hops_away', hops_away);
                 hops.btns.removeClass('selected');
                 $(this).addClass('selected');
-                graph.setDepth($(this).data('hops'));
+                graph.setDepth(hops_away);
             }
         }
     };
@@ -198,11 +201,30 @@
         AJAX requests
     ***************************************************************************/
 
+    function recall_graph_state (result) {
+        graph = result;
+
+        // set hop depth
+        var hops_away = window.localStorage.getItem('hops_away') || 1;
+        hops.btns.eq(hops_away - 1).trigger('click');
+
+        // selected entity set
+        var selected_set = window.localStorage.getItem('entity_set_selected_index');
+        if (selected_set) {
+            sets.select.val(selected_set);
+            sets.select.trigger('change');
+        }
+
+        // selected entity
+        graph.selectEntity(window.localStorage.getItem('selected_entity_name'));
+
+
+    }
+
     /* Ajax Request to fetch Graph Data */
     $.ajax({url: '/secured/mind-map/assets/links.json'})
     .done(function (data) {
-        graph = EntityGraph.create(data, 'graph');
-        hops.btns.eq(graph.getDepth() - 1).addClass('selected');
+        EntityGraph.create(data, 'graph', recall_graph_state);
     }).fail(function() {
         error_handler('unable to download graph data');
     });

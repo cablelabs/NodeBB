@@ -2,7 +2,7 @@
   "sets": [
     {
       "name": "Set 1",
-      "entities": []
+      "entities": ["/contact/{id}", "/billcharge/{id}", "/property/{id}", "/service/evc/{id}"]
     },
     {
       "name": "Set 2",
