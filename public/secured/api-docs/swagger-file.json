@@ -2597,7 +2597,7 @@
         }
       }
     },
-    "/resource/port": {
+    "/port": {
       "post": {
         "tags": [
           "Resource"
@@ -2633,7 +2633,7 @@
         }
       }
     },
-    "/resource/port/{id}": {
+    "/port/{id}": {
       "get": {
         "tags": [
           "Resource"
@@ -4340,7 +4340,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Service Specification"
+              "$ref": "#/definitions/ServiceSpecification"
             }
           }
         ],
@@ -4361,7 +4361,7 @@
         ],
         "summary": "Find resource by ID",
         "description": "A ServiceSpecification defines the invariant characteristics of a Service. It can be conceptually thought of as a template that different Service instances can be instantiated from.",
-        "displayName": "Service  Specification",
+        "displayName": "Service Specification",
         "produces": [
           "application/json",
           "application/xml"
@@ -4387,7 +4387,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/Service Specification"
+              "$ref": "#/definitions/ServiceSpecification"
             }
           },
           "400": {
@@ -4419,7 +4419,7 @@
             "description": "Instance object that needs to be updated.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Service Specification"
+              "$ref": "#/definitions/ServiceSpecification"
             }
           }
         ],
@@ -4427,7 +4427,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/Service Specification"
+              "$ref": "#/definitions/ServiceSpecification"
             }
           },
           "400": {
@@ -4471,7 +4471,7 @@
         }
       }
     },
-    "/resource/card": {
+    "/card": {
       "post": {
         "tags": [
           "Resource"
@@ -4507,7 +4507,7 @@
         }
       }
     },
-    "/resource/card/{id}": {
+    "/card/{id}": {
       "get": {
         "tags": [
           "Resource"
@@ -5458,7 +5458,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/EVC Service"
+              "$ref": "#/definitions/EVCService"
             }
           },
           "400": {
@@ -5498,7 +5498,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/EVC Service"
+              "$ref": "#/definitions/EVCService"
             }
           },
           "400": {
@@ -9947,7 +9947,7 @@
             "description": "",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/AsBuiltDesign"
+              "$ref": "#/definitions/AsBuiltOrderDesign"
             }
           }
         ],
@@ -9994,7 +9994,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/AsBuiltDesign"
+              "$ref": "#/definitions/AsBuiltOrderDesign"
             }
           },
           "400": {
@@ -10026,7 +10026,7 @@
             "description": "Instance object that needs to be updated.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/AsBuiltDesign"
+              "$ref": "#/definitions/AsBuiltOrderDesign"
             }
           }
         ],
@@ -10034,7 +10034,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/AsBuiltDesign"
+              "$ref": "#/definitions/AsBuiltOrderDesign"
             }
           },
           "400": {
@@ -13483,7 +13483,7 @@
         }
       }
     },
-    "/resource/ethernetinterface": {
+    "/ethernetinterface": {
       "post": {
         "tags": [
           "Service"
@@ -13519,7 +13519,7 @@
         }
       }
     },
-    "/resource/ethernetinterface/{id}": {
+    "/ethernetinterface/{id}": {
       "get": {
         "tags": [
           "Service"
@@ -16500,6 +16500,133 @@
         }
       }
     },
+    "CMTSSummary": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "type": "object",
+          "$ref": "Link"
+        },
+        "commonName": {
+          "type": "string"
+        }
+      }
+    },
+    "CMTS": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "type": "object",
+          "$ref": "Link"
+        },
+        "commonName": {
+          "type": "string"
+        },
+        "deviceActivationStatus": {
+          "type": "object",
+          "description": "Activation_Pending, Activated, Activation_Failed",
+          "enum": ["Activation_Pending", "Activated", "Activation_Failed"]
+        },
+        "backplaneIndependent": {
+          "type": "boolean"
+        },
+        "backplaneNumber": {
+          "type": "integer"
+        },
+        "configurationOrder": {
+          "type": "string"
+        },
+        "deviceGroupID": {
+          "type": "string"
+        },
+        "isComposite": {
+          "type": "boolean"
+        },
+        "canMixPower": {
+          "type": "boolean"
+        },
+        "hasPowerManagement": {
+          "type": "boolean"
+        },
+        "powerManagementCapabilities": {
+          "type": "string"
+        },
+        "deviceProviderType": {
+          "type": "object",
+          "$ref": "DeviceProviderType"
+        },
+        "deviceManagementType": {
+          "type": "object",
+          "$ref": "DeviceManagementType"
+        },
+        "manufactureDate": {
+          "type": "string"
+        },
+        "manufactureDateStamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "otherIdentifier": {
+          "type": "string"
+        },
+        "powerState": {
+          "type": "integer",
+          "description": "0: Unknown, 1: Not Applicable, 2: No Power Applied, 3: Full Power Applied, 4: Power Save - Normal, 5: Power Save - Degraded, 6: Power Save - Standby, 7: Power Save - Critical, 8: Power Save - Low Power Mode, 9: Power Save - Unknown, 10: Power Cycle, 11: Power Warning, 12: Power Off"
+        },
+        "serialNumber": {
+          "type": "string"
+        },
+        "versionNumber": {
+          "type": "string"
+        },
+        "usageState": {
+          "type": "integer"
+        },
+        "clliCode": {
+          "type": "object",
+          "$ref": "CLLICode"
+        },
+        "assignedCableModems": {
+          "type": "array",
+          "items": {
+            "$ref": "CMTSCableModemAssignment"
+          }
+        },
+        "channels": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "CableModemChannel"
+          }
+        }
+      }
+    },
+    "CMTSCableModemAssignment": {
+      "type": "object",
+      "properties": {
+        "cmStatus": {
+          "type": "integer",
+          "description": "1 - other than below, 2 - ranging, 3 - ranging aborted, 4 - ranging complete, 5 - IP complete (IP Address DHCP-assigned), 6 - registration complete (aka operational), 7 - access denied, 8 - RESERVED, 9 - registered, BPI initialized"
+        },
+        "cmPreEqualized": {
+          "type": "boolean"
+        },
+        "cableModem": {
+          "type": "object",
+          "$ref": "CableModemSummary"
+        },
+        "cmts": {
+          "type": "object",
+          "$ref": "CMTSSummary"
+        }
+      }
+    },
     "UNIServiceSummary": {
       "id": "UNIServiceSummary",
       "type": "object",
@@ -17366,6 +17493,79 @@
           "type": "string"
         },
         "attributeValue": {
+          "type": "string"
+        }
+      }
+    },
+    "ServiceSpecification": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "type": "object",
+          "$ref": "Link"
+        },
+        "description": {
+          "type": "string"
+        },
+        "commonName": {
+          "type": "string"
+        },
+        "isBundle": {
+          "type": "boolean"
+        },
+        "isCustomerFacing": {
+          "type": "boolean"
+        },
+        "isResourceFacing": {
+          "type": "boolean"
+        },
+        "isComposedOf": {
+          "type": "array",
+          "items": {
+            "$ref": "ServiceSpecification"
+          }
+        },
+        "customerFacingServiceSpec": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "ServiceSpecification"
+          }
+        },
+        "resourceFacingServiceSpec": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "ServiceSpecification"
+          }
+        },
+        "services": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "ServiceSummary"
+          }
+        },
+        "characteristics": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "Characteristic"
+          }
+        },
+        "serviceSpecificationTypes": {
+          "type": "object",
+          "$ref": "ServiceSpecificationType"
+        }
+      }
+    },
+    "ServiceSpecificationType": {
+      "type": "object",
+      "properties": {
+        "serviceSpecTypeName": {
           "type": "string"
         }
       }
@@ -19162,6 +19362,10 @@
         "validFor": {
           "type": "object",
           "$ref": "TimePeriod"
+        },
+        "offeringPrice": {
+          "type": "object",
+          "$ref": "Price"
         }
       }
     },
@@ -19769,6 +19973,27 @@
         },
         "organization": {
           "$ref": "OrganizationSummary"
+        }
+      }
+    },
+    "CableModemSummary": {
+      "id": "CableModem",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "Link"
+        },
+        "macAddress": {
+          "$ref": "MACAddress"
+        },
+        "serialNumber": {
+          "type": "string"
+        },
+        "numActiveChannels": {
+          "type": "integer"
         }
       }
     },
