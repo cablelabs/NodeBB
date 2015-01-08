@@ -11154,8 +11154,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find list of comments for a ticket.",
-        "description": "An entry to the log of an Ticket.",
+        "summary": "Find a list of comments for a ticket.",
+        "description": "Ticket-Comments is a list of entries to the log of a Ticket.",
         "displayName": "Comment Collection",
         "produces": [
           "application/json",
