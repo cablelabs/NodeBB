@@ -4017,8 +4017,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a document.",
+        "description": "A Document refers to a physical document such as a contract, manual, or e-mail.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -4053,8 +4053,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "A reference to a physical document such as a contract, manual or email.",
+        "summary": "Find a document by ID.",
+        "description": "A Document refers to a physical document such as a contract, manual, or e-mail.",
         "displayName": "Document ",
         "produces": [
           "application/json",
@@ -4096,8 +4096,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing document.",
+        "description": "A Document refers to a physical document such as a contract, manual, or e-mail.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -4139,8 +4139,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a docuemnt based on ID.",
+        "description": "A Document refers to a physical document such as a contract, manual, or e-mail.",
         "produces": [
           "application/json",
           "application/xml"
