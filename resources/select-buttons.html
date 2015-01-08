@@ -1,0 +1,17 @@
+<template name="selectButtons">
+  <div class="select-buttons">
+    <input type="hidden" name="{{input_name}}">
+    {{#each enum}}
+    <div class="select-button">
+      {{#if disabled}}
+      <button class="{{class}} disabled" type="button" data-value="{{value}}" data-key="{{name}}" disabled>{{name}}</button>
+      {{else}}
+      <button class="{{class}}" type="button" data-value="{{value}}">{{name}}</button>
+      {{/if}}
+      <span class="select-button-check">
+        <i class="{{icon}}"></i>
+      </span>
+    </div>
+    {{/each}}
+  </div>
+</template>
