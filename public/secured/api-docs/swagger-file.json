@@ -12145,8 +12145,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a Ticket-Contact.",
+        "description": "A Ticket-Contact is a modifier of a specific ticket.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -12189,8 +12189,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "A modifier of a specific ticket.",
+        "summary": "Find a Ticket-Contact by ID.",
+        "description": "A Ticket-Contact is a modifier of a specific ticket.",
         "displayName": "Modifier",
         "produces": [
           "application/json",
@@ -12240,8 +12240,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing Ticket-Contact.",
+        "description": "A Ticket-Contact is a modifier of a specific ticket.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -12299,8 +12299,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a Ticket-Contact based on ID.",
+        "description": "A Ticket-Contact is a modifier of a specific ticket.",
         "produces": [
           "application/json",
           "application/xml"
