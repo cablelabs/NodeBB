@@ -2296,8 +2296,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a BillCharge.",
+        "description": "A BillCharge is a charge or a credit assigned to a customer's account during the billing process.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -2332,8 +2332,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "A charge or a credit assigned to the customer's account in the course or for the purpose of the billing process. Subclasses further define these elements.",
+        "summary": "Find a BillCharge by ID.",
+        "description": "A BillCharge is a charge or a credit assigned to a customer's account during the billing process.",
         "displayName": "Bill  Charge",
         "produces": [
           "application/json",
@@ -2375,8 +2375,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing BillCharge.",
+        "description": "A BillCharge is a charge or a credit assigned to a customer's account during the billing process.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -2418,8 +2418,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a BillCharge based on ID.",
+        "description": "A BillCharge is a charge or a credit assigned to a customer's account during the billing process.",
         "produces": [
           "application/json",
           "application/xml"
