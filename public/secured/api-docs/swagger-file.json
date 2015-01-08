@@ -11154,7 +11154,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a list of comments for a ticket.",
+        "summary": "Find the Ticket-Comments (a list of comments) for a ticket.",
         "description": "Ticket-Comments is a list of entries to the log of a Ticket.",
         "displayName": "Comment Collection",
         "produces": [
@@ -11197,8 +11197,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a Ticket-Comment.",
-        "description": "A Ticket-Comment is an entry to the log of a Ticket.",
+        "summary": "Create Ticket-Comments (a list of comments) for a ticket.",
+        "description": "Ticket-Comments is a list of entries to the log of a Ticket.",
         "description": "",
         "consumes": [
           "application/json",
@@ -12102,8 +12102,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find list of contacts for a ticket.",
-        "description": "List of contacts for a given ticket.",
+        "summary": "Find the Ticket-Contacts (list of contacts) for a Ticket.",
+        "description": "Ticket-Contacts is the list of contacts for a given ticket.",
         "displayName": "Ticket Contact Collection",
         "produces": [
           "application/json",
@@ -12145,8 +12145,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a Ticket-Contact.",
-        "description": "A Ticket-Contact is a modifier of a specific ticket.",
+        "summary": "Create Ticket-Contacts (list of contacts) for a Ticket.",
+        "description": "Ticket-Contacts is the list of contacts for a given ticket.",
         "consumes": [
           "application/json",
           "application/xml"
