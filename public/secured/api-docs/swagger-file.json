@@ -3864,8 +3864,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a PaymentItem.",
+        "description": "A PaymentItem is the application of a CustomerPayment.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -3900,8 +3900,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "PaymentItem is the application of CustomerPayment. PaymentItem is applied to CustomerBillInvoice, AppliedCustomerBillingRate.",
+        "summary": "Find a PaymentItem by ID.",
+        "description": "A PaymentItem is the application of a CustomerPayment.",
         "displayName": "Payment Item",
         "produces": [
           "application/json",
@@ -3943,8 +3943,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing PaymentItem.",
+        "description": "A PaymentItem is the application of a CustomerPayment.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -3986,8 +3986,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a PaymentItem based on ID.",
+        "description": "A PaymentItem is the application of a CustomerPayment.",
         "produces": [
           "application/json",
           "application/xml"
