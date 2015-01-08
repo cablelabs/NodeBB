@@ -2449,8 +2449,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a ServiceOrderItem.",
+        "description": "A ServiceOrderItem is a specific item within a ServiceOrder and is expressed in terms of a ServiceSpecification or a Service.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -2485,8 +2485,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "The purpose for the ServiceOrder expressed in terms of a ServiceSpecification or a Service.",
+        "summary": "Find a ServiceOrderItem by ID.",
+        "description": "A ServiceOrderItem is a specific item within a ServiceOrder and is expressed in terms of a ServiceSpecification or a Service.",
         "displayName": "Service  Order Item",
         "produces": [
           "application/json",
@@ -2528,8 +2528,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing ServiceOrderItem.",
+        "description": "A ServiceOrderItem is a specific item within a ServiceOrder and is expressed in terms of a ServiceSpecification or a Service.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -2571,8 +2571,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a ServiceOrderItem based on ID.",
+        "description": "A ServiceOrderItem is a specific item within a ServiceOrder and is expressed in terms of a ServiceSpecification or a Service.",
         "produces": [
           "application/json",
           "application/xml"
