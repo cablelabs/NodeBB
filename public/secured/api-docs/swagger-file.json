@@ -12723,8 +12723,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a CustomerQuote.",
+        "description": "A CustomerQuote is a price estimate (quote) or a presentation for sale (offer) of product offerings to a PartyRole such as a Customer.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -12759,8 +12759,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "A price estimate (quote) or a presentation for sale (offer) of product offerings to a party playing a role.",
+        "summary": "Find a CustomerQuote by ID.",
+        "description": "A CustomerQuote is a price estimate (quote) or a presentation for sale (offer) of product offerings to a PartyRole such as a Customer.",
         "displayName": "Customer Quote",
         "produces": [
           "application/json",
@@ -12802,8 +12802,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing CustomerQuote.",
+        "description": "A CustomerQuote is a price estimate (quote) or a presentation for sale (offer) of product offerings to a PartyRole such as a Customer.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -12845,8 +12845,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a CustomerQuote based on ID.",
+        "description": "A CustomerQuote is a price estimate (quote) or a presentation for sale (offer) of product offerings to a PartyRole such as a Customer.",
         "produces": [
           "application/json",
           "application/xml"
