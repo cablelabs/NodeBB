@@ -5241,8 +5241,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a ServiceRole.",
+        "description": "A ServiceRole defines a Service in terms of a set of roles that characterize the functionality of the Service.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -5277,8 +5277,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "This is an abstract base class that defines a Service in terms of a set of roles. The roles are then used to characterize the functionality of the Service, regardless of whether it is a resource- or a customer-facing service.",
+        "summary": "Find a ServiceRole by ID.",
+        "description": "A ServiceRole defines a Service in terms of a set of roles that characterize the functionality of the Service.",
         "displayName": "Service Role",
         "produces": [
           "application/json",
@@ -5320,8 +5320,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing ServiceRole.",
+        "description": "A ServiceRole defines a Service in terms of a set of roles that characterize the functionality of the Service.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -5363,8 +5363,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a ServiceRole based on ID.",
+        "description": "A ServiceRole defines a Service in terms of a set of roles that characterize the functionality of the Service.",
         "produces": [
           "application/json",
           "application/xml"
