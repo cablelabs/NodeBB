@@ -3711,8 +3711,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a ResourceOrder.",
+        "description": "A ResourceOrder lists the resources needed to provision the services in a ServiceOrder.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -3747,8 +3747,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "A type of Request that represents a Service Order's services decomposed into the resources on which the services will be provisioned.",
+        "summary": "Find a ResourceOrder by ID.",
+        "description": "A ResourceOrder lists the resources needed to provision the services in a ServiceOrder.",
         "displayName": "Resource Order",
         "produces": [
           "application/json",
@@ -3790,8 +3790,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing ResourceOrder.",
+        "description": "A ResourceOrder lists the resources needed to provision the services in a ServiceOrder.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -3833,8 +3833,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a ResourceOrder based on ID.",
+        "description": "A ResourceOrder lists the resources needed to provision the services in a ServiceOrder.",
         "produces": [
           "application/json",
           "application/xml"
