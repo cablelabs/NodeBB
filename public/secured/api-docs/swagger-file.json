@@ -13335,8 +13335,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a CustomerBill.",
+        "description": "A CustomerBill is the total amount due from a CustomerAccount for all products during a billing period.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -13371,8 +13371,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "A total amount due from a CustomerAccount for all products during the billing period.",
+        "summary": "Find a CustomerBill by ID.",
+        "description": "A CustomerBill is the total amount due from a CustomerAccount for all products during a billing period.",
         "displayName": "Customer Bill",
         "produces": [
           "application/json",
@@ -13414,8 +13414,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing CustomerBill.",
+        "description": "A CustomerBill is the total amount due from a CustomerAccount for all products during a billing period.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -13457,8 +13457,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a CustomerBill based on ID.",
+        "description": "A CustomerBill is the total amount due from a CustomerAccount for all products during a billing period.",
         "produces": [
           "application/json",
           "application/xml"
