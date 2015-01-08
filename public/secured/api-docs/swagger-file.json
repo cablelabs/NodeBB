@@ -3061,8 +3061,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a new OrderItem.",
+        "description": "An OrderItem is one item in an order and is expressed in terms of a Product Offering or a Product.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -3105,8 +3105,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "The purpose for the Order expressed in terms of a Product Offering or a Product (for a change order) inherited from BusinessInteractionItem.",
+        "summary": "Find an OrderItem by ID.",
+        "description": "An OrderItem is one item in an order and is expressed in terms of a Product Offering or a Product.",
         "displayName": "Product OrderItem",
         "produces": [
           "application/json",
@@ -3156,8 +3156,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing OrderItem.",
+        "description": "An OrderItem is one item in an order and is expressed in terms of a Product Offering or a Product.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -3207,8 +3207,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete an OrderItem based on ID.",
+        "description": "An OrderItem is one item in an order and is expressed in terms of a Product Offering or a Product.",
         "produces": [
           "application/json",
           "application/xml"
