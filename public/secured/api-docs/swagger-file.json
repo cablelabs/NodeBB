@@ -10083,8 +10083,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a CustomerOrderItem.",
+        "description": "A CustomerOrderItem is a specific item within a CustomerOrder and is expressed in terms of a Product Offering or a Product.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -10119,8 +10119,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "The purpose for the Customer Order expressed in terms of a Product Offering or a Product (for a change order) inherited from BusinessInteractionItem.",
+        "summary": "Find a CustomerOrderItem by ID.",
+        "description": "A CustomerOrderItem is a specific item within a CustomerOrder and is expressed in terms of a Product Offering or a Product.",
         "displayName": "Customer OrderItem",
         "produces": [
           "application/json",
@@ -10162,8 +10162,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing CustomerOrderItem.",
+        "description": "A CustomerOrderItem is a specific item within a CustomerOrder and is expressed in terms of a Product Offering or a Product.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -10205,8 +10205,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a CustomerOrderItem based on ID.",
+        "description": "A CustomerOrderItem is a specific item within a CustomerOrder and is expressed in terms of a Product Offering or a Product.",
         "produces": [
           "application/json",
           "application/xml"
