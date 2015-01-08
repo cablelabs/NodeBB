@@ -3399,8 +3399,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a Ticket-AssignedGroup.",
+        "description": "A Ticket-AssignedGroup is a group assigned to a Ticket, such as a particular organization (e.g., Network Services).",
         "consumes": [
           "application/json",
           "application/xml"
@@ -3441,8 +3441,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "A group assigned to a Ticket. For example, an Ticket assigned to a particular organization (e.g., Network Services).",
+        "summary": "Find a Ticket-AssignedGroup by ID.",
+        "description": "A Ticket-AssignedGroup is a group assigned to a Ticket, such as a particular organization (e.g., Network Services).",
         "displayName": "Ticket AssignedGroup",
         "produces": [
           "application/json",
@@ -3484,8 +3484,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing Ticket-AssignedGroup.",
+        "description": "A Ticket-AssignedGroup is a group assigned to a Ticket, such as a particular organization (e.g., Network Services).",
         "consumes": [
           "application/json",
           "application/xml"
@@ -3527,8 +3527,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a Ticket-AssignedGroup based on ID.",
+        "description": "A Ticket-AssignedGroup is a group assigned to a Ticket, such as a particular organization (e.g., Network Services).",
         "produces": [
           "application/json",
           "application/xml"
