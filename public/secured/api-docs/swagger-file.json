@@ -1990,8 +1990,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a new order.",
+        "description": "An Order represents an order that would typically originate at an end user.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -2026,8 +2026,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "Orders represent orders that would typically originate at an end user. Product Orders may spawn ASRs, LSRs, or other PSRs in order to fill the end users request, if facility, equipment, or plant assignments are not available for designing the requested Product.",
+        "summary": "Find an order by ID.",
+        "description": "An Order represents an order that would typically originate at an end user.",
         "displayName": "Order",
         "produces": [
           "application/json",
@@ -2069,8 +2069,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing order.",
+        "description": "An Order represents an order that would typically originate at an end user.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -2112,8 +2112,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete an order based on ID.",
+        "description": "An Order represents an order that would typically originate at an end user.",
         "produces": [
           "application/json",
           "application/xml"
