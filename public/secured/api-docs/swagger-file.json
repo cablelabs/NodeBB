@@ -4017,7 +4017,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a document.",
+        "summary": "Create a Document.",
         "description": "A Document refers to a physical document such as a contract, manual, or e-mail.",
         "consumes": [
           "application/json",
@@ -4053,7 +4053,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a document by ID.",
+        "summary": "Find a Document by ID.",
         "description": "A Document refers to a physical document such as a contract, manual, or e-mail.",
         "displayName": "Document ",
         "produces": [
@@ -4096,7 +4096,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing document.",
+        "summary": "Update an existing Document.",
         "description": "A Document refers to a physical document such as a contract, manual, or e-mail.",
         "consumes": [
           "application/json",
@@ -4139,7 +4139,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete a docuemnt based on ID.",
+        "summary": "Delete a Document based on ID.",
         "description": "A Document refers to a physical document such as a contract, manual, or e-mail.",
         "produces": [
           "application/json",
@@ -4782,8 +4782,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a Ticket.",
+        "description": "A Ticket is a record containing the details of a single incident such as an interruption to a service or failure of a resource.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -4818,8 +4818,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "A record containing the details of an Incident. Each Ticket documents the lifecycle of a single incident.",
+        "summary": "Find a Ticket by ID.",
+        "description": "A Ticket is a record containing the details of a single incident such as an interruption to a service or failure of a resource.",
         "displayName": "Ticket",
         "produces": [
           "application/json",
@@ -4861,8 +4861,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing Ticket.",
+        "description": "A Ticket is a record containing the details of a single incident such as an interruption to a service or failure of a resource.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -4904,8 +4904,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a Ticket based on ID.",
+        "description": "A Ticket is a record containing the details of a single incident such as an interruption to a service or failure of a resource.",
         "produces": [
           "application/json",
           "application/xml"
