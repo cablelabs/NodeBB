@@ -4629,8 +4629,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create an OrderDesign.",
+        "description": "An OrderDesign is a change to an order from the as-built order.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -4665,8 +4665,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "The difference in changes that were made as from as-built.",
+        "summary": "Find an OrderDesign by ID.",
+        "description": "An OrderDesign is a change to an order from the as-built order.",
         "displayName": "Order Design",
         "produces": [
           "application/json",
@@ -4708,8 +4708,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing OrderDesign.",
+        "description": "An OrderDesign is a change to an order from the as-built order.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -4751,8 +4751,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete an OrderDesign based on ID.",
+        "description": "An OrderDesign is a change to an order from the as-built order.",
         "produces": [
           "application/json",
           "application/xml"
