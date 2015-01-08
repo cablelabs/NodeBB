@@ -10695,8 +10695,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a ServiceOrder.",
+        "description": "A ServiceOrder lists the services through which the products in a CustomerOrder are realized.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -10731,8 +10731,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "A type of Request that represents a Customer Order's products decomposed into the services through which the products are realized.",
+        "summary": "Find a ServiceOrder by ID.",
+        "description": "A ServiceOrder lists the services through which the products in a CustomerOrder are realized.",
         "displayName": "Service  Order",
         "produces": [
           "application/json",
@@ -10774,8 +10774,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing ServiceOrder.",
+        "description": "A ServiceOrder lists the services through which the products in a CustomerOrder are realized.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -10817,8 +10817,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a ServiceOrder based on ID.",
+        "description": "A ServiceOrder lists the services through which the products in a CustomerOrder are realized.",
         "produces": [
           "application/json",
           "application/xml"
