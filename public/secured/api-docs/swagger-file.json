@@ -10848,8 +10848,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a ServiceOrder/sat (SiteAcceptanceTest).",
+        "description": "A ServiceOrder/sat (SiteAcceptanceTest) is a service order to perform a SiteAcceptanceTest for end-to-end acceptance testing. ",
         "consumes": [
           "application/json",
           "application/xml"
@@ -10884,8 +10884,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "The SiteAcceptanceTest is to invoke, and get results from, end-to-end acceptance testing.",
+        "summary": "Find a ServiceOrder/sat (SiteAcceptanceTest) by ID.",
+        "description": "A ServiceOrder/sat (SiteAcceptanceTest) is a service order to perform a SiteAcceptanceTest for end-to-end acceptance testing.",
         "displayName": "SAT",
         "produces": [
           "application/json",
@@ -10927,8 +10927,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing ServiceOrder/sat (SiteAcceptanceTest).",
+        "description": "A ServiceOrder/sat (SiteAcceptanceTest) is a service order to perform a SiteAcceptanceTest for end-to-end acceptance testing. ",
         "consumes": [
           "application/json",
           "application/xml"
@@ -10970,8 +10970,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a ServiceOrder/sat (SiteAcceptanceTest) based on ID.",
+        "description": "A ServiceOrder/sat (SiteAcceptanceTest) is a service order to perform a SiteAcceptanceTest for end-to-end acceptance testing.",
         "produces": [
           "application/json",
           "application/xml"
