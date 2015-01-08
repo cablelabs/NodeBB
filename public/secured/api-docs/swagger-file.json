@@ -5547,8 +5547,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a new Ticket-Category.",
+        "description": "A Ticket-Category is the category of a ticket.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -5591,8 +5591,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "A category of Ticket.",
+        "summary": "Find Ticket-Category by ID.",
+        "description": "A Ticket-Category is the category of a ticket.",
         "displayName": "Ticket Category",
         "produces": [
           "application/json",
@@ -5642,8 +5642,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing Ticket-Category.",
+        "description": "A Ticket-Category is the category of a ticket.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -5701,8 +5701,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a Ticket-Category based on ID.",
+        "description": "A Ticket-Category is the category of a ticket.",
         "produces": [
           "application/json",
           "application/xml"
