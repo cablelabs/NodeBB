@@ -11197,8 +11197,9 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a Ticket-Comment.",
+        "description": "A Ticket-Comment is an entry to the log of a Ticket.",
+        "description": "",
         "consumes": [
           "application/json",
           "application/xml"
@@ -11241,8 +11242,9 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "An entry to the log of an Ticket.",
+        "summary": "Find a Ticket-Comment by ID.",
+        "description": "A Ticket-Comment is an entry to the log of a Ticket.",
+        "description": "",
         "displayName": "Comment",
         "produces": [
           "application/json",
@@ -11292,8 +11294,9 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing Ticket-Comment.",
+        "description": "A Ticket-Comment is an entry to the log of a Ticket.",
+        "description": "",
         "consumes": [
           "application/json",
           "application/xml"
@@ -11351,8 +11354,9 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a Ticket-Comment based on ID.",
+        "description": "A Ticket-Comment is an entry to the log of a Ticket.",
+        "description": "",
         "produces": [
           "application/json",
           "application/xml"
