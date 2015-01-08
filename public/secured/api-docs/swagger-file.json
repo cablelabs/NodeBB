@@ -3246,8 +3246,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a CustomerBillSpec.",
+        "description": "A CustomerBillSpec is a detailed description of a customer's bill structure.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -3282,8 +3282,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "A detailed description of a customer's bill structure. The current version of this class is serving as a placeholder. It will be further developed in the next version of this document.",
+        "summary": "Find a CustomerBillSpec by ID.",
+        "description": "A CustomerBillSpec is a detailed description of a customer's bill structure.",
         "displayName": "Customer BillSpec",
         "produces": [
           "application/json",
@@ -3325,8 +3325,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing CustomerBillSpec.",
+        "description": "A CustomerBillSpec is a detailed description of a customer's bill structure.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -3368,8 +3368,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a CustomerBillSpec based on ID.",
+        "description": "A CustomerBillSpec is a detailed description of a customer's bill structure.",
         "produces": [
           "application/json",
           "application/xml"
