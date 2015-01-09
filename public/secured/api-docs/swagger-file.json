@@ -5548,7 +5548,7 @@
           "Interaction"
         ],
         "summary": "Create a new Ticket-Category.",
-        "description": "A Ticket-Category is the category of a ticket.",
+        "description": "A Ticket-Category is a category of tickets.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -5591,8 +5591,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find Ticket-Category by ID.",
-        "description": "A Ticket-Category is the category of a ticket.",
+        "summary": "Find a Ticket-Category by ID.",
+        "description": "A Ticket-Category is a category of tickets.",
         "displayName": "Ticket Category",
         "produces": [
           "application/json",
@@ -5643,7 +5643,7 @@
           "Interaction"
         ],
         "summary": "Update an existing Ticket-Category.",
-        "description": "A Ticket-Category is the category of a ticket.",
+        "description": "A Ticket-Category is a category of tickets.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -5702,7 +5702,7 @@
           "Interaction"
         ],
         "summary": "Delete a Ticket-Category based on ID.",
-        "description": "A Ticket-Category is the category of a ticket.",
+        "description": "A Ticket-Category is a category of tickets.",
         "produces": [
           "application/json",
           "application/xml"
@@ -11244,7 +11244,6 @@
         ],
         "summary": "Find a Ticket-Comment by ID.",
         "description": "A Ticket-Comment is an entry to the log of a Ticket.",
-        "description": "",
         "displayName": "Comment",
         "produces": [
           "application/json",
@@ -11296,7 +11295,6 @@
         ],
         "summary": "Update an existing Ticket-Comment.",
         "description": "A Ticket-Comment is an entry to the log of a Ticket.",
-        "description": "",
         "consumes": [
           "application/json",
           "application/xml"
@@ -11356,7 +11354,6 @@
         ],
         "summary": "Delete a Ticket-Comment based on ID.",
         "description": "A Ticket-Comment is an entry to the log of a Ticket.",
-        "description": "",
         "produces": [
           "application/json",
           "application/xml"
