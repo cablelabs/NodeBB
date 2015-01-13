@@ -255,6 +255,6 @@ opacity: 0 {
 }
 
 #edit-setlist-btn {
-  margin-bottom: .2em;
+  margin: 0 0 .4em .5em;
   border-radius: .5em;
 }
