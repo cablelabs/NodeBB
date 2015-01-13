@@ -1990,8 +1990,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a new order.",
+        "description": "An Order represents an order that would typically originate at an end user.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -2026,8 +2026,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "Orders represent orders that would typically originate at an end user. Product Orders may spawn ASRs, LSRs, or other PSRs in order to fill the end users request, if facility, equipment, or plant assignments are not available for designing the requested Product.",
+        "summary": "Find an order by ID.",
+        "description": "An Order represents an order that would typically originate at an end user.",
         "displayName": "Order",
         "produces": [
           "application/json",
@@ -2069,8 +2069,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing order.",
+        "description": "An Order represents an order that would typically originate at an end user.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -2112,8 +2112,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete an order based on ID.",
+        "description": "An Order represents an order that would typically originate at an end user.",
         "produces": [
           "application/json",
           "application/xml"
@@ -2296,8 +2296,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a BillCharge.",
+        "description": "A BillCharge is a charge or a credit assigned to a customer's account during the billing process.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -2332,8 +2332,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "A charge or a credit assigned to the customer's account in the course or for the purpose of the billing process. Subclasses further define these elements.",
+        "summary": "Find a BillCharge by ID.",
+        "description": "A BillCharge is a charge or a credit assigned to a customer's account during the billing process.",
         "displayName": "Bill  Charge",
         "produces": [
           "application/json",
@@ -2375,8 +2375,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing BillCharge.",
+        "description": "A BillCharge is a charge or a credit assigned to a customer's account during the billing process.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -2418,8 +2418,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a BillCharge based on ID.",
+        "description": "A BillCharge is a charge or a credit assigned to a customer's account during the billing process.",
         "produces": [
           "application/json",
           "application/xml"
@@ -2449,8 +2449,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a ServiceOrderItem.",
+        "description": "A ServiceOrderItem is a specific item within a ServiceOrder and is expressed in terms of a ServiceSpecification or a Service.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -2485,8 +2485,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "The purpose for the ServiceOrder expressed in terms of a ServiceSpecification or a Service.",
+        "summary": "Find a ServiceOrderItem by ID.",
+        "description": "A ServiceOrderItem is a specific item within a ServiceOrder and is expressed in terms of a ServiceSpecification or a Service.",
         "displayName": "Service  Order Item",
         "produces": [
           "application/json",
@@ -2528,8 +2528,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing ServiceOrderItem.",
+        "description": "A ServiceOrderItem is a specific item within a ServiceOrder and is expressed in terms of a ServiceSpecification or a Service.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -2571,8 +2571,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a ServiceOrderItem based on ID.",
+        "description": "A ServiceOrderItem is a specific item within a ServiceOrder and is expressed in terms of a ServiceSpecification or a Service.",
         "produces": [
           "application/json",
           "application/xml"
@@ -3061,8 +3061,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a new OrderItem.",
+        "description": "An OrderItem is one item in an order and is expressed in terms of a Product Offering or a Product.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -3105,8 +3105,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "The purpose for the Order expressed in terms of a Product Offering or a Product (for a change order) inherited from BusinessInteractionItem.",
+        "summary": "Find an OrderItem by ID.",
+        "description": "An OrderItem is one item in an order and is expressed in terms of a Product Offering or a Product.",
         "displayName": "Product OrderItem",
         "produces": [
           "application/json",
@@ -3156,8 +3156,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing OrderItem.",
+        "description": "An OrderItem is one item in an order and is expressed in terms of a Product Offering or a Product.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -3207,8 +3207,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete an OrderItem based on ID.",
+        "description": "An OrderItem is one item in an order and is expressed in terms of a Product Offering or a Product.",
         "produces": [
           "application/json",
           "application/xml"
@@ -3246,8 +3246,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a CustomerBillSpec.",
+        "description": "A CustomerBillSpec is a detailed description of a customer's bill structure.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -3282,8 +3282,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "A detailed description of a customer's bill structure. The current version of this class is serving as a placeholder. It will be further developed in the next version of this document.",
+        "summary": "Find a CustomerBillSpec by ID.",
+        "description": "A CustomerBillSpec is a detailed description of a customer's bill structure.",
         "displayName": "Customer BillSpec",
         "produces": [
           "application/json",
@@ -3325,8 +3325,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing CustomerBillSpec.",
+        "description": "A CustomerBillSpec is a detailed description of a customer's bill structure.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -3368,8 +3368,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a CustomerBillSpec based on ID.",
+        "description": "A CustomerBillSpec is a detailed description of a customer's bill structure.",
         "produces": [
           "application/json",
           "application/xml"
@@ -3399,8 +3399,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a Ticket-AssignedGroup.",
+        "description": "A Ticket-AssignedGroup is a group assigned to a Ticket, such as a particular organization (e.g., Network Services).",
         "consumes": [
           "application/json",
           "application/xml"
@@ -3441,8 +3441,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "A group assigned to a Ticket. For example, an Ticket assigned to a particular organization (e.g., Network Services).",
+        "summary": "Find a Ticket-AssignedGroup by ID.",
+        "description": "A Ticket-AssignedGroup is a group assigned to a Ticket, such as a particular organization (e.g., Network Services).",
         "displayName": "Ticket AssignedGroup",
         "produces": [
           "application/json",
@@ -3484,8 +3484,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing Ticket-AssignedGroup.",
+        "description": "A Ticket-AssignedGroup is a group assigned to a Ticket, such as a particular organization (e.g., Network Services).",
         "consumes": [
           "application/json",
           "application/xml"
@@ -3527,8 +3527,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a Ticket-AssignedGroup based on ID.",
+        "description": "A Ticket-AssignedGroup is a group assigned to a Ticket, such as a particular organization (e.g., Network Services).",
         "produces": [
           "application/json",
           "application/xml"
@@ -3711,8 +3711,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a ResourceOrder.",
+        "description": "A ResourceOrder lists the resources needed to provision the services in a ServiceOrder.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -3747,8 +3747,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "A type of Request that represents a Service Order's services decomposed into the resources on which the services will be provisioned.",
+        "summary": "Find a ResourceOrder by ID.",
+        "description": "A ResourceOrder lists the resources needed to provision the services in a ServiceOrder.",
         "displayName": "Resource Order",
         "produces": [
           "application/json",
@@ -3790,8 +3790,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing ResourceOrder.",
+        "description": "A ResourceOrder lists the resources needed to provision the services in a ServiceOrder.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -3833,8 +3833,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a ResourceOrder based on ID.",
+        "description": "A ResourceOrder lists the resources needed to provision the services in a ServiceOrder.",
         "produces": [
           "application/json",
           "application/xml"
@@ -3864,8 +3864,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a PaymentItem.",
+        "description": "A PaymentItem is the application of a CustomerPayment.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -3900,8 +3900,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "PaymentItem is the application of CustomerPayment. PaymentItem is applied to CustomerBillInvoice, AppliedCustomerBillingRate.",
+        "summary": "Find a PaymentItem by ID.",
+        "description": "A PaymentItem is the application of a CustomerPayment.",
         "displayName": "Payment Item",
         "produces": [
           "application/json",
@@ -3943,8 +3943,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing PaymentItem.",
+        "description": "A PaymentItem is the application of a CustomerPayment.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -3986,8 +3986,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a PaymentItem based on ID.",
+        "description": "A PaymentItem is the application of a CustomerPayment.",
         "produces": [
           "application/json",
           "application/xml"
@@ -4017,8 +4017,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a Document.",
+        "description": "A Document refers to a physical document such as a contract, manual, or e-mail.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -4053,8 +4053,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "A reference to a physical document such as a contract, manual or email.",
+        "summary": "Find a Document by ID.",
+        "description": "A Document refers to a physical document such as a contract, manual, or e-mail.",
         "displayName": "Document ",
         "produces": [
           "application/json",
@@ -4096,8 +4096,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing Document.",
+        "description": "A Document refers to a physical document such as a contract, manual, or e-mail.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -4139,8 +4139,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a Document based on ID.",
+        "description": "A Document refers to a physical document such as a contract, manual, or e-mail.",
         "produces": [
           "application/json",
           "application/xml"
@@ -4629,8 +4629,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create an OrderDesign.",
+        "description": "An OrderDesign is a change to an order from the as-built order.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -4665,8 +4665,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "The difference in changes that were made as from as-built.",
+        "summary": "Find an OrderDesign by ID.",
+        "description": "An OrderDesign is a change to an order from the as-built order.",
         "displayName": "Order Design",
         "produces": [
           "application/json",
@@ -4708,8 +4708,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing OrderDesign.",
+        "description": "An OrderDesign is a change to an order from the as-built order.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -4751,8 +4751,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete an OrderDesign based on ID.",
+        "description": "An OrderDesign is a change to an order from the as-built order.",
         "produces": [
           "application/json",
           "application/xml"
@@ -4782,8 +4782,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a Ticket.",
+        "description": "A Ticket is a record containing the details of a single incident such as an interruption to a service or failure of a resource.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -4818,8 +4818,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "A record containing the details of an Incident. Each Ticket documents the lifecycle of a single incident.",
+        "summary": "Find a Ticket by ID.",
+        "description": "A Ticket is a record containing the details of a single incident such as an interruption to a service or failure of a resource.",
         "displayName": "Ticket",
         "produces": [
           "application/json",
@@ -4861,8 +4861,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing Ticket.",
+        "description": "A Ticket is a record containing the details of a single incident such as an interruption to a service or failure of a resource.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -4904,8 +4904,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a Ticket based on ID.",
+        "description": "A Ticket is a record containing the details of a single incident such as an interruption to a service or failure of a resource.",
         "produces": [
           "application/json",
           "application/xml"
@@ -5241,8 +5241,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a ServiceRole.",
+        "description": "A ServiceRole defines a Service in terms of a set of roles that characterize the functionality of the Service.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -5277,8 +5277,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "This is an abstract base class that defines a Service in terms of a set of roles. The roles are then used to characterize the functionality of the Service, regardless of whether it is a resource- or a customer-facing service.",
+        "summary": "Find a ServiceRole by ID.",
+        "description": "A ServiceRole defines a Service in terms of a set of roles that characterize the functionality of the Service.",
         "displayName": "Service Role",
         "produces": [
           "application/json",
@@ -5320,8 +5320,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing ServiceRole.",
+        "description": "A ServiceRole defines a Service in terms of a set of roles that characterize the functionality of the Service.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -5363,8 +5363,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a ServiceRole based on ID.",
+        "description": "A ServiceRole defines a Service in terms of a set of roles that characterize the functionality of the Service.",
         "produces": [
           "application/json",
           "application/xml"
@@ -5547,8 +5547,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a new Ticket-Category.",
+        "description": "A Ticket-Category is a category of tickets.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -5591,8 +5591,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "A category of Ticket.",
+        "summary": "Find a Ticket-Category by ID.",
+        "description": "A Ticket-Category is a category of tickets.",
         "displayName": "Ticket Category",
         "produces": [
           "application/json",
@@ -5642,8 +5642,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing Ticket-Category.",
+        "description": "A Ticket-Category is a category of tickets.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -5701,8 +5701,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a Ticket-Category based on ID.",
+        "description": "A Ticket-Category is a category of tickets.",
         "produces": [
           "application/json",
           "application/xml"
@@ -10083,8 +10083,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a CustomerOrderItem.",
+        "description": "A CustomerOrderItem is a specific item within a CustomerOrder and is expressed in terms of a Product Offering or a Product.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -10119,8 +10119,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "The purpose for the Customer Order expressed in terms of a Product Offering or a Product (for a change order) inherited from BusinessInteractionItem.",
+        "summary": "Find a CustomerOrderItem by ID.",
+        "description": "A CustomerOrderItem is a specific item within a CustomerOrder and is expressed in terms of a Product Offering or a Product.",
         "displayName": "Customer OrderItem",
         "produces": [
           "application/json",
@@ -10162,8 +10162,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing CustomerOrderItem.",
+        "description": "A CustomerOrderItem is a specific item within a CustomerOrder and is expressed in terms of a Product Offering or a Product.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -10205,8 +10205,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a CustomerOrderItem based on ID.",
+        "description": "A CustomerOrderItem is a specific item within a CustomerOrder and is expressed in terms of a Product Offering or a Product.",
         "produces": [
           "application/json",
           "application/xml"
@@ -10695,8 +10695,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a ServiceOrder.",
+        "description": "A ServiceOrder lists the services through which the products in a CustomerOrder are realized.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -10731,8 +10731,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "A type of Request that represents a Customer Order's products decomposed into the services through which the products are realized.",
+        "summary": "Find a ServiceOrder by ID.",
+        "description": "A ServiceOrder lists the services through which the products in a CustomerOrder are realized.",
         "displayName": "Service  Order",
         "produces": [
           "application/json",
@@ -10774,8 +10774,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing ServiceOrder.",
+        "description": "A ServiceOrder lists the services through which the products in a CustomerOrder are realized.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -10817,8 +10817,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a ServiceOrder based on ID.",
+        "description": "A ServiceOrder lists the services through which the products in a CustomerOrder are realized.",
         "produces": [
           "application/json",
           "application/xml"
@@ -10848,8 +10848,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a ServiceOrder/sat (SiteAcceptanceTest).",
+        "description": "A ServiceOrder/sat (SiteAcceptanceTest) is a service order to perform a SiteAcceptanceTest for end-to-end acceptance testing. ",
         "consumes": [
           "application/json",
           "application/xml"
@@ -10884,8 +10884,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "The SiteAcceptanceTest is to invoke, and get results from, end-to-end acceptance testing.",
+        "summary": "Find a ServiceOrder/sat (SiteAcceptanceTest) by ID.",
+        "description": "A ServiceOrder/sat (SiteAcceptanceTest) is a service order to perform a SiteAcceptanceTest for end-to-end acceptance testing.",
         "displayName": "SAT",
         "produces": [
           "application/json",
@@ -10927,8 +10927,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing ServiceOrder/sat (SiteAcceptanceTest).",
+        "description": "A ServiceOrder/sat (SiteAcceptanceTest) is a service order to perform a SiteAcceptanceTest for end-to-end acceptance testing. ",
         "consumes": [
           "application/json",
           "application/xml"
@@ -10970,8 +10970,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a ServiceOrder/sat (SiteAcceptanceTest) based on ID.",
+        "description": "A ServiceOrder/sat (SiteAcceptanceTest) is a service order to perform a SiteAcceptanceTest for end-to-end acceptance testing.",
         "produces": [
           "application/json",
           "application/xml"
@@ -11154,8 +11154,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find list of comments for a ticket.",
-        "description": "An entry to the log of an Ticket.",
+        "summary": "Find the Ticket-Comments (a list of comments) for a ticket.",
+        "description": "Ticket-Comments is a list of entries to the log of a Ticket.",
         "displayName": "Comment Collection",
         "produces": [
           "application/json",
@@ -11197,8 +11197,9 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create Ticket-Comments (a list of comments) for a ticket.",
+        "description": "Ticket-Comments is a list of entries to the log of a Ticket.",
+        "description": "",
         "consumes": [
           "application/json",
           "application/xml"
@@ -11241,8 +11242,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "An entry to the log of an Ticket.",
+        "summary": "Find a Ticket-Comment by ID.",
+        "description": "A Ticket-Comment is an entry to the log of a Ticket.",
         "displayName": "Comment",
         "produces": [
           "application/json",
@@ -11292,8 +11293,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing Ticket-Comment.",
+        "description": "A Ticket-Comment is an entry to the log of a Ticket.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -11351,8 +11352,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a Ticket-Comment based on ID.",
+        "description": "A Ticket-Comment is an entry to the log of a Ticket.",
         "produces": [
           "application/json",
           "application/xml"
@@ -12098,8 +12099,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find list of contacts for a ticket.",
-        "description": "List of contacts for a given ticket.",
+        "summary": "Find the Ticket-Contacts (list of contacts) for a Ticket.",
+        "description": "Ticket-Contacts is the list of contacts for a given ticket.",
         "displayName": "Ticket Contact Collection",
         "produces": [
           "application/json",
@@ -12141,8 +12142,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create Ticket-Contacts (list of contacts) for a Ticket.",
+        "description": "Ticket-Contacts is the list of contacts for a given ticket.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -12185,8 +12186,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "A modifier of a specific ticket.",
+        "summary": "Find a Ticket-Contact by ID.",
+        "description": "A Ticket-Contact is a modifier of a specific ticket.",
         "displayName": "Modifier",
         "produces": [
           "application/json",
@@ -12236,8 +12237,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing Ticket-Contact.",
+        "description": "A Ticket-Contact is a modifier of a specific ticket.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -12295,8 +12296,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a Ticket-Contact based on ID.",
+        "description": "A Ticket-Contact is a modifier of a specific ticket.",
         "produces": [
           "application/json",
           "application/xml"
@@ -12723,8 +12724,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a CustomerQuote.",
+        "description": "A CustomerQuote is a price estimate (quote) or a presentation for sale (offer) of product offerings to a PartyRole such as a Customer.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -12759,8 +12760,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "A price estimate (quote) or a presentation for sale (offer) of product offerings to a party playing a role.",
+        "summary": "Find a CustomerQuote by ID.",
+        "description": "A CustomerQuote is a price estimate (quote) or a presentation for sale (offer) of product offerings to a PartyRole such as a Customer.",
         "displayName": "Customer Quote",
         "produces": [
           "application/json",
@@ -12802,8 +12803,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing CustomerQuote.",
+        "description": "A CustomerQuote is a price estimate (quote) or a presentation for sale (offer) of product offerings to a PartyRole such as a Customer.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -12845,8 +12846,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a CustomerQuote based on ID.",
+        "description": "A CustomerQuote is a price estimate (quote) or a presentation for sale (offer) of product offerings to a PartyRole such as a Customer.",
         "produces": [
           "application/json",
           "application/xml"
@@ -13335,8 +13336,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a CustomerBill.",
+        "description": "A CustomerBill is the total amount due from a CustomerAccount for all products during a billing period.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -13371,8 +13372,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "A total amount due from a CustomerAccount for all products during the billing period.",
+        "summary": "Find a CustomerBill by ID.",
+        "description": "A CustomerBill is the total amount due from a CustomerAccount for all products during a billing period.",
         "displayName": "Customer Bill",
         "produces": [
           "application/json",
@@ -13414,8 +13415,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing CustomerBill.",
+        "description": "A CustomerBill is the total amount due from a CustomerAccount for all products during a billing period.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -13457,8 +13458,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a CustomerBill based on ID.",
+        "description": "A CustomerBill is the total amount due from a CustomerAccount for all products during a billing period.",
         "produces": [
           "application/json",
           "application/xml"
