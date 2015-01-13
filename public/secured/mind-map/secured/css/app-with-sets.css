@@ -253,3 +253,8 @@ opacity: 0 {
 #entity-set-sort-list li:hover .remove-icon {
   opacity: 1;
 }
+
+#edit-setlist-btn {
+  margin-bottom: .2em;
+  border-radius: .5em;
+}
