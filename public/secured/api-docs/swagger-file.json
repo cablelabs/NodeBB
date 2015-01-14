@@ -11863,8 +11863,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find list of Tasks for a ticket.",
-        "description": "List of Tasks for a given ticket.",
+        "summary": "Find a list of tasks for a ticket.",
+        "description": "A list of tasks for a given ticket.",
         "displayName": "Task Collection",
         "produces": [
           "application/json",
@@ -11906,8 +11906,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a list of tasks for a ticket.",
+        "description": "A list of tasks for a given ticket.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -11950,8 +11950,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "A modifier of a specific ticket.",
+        "summary": "Find a ticket task.",
+        "description": "A ticket task is a record of a set of actions taken for a ticket. A ticket task can be assigned to a Party.",
         "displayName": "Task",
         "produces": [
           "application/json",
@@ -12001,8 +12001,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing ticket task.",
+        "description": "A ticket task is a record of a set of actions taken for a ticket. A ticket task can be assigned to a Party.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -12060,8 +12060,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a ticket task.",
+        "description": "A ticket task is a record of a set of actions taken for a ticket. A ticket task can be assigned to a Party.",
         "produces": [
           "application/json",
           "application/xml"
