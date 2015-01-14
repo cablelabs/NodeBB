@@ -11391,8 +11391,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find list of watchers for a ticket.",
-        "description": "List of watchers for a given ticket.",
+        "summary": "Find a list of watchers for a ticket.",
+        "description": "A list of watchers for a given ticket.",
         "displayName": "Watcher Collection",
         "produces": [
           "application/json",
@@ -11434,8 +11434,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a list of watchers for a ticket.",
+        "description": "A list of watchers for a given ticket.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -11478,8 +11478,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "A watcher of a specific ticket.",
+        "summary": "Find a ticket watcher.",
+        "description": "A ticket watcher is a Party or Parties that have an interest in the lifecycle of a ticket.",
         "displayName": "Watcher",
         "produces": [
           "application/json",
@@ -11529,8 +11529,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing ticket watcher.",
+        "description": "A ticket watcher is a Party or Parties that have an interest in the lifecycle of a ticket.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -11588,8 +11588,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a ticket watcher.",
+        "description": "A ticket watcher is a Party or Parties that have an interest in the lifecycle of a ticket.",
         "produces": [
           "application/json",
           "application/xml"
