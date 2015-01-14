@@ -11627,8 +11627,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find list of Modifiers for a ticket.",
-        "description": "List of Modifiers for a given ticket.",
+        "summary": "Find a list of all modifiers for a ticket.",
+        "description": "A list of modifiers for a given ticket.",
         "displayName": "Modifier Collection",
         "produces": [
           "application/json",
@@ -11670,8 +11670,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a list of modifiers for a ticket.",
+        "description": "A list of modifiers for a given ticket.",
         "consumes": [
           "application/json",
           "application/xml"
