@@ -13,8 +13,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "An entry that documents the Lifecycle of a given Ticket.",
+        "summary": "Find a ticket status entry.",
+        "description": "A ticket status entry is descriptive text that documents the current cycle of that ticket.",
         "displayName": "Status Entry",
         "produces": [
           "application/json",
@@ -64,8 +64,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing ticket status entry.",
+        "description": "A ticket status entry is descriptive text that documents the current cycle of that ticket.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -123,8 +123,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a ticket status entry.",
+        "description": "A ticket status entry is descriptive text that documents the current cycle of that ticket.",
         "produces": [
           "application/json",
           "application/xml"
@@ -162,8 +162,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find list of status entries for a ticket.",
-        "description": "A status entry to the log of an Ticket.",
+        "summary": "Find a list of status entries for a ticket.",
+        "description": "A list of ticket status entries.",
         "displayName": "Status Entry Collection",
         "produces": [
           "application/json",
@@ -205,8 +205,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a list of ticket status entries.",
+        "description": "A list of ticket status entries.",
         "consumes": [
           "application/json",
           "application/xml"
