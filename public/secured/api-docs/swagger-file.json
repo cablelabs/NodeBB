@@ -8241,8 +8241,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a list of tickets associated with a user.",
+        "description": "A list of tickets associated with a given User.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -8283,8 +8283,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "Tickets associated with a given User.",
+        "summary": "Find a list of tickets associated with a user.",
+        "description": "A list of tickets associated with a given User.",
         "displayName": "Users  Tickets",
         "produces": [
           "application/json",
