@@ -11,7 +11,7 @@ var nconf = require('nconf'),
 	metaRoutes = require('./meta'),
 	apiRoutes = require('./api'),
 	adminRoutes = require('./admin'),
-    portalRoutes = require('./portal'),
+    mindmap = require('./mindmap'),
 	feedRoutes = require('./feeds'),
 	pluginRoutes = require('./plugins'),
 	authRoutes = require('./authentication');
@@ -163,7 +163,6 @@ module.exports = function(app, middleware) {
 	app.use(relativePath, router);
 	app.use(relativePath, pluginRouter);
 	app.use(relativePath, authRouter);
-//>>>>>>> 1eb9016a77c9ef99e63913db0a023b7f9911d4e4
 
 	if (process.env.NODE_ENV === 'development') {
 		require('./debug')(app, middleware, controllers);

@@ -18100,6 +18100,20 @@
         }
       }
     },
+    "ExtendedProperty": {
+      "name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "value": {
+        "type": "string"
+      },
+      "sequenceNumber": {
+        "type": "string"
+      }
+    },
     "BillChargeSummary": {
       "id": "BillChargeSummary",
       "type": "object",
@@ -18186,6 +18200,12 @@
         },
         "appliedCustomerBillingAdjustment": {
           "$ref": "AppliedCustomerBillingAdjustment"
+        },
+        "extendedProperties": {
+          "type": "array",
+          "items": {
+            "$ref": "ExtendedProperty"
+          }
         }
       }
     },
