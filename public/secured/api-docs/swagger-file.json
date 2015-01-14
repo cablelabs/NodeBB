@@ -11627,8 +11627,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a list of all modifiers for a ticket.",
-        "description": "A list of modifiers for a given ticket.",
+        "summary": "Find a list of parties who modified a ticket.",
+        "description": "A list of parties who modified a given ticket.",
         "displayName": "Modifier Collection",
         "produces": [
           "application/json",
@@ -11670,8 +11670,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a list of modifiers for a ticket.",
-        "description": "A list of modifiers for a given ticket.",
+        "summary": "Create a list of parties who modified a ticket.",
+        "description": "A list of parties who modified a given ticket.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -11765,7 +11765,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find the party who last modified a ticket.",
+        "summary": "Update the party who last modified a ticket.",
         "description": "A ticket modifier is the Party who last modified a specific ticket.",
         "consumes": [
           "application/json",
