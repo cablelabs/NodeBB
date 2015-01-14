@@ -11824,8 +11824,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete the party who last modified a ticket.",
+        "description": "A ticket modifier is the Party who last modified a specific ticket.",
         "produces": [
           "application/json",
           "application/xml"
