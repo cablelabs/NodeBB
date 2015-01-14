@@ -2296,7 +2296,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a BillCharge.",
+        "summary": "Create a bill charge or credit.",
         "description": "A BillCharge is a charge or a credit assigned to a customer's account during the billing process.",
         "consumes": [
           "application/json",
@@ -2332,7 +2332,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a BillCharge by ID.",
+        "summary": "Find a bill charge or credit.",
         "description": "A BillCharge is a charge or a credit assigned to a customer's account during the billing process.",
         "displayName": "Bill  Charge",
         "produces": [
@@ -2375,7 +2375,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing BillCharge.",
+        "summary": "Update an existing bill charge or credit.",
         "description": "A BillCharge is a charge or a credit assigned to a customer's account during the billing process.",
         "consumes": [
           "application/json",
@@ -2418,7 +2418,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete a BillCharge based on ID.",
+        "summary": "Delete a bill charge or credit.",
         "description": "A BillCharge is a charge or a credit assigned to a customer's account during the billing process.",
         "produces": [
           "application/json",
@@ -3246,7 +3246,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a CustomerBillSpec.",
+        "summary": "Create a specification for a customer bill.",
         "description": "A CustomerBillSpec is a detailed description of a customer's bill structure.",
         "consumes": [
           "application/json",
@@ -3282,7 +3282,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a CustomerBillSpec by ID.",
+        "summary": "Find a customer bill specification.",
         "description": "A CustomerBillSpec is a detailed description of a customer's bill structure.",
         "displayName": "Customer BillSpec",
         "produces": [
@@ -3325,7 +3325,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing CustomerBillSpec.",
+        "summary": "Update an existing customer bill specification.",
         "description": "A CustomerBillSpec is a detailed description of a customer's bill structure.",
         "consumes": [
           "application/json",
@@ -3368,7 +3368,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete a CustomerBillSpec based on ID.",
+        "summary": "Delete a customer bill specification.",
         "description": "A CustomerBillSpec is a detailed description of a customer's bill structure.",
         "produces": [
           "application/json",
@@ -13372,7 +13372,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a CustomerBill by ID.",
+        "summary": "Find a customer bill.",
         "description": "A CustomerBill is the total amount due from a CustomerAccount for all products during a billing period.",
         "displayName": "Customer Bill",
         "produces": [
@@ -13415,7 +13415,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing CustomerBill.",
+        "summary": "Update an existing customer bill.",
         "description": "A CustomerBill is the total amount due from a CustomerAccount for all products during a billing period.",
         "consumes": [
           "application/json",
@@ -13458,7 +13458,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete a CustomerBill based on ID.",
+        "summary": "Delete a customer bill.",
         "description": "A CustomerBill is the total amount due from a CustomerAccount for all products during a billing period.",
         "produces": [
           "application/json",
