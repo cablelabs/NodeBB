@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "Explore the cable API's. API's are grouped by Domain.",
+    "description": "Explore the cable APIs. APIs are grouped by Domain.",
     "version": "0.0.1",
     "title": "Cable API"
   },
@@ -12422,8 +12422,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "A modifier of a specific ticket.",
+        "summary": "Find a location for a ticket.",
+        "description": "The location of some kind of incident recorded on a ticket, such as a service outage or a the location of a resource.",
         "displayName": "Modifier",
         "produces": [
           "application/json",
@@ -12473,8 +12473,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update a location for a ticket.",
+        "description": "The location of some kind of incident recorded on a ticket, such as a service outage or a the location of a resource.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -12532,8 +12532,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a location for a ticket.",
+        "description": "The location of some kind of incident recorded on a ticket, such as a service outage or a the location of a resource.",
         "produces": [
           "application/json",
           "application/xml"
