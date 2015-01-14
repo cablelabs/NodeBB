@@ -11714,8 +11714,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find resource by ID",
-        "description": "A modifier of a specific ticket.",
+        "summary": "Find the party who last modified a ticket.",
+        "description": "A ticket modifier is the Party who last modified a specific ticket.",
         "displayName": "Modifier",
         "produces": [
           "application/json",
@@ -11765,8 +11765,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Find the party who last modified a ticket.",
+        "description": "A ticket modifier is the Party who last modified a specific ticket.",
         "consumes": [
           "application/json",
           "application/xml"
