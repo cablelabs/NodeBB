@@ -12335,8 +12335,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find list of contacts for a ticket.",
-        "description": "List of contacts for a given ticket.",
+        "summary": "Find a list of locations for a ticket.",
+        "description": "A list of all locations associated with a given ticket.",
         "displayName": "Task Location Collection",
         "produces": [
           "application/json",
@@ -12378,8 +12378,8 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a list of locations for a ticket.",
+        "description": "A list of all locations associated with a given ticket.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -19176,92 +19176,6 @@
         },
         "preferenceCategoryId": {
           "type": "string"
-        }
-      }
-    },
-    "ProductSpecification": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "link": {
-          "type": "object",
-          "$ref": "Link"
-        },
-        "eplProducts": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "EPLProduct"
-          }
-        },
-        "lineOfBusiness": {
-          "type": "object",
-          "$ref": "ProductLineOfBusiness",
-          "required": true
-        },
-        "characteristics": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "Characteristic"
-          }
-        },
-        "attribute": {
-          "type": "string"
-        },
-        "productSpecifications": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "ProductSpecification"
-          }
-        },
-        "composite": {
-          "type": "boolean"
-        },
-
-        "productNumber": {
-          "type": "string"
-        },
-        "description": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "lifecycleStatus": {
-          "type": "string"
-        },
-        "brand": {
-          "type": "string"
-        },
-        "validFor": {
-          "type": "object",
-          "$ref": "TimePeriod",
-          "required": true
-        },
-        "eplProductConfigurations": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "EPLProductConfiguration"
-          }
-        },
-        "productSpecificationTypes": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "ProductSpecificationType"
-          }
-        },
-        "products": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "Product"
-          }
         }
       }
     },
