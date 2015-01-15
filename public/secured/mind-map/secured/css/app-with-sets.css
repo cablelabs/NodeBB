@@ -7,11 +7,9 @@ opacity: 0 {
 #graph {
   font-family: Roboto, 'Lucida Grande', sans-serif;
   width: 100%;
-  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
-  display: -ms-flexbox;      /* TWEENER - IE 10 */
-  display: -webkit-flex;     /* NEW - Chrome */
-  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  display: -ms-flexbox;
+  display: -webkit-flex; 
+  display: inline-flex;   /* should be flex, workaround for Firefox */           
   -webkit-flex-flow: row nowrap;
       -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
@@ -41,12 +39,9 @@ opacity: 0 {
   filter: alpha(opacity=100);
 }
 .domain {
-  width: 15%;                      /* For old syntax, otherwise collapses. */
-  -webkit-box-flex: 0 1 18em;      /* OLD - iOS 6-, Safari 3.1-6 */
-  -moz-box-flex: 0 1 18em;         /* OLD - Firefox 19- */
-  -webkit-flex: 0 1 18em;          /* Chrome */
-  -ms-flex: 0 1 18em;              /* IE 10 */
-  flex: 0 1 18em;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  -webkit-flex: 0 1 18em;
+  -ms-flex: 0 1 18em;
+  flex: 0 1 18em;
   height: calc(100% - 7em);
   border-radius: 1em;
   text-align: center;
@@ -105,11 +100,9 @@ opacity: 0 {
   letter-spacing: 0.1em;
 }
 .glyphs {
-  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
-  display: -ms-flexbox;      /* TWEENER - IE 10 */
-  display: -webkit-flex;     /* NEW - Chrome */
-  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
   transition: all 0.1s ease-out;
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
@@ -122,12 +115,9 @@ opacity: 0 {
 }
 .api-link,
 .description {
-  width: 40%;                      /* For old syntax, otherwise collapses. */
-  -webkit-box-flex: 0 1 2em;      /* OLD - iOS 6-, Safari 3.1-6 */
-  -moz-box-flex: 0 1 2em;         /* OLD - Firefox 19- */
-  -webkit-flex: 0 1 2em;          /* Chrome */
-  -ms-flex: 0 1 2em;              /* IE 10 */
-  flex: 0 1 2em;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  -webkit-flex: 0 1 2em;
+  -ms-flex: 0 1 2em;
+  flex: 0 1 2em;
   display: none;
   color: #000;
   text-decoration: none;

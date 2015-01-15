@@ -10,6 +10,7 @@ var topicsController = require('./topics'),
 	apiController = require('./api'),
 	adminController = require('./admin'),
     portalController = require('./portal'),
+    mindmapController = require('./mindmap'),
 
     apis = require('../apis'),
 
@@ -39,7 +40,8 @@ var Controllers = {
 	static: staticController,
 	api: apiController,
 	admin: adminController,
-    portal: portalController
+    portal: portalController,
+	mindmap: mindmapController
 };
 
 Controllers.home = function(req, res, next) {

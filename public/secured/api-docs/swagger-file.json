@@ -18101,17 +18101,20 @@
       }
     },
     "ExtendedProperty": {
-      "name": {
-        "type": "string"
-      },
-      "description": {
-        "type": "string"
-      },
-      "value": {
-        "type": "string"
-      },
-      "sequenceNumber": {
-        "type": "string"
+      "id": "ExtendedProperty",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "sequenceNumber": {
+          "type": "string"
+        }
       }
     },
     "BillChargeSummary": {
