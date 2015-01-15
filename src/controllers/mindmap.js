@@ -55,4 +55,26 @@ mindmapController.home = function(req, res, next) {
     });
 };
 
+mindmapController.documentation = function(req, res, next) {
+    //async.waterfall([
+    //    function (next) {
+    //        // Refreshing link.json for mind-map
+    //        var linkparser = require('../controllers/mind-map/linkParser');
+    //        linkparser.init(function(err){
+    //            if(err) {
+    //                winston.error('Error Processing links.json for mindmap: ' + err);
+    //            } else {
+    //                winston.info("MIND MAP:: Refreshed links.json file");
+    //            }
+    //        });
+    //        next();
+    //    }
+    //], function (err, result) {
+    //    if (err) {
+    //        return next(err);
+    //    }
+        res.render('mind-map/documentation');
+    //});
+};
+
 module.exports = mindmapController;
