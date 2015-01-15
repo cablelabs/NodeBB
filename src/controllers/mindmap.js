@@ -3,6 +3,7 @@
 var async = require('async'),
 
     user = require('../user'),
+    winston = require('winston'),
     apis = require('../apis'),
     announcements = require('../announcements'),
     topics = require('../topics'),
@@ -32,37 +33,25 @@ var mindmapController = {
     uploads: require('./admin/uploads')
 };
 
-portalController.home = function(req, res, next) {
-    async.parallel({
-        header: function (next) {
-            res.locals.metaTags = [{
-                name: "title",
-                content: meta.config.title || 'CableLabs'
-            }, {
-                name: "description",
-                content: meta.config.description || ''
-            }, {
-                property: 'og:title',
-                content: 'Index | ' + (meta.config.title || 'CableLabs')
-            }, {
-                property: 'og:type',
-                content: 'website'
-            }];
-
-            if(meta.config['brand:logo']) {
-                res.locals.metaTags.push({
-                    property: 'og:image',
-                    content: meta.config['brand:logo']
-                });
-            }
-
-            next(null);
+mindmapController.home = function(req, res, next) {
+    async.waterfall([
+        function (next) {
+            // Refreshing link.json for mind-map
+            var linkparser = require('../controllers/mind-map/linkParser');
+            linkparser.init(function(err){
+                if(err) {
+                    winston.error('Error Processing links.json for mindmap: ' + err);
+                } else {
+                    winston.info("MIND MAP:: Refreshed links.json file");
+                }
+            });
+            next();
         }
-    }, function (err, data) {
+    ], function (err, result) {
         if (err) {
             return next(err);
         }
-        res.render('mindmap/home', data);
+        res.render('mind-map/index');
     });
 };
 

@@ -2,7 +2,7 @@ var request = require('request'),
 	async   = require('async'),
 	fs      = require('fs'),
 	path 	= require('path'),
-	config  = require(path.join(__dirname + '/../../src/mind-map/settings.json'));
+	config  = require(path.join(__dirname + '/settings.json'));
 
 module.exports.init = function (callback) {
 
@@ -17,11 +17,11 @@ module.exports.init = function (callback) {
 		if (err) {
 			callback(err);
 		} else {
-			fs.exists(path.join(__dirname + '/../../public/secured/mind-map/assets'), function (exists) {
+			fs.exists(path.join(__dirname + '/../../../public/secured/mind-map/assets'), function (exists) {
 				if (!exists) {
-					fs.mkdirSync(path.join(__dirname + '/../../public/secured/mind-map/assets'))
+					fs.mkdirSync(path.join(__dirname + '/../../../public/secured/mind-map/assets'))
 				}
-				fs.writeFile(path.join(__dirname + '/../../public/secured/mind-map/assets/links.json'), JSON.stringify(result, null, 4))
+				fs.writeFile(path.join(__dirname + '/../../../public/secured/mind-map/assets/links.json'), JSON.stringify(result, null, 4))
 				callback();
 			});
 		}
@@ -29,7 +29,7 @@ module.exports.init = function (callback) {
 }
 
 function getSwaggerFile (callback) {
-	callback(null, require('../../public/secured/api-docs/swagger-file.json'));
+	callback(null, require('../../../public/secured/api-docs/swagger-file.json'));
 }
 
 //fiter out paths in the swagger file that don't have the get property

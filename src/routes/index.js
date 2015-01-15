@@ -146,6 +146,9 @@ module.exports = function(app, middleware) {
 	feedRoutes(router, middleware, controllers);
 	pluginRoutes(router, middleware, controllers);
 
+	// Mindmap routes
+	mindmap(router, middleware, controllers);
+
 	/**
 	* Every view has an associated API route.
 	*
