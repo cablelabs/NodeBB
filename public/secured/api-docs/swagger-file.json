@@ -4017,7 +4017,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a document.",
+        "summary": "Create a Document.",
         "description": "A Document refers to a physical document such as a contract, manual, or e-mail.",
         "consumes": [
           "application/json",
@@ -4053,7 +4053,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a document.",
+        "summary": "Find a Document by ID.",
         "description": "A Document refers to a physical document such as a contract, manual, or e-mail.",
         "displayName": "Document ",
         "produces": [
@@ -4096,7 +4096,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing document.",
+        "summary": "Update an existing Document.",
         "description": "A Document refers to a physical document such as a contract, manual, or e-mail.",
         "consumes": [
           "application/json",
@@ -4139,7 +4139,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete a document.",
+        "summary": "Delete a Document based on ID.",
         "description": "A Document refers to a physical document such as a contract, manual, or e-mail.",
         "produces": [
           "application/json",
@@ -10083,7 +10083,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create an item for a customer order.",
+        "summary": "Create a CustomerOrderItem.",
         "description": "A CustomerOrderItem is a specific item within a CustomerOrder and is expressed in terms of a Product Offering or a Product.",
         "consumes": [
           "application/json",
@@ -10119,7 +10119,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find an item on a customer order.",
+        "summary": "Find a CustomerOrderItem by ID.",
         "description": "A CustomerOrderItem is a specific item within a CustomerOrder and is expressed in terms of a Product Offering or a Product.",
         "displayName": "Customer OrderItem",
         "produces": [
@@ -10162,7 +10162,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing item on a customer order.",
+        "summary": "Update an existing CustomerOrderItem.",
         "description": "A CustomerOrderItem is a specific item within a CustomerOrder and is expressed in terms of a Product Offering or a Product.",
         "consumes": [
           "application/json",
@@ -10205,7 +10205,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete an item on a customer order.",
+        "summary": "Delete a CustomerOrderItem based on ID.",
         "description": "A CustomerOrderItem is a specific item within a CustomerOrder and is expressed in terms of a Product Offering or a Product.",
         "produces": [
           "application/json",
@@ -12724,7 +12724,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a customer quote.",
+        "summary": "Create a CustomerQuote.",
         "description": "A CustomerQuote is a price estimate (quote) or a presentation for sale (offer) of product offerings to a PartyRole such as a Customer.",
         "consumes": [
           "application/json",
@@ -12760,7 +12760,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a customer quote.",
+        "summary": "Find a CustomerQuote by ID.",
         "description": "A CustomerQuote is a price estimate (quote) or a presentation for sale (offer) of product offerings to a PartyRole such as a Customer.",
         "displayName": "Customer Quote",
         "produces": [
@@ -12803,7 +12803,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing customer quote.",
+        "summary": "Update an existing CustomerQuote.",
         "description": "A CustomerQuote is a price estimate (quote) or a presentation for sale (offer) of product offerings to a PartyRole such as a Customer.",
         "consumes": [
           "application/json",
@@ -12846,7 +12846,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete a customer quote.",
+        "summary": "Delete a CustomerQuote based on ID.",
         "description": "A CustomerQuote is a price estimate (quote) or a presentation for sale (offer) of product offerings to a PartyRole such as a Customer.",
         "produces": [
           "application/json",
@@ -18100,6 +18100,20 @@
         }
       }
     },
+    "ExtendedProperty": {
+      "name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "value": {
+        "type": "string"
+      },
+      "sequenceNumber": {
+        "type": "string"
+      }
+    },
     "BillChargeSummary": {
       "id": "BillChargeSummary",
       "type": "object",
@@ -18186,6 +18200,12 @@
         },
         "appliedCustomerBillingAdjustment": {
           "$ref": "AppliedCustomerBillingAdjustment"
+        },
+        "extendedProperties": {
+          "type": "array",
+          "items": {
+            "$ref": "ExtendedProperty"
+          }
         }
       }
     },
