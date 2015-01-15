@@ -117,14 +117,14 @@ function start() {
 	loadConfig();
 
 	//// Refreshing link.json for mind-map
-	//var linkparser = require('./src/mind-map/linkParser');
-	//linkparser.init(function(err){
-	//	if(err) {
-	//		winston.error('Error Processing links.json for mindmap: ' + err);
-	//	} else {
-	//		winston.info("MIND MAP:: Refreshed links.json file");
-	//	}
-	//});
+	var linkparser = require('./src/controllers/mind-map/linkParser');
+	linkparser.init(function(err){
+		if(err) {
+			winston.error('Error Processing links.json for mindmap: ' + err);
+		} else {
+			winston.info("MIND MAP:: Refreshed links.json file");
+		}
+	});
 
 	winston.info('Time: ' + new Date());
 	winston.info('Initializing NodeBB v' + pkg.version);
