@@ -2026,7 +2026,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find an order by ID.",
+        "summary": "Find an order.",
         "description": "An Order represents an order that would typically originate at an end user.",
         "displayName": "Order",
         "produces": [
@@ -2112,7 +2112,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete an order based on ID.",
+        "summary": "Delete an order.",
         "description": "An Order represents an order that would typically originate at an end user.",
         "produces": [
           "application/json",
@@ -3711,7 +3711,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a ResourceOrder.",
+        "summary": "Create a resource order.",
         "description": "A ResourceOrder lists the resources needed to provision the services in a ServiceOrder.",
         "consumes": [
           "application/json",
@@ -3747,7 +3747,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a ResourceOrder by ID.",
+        "summary": "Find a resource order.",
         "description": "A ResourceOrder lists the resources needed to provision the services in a ServiceOrder.",
         "displayName": "Resource Order",
         "produces": [
@@ -3790,7 +3790,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing ResourceOrder.",
+        "summary": "Update an existing resource order.",
         "description": "A ResourceOrder lists the resources needed to provision the services in a ServiceOrder.",
         "consumes": [
           "application/json",
@@ -3833,7 +3833,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete a ResourceOrder based on ID.",
+        "summary": "Delete a resource order.",
         "description": "A ResourceOrder lists the resources needed to provision the services in a ServiceOrder.",
         "produces": [
           "application/json",
@@ -3864,7 +3864,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a PaymentItem.",
+        "summary": "Create a payment item.",
         "description": "A PaymentItem is the application of a CustomerPayment.",
         "consumes": [
           "application/json",
@@ -3900,7 +3900,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a PaymentItem by ID.",
+        "summary": "Find a payment item.",
         "description": "A PaymentItem is the application of a CustomerPayment.",
         "displayName": "Payment Item",
         "produces": [
@@ -3943,7 +3943,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing PaymentItem.",
+        "summary": "Update an existing payment item.",
         "description": "A PaymentItem is the application of a CustomerPayment.",
         "consumes": [
           "application/json",
@@ -3986,7 +3986,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete a PaymentItem based on ID.",
+        "summary": "Delete a payment item.",
         "description": "A PaymentItem is the application of a CustomerPayment.",
         "produces": [
           "application/json",
@@ -4629,7 +4629,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create an OrderDesign.",
+        "summary": "Create an order design.",
         "description": "An OrderDesign is a change to an order from the as-built order.",
         "consumes": [
           "application/json",
@@ -4665,7 +4665,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find an OrderDesign by ID.",
+        "summary": "Find an order design.",
         "description": "An OrderDesign is a change to an order from the as-built order.",
         "displayName": "Order Design",
         "produces": [
@@ -4708,7 +4708,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing OrderDesign.",
+        "summary": "Update an existing order design.",
         "description": "An OrderDesign is a change to an order from the as-built order.",
         "consumes": [
           "application/json",
@@ -4751,7 +4751,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete an OrderDesign based on ID.",
+        "summary": "Delete an order design.",
         "description": "An OrderDesign is a change to an order from the as-built order.",
         "produces": [
           "application/json",
@@ -10695,7 +10695,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a ServiceOrder.",
+        "summary": "Create a service order.",
         "description": "A ServiceOrder lists the services through which the products in a CustomerOrder are realized.",
         "consumes": [
           "application/json",
@@ -10731,7 +10731,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a ServiceOrder by ID.",
+        "summary": "Find a service order.",
         "description": "A ServiceOrder lists the services through which the products in a CustomerOrder are realized.",
         "displayName": "Service  Order",
         "produces": [
@@ -10774,7 +10774,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing ServiceOrder.",
+        "summary": "Update an existing service order.",
         "description": "A ServiceOrder lists the services through which the products in a CustomerOrder are realized.",
         "consumes": [
           "application/json",
@@ -10817,7 +10817,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete a ServiceOrder based on ID.",
+        "summary": "Delete a service order.",
         "description": "A ServiceOrder lists the services through which the products in a CustomerOrder are realized.",
         "produces": [
           "application/json",
@@ -10848,7 +10848,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a ServiceOrder/sat (SiteAcceptanceTest).",
+        "summary": "Create a service order for a SAT (SiteAcceptanceTest).",
         "description": "A ServiceOrder/sat (SiteAcceptanceTest) is a service order to perform a SiteAcceptanceTest for end-to-end acceptance testing. ",
         "consumes": [
           "application/json",
@@ -10884,7 +10884,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a ServiceOrder/sat (SiteAcceptanceTest) by ID.",
+        "summary": "Find a service order for a SAT (SiteAcceptanceTest).",
         "description": "A ServiceOrder/sat (SiteAcceptanceTest) is a service order to perform a SiteAcceptanceTest for end-to-end acceptance testing.",
         "displayName": "SAT",
         "produces": [
@@ -10927,7 +10927,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing ServiceOrder/sat (SiteAcceptanceTest).",
+        "summary": "Update an existing service order for a SAT (SiteAcceptanceTest).",
         "description": "A ServiceOrder/sat (SiteAcceptanceTest) is a service order to perform a SiteAcceptanceTest for end-to-end acceptance testing. ",
         "consumes": [
           "application/json",
@@ -10970,7 +10970,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete a ServiceOrder/sat (SiteAcceptanceTest) based on ID.",
+        "summary": "Delete a service order for a SAT (SiteAcceptanceTest).",
         "description": "A ServiceOrder/sat (SiteAcceptanceTest) is a service order to perform a SiteAcceptanceTest for end-to-end acceptance testing.",
         "produces": [
           "application/json",
