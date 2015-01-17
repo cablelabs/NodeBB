@@ -3061,7 +3061,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new OrderItem.",
+        "summary": "Create an item in an order.",
         "description": "An OrderItem is one item in an order and is expressed in terms of a Product Offering or a Product.",
         "consumes": [
           "application/json",
@@ -3105,7 +3105,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find an OrderItem by ID.",
+        "summary": "Find an item in an order.",
         "description": "An OrderItem is one item in an order and is expressed in terms of a Product Offering or a Product.",
         "displayName": "Product OrderItem",
         "produces": [
@@ -3156,7 +3156,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing OrderItem.",
+        "summary": "Update an existing item in an order.",
         "description": "An OrderItem is one item in an order and is expressed in terms of a Product Offering or a Product.",
         "consumes": [
           "application/json",
@@ -3207,7 +3207,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete an OrderItem based on ID.",
+        "summary": "Delete an item in an order.",
         "description": "An OrderItem is one item in an order and is expressed in terms of a Product Offering or a Product.",
         "produces": [
           "application/json",
@@ -4782,7 +4782,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a Ticket.",
+        "summary": "Create a ticket.",
         "description": "A Ticket is a record containing the details of a single incident such as an interruption to a service or failure of a resource.",
         "consumes": [
           "application/json",
@@ -4818,7 +4818,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a Ticket by ID.",
+        "summary": "Find a ticket.",
         "description": "A Ticket is a record containing the details of a single incident such as an interruption to a service or failure of a resource.",
         "displayName": "Ticket",
         "produces": [
@@ -4861,7 +4861,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing Ticket.",
+        "summary": "Update an existing ticket.",
         "description": "A Ticket is a record containing the details of a single incident such as an interruption to a service or failure of a resource.",
         "consumes": [
           "application/json",
@@ -4904,7 +4904,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete a Ticket based on ID.",
+        "summary": "Delete a ticket.",
         "description": "A Ticket is a record containing the details of a single incident such as an interruption to a service or failure of a resource.",
         "produces": [
           "application/json",
