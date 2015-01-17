@@ -2449,7 +2449,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a ServiceOrderItem.",
+        "summary": "Create an item on a service order.",
         "description": "A ServiceOrderItem is a specific item within a ServiceOrder and is expressed in terms of a ServiceSpecification or a Service.",
         "consumes": [
           "application/json",
@@ -2485,7 +2485,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a ServiceOrderItem by ID.",
+        "summary": "Find an item on a service order.",
         "description": "A ServiceOrderItem is a specific item within a ServiceOrder and is expressed in terms of a ServiceSpecification or a Service.",
         "displayName": "Service  Order Item",
         "produces": [
@@ -2528,7 +2528,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing ServiceOrderItem.",
+        "summary": "Update an existing item on a service order.",
         "description": "A ServiceOrderItem is a specific item within a ServiceOrder and is expressed in terms of a ServiceSpecification or a Service.",
         "consumes": [
           "application/json",
@@ -2571,7 +2571,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete a ServiceOrderItem based on ID.",
+        "summary": "Delete an item on a service order.",
         "description": "A ServiceOrderItem is a specific item within a ServiceOrder and is expressed in terms of a ServiceSpecification or a Service.",
         "produces": [
           "application/json",
@@ -5241,7 +5241,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a ServiceRole.",
+        "summary": "Create a service role.",
         "description": "A ServiceRole defines a Service in terms of a set of roles that characterize the functionality of the Service.",
         "consumes": [
           "application/json",
@@ -5277,7 +5277,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a ServiceRole by ID.",
+        "summary": "Find a service role.",
         "description": "A ServiceRole defines a Service in terms of a set of roles that characterize the functionality of the Service.",
         "displayName": "Service Role",
         "produces": [
@@ -5320,7 +5320,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing ServiceRole.",
+        "summary": "Update an existing service role.",
         "description": "A ServiceRole defines a Service in terms of a set of roles that characterize the functionality of the Service.",
         "consumes": [
           "application/json",
@@ -5363,7 +5363,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete a ServiceRole based on ID.",
+        "summary": "Delete a service role.",
         "description": "A ServiceRole defines a Service in terms of a set of roles that characterize the functionality of the Service.",
         "produces": [
           "application/json",
@@ -5547,7 +5547,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new Ticket-Category.",
+        "summary": "Create a category of tickets.",
         "description": "A Ticket-Category is a category of tickets.",
         "consumes": [
           "application/json",
@@ -5591,7 +5591,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a Ticket-Category by ID.",
+        "summary": "Find a category of tickets.",
         "description": "A Ticket-Category is a category of tickets.",
         "displayName": "Ticket Category",
         "produces": [
@@ -5642,7 +5642,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing Ticket-Category.",
+        "summary": "Update an existing category of tickets.",
         "description": "A Ticket-Category is a category of tickets.",
         "consumes": [
           "application/json",
@@ -5701,7 +5701,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete a Ticket-Category based on ID.",
+        "summary": "Delete a category of tickets.",
         "description": "A Ticket-Category is a category of tickets.",
         "produces": [
           "application/json",
@@ -11154,7 +11154,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find the Ticket-Comments (a list of comments) for a ticket.",
+        "summary": "Find a list of comments for a ticket.",
         "description": "Ticket-Comments is a list of entries to the log of a Ticket.",
         "displayName": "Comment Collection",
         "produces": [
@@ -11197,7 +11197,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create Ticket-Comments (a list of comments) for a ticket.",
+        "summary": "Create a list of comments for a ticket.",
         "description": "Ticket-Comments is a list of entries to the log of a Ticket.",
         "description": "",
         "consumes": [
@@ -11242,7 +11242,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a Ticket-Comment by ID.",
+        "summary": "Find a comment on a ticket.",
         "description": "A Ticket-Comment is an entry to the log of a Ticket.",
         "displayName": "Comment",
         "produces": [
@@ -11293,7 +11293,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing Ticket-Comment.",
+        "summary": "Update an existing comment on a ticket.",
         "description": "A Ticket-Comment is an entry to the log of a Ticket.",
         "consumes": [
           "application/json",
@@ -11352,7 +11352,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete a Ticket-Comment based on ID.",
+        "summary": "Delete a comment on a ticket.",
         "description": "A Ticket-Comment is an entry to the log of a Ticket.",
         "produces": [
           "application/json",
@@ -12099,7 +12099,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find the Ticket-Contacts (list of contacts) for a Ticket.",
+        "summary": "Find a list of contacts for a ticket.",
         "description": "Ticket-Contacts is the list of contacts for a given ticket.",
         "displayName": "Ticket Contact Collection",
         "produces": [
@@ -12142,7 +12142,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create Ticket-Contacts (list of contacts) for a Ticket.",
+        "summary": "Create a list of contacts for a ticket.",
         "description": "Ticket-Contacts is the list of contacts for a given ticket.",
         "consumes": [
           "application/json",
@@ -12186,7 +12186,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a Ticket-Contact by ID.",
+        "summary": "Find a contact for a ticket.",
         "description": "A Ticket-Contact is a modifier of a specific ticket.",
         "displayName": "Modifier",
         "produces": [
@@ -12237,7 +12237,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing Ticket-Contact.",
+        "summary": "Update an existing contact for a ticket.",
         "description": "A Ticket-Contact is a modifier of a specific ticket.",
         "consumes": [
           "application/json",
@@ -12296,7 +12296,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete a Ticket-Contact based on ID.",
+        "summary": "Delete a contact for a ticket.",
         "description": "A Ticket-Contact is a modifier of a specific ticket.",
         "produces": [
           "application/json",
