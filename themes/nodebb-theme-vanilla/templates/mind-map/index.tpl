@@ -62,8 +62,8 @@
           <div class="arrow"></div>
           <div class="popover-title">Subsets <span class="glyphicon glyphicon-question-sign"></span></div>
           <div class="popover-content">
-            Subsets enable you to limit the scope of what you see.  Click on the pencil icon next to "Entity Subset" to create, delete, and reorder subsets.  To edit the which entites are in a subset, select the subset and then click the circular edit button that appears.
-            The edit icon will appear red to indicate that you are in edit mode.  Click the edit icon again to exit edit mode.  The subset only filters which entities are shown.  The graph still behaves as if all entities are present, so two entities in a subset can be related through entities that aren't in the subset.
+            Subsets enable you to limit the scope of what you see.  Click on the pencil icon next to "Entity Subset" to create, delete, and reorder subsets.  To edit which entites are in a subset, select the subset and then click the circular edit icon that appears.
+            The edit icon will turn red to show that you are in edit mode.  Click the edit icon again to exit edit mode.  Selecting a subset only filters which entities are shown.  The graph still behaves as if all entities are present, so two entities in a subset can be related through entities that aren't in the subset.
           </div>
         </div>
       </div>
@@ -93,7 +93,7 @@
           <div class="popover-content">
             <img src="/images/entity-open.jpg" alt="Entity">
             <span>
-              When you position your mouse over or touch an entity, it expands to show two icons.  Click on the 'i' to view a description of the icon.  Click on the arrows to leave the entity-map page and view the entity in the API documentation.  Click anywhere except for the two icons to select the entity and view related entities.
+              When you position your mouse over or touch an entity, it expands to show two icons.  Click on the 'i' to see the entity's description.  Click on the 'arrows' icon to leave the entity-map and navigate to that entity in the API documentation.  Click anywhere except for those two icons to select the entity and view related entities.
             </span>
           </div>
         </div>
