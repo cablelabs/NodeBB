@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>CIA Entities Map</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="secured/mind-map/secured/css/app-with-sets.css">
+    <link rel="stylesheet" type="text/css" href="secured/mind-map/secured/css/app.css">
 <!--</head>-->
 
 <!--<body>-->
 
 <!--<div id="container-fluid">-->
 
+<div class="entity-map-container">
+  <button class="btn btn-default toggle-help-btn">?</button>
   <div class="graph-settings" class="row">
     <div class="col-md-4" id="entity-sets">
       <div>
@@ -53,7 +55,63 @@
     </div>
   </div>
   <div id="graph"></div>
-<!--</div>-->
+  <div id="help-overlay">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="popover bottom" id="help-subsets">
+          <div class="arrow"></div>
+          <div class="popover-title">Subsets <span class="glyphicon glyphicon-question-sign"></span></div>
+          <div class="popover-content">
+            Subsets enable you to limit the scope of what you see.  Click on the pencil icon next to "Entity Subset" to create, delete, and reorder subsets.  To edit the which entites are in a subset, select the subset and then click the circular edit button that appears.
+            The edit icon will appear red to indicate that you are in edit mode.  Click the edit icon again to exit edit mode.  The subset only filters which entities are shown.  The graph still behaves as if all entities are present, so two entities in a subset can be related through entities that aren't in the subset.
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="popover bottom" id="help-search">
+          <div class="arrow"></div>
+          <div class="popover-title">Search <span class="glyphicon glyphicon-question-sign"></span></div>
+          <div class="popover-content">
+            Search will deselect all entities and show only entities whose name matches the text in the search field.  Click any entity in the search results.  Clicking the 'X' will remove search text and reset the entity-map.
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="popover bottom" id="help-hops">
+          <div class="arrow"></div>
+          <div class="popover-title">Hops Away <span class="glyphicon glyphicon-question-sign"></span></div>
+          <div class="popover-content">
+            'Hops Away' indicates how many hops it takes to get from one entity to another.  All "hops away" are bi-directional and calculated from the selected entity.  Entities that are directly related are 1 hop away.  2 hops away indicates that two entities share a "1 hop" relationship with a common entity.  3 hops away indicates that 2 entities are related through two different entities.  Select "1, 2, or 3" to limit which relationships will appear after selecting an entity.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="popover bottom" id="help-entity">
+          <div class="popover-title">Entity <span class="glyphicon glyphicon-question-sign"></span></div>
+          <div class="popover-content">
+            <img src="/images/entity-open.jpg" alt="Entity">
+            <span>
+              When you position your mouse over or touch an entity, it expands to show two icons.  Click on the 'i' to view a description of the icon.  Click on the arrows to leave the entity-map page and view the entity in the API documentation.  Click anywhere except for the two icons to select the entity and view related entities.
+            </span>
+          </div>
+        </div>
+      </div>
+      <!--
+      <div class="col-md-4">
+        <div class="popover bottom" id="help-video">
+          <div class="popover-title">Video</div>
+          <div class="popover-content">
+            For more detailed instructions on how to use the entity-map, please watch the 
+            <a href="#">Entity-Map Video Tutorial</a>.
+          </div>
+        </div>
+      </div>
+      -->
+    </div>
+  </div>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="set-manager" tabindex="-1" role="dialog" aria-labelledby="set-manager" aria-hidden="true">
@@ -89,8 +147,8 @@
 <script src="secured/mind-map/secured/js/jquery-ui.min.js"></script>
 <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>-->
 <script src="secured/mind-map/secured/js/dom-element.js"></script>
-<script src="secured/mind-map/secured/js/entity-graph-with-sets.js"></script>
-<script src="secured/mind-map/secured/js/app-with-sets.js"></script>
+<script src="secured/mind-map/secured/js/entity-graph.js"></script>
+<script src="secured/mind-map/secured/js/app.js"></script>git 
 
 <!--</body>-->
 <!--</html>-->
