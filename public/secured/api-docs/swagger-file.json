@@ -7935,7 +7935,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Create a ProductConfiguration.",
+        "summary": "Create a product configuration.",
         "description": "ProductConfiguration is the complete set of characteristics associated with a product in the catalog. Specifically, it is the parts of the product that are exposed to the customer and can be referenced during the ordering process. It also informs the requirements for service and resource ordering.",
         "consumes": [
           "application/json",
