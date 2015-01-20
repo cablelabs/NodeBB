@@ -285,7 +285,7 @@
         "tags": [
           "Common"
         ],
-        "summary": "Find a contact by ID.",
+        "summary": "Find a contact.",
         "description": "Contact is a PartyRole for a Party that acts as a specific type of contact, such as a billing contact.",
         "displayName": "Contact ",
         "produces": [
@@ -371,7 +371,7 @@
         "tags": [
           "Common"
         ],
-        "summary": "Delete a contact based on ID.",
+        "summary": "Delete a contact.",
         "description": "Contact is a PartyRole for a Party that acts as a specific type of contact, such as a billing contact.",
         "produces": [
           "application/json",
@@ -2944,7 +2944,7 @@
         "tags": [
           "Common"
         ],
-        "summary": "Find a fax number for a PartyRole by ID.",
+        "summary": "Find a fax number for a PartyRole.",
         "description": "FaxNumber is the fax number to use when contacting a given PartyRole. It is a type of ContactMedium.",
         "displayName": "Fax Number",
         "produces": [
@@ -3030,7 +3030,7 @@
         "tags": [
           "Common"
         ],
-        "summary": "Delete a fax number based on ID.",
+        "summary": "Delete a fax number.",
         "description": "FaxNumber is the fax number to use when contacting a given PartyRole. It is a type of ContactMedium.",
         "produces": [
           "application/json",
@@ -7008,7 +7008,7 @@
         "tags": [
           "Common"
         ],
-        "summary": "Find a postal contact for a PartyRole by ID.",
+        "summary": "Find a postal contact for a PartyRole.",
         "description": "PostalContact is the postal information to use when contacting a given PartyRole. It is a type of ContactMedium.",
         "displayName": "Postal Contact",
         "produces": [
@@ -7094,7 +7094,7 @@
         "tags": [
           "Common"
         ],
-        "summary": "Delete a postal contact based on ID.",
+        "summary": "Delete a postal contact.",
         "description": "PostalContact is the postal information to use when contacting a given PartyRole. It is a type of ContactMedium.",
         "produces": [
           "application/json",
@@ -10578,7 +10578,7 @@
         "tags": [
           "Common"
         ],
-        "summary": "Find a telephone number for a PartyRole by ID.",
+        "summary": "Find a telephone number for a PartyRole.",
         "description": "TelephoneNumber is the telephone number to use when contacting a given PartyRole. It is a type of ContactMedium.",
         "displayName": "Telephone  Number",
         "produces": [
@@ -10664,7 +10664,7 @@
         "tags": [
           "Common"
         ],
-        "summary": "Delete a telephone number for a PartyRole based on ID.",
+        "summary": "Delete a telephone number for a PartyRole.",
         "description": "TelephoneNumber is the telephone number to use when contacting a given PartyRole. It is a type of ContactMedium.",
         "produces": [
           "application/json",
@@ -13642,7 +13642,7 @@
         "tags": [
           "Common"
         ],
-        "summary": "Create an e-mail contact.",
+        "summary": "Create an e-mail contact for a PartyRole.",
         "description": "EmailContact is the e-mail address to use when contacting a given PartyRole. An eMailContact is a type of ContactMedium.",
         "consumes": [
           "application/json",
@@ -13678,7 +13678,7 @@
         "tags": [
           "Common"
         ],
-        "summary": "Find an e-mail contact by ID.",
+        "summary": "Find an e-mail contact for a PartyRole.",
         "description": "EmailContact is the e-mail address to use when contacting a given PartyRole. An eMailContact is a type of ContactMedium.",
         "displayName": "Email  Contact",
         "produces": [
@@ -13721,7 +13721,7 @@
         "tags": [
           "Common"
         ],
-        "summary": "Update an existing e-mail contact.",
+        "summary": "Update an existing e-mail contact for a PartyRole.",
         "description": "EmailContact is the e-mail address to use when contacting a given PartyRole. An eMailContact is a type of ContactMedium.",
         "consumes": [
           "application/json",
@@ -13764,7 +13764,7 @@
         "tags": [
           "Common"
         ],
-        "summary": "Delete an e-mail contact based on ID.",
+        "summary": "Delete an e-mail contact for a PartyRole.",
         "description": "EmailContact is the e-mail address to use when contacting a given PartyRole. An eMailContact is a type of ContactMedium.",
         "produces": [
           "application/json",
