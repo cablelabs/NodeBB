@@ -5901,7 +5901,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Create a ProductSpecification.",
+        "summary": "Create a product specification.",
         "description": "A ProductSpecification is a technical blueprint for a set of Products, defining their common portions. It specifies the invariant characteristics of a Product and describes it independently of the current existence of any instance of that Product.",
         "consumes": [
           "application/json",
@@ -5937,7 +5937,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find a ProductSpecification.",
+        "summary": "Find a product specification.",
         "description": "A ProductSpecification is a technical blueprint for a set of Products, defining their common portions. It specifies the invariant characteristics of a Product and describes it independently of the current existence of any instance of that Product.",
         "displayName": "Product  Specification",
         "produces": [
@@ -5980,7 +5980,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Update an existing ProductSpecification.",
+        "summary": "Update an existing product specification.",
         "description": "A ProductSpecification is a technical blueprint for a set of Products, defining their common portions. It specifies the invariant characteristics of a Product and describes it independently of the current existence of any instance of that Product.",
         "consumes": [
           "application/json",
@@ -6023,7 +6023,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Delete a ProductSpecification.",
+        "summary": "Delete a product specification.",
         "description": "A ProductSpecification is a technical blueprint for a set of Products, defining their common portions. It specifies the invariant characteristics of a Product and describes it independently of the current existence of any instance of that Product.",
         "produces": [
           "application/json",
@@ -7971,7 +7971,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find a ProductConfiguration.",
+        "summary": "Find a product configuration.",
         "description": "ProductConfiguration is the complete set of characteristics associated with a product in the catalog. Specifically, it is the parts of the product that are exposed to the customer and can be referenced during the ordering process. It also informs the requirements for service and resource ordering.",
         "displayName": "Product Configuration",
         "produces": [
@@ -8014,7 +8014,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Update an existing ProductConfiguration.",
+        "summary": "Update an existing product configuration.",
         "description": "ProductConfiguration is the complete set of characteristics associated with a product in the catalog. Specifically, it is the parts of the product that are exposed to the customer and can be referenced during the ordering process. It also informs the requirements for service and resource ordering.",
         "consumes": [
           "application/json",
@@ -8057,7 +8057,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Delete a ProductConfiguration.",
+        "summary": "Delete a product configuration.",
         "description": "ProductConfiguration is the complete set of characteristics associated with a product in the catalog. Specifically, it is the parts of the product that are exposed to the customer and can be referenced during the ordering process. It also informs the requirements for service and resource ordering.",
         "produces": [
           "application/json",
@@ -8859,7 +8859,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Create a ProductPrice.",
+        "summary": "Create a product price.",
         "description": "ProductPrice is the actual price paid by a Customer for a purchase or lease of a Product.",
         "consumes": [
           "application/json",
@@ -8895,7 +8895,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find a ProductPrice.",
+        "summary": "Find a product price.",
         "description": "ProductPrice is the actual price paid by a Customer for a purchase or lease of a Product.",
         "displayName": "Product Price",
         "produces": [
@@ -8938,7 +8938,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Update an existing ProductPrice.",
+        "summary": "Update an existing product price.",
         "description": "ProductPrice is the actual price paid by a Customer for a purchase or lease of a Product.",
         "consumes": [
           "application/json",
@@ -8981,7 +8981,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Delete a ProductPrice.",
+        "summary": "Delete a product price.",
         "description": "ProductPrice is the actual price paid by a Customer for a purchase or lease of a Product.",
         "produces": [
           "application/json",
@@ -11037,7 +11037,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find a product by ID.",
+        "summary": "Find a product.",
         "description": "A Product is the result of a ProductOffering being procured by a Customer or other Party. A Product is realized as one or more Services and/or Resources.",
         "displayName": "Product ",
         "produces": [
@@ -11123,7 +11123,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Delete a product based on ID.",
+        "summary": "Delete a product.",
         "description": "A Product is the result of a ProductOffering being procured by a Customer or other Party. A Product is realized as one or more Services and/or Resources.",
         "produces": [
           "application/json",
@@ -12877,7 +12877,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Create a ProductOffering.",
+        "summary": "Create a product offering.",
         "description": "A ProductOffering is the presentation of one or more ProductSpecifications for sale or lease. A ProductOffering may include a single ProductSpecification or may be a bundling of one or more other ProductOfferings.",
         "consumes": [
           "application/json",
@@ -12913,7 +12913,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find a ProductOffering.",
+        "summary": "Find a product offering.",
         "description": "A ProductOffering is the presentation of one or more ProductSpecifications for sale or lease. A ProductOffering may include a single ProductSpecification or may be a bundling of one or more other ProductOfferings.",
         "displayName": "Product Offering",
         "produces": [
@@ -12956,7 +12956,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Update an existing ProductOffering.",
+        "summary": "Update an existing product offering.",
         "description": "A ProductOffering is the presentation of one or more ProductSpecifications for sale or lease. A ProductOffering may include a single ProductSpecification or may be a bundling of one or more other ProductOfferings.",
         "consumes": [
           "application/json",
@@ -12999,7 +12999,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Delete a ProductOffering.",
+        "summary": "Delete a product offering.",
         "description": "A ProductOffering is the presentation of one or more ProductSpecifications for sale or lease. A ProductOffering may include a single ProductSpecification or may be a bundling of one or more other ProductOfferings.",
         "produces": [
           "application/json",
