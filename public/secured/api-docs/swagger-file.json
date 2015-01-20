@@ -2791,7 +2791,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find an Ethernet Private Line (EPL) product by ID.",
+        "summary": "Find an Ethernet Private Line (EPL) product.",
         "description": "A Product for Ethernet Private Line (EPL). EPL provides a point-to-point ethernet virtual connection (EVC) between a pair of dedicated user network interfaces (UNIs).",
         "displayName": "EPL Product",
         "produces": [
@@ -2877,7 +2877,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Delete an Ethernet Private Line (EPL) product based on ID.",
+        "summary": "Delete an Ethernet Private Line (EPL) product.",
         "description": "A Product for Ethernet Private Line (EPL). EPL provides a point-to-point ethernet virtual connection (EVC) between a pair of dedicated user network interfaces (UNIs).",
         "produces": [
           "application/json",
@@ -5937,7 +5937,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find a ProductSpecification by ID.",
+        "summary": "Find a ProductSpecification.",
         "description": "A ProductSpecification is a technical blueprint for a set of Products, defining their common portions. It specifies the invariant characteristics of a Product and describes it independently of the current existence of any instance of that Product.",
         "displayName": "Product  Specification",
         "produces": [
@@ -6023,7 +6023,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Delete a ProductSpecification based on ID.",
+        "summary": "Delete a ProductSpecification.",
         "description": "A ProductSpecification is a technical blueprint for a set of Products, defining their common portions. It specifies the invariant characteristics of a Product and describes it independently of the current existence of any instance of that Product.",
         "produces": [
           "application/json",
@@ -7314,7 +7314,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find an Ethernet Virtual Connection (EVC) product by ID.",
+        "summary": "Find an Ethernet Virtual Connection (EVC) product.",
         "description": "A Product for an Ethernet Virtual Connection (EVC). EVC is an association between two or more user network interfaces that identifies a point-to-point or multipoint-to-multipoint path within the service provider network. Each endpoint of an EVC is defined as a user-to-network interface (UNI). There are three types of EVCs: point-to-point, multipoint and rooted EVCs.",
         "displayName": "EVC Product",
         "produces": [
@@ -7400,7 +7400,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Delete an Ethernet Virtual Connection (EVC) product based on ID.",
+        "summary": "Delete an Ethernet Virtual Connection (EVC) product.",
         "description": "A Product for an Ethernet Virtual Connection (EVC). EVC is an association between two or more user network interfaces that identifies a point-to-point or multipoint-to-multipoint path within the service provider network. Each endpoint of an EVC is defined as a user-to-network interface (UNI). There are three types of EVCs: point-to-point, multipoint and rooted EVCs.",
         "produces": [
           "application/json",
@@ -7467,7 +7467,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find a User Network Interface (UNI) product by ID.",
+        "summary": "Find a User Network Interface (UNI) product.",
         "description": "A Product for a User Network Interface (UNI). UNI serves as the point of demarcation that specifies where the service provider's (operator's) responsibility ends and the customer's responsibility begins. The UNI defines the means for the subscriber and the service provider to agree on which Ethernet service(s) will be offered and the characteristics of this service.",
         "displayName": "UNI Product",
         "produces": [
@@ -7553,7 +7553,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Delete a User Network Interface (UNI) product based on ID.",
+        "summary": "Delete a User Network Interface (UNI) product.",
         "description": "A Product for a User Network Interface (UNI). UNI serves as the point of demarcation that specifies where the service provider's (operator's) responsibility ends and the customer's responsibility begins. The UNI defines the means for the subscriber and the service provider to agree on which Ethernet service(s) will be offered and the characteristics of this service.",
         "produces": [
           "application/json",
@@ -7971,7 +7971,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find a ProductConfiguration by ID.",
+        "summary": "Find a ProductConfiguration.",
         "description": "ProductConfiguration is the complete set of characteristics associated with a product in the catalog. Specifically, it is the parts of the product that are exposed to the customer and can be referenced during the ordering process. It also informs the requirements for service and resource ordering.",
         "displayName": "Product Configuration",
         "produces": [
@@ -8057,7 +8057,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Delete a ProductConfiguration based on ID.",
+        "summary": "Delete a ProductConfiguration.",
         "description": "ProductConfiguration is the complete set of characteristics associated with a product in the catalog. Specifically, it is the parts of the product that are exposed to the customer and can be referenced during the ordering process. It also informs the requirements for service and resource ordering.",
         "produces": [
           "application/json",
@@ -8895,7 +8895,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find a ProductPrice by ID.",
+        "summary": "Find a ProductPrice.",
         "description": "ProductPrice is the actual price paid by a Customer for a purchase or lease of a Product.",
         "displayName": "Product Price",
         "produces": [
@@ -8981,7 +8981,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Delete a ProductPrice based on ID.",
+        "summary": "Delete a ProductPrice.",
         "description": "ProductPrice is the actual price paid by a Customer for a purchase or lease of a Product.",
         "produces": [
           "application/json",
@@ -12913,7 +12913,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find a ProductOffering by ID.",
+        "summary": "Find a ProductOffering.",
         "description": "A ProductOffering is the presentation of one or more ProductSpecifications for sale or lease. A ProductOffering may include a single ProductSpecification or may be a bundling of one or more other ProductOfferings.",
         "displayName": "Product Offering",
         "produces": [
@@ -12999,7 +12999,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Delete a ProductOffering based on ID.",
+        "summary": "Delete a ProductOffering.",
         "description": "A ProductOffering is the presentation of one or more ProductSpecifications for sale or lease. A ProductOffering may include a single ProductSpecification or may be a bundling of one or more other ProductOfferings.",
         "produces": [
           "application/json",
