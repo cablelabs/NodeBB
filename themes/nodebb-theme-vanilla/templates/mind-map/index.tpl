@@ -148,7 +148,7 @@
 <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>-->
 <script src="secured/mind-map/secured/js/dom-element.js"></script>
 <script src="secured/mind-map/secured/js/entity-graph.js"></script>
-<script src="secured/mind-map/secured/js/app.js"></script>git 
+<script src="secured/mind-map/secured/js/app.js"></script>
 
 <!--</body>-->
 <!--</html>-->
