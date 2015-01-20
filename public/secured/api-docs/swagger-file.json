@@ -2179,7 +2179,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Find a user credential by ID.",
+        "summary": "Find a user credential.",
         "description": "UserCredential is a combination of user ID and password used to authenticate a user for account management or access to provider services.",
         "displayName": "User  Credential",
         "produces": [
@@ -2265,7 +2265,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Delete a user credential based on ID.",
+        "summary": "Delete a user credential.",
         "description": "UserCredential is a combination of user ID and password used to authenticate a user for account management or access to provider services.",
         "produces": [
           "application/json",
@@ -4206,7 +4206,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Find a preference by ID.",
+        "summary": "Find a preference.",
         "description": "A Preference is a favored interaction in a particular area of control, such as parental restriction or e-mail marketing, for a specific PartyRole, Resource, CustomerAccount, or Service.",
         "displayName": "Preference ",
         "produces": [
@@ -4292,7 +4292,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Delete a preference based on ID.",
+        "summary": "Delete a preference.",
         "description": "A Preference is a favored interaction in a particular area of control, such as parental restriction or e-mail marketing, for a specific PartyRole, Resource, CustomerAccount, or Service.",
         "produces": [
           "application/json",
@@ -4971,7 +4971,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Find a payment method by ID.",
+        "summary": "Find a payment method.",
         "description": "PaymentMethod is the way in which a customer provides payment, such as by cash, credit, or transfer.",
         "displayName": "Payment Method",
         "produces": [
@@ -5057,7 +5057,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Delete a payment method based on ID.",
+        "summary": "Delete a payment method.",
         "description": "PaymentMethod is the way in which a customer provides payment, such as by cash, credit, or transfer.",
         "produces": [
           "application/json",
@@ -5124,7 +5124,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Find a customer by ID.",
+        "summary": "Find a customer.",
         "description": "A person or organization that buys products and services from the service provider. A Customer is a Party playing a PartyRole.",
         "displayName": "Customer ",
         "produces": [
@@ -5210,7 +5210,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Delete a customer based on ID.",
+        "summary": "Delete a customer.",
         "description": "A person or organization that buys products and services from the service provider. A Customer is a Party playing a PartyRole.",
         "produces": [
           "application/json",
@@ -6396,7 +6396,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Find a user by ID.",
+        "summary": "Find a user.",
         "description": "A user is a single person or organization that uses products and services. User is a type of PartyRole.",
         "displayName": "User ",
         "produces": [
@@ -6482,7 +6482,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Delete a user based on ID.",
+        "summary": "Delete a user.",
         "description": "A user is a single person or organization that uses products and services. User is a type of PartyRole.",
         "produces": [
           "application/json",
@@ -6549,7 +6549,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Find a user group by ID.",
+        "summary": "Find a user group.",
         "description": "UserGroup is a collection of users. It is a type of PartyRole and can be used independently of the User entity.",
         "displayName": "User Group",
         "produces": [
@@ -6635,7 +6635,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Delete a user group based on ID.",
+        "summary": "Delete a user group.",
         "description": "UserGroup is a collection of users. It is a type of PartyRole and can be used independently of the User entity.",
         "produces": [
           "application/json",
@@ -6702,7 +6702,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Find an individual by ID.",
+        "summary": "Find an individual.",
         "description": "An Individual is a single person. Individual is a type of Party.",
         "displayName": "Individual ",
         "produces": [
@@ -6788,7 +6788,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Delete an individual based on ID.",
+        "summary": "Delete an individual.",
         "description": "An Individual is a single person. Individual is a type of Party.",
         "produces": [
           "application/json",
@@ -6855,7 +6855,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Find an organization by ID.",
+        "summary": "Find an organization.",
         "description": "An Organization is a group of people identified by shared interests or purpose, such as a business or a department within a business. Organization is a type of Party.",
         "displayName": "Organization ",
         "produces": [
@@ -6941,7 +6941,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Delete an organization based on ID.",
+        "summary": "Delete an organization.",
         "description": "An Organization is a group of people identified by shared interests or purpose, such as a business or a department within a business. Organization is a type of Party.",
         "produces": [
           "application/json",
@@ -7818,7 +7818,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Find an account by ID.",
+        "summary": "Find an account.",
         "description": "Account defines the relationship between the customer and provider with respect to billing, payments, and other financial transactions. The customer account is also used to grant entitlement tokens based on services purchased.",
         "displayName": "Account ",
         "produces": [
@@ -7904,7 +7904,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Delete an account based on ID.",
+        "summary": "Delete an account.",
         "description": "Account defines the relationship between the customer and provider with respect to billing, payments, and other financial transactions. The customer account is also used to grant entitlement tokens based on services purchased.",
         "produces": [
           "application/json",
@@ -9048,7 +9048,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Find a customer quote item by ID.",
+        "summary": "Find a customer quote item.",
         "description": "A price estimate (quote) or presentation for sale (offer) of product offerings to a Party playing the PartyRole of Customer.",
         "displayName": "Customer QuoteItem",
         "produces": [
@@ -9134,7 +9134,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Delete a customer quote item based on ID.",
+        "summary": "Delete a customer quote item.",
         "description": "A price estimate (quote) or presentation for sale (offer) of product offerings to a Party playing the PartyRole of Customer.",
         "produces": [
           "application/json",
@@ -10272,7 +10272,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Find a payment plan by ID.",
+        "summary": "Find a payment plan.",
         "description": "PaymentPlan defines a plan for customer payment and is associated with a CustomerAccount.",
         "displayName": "Payment Plan",
         "produces": [
@@ -10358,7 +10358,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Delete a payment plan based on ID.",
+        "summary": "Delete a payment plan.",
         "description": "PaymentPlan defines a plan for customer payment and is associated with a CustomerAccount.",
         "produces": [
           "application/json",
@@ -10425,7 +10425,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Find a system contact by ID.",
+        "summary": "Find a system contact.",
         "description": "SystemContact is a type of ContactMedium that provides a means of contact for a specific PartyRole that is not defined by other types of ContactMedium; for example, notification by instant message or trouble ticket generation and auto-assignment.",
         "displayName": "System  Contact",
         "produces": [
@@ -10511,7 +10511,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Delete a system contact based on ID.",
+        "summary": "Delete a system contact.",
         "description": "SystemContact is a type of ContactMedium that provides a means of contact for a specific PartyRole that is not defined by other types of ContactMedium; for example, notification by instant message or trouble ticket generation and auto-assignment.",
         "produces": [
           "application/json",
@@ -12607,7 +12607,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Find a customer payment by ID.",
+        "summary": "Find a customer payment.",
         "description": "A CustomerPayment is the transfer of money from a Customer for products or services.",
         "displayName": "Customer Payment",
         "produces": [
@@ -12693,7 +12693,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Delete a customer payment based on ID.",
+        "summary": "Delete a customer payment.",
         "description": "A CustomerPayment is the transfer of money from a Customer for products or services.",
         "produces": [
           "application/json",
