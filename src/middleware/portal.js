@@ -34,28 +34,28 @@ middleware.isAdmin = function(req, res, next) {
     });
 };
 
-middleware.buildHeader = function(req, res, next) {
-    res.locals.renderHeader = true;
-    async.parallel({
-        config: function(next) {
-            controllers.api.getConfig(req, res, next);
-        },
-        footer: function(next) {
-            app.render('footer', {}, next);
-        }
-    }, function(err, results) {
-        if (err) {
-            return next(err);
-        }
-
-        res.locals.config = results.config;
-
-        translator.translate(results.footer, results.config.defaultLang, function(parsedTemplate) {
-            res.locals.footer = parsedTemplate;
-            next();
-        });
-    });
-};
+//middleware.buildHeader = function(req, res, next) {
+//    res.locals.renderHeader = true;
+//    async.parallel({
+//        config: function(next) {
+//            controllers.api.getConfig(req, res, next);
+//        },
+//        footer: function(next) {
+//            app.render('footer', {}, next);
+//        }
+//    }, function(err, results) {
+//        if (err) {
+//            return next(err);
+//        }
+//
+//        res.locals.config = results.config;
+//
+//        translator.translate(results.footer, results.config.defaultLang, function(parsedTemplate) {
+//            res.locals.footer = parsedTemplate;
+//            next();
+//        });
+//    });
+//};
 
 middleware.renderHeader = function(req, res, callback) {
 

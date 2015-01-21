@@ -11,7 +11,7 @@ var nconf = require('nconf'),
 	metaRoutes = require('./meta'),
 	apiRoutes = require('./api'),
 	adminRoutes = require('./admin'),
-    mindmap = require('./mindmap'),
+    custom = require('./custom'),
 	feedRoutes = require('./feeds'),
 	pluginRoutes = require('./plugins'),
 	authRoutes = require('./authentication');
@@ -147,7 +147,7 @@ module.exports = function(app, middleware) {
 	pluginRoutes(router, middleware, controllers);
 
 	// Mindmap routes
-	mindmap(router, middleware, controllers);
+	custom(router, middleware, controllers);
 
 	/**
 	* Every view has an associated API route.
