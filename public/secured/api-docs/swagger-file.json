@@ -285,7 +285,7 @@
         "tags": [
           "Common"
         ],
-        "summary": "Find a contact by ID.",
+        "summary": "Find a contact.",
         "description": "Contact is a PartyRole for a Party that acts as a specific type of contact, such as a billing contact.",
         "displayName": "Contact ",
         "produces": [
@@ -371,7 +371,7 @@
         "tags": [
           "Common"
         ],
-        "summary": "Delete a contact based on ID.",
+        "summary": "Delete a contact.",
         "description": "Contact is a PartyRole for a Party that acts as a specific type of contact, such as a billing contact.",
         "produces": [
           "application/json",
@@ -2026,7 +2026,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find an order by ID.",
+        "summary": "Find an order.",
         "description": "An Order represents an order that would typically originate at an end user.",
         "displayName": "Order",
         "produces": [
@@ -2112,7 +2112,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete an order based on ID.",
+        "summary": "Delete an order.",
         "description": "An Order represents an order that would typically originate at an end user.",
         "produces": [
           "application/json",
@@ -2179,7 +2179,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Find a user credential by ID.",
+        "summary": "Find a user credential.",
         "description": "UserCredential is a combination of user ID and password used to authenticate a user for account management or access to provider services.",
         "displayName": "User  Credential",
         "produces": [
@@ -2265,7 +2265,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Delete a user credential based on ID.",
+        "summary": "Delete a user credential.",
         "description": "UserCredential is a combination of user ID and password used to authenticate a user for account management or access to provider services.",
         "produces": [
           "application/json",
@@ -2449,7 +2449,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a ServiceOrderItem.",
+        "summary": "Create an item on a service order.",
         "description": "A ServiceOrderItem is a specific item within a ServiceOrder and is expressed in terms of a ServiceSpecification or a Service.",
         "consumes": [
           "application/json",
@@ -2485,7 +2485,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a ServiceOrderItem by ID.",
+        "summary": "Find an item on a service order.",
         "description": "A ServiceOrderItem is a specific item within a ServiceOrder and is expressed in terms of a ServiceSpecification or a Service.",
         "displayName": "Service  Order Item",
         "produces": [
@@ -2528,7 +2528,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing ServiceOrderItem.",
+        "summary": "Update an existing item on a service order.",
         "description": "A ServiceOrderItem is a specific item within a ServiceOrder and is expressed in terms of a ServiceSpecification or a Service.",
         "consumes": [
           "application/json",
@@ -2571,7 +2571,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete a ServiceOrderItem based on ID.",
+        "summary": "Delete an item on a service order.",
         "description": "A ServiceOrderItem is a specific item within a ServiceOrder and is expressed in terms of a ServiceSpecification or a Service.",
         "produces": [
           "application/json",
@@ -2791,7 +2791,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find an Ethernet Private Line (EPL) product by ID.",
+        "summary": "Find an Ethernet Private Line (EPL) product.",
         "description": "A Product for Ethernet Private Line (EPL). EPL provides a point-to-point ethernet virtual connection (EVC) between a pair of dedicated user network interfaces (UNIs).",
         "displayName": "EPL Product",
         "produces": [
@@ -2877,7 +2877,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Delete an Ethernet Private Line (EPL) product based on ID.",
+        "summary": "Delete an Ethernet Private Line (EPL) product.",
         "description": "A Product for Ethernet Private Line (EPL). EPL provides a point-to-point ethernet virtual connection (EVC) between a pair of dedicated user network interfaces (UNIs).",
         "produces": [
           "application/json",
@@ -2944,7 +2944,7 @@
         "tags": [
           "Common"
         ],
-        "summary": "Find a fax number for a PartyRole by ID.",
+        "summary": "Find a fax number for a PartyRole.",
         "description": "FaxNumber is the fax number to use when contacting a given PartyRole. It is a type of ContactMedium.",
         "displayName": "Fax Number",
         "produces": [
@@ -3030,7 +3030,7 @@
         "tags": [
           "Common"
         ],
-        "summary": "Delete a fax number based on ID.",
+        "summary": "Delete a fax number.",
         "description": "FaxNumber is the fax number to use when contacting a given PartyRole. It is a type of ContactMedium.",
         "produces": [
           "application/json",
@@ -3061,7 +3061,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new OrderItem.",
+        "summary": "Create an item in an order.",
         "description": "An OrderItem is one item in an order and is expressed in terms of a Product Offering or a Product.",
         "consumes": [
           "application/json",
@@ -3105,7 +3105,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find an OrderItem by ID.",
+        "summary": "Find an item in an order.",
         "description": "An OrderItem is one item in an order and is expressed in terms of a Product Offering or a Product.",
         "displayName": "Product OrderItem",
         "produces": [
@@ -3156,7 +3156,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing OrderItem.",
+        "summary": "Update an existing item in an order.",
         "description": "An OrderItem is one item in an order and is expressed in terms of a Product Offering or a Product.",
         "consumes": [
           "application/json",
@@ -3207,7 +3207,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete an OrderItem based on ID.",
+        "summary": "Delete an item in an order.",
         "description": "An OrderItem is one item in an order and is expressed in terms of a Product Offering or a Product.",
         "produces": [
           "application/json",
@@ -3399,7 +3399,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a Ticket-AssignedGroup.",
+        "summary": "Create a group assigned to a ticket.",
         "description": "A Ticket-AssignedGroup is a group assigned to a Ticket, such as a particular organization (e.g., Network Services).",
         "consumes": [
           "application/json",
@@ -3441,7 +3441,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a Ticket-AssignedGroup by ID.",
+        "summary": "Find a group assigned to a ticket.",
         "description": "A Ticket-AssignedGroup is a group assigned to a Ticket, such as a particular organization (e.g., Network Services).",
         "displayName": "Ticket AssignedGroup",
         "produces": [
@@ -3484,7 +3484,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing Ticket-AssignedGroup.",
+        "summary": "Update an existing group assigned to a ticket.",
         "description": "A Ticket-AssignedGroup is a group assigned to a Ticket, such as a particular organization (e.g., Network Services).",
         "consumes": [
           "application/json",
@@ -3527,7 +3527,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete a Ticket-AssignedGroup based on ID.",
+        "summary": "Delete a group assigned to a ticket.",
         "description": "A Ticket-AssignedGroup is a group assigned to a Ticket, such as a particular organization (e.g., Network Services).",
         "produces": [
           "application/json",
@@ -3711,7 +3711,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a ResourceOrder.",
+        "summary": "Create a resource order.",
         "description": "A ResourceOrder lists the resources needed to provision the services in a ServiceOrder.",
         "consumes": [
           "application/json",
@@ -3747,7 +3747,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a ResourceOrder by ID.",
+        "summary": "Find a resource order.",
         "description": "A ResourceOrder lists the resources needed to provision the services in a ServiceOrder.",
         "displayName": "Resource Order",
         "produces": [
@@ -3790,7 +3790,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing ResourceOrder.",
+        "summary": "Update an existing resource order.",
         "description": "A ResourceOrder lists the resources needed to provision the services in a ServiceOrder.",
         "consumes": [
           "application/json",
@@ -3833,7 +3833,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete a ResourceOrder based on ID.",
+        "summary": "Delete a resource order.",
         "description": "A ResourceOrder lists the resources needed to provision the services in a ServiceOrder.",
         "produces": [
           "application/json",
@@ -3864,7 +3864,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a PaymentItem.",
+        "summary": "Create a payment item.",
         "description": "A PaymentItem is the application of a CustomerPayment.",
         "consumes": [
           "application/json",
@@ -3900,7 +3900,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a PaymentItem by ID.",
+        "summary": "Find a payment item.",
         "description": "A PaymentItem is the application of a CustomerPayment.",
         "displayName": "Payment Item",
         "produces": [
@@ -3943,7 +3943,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing PaymentItem.",
+        "summary": "Update an existing payment item.",
         "description": "A PaymentItem is the application of a CustomerPayment.",
         "consumes": [
           "application/json",
@@ -3986,7 +3986,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete a PaymentItem based on ID.",
+        "summary": "Delete a payment item.",
         "description": "A PaymentItem is the application of a CustomerPayment.",
         "produces": [
           "application/json",
@@ -4017,7 +4017,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a Document.",
+        "summary": "Create a document.",
         "description": "A Document refers to a physical document such as a contract, manual, or e-mail.",
         "consumes": [
           "application/json",
@@ -4053,7 +4053,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a Document by ID.",
+        "summary": "Find a document.",
         "description": "A Document refers to a physical document such as a contract, manual, or e-mail.",
         "displayName": "Document ",
         "produces": [
@@ -4096,7 +4096,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing Document.",
+        "summary": "Update an existing document.",
         "description": "A Document refers to a physical document such as a contract, manual, or e-mail.",
         "consumes": [
           "application/json",
@@ -4139,7 +4139,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete a Document based on ID.",
+        "summary": "Delete a document.",
         "description": "A Document refers to a physical document such as a contract, manual, or e-mail.",
         "produces": [
           "application/json",
@@ -4206,7 +4206,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Find a preference by ID.",
+        "summary": "Find a preference.",
         "description": "A Preference is a favored interaction in a particular area of control, such as parental restriction or e-mail marketing, for a specific PartyRole, Resource, CustomerAccount, or Service.",
         "displayName": "Preference ",
         "produces": [
@@ -4292,7 +4292,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Delete a preference based on ID.",
+        "summary": "Delete a preference.",
         "description": "A Preference is a favored interaction in a particular area of control, such as parental restriction or e-mail marketing, for a specific PartyRole, Resource, CustomerAccount, or Service.",
         "produces": [
           "application/json",
@@ -4629,7 +4629,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create an OrderDesign.",
+        "summary": "Create an order design.",
         "description": "An OrderDesign is a change to an order from the as-built order.",
         "consumes": [
           "application/json",
@@ -4665,7 +4665,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find an OrderDesign by ID.",
+        "summary": "Find an order design.",
         "description": "An OrderDesign is a change to an order from the as-built order.",
         "displayName": "Order Design",
         "produces": [
@@ -4708,7 +4708,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing OrderDesign.",
+        "summary": "Update an existing order design.",
         "description": "An OrderDesign is a change to an order from the as-built order.",
         "consumes": [
           "application/json",
@@ -4751,7 +4751,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete an OrderDesign based on ID.",
+        "summary": "Delete an order design.",
         "description": "An OrderDesign is a change to an order from the as-built order.",
         "produces": [
           "application/json",
@@ -4782,7 +4782,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a Ticket.",
+        "summary": "Create a ticket.",
         "description": "A Ticket is a record containing the details of a single incident such as an interruption to a service or failure of a resource.",
         "consumes": [
           "application/json",
@@ -4818,7 +4818,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a Ticket by ID.",
+        "summary": "Find a ticket.",
         "description": "A Ticket is a record containing the details of a single incident such as an interruption to a service or failure of a resource.",
         "displayName": "Ticket",
         "produces": [
@@ -4861,7 +4861,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing Ticket.",
+        "summary": "Update an existing ticket.",
         "description": "A Ticket is a record containing the details of a single incident such as an interruption to a service or failure of a resource.",
         "consumes": [
           "application/json",
@@ -4904,7 +4904,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete a Ticket based on ID.",
+        "summary": "Delete a ticket.",
         "description": "A Ticket is a record containing the details of a single incident such as an interruption to a service or failure of a resource.",
         "produces": [
           "application/json",
@@ -4971,7 +4971,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Find a payment method by ID.",
+        "summary": "Find a payment method.",
         "description": "PaymentMethod is the way in which a customer provides payment, such as by cash, credit, or transfer.",
         "displayName": "Payment Method",
         "produces": [
@@ -5057,7 +5057,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Delete a payment method based on ID.",
+        "summary": "Delete a payment method.",
         "description": "PaymentMethod is the way in which a customer provides payment, such as by cash, credit, or transfer.",
         "produces": [
           "application/json",
@@ -5124,7 +5124,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Find a customer by ID.",
+        "summary": "Find a customer.",
         "description": "A person or organization that buys products and services from the service provider. A Customer is a Party playing a PartyRole.",
         "displayName": "Customer ",
         "produces": [
@@ -5210,7 +5210,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Delete a customer based on ID.",
+        "summary": "Delete a customer.",
         "description": "A person or organization that buys products and services from the service provider. A Customer is a Party playing a PartyRole.",
         "produces": [
           "application/json",
@@ -5241,7 +5241,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a ServiceRole.",
+        "summary": "Create a service role.",
         "description": "A ServiceRole defines a Service in terms of a set of roles that characterize the functionality of the Service.",
         "consumes": [
           "application/json",
@@ -5277,7 +5277,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a ServiceRole by ID.",
+        "summary": "Find a service role.",
         "description": "A ServiceRole defines a Service in terms of a set of roles that characterize the functionality of the Service.",
         "displayName": "Service Role",
         "produces": [
@@ -5320,7 +5320,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing ServiceRole.",
+        "summary": "Update an existing service role.",
         "description": "A ServiceRole defines a Service in terms of a set of roles that characterize the functionality of the Service.",
         "consumes": [
           "application/json",
@@ -5363,7 +5363,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete a ServiceRole based on ID.",
+        "summary": "Delete a service role.",
         "description": "A ServiceRole defines a Service in terms of a set of roles that characterize the functionality of the Service.",
         "produces": [
           "application/json",
@@ -5547,7 +5547,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a new Ticket-Category.",
+        "summary": "Create a category of tickets.",
         "description": "A Ticket-Category is a category of tickets.",
         "consumes": [
           "application/json",
@@ -5591,7 +5591,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a Ticket-Category by ID.",
+        "summary": "Find a category of tickets.",
         "description": "A Ticket-Category is a category of tickets.",
         "displayName": "Ticket Category",
         "produces": [
@@ -5642,7 +5642,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing Ticket-Category.",
+        "summary": "Update an existing category of tickets.",
         "description": "A Ticket-Category is a category of tickets.",
         "consumes": [
           "application/json",
@@ -5701,7 +5701,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete a Ticket-Category based on ID.",
+        "summary": "Delete a category of tickets.",
         "description": "A Ticket-Category is a category of tickets.",
         "produces": [
           "application/json",
@@ -5901,7 +5901,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Create a ProductSpecification.",
+        "summary": "Create a product specification.",
         "description": "A ProductSpecification is a technical blueprint for a set of Products, defining their common portions. It specifies the invariant characteristics of a Product and describes it independently of the current existence of any instance of that Product.",
         "consumes": [
           "application/json",
@@ -5937,7 +5937,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find a ProductSpecification by ID.",
+        "summary": "Find a product specification.",
         "description": "A ProductSpecification is a technical blueprint for a set of Products, defining their common portions. It specifies the invariant characteristics of a Product and describes it independently of the current existence of any instance of that Product.",
         "displayName": "Product  Specification",
         "produces": [
@@ -5980,7 +5980,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Update an existing ProductSpecification.",
+        "summary": "Update an existing product specification.",
         "description": "A ProductSpecification is a technical blueprint for a set of Products, defining their common portions. It specifies the invariant characteristics of a Product and describes it independently of the current existence of any instance of that Product.",
         "consumes": [
           "application/json",
@@ -6023,7 +6023,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Delete a ProductSpecification based on ID.",
+        "summary": "Delete a product specification.",
         "description": "A ProductSpecification is a technical blueprint for a set of Products, defining their common portions. It specifies the invariant characteristics of a Product and describes it independently of the current existence of any instance of that Product.",
         "produces": [
           "application/json",
@@ -6396,7 +6396,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Find a user by ID.",
+        "summary": "Find a user.",
         "description": "A user is a single person or organization that uses products and services. User is a type of PartyRole.",
         "displayName": "User ",
         "produces": [
@@ -6482,7 +6482,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Delete a user based on ID.",
+        "summary": "Delete a user.",
         "description": "A user is a single person or organization that uses products and services. User is a type of PartyRole.",
         "produces": [
           "application/json",
@@ -6549,7 +6549,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Find a user group by ID.",
+        "summary": "Find a user group.",
         "description": "UserGroup is a collection of users. It is a type of PartyRole and can be used independently of the User entity.",
         "displayName": "User Group",
         "produces": [
@@ -6635,7 +6635,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Delete a user group based on ID.",
+        "summary": "Delete a user group.",
         "description": "UserGroup is a collection of users. It is a type of PartyRole and can be used independently of the User entity.",
         "produces": [
           "application/json",
@@ -6702,7 +6702,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Find an individual by ID.",
+        "summary": "Find an individual.",
         "description": "An Individual is a single person. Individual is a type of Party.",
         "displayName": "Individual ",
         "produces": [
@@ -6788,7 +6788,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Delete an individual based on ID.",
+        "summary": "Delete an individual.",
         "description": "An Individual is a single person. Individual is a type of Party.",
         "produces": [
           "application/json",
@@ -6855,7 +6855,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Find an organization by ID.",
+        "summary": "Find an organization.",
         "description": "An Organization is a group of people identified by shared interests or purpose, such as a business or a department within a business. Organization is a type of Party.",
         "displayName": "Organization ",
         "produces": [
@@ -6941,7 +6941,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Delete an organization based on ID.",
+        "summary": "Delete an organization.",
         "description": "An Organization is a group of people identified by shared interests or purpose, such as a business or a department within a business. Organization is a type of Party.",
         "produces": [
           "application/json",
@@ -7008,7 +7008,7 @@
         "tags": [
           "Common"
         ],
-        "summary": "Find a postal contact for a PartyRole by ID.",
+        "summary": "Find a postal contact for a PartyRole.",
         "description": "PostalContact is the postal information to use when contacting a given PartyRole. It is a type of ContactMedium.",
         "displayName": "Postal Contact",
         "produces": [
@@ -7094,7 +7094,7 @@
         "tags": [
           "Common"
         ],
-        "summary": "Delete a postal contact based on ID.",
+        "summary": "Delete a postal contact.",
         "description": "PostalContact is the postal information to use when contacting a given PartyRole. It is a type of ContactMedium.",
         "produces": [
           "application/json",
@@ -7314,7 +7314,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find an Ethernet Virtual Connection (EVC) product by ID.",
+        "summary": "Find an Ethernet Virtual Connection (EVC) product.",
         "description": "A Product for an Ethernet Virtual Connection (EVC). EVC is an association between two or more user network interfaces that identifies a point-to-point or multipoint-to-multipoint path within the service provider network. Each endpoint of an EVC is defined as a user-to-network interface (UNI). There are three types of EVCs: point-to-point, multipoint and rooted EVCs.",
         "displayName": "EVC Product",
         "produces": [
@@ -7400,7 +7400,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Delete an Ethernet Virtual Connection (EVC) product based on ID.",
+        "summary": "Delete an Ethernet Virtual Connection (EVC) product.",
         "description": "A Product for an Ethernet Virtual Connection (EVC). EVC is an association between two or more user network interfaces that identifies a point-to-point or multipoint-to-multipoint path within the service provider network. Each endpoint of an EVC is defined as a user-to-network interface (UNI). There are three types of EVCs: point-to-point, multipoint and rooted EVCs.",
         "produces": [
           "application/json",
@@ -7432,7 +7432,7 @@
           "Product"
         ],
         "summary": "Create a User Network Interface (UNI) product.",
-        "description": "User Network Interface (UNI) is a service used as part of an Ethernet Private Line (EPL) product. A UNI serves as the point of demarcation that specifies where the service provider's (operator's) responsibility ends and the customer's responsibility begins. The UNI defines the means for the subscriber and the service provider to agree on which Ethernet service(s) will be offered and the characteristics of this service.",
+        "description": "A Product for a User Network Interface (UNI). UNI serves as the point of demarcation that specifies where the service provider's (operator's) responsibility ends and the customer's responsibility begins. The UNI defines the means for the subscriber and the service provider to agree on which Ethernet service(s) will be offered and the characteristics of this service.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -7467,8 +7467,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find a User Network Interface (UNI) product by ID.",
-        "description": "User Network Interface (UNI) is a service used as part of an Ethernet Private Line (EPL) product. A UNI serves as the point of demarcation that specifies where the service provider's (operator's) responsibility ends and the customer's responsibility begins. The UNI defines the means for the subscriber and the service provider to agree on which Ethernet service(s) will be offered and the characteristics of this service.",
+        "summary": "Find a User Network Interface (UNI) product.",
+        "description": "A Product for a User Network Interface (UNI). UNI serves as the point of demarcation that specifies where the service provider's (operator's) responsibility ends and the customer's responsibility begins. The UNI defines the means for the subscriber and the service provider to agree on which Ethernet service(s) will be offered and the characteristics of this service.",
         "displayName": "UNI Product",
         "produces": [
           "application/json",
@@ -7511,7 +7511,7 @@
           "Product"
         ],
         "summary": "Update an existing User Network Interface (UNI) product.",
-        "description": "User Network Interface (UNI) is a service used as part of an Ethernet Private Line (EPL) product. A UNI serves as the point of demarcation that specifies where the service provider's (operator's) responsibility ends and the customer's responsibility begins. The UNI defines the means for the subscriber and the service provider to agree on which Ethernet service(s) will be offered and the characteristics of this service.",
+        "description": "A Product for a User Network Interface (UNI). UNI serves as the point of demarcation that specifies where the service provider's (operator's) responsibility ends and the customer's responsibility begins. The UNI defines the means for the subscriber and the service provider to agree on which Ethernet service(s) will be offered and the characteristics of this service.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -7553,8 +7553,8 @@
         "tags": [
           "Product"
         ],
-        "summary": "Delete a User Network Interface (UNI) product based on ID.",
-        "description": "User Network Interface (UNI) is a service used as part of an Ethernet Private Line (EPL) product. A UNI serves as the point of demarcation that specifies where the service provider's (operator's) responsibility ends and the customer's responsibility begins. The UNI defines the means for the subscriber and the service provider to agree on which Ethernet service(s) will be offered and the characteristics of this service.",
+        "summary": "Delete a User Network Interface (UNI) product.",
+        "description": "A Product for a User Network Interface (UNI). UNI serves as the point of demarcation that specifies where the service provider's (operator's) responsibility ends and the customer's responsibility begins. The UNI defines the means for the subscriber and the service provider to agree on which Ethernet service(s) will be offered and the characteristics of this service.",
         "produces": [
           "application/json",
           "application/xml"
@@ -7818,7 +7818,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Find an account by ID.",
+        "summary": "Find an account.",
         "description": "Account defines the relationship between the customer and provider with respect to billing, payments, and other financial transactions. The customer account is also used to grant entitlement tokens based on services purchased.",
         "displayName": "Account ",
         "produces": [
@@ -7904,7 +7904,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Delete an account based on ID.",
+        "summary": "Delete an account.",
         "description": "Account defines the relationship between the customer and provider with respect to billing, payments, and other financial transactions. The customer account is also used to grant entitlement tokens based on services purchased.",
         "produces": [
           "application/json",
@@ -7935,7 +7935,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Create a ProductConfiguration.",
+        "summary": "Create a product configuration.",
         "description": "ProductConfiguration is the complete set of characteristics associated with a product in the catalog. Specifically, it is the parts of the product that are exposed to the customer and can be referenced during the ordering process. It also informs the requirements for service and resource ordering.",
         "consumes": [
           "application/json",
@@ -7971,7 +7971,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find a ProductConfiguration by ID.",
+        "summary": "Find a product configuration.",
         "description": "ProductConfiguration is the complete set of characteristics associated with a product in the catalog. Specifically, it is the parts of the product that are exposed to the customer and can be referenced during the ordering process. It also informs the requirements for service and resource ordering.",
         "displayName": "Product Configuration",
         "produces": [
@@ -8014,7 +8014,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Update an existing ProductConfiguration.",
+        "summary": "Update an existing product configuration.",
         "description": "ProductConfiguration is the complete set of characteristics associated with a product in the catalog. Specifically, it is the parts of the product that are exposed to the customer and can be referenced during the ordering process. It also informs the requirements for service and resource ordering.",
         "consumes": [
           "application/json",
@@ -8057,7 +8057,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Delete a ProductConfiguration based on ID.",
+        "summary": "Delete a product configuration.",
         "description": "ProductConfiguration is the complete set of characteristics associated with a product in the catalog. Specifically, it is the parts of the product that are exposed to the customer and can be referenced during the ordering process. It also informs the requirements for service and resource ordering.",
         "produces": [
           "application/json",
@@ -8859,7 +8859,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Create a ProductPrice.",
+        "summary": "Create a product price.",
         "description": "ProductPrice is the actual price paid by a Customer for a purchase or lease of a Product.",
         "consumes": [
           "application/json",
@@ -8895,7 +8895,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find a ProductPrice by ID.",
+        "summary": "Find a product price.",
         "description": "ProductPrice is the actual price paid by a Customer for a purchase or lease of a Product.",
         "displayName": "Product Price",
         "produces": [
@@ -8938,7 +8938,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Update an existing ProductPrice.",
+        "summary": "Update an existing product price.",
         "description": "ProductPrice is the actual price paid by a Customer for a purchase or lease of a Product.",
         "consumes": [
           "application/json",
@@ -8981,7 +8981,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Delete a ProductPrice based on ID.",
+        "summary": "Delete a product price.",
         "description": "ProductPrice is the actual price paid by a Customer for a purchase or lease of a Product.",
         "produces": [
           "application/json",
@@ -9048,7 +9048,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Find a customer quote item by ID.",
+        "summary": "Find a customer quote item.",
         "description": "A price estimate (quote) or presentation for sale (offer) of product offerings to a Party playing the PartyRole of Customer.",
         "displayName": "Customer QuoteItem",
         "produces": [
@@ -9134,7 +9134,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Delete a customer quote item based on ID.",
+        "summary": "Delete a customer quote item.",
         "description": "A price estimate (quote) or presentation for sale (offer) of product offerings to a Party playing the PartyRole of Customer.",
         "produces": [
           "application/json",
@@ -10083,7 +10083,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a CustomerOrderItem.",
+        "summary": "Create an item for a customer order.",
         "description": "A CustomerOrderItem is a specific item within a CustomerOrder and is expressed in terms of a Product Offering or a Product.",
         "consumes": [
           "application/json",
@@ -10119,7 +10119,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a CustomerOrderItem by ID.",
+        "summary": "Find an item for a customer order.",
         "description": "A CustomerOrderItem is a specific item within a CustomerOrder and is expressed in terms of a Product Offering or a Product.",
         "displayName": "Customer OrderItem",
         "produces": [
@@ -10162,7 +10162,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing CustomerOrderItem.",
+        "summary": "Update an existing item for a customer order.",
         "description": "A CustomerOrderItem is a specific item within a CustomerOrder and is expressed in terms of a Product Offering or a Product.",
         "consumes": [
           "application/json",
@@ -10205,7 +10205,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete a CustomerOrderItem based on ID.",
+        "summary": "Delete an item on a customer order.",
         "description": "A CustomerOrderItem is a specific item within a CustomerOrder and is expressed in terms of a Product Offering or a Product.",
         "produces": [
           "application/json",
@@ -10272,7 +10272,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Find a payment plan by ID.",
+        "summary": "Find a payment plan.",
         "description": "PaymentPlan defines a plan for customer payment and is associated with a CustomerAccount.",
         "displayName": "Payment Plan",
         "produces": [
@@ -10358,7 +10358,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Delete a payment plan based on ID.",
+        "summary": "Delete a payment plan.",
         "description": "PaymentPlan defines a plan for customer payment and is associated with a CustomerAccount.",
         "produces": [
           "application/json",
@@ -10425,7 +10425,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Find a system contact by ID.",
+        "summary": "Find a system contact.",
         "description": "SystemContact is a type of ContactMedium that provides a means of contact for a specific PartyRole that is not defined by other types of ContactMedium; for example, notification by instant message or trouble ticket generation and auto-assignment.",
         "displayName": "System  Contact",
         "produces": [
@@ -10511,7 +10511,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Delete a system contact based on ID.",
+        "summary": "Delete a system contact.",
         "description": "SystemContact is a type of ContactMedium that provides a means of contact for a specific PartyRole that is not defined by other types of ContactMedium; for example, notification by instant message or trouble ticket generation and auto-assignment.",
         "produces": [
           "application/json",
@@ -10578,7 +10578,7 @@
         "tags": [
           "Common"
         ],
-        "summary": "Find a telephone number for a PartyRole by ID.",
+        "summary": "Find a telephone number for a PartyRole.",
         "description": "TelephoneNumber is the telephone number to use when contacting a given PartyRole. It is a type of ContactMedium.",
         "displayName": "Telephone  Number",
         "produces": [
@@ -10664,7 +10664,7 @@
         "tags": [
           "Common"
         ],
-        "summary": "Delete a telephone number for a PartyRole based on ID.",
+        "summary": "Delete a telephone number for a PartyRole.",
         "description": "TelephoneNumber is the telephone number to use when contacting a given PartyRole. It is a type of ContactMedium.",
         "produces": [
           "application/json",
@@ -10695,7 +10695,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a ServiceOrder.",
+        "summary": "Create a service order.",
         "description": "A ServiceOrder lists the services through which the products in a CustomerOrder are realized.",
         "consumes": [
           "application/json",
@@ -10731,7 +10731,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a ServiceOrder by ID.",
+        "summary": "Find a service order.",
         "description": "A ServiceOrder lists the services through which the products in a CustomerOrder are realized.",
         "displayName": "Service  Order",
         "produces": [
@@ -10774,7 +10774,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing ServiceOrder.",
+        "summary": "Update an existing service order.",
         "description": "A ServiceOrder lists the services through which the products in a CustomerOrder are realized.",
         "consumes": [
           "application/json",
@@ -10817,7 +10817,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete a ServiceOrder based on ID.",
+        "summary": "Delete a service order.",
         "description": "A ServiceOrder lists the services through which the products in a CustomerOrder are realized.",
         "produces": [
           "application/json",
@@ -10848,7 +10848,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a ServiceOrder/sat (SiteAcceptanceTest).",
+        "summary": "Create a service order for a SAT (SiteAcceptanceTest).",
         "description": "A ServiceOrder/sat (SiteAcceptanceTest) is a service order to perform a SiteAcceptanceTest for end-to-end acceptance testing. ",
         "consumes": [
           "application/json",
@@ -10884,7 +10884,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a ServiceOrder/sat (SiteAcceptanceTest) by ID.",
+        "summary": "Find a service order for a SAT (SiteAcceptanceTest).",
         "description": "A ServiceOrder/sat (SiteAcceptanceTest) is a service order to perform a SiteAcceptanceTest for end-to-end acceptance testing.",
         "displayName": "SAT",
         "produces": [
@@ -10927,7 +10927,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing ServiceOrder/sat (SiteAcceptanceTest).",
+        "summary": "Update an existing service order for a SAT (SiteAcceptanceTest).",
         "description": "A ServiceOrder/sat (SiteAcceptanceTest) is a service order to perform a SiteAcceptanceTest for end-to-end acceptance testing. ",
         "consumes": [
           "application/json",
@@ -10970,7 +10970,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete a ServiceOrder/sat (SiteAcceptanceTest) based on ID.",
+        "summary": "Delete a service order for a SAT (SiteAcceptanceTest).",
         "description": "A ServiceOrder/sat (SiteAcceptanceTest) is a service order to perform a SiteAcceptanceTest for end-to-end acceptance testing.",
         "produces": [
           "application/json",
@@ -11037,7 +11037,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find a product by ID.",
+        "summary": "Find a product.",
         "description": "A Product is the result of a ProductOffering being procured by a Customer or other Party. A Product is realized as one or more Services and/or Resources.",
         "displayName": "Product ",
         "produces": [
@@ -11123,7 +11123,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Delete a product based on ID.",
+        "summary": "Delete a product.",
         "description": "A Product is the result of a ProductOffering being procured by a Customer or other Party. A Product is realized as one or more Services and/or Resources.",
         "produces": [
           "application/json",
@@ -11154,7 +11154,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find the Ticket-Comments (a list of comments) for a ticket.",
+        "summary": "Find a list of comments for a ticket.",
         "description": "Ticket-Comments is a list of entries to the log of a Ticket.",
         "displayName": "Comment Collection",
         "produces": [
@@ -11197,7 +11197,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create Ticket-Comments (a list of comments) for a ticket.",
+        "summary": "Create a list of comments for a ticket.",
         "description": "Ticket-Comments is a list of entries to the log of a Ticket.",
         "description": "",
         "consumes": [
@@ -11242,7 +11242,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a Ticket-Comment by ID.",
+        "summary": "Find a comment on a ticket.",
         "description": "A Ticket-Comment is an entry to the log of a Ticket.",
         "displayName": "Comment",
         "produces": [
@@ -11293,7 +11293,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing Ticket-Comment.",
+        "summary": "Update an existing comment on a ticket.",
         "description": "A Ticket-Comment is an entry to the log of a Ticket.",
         "consumes": [
           "application/json",
@@ -11352,7 +11352,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete a Ticket-Comment based on ID.",
+        "summary": "Delete a comment on a ticket.",
         "description": "A Ticket-Comment is an entry to the log of a Ticket.",
         "produces": [
           "application/json",
@@ -12099,7 +12099,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find the Ticket-Contacts (list of contacts) for a Ticket.",
+        "summary": "Find a list of contacts for a ticket.",
         "description": "Ticket-Contacts is the list of contacts for a given ticket.",
         "displayName": "Ticket Contact Collection",
         "produces": [
@@ -12142,7 +12142,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create Ticket-Contacts (list of contacts) for a Ticket.",
+        "summary": "Create a list of contacts for a ticket.",
         "description": "Ticket-Contacts is the list of contacts for a given ticket.",
         "consumes": [
           "application/json",
@@ -12186,7 +12186,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a Ticket-Contact by ID.",
+        "summary": "Find a contact for a ticket.",
         "description": "A Ticket-Contact is a modifier of a specific ticket.",
         "displayName": "Modifier",
         "produces": [
@@ -12237,7 +12237,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing Ticket-Contact.",
+        "summary": "Update an existing contact for a ticket.",
         "description": "A Ticket-Contact is a modifier of a specific ticket.",
         "consumes": [
           "application/json",
@@ -12296,7 +12296,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete a Ticket-Contact based on ID.",
+        "summary": "Delete a contact for a ticket.",
         "description": "A Ticket-Contact is a modifier of a specific ticket.",
         "produces": [
           "application/json",
@@ -12607,7 +12607,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Find a customer payment by ID.",
+        "summary": "Find a customer payment.",
         "description": "A CustomerPayment is the transfer of money from a Customer for products or services.",
         "displayName": "Customer Payment",
         "produces": [
@@ -12693,7 +12693,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Delete a customer payment based on ID.",
+        "summary": "Delete a customer payment.",
         "description": "A CustomerPayment is the transfer of money from a Customer for products or services.",
         "produces": [
           "application/json",
@@ -12724,7 +12724,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a CustomerQuote.",
+        "summary": "Create a customer quote.",
         "description": "A CustomerQuote is a price estimate (quote) or a presentation for sale (offer) of product offerings to a PartyRole such as a Customer.",
         "consumes": [
           "application/json",
@@ -12760,7 +12760,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Find a CustomerQuote by ID.",
+        "summary": "Find a customer quote.",
         "description": "A CustomerQuote is a price estimate (quote) or a presentation for sale (offer) of product offerings to a PartyRole such as a Customer.",
         "displayName": "Customer Quote",
         "produces": [
@@ -12803,7 +12803,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Update an existing CustomerQuote.",
+        "summary": "Update an existing customer quote.",
         "description": "A CustomerQuote is a price estimate (quote) or a presentation for sale (offer) of product offerings to a PartyRole such as a Customer.",
         "consumes": [
           "application/json",
@@ -12846,7 +12846,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Delete a CustomerQuote based on ID.",
+        "summary": "Delete a customer quote.",
         "description": "A CustomerQuote is a price estimate (quote) or a presentation for sale (offer) of product offerings to a PartyRole such as a Customer.",
         "produces": [
           "application/json",
@@ -12877,7 +12877,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Create a ProductOffering.",
+        "summary": "Create a product offering.",
         "description": "A ProductOffering is the presentation of one or more ProductSpecifications for sale or lease. A ProductOffering may include a single ProductSpecification or may be a bundling of one or more other ProductOfferings.",
         "consumes": [
           "application/json",
@@ -12913,7 +12913,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Find a ProductOffering by ID.",
+        "summary": "Find a product offering.",
         "description": "A ProductOffering is the presentation of one or more ProductSpecifications for sale or lease. A ProductOffering may include a single ProductSpecification or may be a bundling of one or more other ProductOfferings.",
         "displayName": "Product Offering",
         "produces": [
@@ -12956,7 +12956,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Update an existing ProductOffering.",
+        "summary": "Update an existing product offering.",
         "description": "A ProductOffering is the presentation of one or more ProductSpecifications for sale or lease. A ProductOffering may include a single ProductSpecification or may be a bundling of one or more other ProductOfferings.",
         "consumes": [
           "application/json",
@@ -12999,7 +12999,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Delete a ProductOffering based on ID.",
+        "summary": "Delete a product offering.",
         "description": "A ProductOffering is the presentation of one or more ProductSpecifications for sale or lease. A ProductOffering may include a single ProductSpecification or may be a bundling of one or more other ProductOfferings.",
         "produces": [
           "application/json",
@@ -13336,7 +13336,7 @@
         "tags": [
           "Interaction"
         ],
-        "summary": "Create a CustomerBill.",
+        "summary": "Create a customer bill.",
         "description": "A CustomerBill is the total amount due from a CustomerAccount for all products during a billing period.",
         "consumes": [
           "application/json",
@@ -13642,7 +13642,7 @@
         "tags": [
           "Common"
         ],
-        "summary": "Create an e-mail contact.",
+        "summary": "Create an e-mail contact for a PartyRole.",
         "description": "EmailContact is the e-mail address to use when contacting a given PartyRole. An eMailContact is a type of ContactMedium.",
         "consumes": [
           "application/json",
@@ -13678,7 +13678,7 @@
         "tags": [
           "Common"
         ],
-        "summary": "Find an e-mail contact by ID.",
+        "summary": "Find an e-mail contact for a PartyRole.",
         "description": "EmailContact is the e-mail address to use when contacting a given PartyRole. An eMailContact is a type of ContactMedium.",
         "displayName": "Email  Contact",
         "produces": [
@@ -13721,7 +13721,7 @@
         "tags": [
           "Common"
         ],
-        "summary": "Update an existing e-mail contact.",
+        "summary": "Update an existing e-mail contact for a PartyRole.",
         "description": "EmailContact is the e-mail address to use when contacting a given PartyRole. An eMailContact is a type of ContactMedium.",
         "consumes": [
           "application/json",
@@ -13764,7 +13764,7 @@
         "tags": [
           "Common"
         ],
-        "summary": "Delete an e-mail contact based on ID.",
+        "summary": "Delete an e-mail contact for a PartyRole.",
         "description": "EmailContact is the e-mail address to use when contacting a given PartyRole. An eMailContact is a type of ContactMedium.",
         "produces": [
           "application/json",

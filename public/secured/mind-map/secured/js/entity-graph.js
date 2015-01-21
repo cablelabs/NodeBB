@@ -12,7 +12,7 @@ var EntityGraph = (function (window, document, DomElement, undefined) {
 var swaggerUriBase;
 
 
-function create (data, elementID) {
+function create (data, elementID, callback) {
     swaggerUriBase = data.swaggerUriBase;
     var graph = new Graph({
         elem: document.getElementById(elementID),
@@ -20,7 +20,7 @@ function create (data, elementID) {
     });
     //setup bootstrap popover component
     $('[data-toggle="popover"]').popover();
-    return graph;
+    callback(graph);
 }
 
 
@@ -48,12 +48,7 @@ Graph.prototype.init = function() {
         }
     });
 
-    this.depth = localStorage.getItem('entityMapDepth') || 1;
-
-    var selectedEntityName = localStorage.getItem('entityMapSelected');
-    if (selectedEntityName) {
-        this.broadcast('selectEntity', selectedEntityName);
-    }
+    this.depth = 1;
 };
 
 Graph.prototype.onEmit = function(event, data) {
@@ -86,10 +81,15 @@ Graph.prototype.search = function(term) {
     this.broadcast('search', term);
 };
 
+Graph.prototype.selectEntity = function (name) {
+    if (typeof name === 'string') {
+        this.broadcast('selectEntity', name);
+    }
+};
+
 Graph.prototype.setDepth = function(depth) {
     this.broadcast('reset');
     this.depth = depth;
-    localStorage.entityMapDepth = depth;
 
     if (this.selectedEntity) {
         this.selectedEntity.toggle('selected', true);
@@ -103,7 +103,7 @@ Graph.prototype.getDepth = function () {
 
 Graph.prototype.onReset = function (data) {
     this.selectedEntity = null;
-    localStorage.removeItem('entityMapSelected');
+    window.localStorage.removeItem('selected_entity_name');
     this.broadcast('reset', data);
 };
 
@@ -114,7 +114,7 @@ Graph.prototype.onDepth = function (data) {
         data.graphDepth = this.depth;
         if (data.entity.depth === 0) {
             this.selectedEntity = data.entity;
-            localStorage.setItem('entityMapSelected', data.entity.name);
+            window.localStorage.setItem('selected_entity_name', data.entity.name);
         }
         this.broadcast('depth', data);
     }
