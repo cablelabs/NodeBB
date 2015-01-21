@@ -295,8 +295,9 @@ opacity: 0 {
   left: 0;
   top: 0;
   height: 100%;
-  background: rgba(255,255,255,0.7);
-  padding: 0 15px;
+  background: rgba(0,40,60,0.8);
+  padding: 15px 30px;
+  border: 4px solid #434a51;
 }
 
 #help-overlay .popover  {
@@ -311,8 +312,15 @@ opacity: 0 {
 }
 
 #help-overlay .popover-title {
-  color: #fff;
-  border-bottom: none;
+  background: #98bcdc;
+  color: #000;
+  border-bottom-color: #98bcdc;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+
+#help-overlay .arrow:after {
+  border-bottom-color: #8cbce4;
 }
 
 #help-overlay .popover-title:hover {
@@ -324,7 +332,8 @@ opacity: 0 {
 }
 
 #help-overlay .popover-content {
-  border: 2px solid #000;
+  border: 4px solid #8cbce4;
+  border-top: none;
   overflow: hidden;
 }
 
@@ -347,9 +356,15 @@ opacity: 0 {
 #help-video { left: 400px; top: 400px;}
 
 @media screen and (min-width: 991px) {
-  #help-subsets { left: 33px; top: 80px; }
-  #help-search { left: 33px; top: 80px; }
-  #help-hops { left: 10px; top: 80px; }
+  #help-subsets { left: 20px; top: 80px; }
+  #help-search { left: 20px; top: 80px; }
+  #help-hops { left: 25px; top: 80px; }
+}
+
+@media screen and (min-width: 1100px) {
+  #help-subsets { left: 50px; top: 80px; }
+  #help-search { left: 50px; top: 80px; }
+  #help-hops { left: 25px; top: 80px; }
   #help-entity { left: 33px; top: 300px;}
   #help-video { left: 33px; top: 300px;}
 }
