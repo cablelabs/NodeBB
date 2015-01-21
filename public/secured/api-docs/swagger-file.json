@@ -12188,7 +12188,7 @@
         ],
         "summary": "Find a contact for a ticket.",
         "description": "A Ticket-Contact is a modifier of a specific ticket.",
-        "displayName": "Modifier",
+        "displayName": "Ticket Contact",
         "produces": [
           "application/json",
           "application/xml"
@@ -12424,7 +12424,7 @@
         ],
         "summary": "Find a location for a ticket.",
         "description": "The location of some kind of incident recorded on a ticket, such as a service outage or a the location of a resource.",
-        "displayName": "Modifier",
+        "displayName": "Ticket Location",
         "produces": [
           "application/json",
           "application/xml"
