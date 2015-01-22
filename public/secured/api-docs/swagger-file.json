@@ -5,7 +5,7 @@
     "version": "0.0.1",
     "title": "Cable API"
   },
-  "host": "localhost:8093/cable-api",
+  "host": "cable-api.herokuapp.com",
   "basePath": "/api-docs",
   "paths": {
     "/ticket/{t-id}/statusentry/{id}": {
