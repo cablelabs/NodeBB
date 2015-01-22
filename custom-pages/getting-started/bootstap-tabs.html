@@ -337,7 +337,6 @@
 
         <!-- API ENTITY MAP TAB -->
         <div class="tab-pane" id="entity-map">
-          <div class="row clearfix">
             <div class="col-sm-1 col-md-2">
                 <img class="icon" src="../../public/images/getting-started/entity-map-icon.png" />
             </div>
@@ -363,7 +362,6 @@
                 </div>
               </div>
             </div>
-          </div>
         </div>
 
         <!-- COMMUNITY FORUMS TAB -->
@@ -397,9 +395,10 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
-  $('#guideline-tabs a').click(function (e) {
-    e.preventDefault()
-    $(this).tab('show')
+  $('#guideline-tabs a').on('click', function (e) {
+    'use strict';
+    e.preventDefault();
+    $(this).tab('show');
   });
 </script>
 
