@@ -103,7 +103,7 @@
         <div class="popover bottom" id="help-video">
           <div class="popover-title">Video</div>
           <div class="popover-content">
-            For more detailed instructions on how to use the entity-map, please watch the 
+            For more detailed instructions on how to use the entity-map, please watch the
             <a href="#">Entity-Map Video Tutorial</a>.
           </div>
         </div>

@@ -10,6 +10,7 @@ var async = require('async'),
     meta = require('../meta'),
     db = require('../database'),
     events = require('../events'),
+    categories = require('../categories'),
     languages = require('../languages'),
     plugins = require('../plugins'),
     widgets = require('../widgets'),
@@ -67,13 +68,68 @@ customController.getpath = function(req, res, next) {
         if (err) {
             return next(err);
         }
-        res.render('mind-map/index', data);
+        res.render('mind-map/index', result);
     });
 };
 
 customController.home = function(req, res, next) {
-    async.waterfall([
-        function (next) {
+    async.parallel({
+        header: function (next) {
+            res.locals.metaTags = [{
+                name: "title",
+                content: meta.config.title || 'CableLabs Forums'
+            }, {
+                name: "description",
+                content: meta.config.description || ''
+            }, {
+                property: 'og:title',
+                content: 'Index | ' + (meta.config.title || 'CableLabs Forums')
+            }, {
+                property: 'og:type',
+                content: 'website'
+            }];
+
+            if(meta.config['brand:logo']) {
+                res.locals.metaTags.push({
+                    property: 'og:image',
+                    content: meta.config['brand:logo']
+                });
+            }
+
+            next(null);
+        },
+        categories: function (next) {
+            var uid = req.user ? req.user.uid : 0;
+            categories.getCategoriesByPrivilege(uid, 'find', function (err, categoryData) {
+                if (err) {
+                    return next(err);
+                }
+                var childCategories = [];
+
+                for(var i=categoryData.length - 1; i>=0; --i) {
+
+                    if (Array.isArray(categoryData[i].children) && categoryData[i].children.length) {
+                        childCategories.push.apply(childCategories, categoryData[i].children);
+                    }
+
+                    if (categoryData[i].parent && categoryData[i].parent.cid) {
+                        categoryData.splice(i, 1);
+                    }
+                }
+
+                async.parallel([
+                    function(next) {
+                        categories.getRecentTopicReplies(categoryData, uid, next);
+                    },
+                    function(next) {
+                        categories.getRecentTopicReplies(childCategories, uid, next);
+                    }
+                ], function(err) {
+                    next(err, categoryData);
+                });
+            });
+        },
+        refresh: function (next) {
             // Refreshing link.json for mind-map
             var linkparser = require('../controllers/mind-map/linkParser');
             linkparser.init(function(err){
@@ -83,18 +139,79 @@ customController.home = function(req, res, next) {
                     winston.info("MIND MAP:: Refreshed links.json file");
                 }
             });
-            next();
+            next(null);
         }
-    ], function (err, result) {
+    }, function (err, data) {
         if (err) {
             return next(err);
         }
-        res.render('mind-map/index');
+        res.render('custom/entity-map', data);
     });
 };
 
 customController.documentation = function(req, res, next) {
-    res.render('mind-map/documentation');
+    async.parallel({
+        header: function (next) {
+            res.locals.metaTags = [{
+                name: "title",
+                content: meta.config.title || 'CableLabs Forums'
+            }, {
+                name: "description",
+                content: meta.config.description || ''
+            }, {
+                property: 'og:title',
+                content: 'Index | ' + (meta.config.title || 'CableLabs Forums')
+            }, {
+                property: 'og:type',
+                content: 'website'
+            }];
+
+            if(meta.config['brand:logo']) {
+                res.locals.metaTags.push({
+                    property: 'og:image',
+                    content: meta.config['brand:logo']
+                });
+            }
+
+            next(null);
+        },
+        categories: function (next) {
+            var uid = req.user ? req.user.uid : 0;
+            categories.getCategoriesByPrivilege(uid, 'find', function (err, categoryData) {
+                if (err) {
+                    return next(err);
+                }
+                var childCategories = [];
+
+                for(var i=categoryData.length - 1; i>=0; --i) {
+
+                    if (Array.isArray(categoryData[i].children) && categoryData[i].children.length) {
+                        childCategories.push.apply(childCategories, categoryData[i].children);
+                    }
+
+                    if (categoryData[i].parent && categoryData[i].parent.cid) {
+                        categoryData.splice(i, 1);
+                    }
+                }
+
+                async.parallel([
+                    function(next) {
+                        categories.getRecentTopicReplies(categoryData, uid, next);
+                    },
+                    function(next) {
+                        categories.getRecentTopicReplies(childCategories, uid, next);
+                    }
+                ], function(err) {
+                    next(err, categoryData);
+                });
+            });
+        }
+    }, function (err, data) {
+        if (err) {
+            return next(err);
+        }
+        res.render('custom/documentation', data);
+    });
 };
 
 module.exports = customController;

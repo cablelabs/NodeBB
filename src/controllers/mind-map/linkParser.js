@@ -46,7 +46,8 @@ function filterEndpointGet(body, callback) {
 //it contains some uri info and a paths array that holds the endPoint profiles
 function buildEndpointProfiles (body, pathNames, callback) {
 	var result = {
-		apiUriBase: 'http://' + body.host + body.basePath,
+		//apiUriBase: 'http://' + body.host + body.basePath,
+		apiUriBase: 'http://' + body.host,
 		swaggerUriBase: config.swaggerUriBase,
 		paths: []
 	}
