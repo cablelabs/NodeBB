@@ -156,8 +156,10 @@
 	<!-- <div class="container">
 		<div class="row clearfix">
 			<div class="col-md-12 column"> -->
-				<nav class="navbar navbar-inverse navbar-fixed-top header" role="navigation" id="header-menu"> -->
-					<!-- IMPORT partials/portal-menu.tpl -->
+				<nav class="navbar navbar-inverse navbar-fixed-top header" role="navigation" id="header-menu">
+					<div class="container-fluid">
+						<!-- IMPORT partials/portal-menu.tpl -->
+					</div>
 				</nav>
 			<!-- </div>
 		</div>
@@ -165,4 +167,5 @@
 
 
 	<div class="container-fluid parent-container" id="content">
-	<!-- IMPORT partials/noscript/warning.tpl -->
+	  <!-- IMPORT partials/noscript/warning.tpl -->
+	</div>
