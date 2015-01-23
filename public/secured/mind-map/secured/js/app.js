@@ -39,14 +39,17 @@
         sort: $('#entity-set-sort-list'),
         edit: $('#edit-set-btn').hide(),
         add: function (set) {
+            console.log("Came to add set.");
             sets.data.unshift(set);
             sets.render();
             //FIX: make API call to add set
+            user_update();
         },
         remove: function (index) {
             sets.data.splice(index, 1);
             sets.render();
             //FIX: make API call to remove set
+            user_update();
         },
         assign: function (data) {
             sets.data = data;
