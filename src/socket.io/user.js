@@ -139,6 +139,28 @@ SocketUser.updateProfile = function(socket, data, callback) {
 	});
 };
 
+SocketUser.getProfile = function(socket, data, callback) {
+	if(!data || !data.uid) {
+		return callback(new Error('[[error:invalid-data]]'));
+	}
+
+	if(socket.uid === parseInt(data.uid, 10)) {
+		return user.updateProfile(socket.uid, data, callback);
+	}
+
+	user.isAdministrator(socket.uid, function(err, isAdmin) {
+		if(err) {
+			return callback(err);
+		}
+
+		if(!isAdmin) {
+			return callback(new Error('[[error:no-privileges]]'));
+		}
+
+		user.updateProfile(data.uid, data, callback);
+	});
+};
+
 SocketUser.changePicture = function(socket, data, callback) {
 	if(!data) {
 		return callback(new Error('[[error:invalid-data]]'));
@@ -381,6 +403,41 @@ SocketUser.setStatus = function(socket, status, callback) {
 		};
 		websockets.server.sockets.emit('event:user_status_change', data);
 		callback(null, data);
+	});
+};
+
+SocketUser.setSets = function(socket, sets, callback) {
+	if (!socket.uid) {
+		return callback(new Error('[[invalid-uid]]'));
+	}
+
+	console.log("Setting User Sets" + sets);
+
+	user.setUserField(socket.uid, 'sets', sets, function(err) {
+		if (err) {
+			return callback(err);
+		}
+		var data = {
+			uid: socket.uid,
+			sets: sets
+		};
+		//websockets.server.sockets.emit('event:user_status_change', data);
+		callback(null, data);
+	});
+};
+
+SocketUser.getSets = function(socket, data, callback) {
+	if (!socket.uid) {
+		return callback(new Error('[[invalid-uid]]'));
+	}
+
+	user.getUserField(socket.uid, 'sets', function(err, sets) {
+		if (err) {
+			return callback(err);
+		}
+		//websockets.server.sockets.emit('event:user_status_change', data);
+		console.log("User :: Sets" + sets);
+		callback(null, sets);
 	});
 };
 

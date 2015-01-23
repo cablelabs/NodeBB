@@ -7,6 +7,17 @@
 
     var graph;
 
+    // initialize sockets
+    var ioParams = {
+        'max reconnection attempts': config.maxReconnectionAttempts,
+        'reconnection delay': config.reconnectionDelay,
+        resource: RELATIVE_PATH.length ? RELATIVE_PATH.slice(1) + '/socket.io' : 'socket.io'
+    };
+    if (utils.isAndroidBrowser()) {
+        ioParams.transports = ['xhr-polling'];
+    }
+    var socket = io.connect(config.websocketAddress, ioParams);
+
     function error_handler (error) {
         if (typeof error === 'object') {
             console.log(error);
@@ -28,20 +39,24 @@
         sort: $('#entity-set-sort-list'),
         edit: $('#edit-set-btn').hide(),
         add: function (set) {
+            console.log("Came to add");
             sets.data.unshift(set);
             sets.render();
             //FIX: make API call to add set
         },
         remove: function (index) {
+            console.log("Came to remove");
             sets.data.splice(index, 1);
             sets.render();
             //FIX: make API call to remove set
         },
         assign: function (data) {
+            console.log("Came to assign");
             sets.data = data;
             sets.render();
         },
         update: function () {
+            console.log("Came to update");
             //FIX: make api call to update set
         },
         // empty set lists and render new set elements where they occur on the page
@@ -123,6 +138,9 @@
                 }
             },
             "click edit": function (e) {
+                console.log("handlers.click edit");
+                //user_getsets();
+                user_update();
                 graph.editting(!graph.editting());
                 sets.edit.toggleClass('btn-default');
                 sets.edit.toggleClass('btn-danger');
@@ -222,8 +240,6 @@
     help.container.hide();
     help.title.next().hide();
 
-
-
     /***************************************************************************
         AJAX requests
     ***************************************************************************/
@@ -243,14 +259,46 @@
         graph.selectEntity(window.localStorage.getItem('selected_entity_name'));
     }
 
+    function user_getsets() {
+        socket.emit('user.getSets', function(err, data) {
+            if (err) {
+                return app.alertError(err.message);
+            }
+            //app.alertSuccess('[[user:profile_update_success]]');
+            console.log("SETS DATA : " + data);
+            return data;
+        });
+    }
+
+    function user_update() {
+        console.log("Sets : " + JSON.stringify(sets.data));
+
+        socket.emit('user.setSets', JSON.stringify(sets.data), function(err, data) {
+            if (err) {
+                return app.alertError(err.message);
+            }
+            app.alertSuccess('[[user:profile_update_success]]');
+        });
+    }
+
     /**
      * When graph and subset data have been fetched, render graph and recall saved state.
      */
     $.when($.ajax({url: '/secured/mind-map/assets/links.json'}),
            $.ajax({url: '/secured/mind-map/assets/sets.json'}))
     .done(function (graph_data, sets_data) {
-        sets.assign(sets_data[0].sets);
+        //var userSets = user_getsets();
+        //if(userSets == null) {
+            console.log("Default sets : " + sets_data[0].sets);
+            sets.assign(sets_data[0].sets);
+        //} else {
+        //    console.log(userSets);
+        //    sets.assign(userSets);
+        //}
         EntityGraph.create(graph_data[0], 'graph', recall_graph_state);
     });
+
+    // Get User Sets
+    user_getsets();
 
 }(window, document, jQuery, EntityGraph));

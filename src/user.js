@@ -242,7 +242,7 @@ var	async = require('async'),
 	User.getUsers = function(uids, callback) {
 		async.parallel({
 			userData: function(next) {
-				User.getMultipleUserFields(uids, ['uid', 'username', 'userslug', 'fullname', 'company', 'designation', 'picture', 'status', 'banned', 'postcount', 'reputation'], next);
+				User.getMultipleUserFields(uids, ['uid', 'username', 'userslug', 'fullname', 'company', 'designation', 'picture', 'status', 'banned', 'postcount', 'reputation', "sets"], next);
 			},
 			isAdmin: function(next) {
 				User.isAdministrator(uids, next);
