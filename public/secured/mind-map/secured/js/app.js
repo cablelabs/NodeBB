@@ -41,13 +41,11 @@
         add: function (set) {
             sets.data.unshift(set);
             sets.render();
-            user_update();
             //FIX: make API call to add set
         },
         remove: function (index) {
             sets.data.splice(index, 1);
             sets.render();
-            user_update();
             //FIX: make API call to remove set
         },
         assign: function (data) {
@@ -55,7 +53,6 @@
             sets.render();
         },
         update: function () {
-            user_update();
             //FIX: make api call to update set
         },
         // empty set lists and render new set elements where they occur on the page
