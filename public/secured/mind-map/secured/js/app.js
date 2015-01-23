@@ -261,7 +261,9 @@
             if (err) {
                 return app.alertError(err.message);
             }
-            sets.assign(JSON.parse(data));
+            if(data != null) {
+                sets.assign(JSON.parse(data));
+            }
         });
     }
 
