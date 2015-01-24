@@ -122,7 +122,7 @@
             },
             "change search": function () {
                 console.log($('#share-set-user').val())
-                socket.emit('user.search', username, function(err, data) {
+                socket.emit('user.search', $('#share-set-user').val(), function(err, data) {
                     if (err) {
                         console.log("Search failed");
                     }
