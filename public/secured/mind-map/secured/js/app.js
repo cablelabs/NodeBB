@@ -29,15 +29,15 @@
         }
     }
 
-
-
     /***************************************************************************
         sets - all data, elements, and methods for sets
     ***************************************************************************/
     var sets = {
         select: $('#entity-sets select'),
+        searchTxt: $('#share-set-user'),
         sort: $('#entity-set-sort-list'),
         edit: $('#edit-set-btn').hide(),
+        share: $('#share-set-btn').hide(),
         add: function (set) {
             console.log("Came to add set.");
             sets.data.unshift(set);
@@ -105,6 +105,7 @@
                         sets.selected = null;
                         graph.setEntitySet();
                         sets.edit.fadeOut();
+                        sets.share.fadeOut();
                         break;
                     // when a set is selected, reveal edit button
                     default:
@@ -114,9 +115,26 @@
                             update: sets.update
                         });
                         sets.edit.fadeIn();
+                        sets.share.fadeIn();
                 }
                 window.localStorage.setItem('entity_set_selected_index', selected.val());
                 graph.reset();
+            },
+            "change search": function () {
+                console.log($('#share-set-user').val())
+                socket.emit('user.search', username, function(err, data) {
+                    if (err) {
+                        console.log("Search failed");
+                    }
+                    if (!data) {
+                        console.log("Search returned null");
+                    }
+
+                    console.log(JSON.stringify(data));
+                    var innerHtml = '';
+
+                    $('#search-results').innerHTML = innerHtml;
+                });
             },
             "update sort": function () {
                 sets.reorder($(this).sortable('toArray'));
@@ -126,6 +144,20 @@
                 var input = $('#add-set-text');
                 if (input.val()) {
                     sets.add({name: input.val(), entities: [] });
+                }
+                input.val('');
+            },
+            "submit share-set-form": function (e) {
+                e.preventDefault();
+                var input = $('#share-set-user');
+                if (input.val()) {
+                    socket.
+                    socket.emit('user.shareSet', JSON.stringify(sets.data[sets.selected]), function(err, data) {
+                        if (err) {
+                            return app.alertError(err.message);
+                        }
+                        app.alertSuccess('[[user:profile_update_success]]');
+                    });
                 }
                 input.val('');
             },
@@ -142,6 +174,11 @@
                 sets.edit.toggleClass('btn-danger');
                 graph.reset();
                 user_update();
+            },
+            "click share": function (e) {
+                console.log("sets.selected" + JSON.stringify(sets.data[sets.selected]));
+
+
             }
         }
     };
@@ -149,11 +186,19 @@
     //events
     sets.select.on('change', sets.handlers["change select"]);
 
+    sets.searchTxt.on('change', sets.handlers["change search"]);
+
     $('#add-set-form').on('submit', sets.handlers["submit add-set-form"]);
+
+    $('#add-set-form').on('submit', sets.handlers["submit share-set-form"]);
+
+    //$('#add-set-form').on('submit', sets.handlers["submit add-set-form"]);
 
     sets.sort.on('click', sets.handlers["click sort"]);
 
     sets.edit.on('click', sets.handlers["click edit"]);
+
+    sets.share.on('click', sets.handlers["click share"]);
 
     //init jquery-ui sortable plugin and attach event handler to update
     sets.sort.sortable({update:  sets.handlers["update sort"]});

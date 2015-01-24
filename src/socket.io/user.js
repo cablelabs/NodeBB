@@ -406,13 +406,62 @@ SocketUser.setStatus = function(socket, status, callback) {
 	});
 };
 
-SocketUser.setSets = function(socket, sets, callback) {
+SocketUser.shareSet = function(socket, data, callback) {
 	if (!socket.uid) {
 		return callback(new Error('[[invalid-uid]]'));
 	}
 
-	console.log("Setting User Sets" + sets);
+	console.log("Adding Set " + data.set + "--" + data.theirid);
 
+	user.getUserField(data.theirid, 'sets', function(err, sets) {
+		if (err) {
+			return callback(err);
+		}
+		console.log("User :: Sets" + sets);
+
+		var jsonSet = JSON.parse(sets);
+		if(jsonSet == null) {
+			callback(null, jsonSet);
+		}
+
+		jsonSet.push(data.set);
+		var jsonSetString = JSON.stringify(jsonSet);
+
+		user.setUserField(data.theirid, 'sets', jsonSetString, function(err) {
+			if (err) {
+				return callback(err);
+			}
+			var data = {
+				uid: socket.uid,
+				theirid: data.theirid,
+				sets: jsonSetString
+			};
+			callback(null, data);
+		});
+
+		console.log("New Set :" + JSON.stringify(jsonSet));
+		callback(null, jsonSet);
+	});
+};
+
+SocketUser.getUidByUsername = function(socket, data, callback) {
+	if (!socket.uid) {
+		return callback(new Error('[[invalid-uid]]'));
+	}
+
+	user.getUidByUsername(data.username, function(err, uid) {
+		if (err) {
+			return callback(err);
+		}
+		console.log("User :: UID for " + data.username + " is " + uid);
+		callback(null, uid);
+	});
+};
+
+SocketUser.setSets = function(socket, sets, callback) {
+	if (!socket.uid) {
+		return callback(new Error('[[invalid-uid]]'));
+	}
 	user.setUserField(socket.uid, 'sets', sets, function(err) {
 		if (err) {
 			return callback(err);
@@ -421,7 +470,6 @@ SocketUser.setSets = function(socket, sets, callback) {
 			uid: socket.uid,
 			sets: sets
 		};
-		//websockets.server.sockets.emit('event:user_status_change', data);
 		callback(null, data);
 	});
 };
@@ -430,13 +478,10 @@ SocketUser.getSets = function(socket, data, callback) {
 	if (!socket.uid) {
 		return callback(new Error('[[invalid-uid]]'));
 	}
-
 	user.getUserField(socket.uid, 'sets', function(err, sets) {
 		if (err) {
 			return callback(err);
 		}
-		//websockets.server.sockets.emit('event:user_status_change', data);
-		console.log("User :: Sets" + sets);
 		callback(null, sets);
 	});
 };
