@@ -403,7 +403,7 @@
           "Resource"
         ],
         "summary": "Create a Cable Modem Termination System (CMTS).",
-        "description": "Create a new instance of the resource.",
+        "description": "A Cable Modem Termination System (CMTS) is a device, usually located in the headend or hubsite, used to provide high speed data services such as cable Internet to cable subscribers.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -439,7 +439,7 @@
           "Resource"
         ],
         "summary": "Find a Cable Modem Termination System (CMTS).",
-        "description": "A Cable Modem Termination System (CMTS) is a device that cable modems communicate with via channels.",
+        "description": "A Cable Modem Termination System (CMTS) is a device, usually located in the headend or hubsite, used to provide high speed data services such as cable Internet to cable subscribers.",
         "displayName": "CMTS",
         "produces": [
           "application/json",
@@ -482,7 +482,7 @@
           "Resource"
         ],
         "summary": "Update an existing Cable Modem Termination System (CMTS).",
-        "description": "A Cable Modem Termination System (CMTS) is a device that cable modems communicate with via channels.",
+        "description": "A Cable Modem Termination System (CMTS) is a device, usually located in the headend or hubsite, used to provide high speed data services such as cable Internet to cable subscribers.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -525,7 +525,7 @@
           "Resource"
         ],
         "summary": "Delete a Cable Modem Termination System (CMTS).",
-        "description": "A Cable Modem Termination System (CMTS) is a device that cable modems communicate with via channels.",
+        "description": "A Cable Modem Termination System (CMTS) is a device, usually located in the headend or hubsite, used to provide high speed data services such as cable Internet to cable subscribers.",
         "produces": [
           "application/json",
           "application/xml"
@@ -2603,7 +2603,7 @@
           "Resource"
         ],
         "summary": "Create a port.",
-        "description": "A port is a type of resource that consists only of physical ports and logical termination points (specifically, TrailTerminationPointSource, TrailTerminationPointSink, and TrailTerminationPointBiDirectional.",
+        "description": "A port is a type of resource that consists only of physical ports and logical termination points (specifically, TrailTerminationPointSource, TrailTerminationPointSink, and TrailTerminationPointBiDirectional.)",
         "consumes": [
           "application/json",
           "application/xml"
@@ -2639,7 +2639,7 @@
           "Resource"
         ],
         "summary": "Find a port.",
-        "description": "A port is a type of resource that consists only of physical ports and logical termination points (specifically, TrailTerminationPointSource, TrailTerminationPointSink, and TrailTerminationPointBiDirectional.",
+        "description": "A port is a type of resource that consists only of physical ports and logical termination points (specifically, TrailTerminationPointSource, TrailTerminationPointSink, and TrailTerminationPointBiDirectional.)",
         "displayName": "Resource Port",
         "produces": [
           "application/json",
@@ -2682,7 +2682,7 @@
           "Resource"
         ],
         "summary": "Update an existing port.",
-        "description": "A port is a type of resource that consists only of physical ports and logical termination points (specifically, TrailTerminationPointSource, TrailTerminationPointSink, and TrailTerminationPointBiDirectional.",
+        "description": "A port is a type of resource that consists only of physical ports and logical termination points (specifically, TrailTerminationPointSource, TrailTerminationPointSink, and TrailTerminationPointBiDirectional.)",
         "consumes": [
           "application/json",
           "application/xml"
@@ -2725,7 +2725,7 @@
           "Resource"
         ],
         "summary": "Delete a port.",
-        "description": "A port is a type of resource that consists only of physical ports and logical termination points (specifically, TrailTerminationPointSource, TrailTerminationPointSink, and TrailTerminationPointBiDirectional.",
+        "description": "A port is a type of resource that consists only of physical ports and logical termination points (specifically, TrailTerminationPointSource, TrailTerminationPointSink, and TrailTerminationPointBiDirectional.)",
         "produces": [
           "application/json",
           "application/xml"
@@ -5741,7 +5741,7 @@
           "Resource"
         ],
         "summary": "Create a cable modem.",
-        "description": "A cable modem is a type of network device primarily used to deliver broadband Internet access in the form of cable Internet..",
+        "description": "A cable modem is a type of network device primarily used to deliver broadband Internet access in the form of cable Internet.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -5870,7 +5870,7 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Delete a cable modem based on ID.",
+        "summary": "Delete a cable modem.",
         "description": "A cable modem is a type of network device primarily used to deliver broadband Internet access in the form of cable Internet.",
         "produces": [
           "application/json",
