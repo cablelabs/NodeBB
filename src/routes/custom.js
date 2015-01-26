@@ -2,11 +2,13 @@
 
 
 function mainRoutes(app, middleware, controllers) {
-    app.get('/entity-map', middleware.buildHeader, controllers.custom.home);
-
-    app.get('/documentation', middleware.buildHeader, controllers.custom.documentation);
-
     var middlewares = [middleware.incrementPageViews, middleware.updateLastOnlineTime];
+
+    app.get('/entity-map', middleware.buildHeader, middlewares, controllers.custom.home);
+
+    app.get('/documentation', middleware.buildHeader, middlewares, controllers.custom.documentation);
+
+
     app.get('/api/path', middlewares, controllers.custom.getpath);
 }
 

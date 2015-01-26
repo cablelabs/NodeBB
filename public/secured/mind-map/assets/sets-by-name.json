@@ -1,0 +1,16 @@
+{
+  "sets": [
+    {
+      "name": "Set 1",
+      "entities": ["Account ", "Bill  Charge", "Email  Contact", "Feature ", "Customer ", "User "]
+    },
+    {
+      "name": "Set 2",
+      "entities": []
+    },
+    {
+      "name": "Set 3",
+      "entities": []
+    }
+  ]
+}

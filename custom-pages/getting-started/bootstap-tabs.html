@@ -398,6 +398,7 @@
   $('#guideline-tabs a').on('click', function (e) {
     'use strict';
     e.preventDefault();
+    e.stopPropagation();
     $(this).tab('show');
   });
 </script>

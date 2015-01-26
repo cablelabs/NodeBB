@@ -243,6 +243,7 @@ middleware.buildHeader = function(req, res, next) {
 };
 
 middleware.renderHeader = function(req, res, callback) {
+	console.log("envoking renderHeader");
 	var uid = req.user ? parseInt(req.user.uid, 10) : 0;
 
 	var custom_header = {
