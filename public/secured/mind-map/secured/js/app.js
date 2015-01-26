@@ -296,7 +296,7 @@
 
         // selected entity set
         var selected = window.localStorage.getItem('entity_set_selected_index');
-        if (selected) { sets.select.val(selected); }
+        if (selected) { sets.select.val(selected).change(); }
 
         // selected entity
         graph.selectEntity(window.localStorage.getItem('selected_entity_name'));
