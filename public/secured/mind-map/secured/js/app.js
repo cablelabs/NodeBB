@@ -149,10 +149,11 @@
             },
             "submit share-set-form": function (e) {
                 e.preventDefault();
-                var username = $('#share-set-user').val();
-                if (username) {
+                var username = $('#share-set-user');
+                console.log("user name " + username);
+                if (username.val()) {
                     var data = {
-                        username: username,
+                        username: username.val(),
                         set: sets.data[sets.selected]
                     }
                     socket.emit('user.shareSet', data, function(err, return_data) {
@@ -162,7 +163,6 @@
                         app.alertSuccess('[[user:set_share_success]]');
                     });
                 }
-                input.val('');
             },
             // check for click on the remove button
             "click sort": function (e) {
@@ -191,7 +191,7 @@
 
     $('#add-set-form').on('submit', sets.handlers["submit add-set-form"]);
 
-    $('#add-set-form').on('submit', sets.handlers["submit share-set-form"]);
+    $('#share-set-form').on('submit', sets.handlers["submit share-set-form"]);
 
     //$('#add-set-form').on('submit', sets.handlers["submit add-set-form"]);
 
