@@ -430,7 +430,7 @@ SocketUser.shareSet = function(socket, data, callback) {
 			jsonSet.push(data.set);
 			var jsonSetString = JSON.stringify(jsonSet);
 
-			user.setUserField(data.theirid, 'sets', jsonSetString, function(err) {
+			user.setUserField(uid, 'sets', jsonSetString, function(err) {
 				if (err) {
 					return callback(err);
 				}

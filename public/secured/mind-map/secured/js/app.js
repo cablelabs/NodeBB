@@ -150,9 +150,10 @@
             "submit share-set-form": function (e) {
                 e.preventDefault();
                 var username = $('#share-set-user');
+                console.log("user name " + username.val());
                 if (username.val()) {
                     var data = {
-                        username: username,
+                        username: username.val(),
                         set: sets.data[sets.selected]
                     }
                     socket.emit('user.shareSet', data, function(err, return_data) {
@@ -191,7 +192,7 @@
 
     $('#add-set-form').on('submit', sets.handlers["submit add-set-form"]);
 
-    $('#add-set-form').on('submit', sets.handlers["submit share-set-form"]);
+    $('#share-set-form').on('submit', sets.handlers["submit share-set-form"]);
 
     //$('#add-set-form').on('submit', sets.handlers["submit add-set-form"]);
 
