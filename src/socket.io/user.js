@@ -422,12 +422,12 @@ SocketUser.shareSet = function(socket, data, callback) {
 			}
 			console.log("User :: Sets" + sets);
 
-			var jsonSet = JSON.parse(sets);
-			if(jsonSet == null) {
-				callback(null, jsonSet);
+			if(sets == null) {
+				sets = '[]';
 			}
-
+			var jsonSet = JSON.parse(sets);
 			jsonSet.push(data.set);
+
 			var jsonSetString = JSON.stringify(jsonSet);
 
 			user.setUserField(uid, 'sets', jsonSetString, function(err) {

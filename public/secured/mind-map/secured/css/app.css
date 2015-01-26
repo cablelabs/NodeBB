@@ -400,3 +400,7 @@
 #set-manager {
   z-index: 2000;
 }
+
+#share-set {
+  z-index: 2000;
+}

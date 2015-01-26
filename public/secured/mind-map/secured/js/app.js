@@ -160,10 +160,11 @@
                         if (err) {
                             return app.alertError(err.message);
                         }
+                        $('#share-set').modal('toggle');
                         app.alertSuccess('[[user:set_share_success]]');
                     });
+                    username.val('');
                 }
-                input.val('');
             },
             // check for click on the remove button
             "click sort": function (e) {
