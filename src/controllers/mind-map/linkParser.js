@@ -4,8 +4,6 @@ var request = require('request'),
 	path 	= require('path'),
 	config  = require(path.join(__dirname + '/settings.json'));
 
-var entity_names = {};
-
 module.exports.init = function (callback) {
 
 	//each function in the water fall is performed in succession, and receives input from the previous function
@@ -13,22 +11,22 @@ module.exports.init = function (callback) {
 		getSwaggerFile,
 		filterEndpointGet,
 		buildEndpointProfiles,
-		getAllEndpoints//,	
-		//categorizeByDomain
+		getAllEndpoints,
+		categorizeByDomain
 	], function(err, result) {
 		if (err) {
 			callback(err);
 		} else {
 			fs.exists(path.join(__dirname + '/../../../public/secured/mind-map/assets'), function (exists) {
 				if (!exists) {
-					fs.mkdirSync(path.join(__dirname + '/../../../public/secured/mind-map/assets'));
+					fs.mkdirSync(path.join(__dirname + '/../../../public/secured/mind-map/assets'))
 				}
-				fs.writeFile(path.join(__dirname + '/../../../public/secured/mind-map/assets/links.json'), JSON.stringify(result, null, 4));
+				fs.writeFile(path.join(__dirname + '/../../../public/secured/mind-map/assets/links.json'), JSON.stringify(result, null, 4))
 				callback();
 			});
 		}
-	});
-};
+	})
+}
 
 function getSwaggerFile (callback) {
 	callback(null, require('../../../public/secured/api-docs/swagger-file.json'));
@@ -37,10 +35,10 @@ function getSwaggerFile (callback) {
 //fiter out paths in the swagger file that don't have the get property
 function filterEndpointGet(body, callback) {
 	async.filter(Object.keys(body.paths), function (path, cb) {
-		cb(body.paths[path].hasOwnProperty('get'));
+		cb(body.paths[path].hasOwnProperty('get'))
 	}, function (pathNames) {
-		callback(null, body, pathNames);
-	});
+		callback(null, body, pathNames)
+	})
 }
 
 
@@ -52,35 +50,32 @@ function buildEndpointProfiles (body, pathNames, callback) {
 		apiUriBase: 'http://' + body.host,
 		swaggerUriBase: config.swaggerUriBase,
 		paths: []
-	};
-	//console.log(result);
+	}
+	console.log(result);
 	pathNames.forEach( function (path) {
-		var get = body.paths[path].get;
+		var get = body.paths[path].get
 		var endpoint = {
 			path: path,
 			name: get.displayName,
 			description: get.description
-		};
-
-		entity_names[getPathName(path)] = endpoint.name;
+		}
 
 		if (get.tags.length > 0) { endpoint.domain = get.tags[0]; }
 
-		result.paths.push(endpoint);
-	});
-
-	callback(null, result);
+		result.paths.push(endpoint)
+	})
+	callback(null, result)
 }
 
 
 //fetch and parse the endpoints asynchronously
 function getAllEndpoints (profiles, callback) {
 	async.map(profiles.paths, function (path, cb) {
-		parseEndpoint(path, profiles.apiUriBase, cb);
+		parseEndpoint(path, profiles.apiUriBase, cb)
 	}, function (err, paths) {
-		profiles.paths = paths;
-		callback(null, profiles);
-	});
+		profiles.paths = paths
+		callback(null, profiles)
+	})
 }
 
 
@@ -95,33 +90,33 @@ function categorizeByDomain (profiles, callback) {
 	profiles.paths.forEach( function (path) {
 		if (path.hasOwnProperty('domain')) {
 			if (!domains.hasOwnProperty(path.domain)) {
-				domains[path.domain] = [];
+				domains[path.domain] = []
 			}
 
-			insertPathInDomain(domains[path.domain], path);
-			delete path.domain;
+			insertPathInDomain(domains[path.domain], path)
+			delete path.domain
 		}
 	})
 
-	delete profiles.paths;
+	delete profiles.paths
 
 	profiles.domains = Object.keys(domains).sort().map( function (domainName) {
 		return {
 			name: domainName,
 			entities: domains[domainName]
-		};
-	});
+		}
+	})
 
-	callback(null, profiles);
+	callback(null, profiles)
 }
 
 
 // fetch one endpoint, pass endpoint definition to findLinks to get endpoint relationships
 function parseEndpoint (endpoint, apiUriBase, callback) {
 	fetchEndpoint(endpoint, apiUriBase, function (err, response, body) {
-		endpoint.links = findLinks(body, getPathName(endpoint.path));
-		callback(null, endpoint);
-	});
+		endpoint.links = findLinks(body, getPathName(endpoint.path))
+		callback(null, endpoint)
+	})
 }
 
 
@@ -133,7 +128,7 @@ function fetchEndpoint (endpoint, apiUriBase, callback) {
 			Authorization: config.key
 		},
 		json: true
-	}, callback);
+	}, callback)
 }
 
 
@@ -147,42 +142,42 @@ function findLinks (obj, path, links) {
 	if (Array.isArray(obj)) {
 
 		for (var i = obj.length -1; i >= 0; i -= 1) {
-			findLinks(obj[i], path, links);
+			findLinks(obj[i], path, links)
 		}
 
 	} else if (typeof obj === 'object') {
 
 		Object.keys(obj).forEach( function (key) {
 			if (key === 'link') {
-				obj[key].rel = obj[key].rel.replace(' ', '').toLowerCase();
-				if (['self', path].indexOf(obj[key].rel) < 0 && links.indexOf(entity_names[obj[key].rel]) < 0) {
-					if (entity_names[obj[key].rel]) { links.push(entity_names[obj[key].rel]); }
-				} 
+				obj[key].rel = obj[key].rel.replace(' ', '').toLowerCase()
+				if (['self', path].indexOf(obj[key].rel) < 0 && links.indexOf(obj[key].rel) < 0) {
+					links.push(obj[key].rel)
+				}
 			} else {
-				findLinks(obj[key], path, links);
+				findLinks(obj[key], path, links)
 			}
-		});
+		})
 	}
 
 	return links;
 }
 
 function insertPathInDomain(domain, path) {
-	var i = 0, len = domain.length, inserted = false;
+	var i = 0, len = domain.length, inserted = false
 	for (; i < len; i += 1) {
 		if (path.name < domain[i].name) {
-			domain.splice(i, 0, path);
-			inserted = true;
-			break;
+			domain.splice(i, 0, path)
+			inserted = true
+			break
 		}
 	}
-	if (!inserted) { domain.push(path); }
-	return domain;
+	if (!inserted) { domain.push(path)}
+	return domain
 }
 
 
 function getPathName (path) {
 	var re = /^\/([^\/.]*)\/{id}$/,
 		match = re.exec(path);
-	return match ? match[1] : null;
+	return match ? match[1] : null
 }
