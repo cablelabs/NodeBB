@@ -410,37 +410,40 @@ SocketUser.shareSet = function(socket, data, callback) {
 	if (!socket.uid) {
 		return callback(new Error('[[invalid-uid]]'));
 	}
-
-	console.log("Adding Set " + data.set + "--" + data.theirid);
-
-	user.getUserField(data.theirid, 'sets', function(err, sets) {
+	user.getUidByUsername(data.username, function(err, uid) {
 		if (err) {
 			return callback(err);
 		}
-		console.log("User :: Sets" + sets);
+		console.log("User :: UID for " + data.username + " is " + uid);
 
-		var jsonSet = JSON.parse(sets);
-		if(jsonSet == null) {
-			callback(null, jsonSet);
-		}
-
-		jsonSet.push(data.set);
-		var jsonSetString = JSON.stringify(jsonSet);
-
-		user.setUserField(data.theirid, 'sets', jsonSetString, function(err) {
+		user.getUserField(uid, 'sets', function(err, sets) {
 			if (err) {
 				return callback(err);
 			}
-			var data = {
+			console.log("User :: Sets" + sets);
+
+			var jsonSet = JSON.parse(sets);
+			if(jsonSet == null) {
+				callback(null, jsonSet);
+			}
+
+			jsonSet.push(data.set);
+			var jsonSetString = JSON.stringify(jsonSet);
+
+			user.setUserField(data.theirid, 'sets', jsonSetString, function(err) {
+				if (err) {
+					return callback(err);
+				}
+			});
+
+			var return_data = {
 				uid: socket.uid,
-				theirid: data.theirid,
+				theirid: uid,
 				sets: jsonSetString
 			};
-			callback(null, data);
+			console.log("New Set :" + JSON.stringify(jsonSet));
+			callback(null, return_data);
 		});
-
-		console.log("New Set :" + JSON.stringify(jsonSet));
-		callback(null, jsonSet);
 	});
 };
 

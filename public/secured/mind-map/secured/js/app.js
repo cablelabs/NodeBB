@@ -149,14 +149,17 @@
             },
             "submit share-set-form": function (e) {
                 e.preventDefault();
-                var input = $('#share-set-user');
-                if (input.val()) {
-                    socket.
-                    socket.emit('user.shareSet', JSON.stringify(sets.data[sets.selected]), function(err, data) {
+                var username = $('#share-set-user').val();
+                if (username) {
+                    var data = {
+                        username: username,
+                        set: sets.data[sets.selected]
+                    }
+                    socket.emit('user.shareSet', data, function(err, return_data) {
                         if (err) {
                             return app.alertError(err.message);
                         }
-                        app.alertSuccess('[[user:profile_update_success]]');
+                        app.alertSuccess('[[user:set_share_success]]');
                     });
                 }
                 input.val('');
@@ -177,8 +180,6 @@
             },
             "click share": function (e) {
                 console.log("sets.selected" + JSON.stringify(sets.data[sets.selected]));
-
-
             }
         }
     };
@@ -186,7 +187,7 @@
     //events
     sets.select.on('change', sets.handlers["change select"]);
 
-    sets.searchTxt.on('change', sets.handlers["change search"]);
+    //sets.searchTxt.on('change', sets.handlers["change search"]);
 
     $('#add-set-form').on('submit', sets.handlers["submit add-set-form"]);
 

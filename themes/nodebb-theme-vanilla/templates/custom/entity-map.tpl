@@ -156,7 +156,7 @@
               <input type="text" class="form-control" placeholder="Enter username to search" id="share-set-user">
               <span class="input-group-btn">
                 <button class="btn btn-default" id="share-set-submit" type="submit">
-                  <span class="glyphicon glyphicon-plus"></span>
+                  <span class="glyphicon glyphicon-search"></span>
                 </button>
               </span>
               <div>
