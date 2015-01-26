@@ -3,8 +3,8 @@
   min-width: 730px;
 }
 
-.noshow,
-opacity: 0 {
+.noshow {
+  opacity: 0;
   height: 0;
   padding: 0;
   margin: 0;
@@ -215,11 +215,15 @@ opacity: 0 {
 }
 
 #entity-sets > div:nth-child(2) {
-  width: 90%;
+  width: 75%;
 }
 
 #entity-sets > div:nth-child(3) {
-  width: 6%;
+  width: 8%;
+  margin-left: 2%;
+}
+#entity-sets > div:nth-child(4) {
+  width: 10%;
   margin-left: 2%;
 }
 
@@ -235,6 +239,11 @@ opacity: 0 {
 }
 #edit-set-btn:not(.btn-danger) {
   background: #c4c4c4;
+}
+
+#share-set-btn {
+  border-radius: 100%;
+  outline: none;
 }
 
 #entity-set-sort-list {

@@ -146,6 +146,7 @@
   line-height: 37px;
   font-size: 1.5em;
   cursor: pointer;
+
 }
 
 #hops-away span:nth-child(2) { margin-left: 0; }

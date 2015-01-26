@@ -2,7 +2,7 @@
 
 
 function mainRoutes(app, middleware, controllers) {
-    var middlewares = [middleware.incrementPageViews, middleware.updateLastOnlineTime];
+    var middlewares = [middleware.checkIfConfirmed, middleware.incrementPageViews, middleware.updateLastOnlineTime];
 
     app.get('/entity-map', middleware.buildHeader, middlewares, controllers.custom.home);
 

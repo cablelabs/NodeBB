@@ -287,7 +287,7 @@
         ],
         "summary": "Find a contact.",
         "description": "Contact is a PartyRole for a Party that acts as a specific type of contact, such as a billing contact.",
-        "displayName": "Contact ",
+        "displayName": "Contact",
         "produces": [
           "application/json",
           "application/xml"
@@ -402,8 +402,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a Cable Modem Termination System (CMTS).",
+        "description": "A Cable Modem Termination System (CMTS) is a device, usually located in the headend or hubsite, used to provide high speed data services such as cable Internet to cable subscribers.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -438,8 +438,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Find resource by ID",
-        "description": "Cable Modem Termination System.  Device that CableModems 'talk' to via Channels.",
+        "summary": "Find a Cable Modem Termination System (CMTS).",
+        "description": "A Cable Modem Termination System (CMTS) is a device, usually located in the headend or hubsite, used to provide high speed data services such as cable Internet to cable subscribers.",
         "displayName": "CMTS",
         "produces": [
           "application/json",
@@ -481,8 +481,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing Cable Modem Termination System (CMTS).",
+        "description": "A Cable Modem Termination System (CMTS) is a device, usually located in the headend or hubsite, used to provide high speed data services such as cable Internet to cable subscribers.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -524,8 +524,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a Cable Modem Termination System (CMTS).",
+        "description": "A Cable Modem Termination System (CMTS) is a device, usually located in the headend or hubsite, used to provide high speed data services such as cable Internet to cable subscribers.",
         "produces": [
           "application/json",
           "application/xml"
@@ -2181,7 +2181,7 @@
         ],
         "summary": "Find a user credential.",
         "description": "UserCredential is a combination of user ID and password used to authenticate a user for account management or access to provider services.",
-        "displayName": "User  Credential",
+        "displayName": "User Credential",
         "produces": [
           "application/json",
           "application/xml"
@@ -2334,7 +2334,7 @@
         ],
         "summary": "Find a bill charge or credit.",
         "description": "A BillCharge is a charge or a credit assigned to a customer's account during the billing process.",
-        "displayName": "Bill  Charge",
+        "displayName": "Bill Charge",
         "produces": [
           "application/json",
           "application/xml"
@@ -2487,7 +2487,7 @@
         ],
         "summary": "Find an item on a service order.",
         "description": "A ServiceOrderItem is a specific item within a ServiceOrder and is expressed in terms of a ServiceSpecification or a Service.",
-        "displayName": "Service  Order Item",
+        "displayName": "Service Order Item",
         "produces": [
           "application/json",
           "application/xml"
@@ -2602,8 +2602,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a port.",
+        "description": "A port is a type of resource that consists only of physical ports and logical termination points (specifically, TrailTerminationPointSource, TrailTerminationPointSink, and TrailTerminationPointBiDirectional.)",
         "consumes": [
           "application/json",
           "application/xml"
@@ -2638,8 +2638,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Find resource by ID",
-        "description": "The Port is a type of ResourceElement that consists only of logical termination points (TrailTerminationPointSource, TrailTerminationPointSink, and TrailTerminationPointBiDirectional, to be precise) and PhysicalPorts. This enables the Port to take on the physical and logical characteristics of a 'port' as defined in G.805. ",
+        "summary": "Find a port.",
+        "description": "A port is a type of resource that consists only of physical ports and logical termination points (specifically, TrailTerminationPointSource, TrailTerminationPointSink, and TrailTerminationPointBiDirectional.)",
         "displayName": "Resource Port",
         "produces": [
           "application/json",
@@ -2681,8 +2681,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing port.",
+        "description": "A port is a type of resource that consists only of physical ports and logical termination points (specifically, TrailTerminationPointSource, TrailTerminationPointSink, and TrailTerminationPointBiDirectional.)",
         "consumes": [
           "application/json",
           "application/xml"
@@ -2724,8 +2724,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a port.",
+        "description": "A port is a type of resource that consists only of physical ports and logical termination points (specifically, TrailTerminationPointSource, TrailTerminationPointSink, and TrailTerminationPointBiDirectional.)",
         "produces": [
           "application/json",
           "application/xml"
@@ -3596,7 +3596,7 @@
         ],
         "summary": "Find resource by ID",
         "description": "All Services are characterized as either being possibly visible and usable by a Customer or not. This gives rise to the two subclasses of Service: CustomerFacingService and ResourceFacingService.",
-        "displayName": "Service ",
+        "displayName": "Service",
         "produces": [
           "application/json",
           "application/xml"
@@ -4055,7 +4055,7 @@
         ],
         "summary": "Find a document.",
         "description": "A Document refers to a physical document such as a contract, manual, or e-mail.",
-        "displayName": "Document ",
+        "displayName": "Document",
         "produces": [
           "application/json",
           "application/xml"
@@ -4208,7 +4208,7 @@
         ],
         "summary": "Find a preference.",
         "description": "A Preference is a favored interaction in a particular area of control, such as parental restriction or e-mail marketing, for a specific PartyRole, Resource, CustomerAccount, or Service.",
-        "displayName": "Preference ",
+        "displayName": "Preference",
         "produces": [
           "application/json",
           "application/xml"
@@ -4476,8 +4476,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a card.",
+        "description": "A card is a physical container that can be plugged into a Slot, such as a networking card or a memory card.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -4512,9 +4512,9 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Find resource by ID",
-        "description": "This class represents a type of physical container that can be plugged into a Slot. It may represent a primary function (e.g., a networking card) or an auxiliary function (e.g., a memory card) that supports another card. All objects of this type are capable of carrying electrical and/or optical signals. They also provide a mounting point for other types of ManagedePhysicalElements, such as Chips or Cards.",
-        "displayName": "Card ",
+        "summary": "Find a card.",
+        "description": "A card is a physical container that can be plugged into a Slot, such as a networking card or a memory card.",
+        "displayName": "Card",
         "produces": [
           "application/json",
           "application/xml"
@@ -4555,8 +4555,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing card.",
+        "description": "A card is a physical container that can be plugged into a Slot, such as a networking card or a memory card.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -4598,8 +4598,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a card.",
+        "description": "A card is a physical container that can be plugged into a Slot, such as a networking card or a memory card.",
         "produces": [
           "application/json",
           "application/xml"
@@ -5126,7 +5126,7 @@
         ],
         "summary": "Find a customer.",
         "description": "A person or organization that buys products and services from the service provider. A Customer is a Party playing a PartyRole.",
-        "displayName": "Customer ",
+        "displayName": "Customer",
         "produces": [
           "application/json",
           "application/xml"
@@ -5740,8 +5740,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a cable modem.",
+        "description": "A cable modem is a type of network device primarily used to deliver broadband Internet access in the form of cable Internet.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -5776,8 +5776,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Find resource by ID",
-        "description": "A cable modem is a type of network device that provides bi-directional data communication via radio frequency channels on a hybrid fibre-coaxial (HFC) and RFoG infrastructure. Cable modems are primarily used to deliver broadband Internet access in the form of cable Internet, taking advantage of the high bandwidth of a HFC and RFoG network.",
+        "summary": "Find a cable modem by ID",
+        "description": "A cable modem is a type of network device primarily used to deliver broadband Internet access in the form of cable Internet.",
         "displayName": "Cable Modem",
         "produces": [
           "application/json",
@@ -5819,8 +5819,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing cable modem.",
+        "description": "A cable modem is a type of network device primarily used to deliver broadband Internet access in the form of cable Internet.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -5870,8 +5870,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a cable modem.",
+        "description": "A cable modem is a type of network device primarily used to deliver broadband Internet access in the form of cable Internet.",
         "produces": [
           "application/json",
           "application/xml"
@@ -5939,7 +5939,7 @@
         ],
         "summary": "Find a product specification.",
         "description": "A ProductSpecification is a technical blueprint for a set of Products, defining their common portions. It specifies the invariant characteristics of a Product and describes it independently of the current existence of any instance of that Product.",
-        "displayName": "Product  Specification",
+        "displayName": "Product Specification",
         "produces": [
           "application/json",
           "application/xml"
@@ -6398,7 +6398,7 @@
         ],
         "summary": "Find a user.",
         "description": "A user is a single person or organization that uses products and services. User is a type of PartyRole.",
-        "displayName": "User ",
+        "displayName": "User",
         "produces": [
           "application/json",
           "application/xml"
@@ -6704,7 +6704,7 @@
         ],
         "summary": "Find an individual.",
         "description": "An Individual is a single person. Individual is a type of Party.",
-        "displayName": "Individual ",
+        "displayName": "Individual",
         "produces": [
           "application/json",
           "application/xml"
@@ -6857,7 +6857,7 @@
         ],
         "summary": "Find an organization.",
         "description": "An Organization is a group of people identified by shared interests or purpose, such as a business or a department within a business. Organization is a type of Party.",
-        "displayName": "Organization ",
+        "displayName": "Organization",
         "produces": [
           "application/json",
           "application/xml"
@@ -7125,8 +7125,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a device.",
+        "description": "A device is any piece of equipment that provides functionality or is used to access services from the provider (for example, mobile phone, tablet, or gateway).",
         "consumes": [
           "application/json",
           "application/xml"
@@ -7161,9 +7161,9 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Find resource by ID",
-        "description": "A piece of equipment that provides functionality or is used to access services from the provider (e.g. mobile phone, tablet, gateway, etc.).",
-        "displayName": "Device ",
+        "summary": "Find a device.",
+        "description": "A device is any piece of equipment that provides functionality or is used to access services from the provider (for example, mobile phone, tablet, or gateway).",
+        "displayName": "Device",
         "produces": [
           "application/json",
           "application/xml"
@@ -7204,8 +7204,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing device.",
+        "description": "A device is any piece of equipment that provides functionality or is used to access services from the provider (for example, mobile phone, tablet, or gateway).",
         "consumes": [
           "application/json",
           "application/xml"
@@ -7247,8 +7247,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a device.",
+        "description": "A device is any piece of equipment that provides functionality or is used to access services from the provider (for example, mobile phone, tablet, or gateway).",
         "produces": [
           "application/json",
           "application/xml"
@@ -7820,7 +7820,7 @@
         ],
         "summary": "Find an account.",
         "description": "Account defines the relationship between the customer and provider with respect to billing, payments, and other financial transactions. The customer account is also used to grant entitlement tokens based on services purchased.",
-        "displayName": "Account ",
+        "displayName": "Account",
         "produces": [
           "application/json",
           "application/xml"
@@ -8285,7 +8285,7 @@
         ],
         "summary": "Find a list of tickets associated with a user.",
         "description": "A list of tickets associated with a given User.",
-        "displayName": "Users  Tickets",
+        "displayName": "Users Tickets",
         "produces": [
           "application/json",
           "application/xml"
@@ -9356,7 +9356,7 @@
         ],
         "summary": "Find resource by ID",
         "description": "A piece of land with defined legal boundaries.This is an example of a concrete Geographic Location entity.",
-        "displayName": "Property ",
+        "displayName": "Property",
         "produces": [
           "application/json",
           "application/xml"
@@ -9662,7 +9662,7 @@
         ],
         "summary": "Find resource by ID",
         "description": "Retrieves an instance based on the ID",
-        "displayName": "Feature ",
+        "displayName": "Feature",
         "produces": [
           "application/json",
           "application/xml"
@@ -9968,7 +9968,7 @@
         ],
         "summary": "Find resource by ID",
         "description": "The technical specification of the service level being offered by the Service Provider to the Subscriber.",
-        "displayName": "As  Built Design",
+        "displayName": "As Built Design",
         "produces": [
           "application/json",
           "application/xml"
@@ -10427,7 +10427,7 @@
         ],
         "summary": "Find a system contact.",
         "description": "SystemContact is a type of ContactMedium that provides a means of contact for a specific PartyRole that is not defined by other types of ContactMedium; for example, notification by instant message or trouble ticket generation and auto-assignment.",
-        "displayName": "System  Contact",
+        "displayName": "System Contact",
         "produces": [
           "application/json",
           "application/xml"
@@ -10580,7 +10580,7 @@
         ],
         "summary": "Find a telephone number for a PartyRole.",
         "description": "TelephoneNumber is the telephone number to use when contacting a given PartyRole. It is a type of ContactMedium.",
-        "displayName": "Telephone  Number",
+        "displayName": "Telephone Number",
         "produces": [
           "application/json",
           "application/xml"
@@ -10733,7 +10733,7 @@
         ],
         "summary": "Find a service order.",
         "description": "A ServiceOrder lists the services through which the products in a CustomerOrder are realized.",
-        "displayName": "Service  Order",
+        "displayName": "Service Order",
         "produces": [
           "application/json",
           "application/xml"
@@ -11039,7 +11039,7 @@
         ],
         "summary": "Find a product.",
         "description": "A Product is the result of a ProductOffering being procured by a Customer or other Party. A Product is realized as one or more Services and/or Resources.",
-        "displayName": "Product ",
+        "displayName": "Product",
         "produces": [
           "application/json",
           "application/xml"
@@ -13680,7 +13680,7 @@
         ],
         "summary": "Find an e-mail contact for a PartyRole.",
         "description": "EmailContact is the e-mail address to use when contacting a given PartyRole. An eMailContact is a type of ContactMedium.",
-        "displayName": "Email  Contact",
+        "displayName": "Email Contact",
         "produces": [
           "application/json",
           "application/xml"

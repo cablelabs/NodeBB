@@ -14,7 +14,7 @@ var async = require('async'),
 module.exports = function(User) {
 
 	User.updateProfile = function(uid, data, callback) {
-		var fields = ['username', 'email', 'fullname', 'company', 'designation', 'tags', 'website', 'location', 'birthday', 'signature'];
+		var fields = ['username', 'email', 'fullname', 'company', 'designation', 'tags', 'website', 'location', 'birthday', 'signature', "sets"];
 
 		function isSignatureValid(next) {
 			if (data.signature !== undefined && data.signature.length > meta.config.maximumSignatureLength) {

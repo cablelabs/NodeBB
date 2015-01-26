@@ -44,7 +44,7 @@ define('forum/register', function() {
 		}
 
 		// Check if user's company is in whitelist
-		var whiteList = ["cablelabs.com"];
+		var whiteList = ["cablelabs.com", "gmail.com"];
 		var accepted = false;
 		whiteList.forEach(function(item, index){
 			if (isFromDomain(item, email)) {

@@ -7,6 +7,17 @@
 
     var graph;
 
+    // initialize sockets
+    var ioParams = {
+        'max reconnection attempts': config.maxReconnectionAttempts,
+        'reconnection delay': config.reconnectionDelay,
+        resource: RELATIVE_PATH.length ? RELATIVE_PATH.slice(1) + '/socket.io' : 'socket.io'
+    };
+    if (utils.isAndroidBrowser()) {
+        ioParams.transports = ['xhr-polling'];
+    }
+    var socket = io.connect(config.websocketAddress, ioParams);
+
     function error_handler (error) {
         if (typeof error === 'object') {
             console.log(error);
@@ -18,24 +29,27 @@
         }
     }
 
-
-
     /***************************************************************************
         sets - all data, elements, and methods for sets
     ***************************************************************************/
     var sets = {
         select: $('#entity-sets select'),
+        searchTxt: $('#share-set-user'),
         sort: $('#entity-set-sort-list'),
         edit: $('#edit-set-btn').hide(),
+        share: $('#share-set-btn').hide(),
         add: function (set) {
+            console.log("Came to add set.");
             sets.data.unshift(set);
             sets.render();
             //FIX: make API call to add set
+            user_update();
         },
         remove: function (index) {
             sets.data.splice(index, 1);
             sets.render();
             //FIX: make API call to remove set
+            user_update();
         },
         assign: function (data) {
             sets.data = data;
@@ -91,6 +105,7 @@
                         sets.selected = null;
                         graph.setEntitySet();
                         sets.edit.fadeOut();
+                        sets.share.fadeOut();
                         break;
                     // when a set is selected, reveal edit button
                     default:
@@ -100,9 +115,26 @@
                             update: sets.update
                         });
                         sets.edit.fadeIn();
+                        sets.share.fadeIn();
                 }
                 window.localStorage.setItem('entity_set_selected_index', selected.val());
                 graph.reset();
+            },
+            "change search": function () {
+                console.log($('#share-set-user').val())
+                socket.emit('user.search', $('#share-set-user').val(), function(err, data) {
+                    if (err) {
+                        console.log("Search failed");
+                    }
+                    if (!data) {
+                        console.log("Search returned null");
+                    }
+
+                    console.log(JSON.stringify(data));
+                    var innerHtml = '';
+
+                    $('#search-results').innerHTML = innerHtml;
+                });
             },
             "update sort": function () {
                 sets.reorder($(this).sortable('toArray'));
@@ -112,6 +144,23 @@
                 var input = $('#add-set-text');
                 if (input.val()) {
                     sets.add({name: input.val(), entities: [] });
+                }
+                input.val('');
+            },
+            "submit share-set-form": function (e) {
+                e.preventDefault();
+                var username = $('#share-set-user').val();
+                if (username) {
+                    var data = {
+                        username: username,
+                        set: sets.data[sets.selected]
+                    }
+                    socket.emit('user.shareSet', data, function(err, return_data) {
+                        if (err) {
+                            return app.alertError(err.message);
+                        }
+                        app.alertSuccess('[[user:set_share_success]]');
+                    });
                 }
                 input.val('');
             },
@@ -127,6 +176,10 @@
                 sets.edit.toggleClass('btn-default');
                 sets.edit.toggleClass('btn-danger');
                 graph.reset();
+                user_update();
+            },
+            "click share": function (e) {
+                console.log("sets.selected" + JSON.stringify(sets.data[sets.selected]));
             }
         }
     };
@@ -134,11 +187,19 @@
     //events
     sets.select.on('change', sets.handlers["change select"]);
 
+    //sets.searchTxt.on('change', sets.handlers["change search"]);
+
     $('#add-set-form').on('submit', sets.handlers["submit add-set-form"]);
+
+    $('#add-set-form').on('submit', sets.handlers["submit share-set-form"]);
+
+    //$('#add-set-form').on('submit', sets.handlers["submit add-set-form"]);
 
     sets.sort.on('click', sets.handlers["click sort"]);
 
     sets.edit.on('click', sets.handlers["click edit"]);
+
+    sets.share.on('click', sets.handlers["click share"]);
 
     //init jquery-ui sortable plugin and attach event handler to update
     sets.sort.sortable({update:  sets.handlers["update sort"]});
@@ -222,8 +283,6 @@
     help.container.hide();
     help.title.next().hide();
 
-
-
     /***************************************************************************
         AJAX requests
     ***************************************************************************/
@@ -243,14 +302,37 @@
         graph.selectEntity(window.localStorage.getItem('selected_entity_name'));
     }
 
+    function user_getsets() {
+        socket.emit('user.getSets', function(err, data) {
+            if (err) {
+                return app.alertError(err.message);
+            }
+            if(data != null) {
+                sets.assign(JSON.parse(data));
+            }
+        });
+    }
+
+    function user_update() {
+        socket.emit('user.setSets', JSON.stringify(sets.data), function(err, data) {
+            if (err) {
+                return app.alertError(err.message);
+            }
+            app.alertSuccess('[[user:profile_update_success]]');
+        });
+    }
+
     /**
      * When graph and subset data have been fetched, render graph and recall saved state.
      */
     $.when($.ajax({url: '/secured/mind-map/assets/links.json'}),
            $.ajax({url: '/secured/mind-map/assets/sets.json'}))
     .done(function (graph_data, sets_data) {
-        sets.assign(sets_data[0].sets);
-        EntityGraph.create(graph_data[0], 'graph', recall_graph_state);
+            sets.assign(sets_data[0].sets);
+            EntityGraph.create(graph_data[0], 'graph', recall_graph_state);
     });
+
+    // Get User Sets
+    user_getsets();
 
 }(window, document, jQuery, EntityGraph));

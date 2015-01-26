@@ -1,6 +1,3 @@
-<!--<!doctype html>-->
-<!--<html lang="en">-->
-<!--<head>-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -8,11 +5,6 @@
     <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">-->
     <link href='//fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="secured/mind-map/secured/css/app.css">
-<!--</head>-->
-
-<!--<body>-->
-
-<!--<div id="container-fluid">-->
 
 <div class="entity-map-container">
   <button class="btn btn-default toggle-help-btn">?</button>
@@ -33,6 +25,12 @@
       <div>
         <button type="button" id="edit-set-btn" class="btn btn-default">
           <span class="glyphicon glyphicon-edit"></span>
+        </button>
+      </div>
+      <div>
+        <button type="button" id="share-set-btn" class="btn btn-link" title="Share Entity Set"
+                data-toggle="modal" data-target="#share-set">
+          <span class="glyphicon glyphicon-share"></span>
         </button>
       </div>
     </div>
@@ -134,6 +132,38 @@
           </div>
           </form>
           <ul id="entity-set-sort-list"></ul>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Share Set Modal -->
+<div class="modal fade" id="share-set" tabindex="-1" role="dialog" aria-labelledby="set-manager" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="shareModalLabel">Share Entity Set</h4>
+      </div>
+      <div class="modal-body">
+        <div>
+          <form role="add" id="share-set-form">
+            <div class="input-group input-group-lg">
+              <input type="text" class="form-control" placeholder="Enter username to search" id="share-set-user">
+              <span class="input-group-btn">
+                <button class="btn btn-default" id="share-set-submit" type="submit">
+                  <span class="glyphicon glyphicon-search"></span>
+                </button>
+              </span>
+              <div>
+                <span class="search-results" id="search-results">No User Found</span>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
       <div class="modal-footer">
