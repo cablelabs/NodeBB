@@ -32,7 +32,7 @@
     "header.profile": "Profile",
     "notifications.loading": "Loading Notifications",
     "chats.loading": "Loading Chats",
-    "motd.welcome": "Welcome to NodeBB, the discussion platform of the future.",
+    "motd.welcome": "Welcome to CableLabs developer portal, the place for all things dev.",
     "previouspage": "Previous Page",
     "nextpage": "Next Page",
     "alert.success": "Success",
@@ -70,6 +70,6 @@
     "language": "Language",
     "guest": "Guest",
     "guests": "Guests",
-    "updated.title": "Forum Updated",
-    "updated.message": "This forum has just been updated to the latest version. Click here to refresh the page."
+    "updated.title": "Portal Updated",
+    "updated.message": "This portal has just been updated to the latest version. Click here to refresh the page."
 }
