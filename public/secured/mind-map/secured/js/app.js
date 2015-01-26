@@ -149,8 +149,8 @@
             },
             "submit share-set-form": function (e) {
                 e.preventDefault();
-                var username = $('#share-set-user').val();
-                if (username) {
+                var username = $('#share-set-user');
+                if (username.val()) {
                     var data = {
                         username: username,
                         set: sets.data[sets.selected]

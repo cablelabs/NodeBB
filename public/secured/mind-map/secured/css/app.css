@@ -396,3 +396,7 @@
 .entity-map-container .toggle-help-btn:hover {
   background: rgba(0,40,60,0.6);
 }
+
+#set-manager {
+  z-index: 2000;
+}
