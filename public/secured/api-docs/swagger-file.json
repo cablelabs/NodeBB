@@ -402,8 +402,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a Cable Modem Termination System (CMTS).",
+        "description": "A Cable Modem Termination System (CMTS) is a device, usually located in the headend or hubsite, used to provide high speed data services such as cable Internet to cable subscribers.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -438,8 +438,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Find resource by ID",
-        "description": "Cable Modem Termination System.  Device that CableModems 'talk' to via Channels.",
+        "summary": "Find a Cable Modem Termination System (CMTS).",
+        "description": "A Cable Modem Termination System (CMTS) is a device, usually located in the headend or hubsite, used to provide high speed data services such as cable Internet to cable subscribers.",
         "displayName": "CMTS",
         "produces": [
           "application/json",
@@ -481,8 +481,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing Cable Modem Termination System (CMTS).",
+        "description": "A Cable Modem Termination System (CMTS) is a device, usually located in the headend or hubsite, used to provide high speed data services such as cable Internet to cable subscribers.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -524,8 +524,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a Cable Modem Termination System (CMTS).",
+        "description": "A Cable Modem Termination System (CMTS) is a device, usually located in the headend or hubsite, used to provide high speed data services such as cable Internet to cable subscribers.",
         "produces": [
           "application/json",
           "application/xml"
@@ -2602,8 +2602,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a port.",
+        "description": "A port is a type of resource that consists only of physical ports and logical termination points (specifically, TrailTerminationPointSource, TrailTerminationPointSink, and TrailTerminationPointBiDirectional.)",
         "consumes": [
           "application/json",
           "application/xml"
@@ -2638,8 +2638,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Find resource by ID",
-        "description": "The Port is a type of ResourceElement that consists only of logical termination points (TrailTerminationPointSource, TrailTerminationPointSink, and TrailTerminationPointBiDirectional, to be precise) and PhysicalPorts. This enables the Port to take on the physical and logical characteristics of a 'port' as defined in G.805. ",
+        "summary": "Find a port.",
+        "description": "A port is a type of resource that consists only of physical ports and logical termination points (specifically, TrailTerminationPointSource, TrailTerminationPointSink, and TrailTerminationPointBiDirectional.)",
         "displayName": "Resource Port",
         "produces": [
           "application/json",
@@ -2681,8 +2681,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing port.",
+        "description": "A port is a type of resource that consists only of physical ports and logical termination points (specifically, TrailTerminationPointSource, TrailTerminationPointSink, and TrailTerminationPointBiDirectional.)",
         "consumes": [
           "application/json",
           "application/xml"
@@ -2724,8 +2724,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a port.",
+        "description": "A port is a type of resource that consists only of physical ports and logical termination points (specifically, TrailTerminationPointSource, TrailTerminationPointSink, and TrailTerminationPointBiDirectional.)",
         "produces": [
           "application/json",
           "application/xml"
@@ -4476,8 +4476,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a card.",
+        "description": "A card is a physical container that can be plugged into a Slot, such as a networking card or a memory card.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -4512,8 +4512,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Find resource by ID",
-        "description": "This class represents a type of physical container that can be plugged into a Slot. It may represent a primary function (e.g., a networking card) or an auxiliary function (e.g., a memory card) that supports another card. All objects of this type are capable of carrying electrical and/or optical signals. They also provide a mounting point for other types of ManagedePhysicalElements, such as Chips or Cards.",
+        "summary": "Find a card.",
+        "description": "A card is a physical container that can be plugged into a Slot, such as a networking card or a memory card.",
         "displayName": "Card",
         "produces": [
           "application/json",
@@ -4555,8 +4555,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing card.",
+        "description": "A card is a physical container that can be plugged into a Slot, such as a networking card or a memory card.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -4598,8 +4598,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a card.",
+        "description": "A card is a physical container that can be plugged into a Slot, such as a networking card or a memory card.",
         "produces": [
           "application/json",
           "application/xml"
@@ -5740,8 +5740,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a cable modem.",
+        "description": "A cable modem is a type of network device primarily used to deliver broadband Internet access in the form of cable Internet.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -5776,8 +5776,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Find resource by ID",
-        "description": "A cable modem is a type of network device that provides bi-directional data communication via radio frequency channels on a hybrid fibre-coaxial (HFC) and RFoG infrastructure. Cable modems are primarily used to deliver broadband Internet access in the form of cable Internet, taking advantage of the high bandwidth of a HFC and RFoG network.",
+        "summary": "Find a cable modem by ID",
+        "description": "A cable modem is a type of network device primarily used to deliver broadband Internet access in the form of cable Internet.",
         "displayName": "Cable Modem",
         "produces": [
           "application/json",
@@ -5819,8 +5819,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing cable modem.",
+        "description": "A cable modem is a type of network device primarily used to deliver broadband Internet access in the form of cable Internet.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -5870,8 +5870,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a cable modem.",
+        "description": "A cable modem is a type of network device primarily used to deliver broadband Internet access in the form of cable Internet.",
         "produces": [
           "application/json",
           "application/xml"
@@ -7125,8 +7125,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a device.",
+        "description": "A device is any piece of equipment that provides functionality or is used to access services from the provider (for example, mobile phone, tablet, or gateway).",
         "consumes": [
           "application/json",
           "application/xml"
@@ -7161,8 +7161,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Find resource by ID",
-        "description": "A piece of equipment that provides functionality or is used to access services from the provider (e.g. mobile phone, tablet, gateway, etc.).",
+        "summary": "Find a device.",
+        "description": "A device is any piece of equipment that provides functionality or is used to access services from the provider (for example, mobile phone, tablet, or gateway).",
         "displayName": "Device",
         "produces": [
           "application/json",
@@ -7204,8 +7204,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing device.",
+        "description": "A device is any piece of equipment that provides functionality or is used to access services from the provider (for example, mobile phone, tablet, or gateway).",
         "consumes": [
           "application/json",
           "application/xml"
@@ -7247,8 +7247,8 @@
         "tags": [
           "Resource"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a device.",
+        "description": "A device is any piece of equipment that provides functionality or is used to access services from the provider (for example, mobile phone, tablet, or gateway).",
         "produces": [
           "application/json",
           "application/xml"
