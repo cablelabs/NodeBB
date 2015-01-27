@@ -304,7 +304,7 @@
         graph.selectEntity(window.localStorage.getItem('selected_entity_name'));
     }
 
-    function user_getsets() {
+    function user_getsets(callback) {
         socket.emit('user.getSets', function(err, data) {
             if (err) {
                 return app.alertError(err.message);
@@ -312,6 +312,7 @@
             if(data != null) {
                 sets.assign(JSON.parse(data));
             }
+            callback();
         });
     }
 
@@ -331,10 +332,11 @@
            $.ajax({url: '/secured/mind-map/assets/sets.json'}))
     .done(function (graph_data, sets_data) {
             sets.assign(sets_data[0].sets);
-            EntityGraph.create(graph_data[0], 'graph', recall_graph_state);
-    });
 
-    // Get User Sets
-    user_getsets();
+            // Get User Sets
+            user_getsets(function() {
+                EntityGraph.create(graph_data[0], 'graph', recall_graph_state);
+            });
+        });
 
 }(window, document, jQuery, EntityGraph));
