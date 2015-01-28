@@ -879,8 +879,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a polygon.",
+        "description": "A polygon is a geometric polygon object.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -915,8 +915,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find resource by ID",
-        "description": "A geometry polygon object. For type \"Polygon\", the \"coordinates\" member must be an array of LinearRing coordinate arrays. For Polygons with multiple rings, the first must be the exterior ring and any others must be interior rings or holes.",
+        "summary": "Find a polygon.",
+        "description": "A polygon is a geometric polygon object.",
         "displayName": "Polygon",
         "produces": [
           "application/json",
@@ -958,8 +958,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing polygon.",
+        "description": "A polygon is a geometric polygon object.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1009,8 +1009,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a polygon.",
+        "description": "A polygon is a geometric polygon object.",
         "produces": [
           "application/json",
           "application/xml"
@@ -9318,8 +9318,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a property.",
+        "description": "A property is a piece of land with defined legal boundaries.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -9354,8 +9354,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find resource by ID",
-        "description": "A piece of land with defined legal boundaries.This is an example of a concrete Geographic Location entity.",
+        "summary": "Find a property.",
+        "description": "A property is a piece of land with defined legal boundaries.",
         "displayName": "Property",
         "produces": [
           "application/json",
@@ -9397,8 +9397,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing property.",
+        "description": "A property is a piece of land with defined legal boundaries.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -9440,8 +9440,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a property.",
+        "description": "A property is a piece of land with defined legal boundaries.",
         "produces": [
           "application/json",
           "application/xml"
