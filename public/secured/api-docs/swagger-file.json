@@ -9471,8 +9471,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create configuration data.",
+        "description": "ConfigurationData holds the common properties of all captured configuration data (such as files, strings, and binary data). Other entities specify configuration data such as current, backup, and disaster recovery.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -9507,8 +9507,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Find resource by ID",
-        "description": "Class to hold common properties of all captured configuration data (files, strings, binary data, ...).  Subclasses specify base, current, backup, proposed, disaster recovery, etc configuration data.",
+        "summary": "Find configuration data.",
+        "description": "ConfigurationData holds the common properties of all captured configuration data (such as files, strings, and binary data). Other entities specify configuration data such as current, backup, and disaster recovery.",
         "displayName": "Configuration Data",
         "produces": [
           "application/json",
@@ -9550,8 +9550,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update existing configuration data.",
+        "description": "ConfigurationData holds the common properties of all captured configuration data (such as files, strings, and binary data). Other entities specify configuration data such as current, backup, and disaster recovery.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -9593,8 +9593,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete configuration data.",
+        "description": "ConfigurationData holds the common properties of all captured configuration data (such as files, strings, and binary data). Other entities specify configuration data such as current, backup, and disaster recovery.",
         "produces": [
           "application/json",
           "application/xml"
