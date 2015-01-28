@@ -754,8 +754,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find resource by ID",
-        "description": "A geometry multi polygon object. For type \"MultiPolygon\", the \"coordinates\" member must be an array of Polygon coordinate arrays.",
+        "summary": "Find a multipolygon.",
+        "description": "A multipolygon is a geometry multipolygon object.",
         "displayName": "Multi Polygon",
         "produces": [
           "application/json",
@@ -797,8 +797,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing multipolygon.",
+        "description": "A multipolygon is a geometry multipolygon object.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -848,8 +848,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a multipolygon.",
+        "description": "A multipolygon is a geometry multipolygon object.",
         "produces": [
           "application/json",
           "application/xml"
