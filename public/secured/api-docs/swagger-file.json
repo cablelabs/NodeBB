@@ -13489,8 +13489,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create an Ethernet device interface.",
+        "description": "EthernetInterface refines the concept of a DeviceInterface into a EthernetDeviceInterface.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -13525,8 +13525,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "summary": "Find an Ethernet interface device.",
+        "description": "EthernetInterface refines the concept of a DeviceInterface into a EthernetDeviceInterface.",
         "displayName": "Ethernet Interface",
         "produces": [
           "application/json",
@@ -13568,8 +13568,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing Ethernet device interface.",
+        "description": "EthernetInterface refines the concept of a DeviceInterface into a EthernetDeviceInterface.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -13611,8 +13611,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete an Ethernet interface device.",
+        "description": "EthernetInterface refines the concept of a DeviceInterface into a EthernetDeviceInterface.",
         "produces": [
           "application/json",
           "application/xml"
