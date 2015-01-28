@@ -8088,7 +8088,7 @@
         "tags": [
           "Service"
         ],
-        "summary": "Create a UNI service.",
+        "summary": "Create a UNI configuration.",
         "description": "Create a new instance of the resource.",
         "consumes": [
           "application/json",
@@ -8124,8 +8124,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Find resource by ID",
-        "description": "A UNI can have a number of characteristics that will be important to the way that the CE sees a service. One of the key aspects of a service description will be the allowable mix of UNIs with different characteristics in an EVC.",
+        "summary": "Find a UNI configuration.",
+        "description": "UNIConfiguration holds configuration data for a UNIService. ",
         "displayName": "UNI ServiceConfiguration",
         "produces": [
           "application/json",
@@ -8167,8 +8167,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing UNI configuration.",
+        "description": "UNIConfiguration holds configuration data for a UNIService.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -8210,8 +8210,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a UNI configuration.",
+        "description": "UNIConfiguration holds configuration data for a UNIService.",
         "produces": [
           "application/json",
           "application/xml"
