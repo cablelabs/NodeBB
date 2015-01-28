@@ -557,8 +557,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a geometry collection.",
+        "description": "A geometry collection is a list of geometries.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -593,8 +593,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find resource by ID",
-        "description": "A geometry collection object. A GeoJSON object with type \"GeometryCollection\" is a geometry object which represents a collection of geometry objects. A geometry collection must have a member with the name \"geometries\". The value corresponding to \"geometries\"is an array. Each element in this array is a GeoJSON geometry object.",
+        "summary": "Find a geometry collection.",
+        "description": "A geometry collection is a list of geometries.",
         "displayName": "Geometry Collection",
         "produces": [
           "application/json",
@@ -636,8 +636,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing geometry collection.",
+        "description": "A geometry collection is a list of geometries.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -687,8 +687,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a geometry collection.",
+        "description": "A geometry collection is a list of geometries.",
         "produces": [
           "application/json",
           "application/xml"
