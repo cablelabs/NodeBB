@@ -3558,8 +3558,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a service.",
+        "description": "Service defines the Service hierarchy. Services are defined by products: All services are either a CustomerFacingService (visible to a customer) or a ResourceFacingService (not visible to a customer but still supporting a customer’s product).",
         "consumes": [
           "application/json",
           "application/xml"
@@ -3594,8 +3594,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Find resource by ID",
-        "description": "All Services are characterized as either being possibly visible and usable by a Customer or not. This gives rise to the two subclasses of Service: CustomerFacingService and ResourceFacingService.",
+        "summary": "Find a service.",
+        "description": "Service defines the Service hierarchy. Services are defined by products: All services are either a CustomerFacingService (visible to a customer) or a ResourceFacingService (not visible to a customer but still supporting a customer’s product).",
         "displayName": "Service",
         "produces": [
           "application/json",
@@ -3637,8 +3637,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing service.",
+        "description": "Service defines the Service hierarchy. Services are defined by products: All services are either a CustomerFacingService (visible to a customer) or a ResourceFacingService (not visible to a customer but still supporting a customer’s product).",
         "consumes": [
           "application/json",
           "application/xml"
@@ -3680,8 +3680,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a service.",
+        "description": "Service defines the Service hierarchy. Services are defined by products: All services are either a CustomerFacingService (visible to a customer) or a ResourceFacingService (not visible to a customer but still supporting a customer’s product).",
         "produces": [
           "application/json",
           "application/xml"
