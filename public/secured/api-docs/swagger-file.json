@@ -13525,7 +13525,7 @@
         "tags": [
           "Service"
         ],
-        "summary": "Find an Ethernet interface device.",
+        "summary": "Find an Ethernet device interface.",
         "description": "EthernetInterface refines the concept of a DeviceInterface into a EthernetDeviceInterface.",
         "displayName": "Ethernet Interface",
         "produces": [
@@ -13611,7 +13611,7 @@
         "tags": [
           "Service"
         ],
-        "summary": "Delete an Ethernet interface device.",
+        "summary": "Delete an Ethernet device interface.",
         "description": "EthernetInterface refines the concept of a DeviceInterface into a EthernetDeviceInterface.",
         "produces": [
           "application/json",
