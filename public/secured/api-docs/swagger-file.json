@@ -9930,8 +9930,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a service design.",
+        "description": "A ServiceDesign is the technical specification of the service level being offered by the service provider to the customer.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -9966,8 +9966,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Find resource by ID",
-        "description": "The technical specification of the service level being offered by the Service Provider to the Subscriber.",
+        "summary": "Find a service design.",
+        "description": "A ServiceDesign is the technical specification of the service level being offered by the service provider to the customer.",
         "displayName": "As Built Design",
         "produces": [
           "application/json",
@@ -10009,8 +10009,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing service design.",
+        "description": "A ServiceDesign is the technical specification of the service level being offered by the service provider to the customer.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -10052,8 +10052,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a service design.",
+        "description": "A ServiceDesign is the technical specification of the service level being offered by the service provider to the customer.",
         "produces": [
           "application/json",
           "application/xml"
