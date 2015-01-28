@@ -718,8 +718,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a multipolygon.",
+        "description": "A multipolygon is a geometry multipolygon object.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1041,7 +1041,7 @@
           "Location"
         ],
         "summary": "Create a multilinestring.",
-        "description": "A multilinestring is a geometry multi linestring object.",
+        "description": "A multilinestring is a geometry multilinestring object.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1077,7 +1077,7 @@
           "Location"
         ],
         "summary": "Find a multilinestring.",
-        "description": "A multilinestring is a geometry multi linestring object.",
+        "description": "A multilinestring is a geometry multilinestring object.",
         "displayName": "Multi Line String",
         "produces": [
           "application/json",
@@ -1120,7 +1120,7 @@
           "Location"
         ],
         "summary": "Update an existing multilinestring.",
-        "description": "A multilinestring is a geometry multi linestring object.",
+        "description": "A multilinestring is a geometry multilinestring object.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1171,7 +1171,7 @@
           "Location"
         ],
         "summary": "Delete a multilinestring.",
-        "description": "A multilinestring is a geometry multi linestring object.",
+        "description": "A multilinestring is a geometry multilinestring object.",
         "produces": [
           "application/json",
           "application/xml"
@@ -7738,7 +7738,7 @@
           "Location"
         ],
         "summary": "Find services in a specific site.",
-        "description": "Site Services is a list of services at a specified site.",
+        "description": "Site services returns a list of services at a specified site.",
         "displayName": "Service on Site",
         "produces": [
           "application/json",
