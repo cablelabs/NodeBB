@@ -4324,7 +4324,7 @@
           "Service"
         ],
         "summary": "Create a service specification.",
-        "description": "A ServiceSpecification defines the invariant characteristics of a Service. It acts as a template that different Service instances can be instantiated from.",
+        "description": "A ServiceSpecification defines the invariant characteristics of a service. It acts as a template that different service instances can be instantiated from.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -4360,7 +4360,7 @@
           "Service"
         ],
         "summary": "Find a service specification.",
-        "description": "A ServiceSpecification defines the invariant characteristics of a Service. It acts as a template that different Service instances can be instantiated from.",
+        "description": "A ServiceSpecification defines the invariant characteristics of a service. It acts as a template that different service instances can be instantiated from.",
         "displayName": "Service Specification",
         "produces": [
           "application/json",
@@ -4403,7 +4403,7 @@
           "Service"
         ],
         "summary": "Update an existing service specification.",
-        "description": "A ServiceSpecification defines the invariant characteristics of a Service. It acts as a template that different Service instances can be instantiated from.",
+        "description": "A ServiceSpecification defines the invariant characteristics of a service. It acts as a template that different service instances can be instantiated from.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -4446,7 +4446,7 @@
           "Service"
         ],
         "summary": "Delete a service specification.",
-        "description": "A ServiceSpecification defines the invariant characteristics of a Service. It acts as a template that different Service instances can be instantiated from.",
+        "description": "A ServiceSpecification defines the invariant characteristics of a service. It acts as a template that different service instances can be instantiated from.",
         "produces": [
           "application/json",
           "application/xml"
@@ -8088,7 +8088,7 @@
         "tags": [
           "Service"
         ],
-        "summary": "Create a UNI configuration.",
+        "summary": "Create a UNI service configuration.",
         "description": "UNIConfiguration holds configuration data for a UNIService. Each EthernetServiceConfiguration must be configured via two or more UNIConfigurations.",
         "consumes": [
           "application/json",
@@ -8124,7 +8124,7 @@
         "tags": [
           "Service"
         ],
-        "summary": "Find a UNI configuration.",
+        "summary": "Find a UNI service configuration.",
         "description": "UNIConfiguration holds configuration data for a UNIService. Each EthernetServiceConfiguration must be configured via two or more UNIConfigurations.",
         "displayName": "UNI ServiceConfiguration",
         "produces": [
@@ -8167,7 +8167,7 @@
         "tags": [
           "Service"
         ],
-        "summary": "Update an existing UNI configuration.",
+        "summary": "Update an existing UNI service configuration.",
         "description": "UNIConfiguration holds configuration data for a UNIService. Each EthernetServiceConfiguration must be configured via two or more UNIConfigurations.",
         "consumes": [
           "application/json",
@@ -8210,7 +8210,7 @@
         "tags": [
           "Service"
         ],
-        "summary": "Delete a UNI configuration.",
+        "summary": "Delete a UNI service configuration.",
         "description": "UNIConfiguration holds configuration data for a UNIService. Each EthernetServiceConfiguration must be configured via two or more UNIConfigurations.",
         "produces": [
           "application/json",
@@ -8400,7 +8400,7 @@
         "tags": [
           "Service"
         ],
-        "summary": "Create an EVCConfiguration.",
+        "summary": "Create an EVC service configuration.",
         "description": "EVCConfiguration holds configuration data for an EVCService.",
         "consumes": [
           "application/json",
@@ -8436,7 +8436,7 @@
         "tags": [
           "Service"
         ],
-        "summary": "Find an EVCConfiguration.",
+        "summary": "Find an EVC service configuration.",
         "description": "EVCConfiguration holds configuration data for an EVCService.",
         "displayName": "EVC Service Configuration",
         "produces": [
@@ -8479,7 +8479,7 @@
         "tags": [
           "Service"
         ],
-        "summary": "Update an existing EVCConfiguration.",
+        "summary": "Update an existing EVC service configuration.",
         "description": "EVCConfiguration holds configuration data for an EVCService.",
         "consumes": [
           "application/json",
@@ -8522,7 +8522,7 @@
         "tags": [
           "Service"
         ],
-        "summary": "Delete an EVCConfiguration.",
+        "summary": "Delete an EVC service configuration.",
         "description": "EVCConfiguration holds configuration data for an EVCService.",
         "produces": [
           "application/json",
@@ -9777,7 +9777,7 @@
         "tags": [
           "Service"
         ],
-        "summary": "Create a new resource",
+        "summary": "Create a UNI service.",
         "description": "A UNIService is a User Network Interface service used as part of an Ethernet Private Line product.",
         "consumes": [
           "application/json",
