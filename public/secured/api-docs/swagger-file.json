@@ -6207,8 +6207,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a feature collection.",
+        "description": "A feature collection is a list of features, which are geometries with additional properties. Lists of geometries are geometry collections.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -6243,8 +6243,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find resource by ID",
-        "description": "Lists of geometries are represented by a GeometryCollection. Geometries with additional properties are Feature objects. And lists of features are represented by a FeatureCollection.",
+        "summary": "Find a feature collection.",
+        "description": "A feature collection is a list of features, which are geometries with additional properties. Lists of geometries are geometry collections.",
         "displayName": "Feature Collection",
         "produces": [
           "application/json",
@@ -6286,8 +6286,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update a feature collection.",
+        "description": "A feature collection is a list of features, which are geometries with additional properties. Lists of geometries are geometry collections.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -6329,8 +6329,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a feature collection.",
+        "description": "A feature collection is a list of features, which are geometries with additional properties. Lists of geometries are geometry collections.",
         "produces": [
           "application/json",
           "application/xml"
