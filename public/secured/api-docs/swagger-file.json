@@ -1201,8 +1201,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a linestring.",
+        "description": "Linestring is a geometry linestring object.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1237,8 +1237,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find resource by ID",
-        "description": "A geometry linestring object. Geo Json Spec: For type \"LineString\", the \"coordinates\" member must be an array of two or more positions. A LinearRing is closed LineString with 4 or more positions. The first and last positions are equivalent (they represent equivalent points). Though a LinearRing is not explicitly represented as a GeoJSON geometry type, it is referred to in the Polygon geometry type definition.",
+        "summary": "Find a linestring.",
+        "description": "Linestring is a geometry linestring object.",
         "displayName": "Line String",
         "produces": [
           "application/json",
@@ -1280,8 +1280,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing linestring.",
+        "description": "Linestring is a geometry linestring object.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1331,8 +1331,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a linestring.",
+        "description": "Linestring is a geometry linestring object.",
         "produces": [
           "application/json",
           "application/xml"
