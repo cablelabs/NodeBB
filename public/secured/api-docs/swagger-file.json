@@ -1040,8 +1040,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a multi linestring.",
+        "description": "A multi linestring is a geometry multi linestring object.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1076,8 +1076,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find resource by ID",
-        "description": "A geometry multi linestring object. For type \"MultiLineString\", the \"coordinates\" member must be an array of LineString coordinate arrays.",
+        "summary": "Find a multi linestring.",
+        "description": "A multi linestring is a geometry multi linestring object.",
         "displayName": "Multi Line String",
         "produces": [
           "application/json",
@@ -1119,8 +1119,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing multi linestring.",
+        "description": "A multi linestring is a geometry multi linestring object.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1170,8 +1170,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a multi linestring.",
+        "description": "A multi linestring is a geometry multi linestring object.",
         "produces": [
           "application/json",
           "application/xml"
