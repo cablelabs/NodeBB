@@ -1523,8 +1523,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a point.",
+        "description": "A point specifies a particular geometric point, which can include a latitude, longitude, and elevation.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1559,8 +1559,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find resource by ID",
-        "description": "A geometry point object. Geo Json Spec : For type \"Point\", the \"coordinates\" member must be a single position.",
+        "summary": "Find a point.",
+        "description": "A point specifies a particular geometric point, which can include a latitude, longitude, and elevation.",
         "displayName": "Point",
         "produces": [
           "application/json",
@@ -1602,8 +1602,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing point.",
+        "description": "A point specifies a particular geometric point, which can include a latitude, longitude, and elevation.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1653,8 +1653,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a point.",
+        "description": "A point specifies a particular geometric point, which can include a latitude, longitude, and elevation.",
         "produces": [
           "application/json",
           "application/xml"
