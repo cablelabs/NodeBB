@@ -8400,8 +8400,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create an EVCConfiguration.",
+        "description": "EVCConfiguration holds configuration data for an EVCService.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -8436,8 +8436,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Find resource by ID",
-        "description": "The logical circuit that connects two or more customer networks (end points). The end points of an EVC are defined as UNIs. An intra-MEN EVC is an Ethernet Service that connects two (or more) UNIs provided by a single Operator within a single MEN. An inter-MEN EVC is an ENNI-based Ethernet Service that connects two or more UNIs that are located in different Operator MENs and physically provided by at least two MEN Operators.",
+        "summary": "Find an EVCConfiguration.",
+        "description": "EVCConfiguration holds configuration data for an EVCService.",
         "displayName": "EVC Service Configuration",
         "produces": [
           "application/json",
@@ -8479,8 +8479,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing EVCConfiguration.",
+        "description": "EVCConfiguration holds configuration data for an EVCService.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -8522,8 +8522,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete an EVCConfiguration.",
+        "description": "EVCConfiguration holds configuration data for an EVCService.",
         "produces": [
           "application/json",
           "application/xml"
