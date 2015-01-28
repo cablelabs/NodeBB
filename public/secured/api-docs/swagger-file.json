@@ -5394,8 +5394,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create an EVC service.",
+        "description": "An EVCService is a point-to-point Ethernet Virtual Connection with no multiplexing and is used as part of an Ethernet Private Line product..",
         "consumes": [
           "application/json",
           "application/xml"
@@ -5430,8 +5430,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Find resource by ID",
-        "description": "An association of two or more UNIs (The physical point in a 'network' that defines the demarcation between the responsibility of a Service Provider and the responsibility of a Subscriber) across one or more Metro Ethernet Networks.",
+        "summary": "Find an EVC service.",
+        "description": "An EVCService is a point-to-point Ethernet Virtual Connection with no multiplexing and is used as part of an Ethernet Private Line product.",
         "displayName": "EVC Service",
         "produces": [
           "application/json",
@@ -5473,8 +5473,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing EVC service.",
+        "description": "An EVCService is a point-to-point Ethernet Virtual Connection with no multiplexing and is used as part of an Ethernet Private Line product.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -5516,8 +5516,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete an EVC service.",
+        "description": "An EVCService is a point-to-point Ethernet Virtual Connection with no multiplexing and is used as part of an Ethernet Private Line product.",
         "produces": [
           "application/json",
           "application/xml"
