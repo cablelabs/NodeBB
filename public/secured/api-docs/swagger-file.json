@@ -8089,7 +8089,7 @@
           "Service"
         ],
         "summary": "Create a UNI configuration.",
-        "description": "Create a new instance of the resource.",
+        "description": "UNIConfiguration holds configuration data for a UNIService. Each EthernetServiceConfiguration must be configured via two or more UNIConfigurations.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -8125,7 +8125,7 @@
           "Service"
         ],
         "summary": "Find a UNI configuration.",
-        "description": "UNIConfiguration holds configuration data for a UNIService. ",
+        "description": "UNIConfiguration holds configuration data for a UNIService. Each EthernetServiceConfiguration must be configured via two or more UNIConfigurations.",
         "displayName": "UNI ServiceConfiguration",
         "produces": [
           "application/json",
@@ -8168,7 +8168,7 @@
           "Service"
         ],
         "summary": "Update an existing UNI configuration.",
-        "description": "UNIConfiguration holds configuration data for a UNIService.",
+        "description": "UNIConfiguration holds configuration data for a UNIService. Each EthernetServiceConfiguration must be configured via two or more UNIConfigurations.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -8211,7 +8211,7 @@
           "Service"
         ],
         "summary": "Delete a UNI configuration.",
-        "description": "UNIConfiguration holds configuration data for a UNIService.",
+        "description": "UNIConfiguration holds configuration data for a UNIService. Each EthernetServiceConfiguration must be configured via two or more UNIConfigurations.",
         "produces": [
           "application/json",
           "application/xml"
@@ -13030,8 +13030,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a service configuration.",
+        "description": "ServiceConfiguration is the setup data for a service, such as the setup of network / resource components for a customer, or a class of customers of a generic service build. Service configurations can be derived from order details and service specifications.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -13066,8 +13066,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Find resource by ID",
-        "description": "Service Configuration management might be either the set up of network / resource components for a customer, or a class of customers of a generic service build. Service configuration can be derived from order details in addition to inherent business rules from service specifications.",
+        "summary": "Find a service configuration.",
+        "description": "ServiceConfiguration is the setup data for a service, such as the setup of network / resource components for a customer, or a class of customers of a generic service build. Service configurations can be derived from order details and service specifications.",
         "displayName": "Service Configuration",
         "produces": [
           "application/json",
@@ -13109,8 +13109,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing service configuration.",
+        "description": "ServiceConfiguration is the setup data for a service, such as the setup of network / resource components for a customer, or a class of customers of a generic service build. Service configurations can be derived from order details and service specifications.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -13152,8 +13152,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a service configuration.",
+        "description": "ServiceConfiguration is the setup data for a service, such as the setup of network / resource components for a customer, or a class of customers of a generic service build. Service configurations can be derived from order details and service specifications.",
         "produces": [
           "application/json",
           "application/xml"
