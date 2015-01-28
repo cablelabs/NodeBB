@@ -4323,8 +4323,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a service specification.",
+        "description": "A ServiceSpecification defines the invariant characteristics of a Service. It acts as a template that different Service instances can be instantiated from.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -4359,8 +4359,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Find resource by ID",
-        "description": "A ServiceSpecification defines the invariant characteristics of a Service. It can be conceptually thought of as a template that different Service instances can be instantiated from.",
+        "summary": "Find a service specification.",
+        "description": "A ServiceSpecification defines the invariant characteristics of a Service. It acts as a template that different Service instances can be instantiated from.",
         "displayName": "Service Specification",
         "produces": [
           "application/json",
@@ -4402,8 +4402,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing service specification.",
+        "description": "A ServiceSpecification defines the invariant characteristics of a Service. It acts as a template that different Service instances can be instantiated from.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -4445,8 +4445,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a service specification.",
+        "description": "A ServiceSpecification defines the invariant characteristics of a Service. It acts as a template that different Service instances can be instantiated from.",
         "produces": [
           "application/json",
           "application/xml"
