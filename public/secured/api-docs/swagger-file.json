@@ -9624,8 +9624,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a feature.",
+        "description": "A feature is a geometry with additional properties.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -9660,8 +9660,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "summary": "Find a feature.",
+        "description": "A feature is a geometry with additional properties.",
         "displayName": "Feature",
         "produces": [
           "application/json",
@@ -9703,8 +9703,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing feature.",
+        "description": "A feature is a geometry with additional properties.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -9746,8 +9746,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a feature.",
+        "description": "A feature is a geometry with additional properties.",
         "produces": [
           "application/json",
           "application/xml"
