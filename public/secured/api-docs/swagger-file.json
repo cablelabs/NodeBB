@@ -1040,8 +1040,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Create a multi linestring.",
-        "description": "A multi linestring is a geometry multi linestring object.",
+        "summary": "Create a multilinestring.",
+        "description": "A multilinestring is a geometry multi linestring object.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1076,8 +1076,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find a multi linestring.",
-        "description": "A multi linestring is a geometry multi linestring object.",
+        "summary": "Find a multilinestring.",
+        "description": "A multilinestring is a geometry multi linestring object.",
         "displayName": "Multi Line String",
         "produces": [
           "application/json",
@@ -1119,8 +1119,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Update an existing multi linestring.",
-        "description": "A multi linestring is a geometry multi linestring object.",
+        "summary": "Update an existing multilinestring.",
+        "description": "A multilinestring is a geometry multi linestring object.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1170,8 +1170,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Delete a multi linestring.",
-        "description": "A multi linestring is a geometry multi linestring object.",
+        "summary": "Delete a multilinestring.",
+        "description": "A multilinestring is a geometry multi linestring object.",
         "produces": [
           "application/json",
           "application/xml"
@@ -1202,7 +1202,7 @@
           "Location"
         ],
         "summary": "Create a linestring.",
-        "description": "Linestring is a geometry linestring object.",
+        "description": "A linestring is a geometry linestring object.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1238,7 +1238,7 @@
           "Location"
         ],
         "summary": "Find a linestring.",
-        "description": "Linestring is a geometry linestring object.",
+        "description": "A linestring is a geometry linestring object.",
         "displayName": "Line String",
         "produces": [
           "application/json",
@@ -1281,7 +1281,7 @@
           "Location"
         ],
         "summary": "Update an existing linestring.",
-        "description": "Linestring is a geometry linestring object.",
+        "description": "A linestring is a geometry linestring object.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1332,7 +1332,7 @@
           "Location"
         ],
         "summary": "Delete a linestring.",
-        "description": "Linestring is a geometry linestring object.",
+        "description": "A linestring is a geometry linestring object.",
         "produces": [
           "application/json",
           "application/xml"
@@ -1362,8 +1362,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a multipoint.",
+        "description": "A multipoint is a geometry multipoint object.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1398,8 +1398,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find resource by ID",
-        "description": "A geometry multi point object. Geo Json Spec : For type \"MultiPoint\", the \"coordinates\" member must be an array of positions.",
+        "summary": "Find a multipoint.",
+        "description": "A multipoint is a geometry multipoint object.",
         "displayName": "Multi Point",
         "produces": [
           "application/json",
@@ -1441,8 +1441,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing multipoint.",
+        "description": "A multipoint is a geometry multipoint object.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1492,8 +1492,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a multipoint.",
+        "description": "A multipoint is a geometry multipoint object.",
         "produces": [
           "application/json",
           "application/xml"
@@ -13183,7 +13183,7 @@
         "tags": [
           "Location"
         ],
-        "summary": "Create cable service area.",
+        "summary": "Create a cable service area.",
         "description": "A cable service area is an area served by a cable provider. Typically this area would be that served by one or more nodes in the cable plant.",
         "consumes": [
           "application/json",
