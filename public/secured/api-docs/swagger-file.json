@@ -8088,7 +8088,7 @@
         "tags": [
           "Service"
         ],
-        "summary": "Create a new resource",
+        "summary": "Create a UNI service.",
         "description": "Create a new instance of the resource.",
         "consumes": [
           "application/json",
@@ -9778,7 +9778,7 @@
           "Service"
         ],
         "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "description": "A UNIService is a User Network Interface service used as part of an Ethernet Private Line product.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -9813,8 +9813,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Find resource by ID",
-        "description": "Serves as the point of demarcation that specifies where the Service Provider's (Operator's) responsibility ends and the customer's responsibility begins. The UNI is typically considered to reside at the customer network facing side of the PE equipment that the Service Provider places at the customer premises. The UNI has two sides: the UNI-C represents the customer premise facing side of the Provider Edge device, and the UNI-N represents the side of the PE that faces back towards the Service Provider (Operator) network. The organization responsible for the UNI-to-UNI (end-to-end) Ethernet service, i.e., the company that the end user Subscriber has the primary commercial relationship with for Ethernet services.",
+        "summary": "Find a UNI service.",
+        "description": "A UNIService is a User Network Interface service used as part of an Ethernet Private Line product.",
         "displayName": "UNI Service",
         "produces": [
           "application/json",
@@ -9856,8 +9856,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing UNI service.",
+        "description": "A UNIService is a User Network Interface service used as part of an Ethernet Private Line product.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -9899,8 +9899,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a UNI service.",
+        "description": "A UNIService is a User Network Interface service used as part of an Ethernet Private Line product.",
         "produces": [
           "application/json",
           "application/xml"
