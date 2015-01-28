@@ -1684,8 +1684,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a site.",
+        "description": "A site list is a collection of sites.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1720,8 +1720,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find resource by ID",
-        "description": "A collection of Site instances.",
+        "summary": "Find a site.",
+        "description": "A site list is a collection of sites.",
         "displayName": "Site List",
         "produces": [
           "application/json",
@@ -1763,8 +1763,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing site.",
+        "description": "A site list is a collection of sites.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1806,8 +1806,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a site.",
+        "description": "A site list is a collection of sites.",
         "produces": [
           "application/json",
           "application/xml"
@@ -7584,8 +7584,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a new site.",
+        "description": "A site is a location where a customer is receiving service. It is the point at which service is delivered to a customer, and is associated with a service address.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -7620,8 +7620,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find resource by ID",
-        "description": "ServiceSite is a customer location where a customer is receiving service. It is the point at which service is delivered to a customer, and is associated with a service address (UrbanPropertyAddress).",
+        "summary": "Find a site.",
+        "description": "A site is a location where a customer is receiving service. It is the point at which service is delivered to a customer, and is associated with a service address.",
         "displayName": "Site",
         "produces": [
           "application/json",
@@ -7663,8 +7663,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing site.",
+        "description": "A site is a location where a customer is receiving service. It is the point at which service is delivered to a customer, and is associated with a service address.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -7706,8 +7706,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a site.",
+        "description": "A site is a location where a customer is receiving service. It is the point at which service is delivered to a customer, and is associated with a service address.",
         "produces": [
           "application/json",
           "application/xml"
@@ -7737,8 +7737,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find Services in a specific site",
-        "description": "Returns a collection of Services found at the specified Site.",
+        "summary": "Find services in a specific site.",
+        "description": "Site Services is a list of services at a specified site.",
         "displayName": "Service on Site",
         "produces": [
           "application/json",
@@ -8553,8 +8553,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a property address.",
+        "description": "A property address describes how to locate a property.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -8589,8 +8589,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find resource by ID",
-        "description": "This is a structured textual way of describing how to find a Property in an urban area (country properties are often defined differently).",
+        "summary": "Find a property address.",
+        "description": "A property address describes how to locate a property.",
         "displayName": "Property Address",
         "produces": [
           "application/json",
@@ -8632,8 +8632,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing property address.",
+        "description": "A property address describes how to locate a property.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -8675,8 +8675,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a property address.",
+        "description": "A property address describes how to locate a property.",
         "produces": [
           "application/json",
           "application/xml"
