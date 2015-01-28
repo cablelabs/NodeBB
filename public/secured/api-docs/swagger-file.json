@@ -13183,8 +13183,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create cable service area.",
+        "description": "A cable service area is an area served by a cable provider. Typically this area would be that served by one or more nodes in the cable plant.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -13219,8 +13219,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find resource by ID",
-        "description": "An area that it served by a Cable provider.  Typically this area would be that served by 1 or more Nodes in the cable plant.",
+        "summary": "Find a cable service area.",
+        "description": "A cable service area is an area served by a cable provider. Typically this area would be that served by one or more nodes in the cable plant.",
         "displayName": "Cable ServiceArea",
         "produces": [
           "application/json",
@@ -13262,8 +13262,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing cable service area.",
+        "description": "A cable service area is an area served by a cable provider. Typically this area would be that served by one or more nodes in the cable plant.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -13305,8 +13305,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a cable service area.",
+        "description": "A cable service area is an area served by a cable provider. Typically this area would be that served by one or more nodes in the cable plant.",
         "produces": [
           "application/json",
           "application/xml"
