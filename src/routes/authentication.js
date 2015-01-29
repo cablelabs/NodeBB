@@ -8,6 +8,7 @@
 		winston = require('winston'),
 		async = require('async'),
 		express = require('express'),
+		AtlassianCrowdStrategy = require('passport-atlassian-crowd').Strategy,
 
 		meta = require('../meta'),
 		user = require('../user'),
@@ -225,6 +226,20 @@
 			return;
 		}
 
+		passport.use(new AtlassianCrowdStrategy({
+				crowdServer:"http://localhost:2990/jira",
+				crowdApplication:"nodejs",
+				crowdApplicationPassword:"password",
+				retrieveGroupMemberships:false
+			},
+			function (userprofile, done) {
+				Users.findOrCreate(userprofile, function(err,user) {
+					if(err) return done(err);
+					return done(null, user);
+				});
+			}
+		));
+
 		var userslug = utils.slugify(username);
 
 		user.getUidByUserslug(userslug, function(err, uid) {
@@ -273,6 +288,33 @@
 			});
 		});
 	};
+
+	// Use the AtlassianCrowdStrategy within Passport.
+//   Strategies in passport require a `verify` function, which accept
+//   credentials (in this case a crowd user profile), and invoke a callback
+//   with a user object.  In the real world, this would query a database;
+//   however, in this example we are using a baked-in set of users.
+//	passport.use(new AtlassianCrowdStrategy({
+//			crowdServer:"http://ccauth.cablelabs.com:8095/crowd/services/",
+//			crowdApplication:"devportal",
+//			crowdApplicationPassword:"lF~!DL4o",
+//			retrieveGroupMemberships:true
+//		},
+//		function (userprofile, done) {
+//			// asynchronous verification, for effect...
+//			process.nextTick(function () {
+//
+//				var exists = _.any(users, function (user) {
+//					return user.id == userprofile.id;
+//				});
+//				if (!exists) {
+//					users.push(userprofile);
+//				}
+//
+//				return done(null, userprofile);
+//			});
+//		}
+//	));
 
 	passport.use(new passportLocal(Auth.login));
 
