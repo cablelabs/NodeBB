@@ -58,49 +58,46 @@
       return s.sort().map( (domain) => { return { name: domain, entities: this.by_domain(domain) }; });
     }
 
-    related (entity) {
+    related (entity, bidirectional) {
       if (Array.isArray(entity)) { return this.related_list(entity); }
       else {
         return this.entities.filter( (ent) => {
-          return ent.has_link(entity) || entity.has_link(ent);
+          return entity.has_link(ent) || (bidirectional && ent.has_link(entity));
         });
       }
     }
 
-    related_list (list) {
+    related_list (list, bidirectional) {
       var result = new Set(), self = this;
       list.forEach((entity) => {
-        self.related(entity).forEach( (ent) => {
+        self.related(entity, bidirectional).forEach( (ent) => {
           if (list.indexOf(ent) < 0) { result.add([entity, ent]); }
         });
       });
       return Array.from(result.values());
     }
 
-    hops_data (entities, max) {
+    hops_data (entities, max, bidirectional) {
 
-      var entity_names =  Array.isArray(entities) ? entities : [entities];
-      entities = this.by_name(entity_names);
+      entities = this.by_name( Array.isArray(entities) ? entities : [entities] );
 
-      var hops = [this.related_list(entities)],
-          result = {};
-      hops[0].forEach( (pair) => { result[pair[1].name] = {hops: 1}; });
+      var hops = [], result = {};
 
-      for (let i = 1; i < max; i++) {
+      for (let i = 0; i < max; i++) {
 
-        let next = hops[i-1].map( (pair) => { return pair[1]; });
+        let next = i === 0 ? entities : hops[i-1].map( (pair) => { return pair[1]; });
 
-        hops[i] = (this.related_list(next)).filter( (pair) => {
+        hops[i] = (this.related_list(next, bidirectional)).filter( (pair) => {
           var name = pair[1].name;
-          return !result.hasOwnProperty(name) && entity_names.indexOf(name) < 0;
+          return !result.hasOwnProperty(name) && next.indexOf(name) < 0;
         });
 
         hops[i].forEach( (pair) => {
           if (!result.hasOwnProperty(pair[1].name)) {
-            result[pair[1].name] = {hops: i+1, trails: []};
+            result[pair[1].name] = {hops: i+1, trail: []};
           }
-          if (result[pair[1].name].trails.indexOf(pair[0].name) < 0) {
-            result[pair[1].name].trails.push(pair[0].name);
+          if (result[pair[1].name].trail.indexOf(pair[0].name) < 0) {
+            result[pair[1].name].trail.push(pair[0].name);
           }
         });
       }

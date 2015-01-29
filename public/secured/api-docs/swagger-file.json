@@ -557,8 +557,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a geometry collection.",
+        "description": "A geometry collection is a list of geometries.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -593,8 +593,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find resource by ID",
-        "description": "A geometry collection object. A GeoJSON object with type \"GeometryCollection\" is a geometry object which represents a collection of geometry objects. A geometry collection must have a member with the name \"geometries\". The value corresponding to \"geometries\"is an array. Each element in this array is a GeoJSON geometry object.",
+        "summary": "Find a geometry collection.",
+        "description": "A geometry collection is a list of geometries.",
         "displayName": "Geometry Collection",
         "produces": [
           "application/json",
@@ -636,8 +636,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing geometry collection.",
+        "description": "A geometry collection is a list of geometries.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -687,8 +687,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a geometry collection.",
+        "description": "A geometry collection is a list of geometries.",
         "produces": [
           "application/json",
           "application/xml"
@@ -718,8 +718,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a multipolygon.",
+        "description": "A multipolygon is a geometry multipolygon object.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -754,8 +754,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find resource by ID",
-        "description": "A geometry multi polygon object. For type \"MultiPolygon\", the \"coordinates\" member must be an array of Polygon coordinate arrays.",
+        "summary": "Find a multipolygon.",
+        "description": "A multipolygon is a geometry multipolygon object.",
         "displayName": "Multi Polygon",
         "produces": [
           "application/json",
@@ -797,8 +797,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing multipolygon.",
+        "description": "A multipolygon is a geometry multipolygon object.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -848,8 +848,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a multipolygon.",
+        "description": "A multipolygon is a geometry multipolygon object.",
         "produces": [
           "application/json",
           "application/xml"
@@ -879,8 +879,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a polygon.",
+        "description": "A polygon is a geometric polygon object.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -915,8 +915,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find resource by ID",
-        "description": "A geometry polygon object. For type \"Polygon\", the \"coordinates\" member must be an array of LinearRing coordinate arrays. For Polygons with multiple rings, the first must be the exterior ring and any others must be interior rings or holes.",
+        "summary": "Find a polygon.",
+        "description": "A polygon is a geometric polygon object.",
         "displayName": "Polygon",
         "produces": [
           "application/json",
@@ -958,8 +958,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing polygon.",
+        "description": "A polygon is a geometric polygon object.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1009,8 +1009,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a polygon.",
+        "description": "A polygon is a geometric polygon object.",
         "produces": [
           "application/json",
           "application/xml"
@@ -1040,8 +1040,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a multilinestring.",
+        "description": "A multilinestring is a geometry multilinestring object.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1076,8 +1076,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find resource by ID",
-        "description": "A geometry multi linestring object. For type \"MultiLineString\", the \"coordinates\" member must be an array of LineString coordinate arrays.",
+        "summary": "Find a multilinestring.",
+        "description": "A multilinestring is a geometry multilinestring object.",
         "displayName": "Multi Line String",
         "produces": [
           "application/json",
@@ -1119,8 +1119,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing multilinestring.",
+        "description": "A multilinestring is a geometry multilinestring object.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1170,8 +1170,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a multilinestring.",
+        "description": "A multilinestring is a geometry multilinestring object.",
         "produces": [
           "application/json",
           "application/xml"
@@ -1201,8 +1201,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a linestring.",
+        "description": "A linestring is a geometry linestring object.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1237,8 +1237,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find resource by ID",
-        "description": "A geometry linestring object. Geo Json Spec: For type \"LineString\", the \"coordinates\" member must be an array of two or more positions. A LinearRing is closed LineString with 4 or more positions. The first and last positions are equivalent (they represent equivalent points). Though a LinearRing is not explicitly represented as a GeoJSON geometry type, it is referred to in the Polygon geometry type definition.",
+        "summary": "Find a linestring.",
+        "description": "A linestring is a geometry linestring object.",
         "displayName": "Line String",
         "produces": [
           "application/json",
@@ -1280,8 +1280,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing linestring.",
+        "description": "A linestring is a geometry linestring object.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1331,8 +1331,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a linestring.",
+        "description": "A linestring is a geometry linestring object.",
         "produces": [
           "application/json",
           "application/xml"
@@ -1362,8 +1362,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a multipoint.",
+        "description": "A multipoint is a geometry multipoint object.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1398,8 +1398,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find resource by ID",
-        "description": "A geometry multi point object. Geo Json Spec : For type \"MultiPoint\", the \"coordinates\" member must be an array of positions.",
+        "summary": "Find a multipoint.",
+        "description": "A multipoint is a geometry multipoint object.",
         "displayName": "Multi Point",
         "produces": [
           "application/json",
@@ -1441,8 +1441,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing multipoint.",
+        "description": "A multipoint is a geometry multipoint object.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1492,8 +1492,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a multipoint.",
+        "description": "A multipoint is a geometry multipoint object.",
         "produces": [
           "application/json",
           "application/xml"
@@ -1523,8 +1523,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a point.",
+        "description": "A point specifies a particular geometric point, which can include a latitude, longitude, and elevation.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1559,8 +1559,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find resource by ID",
-        "description": "A geometry point object. Geo Json Spec : For type \"Point\", the \"coordinates\" member must be a single position.",
+        "summary": "Find a point.",
+        "description": "A point specifies a particular geometric point, which can include a latitude, longitude, and elevation.",
         "displayName": "Point",
         "produces": [
           "application/json",
@@ -1602,8 +1602,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing point.",
+        "description": "A point specifies a particular geometric point, which can include a latitude, longitude, and elevation.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1653,8 +1653,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a point.",
+        "description": "A point specifies a particular geometric point, which can include a latitude, longitude, and elevation.",
         "produces": [
           "application/json",
           "application/xml"
@@ -1684,8 +1684,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a site.",
+        "description": "A site list is a collection of sites.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1720,8 +1720,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find resource by ID",
-        "description": "A collection of Site instances.",
+        "summary": "Find a site.",
+        "description": "A site list is a collection of sites.",
         "displayName": "Site List",
         "produces": [
           "application/json",
@@ -1763,8 +1763,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing site.",
+        "description": "A site list is a collection of sites.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1806,8 +1806,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a site.",
+        "description": "A site list is a collection of sites.",
         "produces": [
           "application/json",
           "application/xml"
@@ -3558,8 +3558,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a service.",
+        "description": "Service defines the Service hierarchy. Services are defined by products: All services are either a CustomerFacingService (visible to a customer) or a ResourceFacingService (not visible to a customer but still supporting a customer’s product).",
         "consumes": [
           "application/json",
           "application/xml"
@@ -3594,8 +3594,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Find resource by ID",
-        "description": "All Services are characterized as either being possibly visible and usable by a Customer or not. This gives rise to the two subclasses of Service: CustomerFacingService and ResourceFacingService.",
+        "summary": "Find a service.",
+        "description": "Service defines the Service hierarchy. Services are defined by products: All services are either a CustomerFacingService (visible to a customer) or a ResourceFacingService (not visible to a customer but still supporting a customer’s product).",
         "displayName": "Service",
         "produces": [
           "application/json",
@@ -3637,8 +3637,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing service.",
+        "description": "Service defines the Service hierarchy. Services are defined by products: All services are either a CustomerFacingService (visible to a customer) or a ResourceFacingService (not visible to a customer but still supporting a customer’s product).",
         "consumes": [
           "application/json",
           "application/xml"
@@ -3680,8 +3680,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a service.",
+        "description": "Service defines the Service hierarchy. Services are defined by products: All services are either a CustomerFacingService (visible to a customer) or a ResourceFacingService (not visible to a customer but still supporting a customer’s product).",
         "produces": [
           "application/json",
           "application/xml"
@@ -4323,8 +4323,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a service specification.",
+        "description": "A ServiceSpecification defines the invariant characteristics of a service. It acts as a template that different service instances can be instantiated from.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -4359,8 +4359,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Find resource by ID",
-        "description": "A ServiceSpecification defines the invariant characteristics of a Service. It can be conceptually thought of as a template that different Service instances can be instantiated from.",
+        "summary": "Find a service specification.",
+        "description": "A ServiceSpecification defines the invariant characteristics of a service. It acts as a template that different service instances can be instantiated from.",
         "displayName": "Service Specification",
         "produces": [
           "application/json",
@@ -4402,8 +4402,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing service specification.",
+        "description": "A ServiceSpecification defines the invariant characteristics of a service. It acts as a template that different service instances can be instantiated from.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -4445,8 +4445,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a service specification.",
+        "description": "A ServiceSpecification defines the invariant characteristics of a service. It acts as a template that different service instances can be instantiated from.",
         "produces": [
           "application/json",
           "application/xml"
@@ -5394,8 +5394,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create an EVC service.",
+        "description": "An EVCService is a point-to-point Ethernet Virtual Connection with no multiplexing and is used as part of an Ethernet Private Line product..",
         "consumes": [
           "application/json",
           "application/xml"
@@ -5430,8 +5430,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Find resource by ID",
-        "description": "An association of two or more UNIs (The physical point in a 'network' that defines the demarcation between the responsibility of a Service Provider and the responsibility of a Subscriber) across one or more Metro Ethernet Networks.",
+        "summary": "Find an EVC service.",
+        "description": "An EVCService is a point-to-point Ethernet Virtual Connection with no multiplexing and is used as part of an Ethernet Private Line product.",
         "displayName": "EVC Service",
         "produces": [
           "application/json",
@@ -5473,8 +5473,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing EVC service.",
+        "description": "An EVCService is a point-to-point Ethernet Virtual Connection with no multiplexing and is used as part of an Ethernet Private Line product.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -5516,8 +5516,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete an EVC service.",
+        "description": "An EVCService is a point-to-point Ethernet Virtual Connection with no multiplexing and is used as part of an Ethernet Private Line product.",
         "produces": [
           "application/json",
           "application/xml"
@@ -6207,8 +6207,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a feature collection.",
+        "description": "A feature collection is a list of features, which are geometries with additional properties. Lists of geometries are geometry collections.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -6243,8 +6243,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find resource by ID",
-        "description": "Lists of geometries are represented by a GeometryCollection. Geometries with additional properties are Feature objects. And lists of features are represented by a FeatureCollection.",
+        "summary": "Find a feature collection.",
+        "description": "A feature collection is a list of features, which are geometries with additional properties. Lists of geometries are geometry collections.",
         "displayName": "Feature Collection",
         "produces": [
           "application/json",
@@ -6286,8 +6286,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update a feature collection.",
+        "description": "A feature collection is a list of features, which are geometries with additional properties. Lists of geometries are geometry collections.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -6329,8 +6329,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a feature collection.",
+        "description": "A feature collection is a list of features, which are geometries with additional properties. Lists of geometries are geometry collections.",
         "produces": [
           "application/json",
           "application/xml"
@@ -7584,8 +7584,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a new site.",
+        "description": "A site is a location where a customer is receiving service. It is the point at which service is delivered to a customer, and is associated with a service address.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -7620,8 +7620,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find resource by ID",
-        "description": "ServiceSite is a customer location where a customer is receiving service. It is the point at which service is delivered to a customer, and is associated with a service address (UrbanPropertyAddress).",
+        "summary": "Find a site.",
+        "description": "A site is a location where a customer is receiving service. It is the point at which service is delivered to a customer, and is associated with a service address.",
         "displayName": "Site",
         "produces": [
           "application/json",
@@ -7663,8 +7663,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing site.",
+        "description": "A site is a location where a customer is receiving service. It is the point at which service is delivered to a customer, and is associated with a service address.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -7706,8 +7706,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a site.",
+        "description": "A site is a location where a customer is receiving service. It is the point at which service is delivered to a customer, and is associated with a service address.",
         "produces": [
           "application/json",
           "application/xml"
@@ -7737,8 +7737,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find Services in a specific site",
-        "description": "Returns a collection of Services found at the specified Site.",
+        "summary": "Find services in a specific site.",
+        "description": "Site services returns a list of services at a specified site.",
         "displayName": "Service on Site",
         "produces": [
           "application/json",
@@ -8088,8 +8088,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a UNI service configuration.",
+        "description": "UNIConfiguration holds configuration data for a UNIService. Each EthernetServiceConfiguration must be configured via two or more UNIConfigurations.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -8124,8 +8124,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Find resource by ID",
-        "description": "A UNI can have a number of characteristics that will be important to the way that the CE sees a service. One of the key aspects of a service description will be the allowable mix of UNIs with different characteristics in an EVC.",
+        "summary": "Find a UNI service configuration.",
+        "description": "UNIConfiguration holds configuration data for a UNIService. Each EthernetServiceConfiguration must be configured via two or more UNIConfigurations.",
         "displayName": "UNI ServiceConfiguration",
         "produces": [
           "application/json",
@@ -8167,8 +8167,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing UNI service configuration.",
+        "description": "UNIConfiguration holds configuration data for a UNIService. Each EthernetServiceConfiguration must be configured via two or more UNIConfigurations.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -8210,8 +8210,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a UNI service configuration.",
+        "description": "UNIConfiguration holds configuration data for a UNIService. Each EthernetServiceConfiguration must be configured via two or more UNIConfigurations.",
         "produces": [
           "application/json",
           "application/xml"
@@ -8400,8 +8400,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create an EVC service configuration.",
+        "description": "EVCConfiguration holds configuration data for an EVCService.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -8436,8 +8436,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Find resource by ID",
-        "description": "The logical circuit that connects two or more customer networks (end points). The end points of an EVC are defined as UNIs. An intra-MEN EVC is an Ethernet Service that connects two (or more) UNIs provided by a single Operator within a single MEN. An inter-MEN EVC is an ENNI-based Ethernet Service that connects two or more UNIs that are located in different Operator MENs and physically provided by at least two MEN Operators.",
+        "summary": "Find an EVC service configuration.",
+        "description": "EVCConfiguration holds configuration data for an EVCService.",
         "displayName": "EVC Service Configuration",
         "produces": [
           "application/json",
@@ -8479,8 +8479,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing EVC service configuration.",
+        "description": "EVCConfiguration holds configuration data for an EVCService.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -8522,8 +8522,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete an EVC service configuration.",
+        "description": "EVCConfiguration holds configuration data for an EVCService.",
         "produces": [
           "application/json",
           "application/xml"
@@ -8553,8 +8553,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a property address.",
+        "description": "A property address describes how to locate a property.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -8589,8 +8589,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find resource by ID",
-        "description": "This is a structured textual way of describing how to find a Property in an urban area (country properties are often defined differently).",
+        "summary": "Find a property address.",
+        "description": "A property address describes how to locate a property.",
         "displayName": "Property Address",
         "produces": [
           "application/json",
@@ -8632,8 +8632,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing property address.",
+        "description": "A property address describes how to locate a property.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -8675,8 +8675,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a property address.",
+        "description": "A property address describes how to locate a property.",
         "produces": [
           "application/json",
           "application/xml"
@@ -9318,8 +9318,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a property.",
+        "description": "A property is a piece of land with defined legal boundaries.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -9354,8 +9354,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find resource by ID",
-        "description": "A piece of land with defined legal boundaries.This is an example of a concrete Geographic Location entity.",
+        "summary": "Find a property.",
+        "description": "A property is a piece of land with defined legal boundaries.",
         "displayName": "Property",
         "produces": [
           "application/json",
@@ -9397,8 +9397,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing property.",
+        "description": "A property is a piece of land with defined legal boundaries.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -9440,8 +9440,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a property.",
+        "description": "A property is a piece of land with defined legal boundaries.",
         "produces": [
           "application/json",
           "application/xml"
@@ -9471,8 +9471,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create configuration data.",
+        "description": "ConfigurationData holds the common properties of all captured configuration data (such as files, strings, and binary data). Other entities specify configuration data such as current, backup, and disaster recovery.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -9507,8 +9507,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Find resource by ID",
-        "description": "Class to hold common properties of all captured configuration data (files, strings, binary data, ...).  Subclasses specify base, current, backup, proposed, disaster recovery, etc configuration data.",
+        "summary": "Find configuration data.",
+        "description": "ConfigurationData holds the common properties of all captured configuration data (such as files, strings, and binary data). Other entities specify configuration data such as current, backup, and disaster recovery.",
         "displayName": "Configuration Data",
         "produces": [
           "application/json",
@@ -9550,8 +9550,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update existing configuration data.",
+        "description": "ConfigurationData holds the common properties of all captured configuration data (such as files, strings, and binary data). Other entities specify configuration data such as current, backup, and disaster recovery.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -9593,8 +9593,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete configuration data.",
+        "description": "ConfigurationData holds the common properties of all captured configuration data (such as files, strings, and binary data). Other entities specify configuration data such as current, backup, and disaster recovery.",
         "produces": [
           "application/json",
           "application/xml"
@@ -9624,8 +9624,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a feature.",
+        "description": "A feature is a geometry with additional properties.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -9660,8 +9660,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "summary": "Find a feature.",
+        "description": "A feature is a geometry with additional properties.",
         "displayName": "Feature",
         "produces": [
           "application/json",
@@ -9703,8 +9703,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing feature.",
+        "description": "A feature is a geometry with additional properties.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -9746,8 +9746,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a feature.",
+        "description": "A feature is a geometry with additional properties.",
         "produces": [
           "application/json",
           "application/xml"
@@ -9777,8 +9777,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a UNI service.",
+        "description": "A UNIService is a User Network Interface service used as part of an Ethernet Private Line product.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -9813,8 +9813,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Find resource by ID",
-        "description": "Serves as the point of demarcation that specifies where the Service Provider's (Operator's) responsibility ends and the customer's responsibility begins. The UNI is typically considered to reside at the customer network facing side of the PE equipment that the Service Provider places at the customer premises. The UNI has two sides: the UNI-C represents the customer premise facing side of the Provider Edge device, and the UNI-N represents the side of the PE that faces back towards the Service Provider (Operator) network. The organization responsible for the UNI-to-UNI (end-to-end) Ethernet service, i.e., the company that the end user Subscriber has the primary commercial relationship with for Ethernet services.",
+        "summary": "Find a UNI service.",
+        "description": "A UNIService is a User Network Interface service used as part of an Ethernet Private Line product.",
         "displayName": "UNI Service",
         "produces": [
           "application/json",
@@ -9856,8 +9856,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing UNI service.",
+        "description": "A UNIService is a User Network Interface service used as part of an Ethernet Private Line product.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -9899,8 +9899,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a UNI service.",
+        "description": "A UNIService is a User Network Interface service used as part of an Ethernet Private Line product.",
         "produces": [
           "application/json",
           "application/xml"
@@ -9930,8 +9930,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a service design.",
+        "description": "A ServiceDesign is the technical specification of the service level being offered by the service provider to the customer.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -9966,8 +9966,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Find resource by ID",
-        "description": "The technical specification of the service level being offered by the Service Provider to the Subscriber.",
+        "summary": "Find a service design.",
+        "description": "A ServiceDesign is the technical specification of the service level being offered by the service provider to the customer.",
         "displayName": "As Built Design",
         "produces": [
           "application/json",
@@ -10009,8 +10009,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing service design.",
+        "description": "A ServiceDesign is the technical specification of the service level being offered by the service provider to the customer.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -10052,8 +10052,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a service design.",
+        "description": "A ServiceDesign is the technical specification of the service level being offered by the service provider to the customer.",
         "produces": [
           "application/json",
           "application/xml"
@@ -13030,8 +13030,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a service configuration.",
+        "description": "ServiceConfiguration is the setup data for a service, such as the setup of network / resource components for a customer, or a class of customers of a generic service build. Service configurations can be derived from order details and service specifications.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -13066,8 +13066,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Find resource by ID",
-        "description": "Service Configuration management might be either the set up of network / resource components for a customer, or a class of customers of a generic service build. Service configuration can be derived from order details in addition to inherent business rules from service specifications.",
+        "summary": "Find a service configuration.",
+        "description": "ServiceConfiguration is the setup data for a service, such as the setup of network / resource components for a customer, or a class of customers of a generic service build. Service configurations can be derived from order details and service specifications.",
         "displayName": "Service Configuration",
         "produces": [
           "application/json",
@@ -13109,8 +13109,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing service configuration.",
+        "description": "ServiceConfiguration is the setup data for a service, such as the setup of network / resource components for a customer, or a class of customers of a generic service build. Service configurations can be derived from order details and service specifications.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -13152,8 +13152,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a service configuration.",
+        "description": "ServiceConfiguration is the setup data for a service, such as the setup of network / resource components for a customer, or a class of customers of a generic service build. Service configurations can be derived from order details and service specifications.",
         "produces": [
           "application/json",
           "application/xml"
@@ -13183,8 +13183,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create a cable service area.",
+        "description": "A cable service area is an area served by a cable provider. Typically this area would be that served by one or more nodes in the cable plant.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -13219,8 +13219,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Find resource by ID",
-        "description": "An area that it served by a Cable provider.  Typically this area would be that served by 1 or more Nodes in the cable plant.",
+        "summary": "Find a cable service area.",
+        "description": "A cable service area is an area served by a cable provider. Typically this area would be that served by one or more nodes in the cable plant.",
         "displayName": "Cable ServiceArea",
         "produces": [
           "application/json",
@@ -13262,8 +13262,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing cable service area.",
+        "description": "A cable service area is an area served by a cable provider. Typically this area would be that served by one or more nodes in the cable plant.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -13305,8 +13305,8 @@
         "tags": [
           "Location"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete a cable service area.",
+        "description": "A cable service area is an area served by a cable provider. Typically this area would be that served by one or more nodes in the cable plant.",
         "produces": [
           "application/json",
           "application/xml"
@@ -13489,8 +13489,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Create a new resource",
-        "description": "Create a new instance of the resource.",
+        "summary": "Create an Ethernet device interface.",
+        "description": "EthernetInterface refines the concept of a DeviceInterface into a EthernetDeviceInterface.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -13525,8 +13525,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Find resource by ID",
-        "description": "Retrieves an instance based on the ID",
+        "summary": "Find an Ethernet device interface.",
+        "description": "EthernetInterface refines the concept of a DeviceInterface into a EthernetDeviceInterface.",
         "displayName": "Ethernet Interface",
         "produces": [
           "application/json",
@@ -13568,8 +13568,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Update an existing resource",
-        "description": "Update a specific instance of the resource by ID.",
+        "summary": "Update an existing Ethernet device interface.",
+        "description": "EthernetInterface refines the concept of a DeviceInterface into a EthernetDeviceInterface.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -13611,8 +13611,8 @@
         "tags": [
           "Service"
         ],
-        "summary": "Deletes a resource based on ID.",
-        "description": "Delete a specific instance based on the ID",
+        "summary": "Delete an Ethernet device interface.",
+        "description": "EthernetInterface refines the concept of a DeviceInterface into a EthernetDeviceInterface.",
         "produces": [
           "application/json",
           "application/xml"

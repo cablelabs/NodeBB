@@ -15,88 +15,97 @@
 
 <div id="container-fluid">
   <div id="entity-map-container">
-    <!-- button that shows/hides help overlay -->
-    <button class="btn btn-default toggle-help-btn">?</button>
 
-    <!-- Graph Settings -->
-    <div id="graph-settings" class="row">
+    <div class="row" id="graph-settings">
 
       <!-- Subsets -->
-      <div class="col-md-4" id="entity-subsets">
-        <div>
-          <label>Entity Subset</label>
-          <button type="button" class="btn btn-link" title="Manage Entity Sets" data-toggle="modal" data-target="#subset-manager">
-            <span class="glyphicon glyphicon-edit"></span>
+      <div class="col-md-4" id="subset-settings">
+        <select class="form-control">
+          <option value="-1">All Entities</option>
+        </select>
+        <div class="second-row">
+          <button class="btn btn-xs" type="button" data-toggle="modal" data-target="#subset-manager">
+            <span class="glyphicon glyphicon-edit"></span> Subsets
+          </button>
+          <div class="btn-group pull-right">
+            <button type="button" class="btn btn-xs edit-subset-btn">
+              <span class="glyphicon glyphicon-edit"></span> edit
+            </button>
+            <button type="button" class="btn btn-primary btn-xs share-subset-btn">
+              <span class="glyphicon glyphicon-share"></span> share
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- End Subsets -->
+
+      <!-- Search, Help, Reset -->
+      <div class="col-md-4" id="search-settings">
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control" placeholder="Search by Name" id="search-field">
+          <span class="input-group-btn">
+            <button class="btn clear-search-field-btn" type="button">&#10006;</button>
+          </span>
+        </div>
+        <div class="btn-group second-row">
+          <button type="button" class="btn btn-primary btn-xs open-help-btn">
+            <span class="glyphicon glyphicon-question-sign"></span> Help
+          </button>
+          <button type="button" class="btn btn-danger btn-xs reset-graph-btn">
+            <span class="glyphicon glyphicon-refresh"></span> Reset
           </button>
         </div>
-        <div class="select-and-button">
-          <div>
-            <select class="form-control">
-              <option value="all">All Entities</option>
-            </select>
+      </div>
+      <!-- End Search -->
+
+      <!-- Show Related -->
+      <div class="col-md-4" id="show-related-settings">
+        <div class="input-group">
+          <span class="input-group-addon">Show Related</span>
+          <div class="btn-group">
+            <button class="btn hops-1 btn-sm hops-btn" data-hops="1">1</button>
+            <button class="btn hops-2 btn-sm hops-btn" data-hops="2">2</button>
+            <button class="btn hops-3 btn-sm hops-btn" data-hops="3">3</button>
           </div>
-          <button type="button" id="edit-subset-btn" class="btn btn-default">
-            <span class="glyphicon glyphicon-edit"></span>
-          </button>
         </div>
-        <div class="checkbox">
-          <label><input type="checkbox"> Show entities related to set</label>
+        <div class="btn-group second-row">
+          <button class="btn btn-xs bidirectional-btn" data-setting="bidirectional">bidirectional</button>
+          <button class="btn btn-xs show-all-btn" data-setting="show_all">show all</button>
         </div>
       </div>
-
-      <!-- Search -->
-      <div class="col-md-4">
-        <form role="search" id="search-form">
-          <label for="search-field">Entity Search</label>
-          <div class="input-group input-group-lg">
-            <input type="text" class="form-control" placeholder="Entity Name" id="search-field">
-            <span class="input-group-btn">
-              <button class="btn btn-default" type="button">&#x2716;</button>
-            </span>
-          </div>
-        </form>
-      </div>
-
-      <!-- Hops Away -->
-      <div id="hops-away" class="col-md-4">
-        <p>Hops Away</p>
-        <span data-hops="1" class="hops-1 hops-away-btn">1</span>
-        <span data-hops="2" class="hops-2 hops-away-btn">2</span>
-        <span data-hops="3" class="hops-3 hops-away-btn">3</span>
-      </div>
-
-    </div>
-    <!-- End Graph Settings -->
+      <!-- End Show Related -->
+    </div> <!-- End Graph Settings -->
 
     <!-- Graph -->
     <div id="graph"></div>
+
+    <!-- Help -->
     <div id="help-overlay">
+      <button class="btn close-help-btn btn-primary">&#10006;</button>
       <div class="row">
         <div class="col-md-4">
           <div class="popover bottom" id="help-subsets">
-            <div class="arrow"></div>
-            <div class="popover-title">Subsets <span class="glyphicon glyphicon-question-sign"></span></div>
+            <div class="popover-title">Subsets</div>
             <div class="popover-content">
-              Subsets enable you to limit the scope of what you see.  Click on the pencil icon next to "Entity Subset" to create, delete, and reorder subsets.  To edit the which entites are in a subset, select the subset and then click the circular edit button that appears.
-              The edit icon will appear red to indicate that you are in edit mode.  Click the edit icon again to exit edit mode.  The subset only filters which entities are shown.  The graph still behaves as if all entities are present, so two entities in a subset can be related through entities that aren't in the subset.
+              Subsets enable you to limit the scope of what you see.  Click on "Subsets" to create, delete, and reorder subsets.  You can create a subset as empty, containing selected entities, or containing selected and related entities.  Outside of the subset manager, if you select a subset, you will see the edit and share buttons appear.  Edit allows you to add/remove entites from the set.  Share, allows you to share a copy of the subset with another user.  Any edits made after sharing won't be shared.
+              The subset only filters which entities are shown.  The graph still behaves as if all entities are present, so two entities in a subset can be related through entities that aren't in the subset.
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="popover bottom" id="help-search">
-            <div class="arrow"></div>
-            <div class="popover-title">Search <span class="glyphicon glyphicon-question-sign"></span></div>
+            <div class="popover-title">Search</div>
             <div class="popover-content">
-              Search will deselect all entities and show only entities whose name matches the text in the search field.  Click any entity in the search results.  Clicking the 'X' will remove search text and reset the entity-map.
+              Search will deselect all entities and show only entities whose name matches the text in the search field.  Click any entity in the search results.  Clicking the 'X' will remove search text and reset the entity-map.  Likewise, clicking the reset button will reset the map and the search field.
             </div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="popover bottom" id="help-hops">
-            <div class="arrow"></div>
-            <div class="popover-title">Hops Away <span class="glyphicon glyphicon-question-sign"></span></div>
+          <div class="popover bottom" id="help-related">
+            <div class="popover-title">Show Related</div>
             <div class="popover-content">
-              'Hops Away' indicates how many hops it takes to get from one entity to another.  All "hops away" are bi-directional and calculated from the selected entity.  Entities that are directly related are 1 hop away.  2 hops away indicates that two entities share a "1 hop" relationship with a common entity.  3 hops away indicates that 2 entities are related through two different entities.  Select "1, 2, or 3" to limit which relationships will appear after selecting an entity.
+              "Show Related" settings 1, 2, or 3 will limit the degree of relationships visible after selecting entities.  1 limits the visible relationships to those entities directly related to the selected entities.  The relationships displayed are unidirectional, or stemming from the selected entities, unless bidirectional is selected.  Selecting bidirectional will consider both links to/from an entity in calculating relationships.
+              Clicking "Show All" will display all entities (limited by the subset), not just those related to the selected entities.
             </div>
           </div>
         </div>
@@ -104,7 +113,7 @@
       <div class="row">
         <div class="col-md-4">
           <div class="popover bottom" id="help-entity">
-            <div class="popover-title">Entity <span class="glyphicon glyphicon-question-sign"></span></div>
+            <div class="popover-title">Entity</div>
             <div class="popover-content">
               <img src="/images/entity-open.jpg" alt="Entity">
               <span>
@@ -114,15 +123,16 @@
           </div>
         </div>
         
-        <!-- <div class="col-md-4">
-          <div class="popover bottom" id="help-video">
-            <div class="popover-title">Video</div>
+        <div class="col-md-4">
+          <div class="popover bottom" id="help-trail">
+            <div class="popover-title">Entity Trail</div>
             <div class="popover-content">
-              For more detailed instructions on how to use the entity-map, please watch the 
-              <a href="#">Entity-Map Video Tutorial</a>.
+              <img src="/images/hop-trail.jpg" alt="Entity">
+              <span></span>
+              Related entities will show the previous entities, which can be traced back to the selected entities.  In this example, "Email Contact" can be traced back to the selected entities through either "Customer" or "User".  The entity trail is always the shortest possible path back to the selected entities.
             </div>
           </div>
-        </div> -->
+        </div>
       </div>
     </div>
   </div> <!-- end #entity-map-container -->
@@ -139,15 +149,28 @@
       <div class="modal-body">
         <div>
           <form role="add" id="add-set-form">
+            <legend>Create Set</legend>
+            <div class="add-set-radio">
+              <label class="checkbox-inline">
+                <input type="radio" name="include-related" value="none" checked> Empty
+              </label>
+              <label class="checkbox-inline">
+                <input type="radio" name="include-related" value="selected"> Include Selected
+              </label>
+              <label class="checkbox-inline">
+                <input type="radio" name="include-related" value="all"> Selected and Related
+              </label>
+            </div>
             <div class="input-group input-group-lg">
-            <input type="text" class="form-control" placeholder="New Set Name" id="add-set-text">
-            <span class="input-group-btn">
-              <button class="btn btn-default" id="add-set-btn" type="submit">
-                <span class="glyphicon glyphicon-plus"></span>
-              </button>
-            </span>
-          </div>
+              <input type="text" class="form-control" placeholder="New Set Name" id="add-set-text">
+              <span class="input-group-btn">
+                <button class="btn btn-default" id="add-set-btn" type="submit">
+                  <span class="glyphicon glyphicon-plus"></span>
+                </button>
+              </span>
+            </div>
           </form>
+          <h3>Current Sets</h3>
           <ul id="subset-list"></ul>
         </div>
       </div>
