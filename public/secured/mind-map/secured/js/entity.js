@@ -75,22 +75,22 @@ var Entity_Set = function Entity_Set(entities) {
       };
     }));
   },
-  related: function(entity) {
+  related: function(entity, bidirectional) {
     "use strict";
     if (Array.isArray(entity)) {
       return this.related_list(entity);
     } else {
       return this.entities.filter((function(ent) {
-        return ent.has_link(entity) || entity.has_link(ent);
+        return entity.has_link(ent) || (bidirectional && ent.has_link(entity));
       }));
     }
   },
-  related_list: function(list) {
+  related_list: function(list, bidirectional) {
     "use strict";
     var result = new Set(),
         self = this;
     list.forEach((function(entity) {
-      self.related(entity).forEach((function(ent) {
+      self.related(entity, bidirectional).forEach((function(ent) {
         if (list.indexOf(ent) < 0) {
           result.add([entity, ent]);
         }
@@ -98,37 +98,33 @@ var Entity_Set = function Entity_Set(entities) {
     }));
     return Array.from(result.values());
   },
-  hops_data: function(entities, max) {
+  hops_data: function(entities, max, bidirectional) {
     "use strict";
-    var entity_names = Array.isArray(entities) ? entities : [entities];
-    entities = this.by_name(entity_names);
-    var hops = [this.related_list(entities)],
+    entities = this.by_name(Array.isArray(entities) ? entities : [entities]);
+    var hops = [],
         result = {};
-    hops[0].forEach((function(pair) {
-      result[pair[1].name] = {hops: 1};
-    }));
     var $__2 = this,
         $__3 = function(i) {
-          var next = hops[i - 1].map((function(pair) {
+          var next = i === 0 ? entities : hops[i - 1].map((function(pair) {
             return pair[1];
           }));
-          hops[i] = ($__2.related_list(next)).filter((function(pair) {
+          hops[i] = ($__2.related_list(next, bidirectional)).filter((function(pair) {
             var name = pair[1].name;
-            return !result.hasOwnProperty(name) && entity_names.indexOf(name) < 0;
+            return !result.hasOwnProperty(name) && next.indexOf(name) < 0;
           }));
           hops[i].forEach((function(pair) {
             if (!result.hasOwnProperty(pair[1].name)) {
               result[pair[1].name] = {
                 hops: i + 1,
-                trails: []
+                trail: []
               };
             }
-            if (result[pair[1].name].trails.indexOf(pair[0].name) < 0) {
-              result[pair[1].name].trails.push(pair[0].name);
+            if (result[pair[1].name].trail.indexOf(pair[0].name) < 0) {
+              result[pair[1].name].trail.push(pair[0].name);
             }
           }));
         };
-    for (var i = 1; i < max; i++) {
+    for (var i = 0; i < max; i++) {
       $__3(i);
     }
     return result;

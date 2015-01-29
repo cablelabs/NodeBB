@@ -17,15 +17,16 @@
     **********************************/
 
     var help = {
+
+        $: {
+            container:  $('#help-overlay'),
+            titles:     $('#help-overlay .popover-title'),
+            toggle_btn: $('.open-help-btn, .close-help-btn'),
+        },
         init: function () {
             // attach event handlers
             this.$.toggle_btn.on('click', help.handlers['click toggle_btn']);
             this.$.titles    .on('click', help.handlers['click title']);
-        },
-        $: {
-            container:  $('#help-overlay'),
-            titles:     $('#help-overlay .popover-title'),
-            toggle_btn: $('#entity-map-container .toggle-help-btn'),
         },
         handlers: {
             'click toggle_btn': function (e) {
@@ -34,7 +35,6 @@
             },
             'click title': function (e) {
                 // adding 'open' class sets z-index: 1000 on help bubble
-                // slide open/close the bubble content
                 $(this).parent().toggleClass('open').end().next().slideToggle();
             }
         }
@@ -45,21 +45,31 @@
     ***************************************************************************/
 
     var hops = {
+
+        bidirectional: true,
+        show_all: false,
+        $: {
+            hops_btns: $('.hops-btn'),
+            setting_btns: $('.bidirectional-btn, .show-all-btn')
+        },
         init: function () {
             // attach event handlers
-            this.$.btns.on('click', hops.handlers["click btn"]);
-        },
-        $: {
-            btns: $('#hops-away span')
+            this.$.hops_btns   .on('click', hops.handlers["click hops_btn"]);
+            this.$.setting_btns.on('click', hops.handlers["click settings_btn"]);
         },
         handlers: {
             // change hops away setting
-            "click btn": function (e) {
-                hops.$.btns.removeClass('selected');
+            "click hops_btn": function (e) {
+                hops.$.hops_btns.removeClass('selected');
                 $(this).addClass('selected');
                 hops.selected = $(this).data('hops');
                 localStorage.setItem('hops_away', hops.selected);
-                if (graph.selected) {graph.set_selected(graph.selected); }
+                graph.refresh();
+            },
+            "click settings_btn": function (e) {
+                var elem = $(this);
+                hops[elem.data('setting')] = elem.toggleClass('btn-warning').hasClass('btn-warning');
+                graph.refresh();
             }
         }
     };
@@ -68,25 +78,21 @@
         search - all data, elements, and methods for search
     ***************************************************************************/
     var search = {
-        init: function () {
-            var form = $('#search-form');
 
+        init: function () {
             //attach event handlers
-            search.$.input     .on('keyup',  search.handlers["keyup input"]);
-            form               .on('submit', search.handlers["submit form"]);
-            form.find('button').on('click',  search.handlers["click clear-btn"]);
+            this.$.input.on('keyup', search.handlers["keyup input"]);
+            this.$.reset.on('click', search.handlers["click reset-btn"]);
         },
         $: {
             input: $('#search-field'),
+            reset: $('.reset-graph-btn, .clear-search-field-btn')
         },
         handlers: {
             "keyup input": function (e) {
                 graph.search(search.$.input.val());
             },
-            "submit form": function (e) {
-                e.preventDefault();
-            },
-            "click clear-btn": function (e) {
+            "click reset-btn": function (e) {
                 search.$.input.val('');
                 graph.reset();
             }
@@ -98,6 +104,14 @@
     **********************************/
 
     var graph = {
+
+        es: null,         // instance of Entity_Set
+        doc_uri_base: '', // uri base for links to api documentation
+        selected: [],     // array of names for selected entities
+        $: {
+            container: null,
+            entities: null
+        },
         init: function (data, elem) {
             this.es = new Entity_Set(data.paths);
             this.doc_uri_base = data.swaggerUriBase;
@@ -110,10 +124,6 @@
             $('[data-toggle="popover"]').popover();
             $('.domain-title').on('click', this.handlers['click domain']);
             $('.description').on('click', this.handlers['click description']);
-        },
-        $: {
-            container: null,
-            entities: null
         },
         // create the entity's link to API docs
         get_doc_link: function (entity) {
@@ -152,7 +162,7 @@
         },
         // return the HTML for an entity's previous hops
         hop_trail_html: function (data, name) {
-            return '<span>' + data[name].trails.join('<br>') + '</span>';
+            return '<span>' + data[name].trail.join('<br>') + '</span>';
         },
         // create the DOM elements for the graph, categorize entities by domain
         render: function () {
@@ -168,45 +178,40 @@
                 });
             });
         },
-        // set the graph state to reflect the entity param as selected
-        // if entity is undefined, reset the graph
-        set_selected: function (entity) {
-            // if entity is undefined, remove references
-            if (!entity) {
-                delete this.selected;
-                localStorage.removeItem('selected_entity');
-            // if entity is a string (name), set selected to name and entity to jQuery object
-            } else if (typeof entity === 'string') {
-                this.selected = entity;
-                entity = this.$.entities.filter('[data-name="' + entity + '"]');
-            // if entity is a jQuery object, set selected to element's data-name value
-            } else {
-                this.selected = entity.data('name');
-            }
-
+        // add or remove a selected entity
+        update_selected: function (name) {
+            var index = this.selected.indexOf(name);
+            if (index < 0) { this.selected.push(name); }
+            else { this.selected.splice(index, 1); }
+            localStorage.setItem('selected_entities', JSON.stringify(this.selected));
+            this.refresh();
+        },
+        // set selected entities to entities param
+        set_selected: function (entities) {
+            this.selected = entities;
+            localStorage.setItem('selected_entities', JSON.stringify(this.selected));
+            this.refresh();
+        },
+        // reset graph and re-draw hops data for selected entities
+        refresh: function () {
             this.reset();
-
-            if (this.selected) {
-                localStorage.setItem('selected_entity', this.selected);
-                entity.addClass('selected');
+            if (this.selected.length > 0) {
+                this.$.entities.filter(function (i, elem) {
+                    return graph.selected.indexOf($(elem).data('name')) >= 0;
+                }).addClass('selected');
                 this.show_hops();
             }
         },
-        // if subset_selected, filter graph.$.entities to entites in subset, hide all entites not in subset
-        // if !subset, set graph.$.entites to all entities, show all
-        set_subset: function (subset_selected) {
-            var ents = $('.entity');
-            if (subset_selected) {
-                ents.filter(function (i, elem) {
-                    return !sets.in_subset($(elem).data('name'));
-                }).addClass('noshow');
-                this.$.entities = ents.filter(function (i, elem) {
-                    return sets.in_subset($(elem).data('name'));
-                });
-            } else {
-                this.$.entities = ents;
-            }
-            this.reset();
+        // filter visible entities to match subset
+        // if in edit mode or no subset selected, show all entities
+        filter_subset: function () {
+            var show = [[],[]];
+            $('.entity').each(function (i, elem) {
+                show[sets.show_entity($(elem).data('name')) ? 0 : 1].push(elem);
+            });
+            this.$.entities = $(show[0]);
+            $(show[1]).addClass('noshow');
+            this.set_selected([]);
         },
         // remove classes, so no entity is selected, remove hop-trail text
         reset: function () {
@@ -215,7 +220,7 @@
         // configure graph to reflect "hops away" from selected entity for all entites not selected
         show_hops: function () {
             //hops_data is an object where keys are entity names of related entities
-            var hop_data = this.es.hops_data(this.selected, hops.selected),
+            var hop_data = this.es.hops_data(this.selected, hops.selected, hops.bidirectional),
                 found, elem, name;
 
             // run the function for all non-selected graph.$.entities
@@ -227,29 +232,23 @@
                 // if hop_data has a key that matches the entity's name
                 if (hop_data.hasOwnProperty(name)) {
                     found = true;
-                    // if the entity is more than one hop away from the selected entity
-                    if (hop_data[name].hops > 1) {
-                        elem.addClass("hops-" + hop_data[name].hops);
-                        elem.children().eq(2).append(graph.hop_trail_html(hop_data, name));
-                    }
+                    elem.addClass("hops-" + hop_data[name].hops);
+                    elem.children().eq(2).append(graph.hop_trail_html(hop_data, name));
                 }
                 // hide entity if name not found in hop_data
-                if (!found) { elem.addClass('noshow'); }
+                if (!hops.show_all && !found) { elem.addClass('noshow'); }
             });
         },
         // reset graph and filter entities to show only those whose name's contain text in the search field
         search: function (search_term) {
             this.reset();
             search_term = search_term.toLowerCase();
-            this.entities.each(function (i, elem) {
+            this.$.entities.each(function (i, elem) {
                 elem = $(elem);
                 if (elem.data('name').toLowerCase().indexOf(search_term) < 0) {
                     elem.addClass('noshow');
                 }
             });
-        },
-        related_to_subset: function (entities) {
-
         },
         handlers: {
             'click entity': function (e) {
@@ -257,23 +256,22 @@
                 if (e.target.tagName !== 'SPAN') {
                     var ent = $(this);
                     // if editing a subset
-                    if (sets.selected.edit_mode) {
+                    if (sets.edit_mode) {
                         sets.update(ent.data('name'));
                         ent.toggleClass('selected');
-
                     // normal functionality, not in edit mode
                     } else {
-                        graph.set_selected(ent.hasClass('selected') ? undefined : ent);
+                        graph.update_selected(ent.data('name'));
                     }
                 }
             },
             'click domain': function (e) {
                 // hide/show domain
-                $(this).toggleClass('open');
+                $(this).parent().toggleClass('open');
             },
             'click description': function (e) {
                 // toggle selected class on icons' container, so it doesn't close when description is open
-                $(this).parent().toggleClass('selected');
+                $(this).parent().toggleClass('open');
             } 
         }
     };
@@ -282,55 +280,56 @@
         sets - all data, elements, and methods for sets
     ***************************************************************************/
     var sets = {
+
+        data: null,       // array of subset objects
+        selected: -1,     // index of selected subset in data, -1 -> no subset selected
+        edit_mode: false, //if currently selected subset is in edit mode
+        $: {
+            container: $('#subset-settings'),
+            select: $('#subset-settings select'),
+            list: $('#subset-list'), //list of subsets in modal
+            edit: $('.edit-subset-btn'),
+            share: $('.share-subset-btn')
+        },
         init: function (data) {
             this.assign(data);
 
             // attach event listeners
-            this.$.select              .on('change', this.handlers["change select"]);
-            this.$.list                .on('click',  this.handlers["click list"]);
-            this.$.edit                .on('click',  this.handlers["click edit"]);
-            this.$.show_related        .on('click',  this.handlers["click show_related"]);
-            $('#add-set-form')         .on('submit', this.handlers["submit add-set-form"]);
+            this.$.select     .on('change', this.handlers["change select"]);
+            this.$.list       .on('click',  this.handlers["click list"]);
+            this.$.edit       .on('click',  this.handlers["click edit"]);
+            $('#add-set-form').on('submit', this.handlers["submit add-set-form"]);
 
             //init jquery-ui sortable plugin and attach event handler to update
             this.$.list.sortable({update: this.handlers["update sort"]});
 
         },
-        $: {
-            container: $('#entity-subsets'),
-            select: $('#entity-subsets select'),
-            list: $('#subset-list'),
-            edit: $('#edit-subset-btn').hide(),
-            show_related: $('#entity-subsets .checkbox')
-        },
-        selected: {
-            edit_mode: false
-        },
+        // add a new set
         add: function (set) {
             sets.data.unshift(set);
             sets.render();
             //FIX: make API call to add set
         },
+        // remove a set
         remove: function (index) {
             sets.data.splice(index, 1);
             sets.render();
             //FIX: make API call to remove set
         },
+        // assign sets.data
         assign: function (data) {
             sets.data = data;
             sets.render();
         },
+        // update a set, add or remove an entity name
         update: function (name) {
             var entities = sets.data[sets.selected].entities,
                 index = entities.indexOf(name);
-            if (index < 0) {
-                entities.push(name);
-            } else {
-                entities.splice(index, 1);
-            }
+            if (index < 0) { entities.push(name); }
+            else { entities.splice(index, 1); }
             //FIX: make api call to update set
         },
-        // re-render select options in DOM to reflect sets.data
+        // (re-)render DOM to reflect sets.data
         render: (function () {
             // return HTML for select option
             function option (name, i) {
@@ -366,30 +365,22 @@
             });
             sets.assign(result);
         },
-        // return whether or not the name is contained in the subset
         in_subset: function (name) {
-            return sets.selected.hasOwnProperty('entities') ? sets.selected.entities.indexOf(name) >= 0 : true;
+            return sets.data[sets.selected].entities.indexOf(name) >= 0;
         },
-        // 
-        select_subset: function (index) {
-            if (isNaN(index)) {
-                delete sets.selected.index;
-                delete sets.selected.entities;
-                localStorage.removeItem('selected_subset_index');
-                sets.$.container.removeClass('subset-selected');
-            } else {
-                index = parseInt(index, 10);
-                sets.selected.index = index;
-                sets.selected.entities = sets.selected.show_related ? graph.related_to_subset(sets.data[index].entities) : sets.data[index].entities;
-                localStorage.setItem('selected_subset_index', index);
-                sets.$.container.addClass('subset-selected');
-            }
-            graph.set_subset(sets.selected.hasOwnProperty('index'));
+        // return whether or not the name is contained in the subset
+        // if no subset selected, return true
+        show_entity: function (name) {
+            return sets.edit_mode || sets.selected < 0 || this.in_subset(name);
         },
         handlers: {
             // select a subset or select all entities
             "change select": function (e) {
-                sets.select_subset($(e.currentTarget).find(':selected').val());
+                var val =  $(e.currentTarget).find(':selected').val();
+                sets.selected = parseInt(val, 10);
+                localStorage.setItem('selected_subset', val);
+                sets.$.container.toggleClass('subset-selected', sets.selected >= 0);
+                graph.filter_subset();
             },
             // change subset order in subset manager
             "update sort": function () {
@@ -398,9 +389,17 @@
             // submit 'add set' form in subset manager
             "submit add-set-form": function (e) {
                 e.preventDefault();
-                var input = $('#add-set-text');
+                var input = $('#add-set-text'),
+                    start = $(this).find('input:radio:checked').val(),
+                    entities = [];
                 if (input.val()) {
-                    sets.add({name: input.val(), entities: [] });
+                    if (start === 'selected') {
+                        entities = graph.selected;
+                    } else if (start === 'all') {
+                        entities = graph.$.entities.filter('.selected, .hops-1, .hops-2, .hops-3')
+                            .map( function (i, elem) { return $(elem).data('name'); }).get();
+                    }
+                    sets.add({name: input.val(), entities: entities });
                 }
                 input.val('');
             },
@@ -413,16 +412,18 @@
             },
             // click edit button next to set selection
             "click edit": function (e) {
-                sets.selected.edit_mode = !sets.selected.edit_mode;
-                sets.$.edit.toggleClass('btn-default');
-                sets.$.edit.toggleClass('btn-danger');
-                graph.set_subset(sets.selected.edit_mode ? false : true);
-                graph.entities.toggleClass('selected', sets.selected.edit_mode);
-            },
-            // click show related checkbox under subset select
-            "click show_related": function (e) {
-                sets.selected.show_related = $(e.currentTarget).prop('checked');
-                sets.select_subset(sets.selected.index);
+                sets.edit_mode = !sets.edit_mode;
+                $('button:not(.edit-subset-btn)').prop('disabled', sets.edit_mode);
+                sets.$.select.toggleClass('disabled', sets.edit_mode);
+                search.$.input.toggleClass('disabled', sets.edit_mode);
+                sets.$.edit.toggleClass('btn-default btn-danger');
+                graph.filter_subset();
+                if (sets.edit_mode) {
+                    graph.$.entities.filter(function(i, elem){
+                        return sets.in_subset($(elem).data('name'));
+                    }).addClass('selected');
+                }
+                
             }
         }
     };
@@ -441,17 +442,14 @@
         sets.init(sets_data[0].sets);
 
         //recall graph state
-
-        // get hops away setting
         hops.selected = localStorage.getItem('hops_away') || 1;
-        hops.$.btns.eq(hops.selected - 1).addClass('selected');
+        hops.$.hops_btns.eq(hops.selected - 1).addClass('selected');
 
-        var selected_index = parseInt(localStorage.getItem('selected_subset_index'), 10);
+        var selected_index = parseInt(localStorage.getItem('selected_subset'), 10);
         if (selected_index >= 0) { sets.$.select.val(selected_index).change(); }
 
-        sets.selected.show_related = localStorage.getItem('selected_subset_show_related') ? true : false;
-
-        graph.set_selected(localStorage.getItem('selected_entity'));
+        var selected_entities = localStorage.getItem('selected_entities');
+        graph.set_selected(selected_entities ? JSON.parse(selected_entities) : []);
     }
 
     /***************************************************************************

@@ -4,68 +4,40 @@
 
 #entity-map-container {
   position: relative;
-  min-width: 730px;
+  font-family: Roboto, 'Lucida Grande', sans-serif;
+  padding: 4em;  /* FIX: remove */
+  /*min-width: 600px;*/
 }
-
-
 
 /******************************************
   Settings
 ******************************************/
 
-@media screen and (min-width: 75em) {
-  #graph-settings > div {
-    padding: 20px 4em 0;
-  }
+#subset-settings .form-control {
+  height: 30px;
 }
 
-#graph-settings .input-group .form-control {
-  z-index: 0;
+.second-row {
+  margin: 0.3em 0 0.7em;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.6;
 }
 
 
 /****** Subsets *******/
 
-#entity-subsets {
-  position: relative;
-  top: -10px;
-}
-
-#entity-subsets select {
-  font-size: 1.25em;
-  height: 46px;
-}
-
-.select-and-button > div {
-  display: inline-block;
-}
-
-.select-and-button > div:nth-child(1) {
-  width: 90%;
-}
-
-.select-and-button > div:nth-child(2) {
-  width: 6%;
-  margin-left: 2%;
-}
-
-#edit-subset-btn {
-  border-radius: 100%;
-  outline: none;
-}
-
-#edit-subset-btn:not(.btn-danger) {
-  background: #c4c4c4;
-}
-
-#edit-subset-btn, #entity-subsets .checkbox * {
+#subset-settings .btn-group {
   opacity: 0;
   transition: all 0.3s ease-out;
+  pointer-events: none;
 }
 
-#entity-subsets.subset-selected #edit-subset-btn,
-#entity-subsets.subset-selected .checkbox * {
+#subset-settings.subset-selected .btn-group {
   opacity: 1;
+  pointer-events: auto;
 }
 
 
@@ -95,7 +67,6 @@
 
 #subset-list li:active {
   opacity: 0.5;
-  filter: alpha(opacity=50);
 }
 
 #subset-list li .remove-icon {
@@ -106,51 +77,42 @@
   color: #fff;
   cursor: pointer;
   opacity: 0;
-  filter: alpha(opacity=0);
 }
 
 #subset-list li:hover .remove-icon {
   opacity: 1;
-  filter: alpha(opacity=100);
 }
 
 
 /****** Search *******/
 
-#search-form input,
-#search-form button,
-#entity-sets select {
-  background: #d0d0d0;
-  color: #8d8d8d;
+#search-settings input {
+  z-index: 0; /* hide input while help showing */
 }
 
+.close-help-btn {
+  position: absolute;
+}
 
 /****** Hops Away *******/
 
-#hops-away > p {
+.hops-btn {
+  opacity: 0.6;
+  padding-left: 1.9em;
+  padding-right: 1.9em;
   font-weight: bold;
 }
 
-.hops-2 { background: #a1acbb; }
-.hops-3 { background: #aa9a9b; }
-
-#hops-away span {
-  display: inline-block;
-  text-align: center;
-  border: 1px solid #c0c0c0;
-  width: 40px;
-  height: 40px;
-  border-radius: 0.5em;
-  margin-left: 1em;
-  vertical-align: middle;
-  line-height: 37px;
-  font-size: 1.5em;
-  cursor: pointer;
-
+.hops-btn:first-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
-#hops-away span:nth-child(2) { margin-left: 0; }
-#hops-away span.selected     { border: 3px solid #f00; }
+.hops-btn.selected { opacity: 1; }
+
+.hops-1 { background: #8a9583; }
+.hops-2 { background: #a1acbb; }
+.hops-3 { background: #aa9a9b; }
 
 
 /******************************************
@@ -158,8 +120,8 @@
 ******************************************/
 
 #graph {
-  font-family: Roboto, 'Lucida Grande', sans-serif;
   width: 100%;
+  min-height: 30em;
   display: -ms-flexbox;
   display: -webkit-flex; 
   display: inline-flex;   /* should be flex, workaround for Firefox */           
@@ -169,9 +131,6 @@
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0 1em 1em;
-  min-width: 700px;
-  margin: 0 auto;
 }
 @media screen and (max-width: 90em) {
   #graph { font-size: 90%; }
@@ -185,33 +144,41 @@
 @media screen and (max-width: 60em) {
   #graph { font-size: 60%; }
 }
-.domain.open .entities {
-  height: auto;
-  padding: 0.5em 1em;
-  opacity: 1;
-  filter: alpha(opacity=100);
-}
+
 .domain {
-  -webkit-flex: 0 1 18em;
-  -ms-flex: 0 1 18em;
-  flex: 0 1 18em;
+  transition: all 0.3s ease-out;
+  -webkit-flex: 0 0 2em;
+  -ms-flex: 0 0 2em;
+  flex: 0 0 2em;
   height: calc(100% - 7em);
   border-radius: 1em;
   text-align: center;
-  margin: 2em 0.2em;
+  margin: 1em 0.2em;
   vertical-align: top;
+}
+.domain.open {
+  -webkit-flex: 1 0;
+  -ms-flex: 1 0;
+  flex: 1 0;
   background: rgba(0,0,0,0.6);
 }
 .domain .domain-title {
-  background: #000;
+  transition: all 0.3s ease-out;
+  position: relative;
+  transform: rotate(90deg);
   font-size: 1.3em;
-  color: #919191;
+  color: #000;
   margin: 0;
-  padding: 1em 0.5em;
-  border-top-left-radius: .8em;
-  border-top-right-radius: .8em;
+  padding: 0.25em;
+  border-radius: 0.8em;
   cursor: pointer;
   letter-spacing: 0.1em;
+}
+.domain.open .domain-title {
+  transform: rotate(0deg);
+  border-radius: 0.8em 0.8em 0 0;
+  background: #000;
+  color: #919191;
 }
 .domain .domain-title:first-letter {
   color: #bebebe;
@@ -219,12 +186,16 @@
 }
 .entities {
   height: 0;
-  padding: 0 1em;
+  padding: 0 0.5em;
   opacity: 0;
-  filter: alpha(opacity=0);
   transition: 0.3s all ease-out;
   border-bottom-left-radius: .8em;
   border-bottom-right-radius: .8em;
+}
+.domain.open .entities {
+  height: auto;
+  padding: 0.5em 1em;
+  opacity: 1;
 }
 .entity {
   display: block;
@@ -238,10 +209,12 @@
   transition: all 0.23s ease-out;
   overflow: hidden;
 }
-.entity.selected {
-  border: 3px solid #f00;
-  color: #000;
-}
+
+.entity.hops-1 { background: #8a9583; }
+.entity.hops-2 { background: #a1acbb; }
+.entity.hops-3 { background: #aa9a9b; }
+.entity.selected { border: 2px solid #f00; color: #000; }
+
 .entity.noshow {
   padding: 0;
   margin: 0;
@@ -264,7 +237,6 @@
       -ms-flex-pack: distribute;
           justify-content: space-around;
   opacity: 0;
-  filter: alpha(opacity=0);
   height: 0;
   margin: 0;
   overflow: hidden;
@@ -283,25 +255,24 @@
   color: #fff;
   padding-top: .6em;
 }
-.glyphs.selected .description,
+.glyphs.open .description,
 .description:hover,
 .api-link:hover {
   color: #f00;
 }
 .entity:hover .glyphs,
 .entity.selected .glyphs,
-.glyphs.selected {
+.glyphs.open {
   height: 1.5em;
   opacity: 1;
-  filter: alpha(opacity=100);
   margin-top: 1em;
 }
 .entity:hover .glyphs .api-link,
 .entity.selected .glyphs .api-link,
-.glyphs.selected .api-link,
+.glyphs.open .api-link,
 .entity:hover .glyphs .description,
 .entity.selected .glyphs .description,
-.glyphs.selected .description {
+.glyphs.open .description {
   display: block;
 }
 
@@ -326,21 +297,24 @@
   width: 100%;
   left: 0;
   top: 0;
-  height: 100%;
+  height: 100vh;
   background: rgba(0,40,60,0.8);
   padding: 15px 30px;
   border: 4px solid #434a51;
+  z-index: 5;
 }
 
 #help-overlay .popover  {
   display: block;
   position: absolute;
-  width: 400px;
   z-index: 1;
+  width: 10em;
+  transition: all 0.3s ease-out;
 }
 
 #help-overlay .popover.open {
   z-index: 1000;
+  width: 400px;
 }
 
 #help-overlay .popover-title {
@@ -351,16 +325,9 @@
   letter-spacing: 0.1em;
 }
 
-#help-overlay .arrow:after {
-  border-bottom-color: #8cbce4;
-}
 
 #help-overlay .popover-title:hover {
   cursor: pointer;
-}
-
-#help-overlay .glyphicon {
-  float: right;
 }
 
 #help-overlay .popover-content {
@@ -382,41 +349,16 @@
   position: relative;
 }
 
-#help-subsets { left: 50%; top: 80px; }
-#help-search { left: 30%; top: 180px; }
-#help-hops { left: 43px; top: 270px; }
-#help-entity { left: 43px; top: 400px;}
-#help-video { left: 400px; top: 400px;}
+#help-subsets { left: 23%; top: 17px; }
+#help-search  { left: 40%; top: 83px; }
+#help-related { left: 57%; top: 147px; }
+#help-entity  { left: 10%; top: 260px;}
+#help-trail   { left: 47%; top: 260px;}
 
-@media screen and (min-width: 991px) {
-  #help-subsets { left: 20px; top: 80px; }
-  #help-search { left: 20px; top: 80px; }
-  #help-hops { left: 25px; top: 80px; }
-}
-
-@media screen and (min-width: 1100px) {
-  #help-subsets { left: 50px; top: 80px; }
-  #help-search { left: 50px; top: 80px; }
-  #help-hops { left: 25px; top: 80px; }
-  #help-entity { left: 33px; top: 300px;}
-  #help-video { left: 33px; top: 300px;}
-}
-
-#entity-map-container .toggle-help-btn {
-  background: rgba(0,40,60,0.8);
-  transition: all 0.3s ease-out;
-  color: #fff;
-  border-radius: 100%;
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 3em;
-  width: 50px;
-  height: 50px;
-  line-height: 38px;
-  z-index: 1000;
-}
-
-#entity-map-container .toggle-help-btn:hover {
-  background: rgba(0,40,60,0.6);
+@media screen and (min-width: 992px) {
+  #help-subsets { left: 30%; top: 60px; }
+  #help-search { left: 40%; top: 60px; }
+  #help-related { left: 40%; top: 60px; }
+  #help-entity { left: 60%; top: 200px;}
+  #help-trail { left: 60%; top: 200px;}
 }
