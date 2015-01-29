@@ -1,6 +1,17 @@
 (function (window, document, $, Entity_Set, undefined) {
     'use strict';
 
+    // initialize sockets
+    // var ioParams = {
+    //     'max reconnection attempts': config.maxReconnectionAttempts,
+    //     'reconnection delay': config.reconnectionDelay,
+    //     resource: RELATIVE_PATH.length ? RELATIVE_PATH.slice(1) + '/socket.io' : 'socket.io'
+    // };
+    // if (utils.isAndroidBrowser()) {
+    //     ioParams.transports = ['xhr-polling'];
+    // }
+    // var socket = io.connect(config.websocketAddress, ioParams);
+
     function error_handler (error) {
         if (typeof error === 'object') {
             console.log(error);
@@ -46,16 +57,18 @@
 
     var hops = {
 
-        bidirectional: true,
+        bidirectional: false,
         show_all: false,
         $: {
             hops_btns: $('.hops-btn'),
-            setting_btns: $('.bidirectional-btn, .show-all-btn')
+            bidirectional: $('.bidirectional-btn'),
+            show_all: $('.show-all-btn')
         },
         init: function () {
             // attach event handlers
-            this.$.hops_btns   .on('click', hops.handlers["click hops_btn"]);
-            this.$.setting_btns.on('click', hops.handlers["click settings_btn"]);
+            this.$.hops_btns    .on('click', hops.handlers["click hops_btn"]);
+            this.$.bidirectional.on('click', hops.handlers["click settings_btn"]);
+            this.$.show_all     .on('click',     hops.handlers["click settings_btn"]);
         },
         handlers: {
             // change hops away setting
@@ -67,8 +80,10 @@
                 graph.refresh();
             },
             "click settings_btn": function (e) {
-                var elem = $(this);
-                hops[elem.data('setting')] = elem.toggleClass('btn-warning').hasClass('btn-warning');
+                var elem = $(this),
+                    setting = elem.data('setting');
+                hops[setting] = elem.toggleClass('btn-warning').hasClass('btn-warning');
+                localStorage.setItem(setting, hops[setting]);
                 graph.refresh();
             }
         }
@@ -112,13 +127,13 @@
             container: null,
             entities: null
         },
-        init: function (data, elem) {
+        create: function (data, elem) {
             this.es = new Entity_Set(data.paths);
             this.doc_uri_base = data.swaggerUriBase;
             this.$.container = $(elem);
-
-            this.render(); // render graph
-
+            this.render();
+        },
+        init: function () {
             // attach event handlers
             this.$.entities = $('.entity').on('click', graph.handlers['click entity']);
             $('[data-toggle="popover"]').popover();
@@ -177,6 +192,7 @@
                     ent_wrap.append(self.entity_html(ent));
                 });
             });
+            this.init();
         },
         // add or remove a selected entity
         update_selected: function (name) {
@@ -298,23 +314,26 @@
             this.$.select     .on('change', this.handlers["change select"]);
             this.$.list       .on('click',  this.handlers["click list"]);
             this.$.edit       .on('click',  this.handlers["click edit"]);
+            this.$.share      .on('click',  this.handlers["click share"]);
             $('#add-set-form').on('submit', this.handlers["submit add-set-form"]);
+            $('#share-set-form').on('submit', sets.handlers["submit share-set-form"]);
 
             //init jquery-ui sortable plugin and attach event handler to update
             this.$.list.sortable({update: this.handlers["update sort"]});
-
         },
         // add a new set
         add: function (set) {
             sets.data.unshift(set);
             sets.render();
             //FIX: make API call to add set
+            user_update();
         },
         // remove a set
         remove: function (index) {
             sets.data.splice(index, 1);
             sets.render();
             //FIX: make API call to remove set
+            user_update();
         },
         // assign sets.data
         assign: function (data) {
@@ -382,6 +401,22 @@
                 sets.$.container.toggleClass('subset-selected', sets.selected >= 0);
                 graph.filter_subset();
             },
+            "change search": function () {
+                console.log($('#share-set-user').val());
+                socket.emit('user.search', $('#share-set-user').val(), function(err, data) {
+                    if (err) {
+                        console.log("Search failed");
+                    }
+                    if (!data) {
+                        console.log("Search returned null");
+                    }
+
+                    console.log(JSON.stringify(data));
+                    var innerHtml = '';
+
+                    $('#search-results').innerHTML = innerHtml;
+                });
+            },
             // change subset order in subset manager
             "update sort": function () {
                 sets.reorder($(this).sortable('toArray'));
@@ -402,6 +437,25 @@
                     sets.add({name: input.val(), entities: entities });
                 }
                 input.val('');
+            },
+            "submit share-set-form": function (e) {
+                e.preventDefault();
+                var username = $('#share-set-user');
+                console.log("user name " + username.val());
+                if (username.val()) {
+                    var data = {
+                        username: username.val(),
+                        set: sets.data[sets.selected]
+                    }
+                    socket.emit('user.shareSet', data, function(err, return_data) {
+                        if (err) {
+                            return app.alertError(err.message);
+                        }
+                        $('#share-set').modal('toggle');
+                        app.alertSuccess('[[user:set_share_success]]');
+                    });
+                    username.val('');
+                }
             },
             // check for click on the remove button
             "click list": function (e) {
@@ -424,6 +478,9 @@
                     }).addClass('selected');
                 }
                 
+            },
+            "click share": function (e) {
+                console.log("sets.selected" + JSON.stringify(sets.data[sets.selected]));
             }
         }
     };
@@ -433,22 +490,48 @@
         Init
     **********************************/
 
+    function user_getsets(default_sets, callback) {
+        socket.emit('user.getSets', function(err, data) {
+            var set_data;
+            if (err) {
+                return app.alertError(err.message);
+            }
+            set_data = data === null ? default_sets : data;
+            callback(set_data);
+        });
+    }
+
+    function user_update() {
+        socket.emit('user.setSets', JSON.stringify(sets.data), function(err, data) {
+            if (err) {
+                return app.alertError(err.message);
+            }
+            app.alertSuccess('[[user:profile_update_success]]');
+        });
+    }
+
     function init(graph_data, sets_data) {
 
-        help.init();
-        search.init();
-        graph.init(graph_data[0], $('#graph'));
-        hops.init();
+        graph.create(graph_data[0], $('#graph'));
+        //user_getsets(sets_data[0].sets, sets.init);
         sets.init(sets_data[0].sets);
+
+        hops.init();
+        search.init();
+        help.init();
 
         //recall graph state
         hops.selected = localStorage.getItem('hops_away') || 1;
+        hops.bidirectional = localStorage.getItem('bidirectional') === "true";
+        hops.$.bidirectional.toggleClass('btn-warning', hops.bidirectional);
+        hops.show_all = localStorage.getItem('show_all') === "true";
+        hops.$.show_all.toggleClass('btn-warning', hops.show_all);
+
+        var selected_subset = parseInt(localStorage.getItem('selected_subset'), 10),
+            selected_entities = localStorage.getItem('selected_entities');
+
         hops.$.hops_btns.eq(hops.selected - 1).addClass('selected');
-
-        var selected_index = parseInt(localStorage.getItem('selected_subset'), 10);
-        if (selected_index >= 0) { sets.$.select.val(selected_index).change(); }
-
-        var selected_entities = localStorage.getItem('selected_entities');
+        if (selected_subset >= 0) { sets.$.select.val(selected_subset).change(); }
         graph.set_selected(selected_entities ? JSON.parse(selected_entities) : []);
     }
 
