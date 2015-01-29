@@ -156,12 +156,9 @@
               <input type="text" class="form-control" placeholder="Enter username to search" id="share-set-user">
               <span class="input-group-btn">
                 <button class="btn btn-default" id="share-set-submit" type="submit">
-                  <span class="glyphicon glyphicon-search"></span>
+                  <span class="glyphicon glyphicon-share"></span>
                 </button>
               </span>
-              <div>
-                <span class="search-results" id="search-results">No User Found</span>
-              </div>
             </div>
           </form>
         </div>
