@@ -233,20 +233,6 @@
 			return;
 		}
 
-		//passport.use(new AtlassianCrowdStrategy({
-		//		crowdServer:"http://localhost:2990/jira",
-		//		crowdApplication:"nodejs",
-		//		crowdApplicationPassword:"password",
-		//		retrieveGroupMemberships:false
-		//	},
-		//	function (userprofile, done) {
-		//		Users.findOrCreate(userprofile, function(err,user) {
-		//			if(err) return done(err);
-		//			return done(null, user);
-		//		});
-		//	}
-		//));
-
 		var userslug = utils.slugify(username);
 
 		user.getUidByUserslug(userslug, function(err, uid) {
@@ -306,22 +292,22 @@
 			crowdApplication:"devportal",
 			crowdApplicationPassword:"lF~!DL4o",
 			retrieveGroupMemberships:true
-		},
-		function (userprofile, done) {
-			console.log("Username :: " + userprofile.username);
-			// asynchronous verification, for effect...
-			process.nextTick(function () {
-
-				var exists = _.any(users, function (user) {
-					return user.id == userprofile.id;
-				});
-				if (!exists) {
-					users.push(userprofile);
-				}
-
-				return done(null, userprofile);
-			});
-		}
+		}, Auth.login
+		//function (userprofile, done) {
+		//	console.log("Username :: " + userprofile.username);
+		//	// asynchronous verification, for effect...
+		//	process.nextTick(function () {
+        //
+		//		var exists = _.any(users, function (user) {
+		//			return user.id == userprofile.id;
+		//		});
+		//		if (!exists) {
+		//			users.push(userprofile);
+		//		}
+        //
+		//		return done(null, userprofile);
+		//	});
+		//}
 	));
 
 	//passport.use(new passportLocal(Auth.login));
