@@ -6,8 +6,10 @@
   position: relative;
   font-family: Roboto, 'Lucida Grande', sans-serif;
   padding: 4em;  /* FIX: remove */
-  /*min-width: 600px;*/
+  min-width: 600px;
 }
+
+
 
 /******************************************
   Settings
@@ -165,7 +167,9 @@
 .domain .domain-title {
   transition: all 0.3s ease-out;
   position: relative;
+  -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
+  top: 1.3em;
   font-size: 1.3em;
   color: #000;
   margin: 0;
@@ -173,12 +177,15 @@
   border-radius: 0.8em;
   cursor: pointer;
   letter-spacing: 0.1em;
+  z-index: 10;
 }
 .domain.open .domain-title {
+  -webkit-transform: rotate(0deg);
   transform: rotate(0deg);
   border-radius: 0.8em 0.8em 0 0;
   background: #000;
   color: #919191;
+  top: 0;
 }
 .domain .domain-title:first-letter {
   color: #bebebe;
@@ -357,8 +364,8 @@
 
 @media screen and (min-width: 992px) {
   #help-subsets { left: 30%; top: 60px; }
-  #help-search { left: 40%; top: 60px; }
-  #help-related { left: 40%; top: 60px; }
+  #help-search { left: 36%; top: 60px; }
+  #help-related { left: 30%; top: 60px; }
   #help-entity { left: 60%; top: 200px;}
   #help-trail { left: 60%; top: 200px;}
 }
