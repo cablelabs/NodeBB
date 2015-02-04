@@ -402,7 +402,6 @@
                 graph.filter_subset();
             },
             "change search": function () {
-                console.log($('#share-set-user').val());
                 socket.emit('user.search', $('#share-set-user').val(), function(err, data) {
                     if (err) {
                         console.log("Search failed");
@@ -411,7 +410,6 @@
                         console.log("Search returned null");
                     }
 
-                    console.log(JSON.stringify(data));
                     var innerHtml = '';
 
                     $('#search-results').innerHTML = innerHtml;
@@ -441,7 +439,6 @@
             "submit share-set-form": function (e) {
                 e.preventDefault();
                 var username = $('#share-set-user');
-                console.log("user name " + username.val());
                 if (username.val()) {
                     var data = {
                         username: username.val(),
@@ -478,9 +475,6 @@
                     }).addClass('selected');
                 }
                 
-            },
-            "click share": function (e) {
-                console.log("sets.selected" + JSON.stringify(sets.data[sets.selected]));
             }
         }
     };
@@ -490,14 +484,15 @@
         Init
     **********************************/
 
-    function user_getsets(default_sets, callback) {
+    function user_getsets(callback) {
         socket.emit('user.getSets', function(err, data) {
             var set_data;
             if (err) {
                 return app.alertError(err.message);
             }
-            set_data = data === null ? default_sets : data;
-            callback(set_data);
+            set_data = data === null ? default_sets : JSON.parse(data);
+            sets.init(set_data);
+            callback();
         });
     }
 
@@ -510,28 +505,28 @@
         });
     }
 
-    function init(graph_data, sets_data) {
+    function init(graph_data) {
 
-        graph.create(graph_data[0], $('#graph'));
-        user_getsets(sets_data[0].sets, sets.init);
+        user_getsets(function() {
+            graph.create(graph_data, $('#graph'));    
+            hops.init();
+            search.init();
+            help.init();
 
-        hops.init();
-        search.init();
-        help.init();
+            //recall graph state
+            hops.selected = localStorage.getItem('hops_away') || 1;
+            hops.bidirectional = localStorage.getItem('bidirectional') === "true";
+            hops.$.bidirectional.toggleClass('btn-warning', hops.bidirectional);
+            hops.show_all = localStorage.getItem('show_all') === "true";
+            hops.$.show_all.toggleClass('btn-warning', hops.show_all);
 
-        //recall graph state
-        hops.selected = localStorage.getItem('hops_away') || 1;
-        hops.bidirectional = localStorage.getItem('bidirectional') === "true";
-        hops.$.bidirectional.toggleClass('btn-warning', hops.bidirectional);
-        hops.show_all = localStorage.getItem('show_all') === "true";
-        hops.$.show_all.toggleClass('btn-warning', hops.show_all);
+            var selected_subset = parseInt(localStorage.getItem('selected_subset'), 10),
+                selected_entities = localStorage.getItem('selected_entities');
 
-        var selected_subset = parseInt(localStorage.getItem('selected_subset'), 10),
-            selected_entities = localStorage.getItem('selected_entities');
-
-        hops.$.hops_btns.eq(hops.selected - 1).addClass('selected');
-        if (selected_subset >= 0) { sets.$.select.val(selected_subset).change(); }
-        graph.set_selected(selected_entities ? JSON.parse(selected_entities) : []);
+            hops.$.hops_btns.eq(hops.selected - 1).addClass('selected');
+            if (selected_subset >= 0) { sets.$.select.val(selected_subset).change(); }
+            graph.set_selected(selected_entities ? JSON.parse(selected_entities) : []);
+            });
     }
 
     /***************************************************************************
@@ -542,10 +537,9 @@
     /**
      * When graph and subset data have been fetched, render graph and recall saved state.
      */
-    $.when($.ajax({url: '/secured/mind-map/assets/links-new-format.json'}),
-           $.ajax({url: '/secured/mind-map/assets/sets-by-name.json'}))
-    .done(function (graph_data, sets_data) {
-        init(graph_data, sets_data);
+    $.when($.ajax({url: '/secured/mind-map/assets/links-new-format.json'}))
+    .done(function (graph_data) {
+        init(graph_data);
     })
     .fail(function() {
         error_handler('unable to download graph data');
