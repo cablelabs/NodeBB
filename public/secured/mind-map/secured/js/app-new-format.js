@@ -513,8 +513,7 @@
     function init(graph_data, sets_data) {
 
         graph.create(graph_data[0], $('#graph'));
-        //user_getsets(sets_data[0].sets, sets.init);
-        sets.init(sets_data[0].sets);
+        user_getsets(sets_data[0].sets, sets.init);
 
         hops.init();
         search.init();
