@@ -375,3 +375,11 @@
   #help-entity { left: 60%; top: 200px;}
   #help-trail { left: 60%; top: 200px;}
 }
+
+#set-manager {
+  z-index: 2000;
+}
+
+#share-set {
+  z-index: 2000;
+}
