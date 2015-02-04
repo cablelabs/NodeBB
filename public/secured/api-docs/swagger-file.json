@@ -558,7 +558,7 @@
           "Location"
         ],
         "summary": "Create a geometry collection.",
-        "description": "A geometry collection is a list of geometries.",
+        "description": "A geometry collection is a list of geometries, as defined by the GeoJson format.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -594,7 +594,7 @@
           "Location"
         ],
         "summary": "Find a geometry collection.",
-        "description": "A geometry collection is a list of geometries.",
+        "description": "A geometry collection is a list of geometries, as defined by the GeoJson format.",
         "displayName": "Geometry Collection",
         "produces": [
           "application/json",
@@ -637,7 +637,7 @@
           "Location"
         ],
         "summary": "Update an existing geometry collection.",
-        "description": "A geometry collection is a list of geometries.",
+        "description": "A geometry collection is a list of geometries, as defined by the GeoJson format.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -688,7 +688,7 @@
           "Location"
         ],
         "summary": "Delete a geometry collection.",
-        "description": "A geometry collection is a list of geometries.",
+        "description": "A geometry collection is a list of geometries, as defined by the GeoJson format.",
         "produces": [
           "application/json",
           "application/xml"
@@ -1202,7 +1202,7 @@
           "Location"
         ],
         "summary": "Create a linestring.",
-        "description": "A linestring is a geometry linestring object.",
+        "description": "A linestring is a geometry linestring object, as defined by the GeoJson format.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1238,7 +1238,7 @@
           "Location"
         ],
         "summary": "Find a linestring.",
-        "description": "A linestring is a geometry linestring object.",
+        "description": "A linestring is a geometry linestring object, as defined by the GeoJson format.",
         "displayName": "Line String",
         "produces": [
           "application/json",
@@ -1281,7 +1281,7 @@
           "Location"
         ],
         "summary": "Update an existing linestring.",
-        "description": "A linestring is a geometry linestring object.",
+        "description": "A linestring is a geometry linestring object, as defined by the GeoJson format.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1332,7 +1332,7 @@
           "Location"
         ],
         "summary": "Delete a linestring.",
-        "description": "A linestring is a geometry linestring object.",
+        "description": "A linestring is a geometry linestring object, as defined by the GeoJson format.",
         "produces": [
           "application/json",
           "application/xml"
@@ -6208,7 +6208,7 @@
           "Location"
         ],
         "summary": "Create a feature collection.",
-        "description": "A feature collection is a list of features, which are geometries with additional properties. Lists of geometries are geometry collections.",
+        "description": "A feature collection is a list of features, which are geometries with additional properties, as defined by the GeoJson format. Lists of geometries are geometry collections.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -6244,7 +6244,7 @@
           "Location"
         ],
         "summary": "Find a feature collection.",
-        "description": "A feature collection is a list of features, which are geometries with additional properties. Lists of geometries are geometry collections.",
+        "description": "A feature collection is a list of features, which are geometries with additional properties, as defined by the GeoJson format. Lists of geometries are geometry collections.",
         "displayName": "Feature Collection",
         "produces": [
           "application/json",
@@ -6287,7 +6287,7 @@
           "Location"
         ],
         "summary": "Update a feature collection.",
-        "description": "A feature collection is a list of features, which are geometries with additional properties. Lists of geometries are geometry collections.",
+        "description": "A feature collection is a list of features, which are geometries with additional properties, as defined by the GeoJson format. Lists of geometries are geometry collections.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -6330,7 +6330,7 @@
           "Location"
         ],
         "summary": "Delete a feature collection.",
-        "description": "A feature collection is a list of features, which are geometries with additional properties. Lists of geometries are geometry collections.",
+        "description": "A feature collection is a list of features, which are geometries with additional properties, as defined by the GeoJson format. Lists of geometries are geometry collections.",
         "produces": [
           "application/json",
           "application/xml"
