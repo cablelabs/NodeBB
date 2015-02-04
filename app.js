@@ -117,7 +117,7 @@ function start() {
 	loadConfig();
 
 	//// Refreshing link.json for mind-map
-	var linkparser = require('./src/controllers/mind-map/linkParser');
+	var linkparser = require('./src/controllers/mind-map/linkParser_new-format');
 	linkparser.init(function(err){
 		if(err) {
 			winston.error('Error Processing links.json for mindmap: ' + err);

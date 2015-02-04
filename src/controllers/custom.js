@@ -131,7 +131,7 @@ customController.home = function(req, res, next) {
         },
         refresh: function (next) {
             // Refreshing link.json for mind-map
-            var linkparser = require('../controllers/mind-map/linkParser');
+            var linkparser = require('../controllers/mind-map/linkParser_new-format');
             linkparser.init(function(err){
                 if(err) {
                     winston.error('Error Processing links.json for mindmap: ' + err);

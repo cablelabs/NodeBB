@@ -2,15 +2,15 @@
     'use strict';
 
     // initialize sockets
-    // var ioParams = {
-    //     'max reconnection attempts': config.maxReconnectionAttempts,
-    //     'reconnection delay': config.reconnectionDelay,
-    //     resource: RELATIVE_PATH.length ? RELATIVE_PATH.slice(1) + '/socket.io' : 'socket.io'
-    // };
-    // if (utils.isAndroidBrowser()) {
-    //     ioParams.transports = ['xhr-polling'];
-    // }
-    // var socket = io.connect(config.websocketAddress, ioParams);
+    var ioParams = {
+        'max reconnection attempts': config.maxReconnectionAttempts,
+        'reconnection delay': config.reconnectionDelay,
+        resource: RELATIVE_PATH.length ? RELATIVE_PATH.slice(1) + '/socket.io' : 'socket.io'
+    };
+    if (utils.isAndroidBrowser()) {
+        ioParams.transports = ['xhr-polling'];
+    }
+    var socket = io.connect(config.websocketAddress, ioParams);
 
     function error_handler (error) {
         if (typeof error === 'object') {

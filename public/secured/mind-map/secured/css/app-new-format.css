@@ -5,8 +5,6 @@
 #entity-map-container {
   position: relative;
   font-family: Roboto, 'Lucida Grande', sans-serif;
-  padding: 4em;  /* FIX: remove */
-  min-width: 600px;
 }
 
 
@@ -99,10 +97,19 @@
 /****** Hops Away *******/
 
 .hops-btn {
-  opacity: 0.6;
-  padding-left: 1.9em;
-  padding-right: 1.9em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
   font-weight: bold;
+  font-size: 2em;
+  line-height: .6em;
+  color: #4c4c4c;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box; 
+}
+
+.hops-btn:hover, .hops-btn:focus {
+  opacity: 0.8;
 }
 
 .hops-btn:first-child {
@@ -110,11 +117,14 @@
   border-bottom-left-radius: 0;
 }
 
-.hops-btn.selected { opacity: 1; }
+.hops-btn.selected { color: #f00;}
 
-.hops-1 { background: #8a9583; }
-.hops-2 { background: #a1acbb; }
-.hops-3 { background: #aa9a9b; }
+.hops-1, .hops-1:hover, .hops-1:focus { background: #8a9583; }
+.hops-2, .hops-2:hover, .hops-2:focus { background: #a1acbb; }
+.hops-3, .hops-3:hover, .hops-3:focus { background: #aa9a9b; }
+
+.show-all-btn { border-left: 1px solid #000; }
+.bidirectional-btn { border-right: 1px solid #000;}
 
 
 /******************************************
@@ -151,17 +161,18 @@
   transition: all 0.3s ease-out;
   -webkit-flex: 0 0 2em;
   -ms-flex: 0 0 2em;
-  flex: 0 0 2em;
+  flex: 0 1 2em;
   height: calc(100% - 7em);
   border-radius: 1em;
   text-align: center;
   margin: 1em 0.2em;
   vertical-align: top;
+  background: none;
 }
 .domain.open {
   -webkit-flex: 1 0;
   -ms-flex: 1 0;
-  flex: 1 0;
+  flex: 1 0 10em;
   background: rgba(0,0,0,0.6);
 }
 .domain .domain-title {
@@ -169,6 +180,7 @@
   position: relative;
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
+  transform-origin: 50% 50%;
   top: 1.3em;
   font-size: 1.3em;
   color: #000;
@@ -177,7 +189,8 @@
   border-radius: 0.8em;
   cursor: pointer;
   letter-spacing: 0.1em;
-  z-index: 10;
+  z-index: 3;
+  background: none;
 }
 .domain.open .domain-title {
   -webkit-transform: rotate(0deg);
@@ -192,23 +205,17 @@
   font-size: 1.5em;
 }
 .entities {
-  height: 0;
-  padding: 0 0.5em;
-  opacity: 0;
-  transition: 0.3s all ease-out;
-  border-bottom-left-radius: .8em;
-  border-bottom-right-radius: .8em;
+  display: none;
 }
 .domain.open .entities {
-  height: auto;
-  padding: 0.5em 1em;
-  opacity: 1;
+  display: block;
+  padding: 0;
 }
 .entity {
   display: block;
-  margin: 1.5em auto;
-  padding: 0.2em 0.5em 1em;
-  border-radius: 0.6em;
+  margin: 0.7em;
+  padding: 0.2em 0.2em 0.5em;
+  border-radius: 0.4em;
   cursor: pointer;
   background: #fafafa;
   color: #000;
@@ -314,7 +321,6 @@
 #help-overlay .popover  {
   display: block;
   position: absolute;
-  z-index: 1;
   width: 10em;
   transition: all 0.3s ease-out;
 }
