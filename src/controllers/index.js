@@ -143,6 +143,7 @@ Controllers.reset = function(req, res, next) {
 };
 
 Controllers.login = function(req, res, next) {
+	console.log("Controller.Login");
 	var data = {},
 		login_strategies = auth.get_login_strategies(),
 		num_strategies = login_strategies.length,

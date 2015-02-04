@@ -558,7 +558,7 @@
           "Location"
         ],
         "summary": "Create a geometry collection.",
-        "description": "A geometry collection is a list of geometries.",
+        "description": "A geometry collection is a list of geometries, as defined by the GeoJson format.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -594,7 +594,7 @@
           "Location"
         ],
         "summary": "Find a geometry collection.",
-        "description": "A geometry collection is a list of geometries.",
+        "description": "A geometry collection is a list of geometries, as defined by the GeoJson format.",
         "displayName": "Geometry Collection",
         "produces": [
           "application/json",
@@ -637,7 +637,7 @@
           "Location"
         ],
         "summary": "Update an existing geometry collection.",
-        "description": "A geometry collection is a list of geometries.",
+        "description": "A geometry collection is a list of geometries, as defined by the GeoJson format.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -688,7 +688,7 @@
           "Location"
         ],
         "summary": "Delete a geometry collection.",
-        "description": "A geometry collection is a list of geometries.",
+        "description": "A geometry collection is a list of geometries, as defined by the GeoJson format.",
         "produces": [
           "application/json",
           "application/xml"
@@ -719,7 +719,7 @@
           "Location"
         ],
         "summary": "Create a multipolygon.",
-        "description": "A multipolygon is a geometry multipolygon object.",
+        "description": "A multipolygon is a geometry multipolygon object, as defined by the GeoJson format.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -755,7 +755,7 @@
           "Location"
         ],
         "summary": "Find a multipolygon.",
-        "description": "A multipolygon is a geometry multipolygon object.",
+        "description": "A multipolygon is a geometry multipolygon object, as defined by the GeoJson format.",
         "displayName": "Multi Polygon",
         "produces": [
           "application/json",
@@ -798,7 +798,7 @@
           "Location"
         ],
         "summary": "Update an existing multipolygon.",
-        "description": "A multipolygon is a geometry multipolygon object.",
+        "description": "A multipolygon is a geometry multipolygon object, as defined by the GeoJson format.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -849,7 +849,7 @@
           "Location"
         ],
         "summary": "Delete a multipolygon.",
-        "description": "A multipolygon is a geometry multipolygon object.",
+        "description": "A multipolygon is a geometry multipolygon object, as defined by the GeoJson format.",
         "produces": [
           "application/json",
           "application/xml"
@@ -880,7 +880,7 @@
           "Location"
         ],
         "summary": "Create a polygon.",
-        "description": "A polygon is a geometric polygon object.",
+        "description": "A polygon is a geometric polygon object, as defined by the GeoJson format.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -916,7 +916,7 @@
           "Location"
         ],
         "summary": "Find a polygon.",
-        "description": "A polygon is a geometric polygon object.",
+        "description": "A polygon is a geometric polygon object, as defined by the GeoJson format.",
         "displayName": "Polygon",
         "produces": [
           "application/json",
@@ -959,7 +959,7 @@
           "Location"
         ],
         "summary": "Update an existing polygon.",
-        "description": "A polygon is a geometric polygon object.",
+        "description": "A polygon is a geometric polygon object, as defined by the GeoJson format.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1010,7 +1010,7 @@
           "Location"
         ],
         "summary": "Delete a polygon.",
-        "description": "A polygon is a geometric polygon object.",
+        "description": "A polygon is a geometric polygon object, as defined by the GeoJson format.",
         "produces": [
           "application/json",
           "application/xml"
@@ -1041,7 +1041,7 @@
           "Location"
         ],
         "summary": "Create a multilinestring.",
-        "description": "A multilinestring is a geometry multilinestring object.",
+        "description": "A multilinestring is a geometry multilinestring object, as defined by the GeoJson format.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1077,7 +1077,7 @@
           "Location"
         ],
         "summary": "Find a multilinestring.",
-        "description": "A multilinestring is a geometry multilinestring object.",
+        "description": "A multilinestring is a geometry multilinestring object, as defined by the GeoJson format.",
         "displayName": "Multi Line String",
         "produces": [
           "application/json",
@@ -1120,7 +1120,7 @@
           "Location"
         ],
         "summary": "Update an existing multilinestring.",
-        "description": "A multilinestring is a geometry multilinestring object.",
+        "description": "A multilinestring is a geometry multilinestring object, as defined by the GeoJson format.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1171,7 +1171,7 @@
           "Location"
         ],
         "summary": "Delete a multilinestring.",
-        "description": "A multilinestring is a geometry multilinestring object.",
+        "description": "A multilinestring is a geometry multilinestring object, as defined by the GeoJson format.",
         "produces": [
           "application/json",
           "application/xml"
@@ -1202,7 +1202,7 @@
           "Location"
         ],
         "summary": "Create a linestring.",
-        "description": "A linestring is a geometry linestring object.",
+        "description": "A linestring is a geometry linestring object, as defined by the GeoJson format.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1238,7 +1238,7 @@
           "Location"
         ],
         "summary": "Find a linestring.",
-        "description": "A linestring is a geometry linestring object.",
+        "description": "A linestring is a geometry linestring object, as defined by the GeoJson format.",
         "displayName": "Line String",
         "produces": [
           "application/json",
@@ -1281,7 +1281,7 @@
           "Location"
         ],
         "summary": "Update an existing linestring.",
-        "description": "A linestring is a geometry linestring object.",
+        "description": "A linestring is a geometry linestring object, as defined by the GeoJson format.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1332,7 +1332,7 @@
           "Location"
         ],
         "summary": "Delete a linestring.",
-        "description": "A linestring is a geometry linestring object.",
+        "description": "A linestring is a geometry linestring object, as defined by the GeoJson format.",
         "produces": [
           "application/json",
           "application/xml"
@@ -1363,7 +1363,7 @@
           "Location"
         ],
         "summary": "Create a multipoint.",
-        "description": "A multipoint is a geometry multipoint object.",
+        "description": "A multipoint is a geometry multipoint object, as defined by the GeoJson format.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1399,7 +1399,7 @@
           "Location"
         ],
         "summary": "Find a multipoint.",
-        "description": "A multipoint is a geometry multipoint object.",
+        "description": "A multipoint is a geometry multipoint object, as defined by the GeoJson format.",
         "displayName": "Multi Point",
         "produces": [
           "application/json",
@@ -1442,7 +1442,7 @@
           "Location"
         ],
         "summary": "Update an existing multipoint.",
-        "description": "A multipoint is a geometry multipoint object.",
+        "description": "A multipoint is a geometry multipoint object, as defined by the GeoJson format.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1493,7 +1493,7 @@
           "Location"
         ],
         "summary": "Delete a multipoint.",
-        "description": "A multipoint is a geometry multipoint object.",
+        "description": "A multipoint is a geometry multipoint object, as defined by the GeoJson format.",
         "produces": [
           "application/json",
           "application/xml"
@@ -1524,7 +1524,7 @@
           "Location"
         ],
         "summary": "Create a point.",
-        "description": "A point specifies a particular geometric point, which can include a latitude, longitude, and elevation.",
+        "description": "A point specifies a particular geometric point, which can include a latitude, longitude, and elevation, as defined by the GeoJson format.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1560,7 +1560,7 @@
           "Location"
         ],
         "summary": "Find a point.",
-        "description": "A point specifies a particular geometric point, which can include a latitude, longitude, and elevation.",
+        "description": "A point specifies a particular geometric point, which can include a latitude, longitude, and elevation, as defined by the GeoJson format.",
         "displayName": "Point",
         "produces": [
           "application/json",
@@ -1603,7 +1603,7 @@
           "Location"
         ],
         "summary": "Update an existing point.",
-        "description": "A point specifies a particular geometric point, which can include a latitude, longitude, and elevation.",
+        "description": "A point specifies a particular geometric point, which can include a latitude, longitude, and elevation, as defined by the GeoJson format.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -1654,7 +1654,7 @@
           "Location"
         ],
         "summary": "Delete a point.",
-        "description": "A point specifies a particular geometric point, which can include a latitude, longitude, and elevation.",
+        "description": "A point specifies a particular geometric point, which can include a latitude, longitude, and elevation, as defined by the GeoJson format.",
         "produces": [
           "application/json",
           "application/xml"
@@ -6208,7 +6208,7 @@
           "Location"
         ],
         "summary": "Create a feature collection.",
-        "description": "A feature collection is a list of features, which are geometries with additional properties. Lists of geometries are geometry collections.",
+        "description": "A feature collection is a list of features, which are geometries with additional properties, as defined by the GeoJson format. Lists of geometries are geometry collections.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -6244,7 +6244,7 @@
           "Location"
         ],
         "summary": "Find a feature collection.",
-        "description": "A feature collection is a list of features, which are geometries with additional properties. Lists of geometries are geometry collections.",
+        "description": "A feature collection is a list of features, which are geometries with additional properties, as defined by the GeoJson format. Lists of geometries are geometry collections.",
         "displayName": "Feature Collection",
         "produces": [
           "application/json",
@@ -6287,7 +6287,7 @@
           "Location"
         ],
         "summary": "Update a feature collection.",
-        "description": "A feature collection is a list of features, which are geometries with additional properties. Lists of geometries are geometry collections.",
+        "description": "A feature collection is a list of features, which are geometries with additional properties, as defined by the GeoJson format. Lists of geometries are geometry collections.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -6330,7 +6330,7 @@
           "Location"
         ],
         "summary": "Delete a feature collection.",
-        "description": "A feature collection is a list of features, which are geometries with additional properties. Lists of geometries are geometry collections.",
+        "description": "A feature collection is a list of features, which are geometries with additional properties, as defined by the GeoJson format. Lists of geometries are geometry collections.",
         "produces": [
           "application/json",
           "application/xml"
@@ -7585,7 +7585,7 @@
           "Location"
         ],
         "summary": "Create a new site.",
-        "description": "A site is a location where a customer is receiving service. It is the point at which service is delivered to a customer, and is associated with a service address.",
+        "description": "A site is a location where either a customer is receiving service or service is being provided. It is the point at which service is delivered and is associated with a service address.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -7621,7 +7621,7 @@
           "Location"
         ],
         "summary": "Find a site.",
-        "description": "A site is a location where a customer is receiving service. It is the point at which service is delivered to a customer, and is associated with a service address.",
+        "description": "A site is a location where either a customer is receiving service or service is being provided. It is the point at which service is delivered and is associated with a service address.",
         "displayName": "Site",
         "produces": [
           "application/json",
@@ -7664,7 +7664,7 @@
           "Location"
         ],
         "summary": "Update an existing site.",
-        "description": "A site is a location where a customer is receiving service. It is the point at which service is delivered to a customer, and is associated with a service address.",
+        "description": "A site is a location where either a customer is receiving service or service is being provided. It is the point at which service is delivered and is associated with a service address.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -7707,7 +7707,7 @@
           "Location"
         ],
         "summary": "Delete a site.",
-        "description": "A site is a location where a customer is receiving service. It is the point at which service is delivered to a customer, and is associated with a service address.",
+        "description": "A site is a location where either a customer is receiving service or service is being provided. It is the point at which service is delivered and is associated with a service address.",
         "produces": [
           "application/json",
           "application/xml"
@@ -9625,7 +9625,7 @@
           "Location"
         ],
         "summary": "Create a feature.",
-        "description": "A feature is a geometry with additional properties.",
+        "description": "A feature is a geometry with additional properties, as defined by the GeoJson format.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -9661,7 +9661,7 @@
           "Location"
         ],
         "summary": "Find a feature.",
-        "description": "A feature is a geometry with additional properties.",
+        "description": "A feature is a geometry with additional properties, as defined by the GeoJson format.",
         "displayName": "Feature",
         "produces": [
           "application/json",
@@ -9704,7 +9704,7 @@
           "Location"
         ],
         "summary": "Update an existing feature.",
-        "description": "A feature is a geometry with additional properties.",
+        "description": "A feature is a geometry with additional properties, as defined by the GeoJson format.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -9747,7 +9747,7 @@
           "Location"
         ],
         "summary": "Delete a feature.",
-        "description": "A feature is a geometry with additional properties.",
+        "description": "A feature is a geometry with additional properties, as defined by the GeoJson format.",
         "produces": [
           "application/json",
           "application/xml"
@@ -13490,7 +13490,7 @@
           "Service"
         ],
         "summary": "Create an Ethernet device interface.",
-        "description": "EthernetInterface refines the concept of a DeviceInterface into a EthernetDeviceInterface.",
+        "description": "An Ethernet Interface is a physical and logical resource that supports one or more of the 802.3 standards.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -13526,7 +13526,7 @@
           "Service"
         ],
         "summary": "Find an Ethernet device interface.",
-        "description": "EthernetInterface refines the concept of a DeviceInterface into a EthernetDeviceInterface.",
+        "description": "An Ethernet Interface is a physical and logical resource that supports one or more of the 802.3 standards.",
         "displayName": "Ethernet Interface",
         "produces": [
           "application/json",
@@ -13569,7 +13569,7 @@
           "Service"
         ],
         "summary": "Update an existing Ethernet device interface.",
-        "description": "EthernetInterface refines the concept of a DeviceInterface into a EthernetDeviceInterface.",
+        "description": "An Ethernet Interface is a physical and logical resource that supports one or more of the 802.3 standards.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -13612,7 +13612,7 @@
           "Service"
         ],
         "summary": "Delete an Ethernet device interface.",
-        "description": "EthernetInterface refines the concept of a DeviceInterface into a EthernetDeviceInterface.",
+        "description": "An Ethernet Interface is a physical and logical resource that supports one or more of the 802.3 standards.",
         "produces": [
           "application/json",
           "application/xml"

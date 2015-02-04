@@ -36,7 +36,6 @@ middleware.authenticate = function(req, res, next) {
 	}
 };
 
-//<<<<<<< HEAD
 //middleware.isLoggedIn = function(req, res, next) {
 //    console.log("middleware.isLoggedin " + req.user);
 //    if (!req.user) {
@@ -46,11 +45,9 @@ middleware.authenticate = function(req, res, next) {
 //        return res.redirect(nconf.get('relative_path') + '/login');
 //    }
 //};
-//=======
 middleware.applyCSRF = csrf();
 
 middleware.ensureLoggedIn = ensureLoggedIn.ensureLoggedIn();
-//>>>>>>> 1eb9016a77c9ef99e63913db0a023b7f9911d4e4
 
 middleware.updateLastOnlineTime = function(req, res, next) {
 	if(req.user) {
