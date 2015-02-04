@@ -34,51 +34,50 @@
 	}
 
 	function login(req, res, next) {
-		cosole.log("login:::");
 		var continueLogin = function() {
-			//passport.authenticate('local', function(err, userData, info) {
-			//	if (err) {
-			//		req.flash('error', info);
-			//		return res.redirect(nconf.get('relative_path') + '/login');
-			//	}
-            //
-			//	if (!userData) {
-			//		if (typeof info === 'object') {
-			//			info = '[[error:invalid-username-or-password]]';
-			//		}
-            //
-			//		req.flash('error', info);
-			//		return res.redirect(nconf.get('relative_path') + '/login');
-			//	}
-            //
-			//	// Alter user cookie depending on passed-in option
-			//	if (req.body.remember === 'on') {
-			//		var duration = 1000*60*60*24*parseInt(meta.config.loginDays || 14, 10);
-			//		req.session.cookie.maxAge = duration;
-			//		req.session.cookie.expires = new Date(Date.now() + duration);
-			//	} else {
-			//		req.session.cookie.maxAge = false;
-			//		req.session.cookie.expires = false;
-			//	}
-            //
-			//	req.login({
-			//		uid: userData.uid
-			//	}, function() {
-			//		if (userData.uid) {
-			//			user.logIP(userData.uid, req.ip);
-            //
-			//			plugins.fireHook('action:user.loggedIn', userData.uid);
-			//		}
-            //
-			//		if (!req.session.returnTo) {
-			//			res.redirect(nconf.get('relative_path') + '/');
-			//		} else {
-			//			var next = req.session.returnTo;
-			//			delete req.session.returnTo;
-			//			res.redirect(nconf.get('relative_path') + next);
-			//		}
-			//	});
-			//})(req, res, next);
+			passport.authenticate('local', function(err, userData, info) {
+				if (err) {
+					req.flash('error', info);
+					return res.redirect(nconf.get('relative_path') + '/login');
+				}
+
+				if (!userData) {
+					if (typeof info === 'object') {
+						info = '[[error:invalid-username-or-password]]';
+					}
+
+					req.flash('error', info);
+					return res.redirect(nconf.get('relative_path') + '/login');
+				}
+
+				// Alter user cookie depending on passed-in option
+				if (req.body.remember === 'on') {
+					var duration = 1000*60*60*24*parseInt(meta.config.loginDays || 14, 10);
+					req.session.cookie.maxAge = duration;
+					req.session.cookie.expires = new Date(Date.now() + duration);
+				} else {
+					req.session.cookie.maxAge = false;
+					req.session.cookie.expires = false;
+				}
+
+				req.login({
+					uid: userData.uid
+				}, function() {
+					if (userData.uid) {
+						user.logIP(userData.uid, req.ip);
+
+						plugins.fireHook('action:user.loggedIn', userData.uid);
+					}
+
+					if (!req.session.returnTo) {
+						res.redirect(nconf.get('relative_path') + '/');
+					} else {
+						var next = req.session.returnTo;
+						delete req.session.returnTo;
+						res.redirect(nconf.get('relative_path') + next);
+					}
+				});
+			})(req, res, next);
 		};
 
 		if(meta.config.allowLocalLogin !== undefined && parseInt(meta.config.allowLocalLogin, 10) === 0) {
@@ -211,12 +210,12 @@
 
 				router.post('/logout', logout);
 				router.post('/register', Auth.middleware.applyCSRF, register);
-				//router.post('/login', Auth.middleware.applyCSRF, login);
-				router.post('/login',
-					passport.authenticate('atlassian-crowd', { failureRedirect:'/login', failureFlash:"Invalid username or password."}),
-					function (req, res) {
-						res.redirect('/');
-					});
+				router.post('/login', Auth.middleware.applyCSRF, login);
+				//router.post('/login',
+				//	passport.authenticate('atlassian-crowd', { failureRedirect:'/login', failureFlash:"Invalid username or password."}),
+				//	function (req, res) {
+				//		res.redirect('/');
+				//	});
 
 				hotswap.replace('auth', router);
 				if (typeof callback === 'function') {
@@ -226,8 +225,67 @@
 		});
 	};
 
-	Auth.login = function(userProfile, next) {
+	Auth.login = function(username, password, next) {
 		console.log("Auth.login");
+		if (!username || !password) {
+			next(new Error('[[error:invalid-password]]'));
+			return;
+		}
+
+		var userslug = utils.slugify(username);
+
+		user.getUidByUserslug(userslug, function(err, uid) {
+			if (err) {
+				return next(err);
+			}
+
+			if(!uid) {
+				return next(null, false, '[[error:no-user]]');
+			}
+
+			user.auth.logAttempt(uid, function(err) {
+				if (err) {
+					return next(null, false, err.message);
+				}
+
+				db.getObjectFields('user:' + uid, ['password', 'banned'], function(err, userData) {
+					if (err) {
+						return next(err);
+					}
+
+					if (!userData || !userData.password) {
+						return next(new Error('[[error:invalid-user-data]]'));
+					}
+
+					if (userData.banned && parseInt(userData.banned, 10) === 1) {
+						return next(null, false, '[[error:user-banned]]');
+					}
+
+					Password.compare(password, userData.password, function(err, res) {
+						if (err) {
+							return next(new Error('bcrypt compare error'));
+						}
+
+						if (!res) {
+							return next(null, false, '[[error:invalid-password]]');
+						}
+
+						user.auth.clearLoginAttempts(uid);
+
+						next(null, {
+							uid: uid
+						}, '[[success:authentication-successful]]');
+					});
+				});
+			});
+		});
+	};
+
+	Auth.crowdLogin = function(userProfile, next) {
+		console.log("Auth.login");
+
+
+
 		if (!username || !password) {
 			next(new Error('[[error:invalid-password]]'));
 			return;
@@ -287,30 +345,14 @@
 //   credentials (in this case a crowd user profile), and invoke a callback
 //   with a user object.  In the real world, this would query a database;
 //   however, in this example we are using a baked-in set of users.
-	passport.use(new AtlassianCrowdStrategy({
-			crowdServer:"http://ccauth.cablelabs.com:8095/crowd/",
-			crowdApplication:"devportal",
-			crowdApplicationPassword:"lF~!DL4o",
-			retrieveGroupMemberships:true
-		}, Auth.login
-		//function (userprofile, done) {
-		//	console.log("Username :: " + userprofile.username);
-		//	// asynchronous verification, for effect...
-		//	process.nextTick(function () {
-        //
-		//		var exists = _.any(users, function (user) {
-		//			return user.id == userprofile.id;
-		//		});
-		//		if (!exists) {
-		//			users.push(userprofile);
-		//		}
-        //
-		//		return done(null, userprofile);
-		//	});
-		//}
-	));
+//	passport.use(new AtlassianCrowdStrategy({
+//			crowdServer:"http://ccauth.cablelabs.com:8095/crowd/",
+//			crowdApplication:"devportal",
+//			crowdApplicationPassword:"lF~!DL4o",
+//			retrieveGroupMemberships:true
+//		}, Auth.crowdLogin));
 
-	//passport.use(new passportLocal(Auth.login));
+	passport.use(new passportLocal(Auth.login));
 
 	passport.serializeUser(function(user, done) {
 		done(null, user.uid);

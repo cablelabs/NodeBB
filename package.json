@@ -53,6 +53,7 @@
     "nodebb-plugin-mandrill-emailer": "0.0.1",
     "nodebb-plugin-markdown": "~0.6.3",
     "nodebb-plugin-soundpack-default": "~0.1.1",
+    "nodebb-plugin-sso-github": "^0.3.1",
     "nodebb-plugin-sso-oauth": "^0.2.2",
     "nodebb-plugin-youtube": "0.0.6",
     "nodebb-theme-lavender": "~0.1.0",
