@@ -7585,7 +7585,7 @@
           "Location"
         ],
         "summary": "Create a new site.",
-        "description": "A site is a location where a customer is receiving service. It is the point at which service is delivered to a customer, and is associated with a service address.",
+        "description": "A site is a location where either a customer is receiving service or service is being provided. It is the point at which service is delivered and is associated with a service address.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -7621,7 +7621,7 @@
           "Location"
         ],
         "summary": "Find a site.",
-        "description": "A site is a location where a customer is receiving service. It is the point at which service is delivered to a customer, and is associated with a service address.",
+        "description": "A site is a location where either a customer is receiving service or service is being provided. It is the point at which service is delivered and is associated with a service address.",
         "displayName": "Site",
         "produces": [
           "application/json",
@@ -7664,7 +7664,7 @@
           "Location"
         ],
         "summary": "Update an existing site.",
-        "description": "A site is a location where a customer is receiving service. It is the point at which service is delivered to a customer, and is associated with a service address.",
+        "description": "A site is a location where either a customer is receiving service or service is being provided. It is the point at which service is delivered and is associated with a service address.",
         "consumes": [
           "application/json",
           "application/xml"
@@ -7707,7 +7707,7 @@
           "Location"
         ],
         "summary": "Delete a site.",
-        "description": "A site is a location where a customer is receiving service. It is the point at which service is delivered to a customer, and is associated with a service address.",
+        "description": "A site is a location where either a customer is receiving service or service is being provided. It is the point at which service is delivered and is associated with a service address.",
         "produces": [
           "application/json",
           "application/xml"
