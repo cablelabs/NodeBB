@@ -39,7 +39,7 @@
     "morgan": "^1.0.0",
     "nconf": "~0.6.7",
     "node-rest-client": "1.0.0",
-    "nodebb-plugin-atlassian-crowd": "0.0.1",
+    "nodebb-plugin-atlassian-crowd": "0.0.2",
     "nodebb-plugin-calendar": "^0.1.0",
     "nodebb-plugin-custom-homepage": "0.0.6",
     "nodebb-plugin-custom-mentions": "~0.6.2",
