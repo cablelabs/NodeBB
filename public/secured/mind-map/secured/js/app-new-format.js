@@ -473,8 +473,9 @@
                     graph.$.entities.filter(function(i, elem){
                         return sets.in_subset($(elem).data('name'));
                     }).addClass('selected');
+                } else {
+                    user_update();
                 }
-                
             }
         }
     };
