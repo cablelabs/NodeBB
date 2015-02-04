@@ -45,9 +45,9 @@
 
 	<!-- Cablelabs.com CSS -->
 	<link href="{relative_path}/custom-css/cl-style.css?{css-buster}" rel="stylesheet">
-<!-- 	<link href="{relative_path}/flatscroller/assets/css/bootstrap-responsive.css?{css-buster}" rel="stylesheet">
+	<!-- <link href="{relative_path}/flatscroller/assets/css/bootstrap-responsive.css?{css-buster}" rel="stylesheet"> -->
 	<link href="{relative_path}/flatscroller/assets/css/style.css?{css-buster}" rel="stylesheet">
-	<link href="{relative_path}/flatscroller/assets/css/font-awesome.min.css?{css-buster}" rel="stylesheet"> -->
+	<link href="{relative_path}/flatscroller/assets/css/font-awesome.min.css?{css-buster}" rel="stylesheet">
 	<link href='//fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="secured/mind-map/secured/css/app-new-format.css?{css-buster}">
 	<!--[if lt IE 7]>
