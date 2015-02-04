@@ -23,7 +23,7 @@
             <button type="button" class="btn btn-xs edit-subset-btn">
               <span class="glyphicon glyphicon-edit"></span> edit
             </button>
-            <button type="button" class="btn btn-primary btn-xs share-subset-btn">
+            <button type="button" data-toggle="modal" data-target="#share-set" class="btn btn-primary btn-xs share-subset-btn">
               <span class="glyphicon glyphicon-share"></span> share
             </button>
           </div>
@@ -168,6 +168,35 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Share Set Modal -->
+  <div class="modal fade" id="share-set" tabindex="-1" role="dialog" aria-labelledby="set-manager" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="shareModalLabel">Share Entity Set</h4>
+        </div>
+        <div class="modal-body">
+          <div>
+            <form role="add" id="share-set-form">
+              <div class="input-group input-group-lg">
+                <input type="text" class="form-control" placeholder="Enter username to search" id="share-set-user">
+              <span class="input-group-btn">
+                <button class="btn btn-default" id="share-set-submit" type="submit">
+                  <span class="glyphicon glyphicon-share"></span>
+                </button>
+              </span>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
+        </div>
       </div>
     </div>
   </div>
