@@ -13526,7 +13526,7 @@
           "Service"
         ],
         "summary": "Find an Ethernet device interface.",
-        "description": "EthernetInterface refines the concept of a DeviceInterface into a EthernetDeviceInterface.",
+        "description": "An Ethernet Interface is a physical and logical resource that supports one or more of the 802.3 standards.",
         "displayName": "Ethernet Interface",
         "produces": [
           "application/json",
