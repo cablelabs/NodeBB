@@ -270,8 +270,8 @@
   padding-top: .6em;
 }
 .glyphs.open .description,
-.description:hover,
-.api-link:hover {
+.glyphs .description:hover,
+.glyphs .api-link:hover {
   color: #f00;
 }
 .entity:hover .glyphs,
