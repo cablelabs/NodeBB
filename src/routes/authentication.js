@@ -211,11 +211,6 @@
 				router.post('/logout', logout);
 				router.post('/register', Auth.middleware.applyCSRF, register);
 				router.post('/login', Auth.middleware.applyCSRF, login);
-				//router.post('/login',
-				//	passport.authenticate('atlassian-crowd', { failureRedirect:'/login', failureFlash:"Invalid username or password."}),
-				//	function (req, res) {
-				//		res.redirect('/');
-				//	});
 
 				hotswap.replace('auth', router);
 				if (typeof callback === 'function') {
@@ -280,77 +275,6 @@
 			});
 		});
 	};
-
-	Auth.crowdLogin = function(userProfile, next) {
-		console.log("Auth.login");
-
-
-
-		if (!username || !password) {
-			next(new Error('[[error:invalid-password]]'));
-			return;
-		}
-
-		var userslug = utils.slugify(username);
-
-		user.getUidByUserslug(userslug, function(err, uid) {
-			if (err) {
-				return next(err);
-			}
-
-			if(!uid) {
-				return next(null, false, '[[error:no-user]]');
-			}
-
-			user.auth.logAttempt(uid, function(err) {
-				if (err) {
-					return next(null, false, err.message);
-				}
-
-				db.getObjectFields('user:' + uid, ['password', 'banned'], function(err, userData) {
-					if (err) {
-						return next(err);
-					}
-
-					if (!userData || !userData.password) {
-						return next(new Error('[[error:invalid-user-data]]'));
-					}
-
-					if (userData.banned && parseInt(userData.banned, 10) === 1) {
-						return next(null, false, '[[error:user-banned]]');
-					}
-
-					Password.compare(password, userData.password, function(err, res) {
-						if (err) {
-							return next(new Error('bcrypt compare error'));
-						}
-
-						if (!res) {
-							return next(null, false, '[[error:invalid-password]]');
-						}
-
-						user.auth.clearLoginAttempts(uid);
-
-						next(null, {
-							uid: uid
-						}, '[[success:authentication-successful]]');
-					});
-				});
-			});
-		});
-	};
-
-	// Use the AtlassianCrowdStrategy within Passport.
-//   Strategies in passport require a `verify` function, which accept
-//   credentials (in this case a crowd user profile), and invoke a callback
-//   with a user object.  In the real world, this would query a database;
-//   however, in this example we are using a baked-in set of users.
-//	passport.use(new AtlassianCrowdStrategy({
-//			crowdServer:"http://ccauth.cablelabs.com:8095/crowd/",
-//			crowdApplication:"devportal",
-//			crowdApplicationPassword:"lF~!DL4o",
-//			retrieveGroupMemberships:true
-//		}, Auth.crowdLogin));
 
 	passport.use(new passportLocal(Auth.login));
 
