@@ -109,7 +109,7 @@
             },
             "click reset-btn": function (e) {
                 search.$.input.val('');
-                graph.reset();
+                graph.set_selected([]);
             }
         }
     };
