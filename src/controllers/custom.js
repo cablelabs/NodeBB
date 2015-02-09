@@ -152,38 +152,19 @@ customController.createPath = function(req, res, next) {
 customController.getEntities = function(req, res, next) {
     async.waterfall([
         function (next) {
-            var keys = cids.map(function(pid) {
-                return 'path:' + pid;
-            });
-
-            db.getObjects(keys, function(err, categories) {
-                if (err) {
+            entity.getAllEntities(function (err, entitiesData) {
+                if(err) {
                     return callback(err);
                 }
-
-                if (!Array.isArray(categories) || !categories.length) {
-                    return callback(null, []);
-                }
-
-                async.map(categories, function(category, next) {
-                    if (!category) {
-                        return next(null, category);
-                    }
-                    category.name = validator.escape(category.name);
-                    category.description = validator.escape(category.description);
-                    category.backgroundImage = category.image ? nconf.get('relative_path') + category.image : '';
-                    category.disabled = parseInt(category.disabled, 10) === 1;
-
-                    next(null, category);
-                }, callback);
+                next(null, entitiesData);
             });
             next();
         }
     ], function (err, result) {
-        if (err) {
+        if(err) {
             return next(err);
         }
-        res.render('mind-map/index', result);
+        res.send(result);
     });
 };
 
@@ -191,7 +172,7 @@ customController.getEntityByName = function(req, res, next) {
     async.waterfall([
         function (next) {
             var keys = cids.map(function(pid) {
-                return 'path:' + pid;
+                return 'entity:' + pid;
             });
 
             db.getObjects(keys, function(err, categories) {
@@ -221,7 +202,7 @@ customController.getEntityByName = function(req, res, next) {
         if (err) {
             return next(err);
         }
-        res.render('mind-map/index', result);
+        res.send(result);
     });
 };
 
@@ -237,7 +218,7 @@ customController.createEntity = function(req, res, next) {
 
     entity.createEntity(entityData, function(err, uid) {
         entityData.uid = uid;
-        res.send(JSON.stringify(entityData));
+        res.send(entityData);
     });
 };
 

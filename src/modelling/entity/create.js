@@ -19,7 +19,7 @@ module.exports = function(Entity) {
 			'domain': data.domain,
 			'tags': data.tags,
 			'entityviews': 0,
-			'definition': data.definition
+			'definition': JSON.stringify(data.definition)
 		};
 
 		async.parallel({

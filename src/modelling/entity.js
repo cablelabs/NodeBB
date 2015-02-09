@@ -106,7 +106,7 @@ var	async = require('async'),
     Entity.getEntities = function(uids, callback) {
         async.parallel({
             entityData: function(next) {
-                Entity.getMultipleUserFields(uids, ['uid', 'name', 'definition', 'tags', 'domain'], next);
+                Entity.getMultipleEntityFields(uids, ['uid', 'name', 'definition', 'tags', 'domain'], next);
             }
         }, function(err, results) {
             if (err) {
@@ -120,6 +120,17 @@ var	async = require('async'),
             });
 
             callback(err, results.entityData);
+        });
+    };
+
+    Entity.getAllEntities = function(callback) {
+        db.getObjectValues('entityname:uid', function(err, uids) {
+            Entity.getEntities(uids, function(err, entitiesData) {
+                if(err) {
+                    return callback(err);
+                }
+                callback(err, entitiesData);
+            });
         });
     };
 
@@ -140,7 +151,7 @@ var	async = require('async'),
     };
 
     Entity.getNamesByUids = function(uids, callback) {
-        Entity.getMultipleUserFields(uids, ['name'], function(err, entities) {
+        Entity.getMultipleEntityFields(uids, ['name'], function(err, entities) {
             if (err) {
                 return callback(err);
             }
