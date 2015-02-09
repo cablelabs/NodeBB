@@ -8,6 +8,7 @@ var	async = require('async'),
 
     require('./entity/create')(Entity);
     require('./entity/update')(Entity);
+    require('./entity/delete')(Entity);
 
     Entity.getEntityField = function(uid, field, callback) {
         Entity.getEntityFields(uid, [field], function(err, entity) {
@@ -16,7 +17,7 @@ var	async = require('async'),
     };
 
     Entity.getEntityFields = function(uid, fields, callback) {
-        Entity.getMultipleUserFields([uid], fields, function(err, entities) {
+        Entity.getMultipleEntityFields([uid], fields, function(err, entities) {
             callback(err, entities ? entities[0] : null);
         });
     };

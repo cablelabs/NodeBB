@@ -150,59 +150,26 @@ customController.createPath = function(req, res, next) {
 };
 
 customController.getEntities = function(req, res, next) {
-    async.waterfall([
-        function (next) {
-            entity.getAllEntities(function (err, entitiesData) {
-                if(err) {
-                    return callback(err);
-                }
-                next(null, entitiesData);
-            });
-            next();
-        }
-    ], function (err, result) {
+    entity.getAllEntities(function (err, entitiesData) {
         if(err) {
             return next(err);
         }
-        res.send(result);
+        res.send(entitiesData);
     });
 };
 
 customController.getEntityByName = function(req, res, next) {
-    async.waterfall([
-        function (next) {
-            var keys = cids.map(function(pid) {
-                return 'entity:' + pid;
-            });
-
-            db.getObjects(keys, function(err, categories) {
-                if (err) {
-                    return callback(err);
-                }
-
-                if (!Array.isArray(categories) || !categories.length) {
-                    return callback(null, []);
-                }
-
-                async.map(categories, function(category, next) {
-                    if (!category) {
-                        return next(null, category);
-                    }
-                    category.name = validator.escape(category.name);
-                    category.description = validator.escape(category.description);
-                    category.backgroundImage = category.image ? nconf.get('relative_path') + category.image : '';
-                    category.disabled = parseInt(category.disabled, 10) === 1;
-
-                    next(null, category);
-                }, callback);
-            });
-            next();
-        }
-    ], function (err, result) {
-        if (err) {
-            return next(err);
-        }
-        res.send(result);
+    var name = req.params.name;
+    console.log("Name : " + name);
+    entity.getUidByName(name, function(err, uid) {
+        console.log("UID :: " + uid);
+        entity.getEntityData(uid, function(err, entities) {
+            if(err) {
+                next(err);
+            }
+            console.log("Result " + entities);
+            res.send(entities);
+        });
     });
 };
 
@@ -220,6 +187,18 @@ customController.createEntity = function(req, res, next) {
         entityData.uid = uid;
         res.send(entityData);
     });
+};
+
+customController.deleteEntity = function(req, res, next) {
+    var name = req.params.name;
+    entity.getUidByName(name, function(err, uid) {
+        entity.deleteEntity(uid, function(err, returnData) {
+            if(err) {
+                return next(err);
+            }
+            res.send(returnData);
+        });
+    })
 };
 
 customController.entityMap = function(req, res, next) {

@@ -23,7 +23,9 @@ function mainRoutes(app, middleware, controllers) {
 
     //app.put('/api/entities', middlewares, controllers.custom.getEntities);
 
-    app.get('/modelling/api/entities:name', middlewares, controllers.custom.getEntityByName);
+    app.get('/modelling/api/entities/:name', middlewares, controllers.custom.getEntityByName);
+
+    app.delete('/modelling/api/entities/:name', middlewares, controllers.custom.deleteEntity);
 
 }
 
