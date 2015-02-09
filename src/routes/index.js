@@ -146,7 +146,7 @@ module.exports = function(app, middleware) {
 	feedRoutes(router, middleware, controllers);
 	pluginRoutes(router, middleware, controllers);
 
-	// Mindmap routes
+	// Custom routes
 	custom(router, middleware, controllers);
 
 	/**

@@ -2,7 +2,8 @@
 
 var async = require('async'),
 
-    user = require('../user'),
+    entity = require('../modelling/entity'),
+    path = require('../modelling/path'),
     winston = require('winston'),
     apis = require('../apis'),
     announcements = require('../announcements'),
@@ -34,7 +35,7 @@ var customController = {
     uploads: require('./admin/uploads')
 };
 
-customController.getpath = function(req, res, next) {
+customController.getPaths = function(req, res, next) {
     async.waterfall([
         function (next) {
             var keys = cids.map(function(pid) {
@@ -72,7 +73,175 @@ customController.getpath = function(req, res, next) {
     });
 };
 
-customController.home = function(req, res, next) {
+customController.getPathByName = function(req, res, next) {
+    async.waterfall([
+        function (next) {
+            var keys = cids.map(function(pid) {
+                return 'path:' + pid;
+            });
+
+            db.getObjects(keys, function(err, categories) {
+                if (err) {
+                    return callback(err);
+                }
+
+                if (!Array.isArray(categories) || !categories.length) {
+                    return callback(null, []);
+                }
+
+                async.map(categories, function(category, next) {
+                    if (!category) {
+                        return next(null, category);
+                    }
+                    category.name = validator.escape(category.name);
+                    category.description = validator.escape(category.description);
+                    category.backgroundImage = category.image ? nconf.get('relative_path') + category.image : '';
+                    category.disabled = parseInt(category.disabled, 10) === 1;
+
+                    next(null, category);
+                }, callback);
+            });
+            next();
+        }
+    ], function (err, result) {
+        if (err) {
+            return next(err);
+        }
+        res.render('mind-map/index', result);
+    });
+};
+
+customController.createPath = function(req, res, next) {
+    async.waterfall([
+        function (next) {
+            var keys = cids.map(function(pid) {
+                return 'path:' + pid;
+            });
+
+            db.getObjects(keys, function(err, categories) {
+                if (err) {
+                    return callback(err);
+                }
+
+                if (!Array.isArray(categories) || !categories.length) {
+                    return callback(null, []);
+                }
+
+                async.map(categories, function(category, next) {
+                    if (!category) {
+                        return next(null, category);
+                    }
+                    category.name = validator.escape(category.name);
+                    category.description = validator.escape(category.description);
+                    category.backgroundImage = category.image ? nconf.get('relative_path') + category.image : '';
+                    category.disabled = parseInt(category.disabled, 10) === 1;
+
+                    next(null, category);
+                }, callback);
+            });
+            next();
+        }
+    ], function (err, result) {
+        if (err) {
+            return next(err);
+        }
+        res.render('mind-map/index', result);
+    });
+};
+
+customController.getEntities = function(req, res, next) {
+    async.waterfall([
+        function (next) {
+            var keys = cids.map(function(pid) {
+                return 'path:' + pid;
+            });
+
+            db.getObjects(keys, function(err, categories) {
+                if (err) {
+                    return callback(err);
+                }
+
+                if (!Array.isArray(categories) || !categories.length) {
+                    return callback(null, []);
+                }
+
+                async.map(categories, function(category, next) {
+                    if (!category) {
+                        return next(null, category);
+                    }
+                    category.name = validator.escape(category.name);
+                    category.description = validator.escape(category.description);
+                    category.backgroundImage = category.image ? nconf.get('relative_path') + category.image : '';
+                    category.disabled = parseInt(category.disabled, 10) === 1;
+
+                    next(null, category);
+                }, callback);
+            });
+            next();
+        }
+    ], function (err, result) {
+        if (err) {
+            return next(err);
+        }
+        res.render('mind-map/index', result);
+    });
+};
+
+customController.getEntityByName = function(req, res, next) {
+    async.waterfall([
+        function (next) {
+            var keys = cids.map(function(pid) {
+                return 'path:' + pid;
+            });
+
+            db.getObjects(keys, function(err, categories) {
+                if (err) {
+                    return callback(err);
+                }
+
+                if (!Array.isArray(categories) || !categories.length) {
+                    return callback(null, []);
+                }
+
+                async.map(categories, function(category, next) {
+                    if (!category) {
+                        return next(null, category);
+                    }
+                    category.name = validator.escape(category.name);
+                    category.description = validator.escape(category.description);
+                    category.backgroundImage = category.image ? nconf.get('relative_path') + category.image : '';
+                    category.disabled = parseInt(category.disabled, 10) === 1;
+
+                    next(null, category);
+                }, callback);
+            });
+            next();
+        }
+    ], function (err, result) {
+        if (err) {
+            return next(err);
+        }
+        res.render('mind-map/index', result);
+    });
+};
+
+customController.createEntity = function(req, res, next) {
+
+    var entityData = {};
+
+    for (var key in req.body) {
+        if (req.body.hasOwnProperty(key)) {
+            entityData[key] = req.body[key];
+        }
+    }
+
+    entity.createEntity(entityData, function(err, uid) {
+        entityData.uid = uid;
+        res.send(JSON.stringify(entityData));
+    });
+};
+
+customController.entityMap = function(req, res, next) {
     async.parallel({
         header: function (next) {
             res.locals.metaTags = [{
