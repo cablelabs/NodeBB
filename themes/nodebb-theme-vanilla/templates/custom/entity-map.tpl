@@ -125,6 +125,17 @@
             </div>
           </div>
         </div>
+
+        <div class="col-md-4">
+          <div class="popover bottom" id="help-tutorial">
+            <div class="popover-title">Video Tutorial</div>
+            <div class="popover-content">
+              For a better understanding of how to use the Entity Map, please see the 
+              <a href="http://youtu.be/-bDG1nTtAsM" target="_blank">video tutorial</a>.
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div> <!-- end #entity-map-container -->
