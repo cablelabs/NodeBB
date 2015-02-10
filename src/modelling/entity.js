@@ -107,7 +107,7 @@ var	async = require('async'),
     Entity.getEntities = function(uids, callback) {
         async.parallel({
             entityData: function(next) {
-                Entity.getMultipleEntityFields(uids, ['uid', 'name', 'definition', 'tags', 'domain', 'createdate', 'updatedate', 'entityviews'], next);
+                Entity.getMultipleEntityFields(uids, ['uid', 'name', 'displayName', 'definition', 'tags', 'domain', 'createdate', 'updatedate', 'entityviews'], next);
             }
         }, function(err, results) {
             if (err) {
@@ -127,6 +127,17 @@ var	async = require('async'),
     Entity.getAllEntities = function(callback) {
         db.getObjectValues('entityname:uid', function(err, uids) {
             Entity.getEntities(uids, function(err, entitiesData) {
+                if(err) {
+                    return callback(err);
+                }
+                callback(err, entitiesData);
+            });
+        });
+    };
+
+    Entity.getAllEntityFields = function(fields, callback) {
+        db.getObjectValues('entityname:uid', function(err, uids) {
+            Entity.getMultipleEntityFields(uids, fields, function(err, entitiesData) {
                 if(err) {
                     return callback(err);
                 }

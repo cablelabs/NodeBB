@@ -15,8 +15,9 @@ module.exports = function(Entity) {
 
 		var entityData = {
 			'name': data.name.trim(),
+			'displayName': data.dsplayName.trim(),
 			'createdate': Date.now(),
-			'domain': data.domain,
+			'domain': data.domain.trim(),
 			'tags': data.tags,
 			'entityviews': 0,
 			'definition': JSON.stringify(data.definition)

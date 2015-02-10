@@ -14,7 +14,7 @@ var async = require('async'),
 module.exports = function(Entity) {
 
     Entity.patchEntity = function(uid, data, callback) {
-        var fields = ['name', 'definition', 'tags', 'domain', 'updatedate', 'entityviews'];
+        var fields = ['name', 'displayName', 'definition', 'tags', 'domain', 'updatedate', 'entityviews'];
 
         function isNameAvailable(next) {
             Entity.getEntityFields(uid, ['uid', 'name'], function(err, entityData) {
@@ -59,7 +59,7 @@ module.exports = function(Entity) {
                     return callback(err);
                 }
 
-                Entity.getEntityFields(uid, ['name', 'definition', 'tags', 'domain', 'updatedate', 'createdate', 'entityviews'], callback);
+                Entity.getEntityFields(uid, ['name', 'displayName', 'definition', 'tags', 'domain', 'updatedate', 'createdate', 'entityviews'], callback);
             });
         });
     };

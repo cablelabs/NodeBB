@@ -150,12 +150,25 @@ customController.createPath = function(req, res, next) {
 };
 
 customController.getEntities = function(req, res, next) {
-    entity.getAllEntities(function (err, entitiesData) {
-        if(err) {
-            return next(err);
-        }
-        res.send(entitiesData);
-    });
+
+    var query = req.query.fields;
+    if(query) { // query handles ?fields=field1,field2
+        var fields = query.split(',');
+        entity.getAllEntityFields(fields, function(err, entitiesData) {
+            if(err) {
+                return next(err);
+            }
+            res.send(entitiesData);
+        });
+    } else { // get all attributes
+        entity.getAllEntities(function (err, entitiesData) {
+            if(err) {
+                return next(err);
+            }
+            res.send(entitiesData);
+        });
+    }
+
 };
 
 customController.getEntityByName = function(req, res, next) {
