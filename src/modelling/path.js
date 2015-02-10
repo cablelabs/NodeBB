@@ -4,24 +4,25 @@ var	async = require('async'),
     plugins = require('../plugins'),
     db = require('../database');
 
-(function(Entity) {
+(function(Path) {
 
-    require('./path/create')(Entity);
-    require('./path/update')(Entity);
+    require('./path/create')(Path);
+    require('./path/patch')(Path);
+    require('./path/delete')(Path);
 
-    Entity.getEntityField = function(uid, field, callback) {
-        Entity.getEntityFields(uid, [field], function(err, entity) {
-            callback(err, entity ? entity[field] : null);
+    Path.getPathField = function(uid, field, callback) {
+        Path.getPathFields(uid, [field], function(err, path) {
+            callback(err, path ? path[field] : null);
         });
     };
 
-    Entity.getEntityFields = function(uid, fields, callback) {
-        Entity.getMultipleUserFields([uid], fields, function(err, entities) {
+    Path.getPathFields = function(uid, fields, callback) {
+        Path.getMultiplePathFields([uid], fields, function(err, entities) {
             callback(err, entities ? entities[0] : null);
         });
     };
 
-    Entity.getMultipleEntityFields = function(uids, fields, callback) {
+    Path.getMultiplePathFields = function(uids, fields, callback) {
         var fieldsToRemove = [];
         function addField(field) {
             if (fields.indexOf(field) === -1) {
@@ -35,7 +36,7 @@ var	async = require('async'),
         }
 
         var keys = uids.map(function(uid) {
-            return 'entity:' + uid;
+            return 'path:' + uid;
         });
 
         addField('uid');
@@ -45,24 +46,24 @@ var	async = require('async'),
                 return callback(err);
             }
 
-            modifyEntityData(entities, fieldsToRemove, callback);
+            modifyPathData(entities, fieldsToRemove, callback);
         });
     };
 
-    Entity.getEntityData = function(uid, callback) {
-        Entity.getEntitiesData([uid], function(err, entities) {
+    Path.getPathData = function(uid, callback) {
+        Path.getPathsData([uid], function(err, entities) {
             callback(err, entities ? entities[0] : null);
         });
     };
 
-    Entity.getEntitiesData = function(uids, callback) {
+    Path.getPathsData = function(uids, callback) {
 
         if (!Array.isArray(uids) || !uids.length) {
             return callback(null, []);
         }
 
         var keys = uids.map(function(uid) {
-            return 'entity:' + uid;
+            return 'path:' + uid;
         });
 
         db.getObjects(keys, function(err, entities) {
@@ -70,86 +71,108 @@ var	async = require('async'),
                 return callback(err);
             }
 
-            modifyEntityData(entities, [], callback);
+            modifyPathData(entities, [], callback);
         });
     };
 
-    function modifyEntityData(entities, fieldsToRemove, callback) {
-        entities.forEach(function(entity) {
-            if (!entity) {
+    function modifyPathData(entities, fieldsToRemove, callback) {
+        entities.forEach(function(path) {
+            if (!path) {
                 return;
             }
 
             for(var i=0; i<fieldsToRemove.length; ++i) {
-                entity[fieldsToRemove[i]] = undefined;
+                path[fieldsToRemove[i]] = undefined;
             }
         });
 
         plugins.fireHook('filter:users.get', entities, callback);
     }
 
-    Entity.setEntityField = function(uid, field, value, callback) {
+    Path.setPathField = function(uid, field, value, callback) {
         plugins.fireHook('action:user.set', field, value, 'set');
-        db.setObjectField('entity:' + uid, field, value, callback);
+        db.setObjectField('path:' + uid, field, value, callback);
     };
 
-    Entity.setEntityFields = function(uid, data, callback) {
+    Path.setPathFields = function(uid, data, callback) {
         for (var field in data) {
             if (data.hasOwnProperty(field)) {
-                plugins.fireHook('action:entity.set', field, data[field], 'set');
+                plugins.fireHook('action:path.set', field, data[field], 'set');
             }
         }
 
-        db.setObject('entity:' + uid, data, callback);
+        db.setObject('path:' + uid, data, callback);
     };
 
-    Entity.getEntities = function(uids, callback) {
+    Path.getPaths = function(uids, callback) {
         async.parallel({
-            entityData: function(next) {
-                Entity.getMultipleUserFields(uids, ['uid', 'name', 'definition', 'tags', 'domain'], next);
+            pathData: function(next) {
+                Path.getMultiplePathFields(uids, ['uid', 'name', 'displayName', 'definition', 'tags', 'domain', 'createdate', 'updatedate', 'pathviews'], next);
             }
         }, function(err, results) {
             if (err) {
                 return callback(err);
             }
 
-            results.entityData.forEach(function(entity, index) {
-                if (!entity) {
+            results.pathData.forEach(function(path, index) {
+                if (!path) {
                     return;
                 }
             });
 
-            callback(err, results.entityData);
+            callback(err, results.pathData);
         });
     };
 
-    Entity.exists = function(name, callback) {
-        Entity.getUidByName(name, function(err, exists) {
+    Path.getAllPaths = function(callback) {
+        db.getObjectValues('pathname:uid', function(err, uids) {
+            Path.getPaths(uids, function(err, pathsData) {
+                if(err) {
+                    return callback(err);
+                }
+                callback(err, pathsData);
+            });
+        });
+    };
+
+    Path.getAllPathFields = function(fields, callback) {
+        db.getObjectValues('pathname:uid', function(err, uids) {
+            Path.getMultiplePathFields(uids, fields, function(err, pathsData) {
+                if(err) {
+                    return callback(err);
+                }
+                callback(err, pathsData);
+            });
+        });
+    };
+
+    Path.exists = function(name, callback) {
+        Path.getUidByName(name, function(err, exists) {
             callback(err, !! exists);
         });
     };
 
-    Entity.count = function(callback) {
-        db.getObjectField('global', 'entityCount', function(err, count) {
+    Path.count = function(callback) {
+        db.getObjectField('global', 'pathCount', function(err, count) {
             callback(err, count ? count : 0);
         });
     };
 
-    Entity.getUidByName = function(name, callback) {
-        db.getObjectField('entityname:uid', name, callback);
+    Path.getUidByName = function(name, callback) {
+        db.getObjectField('pathname:uid', name, callback);
     };
 
-    Entity.getNamesByUids = function(uids, callback) {
-        Entity.getMultipleUserFields(uids, ['name'], function(err, entities) {
+    Path.getNamesByUids = function(uids, callback) {
+        Path.getMultiplePathFields(uids, ['name'], function(err, pathsData) {
             if (err) {
                 return callback(err);
             }
 
-            entities = entities.map(function(entity) {
-                return entity.name;
+            pathsData = pathsData.map(function(path) {
+                return path.name;
             });
 
-            callback(null, entities);
+            callback(null, pathsData);
         });
     };
 

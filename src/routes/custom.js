@@ -6,25 +6,20 @@ function mainRoutes(app, middleware, controllers) {
     var middlewares = [];
 
     app.get('/entity-map', middleware.buildHeader, middlewares, controllers.custom.entityMap);
-
     app.get('/documentation', middleware.buildHeader, middlewares, controllers.custom.documentation);
 
-    //app.get('/api/paths', middlewares, controllers.custom.getPaths);
+    // path routes
+    app.get('/modelling/api/paths', middlewares, controllers.custom.getPaths);
+    app.get('/modelling/api/paths/:uid', middlewares, controllers.custom.getPathById);
+    app.post('/modelling/api/paths', controllers.custom.createPath);
+    app.patch('/modelling/api/paths/:uid', middlewares, controllers.custom.patchPath);
+    app.delete('/modelling/api/paths/:uid', middlewares, controllers.custom.deletePath);
 
-    //app.post('/api/paths', middlewares, controllers.custom.getPaths);
-
-    //app.put('/api/paths', middlewares, controllers.custom.getPaths);
-
-    //app.get('/api/path:name', middlewares, controllers.custom.getPathByName);
-
+    // entity routes
     app.get('/modelling/api/entities', middlewares, controllers.custom.getEntities);
-
     app.get('/modelling/api/entities/:name', middlewares, controllers.custom.getEntityByName);
-
     app.post('/modelling/api/entities', controllers.custom.createEntity);
-
     app.patch('/modelling/api/entities/:name', middlewares, controllers.custom.patchEntity);
-
     app.delete('/modelling/api/entities/:name', middlewares, controllers.custom.deleteEntity);
 
 }

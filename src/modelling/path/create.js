@@ -9,34 +9,35 @@ var async = require('async'),
 	notifications = require('../../notifications'),
 	translator = require('../../../public/src/translator');
 
-module.exports = function(Entity) {
+module.exports = function(Path) {
 
-	Entity.create = function(data, callback) {
+	Path.createPath = function(data, callback) {
 
-		var entityData = {
+		var pathData = {
 			'name': data.name.trim(),
+			'displayName': data.displayName,
 			'createdate': Date.now(),
 			'domain': data.domain,
 			'tags': data.tags,
-			'entityviews': 0,
-			'definition': data.definition
+			'pathviews': 0,
+			'definition': JSON.stringify(data.definition)
 		};
 
 		async.parallel({
-			entityNameValid: function(next) {
+			pathNameValid: function(next) {
 
-				// Add entity Name validations here...
+				// Add path Name validations here...
 				next(null);
 			},
 			customFields: function(next) {
 
 				// For plugins related to entities and adding custom fields.
-				plugins.fireHook('filter:entity.custom_fields', [], next);
+				plugins.fireHook('filter:path.custom_fields', [], next);
 			},
-			entityData: function(next) {
+			pathData: function(next) {
 
-				// For plugins realted to entities which will be fired on entity creation.
-				plugins.fireHook('filter:entity.create', entityData, next);
+				// For plugins realted to entities which will be fired on path creation.
+				plugins.fireHook('filter:path.create', pathData, next);
 			}
 		}, function(err, results) {
 			if (err) {
@@ -50,26 +51,28 @@ module.exports = function(Entity) {
 				}
 			});
 
-			entityData = utils.merge(results.entityData, customData);
+			pathData = utils.merge(results.pathData, customData);
 
 			db.incrObjectField('global', 'nextUid', function(err, uid) {
 				if (err) {
 					return callback(err);
 				}
 
-				entityData.uid = uid;
+				pathData.uid = uid;
 
-				db.setObject('entity:' + uid, entityData, function(err) {
+				db.setObject('path:' + uid, pathData, function(err) {
 					if (err) {
 						return callback(err);
 					}
 
-					db.setObjectField('entityname:uid', entityData.name, uid);
+					db.setObjectField('pathname:uid', pathData.name, uid);
 
-					// Call plugins that might want to operate once entity is created.
-					plugins.fireHook('action:entity.create', entityData);
+					// Call plugins that might want to operate once path is created.
+					plugins.fireHook('action:path.create', pathData);
 
-					db.incrObjectField('global', 'entityCount');
+					db.incrObjectField('global', 'pathCount');
+
+					callback(null, uid);
 				});
 			});
 		});

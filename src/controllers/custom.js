@@ -36,116 +36,77 @@ var customController = {
 };
 
 customController.getPaths = function(req, res, next) {
-    async.waterfall([
-        function (next) {
-            var keys = cids.map(function(pid) {
-                return 'path:' + pid;
-            });
 
-            db.getObjects(keys, function(err, categories) {
-                if (err) {
-                    return callback(err);
-                }
+    var query = req.query.fields;
+    if(query) { // query handles ?fields=field1,field2
+        var fields = query.split(',');
+        path.getAllPathFields(fields, function(err, pathsData) {
+            if(err) {
+                return next(err);
+            }
+            res.send(pathsData);
+        });
+    } else { // get all attributes
+        path.getAllPaths(function (err, pathsData) {
+            if(err) {
+                return next(err);
+            }
+            res.send(pathsData);
+        });
+    }
 
-                if (!Array.isArray(categories) || !categories.length) {
-                    return callback(null, []);
-                }
-
-                async.map(categories, function(category, next) {
-                    if (!category) {
-                        return next(null, category);
-                    }
-                    category.name = validator.escape(category.name);
-                    category.description = validator.escape(category.description);
-                    category.backgroundImage = category.image ? nconf.get('relative_path') + category.image : '';
-                    category.disabled = parseInt(category.disabled, 10) === 1;
-
-                    next(null, category);
-                }, callback);
-            });
-            next();
-        }
-    ], function (err, result) {
-        if (err) {
-            return next(err);
-        }
-        res.render('mind-map/index', result);
-    });
 };
 
-customController.getPathByName = function(req, res, next) {
-    async.waterfall([
-        function (next) {
-            var keys = cids.map(function(pid) {
-                return 'path:' + pid;
-            });
-
-            db.getObjects(keys, function(err, categories) {
-                if (err) {
-                    return callback(err);
-                }
-
-                if (!Array.isArray(categories) || !categories.length) {
-                    return callback(null, []);
-                }
-
-                async.map(categories, function(category, next) {
-                    if (!category) {
-                        return next(null, category);
-                    }
-                    category.name = validator.escape(category.name);
-                    category.description = validator.escape(category.description);
-                    category.backgroundImage = category.image ? nconf.get('relative_path') + category.image : '';
-                    category.disabled = parseInt(category.disabled, 10) === 1;
-
-                    next(null, category);
-                }, callback);
-            });
-            next();
+customController.getPathById = function(req, res, next) {
+    var uid = req.params.uid;
+    path.getPathData(uid, function(err, paths) {
+        if(err) {
+            next(err);
         }
-    ], function (err, result) {
-        if (err) {
-            return next(err);
-        }
-        res.render('mind-map/index', result);
+        res.send(paths);
     });
 };
 
 customController.createPath = function(req, res, next) {
-    async.waterfall([
-        function (next) {
-            var keys = cids.map(function(pid) {
-                return 'path:' + pid;
-            });
 
-            db.getObjects(keys, function(err, categories) {
-                if (err) {
-                    return callback(err);
-                }
+    var pathData = {};
 
-                if (!Array.isArray(categories) || !categories.length) {
-                    return callback(null, []);
-                }
-
-                async.map(categories, function(category, next) {
-                    if (!category) {
-                        return next(null, category);
-                    }
-                    category.name = validator.escape(category.name);
-                    category.description = validator.escape(category.description);
-                    category.backgroundImage = category.image ? nconf.get('relative_path') + category.image : '';
-                    category.disabled = parseInt(category.disabled, 10) === 1;
-
-                    next(null, category);
-                }, callback);
-            });
-            next();
+    for (var key in req.body) {
+        if (req.body.hasOwnProperty(key)) {
+            pathData[key] = req.body[key];
         }
-    ], function (err, result) {
-        if (err) {
+    }
+
+    path.createPath(pathData, function(err, uid) {
+        pathData.uid = uid;
+        res.send(pathData);
+    });
+};
+
+customController.patchPath = function(req, res, next) {
+
+    var uid = req.params.uid;
+
+    var pathData = {};
+
+    for (var key in req.body) {
+        if (req.body.hasOwnProperty(key)) {
+            pathData[key] = req.body[key];
+        }
+    }
+
+    path.patchPath(uid, pathData, function(err, updatedEntity) {
+        res.send(updatedEntity);
+    });
+};
+
+customController.deletePath = function(req, res, next) {
+    var uid = req.params.uid;
+    path.deletePath(uid, function(err, returnData) {
+        if(err) {
             return next(err);
         }
-        res.render('mind-map/index', result);
+        res.send(returnData);
     });
 };
 
