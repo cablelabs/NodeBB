@@ -7,6 +7,9 @@
   },
   "host": "cable-api.herokuapp.com",
   "basePath": "/api-docs",
+  "schemes": [
+    "http"
+  ],
   "paths": {
     "/ticket/{t-id}/statusentry/{id}": {
       "get": {
@@ -13791,9 +13794,6 @@
       }
     }
   },
-  "schemes": [
-    "http"
-  ],
   "definitions": {
     "Link": {
       "id": "Link",
