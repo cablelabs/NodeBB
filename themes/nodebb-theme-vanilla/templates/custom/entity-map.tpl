@@ -3,8 +3,8 @@
 
     <title>CIA Entities Map</title> -->
     <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">-->
-<link href='//fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="secured/mind-map/secured/css/app-new-format.css?v={css_buster}"> 
+<!-- <link href='//fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="secured/mind-map/secured/css/app-new-format.css?v={css_buster}">  -->
 
 <div id="entity-map-container">
 
@@ -131,7 +131,7 @@
             <div class="popover-title">Video Tutorial</div>
             <div class="popover-content">
               For a better understanding of how to use the Entity Map, please see the 
-              <a href="http://youtu.be/-bDG1nTtAsM" target="_blank">video tutorial</a>.
+              <a href="http://youtu.be/32dmHyHAnSI" target="_blank">video tutorial</a>.
             </div>
           </div>
         </div>
