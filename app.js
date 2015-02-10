@@ -116,14 +116,14 @@ function start() {
 
 	loadConfig();
 
-	var swaggerBuilder = require('./src/modelling/buildSwagger');
-	swaggerBuilder.init(function(err) {
-		if(err) {
-			winston.error('Error Building json for mindmap: ' + err);
-		} else {
-			console.log("No errors. Check DB for paths created");
-		}
-	});
+	//var swaggerBuilder = require('./src/modelling/buildSwagger');
+	//swaggerBuilder.init(function(err) {
+	//	if(err) {
+	//		winston.error('Error Building json for mindmap: ' + err);
+	//	} else {
+	//		console.log("No errors. Check DB for paths created");
+	//	}
+	//});
 
 	//// Refreshing link.json for mind-map
 	var linkparser = require('./src/controllers/mind-map/linkParser_new-format');
