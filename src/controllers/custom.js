@@ -160,14 +160,11 @@ customController.getEntities = function(req, res, next) {
 
 customController.getEntityByName = function(req, res, next) {
     var name = req.params.name;
-    console.log("Name : " + name);
     entity.getUidByName(name, function(err, uid) {
-        console.log("UID :: " + uid);
         entity.getEntityData(uid, function(err, entities) {
             if(err) {
                 next(err);
             }
-            console.log("Result " + entities);
             res.send(entities);
         });
     });
@@ -186,6 +183,25 @@ customController.createEntity = function(req, res, next) {
     entity.createEntity(entityData, function(err, uid) {
         entityData.uid = uid;
         res.send(entityData);
+    });
+};
+
+customController.patchEntity = function(req, res, next) {
+
+    var name = req.params.name;
+
+    var entityData = {};
+
+    for (var key in req.body) {
+        if (req.body.hasOwnProperty(key)) {
+            entityData[key] = req.body[key];
+        }
+    }
+
+    entity.getUidByName(name, function(err, uid) {
+        entity.patchEntity(uid, entityData, function(err, updatedEntity) {
+            res.send(updatedEntity);
+        });
     });
 };
 

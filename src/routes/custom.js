@@ -19,11 +19,11 @@ function mainRoutes(app, middleware, controllers) {
 
     app.get('/modelling/api/entities', middlewares, controllers.custom.getEntities);
 
+    app.get('/modelling/api/entities/:name', middlewares, controllers.custom.getEntityByName);
+
     app.post('/modelling/api/entities', controllers.custom.createEntity);
 
-    //app.put('/api/entities', middlewares, controllers.custom.getEntities);
-
-    app.get('/modelling/api/entities/:name', middlewares, controllers.custom.getEntityByName);
+    app.patch('/modelling/api/entities/:name', middlewares, controllers.custom.patchEntity);
 
     app.delete('/modelling/api/entities/:name', middlewares, controllers.custom.deleteEntity);
 

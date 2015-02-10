@@ -7,7 +7,7 @@ var	async = require('async'),
 (function(Entity) {
 
     require('./entity/create')(Entity);
-    require('./entity/update')(Entity);
+    require('./entity/patch')(Entity);
     require('./entity/delete')(Entity);
 
     Entity.getEntityField = function(uid, field, callback) {
@@ -107,7 +107,7 @@ var	async = require('async'),
     Entity.getEntities = function(uids, callback) {
         async.parallel({
             entityData: function(next) {
-                Entity.getMultipleEntityFields(uids, ['uid', 'name', 'definition', 'tags', 'domain'], next);
+                Entity.getMultipleEntityFields(uids, ['uid', 'name', 'definition', 'tags', 'domain', 'createdate', 'updatedate', 'entityviews'], next);
             }
         }, function(err, results) {
             if (err) {
