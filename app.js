@@ -116,7 +116,7 @@ function start() {
 
 	loadConfig();
 
-	//var swaggerBuilder = require('./src/modelling/buildSwagger');
+	//var swaggerBuilder = require('./src/modelling/swaggerDisector');
 	//swaggerBuilder.init(function(err) {
 	//	if(err) {
 	//		winston.error('Error Building json for mindmap: ' + err);
