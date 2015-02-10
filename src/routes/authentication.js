@@ -8,7 +8,6 @@
 		winston = require('winston'),
 		async = require('async'),
 		express = require('express'),
-		AtlassianCrowdStrategy = require('passport-atlassian-crowd').Strategy,
 
 		meta = require('../meta'),
 		user = require('../user'),
