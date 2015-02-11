@@ -1434,7 +1434,6 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 
     SwaggerUi.prototype.buildUrl = function(base, url) {
       var endOfPath, parts;
-      log("base is " + base);
       if (url.indexOf("/") === 0) {
         parts = base.split("/");
         base = parts[0] + "//" + parts[2];
@@ -1641,7 +1640,6 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
       _ref3 = this.model.apisArray;
       for (_i = 0, _len = _ref3.length; _i < _len; _i++) {
         resource = _ref3[_i];
-        //console.info(resource);
         id = resource.name;
         while (typeof resources[id] !== 'undefined') {
           id = id + "_" + counter;

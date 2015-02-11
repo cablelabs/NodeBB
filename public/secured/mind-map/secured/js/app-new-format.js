@@ -12,20 +12,6 @@
     }
     var socket = io.connect(config.websocketAddress, ioParams);
 
-    var loadingModal;
-    loadingModal = loadingModal || (function () {
-        var loadingModal = $('#loadingModal');
-        return {
-            showPleaseWait: function() {
-                console.log("show");
-                loadingModal.modal('show');
-            },
-            hidePleaseWait: function () {
-                loadingModal.modal('hide');
-            }
-        };
-    })();
-
     function error_handler (error) {
         if (typeof error === 'object') {
             console.log(error);
@@ -551,15 +537,19 @@
     /**
      * When graph and subset data have been fetched, render graph and recall saved state.
      */
-    loadingModal.showPleaseWait();
-    $.when($.ajax({url: '/secured/mind-map/assets/links-new-format.json'}))
-        .done(function (graph_data) {
-            init(graph_data);
-            loadingModal.hidePleaseWait();
-        })
-        .fail(function() {
-            error_handler('unable to download graph data');
-            loadingModal.hidePleaseWait();
-        });
+
+    socket.emit('custom.refreshLinkParser', '', function(err, data) {
+        if (err) {
+            return app.alertError(err.message);
+        }
+        console.log("Update Link Parser.");
+        $.when($.ajax({url: '/secured/mind-map/assets/links-new-format.json'}))
+            .done(function (graph_data) {
+                init(graph_data);
+            })
+            .fail(function() {
+                error_handler('unable to download graph data');
+            });
+    });
 
 }(window, document, jQuery, Entity_Set));

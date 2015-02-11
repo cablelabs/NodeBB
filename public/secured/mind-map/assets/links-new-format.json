@@ -378,9 +378,9 @@
             "description": "An Individual is a single person. Individual is a type of Party.",
             "domain": "Customer",
             "links": [
-                "User",
                 "Customer",
-                "Contact"
+                "Contact",
+                "User"
             ]
         },
         {
