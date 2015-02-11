@@ -19,6 +19,9 @@
 <script src='secured/swagger/lib/swagger-oauth.js' type='text/javascript'></script>
 <script src='secured/swagger/init.js' type="text/javascript"></script>
 
+<!-- Spinner -->
+<div class="spinner"><div class="dot1"></div><div class="dot2"></div></div>
+
 <div class="swagger-section">
 
 <!--<div id='header'>-->
@@ -32,6 +35,3 @@
 
 <div id="swagger-ui-container" class="swagger-ui-wrap"></div>
 </div>
-
-<!-- Spinner -->
-<div class="spinner"><div class="dot1"></div><div class="dot2"></div></div>
