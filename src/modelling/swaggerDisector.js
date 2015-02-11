@@ -1,7 +1,8 @@
 var request = require('request'),
     async   = require('async'),
     fs      = require('fs'),
-    path  = require('path');
+    path    = require('path'),
+    db      = require('../database');
     //config  = require(path.join(__dirname + '/settings.json'));
 
 var entityModel  = require('./entity'),
@@ -37,17 +38,6 @@ function getSwaggerFile (callback) {
 //fiter out paths in the swagger file that don't have the get property
 function parsePaths(body, callback) {
     async.map(Object.keys(body.paths), function (path, cb) {
-
-        String.prototype.escapeSpecialChars = function() {
-            return this.replace(/\\n/g, "\\n")
-                .replace(/\\'/g, "\\'")
-                .replace(/\\"/g, '\\"')
-                .replace(/\\&/g, "\\&")
-                .replace(/\\r/g, "\\r")
-                .replace(/\\t/g, "\\t")
-                .replace(/\\b/g, "\\b")
-                .replace(/\\f/g, "\\f");
-        };
         var definition = JSON.stringify(body.paths[path]);
 
         console.log("Disector:" + definition);

@@ -234,8 +234,33 @@ var winston = require('winston'),
 		});
 	}
 
+	//PostTools.parsePost = function(postData, uid, callback) {
+	//	postData.content = postData.content || '';
+    //
+	//	plugins.fireHook('filter:parse.post', {postData: postData, uid: uid}, function(err, data) {
+	//		callback(err, data ? data.postData : null);
+	//	});
+	//};
+
+	//PostTools.parseSignature = function(userData, uid, callback) {
+	//	userData.signature = userData.signature || '';
+    //
+	//	plugins.fireHook('filter:parse.signature', {userData: userData, uid: uid}, callback);
+	//};
+
 	PostTools.parse = function(raw, callback) {
-		parse('filter:post.parse', raw, callback);
+
+		var data = {
+			postData : {
+				content: raw
+			}
+		};
+
+		plugins.fireHook('filter:parse.post', data, function(err, data) {
+			callback(err, data ? data.postData.content : null);
+		});
+
+		//parse('filter:post.parse', raw, callback);
 	};
 
 	PostTools.parseSignature = function(raw, callback) {

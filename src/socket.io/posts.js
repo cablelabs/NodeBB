@@ -302,6 +302,7 @@ SocketPosts.flag = function(socket, pid, callback) {
 		},
 		function(topicTitle, next) {
 			message = '[[notifications:user_flagged_post_in, ' + userName + ', ' + topicTitle + ']]';
+			// TODO :: PARSE
 			postTools.parse(post.content, next);
 		},
 		function(postContent, next) {

@@ -258,6 +258,7 @@ var async = require('async'),
 					async.waterfall([
 						async.apply(posts.getPostField, pid, 'content'),
 						function(content, next) {
+							// TODO :: PARSE
 							postTools.parse(content, next);
 						}
 					], next);

@@ -23,6 +23,10 @@ var swaggerFile = {
 
 module.exports.init = function (callback) {
 
+    //db.setObjectField('entityname:uid', entityData.name, uid);
+
+    //db.getObjectField('cache:info', 'swagger', callback);
+
     //each function in the water fall is performed in succession, and receives input from the previous function
     async.parallel({
         paths: getPaths,

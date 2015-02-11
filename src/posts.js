@@ -95,6 +95,7 @@ var async = require('async'),
 				});
 			},
 			function(postData, next) {
+				// TODO :: PARSE
 				postTools.parse(postData.content, function(err, content) {
 					if (err) {
 						return next(err);
@@ -151,6 +152,7 @@ var async = require('async'),
 				postData.relativeTime = utils.toISOString(postData.timestamp);
 				postData.relativeEditTime = parseInt(postData.edited, 10) !== 0 ? utils.toISOString(postData.edited) : '';
 
+				// TODO :: PARSE
 				postTools.parse(postData.content, function(err, content) {
 					if(err) {
 						return next(err);
@@ -335,6 +337,7 @@ var async = require('async'),
 						return next(null, post);
 					}
 
+					// TODO :: PARSE
 					postTools.parse(post.content, function(err, content) {
 						if (err) {
 							return next(err);
