@@ -213,6 +213,18 @@
   </div>
 </div>
 
+<!-- Page Loading Modal-->
+<div class="modal hide" id="loadingModal" data-backdrop="static" data-keyboard="false">
+  <div class="modal-header">
+    <h1>Loading...</h1>
+  </div>
+  <div class="modal-body">
+    <div class="progress progress-striped active">
+      <div class="bar" style="width: 100%;"></div>
+    </div>
+  </div>
+</div>
+
 <!--<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>-->
 <script src="secured/mind-map/secured/js/jquery-ui.min.js"></script>
 <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>-->

@@ -12,6 +12,20 @@
     }
     var socket = io.connect(config.websocketAddress, ioParams);
 
+    var loadingModal;
+    loadingModal = loadingModal || (function () {
+        var loadingModal = $('#loadingModal');
+        return {
+            showPleaseWait: function() {
+                console.log("show");
+                loadingModal.modal('show');
+            },
+            hidePleaseWait: function () {
+                loadingModal.modal('hide');
+            }
+        };
+    })();
+
     function error_handler (error) {
         if (typeof error === 'object') {
             console.log(error);
@@ -507,7 +521,6 @@
     }
 
     function init(graph_data) {
-
         user_getsets(function() {
             graph.create(graph_data, $('#graph'));    
             hops.init();
@@ -527,7 +540,7 @@
             hops.$.hops_btns.eq(hops.selected - 1).addClass('selected');
             if (selected_subset >= 0) { sets.$.select.val(selected_subset).change(); }
             graph.set_selected(selected_entities ? JSON.parse(selected_entities) : []);
-            });
+        });
     }
 
     /***************************************************************************
@@ -538,12 +551,15 @@
     /**
      * When graph and subset data have been fetched, render graph and recall saved state.
      */
+    loadingModal.showPleaseWait();
     $.when($.ajax({url: '/secured/mind-map/assets/links-new-format.json'}))
-    .done(function (graph_data) {
-        init(graph_data);
-    })
-    .fail(function() {
-        error_handler('unable to download graph data');
-    });
+        .done(function (graph_data) {
+            init(graph_data);
+            loadingModal.hidePleaseWait();
+        })
+        .fail(function() {
+            error_handler('unable to download graph data');
+            loadingModal.hidePleaseWait();
+        });
 
 }(window, document, jQuery, Entity_Set));

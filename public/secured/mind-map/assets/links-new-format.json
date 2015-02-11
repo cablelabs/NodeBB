@@ -18,22 +18,22 @@
         },
         {
             "path": "/contact/{id}",
-            "name": "Contact ",
+            "name": "Contact",
             "description": "Contact is a PartyRole for a Party that acts as a specific type of contact, such as a billing contact.",
             "domain": "Common",
             "links": [
-                "Telephone  Number",
+                "Telephone Number",
                 "Fax Number",
-                "Email  Contact",
+                "Email Contact",
                 "Postal Contact",
-                "System  Contact",
-                "Individual "
+                "System Contact",
+                "Individual"
             ]
         },
         {
             "path": "/cmts/{id}",
             "name": "CMTS",
-            "description": "Cable Modem Termination System.  Device that CableModems 'talk' to via Channels.",
+            "description": "A Cable Modem Termination System (CMTS) is a device, usually located in the headend or hubsite, used to provide high speed data services such as cable Internet to cable subscribers.",
             "domain": "Resource",
             "links": [
                 "Cable Modem"
@@ -42,67 +42,60 @@
         {
             "path": "/geometrycollection/{id}",
             "name": "Geometry Collection",
-            "description": "A geometry collection object. A GeoJSON object with type \"GeometryCollection\" is a geometry object which represents a collection of geometry objects. A geometry collection must have a member with the name \"geometries\". The value corresponding to \"geometries\"is an array. Each element in this array is a GeoJSON geometry object.",
+            "description": "A geometry collection is a list of geometries, as defined by the GeoJson format.",
             "domain": "Location",
             "links": []
         },
         {
             "path": "/multipolygon/{id}",
             "name": "Multi Polygon",
-            "description": "A geometry multi polygon object. For type \"MultiPolygon\", the \"coordinates\" member must be an array of Polygon coordinate arrays.",
+            "description": "A multipolygon is a geometry multipolygon object, as defined by the GeoJson format.",
             "domain": "Location",
             "links": []
         },
         {
             "path": "/polygon/{id}",
             "name": "Polygon",
-            "description": "A geometry polygon object. For type \"Polygon\", the \"coordinates\" member must be an array of LinearRing coordinate arrays. For Polygons with multiple rings, the first must be the exterior ring and any others must be interior rings or holes.",
+            "description": "A polygon is a geometric polygon object, as defined by the GeoJson format.",
             "domain": "Location",
             "links": []
         },
         {
             "path": "/multilinestring/{id}",
             "name": "Multi Line String",
-            "description": "A geometry multi linestring object. For type \"MultiLineString\", the \"coordinates\" member must be an array of LineString coordinate arrays.",
+            "description": "A multilinestring is a geometry multilinestring object, as defined by the GeoJson format.",
             "domain": "Location",
             "links": []
         },
         {
             "path": "/linestring/{id}",
             "name": "Line String",
-            "description": "A geometry linestring object. Geo Json Spec: For type \"LineString\", the \"coordinates\" member must be an array of two or more positions. A LinearRing is closed LineString with 4 or more positions. The first and last positions are equivalent (they represent equivalent points). Though a LinearRing is not explicitly represented as a GeoJSON geometry type, it is referred to in the Polygon geometry type definition.",
+            "description": "A linestring is a geometry linestring object, as defined by the GeoJson format.",
             "domain": "Location",
             "links": []
         },
         {
             "path": "/multipoint/{id}",
             "name": "Multi Point",
-            "description": "A geometry multi point object. Geo Json Spec : For type \"MultiPoint\", the \"coordinates\" member must be an array of positions.",
+            "description": "A multipoint is a geometry multipoint object, as defined by the GeoJson format.",
             "domain": "Location",
             "links": []
         },
         {
             "path": "/point/{id}",
             "name": "Point",
-            "description": "A geometry point object. Geo Json Spec : For type \"Point\", the \"coordinates\" member must be a single position.",
+            "description": "A point specifies a particular geometric point, which can include a latitude, longitude, and elevation, as defined by the GeoJson format.",
             "domain": "Location",
             "links": []
         },
         {
             "path": "/sitelist/{id}",
             "name": "Site List",
-            "description": "A collection of Site instances.",
+            "description": "A site list is a collection of sites.",
             "domain": "Location",
             "links": [
                 "Site"
             ]
-        },
-        {
-            "path": "/ack/{id}",
-            "name": "ACK",
-            "description": "Message that indicates the status of communications received.",
-            "domain": "UnSuported",
-            "links": []
         },
         {
             "path": "/order/{id}",
@@ -113,14 +106,14 @@
         },
         {
             "path": "/usercredential/{id}",
-            "name": "User  Credential",
+            "name": "User Credential",
             "description": "UserCredential is a combination of user ID and password used to authenticate a user for account management or access to provider services.",
             "domain": "Customer",
             "links": []
         },
         {
             "path": "/billcharge/{id}",
-            "name": "Bill  Charge",
+            "name": "Bill Charge",
             "description": "A BillCharge is a charge or a credit assigned to a customer's account during the billing process.",
             "domain": "Interaction",
             "links": [
@@ -130,17 +123,17 @@
         },
         {
             "path": "/serviceorderitem/{id}",
-            "name": "Service  Order Item",
+            "name": "Service Order Item",
             "description": "A ServiceOrderItem is a specific item within a ServiceOrder and is expressed in terms of a ServiceSpecification or a Service.",
             "domain": "Interaction",
             "links": [
-                "Device "
+                "Device"
             ]
         },
         {
             "path": "/port/{id}",
             "name": "Resource Port",
-            "description": "The Port is a type of ResourceElement that consists only of logical termination points (TrailTerminationPointSource, TrailTerminationPointSink, and TrailTerminationPointBiDirectional, to be precise) and PhysicalPorts. This enables the Port to take on the physical and logical characteristics of a 'port' as defined in G.805. ",
+            "description": "A port is a type of resource that consists only of physical ports and logical termination points (specifically, TrailTerminationPointSource, TrailTerminationPointSink, and TrailTerminationPointBiDirectional.)",
             "domain": "Resource",
             "links": []
         },
@@ -187,18 +180,18 @@
         },
         {
             "path": "/service/{id}",
-            "name": "Service ",
-            "description": "All Services are characterized as either being possibly visible and usable by a Customer or not. This gives rise to the two subclasses of Service: CustomerFacingService and ResourceFacingService.",
+            "name": "Service",
+            "description": "Service defines the Service hierarchy. Services are defined by products: All services are either a CustomerFacingService (visible to a customer) or a ResourceFacingService (not visible to a customer but still supporting a customer’s product).",
             "domain": "Service",
             "links": [
                 "Service Specification",
                 "Ticket",
-                "Device ",
-                "Product ",
+                "Device",
+                "Product",
                 "Product Price",
-                "Product  Specification",
+                "Product Specification",
                 "Product Offering",
-                "Preference ",
+                "Preference",
                 "Configuration Data"
             ]
         },
@@ -208,12 +201,12 @@
             "description": "A ResourceOrder lists the resources needed to provision the services in a ServiceOrder.",
             "domain": "Interaction",
             "links": [
-                "Device ",
-                "Customer ",
+                "Device",
+                "Customer",
                 "Site",
-                "Contact ",
+                "Contact",
                 "Property Address",
-                "Property "
+                "Property"
             ]
         },
         {
@@ -223,20 +216,20 @@
             "domain": "Interaction",
             "links": [
                 "Customer Bill",
-                "Bill  Charge",
+                "Bill Charge",
                 "Customer Payment"
             ]
         },
         {
             "path": "/document/{id}",
-            "name": "Document ",
+            "name": "Document",
             "description": "A Document refers to a physical document such as a contract, manual, or e-mail.",
             "domain": "Interaction",
             "links": []
         },
         {
             "path": "/preference/{id}",
-            "name": "Preference ",
+            "name": "Preference",
             "description": "A Preference is a favored interaction in a particular area of control, such as parental restriction or e-mail marketing, for a specific PartyRole, Resource, CustomerAccount, or Service.",
             "domain": "Customer",
             "links": []
@@ -244,16 +237,16 @@
         {
             "path": "/servicespecification/{id}",
             "name": "Service Specification",
-            "description": "A ServiceSpecification defines the invariant characteristics of a Service. It can be conceptually thought of as a template that different Service instances can be instantiated from.",
+            "description": "A ServiceSpecification defines the invariant characteristics of a service. It acts as a template that different service instances can be instantiated from.",
             "domain": "Service",
             "links": [
-                "Service "
+                "Service"
             ]
         },
         {
             "path": "/card/{id}",
-            "name": "Card ",
-            "description": "This class represents a type of physical container that can be plugged into a Slot. It may represent a primary function (e.g., a networking card) or an auxiliary function (e.g., a memory card) that supports another card. All objects of this type are capable of carrying electrical and/or optical signals. They also provide a mounting point for other types of ManagedePhysicalElements, such as Chips or Cards.",
+            "name": "Card",
+            "description": "A card is a physical container that can be plugged into a Slot, such as a networking card or a memory card.",
             "domain": "Resource",
             "links": []
         },
@@ -273,16 +266,15 @@
             "domain": "Interaction",
             "links": [
                 "User Group",
-                "External SystemReference",
-                "User ",
-                "Contact ",
-                "Telephone  Number",
+                "User",
+                "Contact",
+                "Telephone Number",
                 "Fax Number",
-                "Email  Contact",
+                "Email Contact",
                 "Postal Contact",
-                "System  Contact",
-                "Individual ",
-                "Service ",
+                "System Contact",
+                "Individual",
+                "Service",
                 "Site"
             ]
         },
@@ -297,14 +289,14 @@
         },
         {
             "path": "/customer/{id}",
-            "name": "Customer ",
+            "name": "Customer",
             "description": "A person or organization that buys products and services from the service provider. A Customer is a Party playing a PartyRole.",
             "domain": "Customer",
             "links": [
-                "Individual ",
-                "Telephone  Number",
-                "Email  Contact",
-                "Account "
+                "Individual",
+                "Telephone Number",
+                "Email Contact",
+                "Account"
             ]
         },
         {
@@ -313,13 +305,13 @@
             "description": "A ServiceRole defines a Service in terms of a set of roles that characterize the functionality of the Service.",
             "domain": "Interaction",
             "links": [
-                "Service "
+                "Service"
             ]
         },
         {
             "path": "/service/evc/{id}",
             "name": "EVC Service",
-            "description": "An association of two or more UNIs (The physical point in a 'network' that defines the demarcation between the responsibility of a Service Provider and the responsibility of a Subscriber) across one or more Metro Ethernet Networks.",
+            "description": "An EVCService is a point-to-point Ethernet Virtual Connection with no multiplexing and is used as part of an Ethernet Private Line product.",
             "domain": "Service",
             "links": []
         },
@@ -333,48 +325,41 @@
         {
             "path": "/cablemodem/{id}",
             "name": "Cable Modem",
-            "description": "A cable modem is a type of network device that provides bi-directional data communication via radio frequency channels on a hybrid fibre-coaxial (HFC) and RFoG infrastructure. Cable modems are primarily used to deliver broadband Internet access in the form of cable Internet, taking advantage of the high bandwidth of a HFC and RFoG network.",
+            "description": "A cable modem is a type of network device primarily used to deliver broadband Internet access in the form of cable Internet.",
             "domain": "Resource",
             "links": [
                 "CMTS",
                 "Site",
-                "Contact "
+                "Contact"
             ]
         },
         {
             "path": "/productspecification/{id}",
-            "name": "Product  Specification",
+            "name": "Product Specification",
             "description": "A ProductSpecification is a technical blueprint for a set of Products, defining their common portions. It specifies the invariant characteristics of a Product and describes it independently of the current existence of any instance of that Product.",
             "domain": "Product",
             "links": [
-                "Product "
+                "Product"
             ]
-        },
-        {
-            "path": "/externalsystemreference/{id}",
-            "name": "External SystemReference",
-            "description": "Entity used to provide reference to an external system.",
-            "domain": "UnSuported",
-            "links": []
         },
         {
             "path": "/featurecollection/{id}",
             "name": "Feature Collection",
-            "description": "Lists of geometries are represented by a GeometryCollection. Geometries with additional properties are Feature objects. And lists of features are represented by a FeatureCollection.",
+            "description": "A feature collection is a list of features, which are geometries with additional properties, as defined by the GeoJson format. Lists of geometries are geometry collections.",
             "domain": "Location",
             "links": []
         },
         {
             "path": "/user/{id}",
-            "name": "User ",
+            "name": "User",
             "description": "A user is a single person or organization that uses products and services. User is a type of PartyRole.",
             "domain": "Customer",
             "links": [
-                "Individual ",
-                "Telephone  Number",
-                "Email  Contact",
-                "Account ",
-                "Device "
+                "Individual",
+                "Telephone Number",
+                "Email Contact",
+                "Account",
+                "Device"
             ]
         },
         {
@@ -383,30 +368,30 @@
             "description": "UserGroup is a collection of users. It is a type of PartyRole and can be used independently of the User entity.",
             "domain": "Customer",
             "links": [
-                "User ",
-                "Organization "
+                "User",
+                "Organization"
             ]
         },
         {
             "path": "/individual/{id}",
-            "name": "Individual ",
+            "name": "Individual",
             "description": "An Individual is a single person. Individual is a type of Party.",
             "domain": "Customer",
             "links": [
-                "Customer ",
-                "Contact ",
-                "User "
+                "User",
+                "Customer",
+                "Contact"
             ]
         },
         {
             "path": "/organization/{id}",
-            "name": "Organization ",
+            "name": "Organization",
             "description": "An Organization is a group of people identified by shared interests or purpose, such as a business or a department within a business. Organization is a type of Party.",
             "domain": "Customer",
             "links": [
-                "Customer ",
-                "Contact ",
-                "User "
+                "Customer",
+                "Contact",
+                "User"
             ]
         },
         {
@@ -418,11 +403,11 @@
         },
         {
             "path": "/device/{id}",
-            "name": "Device ",
-            "description": "A piece of equipment that provides functionality or is used to access services from the provider (e.g. mobile phone, tablet, gateway, etc.).",
+            "name": "Device",
+            "description": "A device is any piece of equipment that provides functionality or is used to access services from the provider (for example, mobile phone, tablet, or gateway).",
             "domain": "Resource",
             "links": [
-                "Customer "
+                "Customer"
             ]
         },
         {
@@ -446,33 +431,33 @@
         {
             "path": "/site/{id}",
             "name": "Site",
-            "description": "ServiceSite is a customer location where a customer is receiving service. It is the point at which service is delivered to a customer, and is associated with a service address (UrbanPropertyAddress).",
+            "description": "A site is a location where either a customer is receiving service or service is being provided. It is the point at which service is delivered and is associated with a service address.",
             "domain": "Location",
             "links": [
-                "Contact ",
+                "Contact",
                 "Property Address",
-                "Property "
+                "Property"
             ]
         },
         {
             "path": "/site/{id}/services",
             "name": "Service on Site",
-            "description": "Returns a collection of Services found at the specified Site.",
+            "description": "Site services returns a list of services at a specified site.",
             "domain": "Location",
             "links": []
         },
         {
             "path": "/account/{id}",
-            "name": "Account ",
+            "name": "Account",
             "description": "Account defines the relationship between the customer and provider with respect to billing, payments, and other financial transactions. The customer account is also used to grant entitlement tokens based on services purchased.",
             "domain": "Customer",
             "links": [
-                "Customer ",
-                "User ",
-                "Product ",
-                "Device ",
+                "Customer",
+                "User",
+                "Product",
+                "Device",
                 "Site",
-                "Preference "
+                "Preference"
             ]
         },
         {
@@ -482,13 +467,13 @@
             "domain": "Product",
             "links": [
                 "Service Configuration",
-                "Product "
+                "Product"
             ]
         },
         {
             "path": "/service/uniconfiguration/{id}",
             "name": "UNI ServiceConfiguration",
-            "description": "A UNI can have a number of characteristics that will be important to the way that the CE sees a service. One of the key aspects of a service description will be the allowable mix of UNIs with different characteristics in an EVC.",
+            "description": "UNIConfiguration holds configuration data for a UNIService. Each EthernetServiceConfiguration must be configured via two or more UNIConfigurations.",
             "domain": "Service",
             "links": [
                 "Ethernet Interface"
@@ -496,46 +481,38 @@
         },
         {
             "path": "/user/{id}/tickets",
-            "name": "Users  Tickets",
+            "name": "Users Tickets",
             "description": "A list of tickets associated with a given User.",
             "domain": "Interaction",
             "links": [
                 "Ticket",
                 "User Group",
-                "External SystemReference",
-                "User ",
-                "Contact ",
-                "Telephone  Number",
+                "User",
+                "Contact",
+                "Telephone Number",
                 "Fax Number",
-                "Email  Contact",
+                "Email Contact",
                 "Postal Contact",
-                "System  Contact",
-                "Individual ",
-                "Service "
+                "System Contact",
+                "Individual",
+                "Service"
             ]
         },
         {
             "path": "/service/evcconfiguration/{id}",
             "name": "EVC Service Configuration",
-            "description": "The logical circuit that connects two or more customer networks (end points). The end points of an EVC are defined as UNIs. An intra-MEN EVC is an Ethernet Service that connects two (or more) UNIs provided by a single Operator within a single MEN. An inter-MEN EVC is an ENNI-based Ethernet Service that connects two or more UNIs that are located in different Operator MENs and physically provided by at least two MEN Operators.",
+            "description": "EVCConfiguration holds configuration data for an EVCService.",
             "domain": "Service",
             "links": []
         },
         {
             "path": "/propertyaddress/{id}",
             "name": "Property Address",
-            "description": "This is a structured textual way of describing how to find a Property in an urban area (country properties are often defined differently).",
+            "description": "A property address describes how to locate a property.",
             "domain": "Location",
             "links": [
-                "Property "
+                "Property"
             ]
-        },
-        {
-            "path": "/product/eplconfiguration/{id}",
-            "name": "EPL Product Configuration",
-            "description": "Access EPL service uses a Point-to-Point OVC to associate one OVC End Point at a UNI and one OVC End Point at an ENNI. One UNI can support only a single instance of the Access EPL service. ",
-            "domain": "UnSuported",
-            "links": []
         },
         {
             "path": "/productprice/{id}",
@@ -543,7 +520,7 @@
             "description": "ProductPrice is the actual price paid by a Customer for a purchase or lease of a Product.",
             "domain": "Product",
             "links": [
-                "Product "
+                "Product"
             ]
         },
         {
@@ -554,40 +531,33 @@
             "links": []
         },
         {
-            "path": "/geographicaddress/{id}",
-            "name": "Geographic  Address",
-            "description": "A structured textual way of describing how to find a Geographic Location. It is usually composed of an ordered list of Geographic Location names based on context specific rulesIt is an abstract modeling concept that provides a linking point to other parts of the SID model.It holds attributes common to all Geographic Address subclasses.",
-            "domain": "UnSuported",
-            "links": []
-        },
-        {
             "path": "/property/{id}",
-            "name": "Property ",
-            "description": "A piece of land with defined legal boundaries.This is an example of a concrete Geographic Location entity.",
+            "name": "Property",
+            "description": "A property is a piece of land with defined legal boundaries.",
             "domain": "Location",
             "links": []
         },
         {
             "path": "/configurationdata/{id}",
             "name": "Configuration Data",
-            "description": "Class to hold common properties of all captured configuration data (files, strings, binary data, ...).  Subclasses specify base, current, backup, proposed, disaster recovery, etc configuration data.",
+            "description": "ConfigurationData holds the common properties of all captured configuration data (such as files, strings, and binary data). Other entities specify configuration data such as current, backup, and disaster recovery.",
             "domain": "Service",
             "links": [
-                "Service ",
-                "Device "
+                "Service",
+                "Device"
             ]
         },
         {
             "path": "/feature/{id}",
-            "name": "Feature ",
-            "description": "Retrieves an instance based on the ID",
+            "name": "Feature",
+            "description": "A feature is a geometry with additional properties, as defined by the GeoJson format.",
             "domain": "Location",
             "links": []
         },
         {
             "path": "/service/uni/{id}",
             "name": "UNI Service",
-            "description": "Serves as the point of demarcation that specifies where the Service Provider's (Operator's) responsibility ends and the customer's responsibility begins. The UNI is typically considered to reside at the customer network facing side of the PE equipment that the Service Provider places at the customer premises. The UNI has two sides: the UNI-C represents the customer premise facing side of the Provider Edge device, and the UNI-N represents the side of the PE that faces back towards the Service Provider (Operator) network. The organization responsible for the UNI-to-UNI (end-to-end) Ethernet service, i.e., the company that the end user Subscriber has the primary commercial relationship with for Ethernet services.",
+            "description": "A UNIService is a User Network Interface service used as part of an Ethernet Private Line product.",
             "domain": "Service",
             "links": [
                 "Ethernet Interface"
@@ -595,8 +565,8 @@
         },
         {
             "path": "/servicedesign/{id}",
-            "name": "As  Built Design",
-            "description": "The technical specification of the service level being offered by the Service Provider to the Subscriber.",
+            "name": "As Built Design",
+            "description": "A ServiceDesign is the technical specification of the service level being offered by the service provider to the customer.",
             "domain": "Service",
             "links": []
         },
@@ -618,31 +588,31 @@
         },
         {
             "path": "/systemcontact/{id}",
-            "name": "System  Contact",
+            "name": "System Contact",
             "description": "SystemContact is a type of ContactMedium that provides a means of contact for a specific PartyRole that is not defined by other types of ContactMedium; for example, notification by instant message or trouble ticket generation and auto-assignment.",
             "domain": "Customer",
             "links": []
         },
         {
             "path": "/telephonenumber/{id}",
-            "name": "Telephone  Number",
+            "name": "Telephone Number",
             "description": "TelephoneNumber is the telephone number to use when contacting a given PartyRole. It is a type of ContactMedium.",
             "domain": "Common",
             "links": []
         },
         {
             "path": "/serviceorder/{id}",
-            "name": "Service  Order",
+            "name": "Service Order",
             "description": "A ServiceOrder lists the services through which the products in a CustomerOrder are realized.",
             "domain": "Interaction",
             "links": [
-                "Service  Order Item",
-                "Device ",
+                "Service Order Item",
+                "Device",
                 "Site",
-                "Contact ",
+                "Contact",
                 "Property Address",
-                "Property ",
-                "Customer "
+                "Property",
+                "Customer"
             ]
         },
         {
@@ -654,14 +624,14 @@
         },
         {
             "path": "/product/{id}",
-            "name": "Product ",
+            "name": "Product",
             "description": "A Product is the result of a ProductOffering being procured by a Customer or other Party. A Product is realized as one or more Services and/or Resources.",
             "domain": "Product",
             "links": [
                 "Product Price",
-                "Product  Specification",
+                "Product Specification",
                 "Product Offering",
-                "Service "
+                "Service"
             ]
         },
         {
@@ -764,7 +734,7 @@
             "description": "A CustomerQuote is a price estimate (quote) or a presentation for sale (offer) of product offerings to a PartyRole such as a Customer.",
             "domain": "Interaction",
             "links": [
-                "Customer ",
+                "Customer",
                 "Customer QuoteItem"
             ]
         },
@@ -774,20 +744,20 @@
             "description": "A ProductOffering is the presentation of one or more ProductSpecifications for sale or lease. A ProductOffering may include a single ProductSpecification or may be a bundling of one or more other ProductOfferings.",
             "domain": "Product",
             "links": [
-                "Product "
+                "Product"
             ]
         },
         {
             "path": "/serviceconfiguration/{id}",
             "name": "Service Configuration",
-            "description": "Service Configuration management might be either the set up of network / resource components for a customer, or a class of customers of a generic service build. Service configuration can be derived from order details in addition to inherent business rules from service specifications.",
+            "description": "ServiceConfiguration is the setup data for a service, such as the setup of network / resource components for a customer, or a class of customers of a generic service build. Service configurations can be derived from order details and service specifications.",
             "domain": "Service",
             "links": []
         },
         {
             "path": "/cableservicearea/{id}",
             "name": "Cable ServiceArea",
-            "description": "An area that it served by a Cable provider.  Typically this area would be that served by 1 or more Nodes in the cable plant.",
+            "description": "A cable service area is an area served by a cable provider. Typically this area would be that served by one or more nodes in the cable plant.",
             "domain": "Location",
             "links": []
         },
@@ -798,22 +768,22 @@
             "domain": "Interaction",
             "links": [
                 "Payment Item",
-                "Document ",
+                "Document",
                 "Customer BillSpec",
-                "Bill  Charge",
+                "Bill Charge",
                 "Customer Payment"
             ]
         },
         {
             "path": "/ethernetinterface/{id}",
             "name": "Ethernet Interface",
-            "description": "Retrieves an instance based on the ID",
+            "description": "An Ethernet Interface is a physical and logical resource that supports one or more of the 802.3 standards.",
             "domain": "Service",
             "links": []
         },
         {
             "path": "/emailcontact/{id}",
-            "name": "Email  Contact",
+            "name": "Email Contact",
             "description": "EmailContact is the e-mail address to use when contacting a given PartyRole. An eMailContact is a type of ContactMedium.",
             "domain": "Common",
             "links": []

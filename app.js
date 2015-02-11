@@ -153,7 +153,7 @@ function start() {
 			if(err) {
 				winston.error('Error Building Swagger File. This could mean serious consequences to the portal. ' + err);
 			} else {
-				winston.info("Swagger File :: Generated swagger-file.");
+				winston.info("SWAGGER FILE :: Refreshed swagger-file.json");
 				refreshEntityMap();
 			}
 		});
