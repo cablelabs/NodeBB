@@ -32,7 +32,7 @@
         $: {
             container:  $('#help-overlay'),
             titles:     $('#help-overlay .popover-title'),
-            toggle_btn: $('.open-help-btn, .close-help-btn'),
+            toggle_btn: $('.open-help-btn, .close-help-btn')
         },
         init: function () {
             // attach event handlers
@@ -491,7 +491,12 @@
             if (err) {
                 return app.alertError(err.message);
             }
-            set_data = data === null ? default_sets : JSON.parse(data);
+
+            var default_set = [{
+                "name": "Default Set",
+                "entities": []
+            }];
+            set_data = data === null || data === '' ? default_set : JSON.parse(data);
             sets.init(set_data);
             callback();
         });
