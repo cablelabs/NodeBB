@@ -31,7 +31,7 @@ module.exports.init = function (callback) {
 };
 
 function getSwaggerFile (callback) {
-    callback(null, require('../../public/secured/api-docs/swagger-file.json'));
+    callback(null, require('../../public/secured/api-docs/swagger-file-working.json'));
 }
 
 //fiter out paths in the swagger file that don't have the get property
@@ -48,7 +48,9 @@ function parsePaths(body, callback) {
                 .replace(/\\b/g, "\\b")
                 .replace(/\\f/g, "\\f");
         };
-        var definition = JSON.stringify(body.paths[path])
+        var definition = JSON.stringify(body.paths[path]);
+
+        console.log("Disector:" + definition);
 
         var pathData = {
             'name': path,
@@ -57,7 +59,7 @@ function parsePaths(body, callback) {
             'domain': '',
             'tags': '',
             'pathviews': 0,
-            'definition': definition.escapeSpecialChars()
+            'definition': body.paths[path]
         };
 
         pathModel.createPath(pathData, function(err, uid) {
@@ -73,7 +75,7 @@ function parsePaths(body, callback) {
                 'domain': '',
                 'tags': '',
                 'entityviews': 0,
-                'definition': JSON.stringify(body.definitions[entityName])
+                'definition': body.definitions[entityName]
             };
 
             entityModel.createEntity(pathData, function(err, uid) {

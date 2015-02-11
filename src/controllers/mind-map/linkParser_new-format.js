@@ -23,8 +23,10 @@ module.exports.init = function (callback) {
         if (!exists) {
           fs.mkdirSync(path.join(__dirname + '/../../../public/secured/mind-map/assets'));
         }
-        fs.writeFile(path.join(__dirname + '/../../../public/secured/mind-map/assets/links.json'), JSON.stringify(result, null, 4));
-        callback();
+        fs.writeFile(path.join(__dirname + '/../../../public/secured/mind-map/assets/links-new-format.json'), JSON.stringify(result, null, 4), function(err){
+          callback();
+        });
+
       });
     }
   });

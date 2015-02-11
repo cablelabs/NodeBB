@@ -192,7 +192,7 @@ customController.deleteEntity = function(req, res, next) {
 };
 
 customController.entityMap = function(req, res, next) {
-    async.parallel({
+    async.series({
         header: function (next) {
             res.locals.metaTags = [{
                 name: "title",

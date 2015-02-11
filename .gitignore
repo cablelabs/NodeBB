@@ -34,4 +34,5 @@ pidfile
 /public/nodebb.min.js.map
 
 dump.rdb
-/public/secured/mind-map/assets/links.json
+public/secured/mind-map/assets/links-new-format.json
+public/secured/api-docs/swagger-file.json

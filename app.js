@@ -1,21 +1,21 @@
 /*
-	NodeBB - A better forum platform for the modern web
-	https://github.com/NodeBB/NodeBB/
-	Copyright (C) 2013-2014  NodeBB Inc.
+ NodeBB - A better forum platform for the modern web
+ https://github.com/NodeBB/NodeBB/
+ Copyright (C) 2013-2014  NodeBB Inc.
 
-	This program is free software: you can redistribute it and/or modify
-	it under the terms of the GNU General Public License as published by
-	the Free Software Foundation, either version 3 of the License, or
-	(at your option) any later version.
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
 
-	This program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU General Public License for more details.
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
 
-	You should have received a copy of the GNU General Public License
-	along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
 "use strict";
 /*global require, global, process*/
@@ -66,7 +66,7 @@ winston.info('');
 // Use local / cloud config file.
 var configFileName = '/config.json';
 if(nconf.get('cloud')) {
-    configFileName = '/config-cloud.json';
+	configFileName = '/config-cloud.json';
 }
 
 winston.info("Using config file : " + configFileName);
@@ -112,19 +112,7 @@ function loadConfig() {
 	nconf.set('base_templates_path', path.join(nconf.get('themes_path'), 'nodebb-theme-vanilla/templates'));
 }
 
-function start() {
-
-	loadConfig();
-
-	//var swaggerBuilder = require('./src/modelling/swaggerDisector');
-	//swaggerBuilder.init(function(err) {
-	//	if(err) {
-	//		winston.error('Error Building json for mindmap: ' + err);
-	//	} else {
-	//		console.log("No errors. Check DB for paths created");
-	//	}
-	//});
-
+function refreshEntityMap() {
 	//// Refreshing link.json for mind-map
 	var linkparser = require('./src/controllers/mind-map/linkParser_new-format');
 	linkparser.init(function(err){
@@ -134,6 +122,11 @@ function start() {
 			winston.info("MIND MAP:: Refreshed links.json file");
 		}
 	});
+}
+
+function start() {
+
+	loadConfig();
 
 	winston.info('Time: ' + new Date());
 	winston.info('Initializing NodeBB v' + pkg.version);
@@ -153,6 +146,29 @@ function start() {
 			winston.error(err.stack);
 			process.exit();
 		}
+
+		// Code to disect the swagger file and create all the objects in the db. This happens only once.
+		var swaggerDisector = require('./src/modelling/swaggerDisector');
+		swaggerDisector.init(function(err) {
+			if(err) {
+				winston.error('Error Building json for mindmap: ' + err);
+			} else {
+				console.log("No errors. Check DB for paths created");
+			}
+		});
+
+		// Code to build the swagger file from the db objects.
+		//var swaggerBuilder = require('./src/modelling/swaggerBuilder');
+		//swaggerBuilder.init(function(err) {
+		//	if(err) {
+		//		winston.error('Error Building Swagger File. This could mean serious consequences to the portal. ' + err);
+		//	} else {
+		//		winston.info("Swagger File :: Generated swagger-file.");
+		//		refreshEntityMap();
+		//	}
+		//});
+
+
 		var meta = require('./src/meta');
 		meta.configs.init(function () {
 			var templates = require('templates.js'),
@@ -190,20 +206,20 @@ function start() {
 						switch(message.action) {
 							case 'reload':
 								meta.reload();
-							break;
+								break;
 							case 'js-propagate':
 								meta.js.cache = message.cache;
 								meta.js.map = message.map;
 								winston.info('[cluster] Client-side javascript and mapping propagated to worker ' + cluster.worker.id);
-							break;
+								break;
 							case 'css-propagate':
 								meta.css.cache = message.cache;
 								meta.css.acpCache = message.acpCache;
 								winston.info('[cluster] Stylesheet propagated to worker ' + cluster.worker.id);
-							break;
+								break;
 						}
 					});
-					
+
 					process.on('uncaughtException', function(err) {
 						winston.error(err.message);
 						console.log(err.stack);
