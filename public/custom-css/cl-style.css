@@ -58,6 +58,7 @@
 .documentation-anchor{
     position: relative;
     top: -85px;
+    visibility: hidden;
 }
 
 /**/
