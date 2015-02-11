@@ -13,6 +13,10 @@
   animation: rotate 2.0s infinite linear;
 }
 
+.swagger-section .spinner {
+    margin: 100px auto;
+}
+
 .spinner .dot1, .spinner .dot2 {
   width: 60%;
   height: 60%;
