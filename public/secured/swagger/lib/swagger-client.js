@@ -326,7 +326,7 @@ PrimitiveModel.prototype.getMockSignature = function(modelsToIgnore) {
 
 SwaggerClient.prototype.build = function() {
   var self = this;
-  this.progress('fetching resource list: ' + this.url);
+  this.progress('fetching resource list: ' + this.url + '<div class="spinner"><div class="dot1"></div><div class="dot2"></div></div>');
   var obj = {
     useJQuery: this.useJQuery,
     url: this.url,
