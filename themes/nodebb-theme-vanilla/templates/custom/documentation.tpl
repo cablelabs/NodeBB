@@ -20,6 +20,7 @@
 <script src='secured/swagger/init.js' type="text/javascript"></script>
 
 <div class="swagger-section">
+
 <!--<div id='header'>-->
 <div class="swagger-ui-wrap">
     <form id='api_selector'>
@@ -28,5 +29,9 @@
 <!--</div>-->
 
 <div id="message-bar" class="swagger-ui-wrap">&nbsp;</div>
+
 <div id="swagger-ui-container" class="swagger-ui-wrap"></div>
 </div>
+
+<!-- Spinner -->
+<div class="spinner"><div class="dot1"></div><div class="dot2"></div></div>

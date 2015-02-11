@@ -545,6 +545,7 @@
         console.log("Update Link Parser.");
         $.when($.ajax({url: '/secured/mind-map/assets/links-new-format.json'}))
             .done(function (graph_data) {
+                $('.spinner').hide();
                 init(graph_data);
             })
             .fail(function() {

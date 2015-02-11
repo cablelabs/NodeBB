@@ -71,7 +71,7 @@ $(function () {
             return app.alertError(err.message);
         }
         console.log("Updated Swagger file.");
-
+        $('.spinner').hide();
         window.swaggerUi.load();
     });
 });

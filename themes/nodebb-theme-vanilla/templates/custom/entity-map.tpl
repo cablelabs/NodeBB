@@ -68,6 +68,11 @@
       <!-- End Show Related -->
     </div> <!-- End Graph Settings -->
 
+    <div class="spinner">
+      <div class="dot1"></div>
+      <div class="dot2"></div>
+    </div>
+
     <!-- Graph -->
     <div id="graph"></div>
 
