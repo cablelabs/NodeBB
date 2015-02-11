@@ -147,26 +147,16 @@ function start() {
 			process.exit();
 		}
 
-		// Code to disect the swagger file and create all the objects in the db. This happens only once.
-		var swaggerDisector = require('./src/modelling/swaggerDisector');
-		swaggerDisector.init(function(err) {
+		//Code to build the swagger file from the db objects.
+		var swaggerBuilder = require('./src/modelling/swaggerBuilder');
+		swaggerBuilder.init(function(err) {
 			if(err) {
-				winston.error('Error Building json for mindmap: ' + err);
+				winston.error('Error Building Swagger File. This could mean serious consequences to the portal. ' + err);
 			} else {
-				console.log("No errors. Check DB for paths created");
+				winston.info("Swagger File :: Generated swagger-file.");
+				refreshEntityMap();
 			}
 		});
-
-		// Code to build the swagger file from the db objects.
-		//var swaggerBuilder = require('./src/modelling/swaggerBuilder');
-		//swaggerBuilder.init(function(err) {
-		//	if(err) {
-		//		winston.error('Error Building Swagger File. This could mean serious consequences to the portal. ' + err);
-		//	} else {
-		//		winston.info("Swagger File :: Generated swagger-file.");
-		//		refreshEntityMap();
-		//	}
-		//});
 
 
 		var meta = require('./src/meta');
