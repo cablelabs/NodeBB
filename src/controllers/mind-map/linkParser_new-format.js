@@ -33,7 +33,10 @@ module.exports.init = function (callback) {
 };
 
 function getSwaggerFile (callback) {
-  callback(null, require('../../../public/secured/api-docs/swagger-file.json'));
+  fs.readFile(path.join(__dirname + '/../../../public/secured/api-docs/swagger-file.json'), "utf8", function(err, data){
+    callback(null, JSON.parse(data));
+  });
+
 }
 
 //fiter out paths in the swagger file that don't have the get property

@@ -220,7 +220,6 @@
 	};
 
 	Auth.login = function(username, password, next) {
-		console.log("Auth.login");
 		if (!username || !password) {
 			next(new Error('[[error:invalid-password]]'));
 			return;
