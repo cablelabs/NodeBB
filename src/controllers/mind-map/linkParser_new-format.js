@@ -4,6 +4,9 @@ var request = require('request'),
   path  = require('path'),
   config  = require(path.join(__dirname + '/settings.json'));
 
+var entityModel  = require('../../modelling/entity'),
+    pathModel    = require('../../modelling/path');
+
 var entity_names = {};
 
 module.exports.init = function (callback) {
@@ -33,10 +36,61 @@ module.exports.init = function (callback) {
 };
 
 function getSwaggerFile (callback) {
-  fs.readFile(path.join(__dirname + '/../../../public/secured/api-docs/swagger-file.json'), "utf8", function(err, data){
-    callback(null, JSON.parse(data));
+
+  var swaggerFile = {
+    "swagger": "2.0",
+    "info": {
+      "description": "Explore the cable APIs. APIs are grouped by Domain.",
+      "version": "0.0.1",
+      "title": "Cable API"
+    },
+    "host": "cable-api.herokuapp.com",
+    "basePath": "/api-docs",
+    "schemes": [
+      "http"
+    ]
+  };
+
+  //fiter out paths in the swagger file that don't have the get property
+  function getPaths(callback) {
+    pathModel.getAllPathFields(['name', 'definition'], function(err, pathsData) {
+      var paths = {};
+      pathsData.forEach(function(item, index) {
+        paths[item.name] = JSON.parse(item.definition);
+      });
+      callback(null, paths);
+    });
+  }
+
+  //fiter out paths in the swagger file that don't have the get property
+  function getDefinitions(callback) {
+    entityModel.getAllEntityFields(['displayName', 'definition'], function(err, entitysData) {
+      var entities = {};
+      entitysData.forEach(function(item, index) {
+        entities[item.displayName] = JSON.parse(item.definition);
+      });
+      callback(null, entities);
+    });
+  }
+
+
+  async.parallel({
+    paths: getPaths,
+    definitions: getDefinitions
+  }, function(err, result) {
+    if (err) {
+      callback(err);
+    } else {
+      swaggerFile.paths = result.paths;
+      swaggerFile.definitions = result.definitions;
+
+      callback(null, swaggerFile);
+    }
   });
 
+  //fs.readFile(path.join(__dirname + '/../../../public/secured/api-docs/swagger-file.json'), "utf8", function(err, data){
+  //
+  //});
 }
 
 //fiter out paths in the swagger file that don't have the get property
