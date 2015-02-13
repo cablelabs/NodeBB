@@ -47,8 +47,9 @@
 	<!-- <link href="{relative_path}/flatscroller/assets/css/bootstrap-responsive.css?{css-buster}" rel="stylesheet"> -->
 	<!-- <link href="{relative_path}/flatscroller/assets/css/style.css?{css-buster}" rel="stylesheet"> -->
 	<link href="{relative_path}/flatscroller/assets/css/font-awesome.min.css?{css-buster}" rel="stylesheet">
-	<link href='//fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-  	<link rel="stylesheet" type="text/css" href="{relative_path}/custom-css/app-new-format.css?{css-buster}">
+	<!-- <link href='//fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> -->
+  <link rel="stylesheet" type="text/css"
+        href="{relative_path}/custom-css/entity-map.css?{css-buster}">
 	<!--[if lt IE 7]>
 	<link href="{relative_path}/flatscroller/assets/css/font-awesome-ie7.min.css?{css-buster}" rel="stylesheet">
 	<![endif]-->
