@@ -42,7 +42,7 @@
         handlers: {
             'click help_btn': function (e) {
                 // show/hide help section
-                $(this).toggleClass('open').find('i').toggleClass('show')
+                $(this).toggleClass('open').find('i').toggleClass('show');
                 help.$.container.fadeToggle();
             },
             'click title': function (e) {

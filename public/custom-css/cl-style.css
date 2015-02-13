@@ -61,6 +61,185 @@
     visibility: hidden;
 }
 
+/******************************************
+    Getting Started / About CIA
+******************************************/
+
+    #get-started > .row {  margin-left: -30px; }
+    /******************************************
+      Tabs
+    ******************************************/
+    #guideline-tabs {
+      text-align: center;
+      padding: 0 .5em;
+    }
+
+    #guideline-tabs .nav-pills>li>a {
+      border-radius: 0;
+      padding: .5em 1em;
+      line-height: 1.5em;
+      font-size: 1.2em;
+      background: #6d6d6d;
+      color: #fff;
+    }
+
+    @media screen and (min-width: 35em) and (max-width: 991px) {
+      #guideline-tabs .nav-pills>li  {
+        display: inline-block;
+        width: 49%;
+      }
+    }
+
+    @media screen and (min-width: 992px) {
+      #guideline-tabs { padding: 0 2em; }
+      #guideline-tabs .nav-pills>li>a {
+        font-size: 1.5em;
+        min-height: 4em;
+      }
+    }
+
+    #guideline-tabs .nav-pills>li.active>a,
+    #guideline-tabs .nav-pills>li.active>a:hover,
+    #guideline-tabs .nav-pills>li.active>a:focus {
+      background: #b21323;
+    }
+
+    #guideline-tabs .nav-pills>li>a:hover {
+      background: #6e5e60;
+    }
+
+    /******************************************
+      Header
+    ******************************************/
+
+    #get-started header {
+      border-bottom: 3px solid #b21323;
+      padding: 1em;
+    }
+
+    #header-icon {
+      height: 35px;
+      width: 35px;
+      vertical-align: bottom;
+      display: inline-block;
+    }
+
+    #get-started header h2 {
+      margin: 1em .7em 0;
+      display: inline-block;
+      font-size: 1.4em;
+      font-weight: bold;
+      letter-spacing: 0.08em
+    }
+
+    #get-started header + p {
+      padding: 1.3em 1em;
+      font-size: 1.2em;
+    }
+
+    @media screen and (min-width: 35em) {
+      #get-started header { padding: 2em 2em 1em; }
+      #header-icon { width: 50px; height: 50px; }
+      #get-started header h2 { font-size: 2em; }
+      #get-started header + p { padding: 1.3em 4em; font-size: 1.3em; }
+    }
+
+    @media screen and (min-width: 992px) {
+      #get-started header { padding: 2em 6em 1em; }
+      #header-icon { width: 75px; height: 75px; }
+      #get-started header h2 { font-size: 3em; }
+      #get-started header + p { padding: 1.3em 8em; font-size: 1.5em; }
+    }
+
+
+    /******************************************
+      Content
+    ******************************************/
+
+    #get-started .tab-content img {
+      display: block;
+      margin: 0 auto;
+    }
+
+    #get-started .tab-content img:not(.icon) {
+      width: 100%;
+      max-width: 500px;
+    }
+
+    #get-started .tab-content {
+      margin-top: 3em;
+    }
+
+    #get-started .icon {
+      height: 40px;
+      width: 55px;
+    }
+
+    #get-started .tab-content h2 {
+      font-size: 1.2em;
+      border-bottom: 2px solid gray;
+      margin-left: 0em;
+      text-align: center;
+      padding-bottom: .1em;
+    }
+
+    .red-dot-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .red-dot-list li{
+      margin: 1em 0;
+    }
+    
+    .red-dot-list li span {
+      margin-left: 1.4em;
+      display: block;
+    }
+
+    .red-dot-list li:before {
+      content: "• ";
+      font-size: 3em;
+      color: #b21323;
+      vertical-align: top;
+      float:left;
+    }
+
+    .header-numbers {
+      font-size: 1.3em;
+      float:left;
+      background: #b21323;
+      border-radius: 100%;
+      padding: .3em .5em .3em .7em;
+      color: #fff;
+    }
+
+    .header-numbers + h3 { margin-left: 2.1em; }
+
+
+    @media screen and (min-width: 600px) {
+      #get-started .tab-content h2 { font-size: 1.7em;}
+    }
+
+    @media screen and (min-width: 768px) {
+      #get-started .tab-content h2 { text-align: left;}
+    }
+
+    @media screen and (min-width: 992px) {
+      #get-started .icon { height: 75px; width: 95px; }
+      #get-started .tab-content { margin: 2em 0em 2em 4em; }
+      #get-started .tab-content h2 { font-size: 2em; text-align: center}
+      #get-started .tab-desc { font-size: 1.2em;}
+      .red-dot-list { padding-left: 2em; }
+      .header-numbers { font-size: 2em;}
+      .header-numbers + h3 { margin-left: 3.4em;}
+    }
+
+
+/******************************************
+    Old CSS
+******************************************/
+
 /**/
 /*Theme Name: CableLabs v2.2*/
 /*Theme URI:*/
