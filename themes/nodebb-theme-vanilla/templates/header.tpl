@@ -44,9 +44,10 @@
 
 	<!-- Cablelabs.com CSS -->
 	<link href="{relative_path}/custom-css/cl-style.css?{css-buster}" rel="stylesheet">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<!-- <link href="{relative_path}/flatscroller/assets/css/bootstrap-responsive.css?{css-buster}" rel="stylesheet"> -->
 	<!-- <link href="{relative_path}/flatscroller/assets/css/style.css?{css-buster}" rel="stylesheet"> -->
-	<link href="{relative_path}/flatscroller/assets/css/font-awesome.min.css?{css-buster}" rel="stylesheet">
+	<!-- <link href="{relative_path}/flatscroller/assets/css/font-awesome.min.css?{css-buster}" rel="stylesheet"> -->
 	<!-- <link href='//fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> -->
   <link rel="stylesheet" type="text/css"
         href="{relative_path}/custom-css/entity-map.css?{css-buster}">
