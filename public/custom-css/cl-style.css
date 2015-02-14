@@ -275,6 +275,9 @@
         margin-top: 2em;
     }
 
+    #get-started .row + .row {
+        margin-top: 1em;
+    }
 
 
     @media screen and (min-width: 600px) {
