@@ -256,11 +256,17 @@ var winston = require('winston'),
 			}
 		};
 
+		//console.log("SENT :: " + JSON.stringify(raw));
+
 		plugins.fireHook('filter:parse.post', data, function(err, data) {
-			callback(err, data ? data.postData.content : null);
+			var content = JSON.stringify(data.postData.content);
+			if(content.indexOf("<") > 0) {
+				callback(err, data ? data.postData.content : null);
+			} else {
+				parse('filter:post.parse', data.postData.content, callback);
+			}
 		});
 
-		//parse('filter:post.parse', raw, callback);
 	};
 
 	PostTools.parseSignature = function(raw, callback) {
