@@ -1,8 +1,4 @@
-    <!-- <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>CIA Entities Map</title> -->
-    <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">-->
+<!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">-->
 <!-- <link href='//fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="secured/mind-map/secured/css/app-new-format.css?v={css_buster}">  -->
 
@@ -17,14 +13,17 @@
         </select>
         <div class="second-row">
           <button class="btn btn-xs" type="button" data-toggle="modal" data-target="#subset-manager">
-            <span class="glyphicon glyphicon-edit"></span> Subsets
+            <!-- <span class="glyphicon glyphicon-edit"></span> Subsets -->
+            <i class="fa fa-tachometer"></i> Subsets
           </button>
           <div class="btn-group pull-right">
             <button type="button" class="btn btn-xs edit-subset-btn">
-              <span class="glyphicon glyphicon-edit"></span> edit
+              <!-- <span class="glyphicon glyphicon-edit"></span> edit -->
+              <i class="fa fa-edit"></i> edit
             </button>
             <button type="button" data-toggle="modal" data-target="#share-set" class="btn btn-primary btn-xs share-subset-btn">
-              <span class="glyphicon glyphicon-share"></span> share
+              <!-- <span class="glyphicon glyphicon-share"></span> share -->
+              <i class="fa fa-share"></i> share
             </button>
           </div>
         </div>
@@ -36,16 +35,11 @@
         <div class="input-group input-group-sm">
           <input type="text" class="form-control" placeholder="Search by Name" id="search-field">
           <span class="input-group-btn">
-            <button class="btn clear-search-field-btn" type="button">&#10006;</button>
+            <button type="button" class="btn btn-xs reset-graph-btn">
+              <!-- <span class="glyphicon glyphicon-refresh"></span> Reset -->
+              <i class="fa fa-refresh"></i> Reset
+            </button>
           </span>
-        </div>
-        <div class="btn-group second-row">
-          <button type="button" class="btn btn-primary btn-xs open-help-btn">
-            <span class="glyphicon glyphicon-question-sign"></span> Help
-          </button>
-          <button type="button" class="btn btn-danger btn-xs reset-graph-btn">
-            <span class="glyphicon glyphicon-refresh"></span> Reset
-          </button>
         </div>
       </div>
       <!-- End Search -->
@@ -59,10 +53,17 @@
             <button class="btn hops-2 btn-sm hops-btn" data-hops="2">2</button>
             <button class="btn hops-3 btn-sm hops-btn" data-hops="3">3</button>
           </div>
+          <button type="button" class="btn btn-primary btn-xs help-btn">
+            <i class="fa fa-question show"></i><i class="fa fa-close"></i>
+          </button>
         </div>
-        <div class="btn-group second-row">
-          <button class="btn btn-xs bidirectional-btn" data-setting="bidirectional">bidirectional</button>
-          <button class="btn btn-xs show-all-btn" data-setting="show_all">show all</button>
+        <div class="second-row">
+          <div class="btn-group">
+            <button class="btn btn-xs bidirectional-btn" data-setting="bidirectional">
+              bidirectional
+            </button>
+            <button class="btn btn-xs show-all-btn" data-setting="show_all">show all</button>
+          </div>
         </div>
       </div>
       <!-- End Show Related -->
@@ -76,7 +77,32 @@
 
     <!-- Help -->
     <div id="help-overlay">
-      <button class="btn close-help-btn btn-primary">&#10006;</button>
+
+      <!-- <div class="explanation-panel">
+        <ul class="nav nav-tabs" role="tablist" id="myTab">
+          <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Entity</a></li>
+          <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Show Related</a></li>
+          <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Subsets</a></li>
+          <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Video</a></li>
+        </ul>
+
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="entity-tab">
+            <img src="/images/entity-open.jpg" alt="Entity">
+            <p>
+              When you position your mouse over or touch an entity, it expands to show two icons.
+            </p>
+            <ul>
+              <li><i class="fa fa-info-circle"></i> Click on the 'i' to view a description of the icon.</li>
+              <li>Click on the arrows to leave the entity-map page and view the entity in the API documentation.</li>
+              <li>Click anywhere except for the two icons to select the entity and view related entities.</li>
+            </ul>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="related-tab">...</div>
+          <div role="tabpanel" class="tab-pane" id="subsets-tab">...</div>
+          <div role="tabpanel" class="tab-pane" id="video-tab">...</div>
+        </div>
+      </div> -->
       <div class="row">
         <div class="col-md-4">
           <div class="popover bottom" id="help-subsets">
@@ -229,12 +255,8 @@
 </div>
 
 <!--<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>-->
-<script src="secured/mind-map/secured/js/jquery-ui.min.js"></script>
 <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>-->
-<!-- <script src="secured/mind-map/secured/js/dom-element.js"></script> -->
-<!-- <script src="secured/mind-map/secured/js/entity-graph.js"></script> -->
+<script src="secured/mind-map/secured/js/jquery-ui.min.js"></script>
 <script src="secured/mind-map/secured/js/entity.js"></script>
-<script src="secured/mind-map/secured/js/app-new-format.js"></script>
+<script src="secured/mind-map/secured/js/entity-map.js"></script>
 
-<!--</body>-->
-<!--</html>-->

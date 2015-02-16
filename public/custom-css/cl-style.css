@@ -1,4 +1,4 @@
-/******************************************
+/*****************************************
   Spinner
 ******************************************/
 
@@ -60,6 +60,271 @@
     top: -85px;
     visibility: hidden;
 }
+
+/******************************************
+    Getting Started / About CIA
+******************************************/
+
+    .info-page > .row {  margin-left: -30px; }
+
+    .info-page ul { list-style: none; }
+    /******************************************
+      Tabs
+    ******************************************/
+    #guideline-tabs {
+      text-align: center;
+      padding: 0 .5em;
+    }
+
+    #guideline-tabs .nav-pills>li>a {
+      border-radius: 0;
+      padding: .5em 1em;
+      line-height: 1.5em;
+      font-size: 1.2em;
+      background: #6d6d6d;
+      color: #fff;
+    }
+
+    @media screen and (min-width: 35em) and (max-width: 991px) {
+      #guideline-tabs .nav-pills>li  {
+        display: inline-block;
+        width: 49%;
+      }
+    }
+
+    @media screen and (min-width: 992px) {
+      #guideline-tabs { padding: 0 2em; }
+      #guideline-tabs .nav-pills>li>a {
+        font-size: 1.5em;
+        min-height: 4em;
+      }
+    }
+
+    #guideline-tabs .nav-pills>li.active>a,
+    #guideline-tabs .nav-pills>li.active>a:hover,
+    #guideline-tabs .nav-pills>li.active>a:focus {
+      background: #b21323;
+    }
+
+    #guideline-tabs .nav-pills>li>a:hover {
+      background: #6e5e60;
+    }
+
+    /******************************************
+      Header
+    ******************************************/
+
+    .info-page header {
+      border-bottom: 3px solid #b21323;
+      padding: 1em;
+    }
+
+    #header-icon {
+        display: inline;
+        width: 45px;
+        height: auto;
+        vertical-align: bottom;
+    }
+
+    .info-page header h2 {
+      margin: 0 0 0 .5em;
+      display: inline-block;
+      font-weight: bold;
+      letter-spacing: 0.08em;
+      width: calc(100% - 65px);
+    }
+
+    .info-page header h2 { font-size: 1.3em; }
+
+    .info-page header + p {
+      padding: 1.3em 1em;
+      font-size: 1.2em;
+    }
+
+    @media screen and (min-width: 35em) {
+      .info-page header { padding: 0em 1em 1em; }
+      #header-icon { width: 60px; }
+      .info-page header h2 { width: calc(100% - 80px); font-size: 1.5em; }
+      .info-page header + p { padding: 1.3em 4em; font-size: 1.3em; }
+    }
+
+    @media screen and (min-width: 992px) {
+      #get-started header { padding: 0em 1em 1em 6em; }
+      #about-cia   header { padding: 0em 1em 1em 2.7em; }
+      #header-icon { width: 80px; }
+      .info-page   header h2 { width: calc(100% - 110px);}
+      #get-started header h2 { font-size: 3em; }
+      #about-cia   header h2 { font-size: 2.1em; }
+      .info-page header + p { padding: 1.3em 8em; font-size: 1.5em; }
+    }
+
+    @media screen and (min-width: 1300px) {
+      .info-page header { width: 1300px; margin: 0 auto;}
+      #about-cia header { padding: 0em 1em 1em 5em; }
+      #header-icon { width: 100px;}
+      .info-page header h2 { width: calc(100% - 130px); }
+      #about-cia header h2 { font-size: 3em;}
+    }
+
+
+    /******************************************
+      Content
+    ******************************************/
+
+    .info-page .tab-content img {
+      margin: 0 auto;
+    }
+
+    .info-page .tab-content img:not(.icon) {
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .info-page .tab-content img.long-img {
+        max-width: 1000px;
+    }
+
+    .info-page .tab-content img.large-visual {
+        max-width: 750px;
+    }
+
+    .info-page .tab-content {
+      margin-top: 3em;
+    }
+
+    .info-page .icon {
+      height: 40px;
+      width: 55px;
+      position: relative;
+    }
+
+    .info-page .tab-title-img {
+        width: 80px;
+        height: auto;
+        max-width: 140%;
+    }
+
+    .info-page .tab-content h2 {
+      font-size: 1.2em;
+      border-bottom: 2px solid gray;
+      margin-left: 0em;
+      text-align: center;
+      padding-bottom: .1em;
+    }
+
+    .icon-list { padding-left: 0; font-size: 1.2em;}
+
+    .icon-list li { margin: 1em 0;}
+
+    .icon-list div { display: inline; }
+
+    .icon-list h4 {
+        display: inline;
+        vertical-align: bottom;
+        margin-right: 0.5em;
+    }
+
+    .icon-list h4:after {
+        content: ":";
+    }
+
+    .icon-list .icon {
+        display: inline-block;
+        vertical-align: bottom;
+        width: 30px;
+        height: 30px;
+    }
+
+    .red-dot-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .red-dot-list li{
+      margin: 1em 0;
+    }
+    
+    .red-dot-list li span {
+      margin-left: 1.4em;
+      display: block;
+    }
+
+    .red-dot-list li:before {
+      content: "• ";
+      font-size: 3em;
+      color: #b21323;
+      vertical-align: top;
+      float:left;
+    }
+
+    .header-numbers {
+      font-size: 1.3em;
+      float:left;
+      background: #b21323;
+      border-radius: 100%;
+      padding: .3em .5em .3em .7em;
+      color: #fff;
+    }
+
+    .header-numbers + h3 { margin-left: 2.1em; }
+
+    
+    .italic-headers h4 {
+        font-style: italic;
+        font-weight: bold;
+        margin-top: 2em;
+    }
+
+    #get-started .row + .row {
+        margin-top: 1em;
+    }
+
+
+    @media screen and (min-width: 600px) {
+      .info-page .tab-content h2 { font-size: 1.7em;}
+    }
+
+    @media screen and (min-width: 768px) {
+      .info-page .tab-content h2 { text-align: left;}
+      .info-page .icon { margin-left: -10px; margin-right: -10px;}
+      .icon-list div { display: inline-block; width: 80%; margin-left: 0.5em;}
+      .icon-list .icon { width: 50px; height: 50px; top: 0.2em; }
+      .icon-list p { display: inline; vertical-align: bottom; position: relative; top: 3px;}
+      .info-page h3.larger { font-size: 1.8em; }
+      .info-page p.larger { font-size: 1.2em;}
+      .italic-headers h4 { font-size: 1.5em; }
+    }
+
+    @media screen and (min-width: 992px) {
+      .info-page .icon { height: 75px; width: 95px; }
+      .icon-list .icon { width: 60px; height: 60px;}
+      .info-page .tab-content { margin: 2em 0em 2em 4em; }
+      .info-page .tab-content h2 { font-size: 2em; text-align: center}
+      .info-page .tab-desc { font-size: 1.2em;}
+      .red-dot-list { padding-left: 2em; }
+      .header-numbers { font-size: 2em;}
+      .header-numbers + h3 { margin-left: 3.4em;}
+      .info-page .tab-content img.tab-title-img {
+        width: 100%;
+        max-width: 150px;
+        height: auto;
+      }
+      #about-cia h3 { margin: 1.5em 0 1em; }
+      #engagement-process .red-dot-list {
+        font-size: 1.3em;
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+        .info-page .tab-content img.tab-title-img {
+            margin-top: -2.8em;
+        }
+    }
+
+
+/******************************************
+    Old CSS
+******************************************/
 
 /**/
 /*Theme Name: CableLabs v2.2*/
@@ -5593,4 +5858,4 @@
 /*.customSelect.field_gray{color:#DADADA !important;}*/
 /*.field_black{color:#000 !important;}*/
 /*.customSelect.field_black{color:#000 !important;}*/
-/*#zclip-ZeroClipboardMovie_1{line-height:16px;}*/
+/*#zclip-ZeroClipboardMovie_1{line-height:16px;}

@@ -4,7 +4,7 @@
 
 #entity-map-container {
   position: relative;
-  font-family: Roboto, 'Lucida Grande', sans-serif;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
 }
 
 /******************************************
@@ -17,6 +17,16 @@
 
 .second-row {
   margin: 0.3em 0 0.7em;
+}
+
+#graph-settings > div:not(:first-child) {
+  margin-top: 0.8em;
+}
+
+@media screen and (min-width: 992px) {
+  #graph-settings > div:not(:first-child) {
+    margin-top: 0;
+  }
 }
 
 .disabled {
@@ -300,8 +310,58 @@
 
 
 /******************************************
+  Modals
+******************************************/
+
+#set-manager, #share-set {
+  z-index: 2000;
+}
+
+/******************************************
   Help
 ******************************************/
+
+/* help btn */
+
+#graph-settings .help-btn {
+  position: absolute;
+  top:0;
+  right:0;
+  border-radius: 100%;
+  transition: all 0.5s linear;
+  z-index: 10;
+  width: 3em;
+  height: 3em;
+}
+
+#graph-settings .help-btn.open {
+  transform: rotateY(180deg);
+  background: #000;
+  border-color: #000;
+}
+
+#graph-settings .help-btn i{
+  position: absolute;
+  top: 0.08em;
+  font-size: 2.5em;
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+#graph-settings .help-btn i.show{
+  opacity: 1;
+}
+
+#graph-settings .help-btn i:first-child {
+  left: 0.25em;
+}
+
+#graph-settings .help-btn i:last-child {
+  left: 0.18em;
+}
+
+
+/* help overlay */
 
 #help-overlay {
   display: none;
@@ -317,11 +377,24 @@
   z-index: 5;
 }
 
-#help-overlay .close-help-btn {
-  position: absolute;
-  top: 0;
-  right: 0;
+/*#help-overlay .explanation-panel {
+  width: 80%;
+  height: 400px;
+  margin: 4em auto;
+  background: rgba(0,0,0, 0.5);
 }
+
+#help-overlay .tab-content {
+  padding: 1em;
+  color: #fff;
+
+}
+
+#help-overlay ul {
+  list-style: none;
+}*/
+
+
 
 #help-overlay .popover  {
   display: block;
@@ -331,7 +404,7 @@
 }
 
 #help-overlay .popover.open {
-  z-index: 1000;
+  z-index: 1100;
   width: 400px;
 }
 
@@ -382,12 +455,4 @@
   #help-entity { left: 30%; top: 200px;}
   #help-tutorial { left: 30%; top: 200px;}
   #help-trail { left: 30%; top: 200px;}
-}
-
-#set-manager {
-  z-index: 2000;
-}
-
-#share-set {
-  z-index: 2000;
 }

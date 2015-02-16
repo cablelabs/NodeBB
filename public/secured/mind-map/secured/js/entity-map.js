@@ -32,16 +32,17 @@
         $: {
             container:  $('#help-overlay'),
             titles:     $('#help-overlay .popover-title'),
-            toggle_btn: $('.open-help-btn, .close-help-btn')
+            help_btn:   $('.help-btn')
         },
         init: function () {
             // attach event handlers
-            this.$.toggle_btn.on('click', help.handlers['click toggle_btn']);
-            this.$.titles    .on('click', help.handlers['click title']);
+            this.$.help_btn.on('click', help.handlers['click help_btn']);
+            this.$.titles  .on('click', help.handlers['click title']);
         },
         handlers: {
-            'click toggle_btn': function (e) {
+            'click help_btn': function (e) {
                 // show/hide help section
+                $(this).toggleClass('open').find('i').toggleClass('show');
                 help.$.container.fadeToggle();
             },
             'click title': function (e) {
