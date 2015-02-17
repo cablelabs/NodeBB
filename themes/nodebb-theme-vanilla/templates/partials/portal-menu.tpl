@@ -30,7 +30,7 @@
                             <!-- IF loggedIn -->
                             <li><a href="{relative_path}/getting-started">Getting Started</a></li>
                             <!--<li><a href="{relative_path}/authorization">Authorization</a></li>-->
-                            <li><a href="{relative_path}/video-tutorials">Video Tutorials</a></li>
+                            <!--<li><a href="{relative_path}/video-tutorials">Video Tutorials</a></li>-->
                             <li><a href="{relative_path}/about-cia">About CIA</a></li>
                             <!-- ELSE -->
                             <li><a href="{relative_path}/login">Login</a></li>
