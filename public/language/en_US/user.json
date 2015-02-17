@@ -22,7 +22,7 @@
     "followers": "Followers",
     "following": "Following",
     "signature": "Signature",
-    "gravatar": "Gravatar - Images pulled from gravatar.com",
+    "gravatar": "Gravatar - Images pulled from <a href=\"http://gravatar.com\"/>",
     "birthday": "Birthday",
     "chat": "Chat",
     "follow": "Follow",
