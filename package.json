@@ -43,7 +43,7 @@
     "nodebb-plugin-calendar": "^0.1.0",
     "nodebb-plugin-custom-homepage": "0.0.6",
     "nodebb-plugin-custom-mentions": "~0.6.2",
-    "nodebb-plugin-custom-secured-pages": "0.0.5",
+    "nodebb-plugin-custom-secured-pages": "0.0.6",
     "nodebb-plugin-dbsearch": "0.0.10",
     "nodebb-plugin-desktop-notifications": "~0.0.10",
     "nodebb-plugin-emoji": "~0.1.4-2",
