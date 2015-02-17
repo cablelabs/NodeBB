@@ -2,6 +2,13 @@
 <!-- <link href='//fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="secured/mind-map/secured/css/app-new-format.css?v={css_buster}">  -->
 
+<!--[if lt IE 9]>
+<p class="alert alert-danger">
+  The Entity Map isn't compatible with versions of Internet Explorer below 9.
+  Please update your version of Internet Explorer for full compatibility.
+</p>
+<![endif]-->
+
 <div id="entity-map-container">
 
     <div class="row" id="graph-settings">
