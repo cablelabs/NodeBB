@@ -1,0 +1,409 @@
+/******************************************
+  Container
+******************************************/
+
+#entity-map-container {
+  position: relative;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+}
+
+/******************************************
+  Settings
+******************************************/
+
+#subset-settings .form-control {
+  height: 30px;
+}
+
+.second-row {
+  margin: 0.3em 0 0.7em;
+}
+
+#graph-settings > div:not(:first-child) {
+  margin-top: 0.8em;
+}
+
+@media screen and (min-width: 992px) {
+  #graph-settings > div:not(:first-child) {
+    margin-top: 0;
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+
+/****** Subsets *******/
+
+#subset-settings .btn-group {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#subset-settings.subset-selected .btn-group {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+/****** Subset Manager *******/
+
+#subset-manager .modal-body .input-group {
+  margin-bottom: 1em;
+}
+
+#subset-list {
+  list-style: none;
+  background: #d8d8d8;
+  padding-left: 0;
+  border: 2px solid #000;
+}
+
+#subset-list li{
+  font-size: 1.5em;
+  line-height: 1.5em;
+  padding: 0.5em 1em;
+}
+
+#subset-list li:hover {
+  cursor: move;
+  background: #7c7c7c;
+}
+
+#subset-list li:active {
+  opacity: 0.5;
+}
+
+#subset-list li .remove-icon {
+  background: #b80019;
+  border-radius: 100%;
+  float: right;
+  padding: 0 0.1em 0.1em 0;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0;
+}
+
+#subset-list li:hover .remove-icon {
+  opacity: 1;
+}
+
+
+/****** Search *******/
+
+#search-settings input {
+  z-index: 0; /* hide input while help showing */
+}
+
+.close-help-btn {
+  position: absolute;
+}
+
+/****** Hops Away *******/
+
+.hops-btn {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  font-weight: bold;
+  font-size: 2em;
+  line-height: .6em;
+  color: #4c4c4c;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box; 
+}
+
+.hops-btn:hover, .hops-btn:focus {
+  opacity: 0.8;
+}
+
+.hops-btn:first-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.hops-btn.selected { color: #f00;}
+
+.hops-1, .hops-1:hover, .hops-1:focus { background: #8a9583; }
+.hops-2, .hops-2:hover, .hops-2:focus { background: #a1acbb; }
+.hops-3, .hops-3:hover, .hops-3:focus { background: #aa9a9b; }
+
+.show-all-btn { border-left: 1px solid #000; }
+.bidirectional-btn { border-right: 1px solid #000;}
+
+
+/******************************************
+  Graph
+******************************************/
+
+#graph {
+  width: 100%;
+  margin: 0 auto;
+  min-height: 30em;
+}
+@media screen and (max-width: 90em) {
+  #graph { font-size: 90%; }
+}
+@media screen and (max-width: 80em) {
+  #graph { font-size: 80%; }
+}
+@media screen and (max-width: 70em) {
+  #graph { font-size: 70%; }
+}
+@media screen and (max-width: 60em) {
+  #graph { font-size: 60%; }
+}
+
+.domain {
+  display: inline-block;
+  width: 13.8%;
+  border-radius: 1em;
+  text-align: center;
+  margin: 1em 0.2em;
+  vertical-align: top;
+  background: none;
+}
+.domain.open {
+  background: rgba(0,0,0,0.6);
+}
+.domain .domain-title {
+  position: relative;
+  top: 1.3em;
+  font-size: 1.3em;
+  color: #000;
+  margin: 0;
+  padding: 0.25em;
+  border-radius: 0.8em;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+  z-index: 3;
+  background: none;
+}
+.domain.open .domain-title {
+  border-radius: 0.8em 0.8em 0 0;
+  background: #000;
+  color: #919191;
+  top: 0;
+}
+.domain .domain-title:first-letter {
+  color: #bebebe;
+  font-size: 1.5em;
+}
+.entities {
+  display: none;
+}
+.domain.open .entities {
+  display: block;
+  padding: 0;
+}
+.entity {
+  display: block;
+  margin: 0.7em;
+  padding: 0.2em 0.2em 0.5em;
+  border-radius: 0.4em;
+  cursor: pointer;
+  background: #fafafa;
+  color: #000;
+  letter-spacing: 0.08em;
+  overflow: hidden;
+}
+
+.entity.hops-1 { background: #8a9583; }
+.entity.hops-2 { background: #a1acbb; }
+.entity.hops-3 { background: #aa9a9b; }
+.entity.selected { border: 2px solid #f00; color: #000; }
+
+.entity.noshow {
+  padding: 0;
+  margin: 0;
+  height: 0;
+  opacity: 0;
+  background: rgba(0,0,0,0.6);
+  position: absolute;
+}
+.entity-title {
+  font-size: 1em;
+  margin: 0.5em 0 0;
+  letter-spacing: 0.1em;
+}
+.glyphs {
+  text-align: center;
+  opacity: 0;
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+}
+.api-link,
+.description {
+  display: none;
+  width: 2em;
+  color: #000;
+  text-decoration: none;
+}
+.api-link {
+  margin-left: 25%;
+}
+.hop-trail span {
+  display: block;
+  color: #fff;
+  padding-top: .6em;
+}
+.glyphs.open .description,
+.glyphs .description:hover,
+.glyphs .api-link:hover {
+  color: #f00;
+}
+.entity:hover .glyphs,
+.entity.selected .glyphs,
+.glyphs.open {
+  height: 1.5em;
+  opacity: 1;
+  margin-top: 1em;
+}
+.entity:hover .glyphs .api-link,
+.entity.selected .glyphs .api-link,
+.glyphs.open .api-link,
+.entity:hover .glyphs .description,
+.entity.selected .glyphs .description,
+.glyphs.open .description {
+  display: inline-block;
+}
+
+.popover.bottom {
+  padding: 0;
+}
+.popover.bottom>.arrow:after {
+  border-bottom-color: #000;
+}
+.popover-title {
+  background: #000;
+}
+
+
+/******************************************
+  Modals
+******************************************/
+
+#set-manager, #share-set {
+  z-index: 2000;
+}
+
+/******************************************
+  Help
+******************************************/
+
+/* help btn */
+
+#graph-settings .help-btn {
+  position: absolute;
+  top:0;
+  right:0;
+  border-radius: 100%;
+  z-index: 10;
+  width: 3em;
+  height: 3em;
+}
+
+#graph-settings .help-btn.open {
+  transform: rotateY(180deg);
+  background: #000;
+  border-color: #000;
+}
+
+#graph-settings .help-btn i{
+  position: absolute;
+  top: 0.08em;
+  font-size: 2.5em;
+  opacity: 0;
+}
+
+#graph-settings .help-btn i.show{
+  opacity: 1;
+}
+
+#graph-settings .help-btn i:first-child {
+  left: 0.25em;
+}
+
+#graph-settings .help-btn i:last-child {
+  left: 0.18em;
+}
+
+
+/* help overlay */
+
+#help-overlay {
+  display: none;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 100%;
+  min-height: 100vh;
+  background: rgba(0,40,60,0.8);
+  padding: 15px 30px;
+  border: 4px solid #434a51;
+  z-index: 5;
+}
+
+#help-overlay .popover  {
+  display: block;
+  position: absolute;
+  width: 10em;
+}
+
+#help-overlay .popover.open {
+  z-index: 1100;
+  width: 400px;
+}
+
+#help-overlay .popover-title {
+  background: #98bcdc;
+  color: #000;
+  border-bottom-color: #98bcdc;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+
+
+#help-overlay .popover-title:hover {
+  cursor: pointer;
+}
+
+#help-overlay .popover-content {
+  border: 4px solid #8cbce4;
+  border-top: none;
+  overflow: hidden;
+  display: none;
+}
+
+#help-overlay img {
+  border-radius: .5em;
+  width: 120px;
+  height: 65px;
+  margin: 0 1em 1em 0;
+  float: left;
+}
+
+#help-subsets { left: 23%; top: 0px; }
+#help-search  { left: 40%; top: 60px; }
+#help-related { left: 57%; top: 130px; }
+#help-entity  { left: 0%; top: 220px;}
+#help-trail   { left: 50%; top: 220px;}
+#help-tutorial{ left: 25%; top: 280px;}
+
+@media screen and (min-width: 550px) {
+  #help-subsets { left: 57%; top: 0px; }
+  #help-related { left: 23%; top: 130px; }
+}
+
+@media screen and (min-width: 992px) {
+  #help-subsets { left: 30%; top: 0px; }
+  #help-search { left: 36%; top: 0px; }
+  #help-related { left: 30%; top: 0px; }
+  #help-entity { left: 30%; top: 200px;}
+  #help-tutorial { left: 30%; top: 200px;}
+  #help-trail { left: 30%; top: 200px;}
+}
