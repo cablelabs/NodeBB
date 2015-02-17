@@ -12,15 +12,15 @@
 						<i class='fa fa-check fa-2x'></i>
 					</div>
 					<br/>
-					<div id="uploaded-box">
-						<img id="user-uploaded-picture" src="" class="img-thumbnail user-profile-picture">
-						<span class="user-picture-label">[[user:uploaded_picture]]</span>
-						<i class='fa fa-check fa-2x'></i>
-					</div>
+					<!--<div id="uploaded-box">-->
+						<!--<img id="user-uploaded-picture" src="" class="img-thumbnail user-profile-picture">-->
+						<!--<span class="user-picture-label">[[user:uploaded_picture]]</span>-->
+						<!--<i class='fa fa-check fa-2x'></i>-->
+					<!--</div>-->
 
-					<a id="uploadPictureBtn" href="#">[[user:upload_new_picture]]</a> <br/>
+					<!--<a id="uploadPictureBtn" href="#">[[user:upload_new_picture]]</a> <br/>-->
 					<!-- IF config.hasImageUploadPlugin -->
-					<a id="uploadFromUrlBtn" href="#">[[user:upload_new_picture_from_url]]</a>
+					<!--<a id="uploadFromUrlBtn" href="#">[[user:upload_new_picture_from_url]]</a>-->
 					<!-- ENDIF config.hasImageUploadPlugin -->
 				</div>
 				<div class="modal-footer">
