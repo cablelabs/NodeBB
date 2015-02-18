@@ -160,6 +160,7 @@ var socket,
 	};
 
 	app.logout = function() {
+		console.log("App.logout.");
 		$.post(RELATIVE_PATH + '/logout', function() {
 			window.location.href = RELATIVE_PATH + '/';
 		});
