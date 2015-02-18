@@ -25,6 +25,16 @@
 
 	<!-- Modernizr -->
 	<script src="{relative_path}/custom-js/modernizr.js"></script>
+	<script>
+		Modernizr.load([
+		    {
+		        test: Modernizr.flexbox,
+		        yep: '{relative_path}/custom-css/entity-map.css?{css-buster}',
+		        nope: '{relative_path}/custom-css/entity-map-ie9.css?{css-buster}'
+		    }
+		]);
+	</script>
+	
 	<script src="{relative_path}/custom-js/pre-check.js"></script>
 
 

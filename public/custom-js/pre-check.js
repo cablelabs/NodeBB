@@ -40,12 +40,4 @@ var BrowserDetect = {
     
 BrowserDetect.init();
 
-Modernizr.load([
-    {
-        test: Modernizr.flexbox,
-        yep: '{relative_path}/custom-css/entity-map.css?{css-buster}',
-        nope: '{relative_path}/custom-css/entity-map-ie9.css?{css-buster}'
-    }
-]);
-
 //document.write("You are using <b>" + BrowserDetect.browser + "</b> with version <b>" + BrowserDetect.version + "</b>");
