@@ -25,15 +25,7 @@
 
 	<!-- Modernizr -->
 	<script src="{relative_path}/custom-js/modernizr.js"></script>
-	<script>
-		Modernizr.load([
-			{
-				test: Modernizr.flexbox,
-				yep: '{relative_path}/custom-css/entity-map.css?{css-buster}',
-				nope: '{relative_path}/custom-css/entity-map-ie9.css?{css-buster}'
-			}
-	]);
-	</script>
+	<script src="{relative_path}/custom-js/pre-check.js"></script>
 
 
 
@@ -67,35 +59,34 @@
 		<!-- IMPORT partials/portal-menu.tpl -->
 	</nav>
 
-	<!--[if IE 8]>
-	  <p class="alert alert-danger">
-		  The portal isn't compatible with versions of Internet Explorer below 9.
-		  Please update your version of Internet Explorer for full compatibility.
-		</p>
-	<![endif] -->
-
-	<!--[if IE]>
-		<script>
-			console.log('running flash detection script');
-			var hasFlash = false;
-			try {
-			  var fo = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
-			  if (fo) {
-			    hasFlash = true;
-			  }
-			} catch (e) {
-			  if (navigator.mimeTypes
-			        && navigator.mimeTypes['application/x-shockwave-flash'] != undefined
-			        && navigator.mimeTypes['application/x-shockwave-flash'].enabledPlugin) {
-			    hasFlash = true;
-			  }
+	<script>
+		if (BrowserDetect.browser === "Explorer") {
+			if (BrowserDetect.version === 8) {
+				document.write('<p class="alert alert-danger">' +
+					  'The portal isn\'t compatible with versions of Internet Explorer below 9.' +
+					  'Please update your version of Internet Explorer for full compatibility.</p>');
 			}
-			if (!hasFlash) {
-				document.write('<p class="alert alert-danger">This website requires Flash Player if viewed in Internet Explorer 9.  Please update your browser
-				or install <a href="#">Flash Player</a></p>')
+			if (BrowserDetect.version === 9) {
+				var hasFlash = false;
+				try {
+				  var fo = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
+				  if (fo) {
+				    hasFlash = true;
+				  }
+				} catch (e) {
+				  if (navigator.mimeTypes
+				        && navigator.mimeTypes['application/x-shockwave-flash'] != undefined
+				        && navigator.mimeTypes['application/x-shockwave-flash'].enabledPlugin) {
+				    hasFlash = true;
+				  }
+				}
+				if (!hasFlash) {
+					document.write('<p class="alert alert-danger">This website requires Flash Player if viewed in Internet Explorer 9.  Please update your browser
+						or install <a href="#">Flash Player</a></p>')
+				}
 			}
-		</script>
-	<![endif]-->
+		}
+	</script>
 
 	<div class="container-fluid parent-container" id="content">
 	  <!-- IMPORT partials/noscript/warning.tpl -->
