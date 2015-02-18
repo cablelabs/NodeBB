@@ -27,13 +27,15 @@
 	<script src="{relative_path}/custom-js/modernizr.js"></script>
 	<script>
 		Modernizr.load([
-			{
-				test: Modernizr.flexbox,
-				yep: '{relative_path}/custom-css/entity-map.css?{css-buster}',
-				nope: '{relative_path}/custom-css/entity-map-ie9.css?{css-buster}'
-			}
-	]);
+		    {
+		        test: Modernizr.flexbox,
+		        yep: '{relative_path}/custom-css/entity-map.css?{css-buster}',
+		        nope: '{relative_path}/custom-css/entity-map-ie9.css?{css-buster}'
+		    }
+		]);
 	</script>
+	
+	<script src="{relative_path}/custom-js/pre-check.js"></script>
 
 
 
@@ -67,35 +69,41 @@
 		<!-- IMPORT partials/portal-menu.tpl -->
 	</nav>
 
-	<!--[if IE 8]>
-	  <p class="alert alert-danger">
-		  The portal isn't compatible with versions of Internet Explorer below 9.
-		  Please update your version of Internet Explorer for full compatibility.
-		</p>
-	<![endif] -->
+	<script>
 
-	<!--[if IE]>
-		<script>
-			console.log('running flash detection script');
-			var hasFlash = false;
-			try {
-			  var fo = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
-			  if (fo) {
-			    hasFlash = true;
-			  }
-			} catch (e) {
-			  if (navigator.mimeTypes
-			        && navigator.mimeTypes['application/x-shockwave-flash'] != undefined
-			        && navigator.mimeTypes['application/x-shockwave-flash'].enabledPlugin) {
-			    hasFlash = true;
-			  }
+		if (BrowserDetect.browser === "Explorer" && BrowserDetect.version <= 9) {
+
+			var IE9Message = [];
+			IE9Message.push('<div class="alert alert-danger"><p>');
+			IE9Message.push('WARNING: Internet Exporer ' + BrowserDetect.version + ' doesn\'t support many features of the portal. ');
+			IE9Message.push('Please upgrade your browser to the latest version of ');
+			IE9Message.push('<a href="//windows.microsoft.com/en-us/internet-explorer/ie-11-worldwide-languages">Internet Explorer</a>. ');
+			IE9Message.push('For the best user experience, we recommend using <a href="//www.google.com/chrome/browser/desktop/">');
+			IE9Message.push('<img src="{relative_path}/images/chrome.png" style="width: 2.5em; height: 2.5em;"/></a>');
+
+			if (BrowserDetect.version === 9) {
+				var hasFlash = false;
+				try {
+				  var fo = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
+				  if (fo) {
+				    hasFlash = true;
+				  }
+				} catch (e) {
+				  if (navigator.mimeTypes
+				        && navigator.mimeTypes['application/x-shockwave-flash'] != undefined
+				        && navigator.mimeTypes['application/x-shockwave-flash'].enabledPlugin) {
+				    hasFlash = true;
+				  }
+				}
+				if (!hasFlash) {
+					IE9Message.push('<p>To view the portal with Internet Explorer 9, please install <a href="//get.adobe.com/flashplayer/otherversions/">Flash Player</a></p>');
+				}
 			}
-			if (!hasFlash) {
-				document.write('<p class="alert alert-danger">This website requires Flash Player if viewed in Internet Explorer 9.  Please update your browser
-				or install <a href="#">Flash Player</a></p>')
-			}
-		</script>
-	<![endif]-->
+
+			IE9Message.push('</div>');
+			document.write(IE9Message.join(''));
+		}
+	</script>
 
 	<div class="container-fluid parent-container" id="content">
 	  <!-- IMPORT partials/noscript/warning.tpl -->
