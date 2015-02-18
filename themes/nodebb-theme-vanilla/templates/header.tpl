@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js">
 <head>
 	<title>{browserTitle}</title>
 	<!-- BEGIN metaTags -->
@@ -14,12 +14,31 @@
 	<style type="text/css">{customCSS}</style>
 	<!-- ENDIF useCustomCSS -->
 
-	<!--[if lt IE 9]>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.3.0/es5-shim.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
-	<script>__lt_ie_9__ = 1;</script>
-	<![endif]-->
+	<!-- Cablelabs.com CSS -->
+	<link href="{relative_path}/custom-css/cl-style.css?{css-buster}" rel="stylesheet">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+	
+	<!-- Le fav and touch icons -->
+	<link rel="shortcut icon" href="{relative_path}/images/cl-icon-bw.ico">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{relative_path}/flatscroller/assets/ico/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{relative_path}/flatscroller/assets/ico/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{relative_path}/flatscroller/assets/ico/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="{relative_path}/flatscroller/assets/ico/apple-touch-icon-57-precomposed.png">
+
+	<script src="{relative_path}/custom-js/modernizr.js"></script>
+
+	<script>
+		Modernizr.load([
+			{
+				test: Modernizr.flexbox,
+				yep: '{relative_path}/custom-css/entity-map.css?{css-buster}',
+				nope: '{relative_path}/custom-css/entity-map-ie9.css?{css-buster}'
+			}
+	]);
+	</script>
+
+
 
 	<script>
 		var RELATIVE_PATH = "{relative_path}";
@@ -42,28 +61,7 @@
 	{customJS}
 	<!-- ENDIF useCustomJS -->
 
-	<!-- Cablelabs.com CSS -->
-	<link href="{relative_path}/custom-css/cl-style.css?{css-buster}" rel="stylesheet">
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-	<!--[if IE 9]>
-		<link rel="stylesheet" type="text/css" href="{relative_path}/custom-css/entity-map-ie9.css?{css-buster}">
-	<![endif]-->
-	<!--[if !IE]> -->
-		<link rel="stylesheet" type="text/css" href="{relative_path}/custom-css/entity-map.css?{css-buster}">
-	<!-- <![endif]-->
-  
-
-	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-	<!--[if lt IE 9]>
-	<script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-	<![endif]-->
 	
-	<!-- Le fav and touch icons -->
-	<link rel="shortcut icon" href="{relative_path}/images/cl-icon-bw.ico">
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{relative_path}/flatscroller/assets/ico/apple-touch-icon-144-precomposed.png">
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{relative_path}/flatscroller/assets/ico/apple-touch-icon-114-precomposed.png">
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{relative_path}/flatscroller/assets/ico/apple-touch-icon-72-precomposed.png">
-	<link rel="apple-touch-icon-precomposed" href="{relative_path}/flatscroller/assets/ico/apple-touch-icon-57-precomposed.png">
 </head>
 
 <body>	
