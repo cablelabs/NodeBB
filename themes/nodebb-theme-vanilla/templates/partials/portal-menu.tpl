@@ -1,5 +1,5 @@
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#header-navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -28,18 +28,18 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">How-Tos<strong class="caret"></strong></a>
                         <ul class="dropdown-menu">
                             <!-- IF loggedIn -->
-                            <li><a href="{relative_path}/getting-started" data-toggle="collapse" data-target=".navbar-collapse">
+                            <li><a href="{relative_path}/getting-started">
                                 Getting Started
                             </a></li>
                             <!--<li><a href="{relative_path}/authorization">Authorization</a></li>-->
-                            <li><a href="{relative_path}/category/9/video-tutorials" data-toggle="collapse" data-target=".navbar-collapse">
+                            <li><a href="{relative_path}/category/9/video-tutorials">
                                 Video Tutorials
                             </a></li>
-                            <li><a href="{relative_path}/about-cia" data-toggle="collapse" data-target=".navbar-collapse">
+                            <li><a href="{relative_path}/about-cia">
                                 About CIA
                             </a></li>
                             <!-- ELSE -->
-                            <li><a href="{relative_path}/login" data-toggle="collapse" data-target=".navbar-collapse">
+                            <li><a href="{relative_path}/login">
                                 Login
                             </a></li>
                             <!-- ENDIF loggedIn -->
@@ -50,15 +50,15 @@
                         <ul class="dropdown-menu">
                             <!-- IF loggedIn -->
                             <!--<li><a href="{relative_path}/api-info">General API Info</a></li>-->
-                            <li><a href="{relative_path}/entity-map" data-toggle="collapse" data-target=".navbar-collapse">
+                            <li><a href="{relative_path}/entity-map">
                                 Entity Map
                             </a></li>
-                            <li><a href="{relative_path}/documentation" data-toggle="collapse" data-target=".navbar-collapse">
+                            <li><a href="{relative_path}/documentation">
                                 Documentation
                             </a></li>
                             <!--<li><a href="{relative_path}/key-management">Get a Key</a></li>-->
                             <!-- ELSE -->
-                            <li><a href="{relative_path}/login" data-toggle="collapse" data-target=".navbar-collapse">
+                            <li><a href="{relative_path}/login">
                                 Login
                             </a></li>
                             <!-- ENDIF loggedIn -->
@@ -71,36 +71,36 @@
                         <ul class="dropdown-menu">
                             <!-- IF loggedIn -->
                             <li>
-                                <a href="{relative_path}/forums" data-toggle="collapse" data-target=".navbar-collapse">
+                                <a href="{relative_path}/forums">
                                     <i id="forum-home" class="fa fa-fw fa-home"></i>Home
                                 </a>
                             </li>
                             <li>
-                                <a href="{relative_path}/unread" data-toggle="collapse" data-target=".navbar-collapse">
+                                <a href="{relative_path}/unread">
                                     <i id="unread-count" class="fa fa-fw fa-inbox" data-content="0" title="[[global:header.unread]]"></i>
                                     <span class="visible-xs-inline"></span> [[global:header.unread]]
                                 </a>
                             </li>
                             <li>
-                                <a href="{relative_path}/recent" data-toggle="collapse" data-target=".navbar-collapse">
+                                <a href="{relative_path}/recent">
                                     <i class="fa fa-fw fa-clock-o" title="[[global:header.recent]]"></i>
                                     <span class="visible-xs-inline"></span> [[global:header.recent]]
                                 </a>
                             </li>
                             <li>
-                                <a href="{relative_path}/tags" data-toggle="collapse" data-target=".navbar-collapse">
+                                <a href="{relative_path}/tags">
                                     <i class="fa fa-fw fa-tags" title="[[global:header.tags]]"></i>
                                     <span class="visible-xs-inline"></span> [[global:header.tags]]
                                 </a>
                             </li>
                             <li>
-                                <a href="{relative_path}/popular" data-toggle="collapse" data-target=".navbar-collapse">
+                                <a href="{relative_path}/popular">
                                     <i class="fa fa-fw fa-fire" title="[[global:header.popular]]"></i>
                                     <span class="visible-xs-inline"></span> [[global:header.popular]]
                                 </a>
                             </li>
                             <!-- ELSE -->
-                            <li><a href="{relative_path}/login" data-toggle="collapse" data-target=".navbar-collapse">
+                            <li><a href="{relative_path}/login">
                                 Login
                             </a></li>
                             <!-- ENDIF loggedIn -->
@@ -120,7 +120,7 @@
 
                     <li>
                         <!-- IF function.displayUsersLink -->
-                        <a href="{relative_path}/users" title="[[global:header.users]]" data-toggle="collapse" data-target=".navbar-collapse">
+                        <a href="{relative_path}/users" title="[[global:header.users]]">
                             <i class="fa fa-fw fa-users"></i><span class="visible-xs-inline"> [[global:header.users]]</span>
                         </a>
                         <!-- ENDIF function.displayUsersLink -->
@@ -128,7 +128,7 @@
 
                     <!-- IF isAdmin -->
                     <li>
-                        <a href="{relative_path}/designer" data-toggle="collapse" data-target=".navbar-collapse">
+                        <a href="{relative_path}/designer">
                             <i class="fa fa-fw fa-clock-o" title="API Designer"></i>
                             <span class="visible-xs-inline">API Designer</span>
                         </a>
@@ -145,7 +145,7 @@
                     <!-- ENDIF isAdmin -->
 
                     <li class="visible-xs">
-                        <a href="{relative_path}/notifications" data-toggle="collapse" data-target=".navbar-collapse">
+                        <a href="{relative_path}/notifications">
                             <i class="fa fa-bell-o fa-fw" title="[[notifications:title]]"></i> [[notifications:title]]
                         </a>
                     </li>
@@ -196,14 +196,14 @@
                     <!--</li>-->
                     <!-- IF allowRegistration -->
                     <li>
-                        <a href="{relative_path}/register" data-toggle="collapse" data-target=".navbar-collapse">
+                        <a href="{relative_path}/register">
                             <i class="fa fa-pencil visible-xs-inline"></i>
                             <span>[[global:register]]</span>
                         </a>
                     </li>
                     <!-- ENDIF allowRegistration -->
                     <li>
-                        <a href="{relative_path}/login" data-toggle="collapse" data-target=".navbar-collapse">
+                        <a href="{relative_path}/login">
                             <i class="fa fa-sign-in visible-xs-inline"></i>
                             <span>[[global:login]]</span>
                         </a>
