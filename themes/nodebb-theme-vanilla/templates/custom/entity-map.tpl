@@ -68,7 +68,7 @@
     </div> <!-- End Graph Settings -->
 
     <!-- Spinner -->
-    <!--[if IE]>Loading Entity Map...<![endif]-->
+    <!--[if IE]><p style="text-align: center">Loading Entity Map...</p><![endif]-->
     <!--[if !IE]> -->
     <div class="spinner">
       <div class="dot1"></div><div class="dot2"></div>
