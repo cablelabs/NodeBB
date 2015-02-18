@@ -21,13 +21,10 @@
 	
 	<!-- Le fav and touch icons -->
 	<link rel="shortcut icon" href="{relative_path}/images/cl-icon-bw.ico">
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{relative_path}/flatscroller/assets/ico/apple-touch-icon-144-precomposed.png">
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{relative_path}/flatscroller/assets/ico/apple-touch-icon-114-precomposed.png">
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{relative_path}/flatscroller/assets/ico/apple-touch-icon-72-precomposed.png">
-	<link rel="apple-touch-icon-precomposed" href="{relative_path}/flatscroller/assets/ico/apple-touch-icon-57-precomposed.png">
 
+
+	<!-- Modernizr -->
 	<script src="{relative_path}/custom-js/modernizr.js"></script>
-
 	<script>
 		Modernizr.load([
 			{
@@ -69,6 +66,30 @@
 	<nav class="navbar navbar-inverse navbar-fixed-top header" role="navigation" id="header-menu">
 		<!-- IMPORT partials/portal-menu.tpl -->
 	</nav>
+
+	<!--[if IE 8]>
+	  <p class="alert alert-danger">
+		  The portal isn't compatible with versions of Internet Explorer below 9.
+		  Please update your version of Internet Explorer for full compatibility.
+		</p>
+	<![endif] -->
+
+	<!-- [if IE 9]>
+		<script>
+		var hasFlash = false;
+		try {
+		  var fo = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
+		  if(fo) hasFlash = true;
+		}catch(e){
+		if(navigator.mimeTypes ["application/x-shockwave-flash"] != undefined) 
+		    hasFlash = true;
+		}
+		if (!hasFlash) {
+			document.write('<p class="alert alert-danger">This website requires Flash Player if viewed in Internet Explorer 9.  Please update your browser
+			or install <a href="#">Flash Player</a></p>')
+		}
+		</script>
+	<![endif] -->
 
 	<div class="container-fluid parent-container" id="content">
 	  <!-- IMPORT partials/noscript/warning.tpl -->
