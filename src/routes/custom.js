@@ -3,13 +3,13 @@
 
 function mainRoutes(app, middleware, controllers) {
     var middlewares = [middleware.incrementPageViews, middleware.updateLastOnlineTime];
-    //var middlewares = [];
 
-    app.get('/index', middleware.buildHeader, middlewares, function(req, res, next) {
-    	res.redirect('/');
+    middlewares = middlewares.concat([middleware.redirectToLoginIfGuest]);
+
+    app.get('/', middleware.buildHeader, middlewares, function(req, res, next) {
+    	res.redirect('/index');
     });
-
-    app.get('/', middleware.buildHeader, middlewares, controllers.custom.index);
+    app.get('/index', middleware.buildHeader, middlewares, controllers.custom.index);
 
     app.get('/about-cia', middleware.buildHeader, middlewares, controllers.custom.aboutCia);
     app.get('/getting-started', middleware.buildHeader, middlewares, controllers.custom.gettingStarted);
@@ -17,19 +17,20 @@ function mainRoutes(app, middleware, controllers) {
     app.get('/entity-map', middleware.buildHeader, middlewares, controllers.custom.entityMap);
     app.get('/documentation', middleware.buildHeader, middlewares, controllers.custom.documentation);
 
+    var apiMiddlewares = [middleware.incrementPageViews, middleware.updateLastOnlineTime];
     // path routes
-    app.get('/api/paths', middlewares, controllers.custom.getPaths);
-    app.get('/api/paths/:uid', middlewares, controllers.custom.getPathById);
+    app.get('/api/paths', apiMiddlewares, controllers.custom.getPaths);
+    app.get('/api/paths/:uid', apiMiddlewares, controllers.custom.getPathById);
     app.post('/api/paths', controllers.custom.createPath);
-    app.patch('/api/paths/:uid', middlewares, controllers.custom.patchPath);
-    app.delete('/api/paths/:uid', middlewares, controllers.custom.deletePath);
+    app.patch('/api/paths/:uid', apiMiddlewares, controllers.custom.patchPath);
+    app.delete('/api/paths/:uid', apiMiddlewares, controllers.custom.deletePath);
 
     // entity routes
-    app.get('/api/entities', middlewares, controllers.custom.getEntities);
-    app.get('/api/entities/:name', middlewares, controllers.custom.getEntityByName);
+    app.get('/api/entities', apiMiddlewares, controllers.custom.getEntities);
+    app.get('/api/entities/:name', apiMiddlewares, controllers.custom.getEntityByName);
     app.post('/api/entities', controllers.custom.createEntity);
-    app.patch('/api/entities/:name', middlewares, controllers.custom.patchEntity);
-    app.delete('/api/entities/:name', middlewares, controllers.custom.deleteEntity);
+    app.patch('/api/entities/:name', apiMiddlewares, controllers.custom.patchEntity);
+    app.delete('/api/entities/:name', apiMiddlewares, controllers.custom.deleteEntity);
 
 }
 
