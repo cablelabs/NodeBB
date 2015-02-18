@@ -75,7 +75,7 @@
 
 			var IE9Message = [];
 			IE9Message.push('<div class="alert alert-danger"><p>');
-			IE9Message.push('WARNING: This version of Internet Exporer (' + BrowserDetect.version + ') doesn\'t support many features of the portal. ');
+			IE9Message.push('WARNING: Internet Exporer ' + BrowserDetect.version + ' doesn\'t support many features of the portal. ');
 			IE9Message.push('Please upgrade your browser to the latest version of ');
 			IE9Message.push('<a href="//windows.microsoft.com/en-us/internet-explorer/ie-11-worldwide-languages">Internet Explorer</a>. ');
 			IE9Message.push('For the best user experience, we recommend using <a href="//www.google.com/chrome/browser/desktop/">');
