@@ -35,6 +35,18 @@ var customController = {
     uploads: require('./admin/uploads')
 };
 
+customController.index = function(req, res, next) {
+    res.render('custom/index');
+};
+
+customController.aboutCia = function(req, res, next) {
+    res.render('custom/about-cia');
+};
+
+customController.gettingStarted = function(req, res, next) {
+    res.render('custom/getting-started');
+};
+
 customController.entityMap = function(req, res, next) {
     res.render('custom/entity-map');
 };

@@ -18,9 +18,9 @@ var nconf = require('nconf'),
 
 function mainRoutes(app, middleware, controllers) {
 
-	setupPageRoute(app, '/', middleware, [], function(req, res, next) {
-		res.redirect('/index');
-	});
+	//setupPageRoute(app, '/', middleware, [], function(req, res, next) {
+	//	res.redirect('/index');
+	//});
 	//setupPageRoute(app, '/home', middleware, [], controllers.portal.landing);
 	//setupPageRoute(app, '/documentation', middleware, [], controllers.portal.documentation);
 
@@ -146,9 +146,6 @@ module.exports = function(app, middleware) {
 	feedRoutes(router, middleware, controllers);
 	pluginRoutes(router, middleware, controllers);
 
-	// Custom routes
-	custom(router, middleware, controllers);
-
 	/**
 	* Every view has an associated API route.
 	*
@@ -170,6 +167,9 @@ module.exports = function(app, middleware) {
 	if (process.env.NODE_ENV === 'development') {
 		require('./debug')(app, middleware, controllers);
 	}
+
+	// Custom routes
+	custom(router, middleware, controllers);
 
 	app.all(relativePath + '/secured/*', middleware.redirectToLoginIfGuest);
 	app.use(relativePath + '/secured', express.static(path.join(__dirname, '../../', 'public/secured')));

@@ -2,8 +2,17 @@
 
 
 function mainRoutes(app, middleware, controllers) {
-    //var middlewares = [middleware.checkIfConfirmed, middleware.incrementPageViews, middleware.updateLastOnlineTime];
-    var middlewares = [];
+    var middlewares = [middleware.incrementPageViews, middleware.updateLastOnlineTime];
+    //var middlewares = [];
+
+    app.get('/index', middleware.buildHeader, middlewares, function(req, res, next) {
+    	res.redirect('/');
+    });
+
+    app.get('/', middleware.buildHeader, middlewares, controllers.custom.index);
+
+    app.get('/about-cia', middleware.buildHeader, middlewares, controllers.custom.aboutCia);
+    app.get('/getting-started', middleware.buildHeader, middlewares, controllers.custom.gettingStarted);
 
     app.get('/entity-map', middleware.buildHeader, middlewares, controllers.custom.entityMap);
     app.get('/documentation', middleware.buildHeader, middlewares, controllers.custom.documentation);

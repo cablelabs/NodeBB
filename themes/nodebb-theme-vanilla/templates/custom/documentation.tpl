@@ -21,14 +21,14 @@
 
 <div class="swagger-section">
 
-<!--<div id='header'>-->
-<div class="swagger-ui-wrap">
-    <form id='api_selector'>
-    </form>
-</div>
-<!--</div>-->
+    <!--<div id='header'>-->
+    <div class="swagger-ui-wrap">
+        <form id='api_selector'>
+        </form>
+    </div>
+    <!--</div>-->
 
-<div id="message-bar" class="swagger-ui-wrap">&nbsp;</div>
+    <div id="message-bar" class="swagger-ui-wrap">&nbsp;</div>
 
-<div id="swagger-ui-container" class="swagger-ui-wrap"></div>
+    <div id="swagger-ui-container" class="swagger-ui-wrap"></div>
 </div>
