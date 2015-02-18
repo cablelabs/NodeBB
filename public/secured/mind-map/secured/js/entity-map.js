@@ -552,6 +552,7 @@
         $.when($.ajax({url: '/secured/mind-map/assets/links-new-format.json'}))
             .done(function (graph_data) {
                 $('.spinner').hide();
+                $('.loading-msg').hide();
                 init(graph_data);
             })
             .fail(function() {

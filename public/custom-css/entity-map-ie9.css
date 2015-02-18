@@ -407,3 +407,7 @@
   #help-tutorial { left: 30%; top: 200px;}
   #help-trail { left: 30%; top: 200px;}
 }
+
+.loading-msg {
+  text-align: center;
+}
