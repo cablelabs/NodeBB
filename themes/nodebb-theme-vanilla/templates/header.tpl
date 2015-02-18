@@ -92,10 +92,11 @@
 				}
 				var IE9Message = [];
 				IE9Message.push('<div class="alert alert-danger"><p>');
-				IE9Message.push('This version of Internet Exporer doesn\'t support all features on the portal.<br>');
+				IE9Message.push('WARNING: This version of Internet Exporer doesn\'t support all features of the portal. ');
 				IE9Message.push('Please upgrade your browser to the latest version of ');
-				IE9Message.push('<a href="//windows.microsoft.com/en-us/internet-explorer/ie-11-worldwide-languages">Internet Explorer</a>');
-				IE9Message.push('We recommend using <a href="//www.google.com/chrome/browser/desktop/">Google Chrome <img src="{relative_path}/images/chrome.png"</a> for the best experience.</p>');
+				IE9Message.push('<a href="//windows.microsoft.com/en-us/internet-explorer/ie-11-worldwide-languages">Internet Explorer</a>. ');
+				IE9Message.push('For the best user experience, we recommend using <a href="//www.google.com/chrome/browser/desktop/">');
+				IE9Message.push('<img src="{relative_path}/images/chrome.png" style="width: 2.5em; height: 2.5em;"/></a>');
 
 				if (!hasFlash) {
 					IE9Message.push('<p>To view the portal with Internet Explorer 9, please install <a href="//get.adobe.com/flashplayer/otherversions/">Flash Player</a></p>');
