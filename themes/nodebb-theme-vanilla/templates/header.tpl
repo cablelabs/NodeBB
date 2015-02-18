@@ -81,8 +81,8 @@
 				  }
 				}
 				if (!hasFlash) {
-					document.write('<p class="alert alert-danger">This website requires Flash Player if viewed in Internet Explorer 9.  Please update your browser
-						or install <a href="#">Flash Player</a></p>')
+					document.write('<p class="alert alert-danger">This website requires Flash Player if viewed in Internet Explorer 9.' +
+						'Please update your browser or install <a href="//get.adobe.com/flashplayer/otherversions/">Flash Player</a></p>')
 				}
 			}
 		}
