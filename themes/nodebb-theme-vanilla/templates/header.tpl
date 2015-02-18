@@ -76,18 +76,23 @@
 
 	<!-- [if IE 9]>
 		<script>
-		var hasFlash = false;
-		try {
-		  var fo = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
-		  if(fo) hasFlash = true;
-		}catch(e){
-		if(navigator.mimeTypes ["application/x-shockwave-flash"] != undefined) 
-		    hasFlash = true;
-		}
-		if (!hasFlash) {
-			document.write('<p class="alert alert-danger">This website requires Flash Player if viewed in Internet Explorer 9.  Please update your browser
-			or install <a href="#">Flash Player</a></p>')
-		}
+			var hasFlash = false;
+			try {
+			  var fo = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
+			  if (fo) {
+			    hasFlash = true;
+			  }
+			} catch (e) {
+			  if (navigator.mimeTypes
+			        && navigator.mimeTypes['application/x-shockwave-flash'] != undefined
+			        && navigator.mimeTypes['application/x-shockwave-flash'].enabledPlugin) {
+			    hasFlash = true;
+			  }
+			}
+			if (!hasFlash) {
+				document.write('<p class="alert alert-danger">This website requires Flash Player if viewed in Internet Explorer 9.  Please update your browser
+				or install <a href="#">Flash Player</a></p>')
+			}
 		</script>
 	<![endif] -->
 
