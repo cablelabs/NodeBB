@@ -74,8 +74,9 @@
 		</p>
 	<![endif] -->
 
-	<!-- [if IE 9]>
+	<!--[if IE]>
 		<script>
+			console.log('running flash detection script');
 			var hasFlash = false;
 			try {
 			  var fo = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
@@ -94,7 +95,7 @@
 				or install <a href="#">Flash Player</a></p>')
 			}
 		</script>
-	<![endif] -->
+	<![endif]-->
 
 	<div class="container-fluid parent-container" id="content">
 	  <!-- IMPORT partials/noscript/warning.tpl -->
