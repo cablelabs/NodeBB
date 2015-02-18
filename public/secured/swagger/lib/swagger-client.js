@@ -329,8 +329,7 @@ SwaggerClient.prototype.build = function() {
   this.progress(
     'fetching resource list: ' +
     this.url +
-    '<div class="spinner"><!--[if IE]>Loading Entity Map...<![endif]-->' +
-    '<!--[if !IE]> --><div class="dot1"></div><div class="dot2"></div><!-- <![endif]--></div>');
+    '<!--[if !IE]> --><div class="spinner"><div class="dot1"></div><div class="dot2"></div></div><![endif]-->');
   var obj = {
     useJQuery: this.useJQuery,
     url: this.url,

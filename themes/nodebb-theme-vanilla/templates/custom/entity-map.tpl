@@ -68,10 +68,12 @@
     </div> <!-- End Graph Settings -->
 
     <!-- Spinner -->
+    <!--[if IE]>Loading Entity Map...<![endif]-->
+    <!--[if !IE]> -->
     <div class="spinner">
-      <!--[if IE]>Loading Entity Map...<![endif]-->
-      <!--[if !IE]> --><div class="dot1"></div><div class="dot2"></div><!-- <![endif]-->
+      <div class="dot1"></div><div class="dot2"></div>
     </div>
+    <!-- <![endif]-->
 
     <!-- Graph -->
     <div id="graph"></div>
