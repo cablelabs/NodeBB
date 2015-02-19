@@ -36,7 +36,7 @@ var customController = {
 };
 
 customController.index = function(req, res, next) {
-    res.render('custom/index');
+    res.render('custom/home');
 };
 
 customController.aboutCia = function(req, res, next) {

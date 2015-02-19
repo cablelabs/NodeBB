@@ -151,6 +151,9 @@ module.exports = function(app, middleware) {
 	*
 	*/
 
+	// Custom routes
+	custom(router, middleware, controllers);
+
 	mainRoutes(router, middleware, controllers);
 	staticRoutes(router, middleware, controllers);
 	topicRoutes(router, middleware, controllers);
@@ -167,9 +170,6 @@ module.exports = function(app, middleware) {
 	if (process.env.NODE_ENV === 'development') {
 		require('./debug')(app, middleware, controllers);
 	}
-
-	// Custom routes
-	custom(router, middleware, controllers);
 
 	app.all(relativePath + '/secured/*', middleware.redirectToLoginIfGuest);
 	app.use(relativePath + '/secured', express.static(path.join(__dirname, '../../', 'public/secured')));
