@@ -1,6 +1,0 @@
-node_modules
-.vimrc
-.idea
-src/*.js
-test/*.js
-*.njsproj
