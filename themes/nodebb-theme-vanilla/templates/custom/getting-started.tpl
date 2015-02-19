@@ -1,11 +1,3 @@
-<script type="text/javascript">
-    $('#guideline-tabs a').on('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        $(this).tab('show');
-    });
-</script>
-
 <div id="get-started" class="info-page">
     <!-- Header -->
     <div class="row">
@@ -209,3 +201,11 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    $('#guideline-tabs a').on('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $(this).tab('show');
+    });
+</script>
