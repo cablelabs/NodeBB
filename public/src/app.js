@@ -524,10 +524,6 @@ var socket,
 
 			handleSearch();
 
-			$('#logout-link').on('click', app.logout);
-
-			$('.logout').on('click', app.logout);
-
 			$window.blur(function(){
 				app.isFocused = false;
 			});
@@ -586,6 +582,19 @@ var socket,
 			require(['admin'], function(Admin) {
 				Admin.init();
 			});
+
+			var logoutLi = $('#logout-link');
+
+			console.log(logoutLi);
+
+			logoutLi.on('click', function (e) {
+				e.preventDefault();
+				e.stopPropagation();
+				console.log('logout clicked');
+				app.logout();
+			});
+
+			$('.logout').on('click', app.logout);
 		});
 	};
 
