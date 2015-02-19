@@ -166,9 +166,6 @@
                             <li>
                                 <a id="user-profile-link" href="{relative_path}/user/{user.userslug}"><i class="fa fa-circle status {user.status}"></i> <span id="user-header-name">{user.username}</span></a>
                             </li>
-                            <li id="logout-link">
-                                <a href="#">[[global:logout]]</a>
-                            </li>
                             <li role="presentation" class="divider"></li>
                             <li>
                                 <a href="#" class="user-status" data-status="online"><i class="fa fa-circle status online"></i><span> [[global:online]]</span></a>
@@ -181,6 +178,10 @@
                             </li>
                             <li>
                                 <a href="#" class="user-status" data-status="offline"><i class="fa fa-circle status offline"></i><span> [[global:invisible]]</span></a>
+                            </li>
+                            <li role="presentation" class="divider"></li>
+                            <li id="logout-link">
+                                <a href="#"><i class="fa fa-fw fa-sign-out"></i><span>[[global:logout]]</span></a>
                             </li>
                         </ul>
                     </li>
