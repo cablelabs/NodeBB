@@ -7,9 +7,9 @@ function mainRoutes(app, middleware, controllers) {
     middlewares = middlewares.concat([middleware.redirectToLoginIfGuest]);
 
     app.get('/', middleware.buildHeader, middlewares, function(req, res, next) {
-    	res.redirect('/index');
+    	res.redirect('/home');
     });
-    app.get('/index', middleware.buildHeader, middlewares, controllers.custom.index);
+    app.get('/home', middleware.buildHeader, middlewares, controllers.custom.index);
 
     app.get('/about-cia', middleware.buildHeader, middlewares, controllers.custom.aboutCia);
     app.get('/getting-started', middleware.buildHeader, middlewares, controllers.custom.gettingStarted);
