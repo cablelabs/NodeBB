@@ -6,7 +6,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <div class="forum-logo">
-                    <a href="{relative_path}/index">
+                    <a href="{relative_path}/home">
                         <img class="{brand:logo:display}" src="{brand:logo}" />
                         <span><strong>DEVELOPER PORTAL</strong></span>
                     </a>
