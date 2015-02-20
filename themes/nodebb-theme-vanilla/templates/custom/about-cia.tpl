@@ -123,7 +123,7 @@
                                 <p class="tab-desc" style="padding-top: .5em; margin-bottom: 1em;">
                                     With every engagement the goal is to accelerate development and deployment while creating the extensible solution to support future operational demand and support. The illustartion below depicts how CableLabs works with participating Members and Suppliers in lockstep through their projects:
                                 </p>
-                                <img src="images/about-cia/Engagement-Process-Visual.png" alt="Engagement Process">
+                                <img src="images/about-cia/Engagement-Process-Visual.png" alt="Engagement Process" class="large-visual">
                                 <h3>How the Engagement Works</h3>
                                 <ul class="red-dot-list">
                                     <li>
