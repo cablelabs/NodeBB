@@ -176,8 +176,13 @@
     }
 
     .info-page .tab-content img:not(.icon) {
-      width: 100%;
       max-width: 500px;
+      width: 100%;
+      display: block;
+    }
+
+    .img-block, .tab-title-img {
+      display: block;
     }
 
     .info-page .tab-content img.long-img {

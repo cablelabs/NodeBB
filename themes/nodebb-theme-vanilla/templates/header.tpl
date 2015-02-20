@@ -31,7 +31,10 @@
 		        test: Modernizr.flexbox,
 		        yep: '{relative_path}/custom-css/entity-map.css?{css-buster}',
 		        nope: '{relative_path}/custom-css/entity-map-ie9.css?{css-buster}'
-		    }
+		    }//,{
+		    //     test: Modernizr.websockets,
+		    //     nope: '{relative_path}/custom-css/entity-map-ie9.css?{css-buster}'
+		    // }
 		]);
 	</script>
 	
