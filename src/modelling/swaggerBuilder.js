@@ -17,7 +17,7 @@ var swaggerFile = {
     "host": "cable-api.herokuapp.com",
     "basePath": "/api-docs",
     "schemes": [
-        "http"
+        "https"
     ]
 };
 
@@ -66,7 +66,9 @@ function getDefinitions(callback) {
     entityModel.getAllEntityFields(['displayName', 'definition'], function(err, entitysData) {
         var entities = {};
         entitysData.forEach(function(item, index) {
-            entities[item.displayName] = JSON.parse(item.definition);
+            if(item.definition !== 'undefined' && item.definition !== '') {
+                entities[item.displayName] = JSON.parse(item.definition);
+            }
         });
         callback(null, entities);
     });

@@ -15833,6 +15833,7 @@
       }
     },
     "CMTS": {
+      "id": "CMTS",
       "type": "object",
       "properties": {
         "id": {
@@ -15920,6 +15921,12 @@
           "items": {
             "type": "object",
             "$ref": "CableModemChannel"
+          }
+        },
+        "ipAddressSummary": {
+          "type" : "array",
+          "items": {
+            "$ref": "IpAddress"
           }
         }
       }
@@ -17262,6 +17269,12 @@
         },
         "slot": {
           "$ref": "Slot"
+        },
+        "ipAddressSummary": {
+          "type": "array",
+          "items": {
+            "$ref": "IpAddress"
+          }
         }
       }
     },
@@ -18514,6 +18527,112 @@
           "type": "string"
         },
         "preferenceCategoryId": {
+          "type": "string"
+        }
+      }
+    },
+    "ProductSpecificationSummary": {
+      "id": "ProductSpecificationSummary",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "type": "object",
+          "$ref": "Link"
+        },
+        "name": {
+          "type": "string"
+        },
+        "productNumber": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "lifecycleStatus": {
+          "type": "string"
+        }
+      }
+    },
+    "ProductSpecification": {
+      "id": "ProductSpecification",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "link": {
+          "type": "object",
+          "$ref": "Link"
+        },
+        "name": {
+          "type": "string"
+        },
+        "productNumber": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "lifecycleStatus": {
+          "type": "string"
+        },
+        "brand": {
+          "type": "string"
+        },
+        "validFor": {
+          "type": "object",
+          "$ref": "TimePeriod"
+        },
+        "composite": {
+          "type": "boolean"
+        },
+        "attribute": {
+          "type": "string"
+        },
+        "productSpecifications": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "ProductSpecificationSummary"
+          }
+        },
+        "characteristics": {
+          "type": "array",
+          "items": {
+            "$ref": "Characteristic"
+          }
+        },
+        "lineOfBusiness": {
+          "type": "object",
+          "$ref": "ProductLineOfBusiness"
+        },
+        "productSpecificationTypes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "ProductSpecificationType"
+          }
+        },
+        "products": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "ProductSummary"
+          }
+        }
+      }
+    },
+    "ProductSpecificationType": {
+      "id": "ProductSpecificationType",
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "name": {
           "type": "string"
         }
       }
