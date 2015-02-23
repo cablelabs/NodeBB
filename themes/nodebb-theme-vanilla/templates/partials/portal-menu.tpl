@@ -121,18 +121,24 @@
                     <li>
                         <!-- IF function.displayUsersLink -->
                         <a href="{relative_path}/users" title="[[global:header.users]]">
-                            <i class="fa fa-fw fa-users"></i><span class="visible-xs-inline"> [[global:header.users]]</span>
+                            <i class="fa fa-fw fa-user"></i><span class="visible-xs-inline"> [[global:header.users]]</span>
                         </a>
                         <!-- ENDIF function.displayUsersLink -->
                     </li>
 
-                    <!-- IF isAdmin -->
                     <li>
-                        <a href="{relative_path}/designer">
-                            <i class="fa fa-fw fa-clock-o" title="API Designer"></i>
-                            <span class="visible-xs-inline">API Designer</span>
+                        <a href="{relative_path}/groups" title="[[global:header.groups]]">
+                            <i class="fa fa-fw fa-group"></i><span class="visible-xs-inline"> [[global:header.groups]]</span>
                         </a>
                     </li>
+
+                    <!-- IF isAdmin -->
+                    <!--<li>-->
+                        <!--<a href="{relative_path}/designer">-->
+                            <!--<i class="fa fa-fw fa-clock-o" title="API Designer"></i>-->
+                            <!--<span class="visible-xs-inline">API Designer</span>-->
+                        <!--</a>-->
+                    <!--</li>-->
                     <!-- ENDIF isAdmin -->
 
                     <!-- IF isAdmin -->
