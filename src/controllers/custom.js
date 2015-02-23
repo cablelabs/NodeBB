@@ -131,7 +131,6 @@ customController.deletePath = function(req, res, next) {
 };
 
 customController.getEntities = function(req, res, next) {
-
     var query = req.query.fields;
     if(query) { // query handles ?fields=field1,field2
         var fields = query.split(',');
@@ -149,17 +148,15 @@ customController.getEntities = function(req, res, next) {
             res.send(entitiesData);
         });
     }
-
 };
 
 customController.getEntityByName = function(req, res, next) {
     var name = req.params.name;
     entity.getUidByName(name, function(err, uid) {
-        entity.getEntityData(uid, function(err, entities) {
+        entity.getEntities([uid], function(err, entities) {
             if(err) {
                 next(err);
             }
-            console.log(JSON.parse(entities.definition));
             res.send(entities);
         });
     });

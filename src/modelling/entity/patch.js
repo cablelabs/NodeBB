@@ -30,11 +30,12 @@ module.exports = function(Entity) {
 
         function updateField(field, next) {
 
+            // Check if definition is object, if so stringify. If already string it will be taken care by usual routine.
             if(field === 'definition') {
                 if(typeof data[field] === 'object') {
                     var definitionString = JSON.stringify(data[field]);
+                    return Entity.setEntityField(uid, 'definition', definitionString, next);
                 }
-                return Entity.setEntityField(uid, 'definition', definitionString, next);
             }
 
             // Update updatedate first, no matter what happens. It has been touched when it gets here.

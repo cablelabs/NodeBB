@@ -86,7 +86,7 @@ var	async = require('async'),
             }
         });
 
-        plugins.fireHook('filter:users.get', entities, callback);
+        plugins.fireHook('filter:entities.get', entities, callback);
     }
 
     Entity.setEntityField = function(uid, field, value, callback) {
@@ -118,8 +118,10 @@ var	async = require('async'),
                 if (!entity) {
                     return;
                 }
+                if(typeof entity.definition === 'string') {
+                    entity.definition = JSON.parse(entity.definition);
+                }
             });
-
             callback(err, results.entityData);
         });
     };
