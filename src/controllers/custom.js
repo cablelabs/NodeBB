@@ -159,6 +159,7 @@ customController.getEntityByName = function(req, res, next) {
             if(err) {
                 next(err);
             }
+            console.log(JSON.parse(entities.definition));
             res.send(entities);
         });
     });

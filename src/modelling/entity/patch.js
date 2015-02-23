@@ -30,6 +30,13 @@ module.exports = function(Entity) {
 
         function updateField(field, next) {
 
+            if(field === 'definition') {
+                if(typeof data[field] === 'object') {
+                    var definitionString = JSON.stringify(data[field]);
+                }
+                return Entity.setEntityField(uid, 'definition', definitionString, next);
+            }
+
             // Update updatedate first, no matter what happens. It has been touched when it gets here.
             if(field === 'updatedate') {
                 return Entity.setEntityField(uid, 'updatedate', Date.now(), next);
