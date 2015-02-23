@@ -181,7 +181,9 @@
                             </li>
                             <li role="presentation" class="divider"></li>
                             <li id="logout-link">
-                                <a href="#"><i class="fa fa-fw fa-sign-out"></i><span>[[global:logout]]</span></a>
+                                <a href="#"><i class="fa fa-fw fa-sign-out"></i>
+                                <span> [[global:logout]]</span>
+                                </a>
                             </li>
                         </ul>
                     </li>
