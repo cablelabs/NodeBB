@@ -34,7 +34,7 @@
                 <div class="tab-pane active" id="access-model-info">
                     <div class="row clearfix">
                         <div class="col-sm-1 col-md-2">
-                            <img class="icon" src="images/getting-started/data-model-icon.png" />
+                            <img class="icon img-block" src="images/getting-started/data-model-icon.png" />
                         </div>
                         <div class="col-sm-11 col-md-10">
                             <h2>ACCESSING and INTERACTING with the MODEL INFORMATION</h2>
@@ -93,7 +93,7 @@
                 <div class="tab-pane" id="access-api">
                     <div class="row clearfix">
                         <div class="col-sm-1 col-md-2">
-                            <img class="icon" src="images/getting-started/api-icon.png" />
+                            <img class="icon img-block" src="images/getting-started/api-icon.png" />
                         </div>
                         <div class="col-sm-11 col-md-10">
                             <h2>ACCESSING &amp; INTERACTING with the APIs</h2>
@@ -149,13 +149,17 @@
                 <div class="tab-pane" id="entity-map">
                     <div class="row clearfix">
                         <div class="col-sm-1 col-md-2">
-                            <img class="icon" src="images/getting-started/entity-map-icon.png" />
+                            <img class="icon img-block" src="images/getting-started/entity-map-icon.png" />
                         </div>
                         <div class="col-sm-11 col-md-10">
                             <h2>INTERACTING with the ENTITY MAP</h2>
                             <div style="line-height: 1.5em;">
                                 <p class="tab-desc" style="padding-top: .5em">
                                     The <a href="/entity-map">Entity Map</a> is an interactive tool that allows you to navigate the relationships between entities, view the detailed descriptions and access the documentation directly from the map. Through the entity relationships you will get on understanding of the domain relationships for the underlying data model.
+                                </p>
+                                <p class="tab-desc" style="margin: 2em 0">
+                                    For more information about interacting with the entity map, please watch this 
+                                    <a href="http://youtu.be/32dmHyHAnSI">video tutorial</a>.
                                 </p>
                                 <p class="tab-desc" style="margin: 2em 0">
                                     The map provides you with the capabilities to:
@@ -179,20 +183,20 @@
                 <!-- COMMUNITY FORUMS TAB -->
                 <div class="tab-pane" id="forums">
                     <div class="col-sm-1 col-md-2">
-                        <img class="icon" src="images/getting-started/forum-icon.png" />
+                        <img class="icon img-block" src="images/getting-started/forum-icon.png" />
                     </div>
                     <div class="col-sm-11 col-md-10">
                         <h2>UTILIZING the COMMUNITY FORUMS</h2>
                         <div style="line-height: 1.5em;">
                             <p class="tab-desc" style="padding-top: .5em">
-                                The community forums allow you to interact with any user on the portal. While in the forums you can you will have the ability to inidvidually discuss topics with an individual user, or open your discussions for the entire user community.
+                                The community forums allow you to interact with any user on the portal. While in the forums you will have the ability to inidvidually discuss topics with an individual user, or open your discussions for the entire user community.
                             </p>
                             <h3>QUICK TIPS:</h3>
                             <ul class="red-dot-list" style="padding-bottom: 3em">
                                 <li><span>To notify specific users about a recent post, use ‘@’ followed by the user’s name to send a notification to that user.</span></li>
-                                <li><span>Have questions for the CableLabs Data & Information Architecture team? Use @dia-team to notify team members.</span></li>
+                                <li><span>Have questions for the CableLabs Data &amp; Information Architecture team? Use @dia-team to notify team members.</span></li>
                                 <li><span>Use the RSS Feed within each forum to subscribe in order to be notified of any new posts or comments. Only interested in a specific topic in a forum? Click the “watch” icon to follow specific topics.</span></li>
-                                <li><span>Update notification preferences under the “settings” section under your profile.</span></li>
+                                <li><span>Update notification preferences under the “settings” section of your profile.</span></li>
                             </ul>
                         </div>
                     </div>

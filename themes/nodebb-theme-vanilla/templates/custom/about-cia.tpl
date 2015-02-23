@@ -7,7 +7,7 @@
                 <h2>About Cable Information Architecture (CIA)</h2>
             </header>
             <p>
-                This section will provide you with an overview of what the CIA project is, how the engagement process with CableLabs works and what resources & tools are available.
+                This section will provide you with an overview of what the CIA project is, how the engagement process with CableLabs works and what resources &amp; tools are available.
             </p>
         </div>
     </div> <!-- end row -->
@@ -105,7 +105,7 @@
                             <img class="long-img" src="images/about-cia/Interface-Design-Visual.png"/>
                             <h4>Transition from Logical Design To Physical Design</h4>
                             <img class="long-img" src="images/about-cia/Transition-From-Logical-to-Physical-Visual.png"/>
-                            <h4>Implementation of Physical Rources</h4>
+                            <h4>Implementation of Physical Resources</h4>
                             <img class="long-img" src="images/about-cia/Implementation-Visual.png"/>
                         </div>
                     </div>
@@ -123,11 +123,11 @@
                                 <p class="tab-desc" style="padding-top: .5em; margin-bottom: 1em;">
                                     With every engagement the goal is to accelerate development and deployment while creating the extensible solution to support future operational demand and support. The illustartion below depicts how CableLabs works with participating Members and Suppliers in lockstep through their projects:
                                 </p>
-                                <img class="large-visual" src="images/about-cia/Engagement-Process-Visual.png" alt="Engagement Process">
+                                <img src="images/about-cia/Engagement-Process-Visual.png" alt="Engagement Process" class="large-visual">
                                 <h3>How the Engagement Works</h3>
                                 <ul class="red-dot-list">
                                     <li>
-                                        <span>Engagements start with a funded member project that fits within the scope of the focus of management and operations and projects that focus on new build or greenfield opportunities.</span>
+                                        <span>Engagements start with a funded member project that fits within the scope of management and operations and focuses on new system builds.</span>
                                     </li>
                                     <li>
                                         <span>Once the project has been identified, the CableLabs team works to ensure that 80% of the new development can be reused among the industry.</span>
@@ -136,10 +136,10 @@
                                         <span>A gap analysis is conducted to determine what artifacts can be reused and what extentions are required. This is where the development and deployment speed come into play.</span>
                                     </li>
                                     <li>
-                                        <span>The DIA team then works to map the existing artifacts into the members project. Development of new extensions are then applied and capurted for industry reuse.</span>
+                                        <span>The DIA team then works to map the existing artifacts into the Member's project. Development of new extensions are then applied and capurted for industry reuse.</span>
                                     </li>
                                     <li>
-                                        <span>Once the member project is to be released into a production environment the DIA team works in conjunction with the members to ensure a successful launch.</span>
+                                        <span>Once the project is ready to launch into a production environment the DIA team works in conjunction with the members to ensure a successful launch.</span>
                                     </li>
                                 </ul>
                             </div>
