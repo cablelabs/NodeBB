@@ -17,7 +17,7 @@ var swaggerFile = {
     "host": "cable-api.herokuapp.com",
     "basePath": "/api-docs",
     "schemes": [
-        "http"
+        "https"
     ]
 };
 
