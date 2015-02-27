@@ -15,7 +15,7 @@
                                     CABLELABS DIA DEVELOPER PORTAL <small>FOR WHAT’S HAPPENING NEXT IN THE CABLE INDUSTRY</small>
                                 </h2>
                                 <div class="splash-lead">
-                                    <p>The Portal gives industry developers access to APIs related to CableLabs Projects, and a community to share ideas on what’s next.</p>
+                                    <p>The DIA Developer Portal gives industry developers access to APIs related to CableLabs Projects, and a community to share ideas on what’s next.</p>
                                     <p> <a href="{relative_path}/getting-started" class="btn btn-danger">Get Started</a></p>
                                 </div>
                             </div>

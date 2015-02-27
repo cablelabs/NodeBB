@@ -8,7 +8,7 @@
                 <div class="forum-logo">
                     <a href="{relative_path}/#">
                         <img class="{brand:logo:display}" src="{brand:logo}" />
-                        <span><strong>DEVELOPER PORTAL</strong></span>
+                        <span><strong>DIA DEVELOPER PORTAL</strong></span>
                     </a>
                     <!--<!-- IF showSiteTitle -->-->
                     <!--<a href="{relative_path}/">-->
@@ -187,7 +187,9 @@
                             </li>
                             <li role="presentation" class="divider"></li>
                             <li id="logout-link">
-                                <a href="#"><i class="fa fa-fw fa-sign-out"></i><span>[[global:logout]]</span></a>
+                                <a href="#"><i class="fa fa-fw fa-sign-out"></i>
+                                <span> [[global:logout]]</span>
+                                </a>
                             </li>
                         </ul>
                     </li>
