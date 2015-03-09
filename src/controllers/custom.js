@@ -163,11 +163,20 @@ customController.getEntityByName = function(req, res, next) {
 };
 
 customController.getSchemaByName = function(req, res, next) {
-    var name = req.params.name;
+    var name    = req.params.name;
+    var view   = req.query.view;
+    function doValidation() {
+        if(view != null && view === 'validation') {
+            return true;
+        }
+        return false;
+    }
     var nameSpacePrfix = req.connection.encrypted ? "https://" : "http://" + req.get('host') + "/modelling/api/schema/";
     var schema = {
-        $schema : "http://json-schema.org/draft-04/schema#",
-        id      : nameSpacePrfix + name
+        $schema     : "http://json-schema.org/draft-04/schema#",
+        id          : nameSpacePrfix + name,
+        required    : [],
+        properties  : {}
     };
 
     entity.getUidByName(name.toLowerCase(), function(err, uid) {
@@ -178,6 +187,9 @@ customController.getSchemaByName = function(req, res, next) {
             var properties = entities[0].definition.properties;
 
             Object.keys(properties).forEach(function(key) {
+                if(doValidation()) {
+                    schema.required.push(key);
+                }
                 var val = properties[key];
                 if(JSON.stringify(val).indexOf("$ref") > 0) {
                     var refVal  = val["$ref"];
