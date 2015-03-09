@@ -18,8 +18,8 @@ function mainRoutes(app, middleware, controllers) {
     app.get('/documentation', middleware.buildHeader, middlewares, controllers.custom.documentation);
 
     var apiMiddlewares = [middleware.incrementPageViews, middleware.updateLastOnlineTime];
-    // path routes
 
+    // path routes
     var modellingPrefix = '/modelling';
     app.get(modellingPrefix + '/api/paths', apiMiddlewares, controllers.custom.getPaths);
     app.get(modellingPrefix + '/api/paths/:uid', apiMiddlewares, controllers.custom.getPathById);
@@ -33,6 +33,9 @@ function mainRoutes(app, middleware, controllers) {
     app.post(modellingPrefix + '/api/entities', controllers.custom.createEntity);
     app.patch(modellingPrefix + '/api/entities/:name', apiMiddlewares, controllers.custom.patchEntity);
     app.delete(modellingPrefix + '/api/entities/:name', apiMiddlewares, controllers.custom.deleteEntity);
+
+    //schema routes
+    app.get(modellingPrefix + '/api/schema/:name', apiMiddlewares, controllers.custom.getSchemaByName);
 
 }
 

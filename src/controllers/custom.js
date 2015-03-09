@@ -162,6 +162,43 @@ customController.getEntityByName = function(req, res, next) {
     });
 };
 
+customController.getSchemaByName = function(req, res, next) {
+    var name = req.params.name;
+    var nameSpacePrfix = req.connection.encrypted ? "https://" : "http://" + req.get('host') + "/modelling/api/schema/";
+    var schema = {
+        $schema : "http://json-schema.org/draft-04/schema#",
+        id      : nameSpacePrfix + name
+    };
+
+    entity.getUidByName(name.toLowerCase(), function(err, uid) {
+        entity.getEntities([uid], function(err, entities) {
+            if(err) {
+                next(err);
+            }
+            var properties = entities[0].definition.properties;
+
+            Object.keys(properties).forEach(function(key) {
+                var val = properties[key];
+                if(JSON.stringify(val).indexOf("$ref") > 0) {
+                    var refVal  = val["$ref"];
+                    var typeVal = val["type"];
+
+                    if(refVal != undefined) {
+                        val["$ref"] = nameSpacePrfix + refVal;
+                    } else if(typeVal == 'array') {
+                        val["items"].$ref = nameSpacePrfix + val["items"].$ref;
+                    }
+                }
+            });
+
+            schema.properties = properties;
+
+            res.setHeader("Content-type", "application/json");
+            res.send(schema);
+        });
+    });
+};
+
 customController.createEntity = function(req, res, next) {
 
     var entityData = {};
