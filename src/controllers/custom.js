@@ -171,44 +171,50 @@ customController.getSchemaByName = function(req, res, next) {
         }
         return false;
     }
-    var nameSpacePrfix = req.connection.encrypted ? "https://" : "http://" + req.get('host') + "/modelling/api/schema/";
+    var nameSpacePrefix = req.connection.encrypted ? "https://" : "http://" + req.get('host') + "/modelling/api/schema/";
     var schema = {
         $schema                 : "http://json-schema.org/draft-04/schema#",
-        id                      : nameSpacePrfix + name,
+        id                      : nameSpacePrefix + name,
         required                : [],
         additionalProperties    : false,
         properties              : {}
     };
 
     entity.getUidByName(name.toLowerCase(), function(err, uid) {
-        entity.getEntities([uid], function(err, entities) {
-            if(err) {
-                next(err);
-            }
-            var properties = entities[0].definition.properties;
-
-            Object.keys(properties).forEach(function(key) {
-                if(doValidation()) {
-                    schema.required.push(key);
+         if(uid != null) {
+            entity.getEntities([uid], function(err, entities) {
+                if(err) {
+                    next(err);
                 }
-                var val = properties[key];
-                if(JSON.stringify(val).indexOf("$ref") > 0) {
-                    var refVal  = val["$ref"];
-                    var typeVal = val["type"];
+                var definition = entities[0].definition;
+                if(definition != null && definition.properties != null) {
+                    var properties = definition.properties;
+                    Object.keys(properties).forEach(function(key) {
+                        if(doValidation()) {
+                            schema.required.push(key);
+                        }
+                        var val = properties[key];
+                        if(JSON.stringify(val).indexOf("$ref") > 0) {
+                            var refVal  = val["$ref"];
+                            var typeVal = val["type"];
 
-                    if(refVal != undefined) {
-                        val["$ref"] = nameSpacePrfix + refVal;
-                    } else if(typeVal == 'array') {
-                        val["items"].$ref = nameSpacePrfix + val["items"].$ref;
-                    }
+                            if(refVal != undefined) {
+                                val["$ref"] = nameSpacePrefix + refVal;
+                            } else if(typeVal == 'array') {
+                                val["items"].$ref = nameSpacePrefix + val["items"].$ref;
+                            }
+                        }
+                    });
+                    schema.properties = properties;
                 }
+
+                res.setHeader("Content-type", "application/json");
+                res.send(schema);
             });
-
-            schema.properties = properties;
-
-            res.setHeader("Content-type", "application/json");
-            res.send(schema);
-        });
+         } else {
+             res.setHeader("Content-type", "application/json");
+             res.send(schema);
+         }
     });
 };
 
