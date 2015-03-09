@@ -173,10 +173,11 @@ customController.getSchemaByName = function(req, res, next) {
     }
     var nameSpacePrfix = req.connection.encrypted ? "https://" : "http://" + req.get('host') + "/modelling/api/schema/";
     var schema = {
-        $schema     : "http://json-schema.org/draft-04/schema#",
-        id          : nameSpacePrfix + name,
-        required    : [],
-        properties  : {}
+        $schema                 : "http://json-schema.org/draft-04/schema#",
+        id                      : nameSpacePrfix + name,
+        required                : [],
+        additionalProperties    : false,
+        properties              : {}
     };
 
     entity.getUidByName(name.toLowerCase(), function(err, uid) {
