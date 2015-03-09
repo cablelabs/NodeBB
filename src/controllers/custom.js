@@ -176,7 +176,6 @@ customController.getSchemaByName = function(req, res, next) {
         $schema                 : "http://json-schema.org/draft-04/schema#",
         id                      : nameSpacePrefix + name,
         required                : [],
-        additionalProperties    : false,
         properties              : {}
     };
 
@@ -208,6 +207,9 @@ customController.getSchemaByName = function(req, res, next) {
                     schema.properties = properties;
                 }
 
+                if(doValidation()) {
+                    schema.additionalProperties = false
+                }
                 res.setHeader("Content-type", "application/json");
                 res.send(schema);
             });
