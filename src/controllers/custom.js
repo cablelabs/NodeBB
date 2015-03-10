@@ -163,6 +163,9 @@ customController.getEntityByName = function(req, res, next) {
 };
 
 customController.getSchemaByName = function(req, res, next) {
+
+    console.log(req.protocol);
+
     var name    = req.params.name;
     var view   = req.query.view;
     function doValidation() {
@@ -171,7 +174,7 @@ customController.getSchemaByName = function(req, res, next) {
         }
         return false;
     }
-    var nameSpacePrefix = req.connection.encrypted ? "https://" : "http://" + req.get('host') + "/modelling/api/schema/";
+    var nameSpacePrefix = req.protocol + "://" + req.get('host') + "/modelling/api/schema/";
     var schema = {
         $schema                 : "http://json-schema.org/draft-04/schema#",
         id                      : nameSpacePrefix + name,
