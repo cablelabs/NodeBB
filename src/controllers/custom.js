@@ -171,7 +171,7 @@ customController.getSchemaByName = function(req, res, next) {
         }
         return false;
     }
-    var nameSpacePrefix = req.protocol + "://" + req.get('host') + "/modelling/api/schema/";
+    var nameSpacePrefix = req.get('host') + "/modelling/api/schema/";
     var schema = {
         $schema                 : "http://json-schema.org/draft-04/schema#",
         id                      : nameSpacePrefix + name,
