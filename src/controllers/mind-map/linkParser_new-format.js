@@ -4,8 +4,8 @@ var request = require('request'),
   path  = require('path'),
   config  = require(path.join(__dirname + '/settings.json'));
 
-var entityModel  = require('.././entity'),
-    pathModel    = require('.././path');
+var entityModel  = require('../../modeling/entity'),
+    pathModel    = require('../../modeling/path');
 
 var entity_names = {};
 

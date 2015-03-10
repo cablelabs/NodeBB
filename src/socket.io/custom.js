@@ -14,7 +14,7 @@
 //    meta = require('../meta'),
 
 var linkParser = require('../controllers/mind-map/linkParser_new-format'),
-    swaggerBuilder = require('./swaggerBuilder');
+    swaggerBuilder = require('../modeling/swaggerBuilder');
 
 var SocketCustom = {};
 
