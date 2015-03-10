@@ -20,7 +20,7 @@ function mainRoutes(app, middleware, controllers) {
     var apiMiddlewares = [middleware.incrementPageViews, middleware.updateLastOnlineTime];
 
     // path routes
-    var modellingPrefix = '/modelling';
+    var modellingPrefix = '/modeling';
     app.get(modellingPrefix + '/api/paths', apiMiddlewares, controllers.custom.getPaths);
     app.get(modellingPrefix + '/api/paths/:uid', apiMiddlewares, controllers.custom.getPathById);
     app.post(modellingPrefix + '/api/paths', controllers.custom.createPath);
@@ -33,6 +33,20 @@ function mainRoutes(app, middleware, controllers) {
     app.post(modellingPrefix + '/api/entities', controllers.custom.createEntity);
     app.patch(modellingPrefix + '/api/entities/:name', apiMiddlewares, controllers.custom.patchEntity);
     app.delete(modellingPrefix + '/api/entities/:name', apiMiddlewares, controllers.custom.deleteEntity);
+
+    // Scope path routes
+    app.get(modellingPrefix + '/api/scope/paths', apiMiddlewares, controllers.custom.getScopePaths);
+    //app.get(modellingPrefix + '/api/scope/paths/:uid', apiMiddlewares, controllers.custom.getPathById);
+    app.post(modellingPrefix + '/api/scope/paths', controllers.custom.createScopePath);
+    app.patch(modellingPrefix + '/api/scope/paths/:uid', apiMiddlewares, controllers.custom.patchPath);
+    //app.delete(modellingPrefix + '/api/scope/paths/:uid', apiMiddlewares, controllers.custom.deletePath);
+
+    // Scope entity routes
+    app.get(modellingPrefix + '/api/scope/entities', apiMiddlewares, controllers.custom.getScopeEntities);
+    app.get(modellingPrefix + '/api/scope/entities/:name', apiMiddlewares, controllers.custom.getScopeEntityByName);
+    app.post(modellingPrefix + '/api/scope/entities', controllers.custom.createScopeEntity);
+    app.patch(modellingPrefix + '/api/scope/entities/:name', apiMiddlewares, controllers.custom.patchScopeEntity);
+    //app.delete(modellingPrefix + '/api/scope/entities/:name', apiMiddlewares, controllers.custom.deleteEntity);
 
     //schema routes
     app.get(modellingPrefix + '/api/schema/:name', apiMiddlewares, controllers.custom.getSchemaByName);

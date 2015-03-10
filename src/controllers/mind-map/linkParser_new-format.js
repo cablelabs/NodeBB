@@ -4,8 +4,8 @@ var request = require('request'),
   path  = require('path'),
   config  = require(path.join(__dirname + '/settings.json'));
 
-var entityModel  = require('../../modelling/entity'),
-    pathModel    = require('../../modelling/path');
+var entityModel  = require('.././entity'),
+    pathModel    = require('.././path');
 
 var entity_names = {};
 
@@ -34,6 +34,10 @@ module.exports.init = function (callback) {
     }
   });
 };
+
+//function refreshSwaggerFile(callback) {
+//  require('../../modeling/swaggerBuilder').init(callback);
+//}
 
 function getSwaggerFile (callback) {
 

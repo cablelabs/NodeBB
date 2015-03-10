@@ -28,6 +28,16 @@ module.exports.init = function (callback) {
     //db.getObjectField('cache:info', 'swagger', callback);
 
     //each function in the water fall is performed in succession, and receives input from the previous function
+
+    //entityModel.getSwaggerCacheInfo(function(err, needRefresh) {
+    //    console.log(needRefresh);
+    //    if(!needRefresh) {
+    //        entityModel.setSwaggerCacheInfo("true", function (err, data) {
+    //            callback();
+    //        });
+    //    }
+    //});
+
     async.parallel({
         paths: getPaths,
         definitions: getDefinitions

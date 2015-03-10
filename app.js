@@ -148,7 +148,7 @@ function start() {
 		}
 
 		//Code to build the swagger file from the db objects.
-		var swaggerBuilder = require('./src/modelling/swaggerBuilder');
+		var swaggerBuilder = require('./src/modeling/swaggerBuilder');
 		swaggerBuilder.init(function(err) {
 			if(err) {
 				winston.error('Error Building Swagger File. This could mean serious consequences to the portal. ' + err);

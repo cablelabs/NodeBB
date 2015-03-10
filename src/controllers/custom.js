@@ -2,9 +2,9 @@
 
 var async = require('async'),
 
-    entity      = require('../modelling/entity'),
-    exporter    = require('../modelling/exportSchema'),
-    path        = require('../modelling/path'),
+    entity      = require('../modeling/entity'),
+    exporter    = require('../modeling/exportSchema'),
+    path        = require('../modeling/path'),
     winston     = require('winston'),
     apis        = require('../apis'),
     announcements = require('../announcements'),
@@ -78,12 +78,36 @@ customController.getPaths = function(req, res, next) {
 
 };
 
+customController.getScopePaths = function(req, res, next) {
+
+    var query = req.query.fields;
+    if(query) { // query handles ?fields=field1,field2
+        var fields = query.split(',');
+        path.getAllPathFields(fields, function(err, pathsData) {
+            if(err) {
+                return next(err);
+            }
+            res.send(pathsData);
+        });
+    } else { // get all attributes
+        path.getAllScopePaths(function (err, pathsData) {
+            if(err) {
+                return next(err);
+            }
+            res.send(pathsData);
+        });
+    }
+
+};
+
 customController.getPathById = function(req, res, next) {
     var uid = req.params.uid;
     path.getPathData(uid, function(err, paths) {
         if(err) {
             next(err);
         }
+        console.log(JSON.parse(paths.definition));
+        paths.definition = JSON.parse(paths.definition);
         res.send(paths);
     });
 };
@@ -104,6 +128,22 @@ customController.createPath = function(req, res, next) {
     });
 };
 
+customController.createScopePath = function(req, res, next) {
+
+    var pathData = {};
+
+    for (var key in req.body) {
+        if (req.body.hasOwnProperty(key)) {
+            pathData[key] = req.body[key];
+        }
+    }
+
+    path.createScopePath(pathData, function(err, uid) {
+        pathData.uid = uid;
+        res.send(pathData);
+    });
+};
+
 customController.patchPath = function(req, res, next) {
 
     var uid = req.params.uid;
@@ -117,6 +157,23 @@ customController.patchPath = function(req, res, next) {
     }
 
     path.patchPath(uid, pathData, function(err, updatedEntity) {
+        res.send(updatedEntity);
+    });
+};
+
+customController.patchScopePath = function(req, res, next) {
+
+    var uid = req.params.uid;
+
+    var pathData = {};
+
+    for (var key in req.body) {
+        if (req.body.hasOwnProperty(key)) {
+            pathData[key] = req.body[key];
+        }
+    }
+
+    path.patchScopePath(uid, pathData, function(err, updatedEntity) {
         res.send(updatedEntity);
     });
 };
@@ -151,10 +208,42 @@ customController.getEntities = function(req, res, next) {
     }
 };
 
+customController.getScopeEntities = function(req, res, next) {
+    var query = req.query.fields;
+    if(query) { // query handles ?fields=field1,field2
+        var fields = query.split(',');
+        entity.getAllScopeEntityFields(fields, function(err, entitiesData) {
+            if(err) {
+                return next(err);
+            }
+            res.send(entitiesData);
+        });
+    } else { // get all attributes
+        entity.getAllScopeEntities(function (err, entitiesData) {
+            if(err) {
+                return next(err);
+            }
+            res.send(entitiesData);
+        });
+    }
+};
+
 customController.getEntityByName = function(req, res, next) {
     var name = req.params.name;
     entity.getUidByName(name, function(err, uid) {
         entity.getEntities([uid], function(err, entities) {
+            if(err) {
+                next(err);
+            }
+            res.send(entities);
+        });
+    });
+};
+
+customController.getScopeEntityByName = function(req, res, next) {
+    var name = req.params.name;
+    entity.getScopeUidByName(name, function(err, uid) {
+        entity.getScopeEntities([uid], function(err, entities) {
             if(err) {
                 next(err);
             }
@@ -179,7 +268,7 @@ customController.getSchemaByName = function(req, res, next) {
         }
         return false;
     }
-    var nameSpacePrefix = req.get('host') + "/modelling/api/schema/";
+    var nameSpacePrefix = req.get('host') + "/modeling/api/schema/";
     var schema = {
         $schema                 : "http://json-schema.org/draft-04/schema#",
         id                      : nameSpacePrefix + name,
@@ -246,6 +335,22 @@ customController.createEntity = function(req, res, next) {
     });
 };
 
+customController.createScopeEntity = function(req, res, next) {
+
+    var entityData = {};
+
+    for (var key in req.body) {
+        if (req.body.hasOwnProperty(key)) {
+            entityData[key] = req.body[key];
+        }
+    }
+
+    entity.createScopeEntity(entityData, function(err, uid) {
+        entityData.uid = uid;
+        res.send(entityData);
+    });
+};
+
 customController.patchEntity = function(req, res, next) {
 
     var name = req.params.name;
@@ -260,6 +365,25 @@ customController.patchEntity = function(req, res, next) {
 
     entity.getUidByName(name, function(err, uid) {
         entity.patchEntity(uid, entityData, function(err, updatedEntity) {
+            res.send(updatedEntity);
+        });
+    });
+};
+
+customController.patchScopeEntity = function(req, res, next) {
+
+    var name = req.params.name;
+
+    var entityData = {};
+
+    for (var key in req.body) {
+        if (req.body.hasOwnProperty(key)) {
+            entityData[key] = req.body[key];
+        }
+    }
+
+    entity.getScopeUidByName(name, function(err, uid) {
+        entity.patchScopeEntity(uid, entityData, function(err, updatedEntity) {
             res.send(updatedEntity);
         });
     });

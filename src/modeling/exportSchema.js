@@ -56,12 +56,16 @@ function getJsonSchema(name, subRef, callback) {
 
                             if(refVal != undefined) {
                                 if(schema.definitions[refVal] == null) {
-                                    getJsonSchema(refVal, true);
+                                    getJsonSchema(refVal, true, function() {
+                                        return 0;
+                                    });
                                 }
                                 val["$ref"] = "#/definitions/" + refVal;
                             } else if(typeVal == 'array') {
                                 if(schema.definitions[val["items"].$ref] == null) {
-                                    getJsonSchema(val["items"].$ref, true);
+                                    getJsonSchema(val["items"].$ref, true, function() {
+                                        return 0;
+                                    });
                                 }
                                 val["items"].$ref = "#/definitions/" + val["items"].$ref;
                             }
