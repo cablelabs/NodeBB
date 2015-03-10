@@ -2,74 +2,84 @@ var request = require('request'),
     async   = require('async'),
     fs      = require('fs'),
     path  = require('path');
-//config  = require(path.join(__dirname + '/settings.json'));
 
-var entityModel  = require('./entity'),
-    pathModel    = require('./path');
+var entity = require('./entity');
 
-var swaggerFile = {
-    "swagger": "2.0",
-    "info": {
-        "description": "Explore the cable APIs. APIs are grouped by Domain.",
-        "version": "0.0.1",
-        "title": "Cable API"
-    },
-    "host": "cable-api.herokuapp.com",
-    "basePath": "/api-docs",
-    "schemes": [
-        "https"
-    ]
+var nameSpacePrefix = "https://diadeveloper.cablelabs.com/schema/v1/"
+var schema = {
+    $schema                 : "http://json-schema.org/draft-04/schema#",
+    type                    : "object",
+    required                : [],
+    properties              : {},
+    definitions             : {}
 };
 
-module.exports.init = function (callback) {
+module.exports.generateSchema = function (name, callback) {
+    getJsonSchema(name, false, function() {
+        //console.log(schema);
+        callback(schema);
+    });
 
-    //db.setObjectField('entityname:uid', entityData.name, uid);
+};
 
-    //db.getObjectField('cache:info', 'swagger', callback);
+function getJsonSchema(name, subRef, callback) {
+    var subSchema = {
+        $schema                 : "http://json-schema.org/draft-04/schema#",
+        type                    : "object",
+        required                : [],
+        properties              : {},
+        definitions             : {}
+    };
 
-    //each function in the water fall is performed in succession, and receives input from the previous function
-    async.parallel({
-        paths: getPaths,
-        definitions: getDefinitions
-    }, function(err, result) {
-        if (err) {
-            callback(err);
-        } else {
-            swaggerFile.paths = result.paths;
-            swaggerFile.definitions = result.definitions;
-            fs.exists(path.join(__dirname + '/../../public/secured/api-docs'), function (exists) {
-                if (!exists) {
-                    fs.mkdirSync(path.join(__dirname + '/../../public/secured/api-docs'));
+    if(!subRef) {
+        schema.id       =   nameSpacePrefix + name;
+        schema.title    =   name;
+    } else {
+        subSchema.id       =   nameSpacePrefix + name;
+        subSchema.title    =   name;
+    }
+
+    entity.getUidByName(name.toLowerCase(), function(err, uid) {
+        if(uid != null) {
+            entity.getEntities([uid], function(err, entities) {
+                if(err) {
+                    next(err);
                 }
-                fs.writeFile(path.join(__dirname + '/../../public/secured/api-docs/swagger-file.json'), JSON.stringify(swaggerFile, null, 4), function(err) {
-                    callback();
-                });
+                if(entities[0].definition != null && entities[0].definition.properties != null) {
+                    var properties = entities[0].definition.properties;
+                    Object.keys(properties).forEach(function(key) {
 
+                        var val = properties[key];
+                        if(JSON.stringify(val).indexOf("$ref") > 0) {
+                            var refVal  = val["$ref"];
+                            var typeVal = val["type"];
+
+                            if(refVal != undefined) {
+                                if(schema.definitions[refVal] == null) {
+                                    getJsonSchema(refVal, true);
+                                }
+                                val["$ref"] = "#/definitions/" + refVal;
+                            } else if(typeVal == 'array') {
+                                if(schema.definitions[val["items"].$ref] == null) {
+                                    getJsonSchema(val["items"].$ref, true);
+                                }
+                                val["items"].$ref = "#/definitions/" + val["items"].$ref;
+                            }
+                        }
+                    });
+
+                    console.log(name + " " + subRef + " " + JSON.stringify(properties));
+                    if(!subRef) {
+                        schema.properties = properties;
+                        callback();
+                    } else {
+                        subSchema.properties = properties;
+                        schema.definitions[name] = subSchema;
+                    }
+                }
             });
+        } else if(subRef) {
+            schema.definitions[name] = subSchema;
         }
-    });
-};
-
-//fiter out paths in the swagger file that don't have the get property
-function getPaths(callback) {
-    pathModel.getAllPathFields(['name', 'definition'], function(err, pathsData) {
-        var paths = {};
-        pathsData.forEach(function(item, index) {
-            paths[item.name] = JSON.parse(item.definition);
-        });
-        callback(null, paths);
-    });
-}
-
-//fiter out paths in the swagger file that don't have the get property
-function getDefinitions(callback) {
-    entityModel.getAllEntityFields(['displayName', 'definition'], function(err, entitysData) {
-        var entities = {};
-        entitysData.forEach(function(item, index) {
-            if(item.definition !== 'undefined' && item.definition !== '') {
-                entities[item.displayName] = JSON.parse(item.definition);
-            }
-        });
-        callback(null, entities);
     });
 }

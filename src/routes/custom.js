@@ -37,6 +37,8 @@ function mainRoutes(app, middleware, controllers) {
     //schema routes
     app.get(modellingPrefix + '/api/schema/:name', apiMiddlewares, controllers.custom.getSchemaByName);
 
+    app.get(modellingPrefix + '/api/export/:name', apiMiddlewares, controllers.custom.exportSchemaByName);
+
 }
 
 module.exports = function(app, middleware, controllers) {

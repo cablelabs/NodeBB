@@ -2,13 +2,14 @@
 
 var async = require('async'),
 
-    entity = require('../modelling/entity'),
-    path = require('../modelling/path'),
-    winston = require('winston'),
-    apis = require('../apis'),
+    entity      = require('../modelling/entity'),
+    exporter    = require('../modelling/exportSchema'),
+    path        = require('../modelling/path'),
+    winston     = require('winston'),
+    apis        = require('../apis'),
     announcements = require('../announcements'),
-    topics = require('../topics'),
-    meta = require('../meta'),
+    topics      = require('../topics'),
+    meta        = require('../meta'),
     db = require('../database'),
     events = require('../events'),
     categories = require('../categories'),
@@ -162,6 +163,13 @@ customController.getEntityByName = function(req, res, next) {
     });
 };
 
+customController.exportSchemaByName = function(req, res, next) {
+    exporter.generateSchema(req.params.name, function(schema) {
+        res.setHeader("Content-type", "application/json");
+        res.send(schema);
+    })
+}
+
 customController.getSchemaByName = function(req, res, next) {
     var name    = req.params.name;
     var view   = req.query.view;
@@ -175,6 +183,8 @@ customController.getSchemaByName = function(req, res, next) {
     var schema = {
         $schema                 : "http://json-schema.org/draft-04/schema#",
         id                      : nameSpacePrefix + name,
+        title                   : name,
+        type                    : "object",
         required                : [],
         properties              : {}
     };
