@@ -106,7 +106,17 @@ customController.getPathById = function(req, res, next) {
         if(err) {
             next(err);
         }
-        console.log(JSON.parse(paths.definition));
+        paths.definition = JSON.parse(paths.definition);
+        res.send(paths);
+    });
+};
+
+customController.getScopePathById = function(req, res, next) {
+    var uid = req.params.uid;
+    path.getScopePathsData(uid, function(err, paths) {
+        if(err) {
+            next(err);
+        }
         paths.definition = JSON.parse(paths.definition);
         res.send(paths);
     });

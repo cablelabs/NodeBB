@@ -90,6 +90,12 @@ var	async = require('async'),
         });
     };
 
+    Path.getScopePathData = function(uid, callback) {
+        Path.getPathsData([uid], function(err, entities) {
+            callback(err, entities ? entities[0] : null);
+        });
+    };
+
     Path.getPathsData = function(uids, callback) {
 
         if (!Array.isArray(uids) || !uids.length) {
@@ -109,7 +115,40 @@ var	async = require('async'),
         });
     };
 
+    Path.getScopePathsData = function(uids, callback) {
+
+        if (!Array.isArray(uids) || !uids.length) {
+            return callback(null, []);
+        }
+
+        var keys = uids.map(function(uid) {
+            return 'scopepath:' + uid;
+        });
+
+        db.getObjects(keys, function(err, entities) {
+            if (err) {
+                return callback(err);
+            }
+
+            modifyScopePathData(entities, [], callback);
+        });
+    };
+
     function modifyPathData(entities, fieldsToRemove, callback) {
+        entities.forEach(function(path) {
+            if (!path) {
+                return;
+            }
+
+            for(var i=0; i<fieldsToRemove.length; ++i) {
+                path[fieldsToRemove[i]] = undefined;
+            }
+        });
+
+        plugins.fireHook('filter:users.get', entities, callback);
+    }
+
+    function modifyScopePathData(entities, fieldsToRemove, callback) {
         entities.forEach(function(path) {
             if (!path) {
                 return;
