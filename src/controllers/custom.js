@@ -163,9 +163,6 @@ customController.getEntityByName = function(req, res, next) {
 };
 
 customController.getSchemaByName = function(req, res, next) {
-
-    console.log(req.protocol);
-
     var name    = req.params.name;
     var view   = req.query.view;
     function doValidation() {
