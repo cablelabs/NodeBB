@@ -179,7 +179,7 @@ var	async = require('async'),
                 if (!entity) {
                     return;
                 }
-                if(entity.definition != null && typeof entity.definition === 'string') {
+                if(entity.definition != null && entity.definition != undefined && typeof entity.definition === 'string') {
                     entity.definition = JSON.parse(entity.definition);
                 }
             });
@@ -201,7 +201,7 @@ var	async = require('async'),
                 if (!entity) {
                     return;
                 }
-                if(entity.definition != null && typeof entity.definition === 'string') {
+                if(entity.definition != null && entity.definition != undefined && typeof entity.definition === 'string') {
                     entity.definition = JSON.parse(entity.definition);
                 }
             });
