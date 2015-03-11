@@ -238,6 +238,31 @@ customController.getScopeEntities = function(req, res, next) {
     }
 };
 
+customController.getCustomScopeEntities = function(req, res, next) {
+    var scope   = req.params.scope;
+    var name    = req.params.name;
+
+    res.send(scope + " " + name);
+
+    //var query = req.query.fields;
+    //if(query) { // query handles ?fields=field1,field2
+    //    var fields = query.split(',');
+    //    entity.getAllScopeEntityFields(fields, function(err, entitiesData) {
+    //        if(err) {
+    //            return next(err);
+    //        }
+    //        res.send(entitiesData);
+    //    });
+    //} else { // get all attributes
+    //    entity.getAllScopeEntities(function (err, entitiesData) {
+    //        if(err) {
+    //            return next(err);
+    //        }
+    //        res.send(entitiesData);
+    //    });
+    //}
+};
+
 customController.getEntityByName = function(req, res, next) {
     var name = req.params.name;
     entity.getUidByName(name, function(err, uid) {

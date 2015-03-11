@@ -42,10 +42,12 @@ function mainRoutes(app, middleware, controllers) {
     //app.delete(modellingPrefix + '/api/scope/paths/:uid', apiMiddlewares, controllers.custom.deletePath);
 
     // Scope entity routes
-    app.get(modellingPrefix + '/api/scope/entities', apiMiddlewares, controllers.custom.getScopeEntities);
-    app.get(modellingPrefix + '/api/scope/entities/:name', apiMiddlewares, controllers.custom.getScopeEntityByName);
-    app.post(modellingPrefix + '/api/scope/entities', controllers.custom.createScopeEntity);
-    app.patch(modellingPrefix + '/api/scope/entities/:name', apiMiddlewares, controllers.custom.patchScopeEntity);
+    app.get(modellingPrefix + '/api/:scope/entities/:name', apiMiddlewares, controllers.custom.getCustomScopeEntities);
+
+    app.get(modellingPrefix + '/api/:scope/entities', apiMiddlewares, controllers.custom.getScopeEntities);
+    app.get(modellingPrefix + '/api/:scope/entities/:name', apiMiddlewares, controllers.custom.getScopeEntityByName);
+    app.post(modellingPrefix + '/api/:scope/entities', controllers.custom.createScopeEntity);
+    app.patch(modellingPrefix + '/api/:scope/entities/:name', apiMiddlewares, controllers.custom.patchScopeEntity);
     //app.delete(modellingPrefix + '/api/scope/entities/:name', apiMiddlewares, controllers.custom.deleteEntity);
 
     //schema routes
