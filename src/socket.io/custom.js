@@ -14,7 +14,8 @@
 //    meta = require('../meta'),
 
 var linkParser = require('../controllers/mind-map/linkParser_new-format'),
-    swaggerBuilder = require('../modeling/swaggerBuilder');
+    swaggerBuilder = require('../modeling/swaggerBuilder'),
+    swaggerBuildertr069 = require('../modeling/swaggerBuilder-Scope');
 
 var SocketCustom = {};
 
@@ -35,6 +36,17 @@ SocketCustom.refreshSwagger = function(socket, data, callback) {
         callback(null, '{"message": "Refreshed Swagger File"}');
     });
 };
+
+SocketCustom.refreshZoneSwagger = function(socket, data, callback) {
+    if (!socket.uid) {
+        return callback(new Error('[[invalid-uid]]'));
+    }
+    swaggerBuildertr069.init(function(err) {
+        callback(null, '{"message": "Refreshed Zone Swagger File"}');
+    });
+};
+
+
 
 /* Exports */
 

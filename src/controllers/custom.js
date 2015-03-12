@@ -56,6 +56,10 @@ customController.documentation = function(req, res, next) {
     res.render('custom/documentation');
 };
 
+customController.documentationtr069 = function(req, res, next) {
+    res.render('custom/documentation-tr069');
+};
+
 customController.getPaths = function(req, res, next) {
 
     var query = req.query.fields;

@@ -1,0 +1,448 @@
+{
+  "DeviceInfo": {
+    "id": "DeviceInfo",
+    "title": "DeviceInfo",
+    "type": "object",
+    "properties": {
+      "deviceCategory": {
+        "type": "string"
+      },
+      "manufacturer": {
+        "type": "string",
+        "maxLength": 64
+      },
+      "manufacturerOUI": {
+        "type": "string",
+        "maxLength": 6,
+        "minLength": 6
+      },
+      "modelNumber": {
+        "type": "string",
+        "maxLength": 64
+      },
+      "description": {
+        "type": "string",
+        "maxLength": 256
+      },
+      "productClass": {
+        "type": "string",
+        "maxLength": 64
+      },
+      "serialNumber": {
+        "type": "string",
+        "maxLength": 64
+      },
+      "hardwareVersion": {
+        "type": "string",
+        "maxLength": 64
+      },
+      "softwareVersion": {
+        "type": "string",
+        "maxLength": 64
+      },
+      "additionalHardwareVersion": {
+        "type": "string",
+        "maxLength": 64
+      },
+      "additionalSoftwareVersion": {
+        "type": "string",
+        "maxLength": 64
+      },
+      "provisioningCode": {
+        "type": "string",
+        "maxLength": 64
+      },
+      "upTime": {
+        "type": "integer"
+      },
+      "firstUseDate": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "vendorConfigFileNumberOfEntries": {
+        "type": "integer"
+      },
+      "supportedDataModelNumberOfEntries": {
+        "type": "integer"
+      },
+      "processorNumberOfEntries": {
+        "type": "integer"
+      },
+      "vendorLogFileNumberOfEntries": {
+        "type": "integer"
+      },
+      "locationNumberOfEntries": {
+        "type": "integer"
+      },
+      "vendorConfigFile": {
+        "$ref": "VendorConfigFile"
+      },
+      "supportedDataModel": {
+        "$ref": "SupportedDataModel"
+      },
+      "memoryStatus": {
+        "$ref": "MemoryStatus"
+      },
+      "processStatus": {
+        "ref": "ProcessStatus"
+      },
+      "temperatureStatus": {
+        "$ref": "TemperatureStatus"
+      },
+      "networkProperties": {
+        "$ref": "NetworkProperties"
+      },
+      "processor": {
+        "$ref": "Processor"
+      },
+      "vendorLogFile": {
+        "$ref": "VendorLogFile"
+      },
+      "proxierInfo": {
+        "$ref": "ProxierInfo"
+      },
+      "location": {
+        "$ref": "Location"
+      }
+    }
+  },
+  "Location": {
+    "id": "Location",
+    "title": "Location",
+    "type": "object",
+    "properties": {
+      "source": {
+        "type": "string",
+        "description": " Identifies the source of the location data.",
+        "enum": ["GPS", "AGPS", "Manual", "External"]
+      },
+      "acquiredTime": {
+        "type": "string",
+        "format": "date-time",
+        "description": " The time when the location was acquired."
+      },
+      "externalSource": {
+        "type": "string",
+        "description": " URL, MAC address, or other identifier that identifies an \"External\" source of this location.Meaningful only if {{param|Source}} has a value of {{enum|External|Source}}, otherwise it MUST be {{empty}}.If {{param|ExternalProtocol}} has a value of {{enum|CWMP|ExternalProtocol}},  this is the URL or IP address of the ACS."
+      },
+      "externalProtocol": {
+        "type": "string",
+        "description": " Protocol used to acquire a location from an \"External\" source. {{enum}}Meaningful only if {{param|Source}} has a value of {{enum|External|Source}}, otherwise it MUST be {{empty}}.",
+        "enum": ["<Empty> (an empty string)", "CWMP", "OMA-DM", "SNMP", "UPnP", "HELD", "DHCPv4", "DHCPv6", "LLDP-MED", "MLP", "Other"]
+      },
+      "dataObject": {
+        "type": "string",
+        "maxLength": 1200,
+        "description": " The currently valid location information.Writable only when {{param|ExternalProtocol}} has a value of {{enum|CWMP|ExternalProtocol}}.If obtained through the local GPS/AGPS then the location information is formatted according to {{bibref|RFC5491}}.If manually configured then location information will be XML-formatted according to {{bibref|RFC5491}} (geographical information) and {{bibref|RFC5139}} (civic addresses).If obtained by an external source this is the location information as received.If it's an XML document (e.g. CWMP, OMA-DM, UPnP, HELD, MLP) the location information will be represented as-is, otherwise it will be converted to base64.CWMP configured location information will be XML-formatted according to {{bibref|RFC5491}} (geographical information) and {{bibref|RFC5139}} (civic addresses).Only zero or one Location object instance with value {{enum|CWMP|ExternalProtocol}} MUST exist at any given time."
+      }
+    }
+  },
+  "ProxierInfo": {
+    "id": "ProxierInfo",
+    "title": "ProxierInfo",
+    "type": "object",
+    "properties": {
+      "manufacturerOUI": {
+        "type": "string",
+        "maxLength": 6,
+        "minLength": 6,
+        "pattern": "[0-9A-F]{6}",
+        "description": " Organizationally unique identifier of the associated CPE Proxier.  Represented as a six hexadecimal-digit value using all upper-case letters and including any leading zeros.  {{pattern}}The value MUST be a valid OUI as defined in {{bibref|OUI}}."
+      },
+      "productClass": {
+        "type": "string",
+        "maxLength": 64,
+        "description": " Identifier of the class of product of the associated CPE Proxier for which the serial number applies.{{empty}} indicates either that the CPE Proxier does not use a product class to differentiate its serial number."
+      },
+      "serialNumber": {
+        "type": "string",
+        "maxLength": 64,
+        "description": " Serial number of the associated CPE Proxier."
+      },
+      "proxyProtocol": {
+        "type": "string",
+        "enum": ["Z-Wave", "ZigBee", "UPnP-DM", "ETSI-M2M"],
+        "description": " The protocol being used to communicate between the CPE Proxier and this Proxied Device. {{enum}}Vendors can extend the enumerated values with vendor specific extensions, in which case the rules outlined in {{bibref|TR-106a6|3.3}} MUST be adhered to."
+      }
+    }
+  },
+  "VendorLogFile": {
+    "id": "VendorLogFile",
+    "title": "VendorLogFile",
+    "type": "object",
+    "properties": {
+      "alias": {
+        "type": "dataType",
+        "maxLength": 64,
+        "description": " {{datatype|expand}}"
+      },
+      "name": {
+        "type": "string",
+        "maxLength": 64,
+        "description": " Name of the log file.Typically this will be the full file system path, but provided that it is guaranteed to be unique across current and future log files, it MAY be a shorter name derived from the file system path, or be derived via another mechanism."
+      },
+      "maximumSize": {
+        "type": "integer",
+        "description": " The maximum size of the log file in {{units}}.  If the device doesn't know the maximum file size then {{param}} will be 0."
+      },
+      "persistent": {
+        "type": "boolean",
+        "description": " When {{true}}, the log file contents are preserved across a device reboot.When {{false}}, the log file contents will be purged when the device is rebooted."
+      }
+    }
+  },
+  "Processor": {
+    "id": "Processor",
+    "title": "Processor",
+    "type": "object",
+    "properties": {
+      "alias": {
+        "type": "dataType",
+        "maxLength": 64,
+        "description": " {{datatype|expand}}"
+      },
+      "Architecture": {
+        "type": "string",
+        "enum" : ["arm", "i386", "m68010", "m68k", "mipseb (big-endian)", "mipsel (little-endian)", "powerpc", "sh3eb (big-endian)","sh3el (little-endian)", "x86_64"],
+        "description": " The architecture of the processor on the underlying hardware. {{enum}} For processor architectures not included in this list, the vendor MAY include vendor-specific values, which MUST use the format defined in {{bibref|TR-106a4|Section 3.3}}."
+      }
+    }
+  },
+
+  "VendorConfigFile": {
+    "id": "VendorConfigFile",
+    "type": "object",
+    "properties": {
+      "alias": {
+        "type": "string",
+        "maxLength": 64
+      },
+      "name": {
+        "type": "string",
+        "maxLength": 64
+      },
+      "version": {
+        "type": "string",
+        "maxLength": 16
+      },
+      "date": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "description": {
+        "type": "string",
+        "maxLength": 256
+      },
+      "useForBackupRestore": {
+        "type": "boolean"
+      }
+    }
+  },
+  "MemoryStatus": {
+    "id": "MemoryStatus",
+    "title": "MemoryStatus",
+    "type": "object",
+    "properties": {
+      "total": {
+        "type": "integer"
+      },
+      "free": {
+        "type": "integer"
+      }
+    }
+  },
+  "Process": {
+    "id": "Process",
+    "title": "Process",
+    "type": "object",
+    "properties": {
+      "pid": {
+        "type": "integer"
+      },
+      "command": {
+        "type": "string",
+        "maxLength": 256
+      },
+      "size": {
+        "type": "integer"
+      },
+      "cpuTime": {
+        "type": "integer"
+      },
+      "state": {
+        "type": "string"
+      }
+    }
+  },
+  "ProcessStatus": {
+    "id": "ProcessStatus",
+    "type": "object",
+    "properties": {
+      "cpuUsage": {
+        "type": "integer",
+        "max": 100,
+        "description": "The total amount of the CPU, in percent, rounded up to the nearest whole percent. In the case that multiple CPU are present, this value represents the average of all CPU."
+      },
+      "processNumberOfEntries": {
+        "type": "integer",
+        "description": "The number of entries in the Process table. Since a Process can come and go very quickly, the CPE SHOULD place a locally specified limit on the frequency at which it will notify the ACS of value changes, as described in [Section 3.2.1/TR-069a2]."
+      },
+      "processes": {
+        "type": "array",
+        "items": {
+          "$ref": "Process"
+        }
+      }
+    }
+  },
+  "TemperatureSensor": {
+    "id": "TemperatureSensor",
+    "title": "TemperatureSensor",
+    "type": "object",
+    "properties": {
+      "alias": {
+        "type": "string",
+        "maxLength": 64,
+        "description": "A non-volatile handle used to reference this instance. Alias provides a mechanism for an ACS to label this instance for future reference. If the CPE supports the Alias-based Addressing feature as defined in [Section 3.6.1/TR-069a4] and described in [Appendix II/TR-069a4], the following mandatory constraints MUST be enforced: Its value MUST NOT be empty. Its value MUST start with a letter. If its value is not assigned by the ACS, it MUST start with a \"cpe-\" prefix. The CPE MUST NOT change the parameter value."
+      },
+      "enable": {
+        "type": "boolean",
+        "description": " Indicates whether or not the temperature sensor is enabled."
+      },
+      "status": {
+        "type": "string",
+        "enum": ["Disabled (The sensor is not currently sampling the temperature), Enabled (The sensor is currently sampling the temperature), Error (The sensor error currently prevents sampling the temperature)"],
+        "description": " The status of this temperature sensor."
+      },
+      "reset": {
+        "type": "boolean",
+        "description": " When set to {{true}}, resets the temperature sensor."
+      },
+      "resetTime": {
+        "type": "string",
+        "format": "date-time",
+        "description": " The time at which this temperature sensor was reset.Reset can be caused by:* {{param|Status}} transition from {{enum|Disabled|Status}} to {{enum|Enabled|Status}}* {{param|Reset}} set to {{true}}.* An internal reset of the temperature sensor (including a reboot of the device).The Unknown Time value, as defined in {{bibref|TR-106a2}}, indicates that this temperature sensor has never been reset, which can only happen if it has never been enabled."
+      },
+      "name": {
+        "type": "string",
+        "maxLength": 256,
+        "description": " Name of this temperature sensor. This text MUST be sufficient to distinguish this temperature sensor from other temperature sensors."
+      },
+      "Value": {
+        "type": "integer",
+        "minValue": -274,
+        "description": " This temperature sensor's last good reading in {{units}}.A value of -274 (which is below absolute zero) indicates a good reading has not been obtained since last reset."
+      },
+      "lastUpdate": {
+        "type": "string",
+        "format": "date-time",
+        "description": " The time at which this temperature sensor's last good reading was obtained. The Unknown Time value, as defined in {{bibref|TR-106a2}}, indicates a good reading has not been obtained since last reset."
+      },
+      "minValue": {
+        "type": "int",
+        "minValue": -274,
+        "description": " This temperature sensor's lowest value  reading in {{units}} since last reset.A value of -274 (which is below absolute zero) indicates a good reading has not been obtained since last reset."
+      },
+      "minTime": {
+        "type": "string",
+        "format": "date-time",
+        "description": " The time at which this temperature sensor's lowest value was read. The Unknown Time value, as defined in {{bibref|TR-106a2}}, indicates a good reading has not been obtained since last reset."
+      },
+      "maxValue": {
+        "type": "int",
+        "minValue": -274,
+        "description": " This temperature sensor's highest value  reading in {{units}} since last reset.A value of -274 (which is below absolute zero) indicates a good reading has not been obtained since last reset."
+      },
+      "maxTime": {
+        "type": "string",
+        "format": "date-time",
+        "description": " The time at which this temperature sensor's highest value was read. The Unknown Time value, as defined in {{bibref|TR-106a2}}, indicates a good reading has not been obtained since last reset."
+      },
+      "lowAlarmValue": {
+        "type": "int",
+        "minValue": -274,
+        "description": " This temperature sensor's low alarm value in {{units}}.A value of -274 (which is below absolute zero) indicates a non configured value.A change to this value will cause {{param|LowAlarmTime}} to be reset."
+      },
+      "lowAlarmTime": {
+        "type": "string",
+        "format": "date-time",
+        "description": " Initial time at which this temperature sensor's {{param|LowAlarmValue}} was encountered.This value is only set the first time the alarm is seen and not changed until the next reset. The Unknown Time value, as defined in {{bibref|TR-106a2}}, indicates that an alarm has not been encountered since the last reset."
+      },
+      "highAlarmValue": {
+        "type": "int",
+        "minValue": -274,
+        "description": " This temperature sensor's high alarm value in {{units}}.A value of -274 (which is below absolute zero) indicates a non configured value.A change to this value will cause {{param|HighAlarmTime}} to be reset."
+      },
+      "pollingInterval": {
+        "type": "integer",
+        "minValue": -274,
+        "description": " The interval, measured in {{units}}, in which the device polls this {{object}}.If the value is 0 then the device selects its own polling interval.If the value is greater than 0 then the device MUST use this value as the polling interval."
+      },
+      "highAlarmTime": {
+        "type": "string",
+        "format": "date-time",
+        "description": " Initial time at which this temperature sensor's {{param|HighAlarmValue}} was encountered.This value is only set the first time the alarm is seen and not changed until the next reset. The Unknown Time value, as defined in {{bibref|TR-106a2}}, indicates that an alarm has not been encountered since the last reset."
+      }
+    }
+  },
+  "TemperatureStatus": {
+    "id": "TemperatureStatus",
+    "title": "TemperatureStatus",
+    "type": "object",
+    "properties": {
+      "temperatureSensorNumberOfEntries": {
+        "type": "integer",
+        "description": "The number of entries in the TemperatureSensor table."
+      },
+      "temperatureSensor": {
+        "description": "This object represents information that the device has obtained via sampling an internal temperature sensor. At most one entry in this table can exist with a given value for Name, or with a given value for Alias.",
+        "ref": "TemperatureSensor"
+      }
+    }
+  },
+  "NetworkProperties": {
+    "id": "NetworkProperties",
+    "title": "NetworkProperties",
+    "type": "object",
+    "properties": {
+      "maxTCPWindowSize": {
+        "type": "integer",
+        "description": " The maximum number of {{units}} of outstanding data a sender can send on a particular connection prior to an acknowledgment {{bibref|RFC793}}.  Any scaling factor SHOULD be included in this parameter {{bibref|RFC1323}}."
+      },
+      "tCPImplementation": {
+        "type": "string",
+        "enum": ["Tahoe (Represents the base TCP implementation in [RFC793] and elements of [RFC2582]", "Reno (Represents the base TCP implementation in [RFC793] with the additional algorithms defined in [RFC2581]", "New Reno (Described as a modification to the Reno algorithms in [RFC2582]", "Vegas (An emerging TCP congestion control mechanism)"],
+        "description": " Comma-separated list of strings. Indicates the TCP congestion control mechanism(s) implemented. {{enum}}Tahoe, Reno, and New Reno are defined in {{bibref|RFC2582}}"
+      }
+    }
+  },
+  "SupportedDataModel":  {
+    "id": "SupportedDataModel",
+    "title": "SupportedDataModel",
+    "type": "object",
+    "properties": {
+      "alias": {
+        "type": "string",
+        "maxLength": 64
+      },
+      "url": {
+        "type": "string",
+        "maxLength": 256
+      },
+      "uuid": {
+        "type": "string",
+        "maxLength": 36,
+        "minLength": 36
+      },
+      "urn": {
+        "type": "string",
+        "maxLength": 256
+      },
+      "features": {
+        "type": "string"
+      }
+    }
+  }
+}
+
+

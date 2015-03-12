@@ -37,3 +37,4 @@ dump.rdb
 public/secured/mind-map/assets/links-new-format.json
 public/secured/api-docs/swagger-file.json
 nohup.out
+src/modeling/swaggerBuilder-Scope.js
