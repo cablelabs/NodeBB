@@ -30,6 +30,14 @@ module.exports = function(Path) {
 
         function updateField(field, next) {
 
+            // Check if definition is object, if so stringify. If already string it will be taken care by usual routine.
+            if(field === 'definition') {
+                if(typeof data[field] === 'object') {
+                    var definitionString = JSON.stringify(data[field]);
+                    return Path.setScopePathField(uid, 'definition', definitionString, next);
+                }
+            }
+
             // Update updatedate first, no matter what happens. It has been touched when it gets here.
             if(field === 'updatedate') {
                 return Path.setPathField(uid, 'updatedate', Date.now(), next);
@@ -99,6 +107,7 @@ module.exports = function(Path) {
     }
 
     Path.patchScopePath = function(uid, data, callback) {
+        console.log(data);
         var fields = ['name', 'displayName', 'definition', 'tags', 'domain', 'updatedate', 'pathviews'];
 
         function isNameAvailable(next) {
@@ -115,6 +124,14 @@ module.exports = function(Path) {
 
         function updateField(field, next) {
 
+            // Check if definition is object, if so stringify. If already string it will be taken care by usual routine.
+            if(field === 'definition') {
+                if(typeof data[field] === 'object') {
+                    var definitionString = JSON.stringify(data[field]);
+                    return Path.setScopePathField(uid, 'definition', definitionString, next);
+                }
+            }
+
             // Update updatedate first, no matter what happens. It has been touched when it gets here.
             if(field === 'updatedate') {
                 return Path.setScopePathField(uid, 'updatedate', Date.now(), next);
@@ -129,6 +146,10 @@ module.exports = function(Path) {
 
             if (field === 'name') {
                 return updateScopeName(uid, data.name, next);
+            }
+
+            if(field === 'definition') {
+
             }
 
             Path.setScopePathField(uid, field, data[field], next);
