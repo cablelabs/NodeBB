@@ -83,7 +83,7 @@ customController.getPaths = function(req, res, next) {
 };
 
 customController.getScopePaths = function(req, res, next) {
-
+    var scope = req.params.scope;
     var query = req.query.fields;
     if(query) { // query handles ?fields=field1,field2
         var fields = query.split(',');
