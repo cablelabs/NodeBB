@@ -117,7 +117,7 @@ customController.getPathById = function(req, res, next) {
 
 customController.getScopePathById = function(req, res, next) {
     var uid = req.params.uid;
-    path.getScopePathsData(uid, function(err, paths) {
+    path.getScopePathData(uid, function(err, paths) {
         if(err) {
             next(err);
         }

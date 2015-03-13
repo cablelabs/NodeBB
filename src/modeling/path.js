@@ -91,7 +91,7 @@ var	async = require('async'),
     };
 
     Path.getScopePathData = function(uid, callback) {
-        Path.getPathsData([uid], function(err, entities) {
+        Path.getScopePathsData([uid], function(err, entities) {
             callback(err, entities ? entities[0] : null);
         });
     };
@@ -129,7 +129,6 @@ var	async = require('async'),
             if (err) {
                 return callback(err);
             }
-
             modifyScopePathData(entities, [], callback);
         });
     };
