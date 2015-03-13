@@ -249,7 +249,7 @@ var	async = require('async'),
 
     Path.getAllScopePaths = function(callback) {
         db.getObjectValues('scopepathname:uid', function(err, uids) {
-            Path.getPaths(uids, function(err, pathsData) {
+            Path.getScopePaths(uids, function(err, pathsData) {
                 if(err) {
                     return callback(err);
                 }
