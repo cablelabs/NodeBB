@@ -57,19 +57,15 @@
     ***************************************************************************/
 
     var hops = {
-
-        bidirectional: false,
         show_all: false,
         $: {
             hops_btns: $('.hops-btn'),
-            bidirectional: $('.bidirectional-btn'),
             show_all: $('.show-all-btn')
         },
         init: function () {
             // attach event handlers
             this.$.hops_btns    .on('click', hops.handlers["click hops_btn"]);
-            this.$.bidirectional.on('click', hops.handlers["click settings_btn"]);
-            this.$.show_all     .on('click',     hops.handlers["click settings_btn"]);
+            this.$.show_all     .on('click', hops.handlers["click settings_btn"]);
         },
         handlers: {
             // change hops away setting
@@ -178,7 +174,12 @@
         },
         // return the HTML for an entity's previous hops
         hop_trail_html: function (data, name) {
-            return '<span>' + data[name].trail.join('<br>') + '</span>';
+            var result = [];
+            data[name].trail.forEach(function (rel) {
+                var dep = rel[1] && rel[2] ? 'fa-arrows-h' : rel[1] ? 'fa-arrow-right' : 'fa-arrow-left';
+                result.push('<span>' + rel[0] + ' <i class="fa ' + dep + '"></i></span>');
+            });
+            return result.join('');
         },
         // create the DOM elements for the graph, categorize entities by domain
         render: function () {
@@ -237,7 +238,7 @@
         // configure graph to reflect "hops away" from selected entity for all entites not selected
         show_hops: function () {
             //hops_data is an object where keys are entity names of related entities
-            var hop_data = this.es.hops_data(this.selected, hops.selected, hops.bidirectional),
+            var hop_data = this.es.hops_data(this.selected, hops.selected),
                 found, elem, name;
 
             // run the function for all non-selected graph.$.entities
@@ -521,8 +522,8 @@
 
             //recall graph state
             hops.selected = localStorage.getItem('hops_away') || 1;
-            hops.bidirectional = localStorage.getItem('bidirectional') === "true";
-            hops.$.bidirectional.toggleClass('btn-warning', hops.bidirectional);
+
+            
             hops.show_all = localStorage.getItem('show_all') === "true";
             hops.$.show_all.toggleClass('btn-warning', hops.show_all);
 

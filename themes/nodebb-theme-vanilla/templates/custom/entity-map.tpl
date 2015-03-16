@@ -57,9 +57,6 @@
         </div>
         <div class="second-row">
           <div class="btn-group">
-            <button class="btn btn-xs bidirectional-btn" data-setting="bidirectional">
-              bidirectional
-            </button>
             <button class="btn btn-xs show-all-btn" data-setting="show_all">show all</button>
           </div>
         </div>
@@ -80,32 +77,6 @@
 
     <!-- Help -->
     <div id="help-overlay">
-
-      <!-- <div class="explanation-panel">
-        <ul class="nav nav-tabs" role="tablist" id="myTab">
-          <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Entity</a></li>
-          <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Show Related</a></li>
-          <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Subsets</a></li>
-          <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Video</a></li>
-        </ul>
-
-        <div class="tab-content">
-          <div role="tabpanel" class="tab-pane active" id="entity-tab">
-            <img src="/images/entity-open.jpg" alt="Entity">
-            <p>
-              When you position your mouse over or touch an entity, it expands to show two icons.
-            </p>
-            <ul>
-              <li><i class="fa fa-info-circle"></i> Click on the 'i' to view a description of the icon.</li>
-              <li>Click on the arrows to leave the entity-map page and view the entity in the API documentation.</li>
-              <li>Click anywhere except for the two icons to select the entity and view related entities.</li>
-            </ul>
-          </div>
-          <div role="tabpanel" class="tab-pane" id="related-tab">...</div>
-          <div role="tabpanel" class="tab-pane" id="subsets-tab">...</div>
-          <div role="tabpanel" class="tab-pane" id="video-tab">...</div>
-        </div>
-      </div> -->
       <div class="row">
         <div class="col-md-4">
           <div class="popover bottom" id="help-subsets">
@@ -153,7 +124,7 @@
             <div class="popover-content">
               <img src="/images/hop-trail.jpg" alt="Entity">
               <span></span>
-              Related entities will show the previous entities, which can be traced back to the selected entities.  In this example, "Email Contact" can be traced back to the selected entities through either "Customer" or "User".  The entity trail is always the shortest possible path back to the selected entities.
+              Related entities will list the enties that are one step before the current entity, when tracing back to the selected entities.  In this example, "Account" is selected.  On Preference, the right arrow indicates that Account has a link to Preference.  On Payment Plan, the left arrow indicates that Payment Plan has a link to Account.  Preference and Payment plan are both one step away from Account.  Payment Method is two steps away from Account and relates to Account through Payment Plan.  Payment method shares a two-way relationship with Payment Plan. 
             </div>
           </div>
         </div>
@@ -163,7 +134,7 @@
             <div class="popover-title">Video Tutorial</div>
             <div class="popover-content">
               For a better understanding of how to use the Entity Map, please see the 
-              <a href="http://youtu.be/32dmHyHAnSI" target="_blank">video tutorial</a>.
+              <a href="//youtu.be/Irpyf1pgLgI" target="_blank">video tutorial</a>.
             </div>
           </div>
         </div>

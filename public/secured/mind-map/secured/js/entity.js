@@ -56,48 +56,52 @@ var Entity_Set = (function (){
     });
   };
 
-  Entity_Set.prototype.related = function (entity, bidirectional) {
+  Entity_Set.prototype.related = function (entity) {
     if (Array.isArray(entity)) {
       return this.related_list(entity);
     } else {
-      return this.entities.filter( function (ent) {
-        return entity.has_link(ent) || (bidirectional && ent.has_link(entity));
+      return this.entities.map( function (ent) {
+        return [ entity, ent, entity.has_link(ent), ent.has_link(entity) ];
+      })
+      .filter (function (rel) {
+        return rel[2] || rel[3];
       });
     }
   };
 
-  Entity_Set.prototype.related_list = function (list, bidirectional) {
-    var result = [], self = this;
-    list.forEach( function (entity) {
-      self.related(entity, bidirectional).forEach( function (ent) {
-        if (list.indexOf(ent) < 0) { result.push([entity, ent]); }
-      });
-    });
+  Entity_Set.prototype.related_list = function (list) {
+    var result = [];
+    list.forEach( function (ent) {
+      result = result.concat(
+        this.related(ent).filter(function (rel) {
+          return list.indexOf(rel[1]) < 0;
+        }));
+    }, this);
     return result;
   };
 
-  Entity_Set.prototype.hops_data = function (entities, max, bidirectional) {
+  Entity_Set.prototype.hops_data = function (entities, max) {
     entities = this.by_name( Array.isArray(entities) ? entities : [entities] );
 
-    var hops = [], result = {};
+    var hops = [], result = {}, i = 0;
 
-    function related_filter (pair) {
-      var name = pair[1].name;
+    function related_filter (rel) {
+      var name = rel[1].name;
       return !result.hasOwnProperty(name) && next.indexOf(name) < 0;
     }
 
-    function related_each (pair) {
-      if (!result.hasOwnProperty(pair[1].name)) {
-        result[pair[1].name] = {hops: i+1, trail: []};
+    function related_each (rel) {
+      if (!result.hasOwnProperty(rel[1].name)) {
+        result[rel[1].name] = {hops: i+1, trail: []};
       }
-      if (result[pair[1].name].trail.indexOf(pair[0].name) < 0) {
-        result[pair[1].name].trail.push(pair[0].name);
+      if (result[rel[1].name].trail.indexOf(rel[0].name) < 0) {
+        result[rel[1].name].trail.push([rel[0].name, rel[2], rel[3]]);
       }
     }
 
-    for (var i = 0; i < max; i++) {
-      var next = i === 0 ? entities : hops[i-1].map( function (pair) { return pair[1]; });
-      hops[i] = this.related_list(next, bidirectional).filter(related_filter);
+    for (; i < max; i++) {
+      var next = i === 0 ? entities : hops[i-1].map( function (rel) { return rel[1]; });
+      hops[i] = this.related_list(next).filter(related_filter);
       hops[i].forEach(related_each);
     }
 
