@@ -83,24 +83,28 @@ var Entity_Set = (function (){
   Entity_Set.prototype.hops_data = function (entities, max) {
     entities = this.by_name( Array.isArray(entities) ? entities : [entities] );
 
-    var hops = [], result = {}, i = 0;
+    var hops = [], result = {}, i = 0, next;
 
     function related_filter (rel) {
       var name = rel[1].name;
-      return !result.hasOwnProperty(name) && next.indexOf(name) < 0;
+      return !result.hasOwnProperty(name) && next.indexOf(rel[1]) < 0;
+    }
+
+    function trail_map (list) {
+      return list[0];
     }
 
     function related_each (rel) {
       if (!result.hasOwnProperty(rel[1].name)) {
         result[rel[1].name] = {hops: i+1, trail: []};
       }
-      if (result[rel[1].name].trail.indexOf(rel[0].name) < 0) {
+      if (result[rel[1].name].trail.map(trail_map).indexOf(rel[0].name) < 0) {
         result[rel[1].name].trail.push([rel[0].name, rel[2], rel[3]]);
       }
     }
 
     for (; i < max; i++) {
-      var next = i === 0 ? entities : hops[i-1].map( function (rel) { return rel[1]; });
+      next = i === 0 ? entities : hops[i-1].map( function (rel) { return rel[1]; });
       hops[i] = this.related_list(next).filter(related_filter);
       hops[i].forEach(related_each);
     }
