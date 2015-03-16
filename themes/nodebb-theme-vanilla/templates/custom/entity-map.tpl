@@ -134,7 +134,7 @@
             <div class="popover-title">Video Tutorial</div>
             <div class="popover-content">
               For a better understanding of how to use the Entity Map, please see the 
-              <a href="//youtu.be/Irpyf1pgLgI" target="_blank">video tutorial</a>.
+              <a href="//youtu.be/_xRiYydSMgQ" target="_blank">video tutorial</a>.
             </div>
           </div>
         </div>
