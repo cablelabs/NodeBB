@@ -18,6 +18,9 @@ var async = require('async'),
     widgets = require('../widgets'),
     groups = require('../groups'),
     pkg = require('../../package.json'),
+    linkParser = require('../controllers/mind-map/linkParser_new-format'),
+    swaggerBuilder = require('../modeling/swaggerBuilder'),
+    swaggerBuildertr069 = require('../modeling/swaggerBuilder-Scope'),
     validator = require('validator');
 
 var customController = {

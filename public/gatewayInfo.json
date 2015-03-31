@@ -1,0 +1,113 @@
+{
+  "name": "userinterface",
+  "displayName": "UserInterface",
+  "tags": "tr069-zone",
+  "domain": "TR-069",
+  "definition": {
+    "id": "UserInterface",
+    "title": "UserInterface",
+    "type": "object",
+    "properties": {
+      "passwordRequired": {
+        "type": "boolean",
+        "description": " Present only if the CPE provides a password-protected LAN-side user interface.Indicates whether or not the local user interface MUST require a password to be chosen by the user.  If {{false}}, the choice of  whether or not a password is used is left to the user."
+      },
+      "passwordUserSelectable": {
+        "type": "boolean",
+        "description": " Present only if the CPE provides a password-protected LAN-side user interface and supports LAN-side  Auto-Configuration.Indicates whether or not a password to protect the local user interface of the CPE MAY be selected by the user directly (i.e. {{param|.Users.User.{i}.Password}}), or MUST be equal to the password used by the LAN-side Auto-Configuration protocol (i.e. {{param|.LANConfigSecurity.ConfigPassword}})."
+      },
+      "passwordReset": {
+        "type": "boolean",
+        "description": " Present only if the CPE provides a password-protected LAN-side user interface and supports LAN-side Auto-Configuration. When set to true, resets {{param|.LANConfigSecurity.ConfigPassword}} to its factory value."
+      },
+      "upgradeAvailable": {
+        "type": "boolean",
+        "description": " Indicates that a CPE upgrade is available, allowing the CPE to display this information to the  user."
+      },
+      "warrantyDate": {
+        "type": "string",
+        "format": "date-time",
+        "description": " Indicates the date and time in UTC that the warranty associated with the CPE is to expire."
+      },
+      "iSPName": {
+        "type": "string",
+        "maxLength": 64,
+        "description": " The name of the customer's ISP."
+      },
+      "iSPHelpDesk": {
+        "type": "string",
+        "maxLength": 32,
+        "description": " The help desk phone number of the ISP."
+      },
+      "iSPHomePage": {
+        "type": "string",
+        "maxLength": 256,
+        "description": " The URL of the ISP's home page."
+      },
+      "iSPHelpPage": {
+        "type": "string",
+        "maxLength": 256,
+        "description": " The URL of the ISP's on-line support page."
+      },
+      "iSPLogo": {
+        "type": "base64",
+        "description": " Base64 encoded GIF or JPEG image. The binary image is constrained to 4095 bytes or less."
+      },
+      "iSPLogoSize": {
+        "type": "integer",
+        "description": " Un-encoded binary image size in bytes.If ISPLogoSize input value is 0 then the ISPLogo is cleared.ISPLogoSize can also be used as a check to verify correct transfer and conversion of Base64 string to image size."
+      },
+      "iSPMailServer": {
+        "type": "string",
+        "maxLength": 256,
+        "description": " The URL of the ISP's mail server."
+      },
+      "iSPNewsServer": {
+        "type": "string",
+        "maxLength": 256,
+        "description": " The URL of the ISP's news server."
+      },
+      "textColor": {
+        "type": "hexBinary",
+        "description": " The color of text on the GUI screens in RGB hexadecimal notation (e.g., FF0088)."
+      },
+      "backgroundColor": {
+        "type": "hexBinary",
+        "description": " The color of the GUI screen backgrounds in RGB hexadecimal notation (e.g., FF0088)."
+      },
+      "buttonColor": {
+        "type": "hexBinary",
+        "description": " The color of buttons on the GUI screens in RGB hexadecimal notation (e.g., FF0088)."
+      },
+      "buttonTextColor": {
+        "type": "hexBinary",
+        "description": " The color of text on buttons on the GUI screens in RGB hexadecimal notation (e.g., FF0088)."
+      },
+      "autoUpdateServer": {
+        "type": "string",
+        "maxLength": 256,
+        "description": " The server the CPE can check to see if an update is available for direct download to it.  This MUST NOT be used  by the CPE if the {{param|.ManagementServer.UpgradesManaged}} parameter is {{true}}."
+      },
+      "userUpdateServer": {
+        "type": "string",
+        "maxLength": 256,
+        "description": " The server where a user can check via a web browser if an update is available for download to a PC.  This MUST  NOT be used by the CPE if the {{param|.ManagementServer.UpgradesManaged}} parameter is {{true}}."
+      },
+      "availableLanguages": {
+        "type": "string",
+        "description": " {{list}} List items represent user-interface languages that are available, where each language is specified according to {{bibref|RFC3066}}."
+      },
+      "currentLanguage": {
+        "type": "string",
+        "maxLength": 16,
+        "description": " Current user-interface language, specified according to {{bibref|RFC3066}}. The value MUST be a member of the list reported by the {{param|AvailableLanguages}} parameter."
+      },
+      "remoteAccess": {
+        "$ref": "RemoteAccess"
+      },
+      "localDisplay": {
+        "$ref": "LocalDisplay"
+      }
+    }
+  }
+}

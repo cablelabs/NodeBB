@@ -19,21 +19,22 @@ function mainRoutes(app, middleware, controllers) {
     app.get('/tr069', middleware.buildHeader, middlewares, controllers.custom.documentationtr069);
 
     var apiMiddlewares = [middleware.incrementPageViews, middleware.updateLastOnlineTime];
+    var updateApiMiddlewares = [middleware.custom.resetEntityCache, middleware.incrementPageViews, middleware.updateLastOnlineTime];
 
     // path routes
     var modellingPrefix = '/modeling';
     app.get(modellingPrefix + '/api/paths', apiMiddlewares, controllers.custom.getPaths);
     app.get(modellingPrefix + '/api/paths/:uid', apiMiddlewares, controllers.custom.getPathById);
-    app.post(modellingPrefix + '/api/paths', controllers.custom.createPath);
-    app.patch(modellingPrefix + '/api/paths/:uid', apiMiddlewares, controllers.custom.patchPath);
-    app.delete(modellingPrefix + '/api/paths/:uid', apiMiddlewares, controllers.custom.deletePath);
+    app.post(modellingPrefix + '/api/paths', updateApiMiddlewares, controllers.custom.createPath);
+    app.patch(modellingPrefix + '/api/paths/:uid', updateApiMiddlewares, controllers.custom.patchPath);
+    app.delete(modellingPrefix + '/api/paths/:uid', updateApiMiddlewares, controllers.custom.deletePath);
 
     // entity routes
     app.get(modellingPrefix + '/api/entities', apiMiddlewares, controllers.custom.getEntities);
     app.get(modellingPrefix + '/api/entities/:name', apiMiddlewares, controllers.custom.getEntityByName);
-    app.post(modellingPrefix + '/api/entities', controllers.custom.createEntity);
-    app.patch(modellingPrefix + '/api/entities/:name', apiMiddlewares, controllers.custom.patchEntity);
-    app.delete(modellingPrefix + '/api/entities/:name', apiMiddlewares, controllers.custom.deleteEntity);
+    app.post(modellingPrefix + '/api/entities', updateApiMiddlewares, controllers.custom.createEntity);
+    app.patch(modellingPrefix + '/api/entities/:name', updateApiMiddlewares, controllers.custom.patchEntity);
+    app.delete(modellingPrefix + '/api/entities/:name', updateApiMiddlewares, controllers.custom.deleteEntity);
 
     // Scope path routes
     app.get(modellingPrefix + '/api/:scope/paths', apiMiddlewares, controllers.custom.getScopePaths);

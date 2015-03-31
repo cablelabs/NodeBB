@@ -23,20 +23,12 @@ var swaggerFile = {
 
 module.exports.init = function (callback) {
 
-    //db.setObjectField('entityname:uid', entityData.name, uid);
-
-    //db.getObjectField('cache:info', 'swagger', callback);
-
-    //each function in the water fall is performed in succession, and receives input from the previous function
-
-    //entityModel.getSwaggerCacheInfo(function(err, needRefresh) {
-    //    console.log(needRefresh);
-    //    if(!needRefresh) {
-    //        entityModel.setSwaggerCacheInfo("true", function (err, data) {
-    //            callback();
-    //        });
-    //    }
-    //});
+    entityModel.getSwaggerCacheInfo(function(err, needRefresh) {
+        console.log(needRefresh);
+        if(needRefresh === "false") {
+            callback();
+        }
+    });
 
     async.parallel({
         paths: getPaths,
@@ -52,7 +44,9 @@ module.exports.init = function (callback) {
                     fs.mkdirSync(path.join(__dirname + '/../../public/secured/api-docs'));
                 }
                 fs.writeFile(path.join(__dirname + '/../../public/secured/api-docs/swagger-file.json'), JSON.stringify(swaggerFile, null, 4), function(err) {
-                    callback();
+                    entityModel.setSwaggerCacheInfo("false", function(err) {
+                        callback();
+                    })
                 });
 
             });

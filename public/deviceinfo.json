@@ -5,104 +5,138 @@
     "type": "object",
     "properties": {
       "deviceCategory": {
-        "type": "string"
+        "type": "string",
+        "description": " Each list item is a device category (e.g. \"AV_TV\" and \"AV_Recorder\"), or the value is {{empty}} if no such element is provided by the device.Note: It is assumed that this list might be used for HTIP (Home-network Topology Identifying Protocol) {{bibref|JJ-300.00}} and {{bibref|G.9973}}. Standard HTIP device categories are defined in {{bibref|JJ-300.01}}. In this case, the maximum length of the list is 127 and of each item is 31, and any non-HTIP device categories SHOULD NOT conflict with standard HTIP device categories."
       },
       "manufacturer": {
         "type": "string",
-        "maxLength": 64
+        "maxLength": 64,
+        "description": " The manufacturer of the CPE (human readable string)."
       },
       "manufacturerOUI": {
         "type": "string",
         "maxLength": 6,
-        "minLength": 6
+        "minLength": 6,
+        "description": " Organizationally unique identifier of the device manufacturer.  Represented as a six hexadecimal-digit value using all upper-case letters and including any leading zeros.  {{pattern}}The value MUST be a valid OUI as defined in {{bibref|OUI}}.This value MUST remain fixed over the lifetime of the device, including across firmware updates. Any change would indicate that it's a new device and would therefore require a BOOTSTRAP Inform."
+      },
+      "modelName": {
+        "type": "string",
+        "maxLength": 64,
+        "description": " Model name of the CPE (human readable string)."
       },
       "modelNumber": {
         "type": "string",
-        "maxLength": 64
+        "maxLength": 64,
+        "description": " The model number of the device (human readable string), or {{empty}} if no model number is provided by the device. Note: It is assumed that this string might be used for HTIP (Home-network Topology Identifying Protocol) {{bibref|JJ-300.00}} and {{bibref|G.9973}}. In this case, the maximum length of the string is 31."
       },
       "description": {
         "type": "string",
-        "maxLength": 256
+        "maxLength": 256,
+        "description": " A full description of the CPE device (human readable string)."
       },
       "productClass": {
         "type": "string",
-        "maxLength": 64
+        "maxLength": 64,
+        "description": " Identifier of the class of product for which the serial number applies.  That is, for a given manufacturer, this  parameter is used to identify the product or class of product over which the {{param|SerialNumber}} parameter is unique.This value MUST remain fixed over the lifetime of the device, including across firmware updates. Any change would indicate that it's  a new device and would therefore require a BOOTSTRAP Inform."
       },
       "serialNumber": {
         "type": "string",
-        "maxLength": 64
+        "maxLength": 64,
+        "description": " Identifier of the particular device that is unique for the indicated class of product and manufacturer.This value MUST remain fixed over the lifetime of the device, including across firmware updates. Any change would indicate that it's  a new device and would therefore require a BOOTSTRAP Inform."
       },
       "hardwareVersion": {
         "type": "string",
-        "maxLength": 64
+        "maxLength": 64,
+        "description": " A string identifying the particular CPE model and version."
       },
       "softwareVersion": {
         "type": "string",
-        "maxLength": 64
+        "maxLength": 64,
+        "description": " A string identifying the software version currently installed in the CPE (i.e. version of the overall CPE  firmware).To allow version comparisons, this element SHOULD be in the form of dot-delimited integers, where each successive integer represents  a more minor category of variation.  For example, ''3.0.21'' where the components mean: ''Major.Minor.Build''."
       },
       "additionalHardwareVersion": {
         "type": "string",
-        "maxLength": 64
+        "maxLength": 64,
+        "description": " {{list}}  Each entry is an additional version.  Represents any additional hardware version information the vendor might wish to supply."
       },
       "additionalSoftwareVersion": {
         "type": "string",
-        "maxLength": 64
+        "maxLength": 64,
+        "description": " {{list}}  Each entry is an additional version.  Represents any additional software version information the vendor might wish to supply."
       },
       "provisioningCode": {
         "type": "string",
-        "maxLength": 64
+        "maxLength": 64,
+        "description": " Identifier of the primary service provider and other provisioning information, which MAY be used by the ACS to  determine service provider-specific customization and provisioning parameters."
       },
       "upTime": {
-        "type": "integer"
+        "type": "integer",
+        "description": " Time in {{units}} since the CPE was last restarted."
       },
       "firstUseDate": {
         "type": "string",
-        "format": "date-time"
+        "format": "date-time",
+        "description": " Date and time in UTC that the CPE first both successfully established an IP-layer network connection and acquired an absolute time reference using NTP or equivalent over that network connection.  The CPE MAY reset this date after a factory reset.If NTP or equivalent is not available, this parameter, if present, SHOULD be set to the Unknown Time value."
       },
       "vendorConfigFileNumberOfEntries": {
-        "type": "integer"
+        "type": "integer",
+        "description": "The number of entries in the VendorConfigFile table."
       },
       "supportedDataModelNumberOfEntries": {
         "type": "integer"
+        "description": "The number of entries in the SupportedDataModel table."
       },
       "processorNumberOfEntries": {
-        "type": "integer"
+        "type": "integer",
+        "description": "The number of entries in the Processor table."
       },
       "vendorLogFileNumberOfEntries": {
-        "type": "integer"
+        "type": "integer",
+        "description": "The number of entries in the VendorLogFile table."
       },
       "locationNumberOfEntries": {
-        "type": "integer"
+        "type": "integer",
+        "description": "The number of entries in the Location table."
       },
       "vendorConfigFile": {
-        "$ref": "VendorConfigFile"
+        "$ref": "VendorConfigFile",
+        "description": "Every instance of this object is a Vendor Configuration File, and contains parameters associated with the Vendor Configuration File. This table of Vendor Configuration Files is for information only and does not allow the ACS to operate on these files in any way. Whenever the CPE successfully downloads a configuration file as a result of the Download RPC with the FileType argument of 3 Vendor Configuration File, the CPE MUST update this table. At most one entry in this table can exist with a given value for Alias, or with a given value for Name."
       },
       "supportedDataModel": {
-        "$ref": "SupportedDataModel"
+        "$ref": "SupportedDataModel",
+        "description": "This table contains details of the device's Current Supported Data Model. The table MUST describe the device's entire Supported Data Model. Therefore, if a device's Supported Data Model changes at run-time, entries will need to be added or removed as appropriate. Each table entry MUST refer to only a single Root Object or Service Object. The device MAY choose to use more than one table entry for a given Root Object or Service Object. Considering that every device has some form of a data model, this table MUST NOT be empty. At most one entry in this table can exist with a given value for URL, or with a given value for Alias, or with a given value for UUID."
       },
       "memoryStatus": {
-        "$ref": "MemoryStatus"
+        "$ref": "MemoryStatus",
+        "description": "Status of the device's volatile physical memory."
       },
       "processStatus": {
-        "ref": "ProcessStatus"
+        "ref": "ProcessStatus",
+        "description": "Status of the processes on the device."
       },
       "temperatureStatus": {
-        "$ref": "TemperatureStatus"
+        "$ref": "TemperatureStatus",
+        "description": "Status of the temperature of the device."
       },
       "networkProperties": {
-        "$ref": "NetworkProperties"
+        "$ref": "NetworkProperties",
+        "description": "This object defines the parameters that describe how the device handles network traffic."
       },
       "processor": {
-        "$ref": "Processor"
+        "$ref": "Processor",
+        "description": "Each table entry represents a hardware or virtual processor that resides on this device. At most one entry in this table can exist with a given value for Alias."
       },
       "vendorLogFile": {
-        "$ref": "VendorLogFile"
+        "$ref": "VendorLogFile",
+        "description": "Each table entry represents a Vendor Log File. This table of log files is informational only and does not allow the ACS to operate on these files in any way. At most one entry in this table can exist with a given value for Alias, or with a given value for Name."
       },
       "proxierInfo": {
-        "$ref": "ProxierInfo"
+        "$ref": "ProxierInfo",
+        "description": "Represents the associated CPE Proxier for a Proxied Device that utilizes the Virtual CWMP Device Mechanism [Annex J.1.1/TR-069a4]."
       },
       "location": {
-        "$ref": "Location"
+        "$ref": "Location",
+        "description": "This object contains Location information. At most one entry in this table can exist with the same values for Source and ExternalSource. On creation of a new table entry, the CPE MUST choose an initial value for ExternalSource such that the new entry does not conflict with any existing entries."
       }
     }
   },
@@ -208,33 +242,38 @@
       }
     }
   },
-
   "VendorConfigFile": {
     "id": "VendorConfigFile",
     "type": "object",
     "properties": {
       "alias": {
         "type": "string",
-        "maxLength": 64
+        "maxLength": 64,
+        "description": "A non-volatile handle used to reference this instance. Alias provides a mechanism for an ACS to label this instance for future reference. If the CPE supports the Alias-based Addressing feature as defined in [Section 3.6.1/TR-069a4] and described in [Appendix II/TR-069a4], the following mandatory constraints MUST be enforced: Its value MUST NOT be empty. Its value MUST start with a letter. If its value is not assigned by the ACS, it MUST start with a \"cpe-\" prefix.The CPE MUST NOT change the parameter value."
       },
       "name": {
         "type": "string",
-        "maxLength": 64
+        "maxLength": 64,
+        "description": " Name of the vendor configuration file.If the CPE is able to obtain the name of the configuration file from the file itself, then the value of this parameter MUST be set to that name.Otherwise, if the CPE can extract the file name from the URL used to download the configuration file, then the value of this  parameter MUST be set to that name.Otherwise, the value of this parameter MUST be set to the value of the TargetFileName argument of the Download RPC used to download this configuration file."
       },
       "version": {
         "type": "string",
-        "maxLength": 16
+        "maxLength": 16,
+        "description": " A string identifying the configuration file version currently used in the CPE.If the CPE is able to obtain the version of the configuration file from the file itself, then the value of this parameter MUST be set to the obtained value.Otherwise, the value of this parameter MUST be {{empty}}."
       },
       "date": {
         "type": "string",
-        "format": "date-time"
+        "format": "date-time",
+        "description": " Date and time when the content of the current version of this vendor configuration file was first applied by the CPE."
       },
       "description": {
         "type": "string",
-        "maxLength": 256
+        "maxLength": 256,
+        "description": " A description of the vendor configuration file (human-readable string)."
       },
       "useForBackupRestore": {
-        "type": "boolean"
+        "type": "boolean",
+        "description": " When {{true}}, this parameter indicates that this {{object}} instance is to be used for backup and restoration purposes.Note: The backup and restore operations may require the use of multiple {{object}} instances. In this scenario the mechanism for detemining the order and combination of {{object}} instances used for backup and restoration purposes is implementation specific."
       }
     }
   },
@@ -244,10 +283,12 @@
     "type": "object",
     "properties": {
       "total": {
-        "type": "integer"
+        "type": "integer",
+        "description": " The total physical RAM, in {{units}}, installed on the device."
       },
       "free": {
-        "type": "integer"
+        "type": "integer",
+        "description": " The free physical RAM, in {{units}}, currently available on the device."
       }
     }
   },
@@ -257,20 +298,30 @@
     "type": "object",
     "properties": {
       "pid": {
-        "type": "integer"
+        "type": "integer",
+        "description": "The Process Identifier."
       },
       "command": {
         "type": "string",
-        "maxLength": 256
+        "maxLength": 256,
+        "description": "The name of the command that has caused the process to exist."
       },
       "size": {
-        "type": "integer"
+        "type": "integer",
+        "description": "The size in kilobytes of the memory occupied by the process."
+      },
+      "priority": {
+        "type": "integer",
+        "maxValue": 99,
+        "description": "The priority of the process where 0 is highest."
       },
       "cpuTime": {
-        "type": "integer"
+        "type": "integer",
+        "description": "The amount of time in milliseconds that the process has spent taking up CPU time since the process was started."
       },
       "state": {
-        "type": "string"
+        "type": "string",
+        "description": "The current state that the process is in. Enumeration of: Running, Sleeping, Stopped, Idle (OPTIONAL), Uninterruptible (OPTIONAL), Zombie (OPTIONAL)"
       }
     }
   },
@@ -423,23 +474,28 @@
     "properties": {
       "alias": {
         "type": "string",
-        "maxLength": 64
+        "maxLength": 64,
+        "description": "A non-volatile handle used to reference this instance. Alias provides a mechanism for an ACS to label this instance for future reference. If the CPE supports the Alias-based Addressing feature as defined in [Section 3.6.1/TR-069a4] and described in [Appendix II/TR-069a4], the following mandatory constraints MUST be enforced: Its value MUST NOT be empty. Its value MUST start with a letter. If its value is not assigned by the ACS, it MUST start with a \"cpe-\" prefix. The CPE MUST NOT change the parameter value."
       },
       "url": {
         "type": "string",
-        "maxLength": 256
+        "maxLength": 256,
+        "description": " URL ({{bibref|RFC3986}}) that describes some or all of the device's Current Supported Data Model.The URL MUST reference an XML file which describes the appropriate part of the Supported Data Model.The referenced XML file MUST be compliant with the DT (Device Type) Schema that is described in {{bibref|TR-106a3|Annex B}}, including any additional normative requirements referenced within the Schema.The XML file referenced by this URL MUST NOT change while the CPE is running, and SHOULD NOT change across a CPE reboot. Note that {{param|UUID}} is a unique key, so the XML file referenced by this URL will never change.The XML file MAY be located within the CPE. In this scenario the CPE MAY use the value of \"localhost\" as URL host portion, When the \"localhost\" value is used, the ACS has the responsibility to substitute the \"localhost\" value with the host portion of the connection request URL.Behavior in the event of an invalid URL, failure to access the referenced XML file, or an invalid XML file, is implementation-dependent."
       },
       "uuid": {
         "type": "string",
         "maxLength": 36,
-        "minLength": 36
+        "minLength": 36,
+        "description": " UUID ({{bibref|RFC4122}}) that is the value of the uuid attribute in the DT Instance referenced by {{param|URL}}."
       },
       "urn": {
         "type": "string",
-        "maxLength": 256
+        "maxLength": 256,
+        "description": " URN ({{bibref|RFC3986}}) that is the value of the spec attribute in the DM (data model) Instance that defines the Root Object or Service Object referenced by this table entry.For example, if this table entry references a DT Instance that refers to the ''Device:1.3'' Root Object, the value of this parameter would be ''urn:broadband-forum-org:tr-157-1-0-0'', because TR-157 defines ''Device:1.3''.  If the DT Instance instead referred to a vendor-specific Root Object, e.g. ''X_EXAMPLE_Device:1.0'' (derived from ''Device:1.3''), the value of this parameter would be something like ''urn:example-com:device-1-0-0''."
       },
       "features": {
-        "type": "string"
+        "type": "string",
+        "description": " This parameter MUST list exactly the features that are defined using the top-level ''feature'' element in the DT Instance referenced by {{param|URL}}.For example, if the DT instance specified the following::<feature name=\"DNSServer\"/>:<feature name=\"Router\"/>:<feature name=\"X_MyDeviceFeature\"/>then the value of this parameter might be ''DNSServer,Router,X_MyDeviceFeature''.  The order in which the features are listed is not significant."
       }
     }
   }

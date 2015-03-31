@@ -5,9 +5,9 @@
     "bind_address": "0.0.0.0",
     "database": "redis",
     "redis": {
-        "host": "dab.redistogo.com",
-        "port": "9156",
-        "password": "a729e1042d1af21da86df56c34077612",
+        "host": "pub-redis-14370.us-east-1-4.1.ec2.garantiadata.com",
+        "port": "14370",
+        "password": "SiqiJBW1NltRcOuY",
         "database": "0"
     },
     "bcrypt_rounds": 12,

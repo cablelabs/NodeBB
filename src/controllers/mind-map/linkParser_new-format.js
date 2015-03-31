@@ -11,6 +11,14 @@ var entity_names = {};
 
 module.exports.init = function (callback) {
 
+  entityModel.getSwaggerCacheInfo(function(err, needRefresh) {
+    console.log(typeof needRefresh);
+    if(needRefresh === "false") {
+      console.log("Not going to refresh");
+      callback();
+    }
+  });
+
   //each function in the water fall is performed in succession, and receives input from the previous function
   async.waterfall([
     getSwaggerFile,
@@ -27,7 +35,10 @@ module.exports.init = function (callback) {
           fs.mkdirSync(path.join(__dirname + '/../../../public/secured/mind-map/assets'));
         }
         fs.writeFile(path.join(__dirname + '/../../../public/secured/mind-map/assets/links-new-format.json'), JSON.stringify(result, null, 4), function(err){
-          callback();
+          entityModel.setSwaggerCacheInfo("false", function(err) {
+            callback();
+          })
+
         });
 
       });

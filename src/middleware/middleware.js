@@ -495,7 +495,7 @@ module.exports = function(webserver) {
 	middleware.admin = require('./admin')(webserver);
 
     // Added for portal
-    middleware.portal = require('./portal')(webserver);
+    middleware.custom = require('./custom')(webserver);
 
 	return middleware;
 };

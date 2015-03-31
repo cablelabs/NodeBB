@@ -10,13 +10,15 @@ var	async = require('async'),
     require('./entity/patch')(Entity);
     require('./entity/delete')(Entity);
 
-    //Entity.getSwaggerCacheInfo = function(callback) {
-    //    db.getObjectField('cache:swagger', callback);
-    //};
-    //
-    //Entity.setSwaggerCacheInfo = function(value, callback) {
-    //    db.setObjectField('cache:swagger', value, callback);
-    //};
+    Entity.getSwaggerCacheInfo = function(callback) {
+        db.getObjectField('global', 'swagger:refresh', function(err, needsRefresh) {
+            callback(err, needsRefresh ? needsRefresh : "true");
+        });
+    };
+
+    Entity.setSwaggerCacheInfo = function(value, callback) {
+        db.setObjectField('global', 'swagger:refresh', value, callback);
+    };
 
     Entity.getEntityField = function(uid, field, callback) {
         Entity.getEntityFields(uid, [field], function(err, entity) {

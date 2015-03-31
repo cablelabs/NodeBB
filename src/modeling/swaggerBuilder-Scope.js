@@ -38,6 +38,13 @@ module.exports.init = function (callback) {
     //    }
     //});
 
+    entityModel.getSwaggerCacheInfo(function(err, needRefresh) {
+        console.log(needRefresh);
+        if(needRefresh === "false") {
+            callback();
+        }
+    });
+
     async.parallel({
         paths: getPaths,
         definitions: getDefinitions
@@ -52,7 +59,9 @@ module.exports.init = function (callback) {
                     fs.mkdirSync(path.join(__dirname + '/../../public/secured/api-docs'));
                 }
                 fs.writeFile(path.join(__dirname + '/../../public/secured/api-docs/swagger-file-tr069.json'), JSON.stringify(swaggerFile, null, 4), function(err) {
-                    callback();
+                    entityModel.setSwaggerCacheInfo("false", function(err) {
+                        callback();
+                    })
                 });
 
             });
