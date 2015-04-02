@@ -92,6 +92,8 @@ function getSecondaryDatabaseModules(config, next) {
 module.exports = function(err, config, databases, callback) {
 	var allowedDBs = Object.keys(databases);
 
+	console.log(allowedDBs);
+
 	allowedDBs.forEach(function(db) {
 		questions[db] = require('./../src/database/' + db).questions;
 	});
@@ -103,6 +105,7 @@ module.exports = function(err, config, databases, callback) {
 			success(err, config, next);
 		},
 		function(config, next) {
+			console.log(config.secondary_database);
 			if (config.secondary_database && allowedDBs.indexOf(config.secondary_database) !== -1) {
 				winston.info('Now configuring ' + config.secondary_database + ' database:');
 				getSecondaryDatabaseModules(config, next);

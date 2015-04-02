@@ -58,18 +58,18 @@
                                     Documentation
                                 </a>
                             </li>
-                            <li class="divider"></li>
-                            <li class="disabled">
-                                <a href="#">API ZONES</a>
-                            </li>
-                            <!--<li class="menu-item dropdown dropdown-submenu">-->
-                                <!--<a tabindex="-1" href="#">API Zones</a>-->
-                                <!--<ul class="dropdown-menu">-->
-                            <li class="divider"></li>
-                            <li><a href="{relative_path}/tr069">
-                                    TR 069
-                                </a>
-                            </li>
+                            <!--<li class="divider"></li>-->
+                            <!--<li class="disabled">-->
+                                <!--<a href="#">API ZONES</a>-->
+                            <!--</li>-->
+                            <!--&lt;!&ndash;<li class="menu-item dropdown dropdown-submenu">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<a tabindex="-1" href="#">API Zones</a>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<ul class="dropdown-menu">&ndash;&gt;-->
+                            <!--<li class="divider"></li>-->
+                            <!--<li><a href="{relative_path}/tr069">-->
+                                    <!--TR 069-->
+                                <!--</a>-->
+                            <!--</li>-->
                                 <!--</ul>-->
                             <!--</li>-->
                             <!--<li><a href="{relative_path}/key-management">Get a Key</a></li>-->

@@ -1,0 +1,74 @@
+[
+    {
+        "name": "CIA Announcements",
+        "description": "Announcements regarding CIA community",
+        "bgColor": "#3c3c3c",
+        "color": "#fff",
+        "icon" : "fa-bullhorn",
+        "order": 1
+    },
+    {
+        "name": "General Discussion",
+        "description": "A place to talk about whateeeever you want",
+        "bgColor": "#3c3c3c",
+        "color": "#fff",
+        "icon" : "fa-comment",
+        "order": 2
+    },
+    {
+        "name": "Development",
+        "description": "Development news and announcements",
+        "bgColor": "#3c3c3c",
+        "color": "#fff",
+        "icon" : "fa-github",
+        "order": 3
+    },
+    {
+        "name": "Blogs",
+        "description": "Blog posts from individual members",
+        "bgColor": "#3c3c3c",
+        "color": "#fff",
+        "icon" : "fa-pencil",
+        "order": 4
+    },
+    {
+        "name": "Feature Requests",
+        "description": "Got a feature request you'd like to see? Give us a shout here.",
+        "bgColor": "#3c3c3c",
+        "color": "#fff",
+        "icon" : "fa-lightbulb-o",
+        "order": 5
+    },
+    {
+        "name": "Bug Reports",
+        "description": "Having trouble with NodeBB? Let us know...",
+        "bgColor": "#3c3c3c",
+        "color": "#fff",
+        "icon" : "fa-cogs",
+        "order": 6
+    },
+    {
+        "name": "News",
+        "description": "News from around the world",
+        "bgColor": "#3c3c3c",
+        "color": "#fff",
+        "icon" : "fa-globe",
+        "order": 7
+    },
+    {
+        "name": "Model",
+        "description": "All things data structures",
+        "bgColor": "#3c3c3c",
+        "color": "#fff",
+        "icon" : "fa-database",
+        "order": 8
+    },
+    {
+        "name": "Random",
+        "description": "Anything and (almost) everything welcome!",
+        "bgColor": "#3c3c3c",
+        "color": "#fff",
+        "icon" : "fa-beer",
+        "order": 9
+    }
+]
