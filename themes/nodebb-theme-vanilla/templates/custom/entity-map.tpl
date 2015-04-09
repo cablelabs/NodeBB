@@ -39,6 +39,11 @@
             </button>
           </span>
         </div>
+        <div class="second-row">
+          <div class="btn-group">
+            <button class="btn btn-xs export-btn">export</button>
+          </div>
+        </div>
       </div>
       <!-- End Search -->
 
@@ -233,4 +238,5 @@
 <script src="secured/mind-map/secured/js/jquery-ui.min.js"></script>
 <script src="secured/mind-map/secured/js/entity.js"></script>
 <script src="secured/mind-map/secured/js/entity-map.js"></script>
+<script src="secured/mind-map/secured/js/jszip.min.js"></script>
 

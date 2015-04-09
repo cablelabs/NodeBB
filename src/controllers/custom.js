@@ -3,8 +3,10 @@
 var async = require('async'),
 
     entity      = require('../modeling/entity'),
+    scopeEntity      = require('../modeling/scope-entity'),
     exporter    = require('../modeling/exportSchema'),
     path        = require('../modeling/path'),
+    scopePath        = require('../modeling/scope-path'),
     winston     = require('winston'),
     apis        = require('../apis'),
     announcements = require('../announcements'),
@@ -21,6 +23,7 @@ var async = require('async'),
     linkParser = require('../controllers/mind-map/linkParser_new-format'),
     swaggerBuilder = require('../modeling/swaggerBuilder'),
     swaggerBuildertr069 = require('../modeling/swaggerBuilder-Scope'),
+    JSZip = require("jszip"),
     validator = require('validator');
 
 var customController = {
@@ -90,14 +93,14 @@ customController.getScopePaths = function(req, res, next) {
     var query = req.query.fields;
     if(query) { // query handles ?fields=field1,field2
         var fields = query.split(',');
-        path.getAllPathFields(fields, function(err, pathsData) {
+        scopePath.getAllScopePathFields(fields, function(err, pathsData) {
             if(err) {
                 return next(err);
             }
             res.send(pathsData);
         });
     } else { // get all attributes
-        path.getAllScopePaths(function (err, pathsData) {
+        scopePath.getAllScopePaths(function (err, pathsData) {
             if(err) {
                 return next(err);
             }
@@ -120,7 +123,7 @@ customController.getPathById = function(req, res, next) {
 
 customController.getScopePathById = function(req, res, next) {
     var uid = req.params.uid;
-    path.getScopePathData(uid, function(err, paths) {
+    scopePath.getScopePathData(uid, function(err, paths) {
         if(err) {
             next(err);
         }
@@ -147,6 +150,9 @@ customController.createPath = function(req, res, next) {
 
 customController.createScopePath = function(req, res, next) {
 
+    var scope = req.params.scope;
+    console.log(scope);
+
     var pathData = {};
 
     for (var key in req.body) {
@@ -155,9 +161,9 @@ customController.createScopePath = function(req, res, next) {
         }
     }
 
-    path.createScopePath(pathData, function(err, uid) {
+    scopePath.createScopePath(pathData, scope, function(err, uid) {
         pathData.uid = uid;
-        res.send(pathData);
+        res.send(err ? err : pathData);
     });
 };
 
@@ -190,7 +196,7 @@ customController.patchScopePath = function(req, res, next) {
         }
     }
 
-    path.patchScopePath(uid, pathData, function(err, updatedEntity) {
+    scopePath.patchScopePath(uid, pathData, function(err, updatedEntity) {
         res.send(updatedEntity);
     });
 };
@@ -229,14 +235,14 @@ customController.getScopeEntities = function(req, res, next) {
     var query = req.query.fields;
     if(query) { // query handles ?fields=field1,field2
         var fields = query.split(',');
-        entity.getAllScopeEntityFields(fields, function(err, entitiesData) {
+        scopeEntity.getAllScopeEntityFields(fields, function(err, entitiesData) {
             if(err) {
                 return next(err);
             }
             res.send(entitiesData);
         });
     } else { // get all attributes
-        entity.getAllScopeEntities(function (err, entitiesData) {
+        scopeEntity.getAllScopeEntities(function (err, entitiesData) {
             if(err) {
                 return next(err);
             }
@@ -284,8 +290,8 @@ customController.getEntityByName = function(req, res, next) {
 
 customController.getScopeEntityByName = function(req, res, next) {
     var name = req.params.name;
-    entity.getScopeUidByName(name, function(err, uid) {
-        entity.getScopeEntities([uid], function(err, entities) {
+    scopeEntity.getScopeUidByName(name, function(err, uid) {
+        scopeEntity.getScopeEntities([uid], function(err, entities) {
             if(err) {
                 next(err);
             }
@@ -294,12 +300,69 @@ customController.getScopeEntityByName = function(req, res, next) {
     });
 };
 
+customController.exportSchemas = function(req, res, next) {
+    var zip = new JSZip();
+    var items = req.query.items.split(",");
+
+    //Array.prototype.asyncEach = function(iterator) {
+    //    var list    = this,
+    //        n       = list.length,
+    //        i       = -1,
+    //        calls   = 0,
+    //        looping = false;
+    //
+    //    var iterate = function() {
+    //        calls -= 1;
+    //        i += 1;
+    //        if (i === n) return;
+    //        iterator(list[i], resume);
+    //    };
+    //
+    //    var loop = function() {
+    //        if (looping) return;
+    //        looping = true;
+    //        while (calls > 0) iterate();
+    //        looping = false;
+    //    };
+    //
+    //    var resume = function() {
+    //        calls += 1;
+    //        if (typeof setTimeout === 'undefined') loop();
+    //        else setTimeout(iterate, 1);
+    //    };
+    //    resume();
+    //};
+    console.log(items);
+
+    async.waterfall([
+        function(next) {
+            //for(var i = 0 ; i < items.length ; i++) {
+            items.forEach(function(item) {
+                console.log(item);
+                exporter.generateSchema(item, function (schema) {
+                    console.log(schema);
+                })
+            })
+            //}
+            next(null, zip);
+        }
+    ], function(err, result) {
+        if (err) {
+            res.send(err);
+        } else {
+            var content = zip.generate({type:"base64"});
+            res.setHeader("Content-type", "application/zip;base64");
+            res.send(content);
+        }
+    })
+};
+
 customController.exportSchemaByName = function(req, res, next) {
     exporter.generateSchema(req.params.name, function(schema) {
         res.setHeader("Content-type", "application/json");
         res.send(schema);
     })
-}
+};
 
 customController.getSchemaByName = function(req, res, next) {
     var name    = req.params.name;
@@ -387,7 +450,7 @@ customController.createScopeEntity = function(req, res, next) {
         }
     }
 
-    entity.createScopeEntity(entityData, function(err, uid) {
+    scopeEntity.createScopeEntity(entityData, function(err, uid) {
         entityData.uid = uid;
         res.send(entityData);
     });
@@ -424,7 +487,7 @@ customController.patchScopeEntity = function(req, res, next) {
         }
     }
 
-    entity.getScopeUidByName(name, function(err, uid) {
+    scopeEntity.getScopeUidByName(name, function(err, uid) {
         entity.patchScopeEntity(uid, entityData, function(err, updatedEntity) {
             res.send(updatedEntity);
         });

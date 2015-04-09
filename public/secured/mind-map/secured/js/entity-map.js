@@ -95,10 +95,12 @@
             //attach event handlers
             this.$.input.on('keyup', search.handlers["keyup input"]);
             this.$.reset.on('click', search.handlers["click reset-btn"]);
+            this.$.export.on('click', search.handlers["click export-btn"]);
         },
         $: {
             input: $('#search-field'),
-            reset: $('.reset-graph-btn, .clear-search-field-btn')
+            reset: $('.reset-graph-btn, .clear-search-field-btn'),
+            export: $('.export-btn')
         },
         handlers: {
             "keyup input": function (e) {
@@ -107,6 +109,9 @@
             "click reset-btn": function (e) {
                 search.$.input.val('');
                 graph.set_selected([]);
+            },
+            "click export-btn": function (e) {
+                export_entities();
             }
         }
     };
@@ -486,6 +491,35 @@
     /**********************************
         Init
     **********************************/
+
+    function export_entities() {
+        //var zip = new JSZip();
+        //zip.file("Hello.txt", "Hello World\n");
+        //var img = zip.folder("images");
+        //img.file("smile.gif", imgData, {base64: true});
+        //var content = zip.generate({type:"blob"});
+        //// see FileSaver.js
+        //saveAs(content, "example.zip");
+
+        var selected = graph.selected;
+        console.log(selected.join(","));
+        //for(var i = 0 ; i < selected.length; i++) {
+        //    console.log("Exporting -- " + selected[i]);
+            $.when($.ajax({url: '/modeling/api/export?items=' + selected.join(",")}))
+                .done(function (schemas) {
+                    saveAs(schemas, "example.zip");
+                    //console.log(JSON.stringify(schemas));
+                    //zip.file(selected[i] + ".json", JSON.stringify(schemas));
+                })
+                .fail(function() {
+                    error_handler('unable to download graph data');
+                });
+        //}
+
+        //var content = zip.generate({type:"blob"});
+        // see FileSaver.js
+        //saveAs(content, "schemas.zip");
+    }
 
     function user_getsets(callback) {
         socket.emit('user.getSets', function(err, data) {

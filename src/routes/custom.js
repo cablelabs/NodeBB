@@ -55,6 +55,9 @@ function mainRoutes(app, middleware, controllers) {
     //schema routes
     app.get(modellingPrefix + '/api/schema/:name', apiMiddlewares, controllers.custom.getSchemaByName);
 
+    // Export
+    app.get(modellingPrefix + '/api/export', apiMiddlewares, controllers.custom.exportSchemas);
+
     app.get(modellingPrefix + '/api/export/:name', apiMiddlewares, controllers.custom.exportSchemaByName);
 
 }
