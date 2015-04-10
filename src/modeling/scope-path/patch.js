@@ -13,12 +13,13 @@ var async = require('async'),
 
 module.exports = function(ScopePath) {
 
-    ScopePath.patchScopePath = function(uid, data, callback) {
+    ScopePath.patchScopePath = function(uid, data, scope, callback) {
         console.log(data);
         var fields = ['name', 'displayName', 'definition', 'tags', 'domain', 'updatedate', 'pathviews'];
 
+        // TODO : Check is the name needs to be unique across api zones or
         function isNameAvailable(next) {
-            ScopePath.getScopePathFields(uid, ['uid', 'name'], function(err, pathData) {
+            ScopePath.getScopePathFields(uid, ['uid', 'name'], scope, function(err, pathData) {
 
                 ScopePath.exists(pathData.name, function(err, exists) {
                     if(err) {
@@ -30,6 +31,25 @@ module.exports = function(ScopePath) {
         }
 
         function updateField(field, next) {
+
+            if(field === 'tags') {
+
+                if(!Array.isArray(data.tags)) {
+                    return callback("Tags need to be an array");
+                }
+                if(data.tags.length <= 0) {
+                    return callback("Tags cannot be empty");
+                }
+                var isPresent = false;
+                data.tags.forEach(function(item) {
+                    if(scope === item) {
+                        isPresent = true;
+                    }
+                });
+                if(!isPresent) {
+                    return callback("Zone and tags do not match");
+                }
+            }
 
             // Check if definition is object, if so stringify. If already string it will be taken care by usual routine.
             if(field === 'definition') {

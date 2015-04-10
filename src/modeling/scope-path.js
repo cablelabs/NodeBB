@@ -22,41 +22,13 @@ var	async = require('async'),
     //    });
     //};
 
-    ScopePath.getScopePathFields = function(uid, fields, callback) {
-        ScopePath.getMultipleScopePathFields([uid], fields, function(err, entities) {
+    ScopePath.getScopePathFields = function(uid, fields, scope, callback) {
+        ScopePath.getMultipleScopePathFields([uid], fields, scope, function(err, entities) {
             callback(err, entities ? entities[0] : null);
         });
     };
 
-    //ScopePath.getMultiplePathFields = function(uids, fields, callback) {
-    //    var fieldsToRemove = [];
-    //    function addField(field) {
-    //        if (fields.indexOf(field) === -1) {
-    //            fields.push(field);
-    //            fieldsToRemove.push(field);
-    //        }
-    //    }
-    //
-    //    if (!Array.isArray(uids) || !uids.length) {
-    //        return callback(null, []);
-    //    }
-    //
-    //    var keys = uids.map(function(uid) {
-    //        return 'path:' + uid;
-    //    });
-    //
-    //    addField('uid');
-    //
-    //    db.getObjectsFields(keys, fields, function(err, entities) {
-    //        if (err) {
-    //            return callback(err);
-    //        }
-    //
-    //        modifyPathData(entities, fieldsToRemove, callback);
-    //    });
-    //};
-
-    ScopePath.getMultipleScopePathFields = function(uids, fields, callback) {
+    ScopePath.getMultipleScopePathFields = function(uids, fields, scope, callback) {
         var fieldsToRemove = [];
         function addField(field) {
             if (fields.indexOf(field) === -1) {
@@ -84,38 +56,13 @@ var	async = require('async'),
         });
     };
 
-    //ScopePath.getPathData = function(uid, callback) {
-    //    ScopePath.getPathsData([uid], function(err, entities) {
-    //        callback(err, entities ? entities[0] : null);
-    //    });
-    //};
-
-    ScopePath.getScopePathData = function(uid, callback) {
-        ScopePath.getScopePathsData([uid], function(err, entities) {
+    ScopePath.getScopePathData = function(uid, scope, callback) {
+        ScopePath.getScopePathsData([uid], scope, function(err, entities) {
             callback(err, entities ? entities[0] : null);
         });
     };
 
-    //ScopePath.getPathsData = function(uids, callback) {
-    //
-    //    if (!Array.isArray(uids) || !uids.length) {
-    //        return callback(null, []);
-    //    }
-    //
-    //    var keys = uids.map(function(uid) {
-    //        return 'path:' + uid;
-    //    });
-    //
-    //    db.getObjects(keys, function(err, entities) {
-    //        if (err) {
-    //            return callback(err);
-    //        }
-    //
-    //        modifyPathData(entities, [], callback);
-    //    });
-    //};
-
-    ScopePath.getScopePathsData = function(uids, callback) {
+    ScopePath.getScopePathsData = function(uids, scope, callback) {
 
         if (!Array.isArray(uids) || !uids.length) {
             return callback(null, []);
@@ -201,10 +148,10 @@ var	async = require('async'),
     //    });
     //};
 
-    ScopePath.getScopePaths = function(uids, callback) {
+    ScopePath.getScopePaths = function(uids, scope, callback) {
         async.parallel({
             pathData: function(next) {
-                ScopePath.getMultipleScopePathFields(uids, ['uid', 'name', 'displayName', 'definition', 'tags', 'domain', 'createdate', 'updatedate', 'pathviews'], next);
+                ScopePath.getMultipleScopePathFields(uids, ['uid', 'name', 'displayName', 'definition', 'tags', 'domain', 'createdate', 'updatedate', 'pathviews'], scope, next);
             }
         }, function(err, results) {
             if (err) {
@@ -232,8 +179,8 @@ var	async = require('async'),
     //    });
     //};
 
-    ScopePath.getAllScopePaths = function(callback) {
-        db.getObjectValues('scopepathname:uid', function(err, uids) {
+    ScopePath.getAllScopePaths = function(scope, callback) {
+        db.getObjectValues('scopepathname:' + scope + ':uid', function(err, uids) {
             ScopePath.getScopePaths(uids, function(err, pathsData) {
                 if(err) {
                     return callback(err);
@@ -254,9 +201,9 @@ var	async = require('async'),
     //    });
     //};
 
-    ScopePath.getAllScopePathFields = function(fields, callback) {
-        db.getObjectValues('scopepathname:uid', function(err, uids) {
-            ScopePath.getMultipleScopePathFields(uids, fields, function(err, pathsData) {
+    ScopePath.getAllScopePathFields = function(fields, scope, callback) {
+        db.getObjectValues('scopepathname:' + scope + ':uid', function(err, uids) {
+            ScopePath.getMultipleScopePathFields(uids, fields, scope, function(err, pathsData) {
                 if(err) {
                     return callback(err);
                 }
@@ -265,24 +212,24 @@ var	async = require('async'),
         });
     };
 
-    ScopePath.exists = function(name, callback) {
+    ScopePath.exists = function(name, scope, callback) {
         ScopePath.getUidByName(name, function(err, exists) {
             callback(err, !! exists);
         });
     };
 
     ScopePath.count = function(callback) {
-        db.getObjectField('global', 'pathCount', function(err, count) {
+        db.getObjectField('global', 'scopePathCount', function(err, count) {
             callback(err, count ? count : 0);
         });
     };
 
-    ScopePath.getUidByName = function(name, callback) {
-        db.getObjectField('pathname:uid', name, callback);
+    ScopePath.getUidByName = function(name, scope, callback) {
+        db.getObjectField('scopepathname:' + scope + ':uid', name, callback);
     };
 
-    ScopePath.getNamesByUids = function(uids, callback) {
-        ScopePath.getMultiplePathFields(uids, ['name'], function(err, pathsData) {
+    ScopePath.getNamesByUids = function(uids, scope, callback) {
+        ScopePath.getMultipleScopePathFields(uids, ['name'], scope, function(err, pathsData) {
             if (err) {
                 return callback(err);
             }

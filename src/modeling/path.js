@@ -22,12 +22,6 @@ var	async = require('async'),
         });
     };
 
-    //Path.getScopePathFields = function(uid, fields, callback) {
-    //    Path.getMultipleScopePathFields([uid], fields, function(err, entities) {
-    //        callback(err, entities ? entities[0] : null);
-    //    });
-    //};
-
     Path.getMultiplePathFields = function(uids, fields, callback) {
         var fieldsToRemove = [];
         function addField(field) {
@@ -56,45 +50,11 @@ var	async = require('async'),
         });
     };
 
-    //Path.getMultipleScopePathFields = function(uids, fields, callback) {
-    //    var fieldsToRemove = [];
-    //    function addField(field) {
-    //        if (fields.indexOf(field) === -1) {
-    //            fields.push(field);
-    //            fieldsToRemove.push(field);
-    //        }
-    //    }
-    //
-    //    if (!Array.isArray(uids) || !uids.length) {
-    //        return callback(null, []);
-    //    }
-    //
-    //    var keys = uids.map(function(uid) {
-    //        return 'scopepath:' + uid;
-    //    });
-    //
-    //    addField('uid');
-    //
-    //    db.getObjectsFields(keys, fields, function(err, entities) {
-    //        if (err) {
-    //            return callback(err);
-    //        }
-    //
-    //        modifyScopePathData(entities, fieldsToRemove, callback);
-    //    });
-    //};
-
     Path.getPathData = function(uid, callback) {
         Path.getPathsData([uid], function(err, entities) {
             callback(err, entities ? entities[0] : null);
         });
     };
-
-    //Path.getScopePathData = function(uid, callback) {
-    //    Path.getScopePathsData([uid], function(err, entities) {
-    //        callback(err, entities ? entities[0] : null);
-    //    });
-    //};
 
     Path.getPathsData = function(uids, callback) {
 
@@ -115,24 +75,6 @@ var	async = require('async'),
         });
     };
 
-    //Path.getScopePathsData = function(uids, callback) {
-    //
-    //    if (!Array.isArray(uids) || !uids.length) {
-    //        return callback(null, []);
-    //    }
-    //
-    //    var keys = uids.map(function(uid) {
-    //        return 'scopepath:' + uid;
-    //    });
-    //
-    //    db.getObjects(keys, function(err, entities) {
-    //        if (err) {
-    //            return callback(err);
-    //        }
-    //        modifyScopePathData(entities, [], callback);
-    //    });
-    //};
-
     function modifyPathData(entities, fieldsToRemove, callback) {
         entities.forEach(function(path) {
             if (!path) {
@@ -147,43 +89,10 @@ var	async = require('async'),
         plugins.fireHook('filter:users.get', entities, callback);
     }
 
-    //function modifyScopePathData(entities, fieldsToRemove, callback) {
-    //    entities.forEach(function(path) {
-    //        if (!path) {
-    //            return;
-    //        }
-    //
-    //        for(var i=0; i<fieldsToRemove.length; ++i) {
-    //            path[fieldsToRemove[i]] = undefined;
-    //        }
-    //    });
-    //
-    //    plugins.fireHook('filter:users.get', entities, callback);
-    //}
-    //
-    //function modifyScopePathData(entities, fieldsToRemove, callback) {
-    //    entities.forEach(function(path) {
-    //        if (!path) {
-    //            return;
-    //        }
-    //
-    //        for(var i=0; i<fieldsToRemove.length; ++i) {
-    //            path[fieldsToRemove[i]] = undefined;
-    //        }
-    //    });
-    //
-    //    plugins.fireHook('filter:users.get', entities, callback);
-    //}
-
     Path.setPathField = function(uid, field, value, callback) {
         plugins.fireHook('action:user.set', field, value, 'set');
         db.setObjectField('path:' + uid, field, value, callback);
     };
-
-    //Path.setScopePathField = function(uid, field, value, callback) {
-    //    plugins.fireHook('action:user.set', field, value, 'set');
-    //    db.setObjectField('scopepath:' + uid, field, value, callback);
-    //};
 
     Path.setPathFields = function(uid, data, callback) {
         for (var field in data) {
@@ -215,26 +124,6 @@ var	async = require('async'),
         });
     };
 
-    //Path.getScopePaths = function(uids, callback) {
-    //    async.parallel({
-    //        pathData: function(next) {
-    //            Path.getMultipleScopePathFields(uids, ['uid', 'name', 'displayName', 'definition', 'tags', 'domain', 'createdate', 'updatedate', 'pathviews'], next);
-    //        }
-    //    }, function(err, results) {
-    //        if (err) {
-    //            return callback(err);
-    //        }
-    //
-    //        results.pathData.forEach(function(path, index) {
-    //            if (!path) {
-    //                return;
-    //            }
-    //        });
-    //
-    //        callback(err, results.pathData);
-    //    });
-    //};
-
     Path.getAllPaths = function(callback) {
         db.getObjectValues('pathname:uid', function(err, uids) {
             Path.getPaths(uids, function(err, pathsData) {
@@ -246,17 +135,6 @@ var	async = require('async'),
         });
     };
 
-    //Path.getAllScopePaths = function(callback) {
-    //    db.getObjectValues('scopepathname:uid', function(err, uids) {
-    //        Path.getScopePaths(uids, function(err, pathsData) {
-    //            if(err) {
-    //                return callback(err);
-    //            }
-    //            callback(err, pathsData);
-    //        });
-    //    });
-    //};
-
     Path.getAllPathFields = function(fields, callback) {
         db.getObjectValues('pathname:uid', function(err, uids) {
             Path.getMultiplePathFields(uids, fields, function(err, pathsData) {
@@ -267,17 +145,6 @@ var	async = require('async'),
             });
         });
     };
-
-    //Path.getAllScopePathFields = function(fields, callback) {
-    //    db.getObjectValues('scopepathname:uid', function(err, uids) {
-    //        Path.getMultipleScopePathFields(uids, fields, function(err, pathsData) {
-    //            if(err) {
-    //                return callback(err);
-    //            }
-    //            callback(err, pathsData);
-    //        });
-    //    });
-    //};
 
     Path.exists = function(name, callback) {
         Path.getUidByName(name, function(err, exists) {

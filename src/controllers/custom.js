@@ -149,9 +149,7 @@ customController.createPath = function(req, res, next) {
 };
 
 customController.createScopePath = function(req, res, next) {
-
     var scope = req.params.scope;
-    console.log(scope);
 
     var pathData = {};
 
@@ -185,7 +183,7 @@ customController.patchPath = function(req, res, next) {
 };
 
 customController.patchScopePath = function(req, res, next) {
-
+    var scope = req.params.scope;
     var uid = req.params.uid;
 
     var pathData = {};
@@ -196,7 +194,7 @@ customController.patchScopePath = function(req, res, next) {
         }
     }
 
-    scopePath.patchScopePath(uid, pathData, function(err, updatedEntity) {
+    scopePath.patchScopePath(uid, pathData, scope, function(err, updatedEntity) {
         res.send(updatedEntity);
     });
 };
