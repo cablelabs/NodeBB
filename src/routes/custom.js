@@ -37,8 +37,8 @@ function mainRoutes(app, middleware, controllers) {
     app.delete(modellingPrefix + '/api/entities/:name', updateApiMiddlewares, controllers.custom.deleteEntity);
 
     // Scope path routes
-    app.get(modellingPrefix + '/api/:scope/paths', apiMiddlewares, controllers.custom.getScopePaths);
-    app.get(modellingPrefix + '/api/:scope/paths/:uid', apiMiddlewares, controllers.custom.getScopePathById);
+    //app.get(modellingPrefix + '/api/:scope/paths', apiMiddlewares, controllers.custom.getScopePaths);
+    //app.get(modellingPrefix + '/api/:scope/paths/:uid', apiMiddlewares, controllers.custom.getScopePathById);
     app.post(modellingPrefix + '/api/:scope/paths', controllers.custom.createScopePath);
     app.patch(modellingPrefix + '/api/:scope/paths/:uid', apiMiddlewares, controllers.custom.patchScopePath);
     //app.delete(modellingPrefix + '/api/scope/paths/:uid', apiMiddlewares, controllers.custom.deletePath);
@@ -46,10 +46,10 @@ function mainRoutes(app, middleware, controllers) {
     // Scope entity routes
     //app.get(modellingPrefix + '/api/:scope/entities/:name', apiMiddlewares, controllers.custom.getCustomScopeEntities);
 
-    app.get(modellingPrefix + '/api/:scope/entities', apiMiddlewares, controllers.custom.getScopeEntities);
-    app.get(modellingPrefix + '/api/:scope/entities/:name', apiMiddlewares, controllers.custom.getScopeEntityByName);
-    app.post(modellingPrefix + '/api/:scope/entities', controllers.custom.createScopeEntity);
-    app.patch(modellingPrefix + '/api/:scope/entities/:name', apiMiddlewares, controllers.custom.patchScopeEntity);
+    //app.get(modellingPrefix + '/api/:scope/entities', apiMiddlewares, controllers.custom.getScopeEntities);
+    //app.get(modellingPrefix + '/api/:scope/entities/:name', apiMiddlewares, controllers.custom.getScopeEntityByName);
+    //app.post(modellingPrefix + '/api/:scope/entities', controllers.custom.createScopeEntity);
+    //app.patch(modellingPrefix + '/api/:scope/entities/:name', apiMiddlewares, controllers.custom.patchScopeEntity);
     //app.delete(modellingPrefix + '/api/scope/entities/:name', apiMiddlewares, controllers.custom.deleteEntity);
 
     //schema routes

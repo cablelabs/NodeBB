@@ -151,7 +151,10 @@ var	async = require('async'),
     ScopePath.getScopePaths = function(uids, scope, callback) {
         async.parallel({
             pathData: function(next) {
-                ScopePath.getMultipleScopePathFields(uids, ['uid', 'name', 'displayName', 'definition', 'tags', 'domain', 'createdate', 'updatedate', 'pathviews'], scope, next);
+                ScopePath.getMultipleScopePathFields(uids,
+                        ['uid', 'name', 'displayName', 'definition', 'tags',
+                         'domain', 'createdate', 'updatedate', 'pathviews'],
+                        scope, next);
             }
         }, function(err, results) {
             if (err) {
@@ -213,7 +216,7 @@ var	async = require('async'),
     };
 
     ScopePath.exists = function(name, scope, callback) {
-        ScopePath.getUidByName(name, function(err, exists) {
+        ScopePath.getUidByName(name, scope, function(err, exists) {
             callback(err, !! exists);
         });
     };

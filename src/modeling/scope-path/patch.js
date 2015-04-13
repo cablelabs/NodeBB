@@ -17,38 +17,44 @@ module.exports = function(ScopePath) {
         console.log(data);
         var fields = ['name', 'displayName', 'definition', 'tags', 'domain', 'updatedate', 'pathviews'];
 
-        // TODO : Check is the name needs to be unique across api zones or
-        function isNameAvailable(next) {
-            ScopePath.getScopePathFields(uid, ['uid', 'name'], scope, function(err, pathData) {
+        // TODO : Check if the name needs to be unique across api zones or just within a zone.
+        //function isNameAvailable(next) {
+        //    ScopePath.getScopePathFields(uid, ['uid', 'name'], scope, function(err, pathData) {
+        //
+        //        ScopePath.exists(pathData.name, function(err, exists) {
+        //            if(err) {
+        //                return next(err);
+        //            }
+        //            next(exists && uid != pathData.uid ? new Error('[[error:username-taken]]') : null);
+        //        });
+        //    });
+        //}
 
-                ScopePath.exists(pathData.name, function(err, exists) {
-                    if(err) {
-                        return next(err);
-                    }
-                    next(exists && uid != pathData.uid ? new Error('[[error:username-taken]]') : null);
-                });
+        function isTagsValid(next) {
+            var newTags = data.tags;
+            if(!Array.isArray(newTags)) {
+                return next("Tags need to be an array");
+            }
+            if(newTags.length <= 0) {
+                return next("Tags cannot be empty");
+            }
+            var isPresent = false;
+            newTags.forEach(function(item) {
+                if(scope === item) {
+                    isPresent = true;
+                }
             });
+            if(!isPresent) {
+                return next("Zone and tags do not match");
+            }
+            next(null);
         }
 
         function updateField(field, next) {
 
             if(field === 'tags') {
-
-                if(!Array.isArray(data.tags)) {
-                    return callback("Tags need to be an array");
-                }
-                if(data.tags.length <= 0) {
-                    return callback("Tags cannot be empty");
-                }
-                var isPresent = false;
-                data.tags.forEach(function(item) {
-                    if(scope === item) {
-                        isPresent = true;
-                    }
-                });
-                if(!isPresent) {
-                    return callback("Zone and tags do not match");
-                }
+                console.log("Came to update tags");
+                return updateTags(uid, data.tags, scope, next);
             }
 
             // Check if definition is object, if so stringify. If already string it will be taken care by usual routine.
@@ -72,17 +78,15 @@ module.exports = function(ScopePath) {
             data[field] = validator.escape(data[field]);
 
             if (field === 'name') {
-                return updateScopeName(uid, data.name, next);
-            }
-
-            if(field === 'definition') {
-
+                // TODO : Can't update name, you have to delete and create new one.
+                return callback("Cannot update name of path. Delete old one and create new one");
+                //return updateScopeName(uid, data.name, scope, next);
             }
 
             ScopePath.setScopePathField(uid, field, data[field], next);
         }
 
-        async.series([isNameAvailable], function(err, results) {
+        async.series([isTagsValid], function(err, results) {
             if (err) {
                 return callback(err);
             }
@@ -92,42 +96,69 @@ module.exports = function(ScopePath) {
                     return callback(err);
                 }
 
-                ScopePath.getScopePathFields(uid, ['name', 'displayName', 'definition', 'tags', 'domain', 'updatedate', 'createdate', 'pathviews'], callback);
+                ScopePath.getScopePathFields(uid, ['name', 'displayName', 'definition', 'tags', 'domain', 'updatedate', 'createdate', 'pathviews'], scope, callback);
             });
         });
     };
 
-    function updateScopeName(uid, newName, callback) {
-        ScopePath.getScopePathFields(uid, ['name'], function(err, pathData) {
-            function update(field, object, value, callback) {
-                async.parallel([
-                    function(next) {
-                        ScopePath.setScopePathField(uid, field, value, next);
-                    },
-                    function(next) {
-                        db.setObjectField(object, value, uid, next);
-                    }
-                ], callback);
-            }
-
-            if (err) {
-                return callback(err);
-            }
-
-            async.parallel([
+    function updateTags(uid, newTags, scope, callback) {
+        ScopePath.getScopePathFields(uid, ['name', 'tags'], scope, function(err, pathData) {
+            async.series([
                 function(next) {
-                    if (newName === pathData.name) {
-                        return next();
-                    }
-
-                    db.deleteObjectField('scopepathname:uid', pathData.name, function(err) {
-                        if (err) {
-                            return next(err);
-                        }
-                        update('name', 'scopepathname:uid', newName, next);
+                    pathData.tags.split(',').forEach(function(item) {
+                        db.deleteObjectField('scopepathname:' + item + ':uid', pathData.name, function (err) {
+                            if (err) {
+                                return callback(err);
+                            }
+                        });
                     });
+                    next(null);
+                },
+                function(next) {
+                    newTags.forEach(function(item) {
+                        db.setObjectField('scopepathname:' + item + ':uid', pathData.name, uid);
+                    });
+
+                    // update the new tag values to the object
+                    ScopePath.setScopePathField(uid, 'tags', newTags, next);
                 }
-            ], callback);
+            ],callback);
         });
     }
+
+    //function updateScopeName(uid, newName, scope, callback) {
+    //    ScopePath.getScopePathFields(uid, ['name', 'tags'], scope, function(err, pathData) {
+    //        if (err) {
+    //            return callback(err);
+    //        }
+    //
+    //        function update(field, object, value, callback) {
+    //            async.parallel([
+    //                function(next) {
+    //                    ScopePath.setScopePathField(uid, field, value, next);
+    //                },
+    //                function(next) {
+    //                    db.setObjectField(object, value, uid, next);
+    //                }
+    //            ], callback);
+    //        }
+    //
+    //        async.parallel([
+    //            function(next) {
+    //                if (newName === pathData.name) {
+    //                    return next();
+    //                }
+    //
+    //                pathData.tags.forEach(function(item) {
+    //                    db.deleteObjectField('scopepathname:' + item + ':uid', pathData.name, function (err) {
+    //                        if (err) {
+    //                            return next(err);
+    //                        }
+    //                        update('name', 'scopepathname:' + scope + ':uid', newName, next);
+    //                    });
+    //                });
+    //            }
+    //        ], callback);
+    //    });
+    //}
 };

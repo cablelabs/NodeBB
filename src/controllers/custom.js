@@ -195,7 +195,7 @@ customController.patchScopePath = function(req, res, next) {
     }
 
     scopePath.patchScopePath(uid, pathData, scope, function(err, updatedEntity) {
-        res.send(updatedEntity);
+        res.send(err ? err : updatedEntity);
     });
 };
 

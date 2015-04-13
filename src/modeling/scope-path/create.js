@@ -85,26 +85,25 @@ module.exports = function(ScopePath) {
 						return callback(err);
 					}
 
-					async.eachSeries(pathData.tags, function(tag, callback) {
-						db.setObjectField('scopepathname:' + tag + ':uid', pathData.name, uid);
-					}, function(err){
-						// if any of the file processing produced an error, err would equal that error
-						if( err ) {
-							// One of the iterations produced an error.
-							// All processing will now stop.
-							console.log('A file failed to process');
-						} else {
-							console.log('All files have been processed successfully');
-						}
-					});
+					//async.eachSeries(pathData.tags, function(tag, callback) {
+					//	db.setObjectField('scopepathname:' + tag + ':uid', pathData.name, uid);
+					//}, function(err){
+					//	// if any of the file processing produced an error, err would equal that error
+					//	if( err ) {
+					//		// One of the iterations produced an error.
+					//		// All processing will now stop.
+					//		console.log('A file failed to process');
+					//	} else {
+					//		console.log('All files have been processed successfully');
+					//	}
+					//});
 
-					//pathData.tags.forEach(function(item) {
-					//	db.setObjectField('scopepathname:' + item + ':uid', pathData.name, uid, function(err) {
-					//	});
-					//})
+					pathData.tags.forEach(function(item) {
+						db.setObjectField('scopepathname:' + item + ':uid', pathData.name, uid);
+					})
 
 					// Call plugins that might want to operate once path is created.
-					plugins.fireHook('action:path.create', pathData);
+					plugins.fireHook('action:scopepath.create', pathData);
 
 					db.incrObjectField('global', 'scopePathCount');
 
