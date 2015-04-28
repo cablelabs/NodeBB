@@ -11,74 +11,27 @@ var async = require('async'),
 
 module.exports = function(ScopeEntity) {
 
-	//ScopeEntity.createEntity = function(data, callback) {
-    //
-	//	var entityData = {
-	//		'name': data.name.trim(),
-	//		'displayName': data.displayName,
-	//		'createdate': Date.now(),
-	//		'domain': data.domain,
-	//		'tags': data.tags,
-	//		'entityviews': 0,
-	//		'definition': JSON.stringify(data.definition)
-	//	};
-    //
-	//	async.parallel({
-	//		entityNameValid: function(next) {
-    //
-	//			// Add entity Name validations here...
-	//			next(null);
-	//		},
-	//		customFields: function(next) {
-    //
-	//			// For plugins related to entities and adding custom fields.
-	//			plugins.fireHook('filter:entity.custom_fields', [], next);
-	//		},
-	//		entityData: function(next) {
-    //
-	//			// For plugins realted to entities which will be fired on entity creation.
-	//			plugins.fireHook('filter:entity.create', entityData, next);
-	//		}
-	//	}, function(err, results) {
-	//		if (err) {
-	//			return callback(err);
-	//		}
-    //
-	//		var customData = {};
-	//		results.customFields.forEach(function(customField) {
-	//			if (data[customField]) {
-	//				customData[customField] = data[customField];
-	//			}
-	//		});
-    //
-	//		entityData = utils.merge(results.entityData, customData);
-    //
-	//		db.incrObjectField('global', 'nextUid', function(err, uid) {
-	//			if (err) {
-	//				return callback(err);
-	//			}
-    //
-	//			entityData.uid = uid;
-    //
-	//			db.setObject('entity:' + uid, entityData, function(err) {
-	//				if (err) {
-	//					return callback(err);
-	//				}
-    //
-	//				db.setObjectField('entityname:uid', entityData.name, uid);
-    //
-	//				// Call plugins that might want to operate once entity is created.
-	//				plugins.fireHook('action:entity.create', entityData);
-    //
-	//				db.incrObjectField('global', 'entityCount');
-    //
-	//				callback(null, uid);
-	//			});
-	//		});
-	//	});
-	//};
+	ScopeEntity.createScopeEntity = function(data, scope, callback) {
 
-	ScopeEntity.createScopeEntity = function(data, callback) {
+		if(! data.name) {
+			return callback("Name attribute missing, it is a required attribute");
+		}
+
+		if(!Array.isArray(data.tags)) {
+			return callback("Tags need to be an array");
+		}
+		if(data.tags.length <= 0) {
+			return callback("Tags cannot be empty");
+		}
+		var isPresent = false;
+		data.tags.forEach(function(item) {
+			if(scope === item) {
+				isPresent = true;
+			}
+		});
+		if(!isPresent) {
+			return callback("Zone and tags do not match");
+		}
 
 		var entityData = {
 			'name': data.name.trim(),
@@ -91,17 +44,23 @@ module.exports = function(ScopeEntity) {
 		};
 
 		async.parallel({
-			entityNameValid: function(next) {
+
+			//validate tags
+			//function(next) {
+			//
+			//}
+
+			entityNameValid: function (next) {
 
 				// Add entity Name validations here...
 				next(null);
 			},
-			customFields: function(next) {
+			customFields: function (next) {
 
 				// For plugins related to entities and adding custom fields.
 				plugins.fireHook('filter:entity.custom_fields', [], next);
 			},
-			entityData: function(next) {
+			entityData: function (next) {
 
 				// For plugins realted to entities which will be fired on entity creation.
 				plugins.fireHook('filter:entity.create', entityData, next);
@@ -132,7 +91,10 @@ module.exports = function(ScopeEntity) {
 						return callback(err);
 					}
 
-					db.setObjectField('scopeentityname:uid', entityData.name, uid);
+					entityData.tags.forEach(function(item) {
+						db.setObjectField('scopeentityname:' + item + ':uid', entityData.name, uid);
+						db.setObjectField('scopeEntityTags', item, item);
+					})
 
 					// Call plugins that might want to operate once entity is created.
 					plugins.fireHook('action:entity.create', entityData);

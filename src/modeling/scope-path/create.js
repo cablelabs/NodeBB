@@ -100,7 +100,8 @@ module.exports = function(ScopePath) {
 
 					pathData.tags.forEach(function(item) {
 						db.setObjectField('scopepathname:' + item + ':uid', pathData.name, uid);
-					})
+						db.setObjectField('scopePathTags', item, item);
+					});
 
 					// Call plugins that might want to operate once path is created.
 					plugins.fireHook('action:scopepath.create', pathData);

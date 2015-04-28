@@ -158,6 +158,18 @@ function start() {
 			}
 		});
 
+		//Code to build the swagger file from the db objects.
+		var swaggerBuilderScope = require('./src/modeling/swaggerBuilder-Scope');
+		swaggerBuilderScope.init(function(err) {
+			if(err) {
+				winston.error('Error Building Swagger SCOPE File. This could mean serious consequences to the portal. ' + err);
+			} else {
+				winston.info("SWAGGER FILE :: Refreshed SCOPE swagger-file.json");
+				refreshEntityMap();
+			}
+		});
+
+
 
 		var meta = require('./src/meta');
 		meta.configs.init(function () {

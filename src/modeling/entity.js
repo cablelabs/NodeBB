@@ -32,11 +32,11 @@ var	async = require('async'),
         });
     };
 
-    Entity.getScopeEntityFields = function(uid, fields, callback) {
-        Entity.getMultipleScopeEntityFields([uid], fields, function(err, entities) {
-            callback(err, entities ? entities[0] : null);
-        });
-    };
+    //Entity.getScopeEntityFields = function(uid, fields, callback) {
+    //    Entity.getMultipleScopeEntityFields([uid], fields, function(err, entities) {
+    //        callback(err, entities ? entities[0] : null);
+    //    });
+    //};
 
     Entity.getMultipleEntityFields = function(uids, fields, callback) {
         var fieldsToRemove = [];
@@ -66,33 +66,33 @@ var	async = require('async'),
         });
     };
 
-    Entity.getMultipleScopeEntityFields = function(uids, fields, callback) {
-        var fieldsToRemove = [];
-        function addField(field) {
-            if (fields.indexOf(field) === -1) {
-                fields.push(field);
-                fieldsToRemove.push(field);
-            }
-        }
-
-        if (!Array.isArray(uids) || !uids.length) {
-            return callback(null, []);
-        }
-
-        var keys = uids.map(function(uid) {
-            return 'scopeentity:' + uid;
-        });
-
-        addField('uid');
-
-        db.getObjectsFields(keys, fields, function(err, entities) {
-            if (err) {
-                return callback(err);
-            }
-
-            modifyScopeEntityData(entities, fieldsToRemove, callback);
-        });
-    };
+    //Entity.getMultipleScopeEntityFields = function(uids, fields, callback) {
+    //    var fieldsToRemove = [];
+    //    function addField(field) {
+    //        if (fields.indexOf(field) === -1) {
+    //            fields.push(field);
+    //            fieldsToRemove.push(field);
+    //        }
+    //    }
+    //
+    //    if (!Array.isArray(uids) || !uids.length) {
+    //        return callback(null, []);
+    //    }
+    //
+    //    var keys = uids.map(function(uid) {
+    //        return 'scopeentity:' + uid;
+    //    });
+    //
+    //    addField('uid');
+    //
+    //    db.getObjectsFields(keys, fields, function(err, entities) {
+    //        if (err) {
+    //            return callback(err);
+    //        }
+    //
+    //        modifyScopeEntityData(entities, fieldsToRemove, callback);
+    //    });
+    //};
 
     Entity.getEntityData = function(uid, callback) {
         Entity.getEntitiesData([uid], function(err, entities) {
@@ -133,29 +133,29 @@ var	async = require('async'),
         plugins.fireHook('filter:entities.get', entities, callback);
     }
 
-    function modifyScopeEntityData(entities, fieldsToRemove, callback) {
-        entities.forEach(function(entity) {
-            if (!entity) {
-                return;
-            }
-
-            for(var i=0; i<fieldsToRemove.length; ++i) {
-                entity[fieldsToRemove[i]] = undefined;
-            }
-        });
-
-        plugins.fireHook('filter:entities.get', entities, callback);
-    }
+    //function modifyScopeEntityData(entities, fieldsToRemove, callback) {
+    //    entities.forEach(function(entity) {
+    //        if (!entity) {
+    //            return;
+    //        }
+    //
+    //        for(var i=0; i<fieldsToRemove.length; ++i) {
+    //            entity[fieldsToRemove[i]] = undefined;
+    //        }
+    //    });
+    //
+    //    plugins.fireHook('filter:entities.get', entities, callback);
+    //}
 
     Entity.setEntityField = function(uid, field, value, callback) {
         plugins.fireHook('action:user.set', field, value, 'set');
         db.setObjectField('entity:' + uid, field, value, callback);
     };
 
-    Entity.setScopeEntityField = function(uid, field, value, callback) {
-        plugins.fireHook('action:user.set', field, value, 'set');
-        db.setObjectField('scopeentity:' + uid, field, value, callback);
-    };
+    //Entity.setScopeEntityField = function(uid, field, value, callback) {
+    //    plugins.fireHook('action:user.set', field, value, 'set');
+    //    db.setObjectField('scopeentity:' + uid, field, value, callback);
+    //};
 
     Entity.setEntityFields = function(uid, data, callback) {
         for (var field in data) {
@@ -189,28 +189,28 @@ var	async = require('async'),
         });
     };
 
-    Entity.getScopeEntities = function(uids, callback) {
-        async.parallel({
-            entityData: function(next) {
-                Entity.getMultipleScopeEntityFields(uids, ['uid', 'name', 'displayName', 'definition', 'tags', 'domain', 'createdate', 'updatedate', 'entityviews'], next);
-            }
-        }, function(err, results) {
-            if (err) {
-                return callback(err);
-            }
-
-            results.entityData.forEach(function(entity, index) {
-                if (!entity) {
-                    return;
-                }
-                console.log(entity.definition);
-                if(entity.definition != null && entity.definition != 'undefined' && typeof entity.definition === 'string') {
-                    entity.definition = JSON.parse(entity.definition);
-                }
-            });
-            callback(err, results.entityData);
-        });
-    };
+    //Entity.getScopeEntities = function(uids, callback) {
+    //    async.parallel({
+    //        entityData: function(next) {
+    //            Entity.getMultipleScopeEntityFields(uids, ['uid', 'name', 'displayName', 'definition', 'tags', 'domain', 'createdate', 'updatedate', 'entityviews'], next);
+    //        }
+    //    }, function(err, results) {
+    //        if (err) {
+    //            return callback(err);
+    //        }
+    //
+    //        results.entityData.forEach(function(entity, index) {
+    //            if (!entity) {
+    //                return;
+    //            }
+    //            console.log(entity.definition);
+    //            if(entity.definition != null && entity.definition != 'undefined' && typeof entity.definition === 'string') {
+    //                entity.definition = JSON.parse(entity.definition);
+    //            }
+    //        });
+    //        callback(err, results.entityData);
+    //    });
+    //};
 
     Entity.getAllEntities = function(callback) {
         db.getObjectValues('entityname:uid', function(err, uids) {
@@ -223,16 +223,16 @@ var	async = require('async'),
         });
     };
 
-    Entity.getAllScopeEntities = function(callback) {
-        db.getObjectValues('scopeentityname:uid', function(err, uids) {
-            Entity.getScopeEntities(uids, function(err, entitiesData) {
-                if(err) {
-                    return callback(err);
-                }
-                callback(err, entitiesData);
-            });
-        });
-    };
+    //Entity.getAllScopeEntities = function(callback) {
+    //    db.getObjectValues('scopeentityname:uid', function(err, uids) {
+    //        Entity.getScopeEntities(uids, function(err, entitiesData) {
+    //            if(err) {
+    //                return callback(err);
+    //            }
+    //            callback(err, entitiesData);
+    //        });
+    //    });
+    //};
 
     Entity.getAllEntityFields = function(fields, callback) {
         db.getObjectValues('entityname:uid', function(err, uids) {
@@ -245,16 +245,16 @@ var	async = require('async'),
         });
     };
 
-    Entity.getAllScopeEntityFields = function(fields, callback) {
-        db.getObjectValues('scopeentityname:uid', function(err, uids) {
-            Entity.getMultipleScopeEntityFields(uids, fields, function(err, entitiesData) {
-                if(err) {
-                    return callback(err);
-                }
-                callback(err, entitiesData);
-            });
-        });
-    };
+    //Entity.getAllScopeEntityFields = function(fields, callback) {
+    //    db.getObjectValues('scopeentityname:uid', function(err, uids) {
+    //        Entity.getMultipleScopeEntityFields(uids, fields, function(err, entitiesData) {
+    //            if(err) {
+    //                return callback(err);
+    //            }
+    //            callback(err, entitiesData);
+    //        });
+    //    });
+    //};
 
     Entity.exists = function(name, callback) {
         Entity.getUidByName(name, function(err, exists) {

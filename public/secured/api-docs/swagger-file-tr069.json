@@ -1,0 +1,2816 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Explore the cable APIs. APIs are grouped by Domain.",
+        "version": "0.0.1",
+        "title": "Cable API"
+    },
+    "host": "cable-api.herokuapp.com",
+    "basePath": "/api-docs",
+    "schemes": [
+        "https"
+    ],
+    "paths": {
+        "/device/{id}": {
+            "get": {
+                "tags": [
+                    "TR 069"
+                ],
+                "summary": "Find a device",
+                "description": "",
+                "displayName": "Device",
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "ID of instance that needs to be fetched",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    {
+                        "in": "query",
+                        "name": "view",
+                        "description": "View of the resource that you want to get.",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Device"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid ID supplied"
+                    },
+                    "404": {
+                        "description": "Instance not found"
+                    }
+                }
+            }
+        },
+        "/device/{id}/softwaremodules": {
+            "get": {
+                "tags": [
+                    "TR 069"
+                ],
+                "summary": "Find the SW module for given device",
+                "description": "",
+                "displayName": "Device",
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "ID of instance that needs to be fetched",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    {
+                        "in": "query",
+                        "name": "view",
+                        "description": "View of the resource that you want to get.",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/SoftwareModules"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid ID supplied"
+                    },
+                    "404": {
+                        "description": "Instance not found"
+                    }
+                }
+            }
+        },
+        "/device/{id}/users": {
+            "get": {
+                "tags": [
+                    "TR 069"
+                ],
+                "summary": "Find the Uers for given device",
+                "description": "",
+                "displayName": "Device - Users",
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "ID of instance that needs to be fetched",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    {
+                        "in": "query",
+                        "name": "view",
+                        "description": "View of the resource that you want to get.",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/UserList"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid ID supplied"
+                    },
+                    "404": {
+                        "description": "Instance not found"
+                    }
+                }
+            }
+        },
+        "/device/{id}/deviceinfo": {
+            "get": {
+                "tags": [
+                    "TR 069"
+                ],
+                "summary": "Find the Device Info for given device",
+                "description": "",
+                "displayName": "Device - Device Info",
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "ID of instance that needs to be fetched",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    {
+                        "in": "query",
+                        "name": "view",
+                        "description": "View of the resource that you want to get.",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/DeviceInfo"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid ID supplied"
+                    },
+                    "404": {
+                        "description": "Instance not found"
+                    }
+                }
+            }
+        },
+        "/device/{id}/hosts": {
+            "get": {
+                "tags": [
+                    "TR 069"
+                ],
+                "summary": "Find the hosts for given device",
+                "description": "",
+                "displayName": "Device",
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "ID of instance that needs to be fetched",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    {
+                        "in": "query",
+                        "name": "view",
+                        "description": "View of the resource that you want to get.",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/HostList"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid ID supplied"
+                    },
+                    "404": {
+                        "description": "Instance not found"
+                    }
+                }
+            }
+        },
+        "/device/{id}/lanconfigsecurity": {
+            "get": {
+                "tags": [
+                    "TR 069"
+                ],
+                "summary": "Find the LAN Config Security for given device",
+                "description": "",
+                "displayName": "Device - LAN Config Security",
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "ID of instance that needs to be fetched.",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    {
+                        "in": "query",
+                        "name": "view",
+                        "description": "View of the resource that you want to get.",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/LANConfigSecurity"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid ID supplied"
+                    },
+                    "404": {
+                        "description": "Instance not found"
+                    }
+                }
+            }
+        },
+        "/device/{id}/managementserver": {
+            "get": {
+                "tags": [
+                    "TR 069"
+                ],
+                "summary": "Find the Management Server for given device",
+                "description": "",
+                "displayName": "Device - Device Info",
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "ID of instance that needs to be fetched",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    {
+                        "in": "query",
+                        "name": "view",
+                        "description": "View of the resource that you want to get.",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/ManagementServer"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid ID supplied"
+                    },
+                    "404": {
+                        "description": "Instance not found"
+                    }
+                }
+            }
+        },
+        "/device/{id}/gatewayinfo": {
+            "get": {
+                "tags": [
+                    "TR 069"
+                ],
+                "summary": "Find the Gateway Info for given device",
+                "description": "",
+                "displayName": "Device - Gateway Info",
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "ID of instance that needs to be fetched",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    {
+                        "in": "query",
+                        "name": "view",
+                        "description": "View of the resource that you want to get.",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/GatewayInfo"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid ID supplied"
+                    },
+                    "404": {
+                        "description": "Instance not found"
+                    }
+                }
+            }
+        },
+        "/device/{id}/userinterface": {
+            "get": {
+                "tags": [
+                    "TR 069"
+                ],
+                "summary": "Find the Management Server for given device",
+                "description": "",
+                "displayName": "Device - User Interface",
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "ID of instance that needs to be fetched",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    {
+                        "in": "query",
+                        "name": "view",
+                        "description": "View of the resource that you want to get.",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/UserInterface"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid ID supplied"
+                    },
+                    "404": {
+                        "description": "Instance not found"
+                    }
+                }
+            }
+        },
+        "/device/{id}/interfacestack": {
+            "get": {
+                "tags": [
+                    "TR 069"
+                ],
+                "summary": "Find the Interace Stack for given device",
+                "description": "",
+                "displayName": "Device - Interface Stack",
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "ID of instance that needs to be fetched",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    {
+                        "in": "query",
+                        "name": "view",
+                        "description": "View of the resource that you want to get.",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/InterfaceStack"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid ID supplied"
+                    },
+                    "404": {
+                        "description": "Instance not found"
+                    }
+                }
+            }
+        },
+        "/device/{id}/smartcardreaders": {
+            "get": {
+                "tags": [
+                    "TR 069"
+                ],
+                "summary": "Find the Smart Card Readers for given device",
+                "description": "",
+                "displayName": "Device - Smart Card Readers",
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "ID of instance that needs to be fetched.",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    {
+                        "in": "query",
+                        "name": "view",
+                        "description": "View of the resource that you want to get.",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/SmartCardReaderList"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid ID supplied"
+                    },
+                    "404": {
+                        "description": "Instance not found"
+                    }
+                }
+            }
+        },
+        "/device/{id}/periodicstatistics": {
+            "get": {
+                "tags": [
+                    "TR 069"
+                ],
+                "summary": "Find the Periodic Statistics for given device",
+                "description": "",
+                "displayName": "Device - Periodic Statistics",
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "ID of instance that needs to be fetched.",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    {
+                        "in": "query",
+                        "name": "view",
+                        "description": "View of the resource that you want to get.",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/PeriodicStatistics"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid ID supplied"
+                    },
+                    "404": {
+                        "description": "Instance not found"
+                    }
+                }
+            }
+        },
+        "/device/{id}/selftestdiagnostics": {
+            "get": {
+                "tags": [
+                    "TR 069"
+                ],
+                "summary": "Find the Self Test Diagnostics for given device",
+                "description": "",
+                "displayName": "Device - Self Test Diagnostics",
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "ID of instance that needs to be fetched.",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    {
+                        "in": "query",
+                        "name": "view",
+                        "description": "View of the resource that you want to get.",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/SelfTestDiagnostics"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid ID supplied"
+                    },
+                    "404": {
+                        "description": "Instance not found"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "DeviceInfo": {
+            "id": "DeviceInfo",
+            "title": "DeviceInfo",
+            "type": "object",
+            "properties": {
+                "deviceCategory": {
+                    "type": "string",
+                    "description": " Each list item is a device category (e.g. \"AV_TV\" and \"AV_Recorder\"), or the value is {{empty}} if no such element is provided by the device.Note: It is assumed that this list might be used for HTIP (Home-network Topology Identifying Protocol) {{bibref|JJ-300.00}} and {{bibref|G.9973}}. Standard HTIP device categories are defined in {{bibref|JJ-300.01}}. In this case, the maximum length of the list is 127 and of each item is 31, and any non-HTIP device categories SHOULD NOT conflict with standard HTIP device categories."
+                },
+                "manufacturer": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": " The manufacturer of the CPE (human readable string)."
+                },
+                "manufacturerOUI": {
+                    "type": "string",
+                    "maxLength": 6,
+                    "minLength": 6,
+                    "description": " Organizationally unique identifier of the device manufacturer.  Represented as a six hexadecimal-digit value using all upper-case letters and including any leading zeros.  {{pattern}}The value MUST be a valid OUI as defined in {{bibref|OUI}}.This value MUST remain fixed over the lifetime of the device, including across firmware updates. Any change would indicate that it's a new device and would therefore require a BOOTSTRAP Inform."
+                },
+                "modelName": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": " Model name of the CPE (human readable string)."
+                },
+                "modelNumber": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": " The model number of the device (human readable string), or {{empty}} if no model number is provided by the device. Note: It is assumed that this string might be used for HTIP (Home-network Topology Identifying Protocol) {{bibref|JJ-300.00}} and {{bibref|G.9973}}. In this case, the maximum length of the string is 31."
+                },
+                "description": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " A full description of the CPE device (human readable string)."
+                },
+                "productClass": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": " Identifier of the class of product for which the serial number applies.  That is, for a given manufacturer, this  parameter is used to identify the product or class of product over which the {{param|SerialNumber}} parameter is unique.This value MUST remain fixed over the lifetime of the device, including across firmware updates. Any change would indicate that it's  a new device and would therefore require a BOOTSTRAP Inform."
+                },
+                "serialNumber": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": " Identifier of the particular device that is unique for the indicated class of product and manufacturer.This value MUST remain fixed over the lifetime of the device, including across firmware updates. Any change would indicate that it's  a new device and would therefore require a BOOTSTRAP Inform."
+                },
+                "hardwareVersion": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": " A string identifying the particular CPE model and version."
+                },
+                "softwareVersion": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": " A string identifying the software version currently installed in the CPE (i.e. version of the overall CPE  firmware).To allow version comparisons, this element SHOULD be in the form of dot-delimited integers, where each successive integer represents  a more minor category of variation.  For example, ''3.0.21'' where the components mean: ''Major.Minor.Build''."
+                },
+                "additionalHardwareVersion": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": " {{list}}  Each entry is an additional version.  Represents any additional hardware version information the vendor might wish to supply."
+                },
+                "additionalSoftwareVersion": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": " {{list}}  Each entry is an additional version.  Represents any additional software version information the vendor might wish to supply."
+                },
+                "provisioningCode": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": " Identifier of the primary service provider and other provisioning information, which MAY be used by the ACS to  determine service provider-specific customization and provisioning parameters."
+                },
+                "upTime": {
+                    "type": "integer",
+                    "description": " Time in {{units}} since the CPE was last restarted."
+                },
+                "firstUseDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": " Date and time in UTC that the CPE first both successfully established an IP-layer network connection and acquired an absolute time reference using NTP or equivalent over that network connection.  The CPE MAY reset this date after a factory reset.If NTP or equivalent is not available, this parameter, if present, SHOULD be set to the Unknown Time value."
+                },
+                "vendorConfigFileNumberOfEntries": {
+                    "type": "integer",
+                    "description": "The number of entries in the VendorConfigFile table."
+                },
+                "supportedDataModelNumberOfEntries": {
+                    "type": "integer",
+                    "description": "The number of entries in the SupportedDataModel table."
+                },
+                "processorNumberOfEntries": {
+                    "type": "integer",
+                    "description": "The number of entries in the Processor table."
+                },
+                "vendorLogFileNumberOfEntries": {
+                    "type": "integer",
+                    "description": "The number of entries in the VendorLogFile table."
+                },
+                "locationNumberOfEntries": {
+                    "type": "integer",
+                    "description": "The number of entries in the Location table."
+                },
+                "vendorConfigFile": {
+                    "$ref": "VendorConfigFile",
+                    "description": "Every instance of this object is a Vendor Configuration File, and contains parameters associated with the Vendor Configuration File. This table of Vendor Configuration Files is for information only and does not allow the ACS to operate on these files in any way. Whenever the CPE successfully downloads a configuration file as a result of the Download RPC with the FileType argument of 3 Vendor Configuration File, the CPE MUST update this table. At most one entry in this table can exist with a given value for Alias, or with a given value for Name."
+                },
+                "supportedDataModel": {
+                    "$ref": "SupportedDataModel",
+                    "description": "This table contains details of the device's Current Supported Data Model. The table MUST describe the device's entire Supported Data Model. Therefore, if a device's Supported Data Model changes at run-time, entries will need to be added or removed as appropriate. Each table entry MUST refer to only a single Root Object or Service Object. The device MAY choose to use more than one table entry for a given Root Object or Service Object. Considering that every device has some form of a data model, this table MUST NOT be empty. At most one entry in this table can exist with a given value for URL, or with a given value for Alias, or with a given value for UUID."
+                },
+                "memoryStatus": {
+                    "$ref": "MemoryStatus",
+                    "description": "Status of the device's volatile physical memory."
+                },
+                "processStatus": {
+                    "ref": "ProcessStatus",
+                    "description": "Status of the processes on the device."
+                },
+                "temperatureStatus": {
+                    "$ref": "TemperatureStatus",
+                    "description": "Status of the temperature of the device."
+                },
+                "networkProperties": {
+                    "$ref": "NetworkProperties",
+                    "description": "This object defines the parameters that describe how the device handles network traffic."
+                },
+                "processor": {
+                    "$ref": "Processor",
+                    "description": "Each table entry represents a hardware or virtual processor that resides on this device. At most one entry in this table can exist with a given value for Alias."
+                },
+                "vendorLogFile": {
+                    "$ref": "VendorLogFile",
+                    "description": "Each table entry represents a Vendor Log File. This table of log files is informational only and does not allow the ACS to operate on these files in any way. At most one entry in this table can exist with a given value for Alias, or with a given value for Name."
+                },
+                "proxierInfo": {
+                    "$ref": "ProxierInfo",
+                    "description": "Represents the associated CPE Proxier for a Proxied Device that utilizes the Virtual CWMP Device Mechanism [Annex J.1.1/TR-069a4]."
+                },
+                "location": {
+                    "$ref": "Location",
+                    "description": "This object contains Location information. At most one entry in this table can exist with the same values for Source and ExternalSource. On creation of a new table entry, the CPE MUST choose an initial value for ExternalSource such that the new entry does not conflict with any existing entries."
+                }
+            }
+        },
+        "ManagementServer": {
+            "id": "ManagementServer",
+            "title": "ManagementServer",
+            "type": "object",
+            "properties": {
+                "enableCWMP": {
+                    "type": "boolean",
+                    "description": " Enables and disables the CPE's support for CWMP. {{false}} means that CWMP support in the CPE is disabled, in which case the device MUST NOT send any Inform messages to the ACS or  accept any Connection Request notifications from the ACS.{{true}} means that CWMP support on the CPE is enabled.The subscriber can re-enable the CPE's CWMP support either by performing a factory reset or by using a LAN-side protocol to change  the value of this parameter back to {{true}}."
+                },
+                "url": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " URL, as defined in {{bibref|RFC3986}}, for the CPE to connect to the ACS using the CPE WAN Management Protocol. This parameter MUST be in the form of a valid HTTP or HTTPS URL.The ''host'' portion of this URL is used by the CPE for validating the ACS certificate when using SSL or TLS.Note that on a factory reset of the CPE, the value of this parameter might be reset to its factory value.  If an ACS modifies the  value of this parameter, it SHOULD be prepared to accommodate the situation that the original value is restored as the result of a  factory reset."
+                },
+                "username": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " Username used to authenticate the CPE when making a connection to the ACS using the CPE WAN Management Protocol.This username is used only for HTTP-based authentication of the CPE.Note that on a factory reset of the CPE, the value of this parameter might be reset to its factory value.  If an ACS modifies the  value of this parameter, it SHOULD be prepared to accommodate the situation that the original value is restored as the result of a  factory reset."
+                },
+                "password": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " Password used to authenticate the CPE when making a connection to the ACS using the CPE WAN Management Protocol.This password is used only for HTTP-based authentication of the CPE.Note that on a factory reset of the CPE, the value of this parameter might be reset to its factory value.  If an ACS modifies the  value of this parameter, it SHOULD be prepared to accommodate the situation that the original value is restored as the result of a  factory reset."
+                },
+                "periodicInformEnable": {
+                    "type": "boolean",
+                    "description": " Whether or not the CPE MUST periodically send CPE information to the ACS using the Inform method  call."
+                },
+                "periodicInformInterval": {
+                    "type": "integer",
+                    "minValue": 1,
+                    "description": " The duration in {{units}} of the interval for which the CPE MUST attempt to connect with the ACS and call the  Inform method if {{param|PeriodicInformEnable}} is {{true}}."
+                },
+                "periodicInformTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": " An absolute time reference in UTC to determine when the CPE will initiate the periodic Inform method calls. Each Inform call MUST occur at this reference time plus or minus an integer multiple of the {{param|PeriodicInformInterval}}.{{param}} is used only to set the ''phase'' of the periodic Informs.  The actual value of {{param}} can be arbitrarily far into the  past or future.For example, if {{param|PeriodicInformInterval}} is 86400 (a day) and if {{param}} is set to UTC midnight on some day (in the past,  present, or future) then periodic Informs will occur every day at UTC midnight.  These MUST begin on the very next midnight, even if  {{param}} refers to a day in the future.The Unknown Time value defined in {{bibref|TR-106a2|section 3.2}} indicates that no particular time reference is specified.  That is,  the CPE MAY locally choose the time reference, and needs only to adhere to the specified {{param|PeriodicInformInterval}}.If absolute time is not available to the CPE, its periodic Inform behavior MUST be the same as if the {{param}} parameter was set to the Unknown Time value."
+                },
+                "parameterKey": {
+                    "type": "string",
+                    "maxLength": 32,
+                    "description": " {{param}} provides the ACS a reliable and extensible means to track changes made by the ACS.  The value of  {{param}} MUST be equal to the value of the ParameterKey argument from the most recent successful SetParameterValues, AddObject, or  DeleteObject method call from the ACS.The CPE MUST set {{param}} to the value specified in the corresponding method arguments if and only if the method completes  successfully and no fault response is generated.  If a method call does not complete successfully (implying that the changes  requested in the method did not take effect), the value of {{param}} MUST NOT be modified.The CPE MUST only modify the value of {{param}} as a result of SetParameterValues, AddObject, DeleteObject, or due to a factory  reset.  On factory reset, the value of {{param}} MUST be set to {{empty}}."
+                },
+                "connectionRequestURL": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " HTTP URL, as defined in {{bibref|RFC3986}}, for an ACS to make a Connection Request notification to the CPE.In the form:: http://host:port/pathThe ''host'' portion of the URL MAY be the IP address for the management interface of the CPE in lieu of a host name.Note: If the ''host'' portion of the URL is a literal IPv6 address then it MUST be enclosed in square brackets (see {{bibref|RFC3986|Section 3.2.2}})."
+                },
+                "connectionRequestUsername": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " Username used to authenticate an ACS making a Connection Request to the CPE."
+                },
+                "connectionRequestPassword": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " Password used to authenticate an ACS making a Connection Request to the CPE."
+                },
+                "upgradesManaged": {
+                    "type": "boolean",
+                    "description": " Indicates whether or not the ACS will manage upgrades for the CPE.  If {{true}}, the CPE SHOULD NOT use other  means other than the ACS to seek out available upgrades.  If {{false}}, the CPE MAY use other means for this purpose.Note that an autonomous upgrade (reported via an \"10 AUTONOMOUS TRANSFER COMPLETE\" Inform Event code) SHOULD be regarded as a managed  upgrade if it is performed according to ACS-specified policy."
+                },
+                "kickURL": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " Present only for a CPE that supports the Kicked RPC method.LAN-accessible URL, as defined in {{bibref|RFC3986}}, from which the CPE can be ''kicked'' to initiate the Kicked RPC method call.   MUST be an absolute URL including a host name or IP address as would be used on the LAN side of the CPE."
+                },
+                "downloadProgressURL": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " Present only for a CPE that provides a LAN-side web page to show progress during a file download.LAN-accessible URL, as defined in {{bibref|RFC3986}}, to which a web-server associated with the ACS MAY redirect a user's browser on  initiation of a file download to observer the status of the download."
+                },
+                "defaultActiveNotificationThrottle": {
+                    "type": "integer",
+                    "description": " This parameter is used to control throttling of active notifications sent by the CPE to the ACS.  It defines the  minimum number of {{units}} that the CPE MUST wait since the end of the last session with the ACS before establishing a new session for  the purpose of delivering an active notification.In other words, if CPE needs to establish a new session with the ACS for the sole purpose of delivering an active notification, it  MUST delay establishing such a session as needed to ensure that the minimum time since the last session completion has been met.The time is counted since the last successfully completed session, regardless of whether or not it was used for active notifications  or other purposes. However, if connection to the ACS is established for purposes other than just delivering active notifications,  including for the purpose of retrying a failed session, such connection MUST NOT be delayed based on this parameter value, and the  pending active notifications MUST be communicated during that connection.The time of the last session completion does not need to be tracked across reboots."
+                },
+                "cWMPRetryMinimumWaitInterval": {
+                    "type": "integer",
+                    "minValue": 1,
+                    "maxValue": 65535,
+                    "description": " Configures the first session retry wait interval, in {{units}}, as specified in {{bibref|TR-069a2|section 3.2.1.1}}.A value of 5 corresponds to the default behavior that is described in {{bibref|TR-069a2}}.The device MUST use a random value between {{param}}  and ({{param}} * {{param|CWMPRetryIntervalMultiplier}} / 1000) as the first  retry wait interval.  Other values in the retry pattern MUST be calculated using this value as a starting point."
+                },
+                "cWMPRetryIntervalMultiplier": {
+                    "type": "integer",
+                    "minValue": 1000,
+                    "maxValue": 65535,
+                    "description": " Configures the retry interval multiplier as specified in {{bibref|TR-069a2|section 3.2.1.1}}.This value is expressed in units of 0.001.  Hence the values of the multiplier range between 1.000 and 65.535.A value of 2000 corresponds to the default behavior that is described in {{bibref|TR-069a2}}.The device MUST use a random value between {{param|CWMPRetryMinimumWaitInterval}}  and ({{param|CWMPRetryMinimumWaitInterval}} *  {{param}} / 1000) as the first retry wait interval.  Other values in the retry pattern MUST be calculated using this value as a  starting point."
+                },
+                "udpConnectionRequestAddress": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " Address and port to which an ACS MAY send a UDP Connection Request to the CPE (see {{bibref|TR-069a2|Annex G}}).This parameter is represented in the form of an Authority element as defined in {{bibref|RFC3986}}.  The value MUST be in one of the  following two forms:: host:port: host* When {{param|STUNEnable}} is {{true}}, the ''host'' and ''port'' portions of this parameter MUST represent the public address and port corresponding to the NAT binding through which the ACS can send UDP Connection Request messages (once this information is learned by the CPE through the use of STUN).* When {{param|STUNEnable}} is {{false}}, the ''host'' and ''port'' portions of the URL MUST represent the local IP address and port on which the CPE is listening for UDP Connection Request messages.The second form of this parameter MAY be used only if the port value is equal to ''80''.Note: If the ''host'' portion of the URL is a literal IPv6 address then it MUST be enclosed in square brackets (see {{bibref|RFC3986|Section 3.2.2}})."
+                },
+                "stunEnable": {
+                    "type": "boolean",
+                    "description": " Enables or disables the use of STUN by the CPE.  This applies only to the use of STUN in association with the  ACS to allow UDP Connection Requests."
+                },
+                "stunServerAddress": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " Host name or IP address of the STUN server for the CPE to send Binding Requests if STUN is enabled via  {{param|STUNEnable}}.If is {{empty}} and {{param|STUNEnable}} is {{true}}, the CPE MUST use the address of the ACS extracted from the host portion of the  ACS URL."
+                },
+                "sTUNServerPort": {
+                    "type": "integer",
+                    "minValue": 0,
+                    "maxValue": 65535,
+                    "description": " Port number of the STUN server for the CPE to send Binding Requests if STUN is enabled via {{param|STUNEnable}}.By default, this SHOULD be the equal to the default STUN port, 3478."
+                },
+                "stunUsername": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " If is not {{empty}}, the value of the STUN USERNAME attribute to be used in Binding Requests (only if message  integrity has been requested by the STUN server).If is {{empty}}, the CPE MUST NOT send STUN Binding Requests with message integrity."
+                },
+                "stunPassword": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " The value of the STUN Password to be used in computing the MESSAGE-INTEGRITY attribute to be used in Binding  Requests (only if message integrity has been requested by the STUN server)."
+                },
+                "stunMaximumKeepAlivePeriod": {
+                    "type": "integer",
+                    "minValue": -1,
+                    "description": " If STUN Is enabled, the maximum period, in {{units}}, that STUN Binding Requests MUST be sent by the CPE for the  purpose of maintaining the binding in the Gateway.  This applies specifically to Binding Requests sent from the UDP Connection  Request address and port.A value of -1 indicates that no maximum period is specified."
+                },
+                "stunMinimumKeepAlivePeriod": {
+                    "type": "integer",
+                    "description": " If STUN Is enabled, the minimum period, in {{units}}, that STUN Binding Requests can be sent by the CPE for the  purpose of maintaining the binding in the Gateway.  This limit applies only to Binding Requests sent from the UDP Connection Request  address and port, and only those that do not contain the BINDING-CHANGE attribute.  This limit does not apply to retransmissions  following the procedures defined in {{bibref|RFC3489}}."
+                },
+                "natDetected": {
+                    "type": "boolean",
+                    "description": " When STUN is enabled, this parameter indicates whether or not the CPE has detected address and/or port mapping  in use.A {{true}} value indicates that the received MAPPED-ADDRESS in the most recent Binding Response differs from the CPE's source address and port.When {{param|STUNEnable}} is {{false}}, this value MUST be {{false}}."
+                },
+                "aliasBasedAddressing": {
+                    "type": "boolean",
+                    "description": " Indicates whether or not the Alias-Based Addressing Mechanism is supported.A {{true}} value indicates that the CPE supports the Alias-Based Addressing Mechanism, as defined in {{bibref|TR-069a4|3.6.1}} and described in {{bibref|TR-069a4|Appendix II}}."
+                },
+                "instanceMode": {
+                    "type": "default",
+                    "description": " Instance identification mode as defined in {{bibref|TR-069a4|3.6.1}}. When {{param|AliasBasedAddressing}} is {{true}}, {{param}} is used by the ACS to control whether the CPE will use Instance Numbers or Instance Aliases in returned Path Names.  {{enum}} This parameter is REQUIRED for any CPE supporting Alias-Based Addressing."
+                },
+                "autoCreateInstances": {
+                    "type": "default",
+                    "description": " Enable or disable the Auto-Create Instance Mechanism. When {{param|AliasBasedAddressing}} is {{true}}, {{param}} indicates whether or not the CPE will automatically create instances while processing a SetParameterValues RPC (as defined in {{bibref|TR-069a4|A.3.2.1}}).*A {{true}} value indicates that the CPE will perform auto-creation of instances when the Alias-Based Addressing Mechanism is used in SetParameterValues RPC.*A {{false}} value indicates that the CPE will not create new object instances. Instead, it will reject the setting of parameters in unrecognized instances and respond with a fault code.This parameter is REQUIRED for any CPE supporting Alias-Based Addressing."
+                },
+                "manageableDeviceNumberOfEntries": {
+                    "type": "integer",
+                    "description": " {{numentries}}"
+                },
+                "manageableDeviceNotificationLimit": {
+                    "type": "integer",
+                    "description": " The minimum time, in seconds, between Active Notifications resulting from changes to the {{param|ManageableDeviceNumberOfEntries}} (if Active Notification is enabled)."
+                },
+                "embeddedDeviceNumberOfEntries": {
+                    "type": "integer",
+                    "description": " {{numentries}}"
+                },
+                "virtualDeviceNumberOfEntries": {
+                    "type": "integer",
+                    "description": " {{numentries}}"
+                },
+                "supportedConnReqMethods": {
+                    "type": "string",
+                    "description": " The connection request methods supported by this {{object}}. {{enum}}"
+                },
+                "connReqXMPPConnection": {
+                    "type": "string",
+                    "description": " {{reference|the {{object|.XMPP.Connection}} instance that is used for connection requests to this {{object}}}}"
+                },
+                "connReqAllowedJabberIDs": {
+                    "type": "string",
+                    "description": " When an XMPP Connection Request is sent to a CPE the XMPP IQ Stanza will contian a \"from\" address that contains the Jabber ID of the initiating entity.This parameter is a {{list}} Each entry represents a Jabber ID, or address, that is allowed to initiate an XMPP Connection Request.  Each Jabber ID is allowed to be either a \"Full JID\" (containing a local-part, domain-part, and resource-part in the following format: \"local-part@domain-part/resource-part\") or a \"Bare JID\" (containing a local-part and a domain-part in the following format: \"local-part@domain-part\").  \"Full JID\" entries require an exact match whereas \"Bare JID\" entries are a wildcard match and will match any Jabber ID with the same local-part and domain-part independent of the resource-part.For example, if {{param}} contained \"ACS1@tr069.example.com, ACS2@tr-069.example.com/resource1\" then the following incoming \"from\" addresses would be '''allowed''': * \"ACS1@tr069.example.com/resource1\"* \"ACS1@tr069.example.com/resource2\"* \"ACS2@tr069.example.com/resource1\"And the following incoming \"from\" addresses '''would not be allowed''': * \"ACS2@tr069.example.com/resource2\"* \"ACS@tr069.example.com/resource\"  If this Parameter is {{empty}} then all Jabber IDs are allowed and an XMPP Connection Request can not be deemed invalid due to the \"from\" address."
+                },
+                "connReqJabberID": {
+                    "type": "string",
+                    "description": " The value MUST be the value of the {{param|.XMPP.Connection.{i}.JabberID}} contained in the {{object|.XMPP.Connection}} instance referenced by the {{param|ConnReqXMPPConnection}} parameter.  If the {{param|ConnReqXMPPConnection}} parameter is empty or the {{object|.XMPP.Connection}} instance being reference is disabled, then this value will be empty.  If the {{object|.XMPP.Connection}} instance being referenced by the {{param|ConnReqXMPPConnection}} parameter is lost ({{param|.XMPP.Connection.{i}.Status}} parameter changes from Enabled to some other value), then the value of this parameter MUST remain unchanged until the connection can be reestablished and a new {{param|.XMPP.Connection.{i}.JabberID}} can be established.  If the new {{param|.XMPP.Connection.{i}.JabberID}} is identical to the existing value, then the value of this parameter MUST NOT be altered and a VALUE CHANGE event MUST NOT be generated."
+                },
+                "httpCompressionSupported": {
+                    "type": "string",
+                    "description": " Indicates the HTTP Compression mechanism(s) supported by this CPE.  Requirements for the use of HTTP Compression for CWMP can be found in {{bibref|TR-069a5|Section 3.4.7}}. {{enum}}Vendors can extend the enumerated values with vendor specific extensions, in which case the rules outlined in {{bibref|TR-106a7|Section 3.3}} MUST be adhered to."
+                },
+                "httpCompression": {
+                    "type": "default",
+                    "description": " The value of this parameter represents the HTTP Compression mechanism to be used by the CPE when communicating with the ACS."
+                },
+                "lightweightNotificationProtocolsSupported": {
+                    "type": "string",
+                    "description": " Indicates the Lightweight Notification Protocol(s) supported by this CPE.  {{enum}}Vendors can extend the enumerated values with vendor specific extensions, in which case the rules outlined in {{bibref|TR-106a7|Section 3.3}} MUST be adhered to."
+                },
+                "lightweightNotificationProtocolsUsed": {
+                    "type": "string",
+                    "description": " The value of this parameter represents the protocol(s) that will be used by the CPE when sending Lightweight Notifications.{{empty}} means that Lightweight Notifications are disabled, despite any SetParameterAttributes that have been configured on various parameters."
+                },
+                "udpLightweightNotificationHost": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " Host name or address to be used when sending the UDP Lightweight Notifications.{{param}} is only applicable when {{param|LightweightNotificationProtocolsUsed}} contains the {{enum|UDP|LightweightNotificationProtocolsUsed}} enumeration.If {{param}} is not implemented or is {{empty}}, and UDP Lightweight Notifications are supported, the destination host MUST be the same as the ACS (as contained in the host portion of the {{param|URL}})."
+                },
+                "udpLightweightNotificationPort": {
+                    "type": "integer",
+                    "description": " The port number to be used when sending UDP Lightweight Notifications. {{param}} is only applicable when {{param|LightweightNotificationProtocolsUsed}} contains the {{enum|UDP|LightweightNotificationProtocolsUsed}} enumeration.If {{param}} is not implemented and UDP Lightweight Notifications are supported, the destination port MUST be 7547."
+                },
+                "informParameterNumberOfEntries": {
+                    "type": "integer",
+                    "description": " {{numentries}}"
+                },
+                "manageableDevice": {
+                    "$ref": "ManageableDevice"
+                },
+                "autonomousTransferCompletePolicy": {
+                    "$ref": "AutonomousTransferCompletePolicy"
+                },
+                "downloadAvailability": {
+                    "$ref": "DownloadAvailability"
+                },
+                "duStateChangeComplPolicy": {
+                    "$ref": "DUStateChangeComplPolicy"
+                },
+                "embeddedDevice": {
+                    "$ref": "EmbeddedDevice"
+                },
+                "virtualDevice": {
+                    "$ref": "VirtualDevice"
+                },
+                "standbyPolicy": {
+                    "$ref": "StandbyPolicy"
+                },
+                "informParameter": {
+                    "$ref": "InformParameter"
+                }
+            }
+        },
+        "SoftwareModules": {
+            "id": "SoftwareModules",
+            "title": "SoftwareModules",
+            "type": "object",
+            "properties": {
+                "execEnvintegerOfEntries": {
+                    "type": "integer"
+                },
+                "deploymentUnitintegerOfEntries": {
+                    "type": "integer"
+                },
+                "executionUnitintegerOfEntries": {
+                    "type": "integer"
+                },
+                "execEnvs": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "ExecEnv"
+                    }
+                },
+                "deploymentUnits": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "DeploymentUnit"
+                    }
+                },
+                "executionUnits": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "ExecutionUnit"
+                    }
+                }
+            }
+        },
+        "LANConfigSecurity": {
+            "id": "LANConfigSecurity",
+            "title": "LANConfigSecurity",
+            "type": "object",
+            "properties": {
+                "configPassword": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": "A password to allow LAN access to protected auto-configuration services. If the CPE supports TR-064 (LAN-side DSL CPE Configuration Protocol), this parameter is to be used as the ''dslf-config'' password (as defined in TR-064). If the CPE has a user interface with password protection enabled, this parameter is also to be used as the user password for  password-protected operations. However, this parameter MUST NOT be used to set the user password if the parameter {{param|.UserInterface.PasswordUserSelectable}} is {{true}}."
+                }
+            }
+        },
+        "UserList": {
+            "id": "UserList",
+            "title": "UserList",
+            "type": "object",
+            "properties": {
+                "userNumberOfEntries": {
+                    "type": "string"
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "User"
+                    }
+                }
+            }
+        },
+        "SmartCardReaderList": {
+            "id": "SmartCardReaderList",
+            "title": "SmartCardReaderList",
+            "type": "object",
+            "properties": {
+                "smartCardReaderNumberOfEntries": {
+                    "type": "integer"
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "SmartCardReader"
+                    }
+                }
+            }
+        },
+        "User": {
+            "id": "User",
+            "title": "User",
+            "type": "object",
+            "properties": {
+                "alias": {
+                    "type": "string",
+                    "maxLength": 64
+                },
+                "enable": {
+                    "type": "boolean"
+                },
+                "remoteAccessCapable": {
+                    "type": "boolean"
+                },
+                "username": {
+                    "type": "string",
+                    "maxLength": 64
+                },
+                "password": {
+                    "type": "string",
+                    "maxLength": 64
+                },
+                "language": {
+                    "type": "string",
+                    "maxLength": 16
+                }
+            }
+        },
+        "ExecEnv": {
+            "id": "ExecEnv",
+            "title": "ExecEnv",
+            "type": "object",
+            "properties": {
+                "enable": {
+                    "type": "boolean"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "reset": {
+                    "type": "boolean"
+                },
+                "alias": {
+                    "type": "string",
+                    "maxLength": 64
+                },
+                "name": {
+                    "type": "string",
+                    "maxLength": 32
+                },
+                "type": {
+                    "type": "string",
+                    "maxLength": 64
+                },
+                "initialRunLevel": {
+                    "type": "integer"
+                },
+                "requestedRunLevel": {
+                    "type": "integer"
+                },
+                "currentRunLevel": {
+                    "type": "integer"
+                },
+                "initialExecutionUnitRunLevel": {
+                    "type": "integer"
+                },
+                "vendor": {
+                    "type": "string",
+                    "maxLength": 128
+                },
+                "version": {
+                    "type": "string",
+                    "maxLength": 32
+                },
+                "parentExecEnv": {
+                    "type": "string"
+                },
+                "allocatedDiskSpace": {
+                    "type": "integer"
+                },
+                "availableDiskSpace": {
+                    "type": "integer"
+                },
+                "allocatedMemory": {
+                    "type": "integer"
+                },
+                "availableMemory": {
+                    "type": "integer"
+                },
+                "activeExecutionUnits": {
+                    "type": "string"
+                },
+                "processorRefList": {
+                    "type": "string"
+                }
+            }
+        },
+        "DeploymentUnit": {
+            "id": "DeploymentUnit",
+            "title": "DeploymentUnit",
+            "type": "object",
+            "properties": {
+                "uuid": {
+                    "type": "string",
+                    "maxLength": 36
+                },
+                "duid": {
+                    "type": "string",
+                    "maxLength": 64
+                },
+                "alias": {
+                    "type": "string",
+                    "maxLength": 64
+                },
+                "name": {
+                    "type": "string",
+                    "maxLength": 64
+                },
+                "status": {
+                    "type": "string"
+                },
+                "resolved": {
+                    "type": "boolean"
+                },
+                "url": {
+                    "type": "string",
+                    "maxLength": 1024
+                },
+                "description": {
+                    "type": "string",
+                    "maxLength": 256
+                },
+                "vendor": {
+                    "type": "string",
+                    "maxLength": 128
+                },
+                "version": {
+                    "type": "string",
+                    "maxLength": 32
+                },
+                "vendorLogList": {
+                    "type": "string"
+                },
+                "vendorConfigList": {
+                    "type": "string"
+                },
+                "executionUnitList": {
+                    "type": "string"
+                },
+                "executionEnvRef": {
+                    "type": "string"
+                }
+            }
+        },
+        "ExecutionUnit": {
+            "id": "ExecutoionUnit",
+            "title": "ExecutionUnit",
+            "type": "object",
+            "properties": {
+                "euid": {
+                    "type": "string",
+                    "maxLength": 64
+                },
+                "alias": {
+                    "type": "string",
+                    "maxLength": 64
+                },
+                "name": {
+                    "type": "string",
+                    "maxLength": 32
+                },
+                "execEnvLabel": {
+                    "type": "string",
+                    "maxLength": 64
+                },
+                "status": {
+                    "type": "string"
+                },
+                "requestedState": {
+                    "type": "string"
+                },
+                "executionFaultMessage": {
+                    "type": "string",
+                    "maxLength": 256
+                },
+                "autoStart": {
+                    "type": "boolean"
+                },
+                "runlevel": {
+                    "type": "integer"
+                },
+                "vendor": {
+                    "type": "string",
+                    "maxLength": 128
+                },
+                "version": {
+                    "type": "string",
+                    "maxLength": 32
+                },
+                "description": {
+                    "type": "string",
+                    "maxLength": 256
+                },
+                "diskSpaceInUse": {
+                    "type": "integer"
+                },
+                "memoryInUse": {
+                    "type": "integer"
+                },
+                "references": {
+                    "type": "string"
+                },
+                "associatedProcessList": {
+                    "type": "string"
+                },
+                "vendorLogList": {
+                    "type": "string"
+                },
+                "vendorConfigList": {
+                    "type": "string"
+                },
+                "supportedDataModelList": {
+                    "type": "string"
+                },
+                "executionEnvRef": {
+                    "type": "string"
+                }
+            }
+        },
+        "SmartCard": {
+            "id": "SmartCard",
+            "title": "SmartCard",
+            "type": "object",
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "enum": [
+                        "None",
+                        "Running",
+                        "Error"
+                    ],
+                    "description": " Status of the Smart Card."
+                },
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "CA",
+                        "DRM",
+                        "UICC"
+                    ],
+                    "description": " Smart Card Type. {{enum}}Vendors can extend the enumerated values with vendor specific extensions, in which case the rules outlined in {{bibref|TR-106a2|Section 3.3}} MUST be adhered to."
+                },
+                "application": {
+                    "type": "string",
+                    "enum": [
+                        "SIM",
+                        "USIM",
+                        "ISIM"
+                    ],
+                    "description": " {{list}} Indicates Smart Card Application(s).  {{param}} is only relevant when {{param|Type}} has a value of UICC, otherwise it is {{empty}}. {{enum}}Vendors can extend the enumerated values with vendor specific extensions, in which case the rules outlined in {{bibref|TR-106a2|Section 3.3}} MUST be adhered to."
+                },
+                "serialNumber": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " The Smart Card Serial Number or {{empty}} if the Smart Card serial Number is not available, e.g. in the case of IPTV due to restrictions of the Service Delivery Platform."
+                },
+                "atr": {
+                    "type": "string",
+                    "maxLength": 1024,
+                    "description": " The Smart Card answer to a reset action. Issued by the Smart Card upon reset."
+                }
+            }
+        },
+        "SmartCardReader": {
+            "id": "SmartCardReader",
+            "title": "SmartCardReader",
+            "type": "object",
+            "properties": {
+                "alias": {
+                    "type": "string­",
+                    "maxLength": 64,
+                    "description": " {{datatype|expand}}"
+                },
+                "enable": {
+                    "type": "boolean",
+                    "description": " Enables or disables this smart card reader."
+                },
+                "status": {
+                    "type": "string",
+                    "enum": [
+                        "Disabled",
+                        "Enabled",
+                        "Error"
+                    ],
+                    "description": " Indicates the status of this smart card reader."
+                },
+                "name": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " Human-readable name associated with this smart card reader."
+                },
+                "reset": {
+                    "type": "boolean",
+                    "description": " When set to {{true}}, resets the SmartCard Reader and the associated SmartCard."
+                },
+                "resetTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": " The time at which this SmartCard Reader was reset.Reset can be caused by:* {{param|Status}} transition from Disabled to Enabled* {{param|Reset}} set to {{true}}.* An internal reset of the SmartCard Reader (including a reboot of the device).Unknown Time value indicates that this SmartCard Reader has never been reset, which can only happen if it has never been enabled."
+                },
+                "decryptionFailedCounter": {
+                    "type": "integer",
+                    "description": " Counter incremented once each time decryption cannot be carried out.This counter relates to the smart card reader, not to the smart card itself, i.e. it is reset when the {{param|Reset}} parameter is used and not when a Smart Card is inserted or removed."
+                },
+                "decryptionFailedNoKeyCounter": {
+                    "type": "integer",
+                    "description": " Counter incremented once each time the key is not available to decrypt it.  This is a subset of the more general {{param|DecryptionFailedCounter}} within the same object and thus will always be less than that parameter.This counter relates to the smart card reader, not to the smart card itself, i.e. it is reset when the {{param|Reset}} parameter is used and not when a Smart Card is inserted or removed."
+                },
+                "smartCard": {
+                    "$ref": "SmartCard"
+                }
+            }
+        },
+        "Host": {
+            "id": "Host",
+            "title": "Host",
+            "type": "object",
+            "properties": {
+                "Alias": {
+                    "type": "string",
+                    "description": " A non-volatile handle used to reference this instance. {{param}} provides a mechanism for an ACS to label this instance for future reference. An initial unique value MUST be assigned when the CPE creates an instance of this object.This parameter is DEPRECATED because {{object}} is a transient object."
+                },
+                "PhysAddress": {
+                    "type": "string",
+                    "description": " Unique physical identifier of the host. For many layer 2 technologies this is typically a MAC address."
+                },
+                "IPAddress": {
+                    "type": "dataType",
+                    "description": " Current IP Address of the host. {{empty}} if no address is available.If more than one IP address for this host is known, the CPE will choose a ''primary'' address.  All known IP addresses can be listed in the {{object|IPv4Address}} and {{object|IPv6Address}} tables."
+                },
+                "AddressSource": {
+                    "type": "string",
+                    "description": " Indicates whether the IP address of the host was allocated by the CPE using DHCP, was assigned to the host statically, or was assigned using automatic IP address allocation.  {{enum}}This parameter is DEPRECATED because only {{enum|None}} and {{enum|DHCP}} made sense (the CPE doesn't know whether the address is {{enum|Static}} or {{enum|AutoIP}}).  The {{enum|DHCP}} case is now handled via the {{param|DHCPClient}} reference."
+                },
+                "DHCPClient": {
+                    "type": "string",
+                    "description": " {{reference}} Each list item is the DHCPv4 or DHCPv6 server's client entry that corresponds to the host."
+                },
+                "LeaseTimeRemaining": {
+                    "type": "int",
+                    "description": " DHCP lease time remaining in {{units}}.  A value of -1 indicates an infinite lease.  The value MUST be 0 (zero) if the {{param|AddressSource}} is not {{enum|DHCP|AddressSource}}.This parameter is DEPRECATED because DHCP lease/lifetime information can be accessed via the {{param|DHCPClient}} reference."
+                },
+                "AssociatedDevice": {
+                    "type": "string",
+                    "description": " {{noreference}}The value MUST the path name of the ''AssociatedDevice'' (or equivalent) table row that models the host, or {{null}} if there is no such table.For example: ''Device.WiFi.AccessPoint.1.AssociatedDevice.2''"
+                },
+                "Layer1Interface": {
+                    "type": "string",
+                    "description": " {{noreference}}The value MUST be the path name of a row in a layer 1 interface table. For example: ''Device.Ethernet.Interface.2''"
+                },
+                "Layer3Interface": {
+                    "type": "string",
+                    "description": " {{reference}}  If the entry represents a non-IP device, then {{param}} will be {{empty}}."
+                },
+                "VendorClassID": {
+                    "type": "string",
+                    "description": " Vendor Class Identifier DHCP option (Option 60) of the host.This is a normal string, e.g. \"abc\" is represented as \"abc\" and not say \"616263\" hex. However, if the value includes non-printing characters then such characters have to be represented using XML escapes, e.g. #x0a for line-feed.It MAY be defined when {{param|AddressSource}} is {{enum|DHCP|AddressSource}}. {{empty}} indicates this option is not used.Note: DHCPv4 Option values are limited to a length of 255, while DHCPv6 Option values can have a maximum length of 65535.This parameter is DEPRECATED because host-supplied DHCP options can be accessed via the {{param|DHCPClient}} reference."
+                },
+                "ClientID": {
+                    "type": "hexBinary",
+                    "description": " A hexbinary string, Client Identifier DHCP option (Option 61) for the specific IP connection of the client.  The option value is binary, so an exact match is REQUIRED.It MAY be defined when {{param|AddressSource}} is {{enum|DHCP|AddressSource}}. {{empty}} indicates this option is not used.Note: DHCPv4 Option values are limited to a length of 255, while DHCPv6 Option values can have a maximum length of 65535.This parameter is DEPRECATED because host-supplied DHCP options can be accessed via the {{param|DHCPClient}} reference."
+                },
+                "UserClassID": {
+                    "type": "hexBinary",
+                    "description": " A hexbinary string, User Class Identifier DHCP option (Option 77) of the host.It MAY be defined when {{param|AddressSource}} is {{enum|DHCP|AddressSource}}. {{empty}} indicates this option is not used.Note: DHCPv4 Option values are limited to a length of 255, while DHCPv6 Option values can have a maximum length of 65535.This parameter is DEPRECATED because host-supplied DHCP options can be accessed via the {{param|DHCPClient}} reference."
+                },
+                "HostName": {
+                    "type": "string",
+                    "description": " The device's host name or {{empty}} if unknown."
+                },
+                "Active": {
+                    "type": "boolean",
+                    "description": " Whether or not the host is currently present on the LAN.  The method of presence detection is a local matter to  the CPE.The ability to list inactive hosts is OPTIONAL.  If the CPE includes inactive hosts in this table, {{param}} MUST be set to {{false}}  for each inactive host.  The length of time an inactive host remains listed in this table is a local matter to the CPE."
+                },
+                "IPv4AddressNumberOfEntries": {
+                    "type": "integer",
+                    "description": " {{numentries}}"
+                },
+                "IPv6AddressNumberOfEntries": {
+                    "type": "integer",
+                    "description": " {{numentries}}"
+                }
+            }
+        },
+        "Location": {
+            "id": "Location",
+            "title": "Location",
+            "type": "object",
+            "properties": {
+                "source": {
+                    "type": "string",
+                    "description": " Identifies the source of the location data.",
+                    "enum": [
+                        "GPS",
+                        "AGPS",
+                        "Manual",
+                        "External"
+                    ]
+                },
+                "acquiredTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": " The time when the location was acquired."
+                },
+                "externalSource": {
+                    "type": "string",
+                    "description": " URL, MAC address, or other identifier that identifies an \"External\" source of this location.Meaningful only if {{param|Source}} has a value of {{enum|External|Source}}, otherwise it MUST be {{empty}}.If {{param|ExternalProtocol}} has a value of {{enum|CWMP|ExternalProtocol}},  this is the URL or IP address of the ACS."
+                },
+                "externalProtocol": {
+                    "type": "string",
+                    "description": " Protocol used to acquire a location from an \"External\" source. {{enum}}Meaningful only if {{param|Source}} has a value of {{enum|External|Source}}, otherwise it MUST be {{empty}}.",
+                    "enum": [
+                        "<Empty> (an empty string)",
+                        "CWMP",
+                        "OMA-DM",
+                        "SNMP",
+                        "UPnP",
+                        "HELD",
+                        "DHCPv4",
+                        "DHCPv6",
+                        "LLDP-MED",
+                        "MLP",
+                        "Other"
+                    ]
+                },
+                "dataObject": {
+                    "type": "string",
+                    "maxLength": 1200,
+                    "description": " The currently valid location information.Writable only when {{param|ExternalProtocol}} has a value of {{enum|CWMP|ExternalProtocol}}.If obtained through the local GPS/AGPS then the location information is formatted according to {{bibref|RFC5491}}.If manually configured then location information will be XML-formatted according to {{bibref|RFC5491}} (geographical information) and {{bibref|RFC5139}} (civic addresses).If obtained by an external source this is the location information as received.If it's an XML document (e.g. CWMP, OMA-DM, UPnP, HELD, MLP) the location information will be represented as-is, otherwise it will be converted to base64.CWMP configured location information will be XML-formatted according to {{bibref|RFC5491}} (geographical information) and {{bibref|RFC5139}} (civic addresses).Only zero or one Location object instance with value {{enum|CWMP|ExternalProtocol}} MUST exist at any given time."
+                }
+            }
+        },
+        "ProxierInfo": {
+            "id": "ProxierInfo",
+            "title": "ProxierInfo",
+            "type": "object",
+            "properties": {
+                "manufacturerOUI": {
+                    "type": "string",
+                    "maxLength": 6,
+                    "minLength": 6,
+                    "pattern": "[0-9A-F]{6}",
+                    "description": " Organizationally unique identifier of the associated CPE Proxier.  Represented as a six hexadecimal-digit value using all upper-case letters and including any leading zeros.  {{pattern}}The value MUST be a valid OUI as defined in {{bibref|OUI}}."
+                },
+                "productClass": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": " Identifier of the class of product of the associated CPE Proxier for which the serial number applies.{{empty}} indicates either that the CPE Proxier does not use a product class to differentiate its serial number."
+                },
+                "serialNumber": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": " Serial number of the associated CPE Proxier."
+                },
+                "proxyProtocol": {
+                    "type": "string",
+                    "enum": [
+                        "Z-Wave",
+                        "ZigBee",
+                        "UPnP-DM",
+                        "ETSI-M2M"
+                    ],
+                    "description": " The protocol being used to communicate between the CPE Proxier and this Proxied Device. {{enum}}Vendors can extend the enumerated values with vendor specific extensions, in which case the rules outlined in {{bibref|TR-106a6|3.3}} MUST be adhered to."
+                }
+            }
+        },
+        "VendorLogFile": {
+            "id": "VendorLogFile",
+            "title": "VendorLogFile",
+            "type": "object",
+            "properties": {
+                "alias": {
+                    "type": "dataType",
+                    "maxLength": 64,
+                    "description": " {{datatype|expand}}"
+                },
+                "name": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": " Name of the log file.Typically this will be the full file system path, but provided that it is guaranteed to be unique across current and future log files, it MAY be a shorter name derived from the file system path, or be derived via another mechanism."
+                },
+                "maximumSize": {
+                    "type": "integer",
+                    "description": " The maximum size of the log file in {{units}}.  If the device doesn't know the maximum file size then {{param}} will be 0."
+                },
+                "persistent": {
+                    "type": "boolean",
+                    "description": " When {{true}}, the log file contents are preserved across a device reboot.When {{false}}, the log file contents will be purged when the device is rebooted."
+                }
+            }
+        },
+        "Processor": {
+            "id": "Processor",
+            "title": "Processor",
+            "type": "object",
+            "properties": {
+                "alias": {
+                    "type": "dataType",
+                    "maxLength": 64,
+                    "description": " {{datatype|expand}}"
+                },
+                "Architecture": {
+                    "type": "string",
+                    "enum": [
+                        "arm",
+                        "i386",
+                        "m68010",
+                        "m68k",
+                        "mipseb (big-endian)",
+                        "mipsel (little-endian)",
+                        "powerpc",
+                        "sh3eb (big-endian)",
+                        "sh3el (little-endian)",
+                        "x86_64"
+                    ],
+                    "description": " The architecture of the processor on the underlying hardware. {{enum}} For processor architectures not included in this list, the vendor MAY include vendor-specific values, which MUST use the format defined in {{bibref|TR-106a4|Section 3.3}}."
+                }
+            }
+        },
+        "VendorConfigFile": {
+            "id": "VendorConfigFile",
+            "type": "object",
+            "properties": {
+                "alias": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": "A non-volatile handle used to reference this instance. Alias provides a mechanism for an ACS to label this instance for future reference. If the CPE supports the Alias-based Addressing feature as defined in [Section 3.6.1/TR-069a4] and described in [Appendix II/TR-069a4], the following mandatory constraints MUST be enforced: Its value MUST NOT be empty. Its value MUST start with a letter. If its value is not assigned by the ACS, it MUST start with a \"cpe-\" prefix.The CPE MUST NOT change the parameter value."
+                },
+                "name": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": " Name of the vendor configuration file.If the CPE is able to obtain the name of the configuration file from the file itself, then the value of this parameter MUST be set to that name.Otherwise, if the CPE can extract the file name from the URL used to download the configuration file, then the value of this  parameter MUST be set to that name.Otherwise, the value of this parameter MUST be set to the value of the TargetFileName argument of the Download RPC used to download this configuration file."
+                },
+                "version": {
+                    "type": "string",
+                    "maxLength": 16,
+                    "description": " A string identifying the configuration file version currently used in the CPE.If the CPE is able to obtain the version of the configuration file from the file itself, then the value of this parameter MUST be set to the obtained value.Otherwise, the value of this parameter MUST be {{empty}}."
+                },
+                "date": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": " Date and time when the content of the current version of this vendor configuration file was first applied by the CPE."
+                },
+                "description": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " A description of the vendor configuration file (human-readable string)."
+                },
+                "useForBackupRestore": {
+                    "type": "boolean",
+                    "description": " When {{true}}, this parameter indicates that this {{object}} instance is to be used for backup and restoration purposes.Note: The backup and restore operations may require the use of multiple {{object}} instances. In this scenario the mechanism for detemining the order and combination of {{object}} instances used for backup and restoration purposes is implementation specific."
+                }
+            }
+        },
+        "MemoryStatus": {
+            "id": "MemoryStatus",
+            "title": "MemoryStatus",
+            "type": "object",
+            "properties": {
+                "total": {
+                    "type": "integer",
+                    "description": " The total physical RAM, in {{units}}, installed on the device."
+                },
+                "free": {
+                    "type": "integer",
+                    "description": " The free physical RAM, in {{units}}, currently available on the device."
+                }
+            }
+        },
+        "Process": {
+            "id": "Process",
+            "title": "Process",
+            "type": "object",
+            "properties": {
+                "pid": {
+                    "type": "integer"
+                },
+                "command": {
+                    "type": "string",
+                    "maxLength": 256
+                },
+                "size": {
+                    "type": "integer"
+                },
+                "cpuTime": {
+                    "type": "integer"
+                },
+                "state": {
+                    "type": "string"
+                }
+            }
+        },
+        "ProcessStatus": {
+            "id": "ProcessStatus",
+            "type": "object",
+            "properties": {
+                "cpuUsage": {
+                    "type": "integer",
+                    "max": 100,
+                    "description": "The total amount of the CPU, in percent, rounded up to the nearest whole percent. In the case that multiple CPU are present, this value represents the average of all CPU."
+                },
+                "processNumberOfEntries": {
+                    "type": "integer",
+                    "description": "The number of entries in the Process table. Since a Process can come and go very quickly, the CPE SHOULD place a locally specified limit on the frequency at which it will notify the ACS of value changes, as described in [Section 3.2.1/TR-069a2]."
+                },
+                "processes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "Process"
+                    }
+                }
+            }
+        },
+        "TemperatureSensor": {
+            "id": "TemperatureSensor",
+            "title": "TemperatureSensor",
+            "type": "object",
+            "properties": {
+                "alias": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": "A non-volatile handle used to reference this instance. Alias provides a mechanism for an ACS to label this instance for future reference. If the CPE supports the Alias-based Addressing feature as defined in [Section 3.6.1/TR-069a4] and described in [Appendix II/TR-069a4], the following mandatory constraints MUST be enforced: Its value MUST NOT be empty. Its value MUST start with a letter. If its value is not assigned by the ACS, it MUST start with a \"cpe-\" prefix. The CPE MUST NOT change the parameter value."
+                },
+                "enable": {
+                    "type": "boolean",
+                    "description": " Indicates whether or not the temperature sensor is enabled."
+                },
+                "status": {
+                    "type": "string",
+                    "enum": [
+                        "Disabled (The sensor is not currently sampling the temperature), Enabled (The sensor is currently sampling the temperature), Error (The sensor error currently prevents sampling the temperature)"
+                    ],
+                    "description": " The status of this temperature sensor."
+                },
+                "reset": {
+                    "type": "boolean",
+                    "description": " When set to {{true}}, resets the temperature sensor."
+                },
+                "resetTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": " The time at which this temperature sensor was reset.Reset can be caused by:* {{param|Status}} transition from {{enum|Disabled|Status}} to {{enum|Enabled|Status}}* {{param|Reset}} set to {{true}}.* An internal reset of the temperature sensor (including a reboot of the device).The Unknown Time value, as defined in {{bibref|TR-106a2}}, indicates that this temperature sensor has never been reset, which can only happen if it has never been enabled."
+                },
+                "name": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " Name of this temperature sensor. This text MUST be sufficient to distinguish this temperature sensor from other temperature sensors."
+                },
+                "Value": {
+                    "type": "integer",
+                    "minValue": -274,
+                    "description": " This temperature sensor's last good reading in {{units}}.A value of -274 (which is below absolute zero) indicates a good reading has not been obtained since last reset."
+                },
+                "lastUpdate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": " The time at which this temperature sensor's last good reading was obtained. The Unknown Time value, as defined in {{bibref|TR-106a2}}, indicates a good reading has not been obtained since last reset."
+                },
+                "minValue": {
+                    "type": "int",
+                    "minValue": -274,
+                    "description": " This temperature sensor's lowest value  reading in {{units}} since last reset.A value of -274 (which is below absolute zero) indicates a good reading has not been obtained since last reset."
+                },
+                "minTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": " The time at which this temperature sensor's lowest value was read. The Unknown Time value, as defined in {{bibref|TR-106a2}}, indicates a good reading has not been obtained since last reset."
+                },
+                "maxValue": {
+                    "type": "int",
+                    "minValue": -274,
+                    "description": " This temperature sensor's highest value  reading in {{units}} since last reset.A value of -274 (which is below absolute zero) indicates a good reading has not been obtained since last reset."
+                },
+                "maxTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": " The time at which this temperature sensor's highest value was read. The Unknown Time value, as defined in {{bibref|TR-106a2}}, indicates a good reading has not been obtained since last reset."
+                },
+                "lowAlarmValue": {
+                    "type": "int",
+                    "minValue": -274,
+                    "description": " This temperature sensor's low alarm value in {{units}}.A value of -274 (which is below absolute zero) indicates a non configured value.A change to this value will cause {{param|LowAlarmTime}} to be reset."
+                },
+                "lowAlarmTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": " Initial time at which this temperature sensor's {{param|LowAlarmValue}} was encountered.This value is only set the first time the alarm is seen and not changed until the next reset. The Unknown Time value, as defined in {{bibref|TR-106a2}}, indicates that an alarm has not been encountered since the last reset."
+                },
+                "highAlarmValue": {
+                    "type": "int",
+                    "minValue": -274,
+                    "description": " This temperature sensor's high alarm value in {{units}}.A value of -274 (which is below absolute zero) indicates a non configured value.A change to this value will cause {{param|HighAlarmTime}} to be reset."
+                },
+                "pollingInterval": {
+                    "type": "integer",
+                    "minValue": -274,
+                    "description": " The interval, measured in {{units}}, in which the device polls this {{object}}.If the value is 0 then the device selects its own polling interval.If the value is greater than 0 then the device MUST use this value as the polling interval."
+                },
+                "highAlarmTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": " Initial time at which this temperature sensor's {{param|HighAlarmValue}} was encountered.This value is only set the first time the alarm is seen and not changed until the next reset. The Unknown Time value, as defined in {{bibref|TR-106a2}}, indicates that an alarm has not been encountered since the last reset."
+                }
+            }
+        },
+        "TemperatureStatus": {
+            "id": "TemperatureStatus",
+            "title": "TemperatureStatus",
+            "type": "object",
+            "properties": {
+                "temperatureSensorNumberOfEntries": {
+                    "type": "integer",
+                    "description": "The number of entries in the TemperatureSensor table."
+                },
+                "temperatureSensor": {
+                    "description": "This object represents information that the device has obtained via sampling an internal temperature sensor. At most one entry in this table can exist with a given value for Name, or with a given value for Alias.",
+                    "ref": "TemperatureSensor"
+                }
+            }
+        },
+        "NetworkProperties": {
+            "id": "NetworkProperties",
+            "title": "NetworkProperties",
+            "type": "object",
+            "properties": {
+                "maxTCPWindowSize": {
+                    "type": "integer",
+                    "description": " The maximum number of {{units}} of outstanding data a sender can send on a particular connection prior to an acknowledgment {{bibref|RFC793}}.  Any scaling factor SHOULD be included in this parameter {{bibref|RFC1323}}."
+                },
+                "tCPImplementation": {
+                    "type": "string",
+                    "enum": [
+                        "Tahoe (Represents the base TCP implementation in [RFC793] and elements of [RFC2582]",
+                        "Reno (Represents the base TCP implementation in [RFC793] with the additional algorithms defined in [RFC2581]",
+                        "New Reno (Described as a modification to the Reno algorithms in [RFC2582]",
+                        "Vegas (An emerging TCP congestion control mechanism)"
+                    ],
+                    "description": " Comma-separated list of strings. Indicates the TCP congestion control mechanism(s) implemented. {{enum}}Tahoe, Reno, and New Reno are defined in {{bibref|RFC2582}}"
+                }
+            }
+        },
+        "SupportedDataModel": {
+            "id": "SupportedDataModel",
+            "title": "SupportedDataModel",
+            "type": "object",
+            "properties": {
+                "alias": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": "A non-volatile handle used to reference this instance. Alias provides a mechanism for an ACS to label this instance for future reference. If the CPE supports the Alias-based Addressing feature as defined in [Section 3.6.1/TR-069a4] and described in [Appendix II/TR-069a4], the following mandatory constraints MUST be enforced: Its value MUST NOT be empty. Its value MUST start with a letter. If its value is not assigned by the ACS, it MUST start with a \"cpe-\" prefix. The CPE MUST NOT change the parameter value."
+                },
+                "url": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " URL ({{bibref|RFC3986}}) that describes some or all of the device's Current Supported Data Model.The URL MUST reference an XML file which describes the appropriate part of the Supported Data Model.The referenced XML file MUST be compliant with the DT (Device Type) Schema that is described in {{bibref|TR-106a3|Annex B}}, including any additional normative requirements referenced within the Schema.The XML file referenced by this URL MUST NOT change while the CPE is running, and SHOULD NOT change across a CPE reboot. Note that {{param|UUID}} is a unique key, so the XML file referenced by this URL will never change.The XML file MAY be located within the CPE. In this scenario the CPE MAY use the value of \"localhost\" as URL host portion, When the \"localhost\" value is used, the ACS has the responsibility to substitute the \"localhost\" value with the host portion of the connection request URL.Behavior in the event of an invalid URL, failure to access the referenced XML file, or an invalid XML file, is implementation-dependent."
+                },
+                "uuid": {
+                    "type": "string",
+                    "maxLength": 36,
+                    "minLength": 36,
+                    "description": " UUID ({{bibref|RFC4122}}) that is the value of the uuid attribute in the DT Instance referenced by {{param|URL}}."
+                },
+                "urn": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " URN ({{bibref|RFC3986}}) that is the value of the spec attribute in the DM (data model) Instance that defines the Root Object or Service Object referenced by this table entry.For example, if this table entry references a DT Instance that refers to the ''Device:1.3'' Root Object, the value of this parameter would be ''urn:broadband-forum-org:tr-157-1-0-0'', because TR-157 defines ''Device:1.3''.  If the DT Instance instead referred to a vendor-specific Root Object, e.g. ''X_EXAMPLE_Device:1.0'' (derived from ''Device:1.3''), the value of this parameter would be something like ''urn:example-com:device-1-0-0''."
+                },
+                "features": {
+                    "type": "string",
+                    "description": " This parameter MUST list exactly the features that are defined using the top-level ''feature'' element in the DT Instance referenced by {{param|URL}}.For example, if the DT instance specified the following::<feature name=\"DNSServer\"/>:<feature name=\"Router\"/>:<feature name=\"X_MyDeviceFeature\"/>then the value of this parameter might be ''DNSServer,Router,X_MyDeviceFeature''.  The order in which the features are listed is not significant."
+                }
+            }
+        },
+        "HostList": {
+            "id": "HostList",
+            "title": "HostList",
+            "type": "object",
+            "properties": {
+                "hostNumberOfEntries": {
+                    "type": "string"
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "Host"
+                    }
+                }
+            }
+        },
+        "InformParameter": {
+            "id": "InformParameter",
+            "title": "InformParameter",
+            "type": "object",
+            "properties": {
+                "enable": {
+                    "type": "boolean",
+                    "description": " Enables or disables this {{object}}."
+                },
+                "alias": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": "A non-volatile handle used to reference this instance. Alias provides a mechanism for an ACS to label this instance for future reference. If the CPE supports the Alias-based Addressing feature as defined in [Section 3.6.1/TR-069a4] and described in [Appendix II/TR-069a4], the following mandatory constraints MUST be enforced:  Its value MUST NOT be empty. Its value MUST start with a letter. If its value is not assigned by the ACS, it MUST start with a \"cpe-\" prefix. The CPE MUST NOT change the parameter value."
+                },
+                "parameterName": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " A pattern that describes the Parameter(s) to be included in the Inform’s ParameterList argument.  Specifically, patterns with wildcards (an \"*\" character) in place of Instance Identifiers are allowed; any attempt to set the value otherwise MUST be rejected by the CPE.  If the pattern does not match any existing Parameters at the time that the CPE is creating the Inform RPC, then this {{object|#.InformParameter}} instance is not included in the Inform’s ParameterList argument."
+                },
+                "eventList": {
+                    "type": "string",
+                    "description": " Each entry in this list represents an Event for which this Parameter MUST be included within the ParameterList argument of the Inform RPC.All Inform Events (see {{bibref|TR-069|Section 3.7.1.5}}), except for \"4 VALUE CHANGE\", are allowed as entries in this list.  \"4 VALUE CHANGE\" is not allowed as that would violate requirements contained in {{bibref|TR-069|Section A.3.3.1}}.{{empty}} means all events except \"4 VALUE CHANGE\"."
+                }
+            }
+        },
+        "StandbyPolicy": {
+            "id": "StandbyPolicy",
+            "title": "StandbyPolicy",
+            "type": "object",
+            "properties": {
+                "crUnawarenessMaxDuration": {
+                    "type": "integer",
+                    "minValue": -1,
+                    "description": " When waking up from a non CR-Aware Standby that lasted more than this parameter's value (in {{units}}), the CPE MUST issue a WAKEUP Event.If the value is -1, the CPE MUST NOT ever issue WAKEUP Events for having been non CR-aware."
+                },
+                "maxMissedPeriodic": {
+                    "type": "integer",
+                    "minValue": -1,
+                    "description": " When waking up from a non fully Timer-Aware Standby that made it miss more than this parameter's value Periodic Contacts, the CPE MUST issue a WAKEUP Event.If the value is -1, the CPE MUST NOT ever issue WAKEUP Events for exceeding that limit."
+                },
+                "notifyMissedScheduled": {
+                    "type": "boolean",
+                    "description": " When waking up from a non fully Timer-Aware Standby that made it miss at least one Scheduled Contact, the CPE MUST issue a WAKEUP Event if this parameter is {{true}}."
+                },
+                "networkAwarenessCapable": {
+                    "type": "boolean",
+                    "description": " Indicates that the CPE is capable of CR-Aware Standby."
+                },
+                "selfTimerCapable": {
+                    "type": "boolean",
+                    "description": " Indicates that the CPE is capable of Timer-Aware Standby."
+                },
+                "crAwarenessRequested": {
+                    "type": "boolean",
+                    "description": " If {{param|NetworkAwarenessCapable}} and this parameter are both {{true}}, the CPE MUST NOT go into a non CR-Aware Standby state."
+                },
+                "periodicAwarenessRequested": {
+                    "type": "boolean",
+                    "description": " If {{param|SelfTimerCapable}} and this parameter are both {{true}}, the CPE MUST NOT go into a standby state that prevents it from honoring Periodic Contacts."
+                },
+                "scheduledAwarenessRequested": {
+                    "type": "boolean",
+                    "description": " If this parameter is true, the CPE MUST NOT go into a standby state that prevents it from honoring Scheduled Contacts. This means that, whenever the ACS has requested a Scheduled Contact:*if {{param|SelfTimerCapable}} is {{true}} and the CPE chooses to go into Standby before the Scheduled Contact has been honored, it MUST use a Timer-Aware Standby;*if {{param|SelfTimerCapable}} is {{false}}, the CPE MUST NOT go into Standby before the Scheduled Contact has been honored."
+                }
+            }
+        },
+        "VirtualDevice": {
+            "id": "VirtualDevice",
+            "title": "VirtualDevice",
+            "type": "object",
+            "properties": {
+                "manufacturerOUI": {
+                    "type": "string",
+                    "maxLength": 6,
+                    "minLength": 6,
+                    "pattern": "[0-9A-F]{6}",
+                    "description": " Organizationally unique identifier of the associated Proxied Device.  Represented as a six hexadecimal-digit value using all upper-case letters and including any leading zeros.  {{pattern}}The value MUST be a valid OUI as defined in {{bibref|OUI}}."
+                },
+                "productClass": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": " Identifier of the class of product of the associated Proxied Device for which the serial number applies."
+                },
+                "serialNumber": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": " Serial number of the associated Proxied Device."
+                },
+                "host": {
+                    "type": "string",
+                    "description": " {{list}} {{reference}}  References all the {{object|.Hosts.Host}} table entries, whether active or inactive, that correspond to this proxied LAN device.  There can be multiple such entries if the Proxied Device has more than one network interface."
+                },
+                "proxyProtocol": {
+                    "type": "string",
+                    "description": " The protocol being used to communicate between the CPE Proxier and this Proxied Device. {{enum}}Vendors can extend the enumerated values with vendor specific extensions, in which case the rules outlined in {{bibref|TR-106a6|3.3}} MUST be adhered to."
+                },
+                "proxyProtocolReference": {
+                    "type": "string",
+                    "description": " {{reference|a protocol object that uses the {{param|ProxyProtocol}}}}"
+                },
+                "discoveryProtocol": {
+                    "type": "string",
+                    "description": " {{list|that represents the discovery protocol(s) for this proxied device}}{{enum}}Vendors can extend the enumerated values with vendor specific extensions, in which case the rules outlined in {{bibref|TR-106a3|Section 3.3}} MUST be adhered to."
+                },
+                "discoveryProtocolReference": {
+                    "type": "string",
+                    "description": " {{list}} {{reference|an object discovered using one or more protocols listed in {{param|DiscoveryProtocol}}|ignore}}For objects discovered by the UPnP discovery protocol, the {{param}} would contain items that are references to instances of the following:* {{object|.UPnP.Discovery.RootDevice}}* {{object|.UPnP.Discovery.Device}}* {{object|.UPnP.Discovery.Service}}For objects discovered by the ETSI-M2M discovery protocol, the {{param}} would contain items that are references to instances of ETSIM2M.SCL.{i}.AreaNwkDeviceInfoInstance."
+                }
+            }
+        },
+        "EmbeddedDevice": {
+            "id": "EmbeddedDevice",
+            "title": "EmbeddedDevice",
+            "type": "object",
+            "properties": {
+                "controllerID": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " Identifier of the controller that is responsible for a sub-network of Proxied Devices within the LAN.{{empty}} indicates that this Proxied Device either:* Isn't part of a sub-network, within the LAN, with a controller entity.* Doesn't need a {{param}} to ensure its {{param|ProxiedDeviceID}} is unique throughout the LAN."
+                },
+                "proxiedDeviceID": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " Idenitfier of the Proxied Device.  This is an opaque string that is unique to the Proxied Device within a specific sub-network within the LAN (identified by the {{param|ControllerID}}).  If the {{param|ControllerID}} is {{empty}} this {{param}} is unique across the LAN."
+                },
+                "reference": {
+                    "type": "string",
+                    "description": " {{noreference}}The value MUST be the path name of a table row.  If the referenced object is deleted, this {{object}} instance MUST also be removed. Represents the instance of a multi-instanced object that is directly controlled by, and has come into existence because of, this Proxied Device  that utilizes the Embedded Object Mechanism {{bibref|TR-069a4|Annex J.1.2}}."
+                },
+                "supportedDataModel": {
+                    "type": "string",
+                    "description": " Represents the CWMP-DT schema instance(s) that this Proxied Device is utilizing.  The CWMP-DT schema instance is also the one being utilized by the object referenced within {{param|Reference}}."
+                },
+                "host": {
+                    "type": "string",
+                    "description": " References the {{object|.Hosts.Host}} table entry(s), whether active or inactive, that corresponds to this proxied LAN device."
+                },
+                "proxyProtocol": {
+                    "type": "string",
+                    "description": " The protocol being used to communicate between the CPE Proxier and this Proxied Device. {{enum}}Vendors can extend the enumerated values with vendor specific extensions, in which case the rules outlined in {{bibref|TR-106a6|3.3}} MUST be adhered to."
+                },
+                "proxyProtocolReference": {
+                    "type": "string",
+                    "description": " {{reference|a protocol object that uses the {{param|ProxyProtocol}}}}"
+                },
+                "discoveryProtocol": {
+                    "type": "string",
+                    "description": " {{list|that represents the discovery protocol(s) for this proxied device}}{{enum}}Vendors can extend the enumerated values with vendor specific extensions, in which case the rules outlined in {{bibref|TR-106a3|Section 3.3}} MUST be adhered to."
+                },
+                "discoveryProtocolReference": {
+                    "type": "string",
+                    "description": " {{list}} {{reference|an object discovered using one or more protocols listed in {{param|DiscoveryProtocol}}|ignore}}For objects discovered by the UPnP discovery protocol, the {{param}} would contain items that are references to instances of the following:* {{object|.UPnP.Discovery.RootDevice}}* {{object|.UPnP.Discovery.Device}}* {{object|.UPnP.Discovery.Service}}For objects discovered by the ETSI-M2M discovery protocol, the {{param}} would contain items that are references to instances of ETSIM2M.SCL.{i}.AreaNwkDeviceInfoInstance."
+                },
+                "commandProcessed": {
+                    "type": "string",
+                    "description": " Whether or not the CPE Proxier has successfully communicated all pending configuration commands down to the Proxied Device."
+                },
+                "commandProcessingErrMsg": {
+                    "type": "string",
+                    "maxLength": 1024,
+                    "description": " Detailed {{param|CommandProcessed}} error description (vendor specific)."
+                },
+                "lastSyncTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": " The last time that the CPE Proxier synchronized the state of the Proxied Device.  This parameter MUST be updated when a proxy command is executed successfully on the Proxied Device.The Unknown Time value, as defined in {{bibref|TR-106a6}}, indicates that the Proxied Device's state has not been synchronized since the CPE Proxier was last rebooted."
+                }
+            }
+        },
+        "DUStateChangeComplPolicy": {
+            "id": "DUStateChangeComplPolicy",
+            "title": "DUStateChangeComplPolicy",
+            "type": "object",
+            "properties": {
+                "enable": {
+                    "type": "boolean",
+                    "description": " Enables/Disables CPE notification of \"12 AUTONOMOUS DU STATE CHANGE COMPLETE\" events to the ACS."
+                },
+                "operationTypeFilter": {
+                    "type": "string",
+                    "description": " Indicates the Deployment Unit operations that MUST be included when the CPE notifies the ACS of \"12 AUTONOMOUS DU STATE CHANGE COMPLETE\" events.  Operation types not indicated by this list MUST NOT be included when the CPE notifies the ACS.  {{empty}} is essentially the same as setting {{param|Enable}} to {{false}}.",
+                    "enum": [
+                        "Install",
+                        "Update",
+                        "Uninstall"
+                    ]
+                },
+                "resultTypeFilter": {
+                    "type": "string",
+                    "description": " Indicates the Deployment Unit state change results that MUST be included when the CPE notifies the ACS of \"12 AUTONOMOUS DU STATE CHANGE COMPLETE\" events.  State change results omitted from this filter MUST NOT be included when the CPE notifies the ACS."
+                },
+                "faultCodeFilter": {
+                    "type": "string",
+                    "description": " Indicates the Deployment Unit state change fault codes that MUST be included when the CPE notifies the ACS of \"12 AUTONOMOUS DU STATE CHANGE COMPLETE\" events.  State change fault codes omitted from this filter MUST NOT be included when the CPE notifies the ACS.This filter has no effect on the notification of a successful autonomous state change. This filter only applies when {{param|ResultTypeFilter}} is set to either {{enum|Failure|ResultTypeFilter}} or {{enum|Both|ResultTypeFilter}}.  {{empty}} means that failed autonomous state changes will not be sent to the ACS.",
+                    "enum": [
+                        "9001",
+                        "9003",
+                        "9012",
+                        "9013",
+                        "9015",
+                        "9016",
+                        "9017",
+                        "9018",
+                        "9022",
+                        "9023",
+                        "9024",
+                        "9025",
+                        "9026",
+                        "9027",
+                        "9028",
+                        "9029",
+                        "9030",
+                        "9031",
+                        "9032"
+                    ]
+                }
+            }
+        },
+        "Group": {
+            "id": "Group",
+            "title": "Group",
+            "type": "object",
+            "properties": {
+                "alias": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": " {{datatype|expand}}"
+                },
+                "enable": {
+                    "type": "boolean",
+                    "description": " Enable/disable listening to this multicast group."
+                },
+                "status": {
+                    "type": "string",
+                    "description": " The status of this group table entry.",
+                    "enum": [
+                        "Disabled",
+                        "Enabled",
+                        "Error"
+                    ]
+                },
+                "url": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " URL {{bibref|RFC3986}} encoding the group address, source and port on which to listen, and other protocol information, e.g. expected announcement format.Depending on the application, the messages identified by this URL MAY directly contain the data to be downloaded, or alternatively MAY contain information informing the CPE how to obtain the data to be downloaded via a separate mechanism, which itself could involve a unicast or a multicast download protocol.Refer to {{bibref|DVB-TS.102.824}} for an example of a URL format that identifies a SAP {{bibref|RFC2974}} stream that indicates how to use either FLUTE {{bibref|RFC3926}} or DSM-CC {{bibref|ISO-13818-6:1998}} to perform the download."
+                }
+            }
+        },
+        "Announcement": {
+            "id": "Announcement",
+            "title": "Announcement",
+            "type": "object",
+            "properties": {
+                "enable": {
+                    "type": "boolean",
+                    "description": " Enable/disable CPE ability to receive and use multicast announcements from a server for the purpose of downloading files."
+                },
+                "status": {
+                    "type": "string",
+                    "description": " The status of the announcement service."
+                },
+                "groupNumberOfEntries": {
+                    "type": "integer",
+                    "description": " {{numentries}}"
+                },
+                "group": {
+                    "$ref": "Group"
+                }
+            }
+        },
+        "Query": {
+            "id": "Query",
+            "title": "Query",
+            "type": "object",
+            "properties": {
+                "enable": {
+                    "type": "boolean",
+                    "description": " Enable/disable CPE ability to autonomously query a server for the purpose of downloading files."
+                },
+                "status": {
+                    "type": "string",
+                    "description": " The status of the query service.",
+                    "enum": [
+                        "Disabled",
+                        "Enabled",
+                        "Error"
+                    ]
+                },
+                "uRL": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " URL {{bibref|RFC3986}} of the query response server.Depending on the application, the protocol described by this URL MAY be a SOAP interface, or MAY be any other RPC mechanism.Refer to {{bibref|DVB-TS.102.824}} for an example of a URL format that identifies a SOAP interface running over HTTP or HTTPS."
+                }
+            }
+        },
+        "DownloadAvailability": {
+            "id": "DownloadAvailability",
+            "title": "DownloadAvailability",
+            "type": "object",
+            "properties": {
+                "announcement": {
+                    "$ref": "Announcement"
+                },
+                "query": {
+                    "$ref": "Query"
+                }
+            }
+        },
+        "AutonomousTransferCompletePolicy": {
+            "id": "AutonomousTransferCompletePolicy",
+            "title": "AutonomousTransferCompletePolicy",
+            "type": "object",
+            "properties": {
+                "enable": {
+                    "type": "boolean",
+                    "description": " Enable/disable CPE notification of AUTONOMOUS TRANSFER COMPLETE events to the ACS."
+                },
+                "transferTypeFilter": {
+                    "type": "string",
+                    "description": " Indicates the transfer types that MUST be included when the CPE notifies the ACS of AUTONOMOUS TRANSFER COMPLETE events.   Transfer types not indicated by this filter MUST NOT be included when the CPE notifies the ACS. {{enum}}Note that this includes any backup or restore operations that were not specifically requested by the ACS.  A backup is regarded as an Upload and a restore is regarded as a Download."
+                },
+                "resultTypeFilter": {
+                    "type": "string",
+                    "description": " Indicates the transfer results that MUST be included when the CPE notifies the ACS of AUTONOMOUS TRANSFER COMPLETE events.  Transfer results omitted from this list MUST NOT be included when the CPE notifies the ACS.Note that this includes any backup or restore operations that were not specifically requested by the ACS.  A backup is regarded as an Upload and a restore is regarded as a Download."
+                },
+                "fileTypeFilter": {
+                    "type": "string",
+                    "maxLength": 1024,
+                    "description": " {{list}} Indicates the file types that MUST be included when the CPE notifies the ACS of AUTONOMOUS TRANSFER COMPLETE events.  File types omitted from this list MUST NOT be included when the CPE notifies the ACS.{{pattern}}Additionally, the following format is defined to allow the unique definition of vendor-specific file types:* ''\"X <OUI> <Vendor-specific identifier>\"''<OUI> is replaced by a 6 hexadecimal-digit OUI (organizationally unique identifier) as defined in {{bibref|OUI}}, with all upper-case letters and any leading zeros included. The OUI used for a given vendor-specific file type MUST be one that is assigned to the organization that defined this file type (which is not necessarily the same as the vendor of the CPE or ACS).Note that {{empty}} indicates that all file types are excluded from this filter, effectively disabling CPE notification of AUTONOMOUS TRANSFER COMPLETE events to the ACS."
+                }
+            }
+        },
+        "ManageableDevice": {
+            "id": "ManageableDevice",
+            "title": "ManageableDevice",
+            "type": "object",
+            "properties": {
+                "alias": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": " A non-volatile handle used to reference this instance. {{param}} provides a mechanism for an ACS to label this instance for future reference. An initial unique value MUST be assigned when the CPE creates an instance of this object.This parameter is DEPRECATED because {{object}} is a transient object."
+                },
+                "manufacturerOUI": {
+                    "type": "string",
+                    "maxLength": 6,
+                    "minLength": 6,
+                    "pattern": "[0-9A-F]{6}",
+                    "description": " Organizationally unique identifier of the Device manufacturer as provided to the Gateway by the Device.   Represented as a six hexadecimal-digit value using all upper-case letters and including any leading zeros.  {{pattern}}The value MUST be a valid  OUI as defined in {{bibref|OUI}}."
+                },
+                "serialNumber": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": " Serial number of the Device as provided to the Gateway by the Device."
+                },
+                "productClass": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": " Identifier of the class of product for which the Device's serial number applies as provided to the Gateway by  the Device.If the Device does not provide a Product Class, then this parameter MUST be {{empty}}."
+                },
+                "host": {
+                    "type": "string",
+                    "maxLength": 1024,
+                    "description": " {{list}} {{reference}}  References all the {{object|.Hosts.Host}} table entries, whether active or inactive, that correspond to this physical LAN device.  There can be multiple such entries if the device has more than one network interface.For example: ''Device.Hosts.Host.1,Device.Hosts.Host.5''"
+                }
+            }
+        },
+        "GatewayInfo": {
+            "id": "GatewayInfo",
+            "title": "GatewayInfo",
+            "type": "object",
+            "properties": {
+                "manufacturerOUI": {
+                    "type": "string",
+                    "maxLength": 6,
+                    "pattern": "[0-9A-F]{6}",
+                    "description": " Organizationally unique identifier of the associated Internet Gateway Device.  {{pattern}}{{empty}} indicates that there is  no associated Internet Gateway Device that has been detected."
+                },
+                "productClass": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": " Identifier of the product class of the associated Internet Gateway Device.  {{empty}} indicates either that  there is no associated Internet Gateway Device that has been detected, or the Internet Gateway Device does not support the use of the  product-class parameter."
+                },
+                "serialNumber": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": " Serial number of the associated Internet Gateway Device.  {{empty}} indicates that there is no associated  Internet Gateway Device that has been detected."
+                }
+            }
+        },
+        "Time": {
+            "id": "Time",
+            "title": "Time",
+            "type": "object",
+            "properties": {
+                "enable": {
+                    "type": "boolean",
+                    "description": " Enables or disables the NTP or SNTP time client."
+                },
+                "status": {
+                    "type": "string",
+                    "enum": [
+                        "Disabled",
+                        "Unsynchronized",
+                        "Synchronized",
+                        "Error_FailedToSynchronize",
+                        "Error"
+                    ],
+                    "description": " Status of Time support on the CPE.  {{enum}}The {{enum|Unsynchronized}} value indicates that the CPE's absolute time has not yet been set.The {{enum|Synchronized}} value indicates that the CPE has acquired accurate absolute time; its current time is accurate.The {{enum|Error_FailedToSynchronize}} value indicates that the CPE failed to acquire accurate absolute time; its current time is not  accurate.The {{enum|Error}} value MAY be used by the CPE to indicate a locally defined error condition."
+                },
+                "nTPServer1": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": " First NTP timeserver.  Either a host name or IP address."
+                },
+                "nTPServer2": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": " Second NTP timeserver.  Either a host name or IP address."
+                },
+                "nTPServer3": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": " Third NTP timeserver.  Either a host name or IP address."
+                },
+                "nTPServer4": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": " Fourth NTP timeserver.  Either a host name or IP address."
+                },
+                "nTPServer5": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": " Fifth NTP timeserver.  Either a host name or IP address."
+                },
+                "currentLocalTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": " The current date and time in the CPE's local time zone."
+                },
+                "localTimeZone": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " The local time zone definition, encoded according to IEEE 1003.1 (POSIX).  The following is an example value:: EST+5 EDT,M4.1.0/2,M10.5.0/2"
+                }
+            }
+        },
+        "UserInterface": {
+            "id": "UserInterface",
+            "title": "UserInterface",
+            "type": "object",
+            "properties": {
+                "passwordRequired": {
+                    "type": "boolean",
+                    "description": " Present only if the CPE provides a password-protected LAN-side user interface.Indicates whether or not the local user interface MUST require a password to be chosen by the user. If {{false}}, the choice of whether or not a password is used is left to the user."
+                },
+                "passwordUserSelectable": {
+                    "type": "boolean",
+                    "description": " Present only if the CPE provides a password-protected LAN-side user interface and supports LAN-side Auto-Configuration.Indicates whether or not a password to protect the local user interface of the CPE MAY be selected by the user directly (i.e. {{param|.Users.User.{i}.Password}}), or MUST be equal to the password used by the LAN-side Auto-Configuration protocol (i.e. {{param|.LANConfigSecurity.ConfigPassword}})."
+                },
+                "passwordReset": {
+                    "type": "boolean",
+                    "description": " Present only if the CPE provides a password-protected LAN-side user interface and supports LAN-side Auto-Configuration. When set to true, resets {{param|.LANConfigSecurity.ConfigPassword}} to its factory value."
+                },
+                "upgradeAvailable": {
+                    "type": "boolean",
+                    "description": " Indicates that a CPE upgrade is available, allowing the CPE to display this information to the user."
+                },
+                "warrantyDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": " Indicates the date and time in UTC that the warranty associated with the CPE is to expire."
+                },
+                "iSPName": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": " The name of the customer's ISP."
+                },
+                "iSPHelpDesk": {
+                    "type": "string",
+                    "maxLength": 32,
+                    "description": " The help desk phone number of the ISP."
+                },
+                "iSPHomePage": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " The URL of the ISP's home page."
+                },
+                "iSPHelpPage": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " The URL of the ISP's on-line support page."
+                },
+                "iSPLogo": {
+                    "type": "base64",
+                    "description": " Base64 encoded GIF or JPEG image. The binary image is constrained to 4095 bytes or less."
+                },
+                "iSPLogoSize": {
+                    "type": "integer",
+                    "description": " Un-encoded binary image size in bytes.If ISPLogoSize input value is 0 then the ISPLogo is cleared.ISPLogoSize can also be used as a check to verify correct transfer and conversion of Base64 string to image size."
+                },
+                "iSPMailServer": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " The URL of the ISP's mail server."
+                },
+                "iSPNewsServer": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " The URL of the ISP's news server."
+                },
+                "textColor": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "minLength": 3,
+                    "description": " The color of text on the GUI screens in RGB hexadecimal notation (e.g., FF0088)."
+                },
+                "backgroundColor": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "minLength": 3,
+                    "description": " The color of the GUI screen backgrounds in RGB hexadecimal notation (e.g., FF0088)."
+                },
+                "buttonColor": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "minLength": 3,
+                    "description": " The color of buttons on the GUI screens in RGB hexadecimal notation (e.g., FF0088)."
+                },
+                "buttonTextColor": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "minLength": 3,
+                    "description": " The color of text on buttons on the GUI screens in RGB hexadecimal notation (e.g., FF0088)."
+                },
+                "autoUpdateServer": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " The server the CPE can check to see if an update is available for direct download to it. This MUST NOT be used by the CPE if the {{param|.ManagementServer.UpgradesManaged}} parameter is {{true}}."
+                },
+                "userUpdateServer": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " The server where a user can check via a web browser if an update is available for download to a PC. This MUST NOT be used by the CPE if the {{param|.ManagementServer.UpgradesManaged}} parameter is {{true}}."
+                },
+                "availableLanguages": {
+                    "type": "string",
+                    "description": " {{list}} List items represent user-interface languages that are available, where each language is specified according to {{bibref|RFC3066}}."
+                },
+                "currentLanguage": {
+                    "type": "string",
+                    "maxLength": 16,
+                    "description": " Current user-interface language, specified according to {{bibref|RFC3066}}. The value MUST be a member of the list reported by the {{param|AvailableLanguages}} parameter."
+                },
+                "remoteAccess": {
+                    "$ref": "RemoteAccess"
+                },
+                "localDisplay": {
+                    "$ref": "LocalDisplay"
+                }
+            }
+        },
+        "RemoteAccess": {
+            "id": "RemoteAccess",
+            "title": "RemoteAccess",
+            "type": "object",
+            "properties": {
+                "enable": {
+                    "type": "boolean",
+                    "description": " Enables/Disables remotely accessing the CPE's user interface."
+                },
+                "port": {
+                    "type": "integer",
+                    "description": " Destination TCP port required for remote access connection."
+                },
+                "supportedProtocols": {
+                    "type": "string",
+                    "enum": [
+                        "HTTP",
+                        "HTTPS"
+                    ],
+                    "description": " {{list}} Indicates the protocols that are supported by the CPE for the purpose of remotely accessing the user interface."
+                },
+                "protocol": {
+                    "type": "string",
+                    "description": " This is the protocol currently being used for remote access."
+                }
+            }
+        },
+        "LocalDisplay": {
+            "id": "LocalDisplay",
+            "title": "LocalDisplay",
+            "type": "object",
+            "properties": {
+                "movable": {
+                    "type": "boolean",
+                    "description": " Controls whether the user is allowed to change the GUI window position on the local CPE's display."
+                },
+                "resizable": {
+                    "type": "boolean",
+                    "description": " Controls whether the user is allowed to resize the GUI window on the local CPE's display."
+                },
+                "posX": {
+                    "type": "integer",
+                    "description": " The horizontal position of the User Interface's top left corner within the local CPE's display measured from the top left corner, expressed in {{units}}."
+                },
+                "posY": {
+                    "type": "integer",
+                    "description": " The vertical position of the User Interface's top left corner within the local CPE's display measured from the top left corner, expressed in {{units}}."
+                },
+                "width": {
+                    "type": "integer",
+                    "description": " The width of the user interface within the local CPE's display, expressed in {{units}}."
+                },
+                "height": {
+                    "type": "integer",
+                    "description": " The height of the user interface within the local CPE's display, expressed in {{units}}."
+                },
+                "displayWidth": {
+                    "type": "integer",
+                    "description": " The width of the local CPE's display, expressed in {{units}}."
+                },
+                "displayHeight": {
+                    "type": "integer",
+                    "description": " The height of the local CPE's display, expressed in {{units}}."
+                }
+            }
+        },
+        "InterfaceStack": {
+            "id": "InterfaceStack",
+            "title": "InterfaceStack",
+            "type": "object",
+            "properties": {
+                "alias": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": "A non-volatile handle used to reference this instance. Alias provides a mechanism for an ACS to label this instance for future reference. If the CPE supports the Alias-based Addressing feature as defined in [Section 3.6.1/TR-069a4] and described in [Appendix II/TR-069a4], the following mandatory constraints MUST be enforced: Its value MUST NOT be empty., Its value MUST start with a letter., If its value is not assigned by the ACS, it MUST start with a \"cpe-\" prefix., The CPE MUST NOT change the parameter value."
+                },
+                "higherLayer": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " {{noreference}}A reference to the interface object corresponding to the higher layer of the relationship, i.e. the interface which runs on ''top'' of the interface identified by the corresponding instance of {{param|LowerLayer}}. When the referenced higher layer interface is deleted, the CPE MUST delete the table row."
+                },
+                "lowerLayer": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " {{noreference}}A reference to the interface object corresponding to the lower layer of the relationship, i.e. the interface which runs ''below'' the interface identified by the corresponding instance of {{param|HigherLayer}}. When the referenced lower layer interface is deleted, the CPE MUST delete the table row."
+                },
+                "higherAlias": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": " The value of the ''Alias'' parameter for the interface object referenced by {{param|HigherLayer}}."
+                },
+                "lowerAlias": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "description": " The value of the ''Alias'' parameter for the interface object referenced by {{param|LowerLayer}}."
+                }
+            }
+        },
+        "PeriodicStatistics": {
+            "id": "PeriodicStatistics",
+            "title": "PeriodicStatistics",
+            "type": "object",
+            "properties": {
+                "minSampleInterval": {
+                    "type": "integer",
+                    "description": " Minimum sample interval in {{units}} that the CPE is able to support.A value of 0 indicates no specific minimum sample interval."
+                },
+                "maxReportSamples": {
+                    "type": "integer",
+                    "description": " Maximum number of samples of each statistic that the CPE is able to store and report.A value of 0 indicates no specific maximum number of samples."
+                },
+                "sampleSetNumberOfEntries": {
+                    "type": "integer",
+                    "description": " {{numentries}}"
+                },
+                "sampleSets": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "SampleSet"
+                    }
+                }
+            }
+        },
+        "SampleSet": {
+            "id": "SampleSet",
+            "title": "SampleSet",
+            "type": "object",
+            "properties": {
+                "alias": {
+                    "type": "string",
+                    "description": " {{datatype|expand}}"
+                },
+                "enable": {
+                    "type": "boolean",
+                    "description": " Enables or disables collection of periodic statistics for this sample set.When collection of periodic statistics is enabled, any stored samples are discarded, and the first sample interval begins immediately."
+                },
+                "status": {
+                    "type": "string",
+                    "enum": [
+                        "Disabled",
+                        "Enabled",
+                        "Trigger"
+                    ],
+                    "description": " Indicates availability of Sample statistics. {{enum}}The {{enum|Trigger}} value is only used for triggering the ACS to fetch the collected data and can only be used when {{param|FetchSamples}} is in the range [1:{{param|ReportSamples}}].The transition from {{enum|Enabled}} to {{enum|Trigger}} to {{enum|Enabled}} MUST be instantaneous and so will result in only a single value change for notification purposes."
+                },
+                "name": {
+                    "type": "string",
+                    "maxLength": 128,
+                    "description": " The name of this sample set, which uniquely distinguishes each sample set."
+                },
+                "sampleInterval": {
+                    "type": "integer",
+                    "description": " The sample interval in {{units}}. Each statistic is measured over this sample interval.The CPE MAY reject a request to set {{param}} to less than {{param|.PeriodicStatistics.MinSampleInterval}}.Sample intervals MUST begin every {{param}} {{units}}, with no delay between samples.If {{param}} is changed while collection of periodic statistics is enabled, any stored samples are discarded, and the first sample interval begins immediately.For example, if {{param|ReportSamples}} is 24 and {{param}} is 3600 (an hour), the CPE can store up to a day's worth of samples for each statistic."
+                },
+                "reportSamples": {
+                    "type": "integer",
+                    "description": " The number of samples that the CPE will store and report for each statistic.The CPE MUST permit {{param}} to be set to at least {{param|.PeriodicStatistics.MaxReportSamples}}.If {{param}} is changed while collection of periodic statistics is enabled, the CPE will truncate or extend its statistics buffers as appropriate, but statistics collection MUST NOT otherwise be affected.For example, if {{param}} is 24 and {{param|SampleInterval}} is 3600 (an hour), the CPE can store up to a day's worth of samples for each statistic."
+                },
+                "timeReference": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": " An absolute time reference in UTC to determine when sample intervals will complete.  Each sample interval MUST complete at this reference time plus or minus an integer multiple of {{param|SampleInterval}}.{{param}} is used only to set the \"phase\" of the sample and fetch intervals.  The actual value of {{param}} can be arbitrarily far into the past or future.This time reference also determines when the {{param|Status}} {{enum|Enabled|Status}} to {{enum|Trigger|Status}} to {{enum|Enabled|Status}} transitions that are controlled by {{param|FetchSamples}} will occur.  If collection of periodic statistics is enabled and {{param|FetchSamples}} is in the range [1:{{param|ReportSamples}}] then each such {{param|Status}} transition MUST occur at this reference time plus or minus an integer multiple of {{param|FetchSamples}} * {{param|SampleInterval}} (the fetch interval).If {{param}} is changed while collection of periodic statistics is enabled, any stored samples are discarded, and the first sample interval begins immediately.The Unknown Time value defined in {{bibref|TR-106a2}} indicates that no particular time reference is specified.  That is, the CPE MAY locally choose the time reference, and is required only to adhere to the specified sample and fetch intervals.If absolute time is not available to the CPE, its sample and fetch interval behavior MUST be the same as if the {{param}} parameter was set to the Unknown Time value.For example, if {{param|SampleInterval}} is 3600 (an hour) and if {{param}} is set to UTC midnight on some day (in the past, present, or future) then sample intervals will complete on each UTC hour (00:00, 01:00, 02:00 etc).If, in addition, {{param|FetchSamples}} is 24, then the fetch interval is 86400 (a day) and {{param|Status}} {{enum|Enabled|Status}} to {{enum|Trigger|Status}} to {{enum|Enabled|Status}} transitions will occur every day at UTC midnight.Note that, if {{param}} is set to a time other than the Unknown Time, the first sample interval (which has to begin immediately) will almost certainly be shorter than {{param|SampleInterval}}).  This is why {{param}} is defined in terms of when sample intervals complete rather than start."
+                },
+                "fetchSamples": {
+                    "type": "integer",
+                    "description": " The number of sample intervals to be collected before transitioning {{param|Status}} from {{enum|Enabled|Status}} to {{enum|Trigger|Status}} to {{enum|Enabled|Status}}.If this SampleSet is enabled and {{param}} is in the range [1:{{param|ReportSamples}}] then {{param|Status}} MUST transition from {{enum|Enabled|Status}} to {{enum|Trigger|Status}} to {{enum|Enabled|Status}} on completion of every {{param}} sample intervals.  Otherwise, the transition MUST NOT occur.For example, if {{param|ReportSamples}} is 25 and {{param}} is 24, then the CPE will store 25 values for each monitored parameter and the above {{param|Status}} transition will occur as the CPE stores each 24th of 25 sample intervals, which means that the ACS could delay for up to two sample intervals before reading the stored values and would still not miss any samples (see also {{param|ForceSample}}).To disable this trigger mechanism and still collect sampled statistics, {{param}} can be set to either 0 or a value greater than {{param|ReportSamples}}."
+                },
+                "forceSample": {
+                    "type": "boolean",
+                    "description": " When set to {{true}}, forces statistics for the current sample to be calculated and updated in the data model.  Setting it to {{false}} has no effect. {{hidden}}If this is the first time that {{param}} has been set to {{true}} during the current sample interval, this MUST cause a new value to be added to each of the periodic statistics comma-separated list parameters, and the {{param|ReportEndTime}} and all {{param|SampleSeconds}} parameters MUST be updated accordingly.If this is not the first time that {{param}} has been set to {{true}} during the current sample interval, then the new values that were added as described in the previous paragraph, and the {{param|ReportEndTime}} and all {{param|SampleSeconds}} parameters, MUST be updated accordingly.Note that {{param}} just provides a \"sneak preview\" of the current sample.  It does not create a new sample and it does not interfere with the sample interval schedule.At the end of each sample interval, if {{param}} was set to {{true}} during the sample interval then the new values that were added as described above, and the {{param|ReportEndTime}} and all {{param|SampleSeconds}} parameters, will be updated accordingly.  In other words, the partial sample data that was created when {{param}} was set to {{true}} will be updated one last time at the end of the sample interval."
+                },
+                "reportStartTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": " The absolute time at which the sample interval for the first stored sample (for each statistic) started."
+                },
+                "reportEndTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": " The absolute time at which the sample interval for the last stored sample (for each statistic) ended.If {{param|ForceSample}} has been used to force statistics for the current sample to be calculated and updated in the data model, then {{param}} MUST be updated to reflect the actual time over which stored data was collected."
+                },
+                "sampleSeconds": {
+                    "type": "integer",
+                    "description": " {{list}} Each entry indicates the number of {{units}} during which data was collected during the sample interval.Individual {{param}} values can be less than {{param|SampleInterval}}, for several reasons, including:: {{param|TimeReference}} has been set to a time other than the Unknown Time and the current sample interval started part of the way through a scheduled sample interval.: {{param|ForceSample}} has been used to force statistics for the current sample to be calculated and updated in the data model."
+                },
+                "parameterNumberOfEntries": {
+                    "type": "integer",
+                    "description": " {{numentries}}"
+                },
+                "parameters": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "Parameter"
+                    }
+                }
+            }
+        },
+        "Parameter": {
+            "id": "Parameter",
+            "title": "Parameter",
+            "type": "object",
+            "properties": {
+                "alias": {
+                    "type": "string",
+                    "description": " {{datatype|expand}}"
+                },
+                "enable": {
+                    "type": "boolean",
+                    "description": " Enables or disables this object instance."
+                },
+                "reference": {
+                    "type": "string",
+                    "maxLength": 256,
+                    "description": " {{reference}} This is the parameter being monitored by the Periodic Statistics mechanism."
+                },
+                "sampleMode": {
+                    "type": "string",
+                    "enum": [
+                        "Current",
+                        "Change"
+                    ],
+                    "description": " Controls how this parameter's value is sampled. {{enum}}Parameters of non-numeric types can only support {{enum|Current}}.  The value of the {{param}} MUST be ignored for such parameters."
+                },
+                "calculationMode": {
+                    "type": "string",
+                    "enum": [
+                        "Latest",
+                        "Minimum",
+                        "Maximum",
+                        "Average"
+                    ],
+                    "description": " Controls how this parameter's statistic is calculated from the sampled value(s). {{enum}}Parameters of non-numeric types can only support {{enum|Latest}}.  The value of the {{param}} MUST be ignored for such parameters.{{param|SampleMode}} MUST be applied before {{param}}, i.e. the inputs to the calculation will have already accounted for {{param|SampleMode}}."
+                },
+                "lowThreshold": {
+                    "type": "integer",
+                    "description": " The low threshold value that controls the calculation of {{param|Failures}}.  A value equal to {{param|HighThreshold}} disables the threshold/failure mechanism.Parameters of non-numeric types cannot support the threshold/failure mechanism. The value of this parameter MUST be ignored for such parameters."
+                },
+                "highThreshold": {
+                    "type": "integer",
+                    "description": " The high threshold value that controls the calculation of {{param|Failures}}.  A value equal to {{param|LowThreshold}} disables the threshold/failure mechanism.Parameters of non-numeric types cannot support the threshold/failure mechanism. The value of this parameter MUST be ignored for such parameters."
+                },
+                "sampleSeconds": {
+                    "type": "integer",
+                    "description": " {{list}} Each entry indicates the number of {{units}} during which data was collected for this parameter during the sample interval.Individual {{param}} values can be less than {{param|.PeriodicStatistics.SampleSet.{i}.SampleInterval}}, for several reasons, including:: Any of the reasons for which {{param|.PeriodicStatistics.SampleSet.{i}.SampleSeconds}} values might be less than {{param|.PeriodicStatistics.SampleSet.{i}.SampleInterval}}.: The parameter doesn't exist, or was created or deleted during a sample interval."
+                },
+                "suspectData": {
+                    "type": "integer",
+                    "description": " {{list}} Each entry is 0 if the sampled value is believed to be valid, or 1 if an event that might affect the validity of the sampled value occurred during the sample interval.For example, if the parameter value were to be reset during the sample interval then it would be appropriate to set {{param}} to 1."
+                },
+                "values": {
+                    "type": "string",
+                    "description": " {{list}} Each entry indicates the value of the referenced parameter, as determined by {{param|SampleMode}}, during the sample interval.The statistics values in this comma-separated lists MUST be in time order, with the oldest one first and the most recent one last.If the {{param|SampleMode}} parameter is not present, or is inappropriate for the referenced parameter, the statistics values MUST be collected in Current mode."
+                },
+                "failures": {
+                    "type": "integer",
+                    "description": " Counts the number of times (since this object instance was last enabled) that a newly-calculated sample value (accounting for {{param|SampleMode}}) transitioned from the \"in range\" state to the \"out of range\" state, or between the \"out of range (low)\" and \"out of range (high)\" states.  The states are defined as follows:* \"in range\" : current value is greater than {{param|LowThreshold}} and less than {{param|HighThreshold}}.* \"out of range\" : current value is less than or equal to {{param|LowThreshold}}, or greater than or equal to {{param|HighThreshold}}.* \"out of range (low)\" : current value is less than or equal to {{param|LowThreshold}}.* \"out of range (high)\" : current value is greater than or equal to {{param|HighThreshold}}.Note that, if {{param|LowThreshold}} and {{param|HighThreshold}} are both the same, the threshold/failure mechanism is disabled, so the value of this parameter will not increment.This parameter can be incremented at any time during a sample interval, and might be incremented more than once during a single sample interval. For this reason, the CPE SHOULD place a locally specified limit on the frequency at which it will notify the ACS of such changes, as described in {{bibref|TR-069a2|Section 3.2.1}}.Parameters of non-numeric types cannot support the threshold/failure mechanism.  The value of this parameter MUST be ignored for such parameters."
+                }
+            }
+        },
+        "SelfTestDiagnostics": {
+            "id": "SelfTestDiagnostics",
+            "title": "SelfTestDiagnostics",
+            "type": "object",
+            "properties": {
+                "diagnosticsState": {
+                    "type": "string",
+                    "enum": [
+                        "None",
+                        "Requested",
+                        "Complete",
+                        "Error_Internal",
+                        "Error_Other"
+                    ],
+                    "description": " Indicates availability of diagnostic data. {{enum}}If the ACS sets the value of this parameter to {{enum|Requested}}, the CPE MUST initiate the corresponding diagnostic test.  When writing, the only allowed value is {{enum|Requested}}.  To ensure the use of the proper test parameters (the writable parameters in this object), the test parameters MUST be set either prior to or at the same time as (in the same SetParameterValues) setting the DiagnosticsState to Requested.When requested, the CPE SHOULD wait until after completion of the communication session with the ACS before starting the diagnostic.When the test is completed, the value of this parameter MUST be either {{enum|Complete}} (if the test completed successfully), or one of the Error values listed above.If the value of this parameter is anything other than {{enum|Complete}}, the values of the results parameters for this test are indeterminate.When the diagnostic initiated by the ACS is completed (successfully or not), the CPE MUST establish a new connection to the ACS to allow the ACS to view the results, indicating the Event code \"8 DIAGNOSTICS COMPLETE\" in the Inform message.After the diagnostic is complete, the value of all result parameters (all read-only parameters in this object) MUST be retained by the CPE until either this diagnostic is run again, or the CPE reboots.  After a reboot, if the CPE has not retained the result parameters from the most recent test, it MUST set the value of this parameter to {{enum|None}}.Modifying any of the writable parameters in this object except for this one MUST result in the value of this parameter being set to {{enum|None}}.While the test is in progress, modifying any of the writable parameters in this object except for this one MUST result in the test being terminated and the value of this parameter being set to {{enum|None}}.While the test is in progress, setting this parameter to {{enum|Requested}} (and possibly modifying other writable parameters in this object) MUST result in the test being terminated and then restarted using the current values of the test parameters."
+                },
+                "results": {
+                    "type": "string",
+                    "maxLength": 1024,
+                    "description": " Results of self-test (vendor specific)."
+                }
+            }
+        },
+        "Device - Self Test Diagnostics": {
+            "get": {
+                "tags": [
+                    "TR 069"
+                ],
+                "summary": "Find the Self Test Diagnostics for given device",
+                "description": "",
+                "displayName": "Device - Self Test Diagnostics",
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "ID of instance that needs to be fetched.",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    {
+                        "in": "query",
+                        "name": "view",
+                        "description": "View of the resource that you want to get.",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/SelfTestDiagnostics"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid ID supplied"
+                    },
+                    "404": {
+                        "description": "Instance not found"
+                    }
+                }
+            }
+        },
+        "Device": {
+            "id": "Device",
+            "title": "Device",
+            "type": "object",
+            "properties": {
+                "deviceInfo": {
+                    "$ref": "Link",
+                    "description": "The link to fetch the DeviceInfo section of device."
+                },
+                "managementServer": {
+                    "$ref": "Link",
+                    "description": "The link to fetch the ManagementServer section of device."
+                },
+                "gatewayInfo": {
+                    "$ref": "Link",
+                    "description": "The link to fetch the GatewayInfo section of device."
+                },
+                "userInterface": {
+                    "$ref": "Link",
+                    "description": "The link to fetch the UserInterface section of device."
+                },
+                "lanConfigSecurity": {
+                    "$ref": "Link",
+                    "description": "The link to fetch the LANConfigSecurity section of device."
+                },
+                "smartCardReaders": {
+                    "$ref": "Link",
+                    "description": "The link to fetch the SmartCardReaders section of device."
+                },
+                "periodicStatistics": {
+                    "$ref": "Link",
+                    "description": "The link to fetch the PeriodicStatistics section of device."
+                },
+                "selfTestDiagnostics": {
+                    "$ref": "Link",
+                    "description": "The link to fetch the SelfTestDiagnostics section of device."
+                },
+                "softwareModules": {
+                    "$ref": "Link",
+                    "description": "The link to fetch the SoftwareModules section of device."
+                },
+                "users": {
+                    "$ref": "Link",
+                    "description": "The link to fetch the Users section of device."
+                },
+                "hosts": {
+                    "$ref": "Link",
+                    "description": "The link to fetch the Hosts section of device."
+                },
+                "interfaceStack": {
+                    "$ref": "Link",
+                    "description": "The link to fetch the InterfaceStack section of device."
+                }
+            }
+        },
+        "Link": {
+            "id": "Link",
+            "title": "Link",
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string"
+                },
+                "rel": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "method": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Explore the cable APIs. APIs are grouped by Domain.",
+        "version": "0.0.1",
+        "title": "Cable API"
+    },
+    "host": "cable-api.herokuapp.com",
+    "basePath": "/api-docs",
+    "schemes": [
+        "https"
+    ],
+    "paths": {
+        "sample-path2": "{}"
+    },
+    "definitions": {}
+}

@@ -4,8 +4,8 @@ var request = require('request'),
     path  = require('path');
 //config  = require(path.join(__dirname + '/settings.json'));
 
-var entityModel  = require('./entity'),
-    pathModel    = require('./path');
+var entityModel  = require('./scope-entity'),
+    pathModel    = require('./scope-path');
 
 var swaggerFile = {
     "swagger": "2.0",
@@ -38,57 +38,69 @@ module.exports.init = function (callback) {
     //    }
     //});
 
-    entityModel.getSwaggerCacheInfo(function(err, needRefresh) {
-        console.log(needRefresh);
-        if(needRefresh === "false") {
-            callback();
-        }
-    });
+    //entityModel.getSwaggerCacheInfo(function(err, needRefresh) {
+    //    console.log(needRefresh);
+    //    if(needRefresh === "false") {
+    //        callback();
+    //    }
+    //});
 
-    async.parallel({
-        paths: getPaths,
-        definitions: getDefinitions
-    }, function(err, result) {
-        if (err) {
-            callback(err);
-        } else {
-            swaggerFile.paths = result.paths;
-            swaggerFile.definitions = result.definitions;
-            fs.exists(path.join(__dirname + '/../../public/secured/api-docs'), function (exists) {
-                if (!exists) {
-                    fs.mkdirSync(path.join(__dirname + '/../../public/secured/api-docs'));
-                }
-                fs.writeFile(path.join(__dirname + '/../../public/secured/api-docs/swagger-file-tr069.json'), JSON.stringify(swaggerFile, null, 4), function(err) {
-                    entityModel.setSwaggerCacheInfo("false", function(err) {
-                        callback();
-                    })
+    //async.series([
+    //    function(next){
+            pathModel.getAllScopePathTags(function(err, tags) {
+                tags.forEach(function(tag) {
+                    console.log(tag);
+                    async.parallel({
+                        paths: function(next) {
+                            pathModel.getAllScopePathFields(['name', 'definition'], tag, function(err, pathsData) {
+                                var paths = {};
+                                pathsData.forEach(function(item, index) {
+                                    paths[item.name] = item.definition && item.definition !== 'undefined' ? JSON.parse(item.definition) : '{}';
+                                });
+                                next(null, paths);
+                            });
+                        },
+                        definitions: function(next) {
+                            entityModel.getAllScopeEntityFields(['displayName', 'definition'], tag, function(err, entitysData) {
+                                var entities = {};
+                                entitysData.forEach(function(item, index) {
+                                    if(item.definition !== 'undefined' && item.definition !== '') {
+                                        entities[item.displayName] = item.definition && item.definition !== 'undefined' ? JSON.parse(item.definition) : '{}';
+                                    }
+                                });
+                                next(null, entities);
+                            });
+                        }
+                    }, function(err, result) {
+                        if (err) {
+                            callback(err);
+                        } else {
+                            swaggerFile.paths = result.paths;
+                            swaggerFile.definitions = result.definitions;
+                            fs.exists(path.join(__dirname + '/../../public/secured/api-docs'), function (exists) {
+                                if (!exists) {
+                                    fs.mkdirSync(path.join(__dirname + '/../../public/secured/api-docs'));
+                                }
+                                fs.writeFile(path.join(__dirname + '/../../public/secured/api-docs/swagger-file-' + tag + '.json'), JSON.stringify(swaggerFile, null, 4), function(err) {
+                                });
+                            });
+                        }
+                    });
                 });
-
+                callback();
             });
-        }
-    });
+        //}
+    //], function(err, result) {
+    //    callback();
+    //});
 };
 
 //fiter out paths in the swagger file that don't have the get property
-function getPaths(callback) {
-    pathModel.getAllScopePathFields(['name', 'definition'], function(err, pathsData) {
-        var paths = {};
-        pathsData.forEach(function(item, index) {
-            paths[item.name] = JSON.parse(item.definition);
-        });
-        callback(null, paths);
-    });
+function getPaths(tag, callback) {
+
 }
 
 //fiter out paths in the swagger file that don't have the get property
-function getDefinitions(callback) {
-    entityModel.getAllScopeEntityFields(['displayName', 'definition'], function(err, entitysData) {
-        var entities = {};
-        entitysData.forEach(function(item, index) {
-            if(item.definition !== 'undefined' && item.definition !== '') {
-                entities[item.displayName] = JSON.parse(item.definition);
-            }
-        });
-        callback(null, entities);
-    });
+function getDefinitions(tag, callback) {
+
 }

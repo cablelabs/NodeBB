@@ -3,10 +3,10 @@
 var async = require('async'),
 
     entity      = require('../modeling/entity'),
-    scopeEntity      = require('../modeling/scope-entity'),
+    scopeEntity = require('../modeling/scope-entity'),
     exporter    = require('../modeling/exportSchema'),
     path        = require('../modeling/path'),
-    scopePath        = require('../modeling/scope-path'),
+    scopePath   = require('../modeling/scope-path'),
     winston     = require('winston'),
     apis        = require('../apis'),
     announcements = require('../announcements'),
@@ -93,14 +93,14 @@ customController.getScopePaths = function(req, res, next) {
     var query = req.query.fields;
     if(query) { // query handles ?fields=field1,field2
         var fields = query.split(',');
-        scopePath.getAllScopePathFields(fields, function(err, pathsData) {
+        scopePath.getAllScopePathFields(fields, scope, function(err, pathsData) {
             if(err) {
                 return next(err);
             }
             res.send(pathsData);
         });
     } else { // get all attributes
-        scopePath.getAllScopePaths(function (err, pathsData) {
+        scopePath.getAllScopePaths(scope, function (err, pathsData) {
             if(err) {
                 return next(err);
             }
@@ -122,8 +122,10 @@ customController.getPathById = function(req, res, next) {
 };
 
 customController.getScopePathById = function(req, res, next) {
+    var scope = req.params.scope;
+
     var uid = req.params.uid;
-    scopePath.getScopePathData(uid, function(err, paths) {
+    scopePath.getScopePathData(uid, scope, function(err, paths) {
         if(err) {
             next(err);
         }
@@ -230,17 +232,19 @@ customController.getEntities = function(req, res, next) {
 };
 
 customController.getScopeEntities = function(req, res, next) {
+    var scope = req.params.scope;
     var query = req.query.fields;
+
     if(query) { // query handles ?fields=field1,field2
         var fields = query.split(',');
-        scopeEntity.getAllScopeEntityFields(fields, function(err, entitiesData) {
+        scopeEntity.getAllScopeEntityFields(fields, scope, function(err, entitiesData) {
             if(err) {
                 return next(err);
             }
             res.send(entitiesData);
         });
     } else { // get all attributes
-        scopeEntity.getAllScopeEntities(function (err, entitiesData) {
+        scopeEntity.getAllScopeEntities(scope, function (err, entitiesData) {
             if(err) {
                 return next(err);
             }
@@ -287,9 +291,10 @@ customController.getEntityByName = function(req, res, next) {
 };
 
 customController.getScopeEntityByName = function(req, res, next) {
+    var scope = req.params.scope;
     var name = req.params.name;
-    scopeEntity.getScopeUidByName(name, function(err, uid) {
-        scopeEntity.getScopeEntities([uid], function(err, entities) {
+    scopeEntity.getScopeUidByName(name, scope, function(err, uid) {
+        scopeEntity.getScopeEntities([uid], scope, function(err, entities) {
             if(err) {
                 next(err);
             }
@@ -439,7 +444,9 @@ customController.createEntity = function(req, res, next) {
 };
 
 customController.createScopeEntity = function(req, res, next) {
+    var scope = req.params.scope;
 
+    console.log(scope + " Scope ");
     var entityData = {};
 
     for (var key in req.body) {
@@ -448,7 +455,7 @@ customController.createScopeEntity = function(req, res, next) {
         }
     }
 
-    scopeEntity.createScopeEntity(entityData, function(err, uid) {
+    scopeEntity.createScopeEntity(entityData, scope, function(err, uid) {
         entityData.uid = uid;
         res.send(entityData);
     });
