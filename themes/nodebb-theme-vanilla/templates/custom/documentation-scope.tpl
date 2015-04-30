@@ -17,7 +17,7 @@
 
 <!-- enabling this will enable oauth2 implicit scope support -->
 <script src='secured/swagger/lib/swagger-oauth.js' type='text/javascript'></script>
-<script src='secured/swagger/init-tr069.js' type="text/javascript"></script>
+<script src='secured/swagger/init-scope.js' type="text/javascript"></script>
 
 <div class="swagger-section">
 

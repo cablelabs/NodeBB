@@ -16,7 +16,8 @@ function mainRoutes(app, middleware, controllers) {
 
     app.get('/entity-map', middleware.buildHeader, middlewares, controllers.custom.entityMap);
     app.get('/documentation', middleware.buildHeader, middlewares, controllers.custom.documentation);
-    app.get('/tr069', middleware.buildHeader, middlewares, controllers.custom.documentationtr069);
+
+    app.get('/scope/:scopeName', middleware.buildHeader, middlewares, controllers.custom.documentationtr069);
 
     var apiMiddlewares = [middleware.incrementPageViews, middleware.updateLastOnlineTime];
     var updateApiMiddlewares = [middleware.custom.resetEntityCache, middleware.incrementPageViews, middleware.updateLastOnlineTime];

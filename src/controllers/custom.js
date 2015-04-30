@@ -63,7 +63,9 @@ customController.documentation = function(req, res, next) {
 };
 
 customController.documentationtr069 = function(req, res, next) {
-    res.render('custom/documentation-tr069');
+    var scope = req.params.scopename;
+    req.session.scopeName = scope;
+    res.render('custom/documentation-scope');
 };
 
 customController.getPaths = function(req, res, next) {
@@ -129,7 +131,7 @@ customController.getScopePathById = function(req, res, next) {
         if(err) {
             next(err);
         }
-        paths.definition = JSON.parse(paths.definition);
+        paths.definition = paths.definition && paths.definition !== 'undefined' ? JSON.parse(paths.definition) : '';
         res.send(paths);
     });
 };

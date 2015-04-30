@@ -32,28 +32,29 @@ module.exports = function(ScopePath) {
 
         function isTagsValid(next) {
             var newTags = data.tags;
-            if(!Array.isArray(newTags)) {
-                return next("Tags need to be an array");
-            }
-            if(newTags.length <= 0) {
-                return next("Tags cannot be empty");
-            }
-            var isPresent = false;
-            newTags.forEach(function(item) {
-                if(scope === item) {
-                    isPresent = true;
+            if(newTags != null && newTags !== 'undefined') {
+                if(!Array.isArray(newTags)) {
+                    return next("Tags need to be an array");
                 }
-            });
-            if(!isPresent) {
-                return next("Zone and tags do not match");
+                if(newTags.length <= 0) {
+                    return next("Tags cannot be empty");
+                }
+                var isPresent = false;
+                newTags.forEach(function(item) {
+                    if(scope === item) {
+                        isPresent = true;
+                    }
+                });
+                if(!isPresent) {
+                    return next("Zone and tags do not match");
+                }
             }
             next(null);
         }
 
         function updateField(field, next) {
 
-            if(field === 'tags') {
-                console.log("Came to update tags");
+            if(field === 'tags' && data[field] !== undefined) {
                 return updateTags(uid, data.tags, scope, next);
             }
 

@@ -12,10 +12,11 @@ $(function () {
     var socket = io.connect(config.websocketAddress, ioParams);
 
     var url = window.location.search.match(/url=([^&]+)/);
+    var scopeName = '@Session["scopeName"]';
     if (url && url.length > 1) {
         url = url[1];
     } else {
-        url = "/secured/api-docs/swagger-file-tr069.json";
+        url = "/secured/api-docs/swagger-file-" + scopeName + ".json";
     }
     window.swaggerUi = new SwaggerUi({
         url: url,
