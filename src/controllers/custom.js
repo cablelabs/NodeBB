@@ -62,10 +62,10 @@ customController.documentation = function(req, res, next) {
     res.render('custom/documentation');
 };
 
-customController.documentationtr069 = function(req, res, next) {
-    var scope = req.params.scopename;
+customController.documentationScope = function(req, res, next) {
+    var scope = req.params.scopeName;
     req.session.scopeName = scope;
-    res.render('custom/documentation-scope');
+    res.render('custom/documentation-scope', {scopeName: scope});
 };
 
 customController.getPaths = function(req, res, next) {

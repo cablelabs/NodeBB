@@ -20,7 +20,7 @@
 <script src='../secured/swagger/init-scope.js' type="text/javascript"></script>
 
 <div class="swagger-section">
-
+    <input id="scopeName" type="hidden" value="{scopeName}"/>
     <!--<div id='header'>-->
     <div class="swagger-ui-wrap">
         <form id='api_selector'>

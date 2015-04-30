@@ -12,7 +12,8 @@ $(function () {
     var socket = io.connect(config.websocketAddress, ioParams);
 
     var url = window.location.search.match(/url=([^&]+)/);
-    var scopeName = '@Session["scopeName"]';
+    //var scopeName = '@Session["scopeName"]';
+    var scopeName = $('#scopeName').val();
     if (url && url.length > 1) {
         url = url[1];
     } else {
