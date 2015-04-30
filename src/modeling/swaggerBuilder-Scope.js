@@ -61,11 +61,11 @@ module.exports.init = function (callback) {
                             });
                         },
                         definitions: function(next) {
-                            entityModel.getAllScopeEntityFields(['displayName', 'definition'], tag, function(err, entitysData) {
+                            entityModel.getAllScopeEntityFields(['name', 'displayName', 'definition'], tag, function(err, entitysData) {
                                 var entities = {};
                                 entitysData.forEach(function(item, index) {
                                     if(item.definition !== 'undefined' && item.definition !== '') {
-                                        entities[item.displayName] = item.definition && item.definition !== 'undefined' ? JSON.parse(item.definition) : '{}';
+                                        entities[item.name] = item.definition && item.definition !== 'undefined' ? JSON.parse(item.definition) : '{}';
                                     }
                                 });
                                 next(null, entities);
