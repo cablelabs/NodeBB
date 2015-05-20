@@ -20,7 +20,7 @@ function mainRoutes(app, middleware, controllers) {
     app.get('/scope/:scopeName', middleware.buildHeader, middlewares, controllers.custom.documentationScope);
 
     var apiMiddlewares = [middleware.incrementPageViews, middleware.updateLastOnlineTime];
-    var updateApiMiddlewares = [middleware.custom.resestEntityCache, middleware.incrementPageViews, middleware.updateLastOnlineTime];
+    var updateApiMiddlewares = [middleware.custom.resetEntityCache, middleware.incrementPageViews, middleware.updateLastOnlineTime];
 
     // path routes
     var modellingPrefix = '/modeling';
