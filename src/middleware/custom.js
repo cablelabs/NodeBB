@@ -6,10 +6,10 @@ var app,
 
 
 middleware.resetEntityCache = function(req, res, next) {
-    if (!req.user) {
-        return res.redirect('/login?next=admin');
-    }
-    console.log("++++++++++");
+    //if (!req.user) {
+    //    return res.redirect('/login?next=admin');
+    //}
+    console.log("Resetting entity cache.");
     entityModel.setSwaggerCacheInfo("true", function(err) {
         next();
     })
