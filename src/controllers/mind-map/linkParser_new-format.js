@@ -7,7 +7,7 @@ var request = require('request'),
 var entityModel  = require('../../modeling/entity'),
     pathModel    = require('../../modeling/path');
 
-var entity_names = {};
+var entity_names;
 
 module.exports.init = function (callback) {
 
@@ -24,8 +24,7 @@ module.exports.init = function (callback) {
     getSwaggerFile,
     filterEndpointGet,
     buildEndpointProfiles,
-    getAllEndpoints//,  
-    //categorizeByDomain
+    getAllEndpoints
   ], function(err, result) {
     if (err) {
       callback(err);
@@ -37,8 +36,7 @@ module.exports.init = function (callback) {
         fs.writeFile(path.join(__dirname + '/../../../public/secured/mind-map/assets/links-new-format.json'), JSON.stringify(result, null, 4), function(err){
           entityModel.setSwaggerCacheInfo("false", function(err) {
             callback();
-          })
-
+          });
         });
 
       });
@@ -93,14 +91,13 @@ function getSwaggerFile (callback) {
 
   async.parallel({
     paths: getPaths,
-    definitions: getDefinitions
+    definitions: getDefinitions,
   }, function(err, result) {
     if (err) {
       callback(err);
     } else {
       swaggerFile.paths = result.paths;
       swaggerFile.definitions = result.definitions;
-
       callback(null, swaggerFile);
     }
   });
@@ -123,6 +120,8 @@ function filterEndpointGet(body, callback) {
 //build the json object that will eventually be passed to the client
 //it contains some uri info and a paths array that holds the endPoint profiles
 function buildEndpointProfiles (body, pathNames, callback) {
+  entity_names = {};
+
   var result = {
     //apiUriBase: 'http://' + body.host + body.basePath,
     apiUriBase: 'http://' + body.host,
@@ -134,7 +133,8 @@ function buildEndpointProfiles (body, pathNames, callback) {
     var get = body.paths[path].get;
     var endpoint = {
       path: path,
-      name: get.displayName,
+      name: get.responses['200'].schema.$ref.replace('#/definitions/', ''),
+      displayName: get.displayName,
       description: get.description
     };
 
@@ -157,38 +157,6 @@ function getAllEndpoints (profiles, callback) {
     profiles.paths = paths;
     callback(null, profiles);
   });
-}
-
-
-// add the 'domain' property to the payload and copy the endpoint profiles
-// into their respective domains, using the info from the config file
-// print each uncategorized endpoint to the console
-// delete the paths property from the payload
-function categorizeByDomain (profiles, callback) {
-
-  var domains = {};
-
-  profiles.paths.forEach( function (path) {
-    if (path.hasOwnProperty('domain')) {
-      if (!domains.hasOwnProperty(path.domain)) {
-        domains[path.domain] = [];
-      }
-
-      insertPathInDomain(domains[path.domain], path);
-      delete path.domain;
-    }
-  })
-
-  delete profiles.paths;
-
-  profiles.domains = Object.keys(domains).sort().map( function (domainName) {
-    return {
-      name: domainName,
-      entities: domains[domainName]
-    };
-  });
-
-  callback(null, profiles);
 }
 
 
@@ -217,7 +185,6 @@ function fetchEndpoint (endpoint, apiUriBase, callback) {
 // if the 'rel' property of the link object does not equal
 // 'self', the path name, and is not already in the links array, push it in
 function findLinks (obj, path, links) {
-
   links = links || [];
 
   if (Array.isArray(obj)) {
@@ -241,19 +208,6 @@ function findLinks (obj, path, links) {
   }
 
   return links;
-}
-
-function insertPathInDomain(domain, path) {
-  var i = 0, len = domain.length, inserted = false;
-  for (; i < len; i += 1) {
-    if (path.name < domain[i].name) {
-      domain.splice(i, 0, path);
-      inserted = true;
-      break;
-    }
-  }
-  if (!inserted) { domain.push(path); }
-  return domain;
 }
 
 

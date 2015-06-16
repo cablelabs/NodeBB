@@ -221,6 +221,29 @@
   </div>
 </div>
 
+<!-- Share Set Modal -->
+<div class="modal fade" id="download-schema" tabindex="-1" role="dialog" aria-labelledby="download-schema" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Schema for <span></span></h4>
+      </div>
+      <div class="modal-body">
+        <div>
+          <button type="button" class="btn btn-info download-btn" data-type="json">JSON Schema</button>
+          <button type="button" class="btn btn-info download-btn" data-type="xml" >XML</button>
+          <button type="button" class="btn btn-default" id="copy-schema-btn">Select All</button>
+        </div>
+        <div class="schema-preview"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Page Loading Modal-->
 <div class="modal hide" id="loadingModal" data-backdrop="static" data-keyboard="false">
   <div class="modal-header">

@@ -1,7 +1,7 @@
 var Entity = (function (){
   'use strict';
 
-  var properties = ['name', 'path', 'domain', 'description', 'links'];
+  var properties = ['name', 'displayName', 'path', 'domain', 'description', 'links'];
 
   function Entity (spec) {
     var self = this;

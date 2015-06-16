@@ -125,6 +125,7 @@
         es: null,         // instance of Entity_Set
         doc_uri_base: '', // uri base for links to api documentation
         selected: [],     // array of names for selected entities
+        download_entity: null,
         $: {
             container: null,
             entities: null
@@ -141,6 +142,9 @@
             $('[data-toggle="popover"]').popover();
             $('.domain-title').on('click', this.handlers['click domain']);
             $('.description').on('click', this.handlers['click description']);
+            $('.download').on('click', this.handlers['click download-icon']);
+            $('.download-btn').on('click', this.handlers['click download-btn']);
+            $('#copy-schema-btn').on('click', this.handlers['click copy-schema-btn']);
         },
         // create the entity's link to API docs
         get_doc_link: function (entity) {
@@ -161,15 +165,19 @@
         entity_html: function (entity) {
             return [
             '<div class="entity" data-name="' + entity.name + '">', 
-                '<h3 class="entity-title">' + entity.name + '</h3>',
+                '<h3 class="entity-title">' + entity.displayName + '</h3>',
                 '<div class="glyphs">',
                     '<span class="glyphicon glyphicon-info-sign description" ',
                            'data-container="body" data-toggle="popover" data-placement="bottom" ',
                            'data-content="' + entity.description + '" title=" ">',
                     '</span>',
+                    '<span class="glyphicon glyphicon-download download" title="Download Schema"',
+                          'data-toggle="modal" data-target="#download-schema"',
+                          'data-entity="' + entity.name + '" data-display="' + entity.displayName + '">',
+                    '</span>',
                     '<a class="api-link" href="' + this.get_doc_link(entity) + '">',
                         '<span class="glyphicon glyphicon-retweet" title="',
-                               entity.name + ' documentation" aria-hidden="true">',
+                               entity.displayName + ' documentation" aria-hidden="true">',
                         '</span>',
                     '</a>',
                 '</div>',
@@ -273,6 +281,22 @@
                 }
             });
         },
+        select_text: function (element) {
+            var doc = document,
+                text = element,
+                range, selection;    
+            if (doc.body.createTextRange) {
+                range = document.body.createTextRange();
+                range.moveToElementText(text);
+                range.select();
+            } else if (window.getSelection) {
+                selection = window.getSelection();        
+                range = document.createRange();
+                range.selectNodeContents(text);
+                selection.removeAllRanges();
+                selection.addRange(range);
+            }
+        },
         handlers: {
             'click entity': function (e) {
                 // if entity is clicked, but not on an icon
@@ -294,8 +318,29 @@
             },
             'click description': function (e) {
                 // toggle selected class on icons' container, so it doesn't close when description is open
-                $(this).parent().toggleClass('open');
-            } 
+                $(this).toggleClass('open').parent().toggleClass('open');
+            },
+            'click download-icon': function (e) {
+                var $this = $(this);
+                //graph.downloadEntity stores the entity name
+                graph.downloadEntity = $this.data('entity');
+                // insert entity display name into modal title
+                $('#download-schema .modal-title span').html($this.data('display'));
+
+            },
+            'click download-btn': function (e) {
+                var entityName = graph.downloadEntity;
+                var schemaType = $(this).data('type');  // either 'json' or 'xml'
+
+                // call method to get schema, store as string
+                var schema = JSON.stringify({ name: entityName, type: 'object' }, null, 2);
+
+                $('#download-schema .schema-preview').html('<pre>'+schema+'</pre>');
+            },
+            'click copy-schema-btn': function (e) {
+                var element = $('#download-schema .schema-preview pre')[0];
+                graph.select_text(element);
+            }
         }
     };
 

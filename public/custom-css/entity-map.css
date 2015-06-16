@@ -261,7 +261,8 @@
   overflow: hidden;
 }
 .api-link,
-.description {
+.description,
+.download {
   -webkit-flex: 0 1 2em;
   -ms-flex: 0 1 2em;
   flex: 0 1 2em;
@@ -274,8 +275,10 @@
   color: #fff;
   padding-top: .6em;
 }
-.glyphs.open .description,
+
 .glyphs .description:hover,
+.glyphs .description.open,
+.glyphs .download:hover,
 .glyphs .api-link:hover {
   color: #f00;
 }
@@ -291,7 +294,10 @@
 .glyphs.open .api-link,
 .entity:hover .glyphs .description,
 .entity.selected .glyphs .description,
-.glyphs.open .description {
+.glyphs.open .description,
+.entity:hover .glyphs .download,
+.entity.selected .glyphs .download,
+.glyphs.open .download {
   display: block;
 }
 
@@ -312,6 +318,14 @@
 
 #set-manager, #share-set {
   z-index: 2000;
+}
+
+/** Download Schema Modal **/
+#copy-schema-btn {
+  float: right;
+}
+#download-schema .schema-preview {
+  margin-top: 1em;
 }
 
 /******************************************
