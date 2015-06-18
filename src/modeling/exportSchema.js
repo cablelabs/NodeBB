@@ -16,7 +16,10 @@ module.exports.generateSchema = function (name, callback) {
         definitions             : {}
     };
 
-    function getJsonSchema(name, cnt, subRef, callback) {
+    var definitions = {};
+    var cnt = 0;
+
+    function getJsonSchema(name, subRef, next) {
         var subSchema = {
             $schema                 : "http://json-schema.org/draft-04/schema#",
             type                    : "object",
@@ -50,15 +53,18 @@ module.exports.generateSchema = function (name, callback) {
 
                                 if(refVal != undefined) {
                                     if(schema.definitions[refVal] == null) {
-                                        getJsonSchema(refVal, cnt + 1, true, function() {
+                                        //console.log(refVal);
+                                        cnt++;
+                                        getJsonSchema(refVal, true, function() {
                                             console.log(cnt);
                                         });
                                     }
                                     val["$ref"] = "#/definitions/" + refVal;
                                 } else if(typeVal == 'array') {
                                     if(schema.definitions[val["items"].$ref] == null) {
+                                        //console.log(val["items"].$ref);
                                         cnt++;
-                                        getJsonSchema(val["items"].$ref, cnt + 1, true, function() {
+                                        getJsonSchema(val["items"].$ref, true, function() {
                                             console.log(cnt);
                                         });
                                     }
@@ -68,24 +74,13 @@ module.exports.generateSchema = function (name, callback) {
                         });
 
                         if(!subRef) {
-                            //var timeoutId = setTimeout(checkResponse, 1000);
-                            //
-                            //function checkResponse() {
-                            //    console.log("Response "  + cnt);
-                            //    if(cnt == 0) {
-                            //        clearTimeout(timeoutId);
-                            //        schema.properties = properties;
-                            //        callback();
-                            //    }
-                            //}
-                            //if(cnt == 0) {
-                            //    clearTimeout(timeoutId);
-                            //    schema.properties = properties;
-                            //    callback();
-                            //}
+                            schema.properties = properties;
+                            schema.definitions = definitions;
+                            next();
                         } else {
                             subSchema.properties = properties;
-                            schema.definitions[name] = subSchema;
+                            definitions[name] = subSchema;
+                            //console.log("+++" + JSON.stringify(definitions));
                             cnt--;
                         }
                     }
@@ -96,84 +91,83 @@ module.exports.generateSchema = function (name, callback) {
         });
     }
 
-    function getJsonSubSchema(name, callback) {
-        var cnt = 0;
-        var subSchema = {
-            $schema                 : "http://json-schema.org/draft-04/schema#",
-            type                    : "object",
-            required                : [],
-            properties              : {},
-            definitions             : {}
-        };
-
-        subSchema.id       =   nameSpacePrefix + name;
-        subSchema.title    =   name;
-
-        entity.getUidByName(name.toLowerCase(), function(err, uid) {
-            if(uid != null) {
-                entity.getEntities([uid], function(err, entities) {
-                    if(err) {
-                        next(err);
-                    }
-                    if(entities[0].definition != null && entities[0].definition.properties != null) {
-                        var properties = entities[0].definition.properties;
-                        Object.keys(properties).forEach(function(key) {
-
-                            var val = properties[key];
-                            if(JSON.stringify(val).indexOf("$ref") > 0) {
-                                var refVal  = val["$ref"];
-                                var typeVal = val["type"];
-
-                                if(refVal != undefined) {
-                                    if(schema.definitions[refVal] == null) {
-                                        cnt++;
-                                        getJsonSubSchema(refVal, function() {
-                                            cnt--;
-                                        });
-                                    }
-                                    val["$ref"] = "#/definitions/" + refVal;
-                                } else if(typeVal == 'array') {
-                                    if(schema.definitions[val["items"].$ref] == null) {
-                                        cnt++
-                                        getJsonSubSchema(val["items"].$ref, function() {
-                                            cnt--;
-                                        });
-                                    }
-                                    val["items"].$ref = "#/definitions/" + val["items"].$ref;
-                                }
-                            }
-                        });
-
-                        //console.log(name + " " + subRef + " " + JSON.stringify(properties));
-                        //if(!subRef) {
-                        //    schema.properties = properties;
-                        //    callback();
-                        //} else {
-                        var timeoutId = setTimeout(checkResponse, 1000);
-
-                        function checkResponse() {
-                            console.log("Response - SUB "  + cnt);
-                            if(cnt == 0) {
-                                subSchema.properties = properties;
-                                schema.definitions[name] = subSchema;
-                                clearTimeout(timeoutId);
-                                callback();
-                            }
-                        }
-
-                        //}
-                    }
-                });
-            }
-            //else if(subRef) {
-            //    schema.definitions[name] = subSchema;
-            //}
-        });
-    }
-
-    getJsonSchema(name, 0, false, function() {
-        //console.log(schema);
+    getJsonSchema(name, false, function() {
+        //console.log("+++++++++" + schema);
         callback(schema);
     });
 
 };
+
+//function getJsonSubSchema(name, callback) {
+//    var cnt = 0;
+//    var subSchema = {
+//        $schema                 : "http://json-schema.org/draft-04/schema#",
+//        type                    : "object",
+//        required                : [],
+//        properties              : {},
+//        definitions             : {}
+//    };
+//
+//    subSchema.id       =   nameSpacePrefix + name;
+//    subSchema.title    =   name;
+//
+//    entity.getUidByName(name.toLowerCase(), function(err, uid) {
+//        if(uid != null) {
+//            entity.getEntities([uid], function(err, entities) {
+//                if(err) {
+//                    next(err);
+//                }
+//                if(entities[0].definition != null && entities[0].definition.properties != null) {
+//                    var properties = entities[0].definition.properties;
+//                    Object.keys(properties).forEach(function(key) {
+//
+//                        var val = properties[key];
+//                        if(JSON.stringify(val).indexOf("$ref") > 0) {
+//                            var refVal  = val["$ref"];
+//                            var typeVal = val["type"];
+//
+//                            if(refVal != undefined) {
+//                                if(schema.definitions[refVal] == null) {
+//                                    cnt++;
+//                                    getJsonSubSchema(refVal, function() {
+//                                        cnt--;
+//                                    });
+//                                }
+//                                val["$ref"] = "#/definitions/" + refVal;
+//                            } else if(typeVal == 'array') {
+//                                if(schema.definitions[val["items"].$ref] == null) {
+//                                    cnt++
+//                                    getJsonSubSchema(val["items"].$ref, function() {
+//                                        cnt--;
+//                                    });
+//                                }
+//                                val["items"].$ref = "#/definitions/" + val["items"].$ref;
+//                            }
+//                        }
+//                    });
+//
+//                    console.log(name + " " + subRef + " " + JSON.stringify(properties));
+//                    if(!subRef) {
+//                        schema.properties = properties;
+//                        callback();
+//                    } else {
+//                        //var timeoutId = setTimeout(checkResponse, 1000);
+//
+//                        //function checkResponse() {console.log("Response - SUB "  + cnt);
+//                        if(cnt == 0) {
+//                            subSchema.properties = properties;
+//                            schema.definitions[name] = subSchema;
+//                            clearTimeout(timeoutId);
+//                            callback();
+//                        }
+//                    }
+//
+//                    //}
+//                }
+//            });
+//        }
+//        //else if(subRef) {
+//        //    schema.definitions[name] = subSchema;
+//        //}
+//    });
+//}

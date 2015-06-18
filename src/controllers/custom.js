@@ -62,6 +62,10 @@ customController.documentation = function(req, res, next) {
     res.render('custom/documentation');
 };
 
+customController.modeling = function(req, res, next) {
+    res.render('custom/modeling/paths');
+};
+
 customController.documentationScope = function(req, res, next) {
     var scope = req.params.scopeName;
     req.session.scopeName = scope;
