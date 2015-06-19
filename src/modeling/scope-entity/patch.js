@@ -106,13 +106,13 @@ module.exports = function(ScopeEntity) {
     //    });
     //}
 
-    ScopeEntity.patchScopeEntity = function(uid, data, callback) {
+    ScopeEntity.patchScopeEntity = function(uid, scope, data, callback) {
         var fields = ['name', 'displayName', 'definition', 'tags', 'domain', 'updatedate', 'entityviews'];
 
         function isNameAvailable(next) {
-            ScopeEntity.getScopeEntityFields(uid, ['uid', 'name'], function(err, entityData) {
+            ScopeEntity.getScopeEntityFields(uid, ['uid', 'name'], scope, function(err, entityData) {
 
-                ScopeEntity.exists(entityData.name, function(err, exists) {
+                ScopeEntity.exists(entityData.name, scope, function(err, exists) {
                     if(err) {
                         return next(err);
                     }
@@ -144,7 +144,7 @@ module.exports = function(ScopeEntity) {
             data[field] = validator.escape(data[field]);
 
             if (field === 'name') {
-                return updateScopeName(uid, data.name, next);
+                return updateScopeName(uid, scope, data.name, next);
             }
 
             ScopeEntity.setScopeEntityField(uid, field, data[field], next);
@@ -160,13 +160,13 @@ module.exports = function(ScopeEntity) {
                     return callback(err);
                 }
 
-                ScopeEntity.getScopeEntityFields(uid, ['name', 'displayName', 'definition', 'tags', 'domain', 'updatedate', 'createdate', 'entityviews'], callback);
+                ScopeEntity.getScopeEntityFields(uid, ['name', 'displayName', 'definition', 'tags', 'domain', 'updatedate', 'createdate', 'entityviews'], scope, callback);
             });
         });
     };
 
-    function updateScopeName(uid, newName, callback) {
-        ScopeEntity.getScopeEntityFields(uid, ['name'], function(err, entityData) {
+    function updateScopeName(uid, scope, newName, callback) {
+        ScopeEntity.getScopeEntityFields(uid, ['name'], scope, function(err, entityData) {
             function update(field, object, value, callback) {
                 async.parallel([
                     function(next) {
@@ -188,11 +188,11 @@ module.exports = function(ScopeEntity) {
                         return next();
                     }
 
-                    db.deleteObjectField('scopeentityname:uid', entityData.name, function(err) {
+                    db.deleteObjectField('scopeentityname:' + scope + ':uid', entityData.name, function(err) {
                         if (err) {
                             return next(err);
                         }
-                        update('name', 'scopeentityname:uid', newName, next);
+                        update('name', 'scopeentityname:' + scope + ':uid', newName, next);
                     });
                 }
             ], callback);

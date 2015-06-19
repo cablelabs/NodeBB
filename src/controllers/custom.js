@@ -488,7 +488,7 @@ customController.patchEntity = function(req, res, next) {
 };
 
 customController.patchScopeEntity = function(req, res, next) {
-
+    var scope = req.params.scope;
     var name = req.params.name;
 
     var entityData = {};
@@ -499,8 +499,8 @@ customController.patchScopeEntity = function(req, res, next) {
         }
     }
 
-    scopeEntity.getScopeUidByName(name, function(err, uid) {
-        entity.patchScopeEntity(uid, entityData, function(err, updatedEntity) {
+    scopeEntity.getScopeUidByName(name, scope, function(err, uid) {
+        scopeEntity.patchScopeEntity(uid, scope, entityData, function(err, updatedEntity) {
             res.send(updatedEntity);
         });
     });
