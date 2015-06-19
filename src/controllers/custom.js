@@ -135,7 +135,7 @@ customController.getScopePathById = function(req, res, next) {
         if(err) {
             next(err);
         }
-        paths.definition = paths.definition && paths.definition !== 'undefined' ? JSON.parse(paths.definition) : '';
+        paths.definition = paths && paths.definition && paths.definition !== 'undefined' ? JSON.parse(paths.definition) : '';
         res.send(paths);
     });
 };
@@ -300,7 +300,10 @@ customController.getScopeEntityByName = function(req, res, next) {
     var scope = req.params.scope;
     var name = req.params.name;
     scopeEntity.getScopeUidByName(name, scope, function(err, uid) {
-        console.log(uid);
+        if(err || uid == null) {
+            console.log(uid);
+            next("Not found");
+        }
         scopeEntity.getScopeEntities([uid], scope, function(err, entities) {
             if(err) {
                 next(err);

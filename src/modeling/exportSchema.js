@@ -16,18 +16,18 @@ module.exports.generateSchema = function (name, callback) {
         definitions             : {}
     };
 
-    var definitions = {};
+    var subSchema = {
+        $schema                 : "http://json-schema.org/draft-04/schema#",
+        type                    : "object",
+        required                : [],
+        properties              : {},
+        definitions             : {}
+    };
+
+    var definitions = [];
     var cnt = 0;
 
     function getJsonSchema(name, subRef, next) {
-        var subSchema = {
-            $schema                 : "http://json-schema.org/draft-04/schema#",
-            type                    : "object",
-            required                : [],
-            properties              : {},
-            definitions             : {}
-        };
-
         if(!subRef) {
             schema.id       =   nameSpacePrefix + name;
             schema.title    =   name;
@@ -54,7 +54,8 @@ module.exports.generateSchema = function (name, callback) {
                                 if(refVal != undefined) {
                                     if(schema.definitions[refVal] == null) {
                                         //console.log(refVal);
-                                        cnt++;
+                                        //cnt++;
+                                        definitions.push(refVal);
                                         getJsonSchema(refVal, true, function() {
                                             console.log(cnt);
                                         });
@@ -63,7 +64,8 @@ module.exports.generateSchema = function (name, callback) {
                                 } else if(typeVal == 'array') {
                                     if(schema.definitions[val["items"].$ref] == null) {
                                         //console.log(val["items"].$ref);
-                                        cnt++;
+                                        //cnt++;
+                                        definitions.push(val["items"].$ref);
                                         getJsonSchema(val["items"].$ref, true, function() {
                                             console.log(cnt);
                                         });
@@ -73,16 +75,17 @@ module.exports.generateSchema = function (name, callback) {
                             }
                         });
 
-                        if(!subRef) {
+                        //if(subRef) {
+                        //    subSchema.properties = properties;
+                        //    schema.definitions[name] = subSchema;
+                        //    //console.log("++++" + name);
+                        //    //console.log(schema.definitions);
+                        //    //console.log("+++" + JSON.stringify(definitions));
+                        //    //cnt--;
+                        //} else {
                             schema.properties = properties;
-                            schema.definitions = definitions;
                             next();
-                        } else {
-                            subSchema.properties = properties;
-                            definitions[name] = subSchema;
-                            //console.log("+++" + JSON.stringify(definitions));
-                            cnt--;
-                        }
+                        //}
                     }
                 });
             } else if(subRef) {
@@ -93,6 +96,8 @@ module.exports.generateSchema = function (name, callback) {
 
     getJsonSchema(name, false, function() {
         //console.log("+++++++++" + schema);
+        console.log(definitions.length);
+
         callback(schema);
     });
 
