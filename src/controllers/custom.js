@@ -300,6 +300,7 @@ customController.getScopeEntityByName = function(req, res, next) {
     var scope = req.params.scope;
     var name = req.params.name;
     scopeEntity.getScopeUidByName(name, scope, function(err, uid) {
+        console.log(uid);
         scopeEntity.getScopeEntities([uid], scope, function(err, entities) {
             if(err) {
                 next(err);
