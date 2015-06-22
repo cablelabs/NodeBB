@@ -15,19 +15,17 @@ module.exports.generateSchema = function (name, callback) {
         properties              : {},
         definitions             : {}
     };
-
-    var subSchema = {
-        $schema                 : "http://json-schema.org/draft-04/schema#",
-        type                    : "object",
-        required                : [],
-        properties              : {},
-        definitions             : {}
-    };
-
     var definitions = [];
-    var cnt = 0;
 
     function getJsonSchema(name, subRef, next) {
+        var subSchema = {
+            $schema                 : "http://json-schema.org/draft-04/schema#",
+            type                    : "object",
+            required                : [],
+            properties              : {},
+            definitions             : {}
+        };
+
         if(!subRef) {
             schema.id       =   nameSpacePrefix + name;
             schema.title    =   name;
@@ -53,126 +51,53 @@ module.exports.generateSchema = function (name, callback) {
 
                                 if(refVal != undefined) {
                                     if(schema.definitions[refVal] == null) {
-                                        //console.log(refVal);
-                                        //cnt++;
+                                        // Add the type to definition array for processing later.
                                         definitions.push(refVal);
-                                        getJsonSchema(refVal, true, function() {
-                                            console.log(cnt);
-                                        });
                                     }
                                     val["$ref"] = "#/definitions/" + refVal;
                                 } else if(typeVal == 'array') {
                                     if(schema.definitions[val["items"].$ref] == null) {
-                                        //console.log(val["items"].$ref);
-                                        //cnt++;
+                                        // Add the type to definition array for processing later.
                                         definitions.push(val["items"].$ref);
-                                        getJsonSchema(val["items"].$ref, true, function() {
-                                            console.log(cnt);
-                                        });
                                     }
                                     val["items"].$ref = "#/definitions/" + val["items"].$ref;
                                 }
                             }
                         });
 
-                        //if(subRef) {
-                        //    subSchema.properties = properties;
-                        //    schema.definitions[name] = subSchema;
-                        //    //console.log("++++" + name);
-                        //    //console.log(schema.definitions);
-                        //    //console.log("+++" + JSON.stringify(definitions));
-                        //    //cnt--;
-                        //} else {
+                        if(!subRef) {
                             schema.properties = properties;
                             next();
-                        //}
+                        } else {
+                            subSchema.properties = properties;
+                            schema.definitions[name] = subSchema;
+                            next();
+                        }
                     }
                 });
             } else if(subRef) {
                 schema.definitions[name] = subSchema;
+                next();
             }
         });
     }
 
     getJsonSchema(name, false, function() {
-        //console.log("+++++++++" + schema);
-        console.log(definitions.length);
+        // Recursive function fetch all the definitions of the types inside definitions array.
+        (function insertOne() {
+            var def = definitions.splice(0, 1)[0]; // get the first record of coll and reduce coll by one
+            getJsonSchema(def, true, function(err) {
+                if (err) { callback(err); return }
 
-        callback(schema);
+                // Items get added to definition array and they get deleted when they are processed.
+                // Check to end recursion.
+                if (definitions.length == 0) {
+                    callback(schema);
+                } else {
+                    // recursive call.
+                    insertOne();
+                }
+            })
+        })();
     });
-
 };
-
-//function getJsonSubSchema(name, callback) {
-//    var cnt = 0;
-//    var subSchema = {
-//        $schema                 : "http://json-schema.org/draft-04/schema#",
-//        type                    : "object",
-//        required                : [],
-//        properties              : {},
-//        definitions             : {}
-//    };
-//
-//    subSchema.id       =   nameSpacePrefix + name;
-//    subSchema.title    =   name;
-//
-//    entity.getUidByName(name.toLowerCase(), function(err, uid) {
-//        if(uid != null) {
-//            entity.getEntities([uid], function(err, entities) {
-//                if(err) {
-//                    next(err);
-//                }
-//                if(entities[0].definition != null && entities[0].definition.properties != null) {
-//                    var properties = entities[0].definition.properties;
-//                    Object.keys(properties).forEach(function(key) {
-//
-//                        var val = properties[key];
-//                        if(JSON.stringify(val).indexOf("$ref") > 0) {
-//                            var refVal  = val["$ref"];
-//                            var typeVal = val["type"];
-//
-//                            if(refVal != undefined) {
-//                                if(schema.definitions[refVal] == null) {
-//                                    cnt++;
-//                                    getJsonSubSchema(refVal, function() {
-//                                        cnt--;
-//                                    });
-//                                }
-//                                val["$ref"] = "#/definitions/" + refVal;
-//                            } else if(typeVal == 'array') {
-//                                if(schema.definitions[val["items"].$ref] == null) {
-//                                    cnt++
-//                                    getJsonSubSchema(val["items"].$ref, function() {
-//                                        cnt--;
-//                                    });
-//                                }
-//                                val["items"].$ref = "#/definitions/" + val["items"].$ref;
-//                            }
-//                        }
-//                    });
-//
-//                    console.log(name + " " + subRef + " " + JSON.stringify(properties));
-//                    if(!subRef) {
-//                        schema.properties = properties;
-//                        callback();
-//                    } else {
-//                        //var timeoutId = setTimeout(checkResponse, 1000);
-//
-//                        //function checkResponse() {console.log("Response - SUB "  + cnt);
-//                        if(cnt == 0) {
-//                            subSchema.properties = properties;
-//                            schema.definitions[name] = subSchema;
-//                            clearTimeout(timeoutId);
-//                            callback();
-//                        }
-//                    }
-//
-//                    //}
-//                }
-//            });
-//        }
-//        //else if(subRef) {
-//        //    schema.definitions[name] = subSchema;
-//        //}
-//    });
-//}
