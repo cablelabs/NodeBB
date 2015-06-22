@@ -524,8 +524,6 @@ var socket,
 
 			handleSearch();
 
-			console.log($('#logout-link'));
-
 			$('#logout-link').on('click', app.logout);
 
 			$window.blur(function(){

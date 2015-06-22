@@ -113,8 +113,18 @@ var	async = require('async'),
         });
     };
 
-    ScopeEntity.getScopeUidByName = function(name, callback) {
-        db.getObjectField('scopeentityname:uid', name, callback);
+    ScopeEntity.getScopeUidByName = function(name, scope, callback) {
+        db.getObjectField('scopeentityname:' + scope + ':uid', name, callback);
+    };
+
+    ScopeEntity.exists = function(name, scope, callback) {
+        ScopeEntity.getUidByName(name, scope, function(err, exists) {
+            callback(err, !! exists);
+        });
+    };
+
+    ScopeEntity.getUidByName = function(name, scope, callback) {
+        db.getObjectField('scopeentityname:' + scope + ':uid', name, callback);
     };
 
 }(exports));

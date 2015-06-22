@@ -16,6 +16,7 @@ define('forum/account/edit', dependencies, function(header, uploader, tags) {
 		currentEmail;
 
 	AccountEdit.init = function() {
+		console.log("Account init");
 		gravatarPicture = ajaxify.variables.get('gravatarpicture');
 		uploadedPicture = ajaxify.variables.get('uploadedpicture');
 

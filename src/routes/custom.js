@@ -5,6 +5,7 @@ function mainRoutes(app, middleware, controllers) {
     var middlewares = [middleware.incrementPageViews, middleware.updateLastOnlineTime];
 
     middlewares = middlewares.concat([middleware.redirectToLoginIfGuest]);
+    var modelingMiddlewares = middlewares.concat([middleware.redirectToLoginIfGuest, middleware.canDoModeling]);
 
     app.get('/', middleware.buildHeader, middlewares, function(req, res, next) {
     	res.redirect('/home');
@@ -16,6 +17,9 @@ function mainRoutes(app, middleware, controllers) {
 
     app.get('/entity-map', middleware.buildHeader, middlewares, controllers.custom.entityMap);
     app.get('/documentation', middleware.buildHeader, middlewares, controllers.custom.documentation);
+
+    // Admin modeling management
+    app.get('/admin/modeling', middleware.buildHeader, modelingMiddlewares, controllers.custom.modeling);
 
     app.get('/scope/:scopeName', middleware.buildHeader, middlewares, controllers.custom.documentationScope);
 

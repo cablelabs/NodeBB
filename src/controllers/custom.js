@@ -62,6 +62,10 @@ customController.documentation = function(req, res, next) {
     res.render('custom/documentation');
 };
 
+customController.modeling = function(req, res, next) {
+    res.render('custom/modeling/paths');
+};
+
 customController.documentationScope = function(req, res, next) {
     var scope = req.params.scopeName;
     req.session.scopeName = scope;
@@ -131,7 +135,7 @@ customController.getScopePathById = function(req, res, next) {
         if(err) {
             next(err);
         }
-        paths.definition = paths.definition && paths.definition !== 'undefined' ? JSON.parse(paths.definition) : '';
+        paths.definition = paths && paths.definition && paths.definition !== 'undefined' ? JSON.parse(paths.definition) : '';
         res.send(paths);
     });
 };
@@ -296,6 +300,10 @@ customController.getScopeEntityByName = function(req, res, next) {
     var scope = req.params.scope;
     var name = req.params.name;
     scopeEntity.getScopeUidByName(name, scope, function(err, uid) {
+        if(err || uid == null) {
+            console.log(uid);
+            next("Not found");
+        }
         scopeEntity.getScopeEntities([uid], scope, function(err, entities) {
             if(err) {
                 next(err);
@@ -483,7 +491,7 @@ customController.patchEntity = function(req, res, next) {
 };
 
 customController.patchScopeEntity = function(req, res, next) {
-
+    var scope = req.params.scope;
     var name = req.params.name;
 
     var entityData = {};
@@ -494,8 +502,8 @@ customController.patchScopeEntity = function(req, res, next) {
         }
     }
 
-    scopeEntity.getScopeUidByName(name, function(err, uid) {
-        entity.patchScopeEntity(uid, entityData, function(err, updatedEntity) {
+    scopeEntity.getScopeUidByName(name, scope, function(err, uid) {
+        scopeEntity.patchScopeEntity(uid, scope, entityData, function(err, updatedEntity) {
             res.send(updatedEntity);
         });
     });

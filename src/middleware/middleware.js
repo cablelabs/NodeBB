@@ -13,6 +13,7 @@ var app,
 	meta = require('./../meta'),
 	translator = require('./../../public/src/translator'),
 	user = require('./../user'),
+	groups = require('../groups'),
 	db = require('./../database'),
 	categories = require('./../categories'),
 	topics = require('./../topics'),
@@ -91,6 +92,17 @@ middleware.redirectToLoginIfGuest = function(req, res, next) {
 	} else {
 		next();
 	}
+};
+
+middleware.canDoModeling = function(req, res, next) {
+	var userId = req.user ? parseInt(req.user.uid, 10) : 0;
+	groups.isMember(userId, 'modeling', function(err, isMember) {
+		if(!isMember) {
+			return res.redirect(nconf.get('url') + '/403');
+		} else {
+			next();
+		}
+	});
 };
 
 middleware.checkIfConfirmed = function(req, res, next) {
