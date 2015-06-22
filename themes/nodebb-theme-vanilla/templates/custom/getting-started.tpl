@@ -45,7 +45,7 @@
                                 <p class="tab-desc">To access the model and start interacting:</p>
                                 <ol class="tab-desc">
                                     <li>Download and install Visual Paradigm.</li>
-                                    <li><a href="mailto:dia@Cablelabs.com?Subject=Request%20for%20Visual%20Paradigm%20Access" target="_top">Request access</a> to the VPository account, which is the central store of the models.</li>
+                                    <li><a href="mailto:btech@Cablelabs.com?Subject=Request%20for%20Visual%20Paradigm%20Access" target="_top">Request access</a> to the VPository account, which is the central store of the models.</li>
                                     <li>Follow these steps, to setup Visual Paradigm and link the VPository account.</li>
                                 </ol>
                             </div>
