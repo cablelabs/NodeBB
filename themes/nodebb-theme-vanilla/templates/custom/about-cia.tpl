@@ -136,10 +136,10 @@
                                         <span>A gap analysis is conducted to determine what artifacts can be reused and what extentions are required. This is where the development and deployment speed come into play.</span>
                                     </li>
                                     <li>
-                                        <span>The DIA team then works to map the existing artifacts into the Member's project. Development of new extensions are then applied and capurted for industry reuse.</span>
+                                        <span>The Business Technologies team then works to map the existing artifacts into the Member's project. Development of new extensions are then applied and capurted for industry reuse.</span>
                                     </li>
                                     <li>
-                                        <span>Once the project is ready to launch into a production environment the DIA team works in conjunction with the members to ensure a successful launch.</span>
+                                        <span>Once the project is ready to launch into a production environment theBusiness Technologies team works in conjunction with the members to ensure a successful launch.</span>
                                     </li>
                                 </ul>
                             </div>

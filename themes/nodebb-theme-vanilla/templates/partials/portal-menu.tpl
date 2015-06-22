@@ -8,7 +8,7 @@
                 <div class="forum-logo">
                     <a href="{relative_path}/#">
                         <img class="{brand:logo:display}" src="{brand:logo}" />
-                        <span><strong>DIA DEVELOPER PORTAL</strong></span>
+                        <span><strong>BUSINESS TECHNOLOGIES PORTAL</strong></span>
                     </a>
                     <!--<!-- IF showSiteTitle -->-->
                     <!--<a href="{relative_path}/">-->

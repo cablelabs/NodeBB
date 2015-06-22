@@ -7,7 +7,7 @@
                 <h2>GETTING STARTED</h2>
             </header>
             <p>
-                Welcome to Cablelabs’ Developer Portal. Learn how to access the APIs, use the API navigation tool, access and interact with the underlying model and utilize the community forums.
+                Welcome to Cablelabs’ Business Technologies Portal. Learn how to access the APIs, use the API navigation tool, access and interact with the underlying model and utilize the community forums.
             </p>
         </div>
     </div> <!-- end row -->
