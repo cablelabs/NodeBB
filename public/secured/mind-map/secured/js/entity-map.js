@@ -353,7 +353,6 @@
                         }))
                         .done(function (entitySchema) {
                             console.log(entitySchema);
-                            var xmlString = (new XMLSerializer()).serializeToString(entitySchema);
                             if (!String.prototype.encodeHTML) {
                                 String.prototype.encodeHTML = function () {
                                     return this.replace(/&/g, '&amp;')
@@ -363,6 +362,7 @@
                                         .replace(/'/g, '&apos;');
                                 };
                             }
+                            var xmlString = (new XMLSerializer()).serializeToString(entitySchema.documentElement);
                             $('#download-schema .schema-preview').html('<pre>' + xmlString.encodeHTML() + '</pre>');
                         })
                         .fail(function() {
