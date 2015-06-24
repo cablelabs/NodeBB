@@ -352,6 +352,7 @@
                             }
                         }))
                         .done(function (entitySchema) {
+                            console.log(entitySchema);
                             var xmlString = (new XMLSerializer()).serializeToString(entitySchema);
                             if (!String.prototype.encodeHTML) {
                                 String.prototype.encodeHTML = function () {
