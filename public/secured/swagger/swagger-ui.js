@@ -1277,9 +1277,8 @@ templates['signature'] = template(function (Handlebars,depth0,helpers,partials,d
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
 
-
-  buffer += "<div>\n<ul class=\"signature-nav\">\n  <li><a class=\"description-link\" href=\"#\">Model</a></li>\n  <li><a class=\"snippet-link\" href=\"#\">Model Schema</a></li>\n</ul>\n<div>\n\n<div class=\"signature-container\">\n  <div class=\"description\">\n    ";
-  if (stack1 = helpers.signature) { console.log("Came to if"); stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  buffer += "<div>\n<ul class=\"signature-nav\">\n  <li><a class=\"description-link\" href=\"#\">Model</a></li>\n  <li><a class=\"snippet-link\" href=\"#\">Model Schema</a></li>\n  <li><a class=\"download-link\" href=\"#\">Download Schema</a></li>\n</ul>\n<div>\n\n<div class=\"signature-container\">\n  <div class=\"description\">\n    ";
+  if (stack1 = helpers.signature) { console.log("+++++" + data); stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else {
     stack1 = depth0.signature;
     stack1 = stack1.slice(0,0) + "<span class=\"strong\">ENTITY</span><div class=\"well well-lg primary-entity\">" + stack1.slice(0);
@@ -2460,7 +2459,8 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
     SignatureView.prototype.events = {
       'click a.description-link': 'switchToDescription',
       'click a.snippet-link': 'switchToSnippet',
-      'mousedown .snippet': 'snippetToTextArea'
+      'mousedown .snippet': 'snippetToTextArea',
+      'click a.download-link': 'downloadSchema'
     };
 
     SignatureView.prototype.initialize = function() {};
@@ -2492,6 +2492,16 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
     };
 
     SignatureView.prototype.switchToSnippet = function(e) {
+      if (e != null) {
+        e.preventDefault();
+      }
+      $(".description", $(this.el)).hide();
+      $(".snippet", $(this.el)).show();
+      $('.snippet-link', $(this.el)).addClass('selected');
+      return $('.description-link', $(this.el)).removeClass('selected');
+    };
+
+    SignatureView.prototype.downloadSchema = function(e) {
       if (e != null) {
         e.preventDefault();
       }

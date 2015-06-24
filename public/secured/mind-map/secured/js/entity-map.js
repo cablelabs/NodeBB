@@ -332,10 +332,42 @@
                 var entityName = graph.downloadEntity;
                 var schemaType = $(this).data('type');  // either 'json' or 'xml'
 
+                var schema = '';
                 // call method to get schema, store as string
-                var schema = JSON.stringify({ name: entityName, type: 'object' }, null, 2);
-
-                $('#download-schema .schema-preview').html('<pre>'+schema+'</pre>');
+                $.when($.ajax({url: '/modeling/api/export/' + entityName}))
+                    .done(function (entitySchema) {
+                        schema = JSON.stringify(entitySchema, null, 2);
+                        $('#download-schema .schema-preview').html('<pre>' + schema + '</pre>');
+                    })
+                    .fail(function() {
+                        error_handler('unable to download schema');
+                    });
+                if(schemaType == 'xml') {
+                    $.when($.ajax(
+                        {
+                            url: '/modeling/api/export/' + entityName + '?type=xml',
+                            data: schema,
+                            headers: {
+                                "Content-type": "application/json"
+                            }
+                        }))
+                        .done(function (entitySchema) {
+                            var xmlString = (new XMLSerializer()).serializeToString(entitySchema);
+                            if (!String.prototype.encodeHTML) {
+                                String.prototype.encodeHTML = function () {
+                                    return this.replace(/&/g, '&amp;')
+                                        .replace(/</g, '&lt;')
+                                        .replace(/>/g, '&gt;')
+                                        .replace(/"/g, '&quot;')
+                                        .replace(/'/g, '&apos;');
+                                };
+                            }
+                            $('#download-schema .schema-preview').html('<pre>' + xmlString.encodeHTML() + '</pre>');
+                        })
+                        .fail(function() {
+                            error_handler('unable to download schema');
+                        });
+                }
             },
             'click copy-schema-btn': function (e) {
                 var element = $('#download-schema .schema-preview pre')[0];

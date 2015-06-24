@@ -132,8 +132,8 @@ customController.getScopePathById = function(req, res, next) {
 
     var uid = req.params.uid;
     scopePath.getScopePathData(uid, scope, function(err, paths) {
-        if(err) {
-            next(err);
+        if(err || paths == null) {
+            return next("Not found");
         }
         paths.definition = paths && paths.definition && paths.definition !== 'undefined' ? JSON.parse(paths.definition) : '';
         res.send(paths);
@@ -289,7 +289,7 @@ customController.getEntityByName = function(req, res, next) {
     entity.getUidByName(name, function(err, uid) {
         entity.getEntities([uid], function(err, entities) {
             if(err) {
-                next(err);
+                return next(err);
             }
             res.send(entities);
         });
@@ -302,7 +302,7 @@ customController.getScopeEntityByName = function(req, res, next) {
     scopeEntity.getScopeUidByName(name, scope, function(err, uid) {
         if(err || uid == null) {
             console.log(uid);
-            next("Not found");
+            return next("Not found");
         }
         scopeEntity.getScopeEntities([uid], scope, function(err, entities) {
             if(err) {
@@ -371,9 +371,55 @@ customController.exportSchemas = function(req, res, next) {
 };
 
 customController.exportSchemaByName = function(req, res, next) {
+    var type = req.query.type;
     exporter.generateSchema(req.params.name, function(schema) {
-        res.setHeader("Content-type", "application/json");
-        res.send(schema);
+        if(type && type === 'xml') {
+            //var http = require('http');
+            //var options = {
+            //    host: 'http://cl-convert.herokuapp.com',
+            //    path: '/convert',
+            //    method: 'POST',
+            //    //This is the only line that is new. `headers` is an object with the headers to request
+            //    headers: {'Content-type': 'application/json'}
+            //};
+            //
+            //var callback = function(response) {
+            //    var str = ''
+            //    response.on('data', function (chunk) {
+            //        str += chunk;
+            //    });
+            //
+            //    response.on('end', function () {
+            //        console.log("+++" + str);
+            //        res.setHeader("Content-type", "application/xml");
+            //        res.send(str);
+            //    });
+            //};
+            //
+            //var request = http.request(options, callback);
+            //console.log(schema);
+            //request.write(JSON.stringify(schema));
+            //request.end();
+
+            var request = require('request');
+            request.post({
+                headers: {'Content-type' : 'application/json'},
+                url:     'http://cl-convert.herokuapp.com/convert',
+                body:    JSON.stringify(schema)
+            }, function(error, response, body){
+                //res.setHeader("Content-type", "application/xml");
+                //var xml2js = require('xml2js');
+                //var parser = new xml2js.Parser();
+                //parser.parseString(body, function(err, result) {
+                //    console.log(result);
+                //});
+                res.send(body);
+            });
+
+        } else {
+            res.setHeader("Content-type", "application/json");
+            res.send(schema);
+        }
     })
 };
 
@@ -400,7 +446,7 @@ customController.getSchemaByName = function(req, res, next) {
          if(uid != null) {
             entity.getEntities([uid], function(err, entities) {
                 if(err) {
-                    next(err);
+                    return next(err);
                 }
                 var definition = entities[0].definition;
                 if(definition != null && definition.properties != null) {
