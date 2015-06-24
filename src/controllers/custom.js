@@ -374,12 +374,15 @@ customController.exportSchemaByName = function(req, res, next) {
     var type = req.query.type;
     exporter.generateSchema(req.params.name, function(schema) {
         if(type && type === 'xml') {
+            console.log("Converting to xml");
             var request = require('request');
             request.post({
                 headers: {'Content-type' : 'application/json'},
                 url:     'http://cl-convert.herokuapp.com/convert',
                 body:    JSON.stringify(schema)
             }, function(error, response, body){
+                console.log(body);
+                res.setHeader("Content-type", "application/xml");
                 res.send(body);
             });
 
