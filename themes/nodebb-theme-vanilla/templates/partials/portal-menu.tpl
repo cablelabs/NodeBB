@@ -58,10 +58,17 @@
                                     Documentation
                                 </a>
                             </li>
-                            <!--<li class="divider"></li>-->
-                            <!--<li class="disabled">-->
-                                <!--<a href="#">API ZONES</a>-->
-                            <!--</li>-->
+                            <li class="divider"></li>
+                            <li class="disabled">
+                                <a href="#">API ZONES</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="{relative_path}/scope/bse">Business Service</a>
+                            </li>
+                            <li>
+                                <a href="{relative_path}/scope/asr">Access Service Request</a>
+                            </li>
                             <!--&lt;!&ndash;<li class="menu-item dropdown dropdown-submenu">&ndash;&gt;-->
                                 <!--&lt;!&ndash;<a tabindex="-1" href="#">API Zones</a>&ndash;&gt;-->
                                 <!--&lt;!&ndash;<ul class="dropdown-menu">&ndash;&gt;-->
