@@ -64,7 +64,7 @@
                             </li>
                             <li class="divider"></li>
                             <li>
-                                <a href="{relative_path}/scope/bse">Business Service</a>
+                                <a href="{relative_path}/scope/bse">Business Services</a>
                             </li>
                             <li>
                                 <a href="{relative_path}/scope/asr">Access Service Request</a>

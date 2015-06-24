@@ -232,7 +232,7 @@
       <div class="modal-body">
         <div>
           <button type="button" class="btn btn-info download-btn" data-type="json">JSON Schema</button>
-          <button type="button" class="btn btn-info download-btn" data-type="xml" >XML</button>
+          <button type="button" class="btn btn-info download-btn" data-type="xml" >XSD</button>
           <button type="button" class="btn btn-default" id="copy-schema-btn">Select All</button>
         </div>
         <div class="schema-preview"></div>
