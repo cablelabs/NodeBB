@@ -374,45 +374,12 @@ customController.exportSchemaByName = function(req, res, next) {
     var type = req.query.type;
     exporter.generateSchema(req.params.name, function(schema) {
         if(type && type === 'xml') {
-            //var http = require('http');
-            //var options = {
-            //    host: 'http://cl-convert.herokuapp.com',
-            //    path: '/convert',
-            //    method: 'POST',
-            //    //This is the only line that is new. `headers` is an object with the headers to request
-            //    headers: {'Content-type': 'application/json'}
-            //};
-            //
-            //var callback = function(response) {
-            //    var str = ''
-            //    response.on('data', function (chunk) {
-            //        str += chunk;
-            //    });
-            //
-            //    response.on('end', function () {
-            //        console.log("+++" + str);
-            //        res.setHeader("Content-type", "application/xml");
-            //        res.send(str);
-            //    });
-            //};
-            //
-            //var request = http.request(options, callback);
-            //console.log(schema);
-            //request.write(JSON.stringify(schema));
-            //request.end();
-
             var request = require('request');
             request.post({
                 headers: {'Content-type' : 'application/json'},
                 url:     'http://cl-convert.herokuapp.com/convert',
                 body:    JSON.stringify(schema)
             }, function(error, response, body){
-                //res.setHeader("Content-type", "application/xml");
-                //var xml2js = require('xml2js');
-                //var parser = new xml2js.Parser();
-                //parser.parseString(body, function(err, result) {
-                //    console.log(result);
-                //});
                 res.send(body);
             });
 
