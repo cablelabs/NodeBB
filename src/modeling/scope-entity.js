@@ -123,8 +123,8 @@ var	async = require('async'),
         });
     };
 
-    ScopeEntity.getUidByName = function(name, scope, callback) {
-        db.getObjectField('scopeentityname:' + scope + ':uid', name, callback);
-    };
+    //ScopeEntity.getUidByName = function(name, scope, callback) {
+    //    db.getObjectField('scopeentityname:' + scope + ':uid', name, callback);
+    //};
 
 }(exports));

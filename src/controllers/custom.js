@@ -393,6 +393,30 @@ customController.exportSchemaByName = function(req, res, next) {
     })
 };
 
+customController.exportScopeSchemaByName = function(req, res, next) {
+    var scope = req.params.scope;
+    var type = req.query.type;
+    exporter.generateScopeSchema(req.params.name, scope, function(schema) {
+        if(type && type === 'xml') {
+            console.log("Converting to xml");
+            var request = require('request');
+            request.post({
+                headers: {'Content-type' : 'application/json'},
+                url:     'http://cl-convert.herokuapp.com/convert',
+                body:    JSON.stringify(schema)
+            }, function(error, response, body){
+                console.log(body);
+                res.setHeader("Content-type", "application/xml");
+                res.send(body);
+            });
+
+        } else {
+            res.setHeader("Content-type", "application/json");
+            res.send(schema);
+        }
+    })
+};
+
 customController.getSchemaByName = function(req, res, next) {
     var name    = req.params.name;
     var view   = req.query.view;

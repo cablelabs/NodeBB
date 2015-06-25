@@ -272,9 +272,9 @@ var	async = require('async'),
         db.getObjectField('entityname:uid', name, callback);
     };
 
-    Entity.getScopeUidByName = function(name, callback) {
-        db.getObjectField('scopeentityname:uid', name, callback);
-    };
+    //Entity.getScopeUidByName = function(name, callback) {
+    //    db.getObjectField('scopeentityname:uid', name, callback);
+    //};
 
     Entity.getNamesByUids = function(uids, callback) {
         Entity.getMultipleEntityFields(uids, ['name'], function(err, entities) {
