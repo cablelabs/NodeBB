@@ -2505,10 +2505,22 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
       if (e != null) {
         e.preventDefault();
       }
-      //$(".description", $(this.el)).hide();
-      //$(".snippet", $(this.el)).hide();
-      $('.download-link', $(this.el)).addClass('selected');
-      return $('.description-link', $(this.el)).removeClass('selected');
+      // Call a link
+      var spanText = $(this.el).find(".primary-entity").children("span").html();
+      var entityName = spanText.substring(0, spanText.indexOf(" "));
+      console.log("++++" + entityName + "+++");
+
+      var url = window.location.href;
+      var scopeName = url.substring(url.indexOf("scope") + 6, url.indexOf("#"));
+
+      console.log("+++" + scopeName + "++++");
+
+      var exportUrl = url.substring(0, url.indexOf("scope")) + "modeling/api/export/" + scopeName + "/" + entityName;
+
+      console.log(exportUrl);
+
+      window.open(exportUrl, '_blank');
+
     };
 
     SignatureView.prototype.snippetToTextArea = function(e) {
