@@ -55,7 +55,7 @@
                             </a></li>
                             <li>
                                 <a href="{relative_path}/documentation">
-                                    Documentation
+                                    Common
                                 </a>
                             </li>
                             <li class="divider"></li>
