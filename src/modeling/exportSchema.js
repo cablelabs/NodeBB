@@ -35,7 +35,7 @@ module.exports.generateSchema = function (name, callback) {
             subSchema.title    =   name;
         }
 
-        entity.getScopeUidByName(name.toLowerCase(), function(err, uid) {
+        entity.getUidByName(name.toLowerCase(), function(err, uid) {
             if(uid != null) {
                 entity.getEntities([uid], function(err, entities) {
                     if(err) {

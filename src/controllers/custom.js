@@ -381,7 +381,6 @@ customController.exportSchemaByName = function(req, res, next) {
                 url:     'http://cl-convert.herokuapp.com/convert',
                 body:    JSON.stringify(schema)
             }, function(error, response, body){
-                console.log(body);
                 res.setHeader("Content-type", "application/xml");
                 res.send(body);
             });
@@ -405,7 +404,6 @@ customController.exportScopeSchemaByName = function(req, res, next) {
                 url:     'http://cl-convert.herokuapp.com/convert',
                 body:    JSON.stringify(schema)
             }, function(error, response, body){
-                console.log(body);
                 res.setHeader("Content-type", "application/xml");
                 res.send(body);
             });

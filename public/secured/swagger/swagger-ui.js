@@ -2505,9 +2505,9 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
       if (e != null) {
         e.preventDefault();
       }
-      $(".description", $(this.el)).hide();
-      $(".snippet", $(this.el)).show();
-      $('.snippet-link', $(this.el)).addClass('selected');
+      //$(".description", $(this.el)).hide();
+      //$(".snippet", $(this.el)).hide();
+      $('.download-link', $(this.el)).addClass('selected');
       return $('.description-link', $(this.el)).removeClass('selected');
     };
 
