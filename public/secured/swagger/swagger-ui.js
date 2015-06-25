@@ -2508,18 +2508,19 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
       // Call a link
       var spanText = $(this.el).find(".primary-entity").children("span").html();
       var entityName = spanText.substring(0, spanText.indexOf(" "));
-      console.log("++++" + entityName + "+++");
 
       var url = window.location.href;
-      var scopeName = url.substring(url.indexOf("scope") + 6, url.indexOf("#"));
+      if(url.indexOf("scope") > 0 ) {
+        var scopeName = url.substring(url.indexOf("scope") + 6, url.indexOf("#"));
+        var exportUrl = url.substring(0, url.indexOf("scope")) + "modeling/api/export/" + scopeName + "/" + entityName;
+        window.open(exportUrl, '_blank');
+      } else {
+        //var scopeName = url.substring(url.indexOf("documentation") + 6, url.indexOf("#"));
+        var exportUrl = url.substring(0, url.indexOf("documentation")) + "modeling/api/export/" + entityName;
+        window.open(exportUrl, '_blank');
+      }
 
-      console.log("+++" + scopeName + "++++");
 
-      var exportUrl = url.substring(0, url.indexOf("scope")) + "modeling/api/export/" + scopeName + "/" + entityName;
-
-      console.log(exportUrl);
-
-      window.open(exportUrl, '_blank');
 
     };
 
