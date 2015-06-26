@@ -35,7 +35,6 @@ pidfile
 
 dump.rdb
 nohup.out
-public/secured/mind-map/assets/links-new-format.json
 public/secured/api-docs/swagger-file.json
 public/secured/api-docs/swagger-file-tr069.json
 public/secured/api-docs/swagger-file-sample.json

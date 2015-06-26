@@ -169,15 +169,15 @@ function start() {
 			}
 		});
 
-		//// Refreshing link.json for mind-map
-		var linkparser = require('./src/controllers/mind-map/linkParser_new-format');
-		linkparser.init(function(err){
-			if(err) {
-				winston.error('Error Processing links.json for mindmap: ' + err);
-			} else {
-				winston.info("MIND MAP:: Refreshed links.json file");
-			}
-		});
+		////// Refreshing link.json for mind-map
+		//var linkparser = require('./src/controllers/mind-map/linkParser_new-format');
+		//linkparser.init(function(err){
+		//	if(err) {
+		//		winston.error('Error Processing links.json for mindmap: ' + err);
+		//	} else {
+		//		winston.info("MIND MAP:: Refreshed links.json file");
+		//	}
+		//});
 
 		var meta = require('./src/meta');
 		meta.configs.init(function () {
