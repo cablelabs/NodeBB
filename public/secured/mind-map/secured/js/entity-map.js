@@ -657,11 +657,11 @@
      * When graph and subset data have been fetched, render graph and recall saved state.
      */
 
-    socket.emit('custom.refreshLinkParser', '', function(err, data) {
-        if (err) {
-            return app.alertError(err.message);
-        }
-        console.log("Update Link Parser.");
+    //socket.emit('custom.refreshLinkParser', '', function(err, data) {
+    //    if (err) {
+    //        return app.alertError(err.message);
+    //    }
+    //    console.log("Update Link Parser.");
         $.when($.ajax({url: '/secured/mind-map/assets/links-new-format.json'}))
             .done(function (graph_data) {
                 $('.spinner').hide();
@@ -671,6 +671,6 @@
             .fail(function() {
                 error_handler('unable to download graph data');
             });
-    });
+    //});
 
 }(window, document, jQuery, Entity_Set));

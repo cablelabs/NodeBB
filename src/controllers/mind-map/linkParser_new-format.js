@@ -11,13 +11,13 @@ var entity_names;
 
 module.exports.init = function (callback) {
 
-  entityModel.getSwaggerCacheInfo(function(err, needRefresh) {
-    console.log(typeof needRefresh);
-    if(needRefresh === "false") {
-      console.log("Not going to refresh");
-      callback();
-    }
-  });
+  //entityModel.getSwaggerCacheInfo(function(err, needRefresh) {
+  //  console.log(typeof needRefresh);
+  //  if(needRefresh === "false") {
+  //    console.log("Not going to refresh");
+  //    callback();
+  //  }
+  //});
 
   //each function in the water fall is performed in succession, and receives input from the previous function
   async.waterfall([
@@ -144,10 +144,8 @@ function buildEndpointProfiles (body, pathNames, callback) {
 
     result.paths.push(endpoint);
   });
-
   callback(null, result);
 }
-
 
 //fetch and parse the endpoints asynchronously
 function getAllEndpoints (profiles, callback) {
