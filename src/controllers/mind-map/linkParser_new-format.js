@@ -57,7 +57,7 @@ function getSwaggerFile (callback) {
       "version": "0.0.1",
       "title": "Cable API"
     },
-    "host": "localhost:8093",
+    "host": "cable-api.herokuapp.com",
     "basePath": "/api-docs",
     "schemes": [
       "http"
