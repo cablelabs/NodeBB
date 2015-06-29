@@ -317,57 +317,23 @@ customController.exportSchemas = function(req, res, next) {
     var zip = new JSZip();
     var items = req.query.items.split(",");
 
-    //Array.prototype.asyncEach = function(iterator) {
-    //    var list    = this,
-    //        n       = list.length,
-    //        i       = -1,
-    //        calls   = 0,
-    //        looping = false;
-    //
-    //    var iterate = function() {
-    //        calls -= 1;
-    //        i += 1;
-    //        if (i === n) return;
-    //        iterator(list[i], resume);
-    //    };
-    //
-    //    var loop = function() {
-    //        if (looping) return;
-    //        looping = true;
-    //        while (calls > 0) iterate();
-    //        looping = false;
-    //    };
-    //
-    //    var resume = function() {
-    //        calls += 1;
-    //        if (typeof setTimeout === 'undefined') loop();
-    //        else setTimeout(iterate, 1);
-    //    };
-    //    resume();
-    //};
     console.log(items);
+    var response = {};
 
-    async.waterfall([
-        function(next) {
-            //for(var i = 0 ; i < items.length ; i++) {
-            items.forEach(function(item) {
-                console.log(item);
-                exporter.generateSchema(item, function (schema) {
-                    console.log(schema);
-                })
-            })
-            //}
-            next(null, zip);
-        }
-    ], function(err, result) {
-        if (err) {
-            res.send(err);
-        } else {
-            var content = zip.generate({type:"base64"});
-            res.setHeader("Content-type", "application/zip;base64");
-            res.send(content);
-        }
-    })
+    (function insertOne() {
+        var def = items.splice(0, 1)[0]; // get the first record of coll and reduce coll by one
+        exporter.generateSchema(def, function(schema) {
+            response[def] = schema;
+
+            if (items.length == 0) {
+                res.setHeader("Content-type", "application/json");
+                res.send(response);
+            } else {
+                // recursive call.
+                insertOne();
+            }
+        })
+    })();
 };
 
 customController.exportSchemaByName = function(req, res, next) {

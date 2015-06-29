@@ -528,7 +528,7 @@
                     var data = {
                         username: username.val(),
                         set: sets.data[sets.selected]
-                    }
+                    };
                     socket.emit('user.shareSet', data, function(err, return_data) {
                         if (err) {
                             return app.alertError(err.message);
@@ -571,32 +571,10 @@
     **********************************/
 
     function export_entities() {
-        //var zip = new JSZip();
-        //zip.file("Hello.txt", "Hello World\n");
-        //var img = zip.folder("images");
-        //img.file("smile.gif", imgData, {base64: true});
-        //var content = zip.generate({type:"blob"});
-        //// see FileSaver.js
-        //saveAs(content, "example.zip");
-
         var selected = graph.selected;
-        console.log(selected.join(","));
-        //for(var i = 0 ; i < selected.length; i++) {
-        //    console.log("Exporting -- " + selected[i]);
-            $.when($.ajax({url: '/modeling/api/export?items=' + selected.join(",")}))
-                .done(function (schemas) {
-                    saveAs(schemas, "example.zip");
-                    //console.log(JSON.stringify(schemas));
-                    //zip.file(selected[i] + ".json", JSON.stringify(schemas));
-                })
-                .fail(function() {
-                    error_handler('unable to download graph data');
-                });
-        //}
-
-        //var content = zip.generate({type:"blob"});
-        // see FileSaver.js
-        //saveAs(content, "schemas.zip");
+        var url = window.location.href;
+        var exportUrl = url.substring(0, url.indexOf("documentation")) + "modeling/api/export?items=" + selected.join(",");
+        window.open(exportUrl, '_blank');
     }
 
     function user_getsets(callback) {
@@ -662,7 +640,7 @@
     //        return app.alertError(err.message);
     //    }
     //    console.log("Update Link Parser.");
-        $.when($.ajax({url: '/secured/mind-map/assets/links-new-format.json'}))
+        $.when($.ajax({url: '/secured/mind-map/assets/__links-new-format.json'}))
             .done(function (graph_data) {
                 $('.spinner').hide();
                 $('.loading-msg').hide();
