@@ -640,7 +640,7 @@
     //        return app.alertError(err.message);
     //    }
     //    console.log("Update Link Parser.");
-        $.when($.ajax({url: '/secured/mind-map/assets/__links-new-format.json'}))
+        $.when($.ajax({url: '/secured/mind-map/assets/links-new-format.json'}))
             .done(function (graph_data) {
                 $('.spinner').hide();
                 $('.loading-msg').hide();
