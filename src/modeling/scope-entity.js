@@ -118,7 +118,7 @@ var	async = require('async'),
     };
 
     ScopeEntity.exists = function(name, scope, callback) {
-        ScopeEntity.getUidByName(name, scope, function(err, exists) {
+        ScopeEntity.getScopeUidByName(name, scope, function(err, exists) {
             callback(err, !! exists);
         });
     };

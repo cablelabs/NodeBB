@@ -460,7 +460,6 @@ customController.createEntity = function(req, res, next) {
 customController.createScopeEntity = function(req, res, next) {
     var scope = req.params.scope;
 
-    console.log(scope + " Scope ");
     var entityData = {};
 
     for (var key in req.body) {
