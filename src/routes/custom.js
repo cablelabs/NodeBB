@@ -67,6 +67,8 @@ function mainRoutes(app, middleware, controllers) {
 
     app.get(modellingPrefix + '/api/export/:scope/:name', apiMiddlewares, controllers.custom.exportScopeSchemaByName);
 
+    app.get('/migrate/pullzones', apiMiddlewares, controllers.custom.pullZones);
+
 }
 
 module.exports = function(app, middleware, controllers) {

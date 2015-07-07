@@ -381,6 +381,58 @@ customController.exportScopeSchemaByName = function(req, res, next) {
     })
 };
 
+customController.pullZones = function(req, res, next) {
+    var redis = require('redis');
+    var clientProd = redis.createClient("6379", "devportal.cablelabs.com"); //creates a new client
+    var clientHeroku = redis.createClient("14370", "pub-redis-14370.us-east-1-4.1.ec2.garantiadata.com"); //creates a new client
+    clientHeroku.auth("SiqiJBW1NltRcOuY");
+
+    clientHeroku.on('connect', function() {
+        console.log('connected');
+    });
+
+    //clientHeroku.hgetall('scopeEntityTags', function(err, reply) {
+    //    //redisClient.hset(key, field, value, callback);
+    //    clientHeroku.hset('scopeEntityTags', "asr", "asr", function(err, resp) {
+    //        clientHeroku.hset('scopeEntityTags', "bse", "bse", function (err, resp) {
+    //            res.send(reply);
+    //        });
+    //    });
+    //});
+
+    //clientHeroku.hgetall('scopepathname:asr:uid', function(err, resp) {
+    //    clientProd.hmset('scopepathname:asr:uid', resp, function(err) {
+    //        console.log(resp);
+    //        res.send(resp);
+    //    });
+    //})
+
+    //clientHeroku.hgetall('scopeentityname:bse:uid', function(err,resp) {
+    //    Object.keys(resp).forEach(function (id) {
+    //        var entityName = 'scopeentity:' + resp[id];
+    //        clientHeroku.hgetall(entityName, function(err, data) {
+    //            console.log(data);
+    //            clientProd.hmset(entityName, data, function(err) {
+    //            });
+    //        })
+    //    });
+    //    res.send(resp);
+    //});
+
+    //clientHeroku.hgetall('scopepathname:asr:uid', function(err,resp) {
+    //    Object.keys(resp).forEach(function (id) {
+    //        var entityName = 'scopepath:' + resp[id];
+    //        clientHeroku.hgetall(entityName, function(err, data) {
+    //            console.log(data);
+    //            clientProd.hmset(entityName, data, function(err) {
+    //            });
+    //        })
+    //    });
+    //    res.send(resp);
+    //});
+
+};
+
 customController.getSchemaByName = function(req, res, next) {
     var name    = req.params.name;
     var view   = req.query.view;
