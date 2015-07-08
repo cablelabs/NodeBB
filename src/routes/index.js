@@ -48,7 +48,9 @@ function staticRoutes(app, middleware, controllers) {
 function topicRoutes(app, middleware, controllers) {
 	app.get('/api/topic/teaser/:topic_id', controllers.topics.teaser);
 
-	setupPageRoute(app, '/topic/:topic_id/:slug/:post_index?', middleware, [middleware.applyCSRF], controllers.topics.get);
+	var loginRegisterMiddleware = [middleware.applyCSRF, middleware.redirectToLoginIfGuest];
+
+	setupPageRoute(app, '/topic/:topic_id/:slug/:post_index?', middleware, loginRegisterMiddleware, controllers.topics.get);
 	setupPageRoute(app, '/topic/:topic_id/:slug?', middleware, [middleware.applyCSRF, middleware.addSlug], controllers.topics.get);
 }
 
@@ -72,13 +74,13 @@ function categoryRoutes(app, middleware, controllers) {
 
 	app.get('/api/unread/total', middleware.authenticate, controllers.categories.unreadTotal);
 
-	setupPageRoute(app, '/category/:category_id/:slug/:topic_index', middleware, [middleware.applyCSRF, middleware.checkTopicIndex], controllers.categories.get);
-	setupPageRoute(app, '/category/:category_id/:slug?', middleware, [middleware.applyCSRF, middleware.addSlug], controllers.categories.get);
+	setupPageRoute(app, '/category/:category_id/:slug/:topic_index', middleware, [middleware.applyCSRF, middleware.redirectToLoginIfGuest, middleware.checkTopicIndex], controllers.categories.get);
+	setupPageRoute(app, '/category/:category_id/:slug?', middleware, [middleware.applyCSRF, middleware.redirectToLoginIfGuest, middleware.addSlug], controllers.categories.get);
 }
 
 function accountRoutes(app, middleware, controllers) {
-	var middlewares = [middleware.checkGlobalPrivacySettings];
-	var accountMiddlewares = [middleware.checkGlobalPrivacySettings, middleware.checkAccountPermissions];
+	var middlewares = [middleware.checkGlobalPrivacySettings, middleware.redirectToLoginIfGuest];
+	var accountMiddlewares = [middleware.checkGlobalPrivacySettings, middleware.checkAccountPermissions, middleware.redirectToLoginIfGuest];
 
 	setupPageRoute(app, '/user/:userslug', middleware, middlewares, controllers.accounts.getAccount);
 	setupPageRoute(app, '/user/:userslug/following', middleware, middlewares, controllers.accounts.getFollowing);
